@@ -4,8 +4,7 @@ record <record.name>
   extends 
     <record.supername; separator=", "> 
 {
-  <record.members: memberdef(); separator=";\n">
-  <if(record.members)>;<endif>
+  <record.members: memberdef(); separator=";\n"><if(record.members)>;<endif>
 }
   <record.globals: globaldef() ; separator="\n">
   
@@ -21,8 +20,11 @@ globaldef(it) ::= <<
 >>
 
 methoddef(it) ::= <<
-  procedure <it.returnType> <it.name> (<it.parameters; separator=", ">) <it.annotations.keys: {k| @<k> <it.annotations.(k)>}; separator=" "> {
-    <it.code; separator="\n">
+procedure <it.returnType> <it.name> (<it.parameters; separator=", ">) 
+  <it.annotations.keys: {k| @<k> <it.annotations.(k)>}; separator="\n"> 
+  {
+    <it.locals; separator=";\n">;<\n>
+    <it.code : {x| #<x>;}; separator="\n">
   }
 >>
 
@@ -34,6 +36,9 @@ innerclassdef(name, outerName, innerName, access) ::= <<(
 >>
 
 outerclassdef(owner, method) ::= <<
-  <owner><if(method)>, {|<method>|}<endif>
+<owner><if(method)>, {|<method>|}<endif>
 >>
  
+localdef(i, id, start, end, signature, type) ::= <<
+(<i>, :<id>, <type>, :<start>, :<end><if(signature)>, <signature><endif>)
+>>

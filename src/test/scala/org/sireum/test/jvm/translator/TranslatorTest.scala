@@ -1,6 +1,6 @@
 package org.sireum.test.jvm.translator
 
-import org.junit.Assert.assertTrue
+import org.junit.Assert._
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.scalatest.FunSuite
@@ -13,12 +13,14 @@ import org.scalatest.junit.JUnitRunner
 class TranslatorTest extends FunSuite{
   
 	test("It should parse") {
-      val cl = ClassLoader.getSystemClassLoader()
-      val qname = "org.sireum.jvm.samples.HelloWorld"
-      val reporter = new PilarParser.StringErrorReporter(true)
-      PilarParser.apply(Left(ClassTranslator.translate(cl, qname)), reporter)
+	  val reporter = new PilarParser.StringErrorReporter(true)
+//      val cl = ClassLoader.getSystemClassLoader()
+//      val qname = "org.sireum.jvm.samples.HelloWorld2"
+//      PilarParser.apply(Left(ClassTranslator.translate(cl, qname)), reporter)
+	  BytecodeTranslator.main(Array())
+	  PilarParser.apply(Right("file:/Users/Vidit/Dropbox/Classes/Spring2013/FinalProject/Sireum2Workspace/sireum-translator/output"), reporter)
       //PilarParser.apply(Right("file:/Users/Vidit/Dropbox/AndroidStuff/classes.pilar"), reporter)
-      assertTrue(reporter.errorAsString.isEmpty())
+      assertTrue(reporter.errorAsString, reporter.errorAsString.isEmpty())
     }
 	
 }

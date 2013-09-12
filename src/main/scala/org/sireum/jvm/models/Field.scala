@@ -8,7 +8,7 @@ class Field(access: Int, name: String, desc: String, signature: String, value: O
     
 	def isGlobal = Util.isPublic(access) && Util.isStatic(access) && Util.isFinal(access)
 	def getName() = Util.getPilarName(name)
-	def getType() = Util.convertType(Type.getType(desc))
+	def getType() = Util.convertType(desc)
 	def getAnnotations() = {
 	  annotations.put("AccessFlag", Util.getAccessFlag(access))
 	  annotations

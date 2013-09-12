@@ -11,7 +11,7 @@ class BytecodeAnnotationVisitor(api:Int, av:AnnotationVisitor, baseModel: BaseMo
 
   override def visit(name:String, value:Object) =  {
     if(value.isInstanceOf[Type]) {
-      baseModel.annotations.put(name, Util.convertType(value.asInstanceOf[Type]))
+      baseModel.annotations.put(name, Util.convertType(value.asInstanceOf[Type].getDescriptor()))
     } else if (value.getClass().isArray) {
       
     } else {
@@ -19,7 +19,7 @@ class BytecodeAnnotationVisitor(api:Int, av:AnnotationVisitor, baseModel: BaseMo
     }
   }
   override def visitAnnotation(name: String, desc: String) = { 
-    baseModel.annotations.put(name, Util.convertType(Type.getType(desc)))
+    baseModel.annotations.put(name, Util.convertType(desc))
     this
   }
   override def visitArray(name: String) = ???
