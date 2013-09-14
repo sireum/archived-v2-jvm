@@ -1,0 +1,66 @@
+record (|ArrayCreation|)
+    @source "ArrayCreation.java"
+    @type class
+    @AccessFlag (PUBLIC) 
+  extends 
+    [|java.lang.Object|] 
+{
+  (|int|) [|ArrayCreation.fieldArr1|] @AccessFlag (PRIVATE);
+  (|double|) [|ArrayCreation.doubleArr1|] @AccessFlag (PUBLIC);
+}
+  global (|java.lang.String|) @@[|ArrayCreation.globalArr|] @AccessFlag (PUBLIC,STATIC,FINAL);
+
+  procedure (|void|) {|ArrayCreation.<clinit>|} () 
+    @MaxLocals 0
+    @MaxStack 1
+    @Owner (|ArrayCreation|)
+    @Access (STATIC)
+    @Signature "ArrayCreation.<clinit>:()V" 
+  {
+    local temp;
+    v0;
+
+    #L00000a. s0:= new (|java.lang.String|)[3];
+    #L00000b. [|org.sireum.jvm.samples.ArrayCreation.globalArr|]:= s0;
+    #L00000c. return @void;
+  }
+  procedure (|void|) {|ArrayCreation.<init>|} ((|ArrayCreation|) v0 @type this) 
+    @MaxLocals 1
+    @MaxStack 2
+    @Owner (|ArrayCreation|)
+    @Access (PUBLIC,CONSTRUCTOR)
+    @Signature "ArrayCreation.<init>:()V" 
+  {
+    local temp;
+    v1;
+
+    #L00000a. call temp:= {|java.lang.Object.<init>|}(v0) @signature "java/lang/Object.<init>:()V" @classDescriptor [|java.lang.Object|] @type special;
+    #L00001a. s0:= new (|int|)[2];
+    #L00001b. v0.<|org.sireum.jvm.samples.ArrayCreation.fieldArr1|>:= s0;
+    #L00002a. s0:= new (|double|)[2];
+    #L00002b. v0.<|org.sireum.jvm.samples.ArrayCreation.doubleArr1|>:= s0;
+    #L00003a. return @void;
+  }
+  procedure (|void|) {|ArrayCreation.main|} ((|java.lang.String|) v0) 
+    @MaxLocals 4
+    @MaxStack 1
+    @Owner (|ArrayCreation|)
+    @Access (PUBLIC,STATIC)
+    @Signature "ArrayCreation.main:([Ljava/lang/String;)V" 
+  {
+    local temp;
+    v1;
+    v2;
+    v3;
+    v4;
+
+    #L00000a. s0:= new (|int|)[10];
+    #L00000b. v1:= s0 @type int;
+    #L00001a. s0:= new (|float|)[10];
+    #L00001b. v2:= s0 @type float;
+    #L00002a. s0:= new (|java.lang.String|)[1];
+    #L00002b. v3:= s0 @type (|java.lang.Object|);
+    #L00003a. return @void;
+  }
+
+

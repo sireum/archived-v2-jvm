@@ -1,0 +1,192 @@
+record (|HelloWorld2|)
+    @source "HelloWorld2.java"
+    @(|java.lang.Deprecated|) 
+    @type class
+    @AccessFlag (PUBLIC)
+    @InnerClass (
+      @Name (|org.sireum.jvm.samples.HelloWorld2$Point|), 
+      @OuterName (|org.sireum.jvm.samples.HelloWorld2|), 
+      @InnerName Point
+     ) 
+  extends 
+    (|java.lang.Object|) 
+{
+  (|int|) <|HelloWorld2.field2|> @AccessFlag (PUBLIC);
+  (|org.sireum.jvm.samples.HelloWorld2$Point|) <|HelloWorld2.p|> @AccessFlag (PUBLIC);
+}
+  global (|int|) @@+|HelloWorld2.field|+ @AccessFlag (PUBLIC,STATIC,FINAL);
+
+  procedure (|void|) {|HelloWorld2.<init>|} ((|HelloWorld2|) v0 @type this) 
+    @MaxLocals 1
+    @MaxStack 6
+    @Owner (|HelloWorld2|)
+    @Access (PUBLIC,CONSTRUCTOR)
+    @Signature "HelloWorld2.<init>:()V" 
+  {
+    local temp;
+    cmp;
+    s0;
+    v1;
+
+    #L00000a. call temp:= {|java.lang.Object.<init>|}(v0) @signature "java/lang/Object.<init>:()V" @classDescriptor [|java.lang.Object|] @type special;
+    #L00001a. s0:= new (|org.sireum.jvm.samples.HelloWorld2$Point|);
+    #L00001b. call temp:= {|org.sireum.jvm.samples.HelloWorld2$Point.<init>|}(s0,v0,1,2) @signature "org/sireum/jvm/samples/HelloWorld2$Point.<init>:(Lorg/sireum/jvm/samples/HelloWorld2;II)V" @classDescriptor [|org.sireum.jvm.samples.HelloWorld2$Point|] @type special;
+    #L00001c. v0.<|org.sireum.jvm.samples.HelloWorld2.p|>:= s0;
+    #L00002a. return @void;
+  }
+  procedure (|void|) {|HelloWorld2.main|} ((|java.lang.String|) v0) 
+    @Throws [|java.io.IOException|],[|java.io.FileNotFoundException|]
+    @MaxLocals 12
+    @MaxStack 4
+    @Owner (|HelloWorld2|)
+    @Access (PUBLIC,STATIC)
+    @(|com.google.common.annotations.Beta|) 
+    @Signature "HelloWorld2.main:([Ljava/lang/String;)V" 
+  {
+    local temp;
+    cmp;
+    s0;
+    s1;
+    s2;
+    s3;
+    v1;
+    v2;
+    v3;
+    v4;
+    v5;
+    v6;
+    v7;
+    v8;
+    v9;
+    v10;
+    v11;
+    v12;
+
+    #L00003a. s0:= +|java.lang.System.out|+;
+    #L00003b. call temp:= {|java.io.PrintStream.println|}(s0,"hello") @signature "java/io/PrintStream.println:(Ljava/lang/String;)V" @classDescriptor [|java.io.PrintStream|] @type virtual;
+    #L00004a. v1:= 1 @type int;
+    #L00005a. v2:= 2 @type int;
+    #L00006a. v3:= v1+v2 @type int;
+    #L00007a. v4:= -v1 @type int;
+    #L00008a. v5:= v1 @type long;
+    #L00009a. s0:= new (|org.sireum.jvm.samples.HelloWorld2|);
+    #L00009b. call temp:= {|org.sireum.jvm.samples.HelloWorld2.<init>|}(s0) @signature "org/sireum/jvm/samples/HelloWorld2.<init>:()V" @classDescriptor [|org.sireum.jvm.samples.HelloWorld2|] @type special;
+    #L00009c. v7:= s0 @type (|java.lang.Object|);
+    #L00010a. s0:= new (|org.sireum.jvm.samples.HelloWorld2|);
+    #L00010b. call temp:= {|org.sireum.jvm.samples.HelloWorld2.<init>|}(s0) @signature "org/sireum/jvm/samples/HelloWorld2.<init>:()V" @classDescriptor [|org.sireum.jvm.samples.HelloWorld2|] @type special;
+    #L00010c. s1:= s0.<|org.sireum.jvm.samples.HelloWorld2.field2|>;
+    #L00010d. s2:= new (|org.sireum.jvm.samples.HelloWorld2|);
+    #L00010e. call temp:= {|org.sireum.jvm.samples.HelloWorld2.<init>|}(s2) @signature "org/sireum/jvm/samples/HelloWorld2.<init>:()V" @classDescriptor [|org.sireum.jvm.samples.HelloWorld2|] @type special;
+    #L00010f. s3:= s2.<|org.sireum.jvm.samples.HelloWorld2.field2|>;
+    #L00010g. v7.<|org.sireum.jvm.samples.HelloWorld2.field2|>:= 9+s1+s3;
+    #L00011a. s0:= v7.<|org.sireum.jvm.samples.HelloWorld2.p|>;
+    #L00011b. s0.<|org.sireum.jvm.samples.HelloWorld2$Point.x|>:= 3;
+    #L00012a. s0:= new (|int|)[10];
+    #L00012b. v8:= s0 @type int;
+    #L00013a. v4:= v4 + 1 @type int;
+    #L00014a. v9:= v1+v2*3-4 @type int;
+    #L00015a. if v1 <= v2 then goto L00016a;
+    #L00017a. s0:= +|java.lang.System.out|+;
+    #L00017b. call temp:= {|java.io.PrintStream.println|}(s0,"less than") @signature "java/io/PrintStream.println:(Ljava/lang/String;)V" @classDescriptor [|java.io.PrintStream|] @type virtual;
+    #L00016a. if v1 != 0 then goto L00018a;
+    #L00019a. if v7 == null then goto L00018a;
+    #L00020a. call temp:= {|org.sireum.jvm.samples.HelloWorld2.sum|}(v7,v1,v2) @signature "org/sireum/jvm/samples/HelloWorld2.sum:(II)I" @classDescriptor [|org.sireum.jvm.samples.HelloWorld2|] @type virtual;
+    #L00018a. v10:= 0 @type int;
+    #L00021a. goto L00022;
+    #L00023a. call temp:= {|org.sireum.jvm.samples.HelloWorld2.sum|}(v7,v10,v2) @signature "org/sireum/jvm/samples/HelloWorld2.sum:(II)I" @classDescriptor [|org.sireum.jvm.samples.HelloWorld2|] @type virtual;
+    #L00024a. v10:= v10 + 1 @type int;
+    #L00022a. if v10 > 10 then goto L00023a;
+    #L00025a. s0:= instanceof @varname v7 @type "(|org.sireum.jvm.samples.HelloWorld2|)";
+    #L00025b. if s0 == 0 then goto L00026a;
+    #L00027a. call temp:= {|org.sireum.jvm.samples.HelloWorld2.sum|}(v7,v1,v2) @signature "org/sireum/jvm/samples/HelloWorld2.sum:(II)I" @classDescriptor [|org.sireum.jvm.samples.HelloWorld2|] @type virtual;
+    #L00026a. s0:= new (|org.sireum.jvm.samples.HelloWorld2|)[10];
+    #L00026b. v10:= s0 @type (|java.lang.Object|);
+    #L00000a. v1:= 2 @type int;
+    #L00001a. goto L00028;
+    #L00002a. v11:= "Exception" @type object;
+    #L00028a. switch v1
+                | 1 => goto L00029a
+                | 200 => goto L00030a
+                | 3000 => goto L00031a
+                | => goto L00032a;
+    #L00029a. return @void;
+    #L00030a. return @void;
+    #L00031a. return @void;
+    #L00032a. switch v1
+                | 1 => goto L00034a
+                | 2 => goto L00035a
+                | 3 => goto L00036a
+                | => goto L00033a;
+    #L00034a. return @void;
+    #L00035a. return @void;
+    #L00036a. return @void;
+    #L00033a. return @void;
+    #L00099a. <@Frame (@New, 9, `[(|java.lang.String|), int, int, int, int, long, (|java.lang.Object|), (|int|), int, int, :top, :top], 0, `[:top, :top, :top, :top])> abc;
+      catch (|java.lang.ArithmeticException|) @[L00000..L00001] goto L00002;
+  }
+  procedure (|int|) {|HelloWorld2.sum|} ((|HelloWorld2|) v0 @type this, (|int|) v1, (|int|) v2) 
+    @MaxLocals 3
+    @MaxStack 1
+    @Owner (|HelloWorld2|)
+    @Access (PUBLIC)
+    @Signature "HelloWorld2.sum:(II)I" 
+  {
+    local temp;
+    cmp;
+    v3;
+
+    #L00000a. return 5;
+  }
+
+record (|HelloWorld2$Point|)
+    @source "HelloWorld2.java"
+    @type class
+    @AccessFlag ()
+    @InnerClass (
+      @Name (|org.sireum.jvm.samples.HelloWorld2$Point|), 
+      @OuterName (|org.sireum.jvm.samples.HelloWorld2|), 
+      @InnerName Point
+     ) 
+  extends 
+    (|java.lang.Object|) 
+{
+  (|int|) <|HelloWorld2$Point.x|> @AccessFlag ();
+  (|int|) <|HelloWorld2$Point.y|> @AccessFlag ();
+  (|org.sireum.jvm.samples.HelloWorld2|) <|HelloWorld2$Point.this$0|> @AccessFlag (FINAL,SYNTHETIC);
+}
+
+  procedure (|void|) {|HelloWorld2$Point.<init>|} ((|HelloWorld2$Point|) v0 @type this, (|org.sireum.jvm.samples.HelloWorld2|) v1, (|int|) v2, (|int|) v3) 
+    @MaxLocals 4
+    @MaxStack 2
+    @Owner (|HelloWorld2$Point|)
+    @Access (CONSTRUCTOR)
+    @Signature "HelloWorld2$Point.<init>:(Lorg/sireum/jvm/samples/HelloWorld2;II)V" 
+  {
+    local temp;
+    cmp;
+    v4;
+
+    #L00000a. v0.<|org.sireum.jvm.samples.HelloWorld2$Point.this$0|>:= v1;
+    #L00000b. call temp:= {|java.lang.Object.<init>|}(v0) @signature "java/lang/Object.<init>:()V" @classDescriptor [|java.lang.Object|] @type special;
+    #L00001a. v0.<|org.sireum.jvm.samples.HelloWorld2$Point.x|>:= v2;
+    #L00002a. v0.<|org.sireum.jvm.samples.HelloWorld2$Point.y|>:= v3;
+    #L00003a. return @void;
+  }
+  procedure (|void|) {|HelloWorld2$Point.print|} ((|HelloWorld2$Point|) v0 @type this) 
+    @MaxLocals 1
+    @MaxStack 2
+    @Owner (|HelloWorld2$Point|)
+    @Access ()
+    @Signature "HelloWorld2$Point.print:()V" 
+  {
+    local temp;
+    cmp;
+    s0;
+    v1;
+
+    #L00000a. s0:= +|java.lang.System.out|+;
+    #L00000b. call temp:= {|java.io.PrintStream.println|}(s0,9) @signature "java/io/PrintStream.println:(I)V" @classDescriptor [|java.io.PrintStream|] @type virtual;
+    #L00001a. return @void;
+  }
+
+

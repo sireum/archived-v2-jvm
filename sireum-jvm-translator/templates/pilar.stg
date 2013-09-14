@@ -1,0 +1,722 @@
+/******************************************************************************
+ * Copyright (c) 2007 Robby, Kansas State University, and others.             *
+ * All rights reserved. This program and the accompanying materials           *
+ * are made available under the terms of the Eclipse Public License v1.0      *
+ * which accompanies this distribution, and is available at                   *
+ * http://www.eclipse.org/legal/epl-v10.html                                  *
+ ******************************************************************************/
+
+group CLASS_PILAR;
+
+unitdef(version, annotation, package, record, memberpackage, member, global) ::= <<
+@Profile edu::ksu::vidit::jpx
+@Version $version$
+$annotation; separator="\n"$
+  
+$if(package)$
+  
+package $package$;
+
+$endif$
+    
+$record$
+    
+$member; separator="\n\n"$
+>>
+
+recorddef(name, abstract, supername, annotation, member) ::= <<
+record $name$
+    $annotation; separator="\n"$
+  extends 
+    $supername; separator=",\n"$
+{
+  $member; separator="\n\n"$
+}
+>>
+
+textdef(name, text) ::= <<
+@$name$ "$text$"
+>>
+
+innerclassdef(name, outerName, innerName, annotation) ::= <<
+@InnerClass (
+  @Name $name$$if(outerName)$, 
+  @OuterName $outerName$$endif$$if(innerName)$, 
+  @InnerName $innerName$$endif$$if(annotation)$, 
+  @Access ($annotation; separator=", "$)$endif$
+)
+>>
+
+outerclassdef(owner, method) ::= <<
+@OuterClass $owner$$if(method)$, {|$method$|}$endif$
+>>
+
+fieldmemberdef(name, type, annotation) ::= <<
+$type$ $name$$if(annotation)$
+
+    $annotation; separator="\n"$$endif$;
+>>
+
+annotationdef(desc, visible, annotation) ::= <<
+$if(annotation)$
+@$if(visible)$VisibleAnnotation$else$Annotation$endif$ $desc$
+$else$
+@$if(visible)$VisibleAnnotation$else$Annotation$endif$ (
+  $desc$$if(annotation)$,$endif$
+  $annotation; separator=",\n"$
+)
+$endif$
+>>
+
+paramannotationdef(i, desc, visible, annotation) ::= <<
+$if(annotation)$
+@$if(visible)$VisibleAnnotation$else$Annotation$endif$ ($i$, $desc$)
+$else$
+@$if(visible)$VisibleAnnotation$else$Annotation$endif$ (
+  $i$,
+  $desc$$if(annotation)$,$endif$
+  $annotation; separator=",\n"$
+)
+$endif$
+>>
+
+primannotationdef(name, value) ::= <<
+$if(name)$$name$ = $endif$$value$
+>>
+
+enumannotationdef(name, desc, value) ::= <<
+$if(name)$$name$ = $endif$@Enum ($desc$, :$value$)
+>>
+
+arrannotationdef(name, annotation) ::= <<
+$if(name)$$name$ = $endif$@Array($annotation$)
+>>
+
+arrayanndef(element) ::= <<
+`[$element; separator=", "$]
+>>
+
+methoddef(name, annotation, instruction, catch) ::= <<
+procedure $name$$if(annotation)$
+
+    $annotation; separator="\n"$$endif$
+{    
+  $if(!instruction)$
+  # jmp RETURN;
+  $else$
+  $instruction; separator="\n\n"$$endif$$if(catch)$
+  
+
+  $catch; separator="\n"$$endif$
+}
+>>
+
+parametertypesdef(type) ::= <<
+@ParameterTypes ($if(type)$`$type; separator=", `"$$endif$)
+>>
+
+returntypedef(type) ::= <<
+@ReturnType `$type$
+>>
+
+throwsdef(name) ::= <<
+@Throws $name; separator=", "$
+>>
+ 
+maxsdef(x, y) ::= <<
+@MaxStack $x$
+@MaxLocals $y$
+>>
+
+lineinfodef(info) ::= <<
+@LineInfo `{$if(info)$ $info; separator=", "$$endif$ }
+>>
+
+linedef(id, line) ::= <<
+:$id$ -> $line$
+>>
+
+localdef(i, id, start, end, signature, type) ::= <<
+@Local ($i$, :$id$, `$type$, :$start$, :$end$$if(signature)$,
+        $signature$$endif$)
+>>
+
+framedef(type, nLocal, local, nStack, stack) ::= <<
+<@Frame ($type$, $nLocal$, `[$local; separator=", "$], $nStack$, `[$stack; separator=", "$])>
+>>
+
+classsigdef(text, typeparam, superclass, interface) ::= <<
+@Signature (
+  "$text$",
+  @TypeParam$if(typeparam)$ (
+    $typeparam; separator=",\n"$
+  )$endif$,
+  $superclass$,
+  @InterfaceBounds$if(interface)$ (
+    $interface; separator=",\n"$
+  )$endif$
+)
+>>
+
+methodsigdef(text, typeparam, paramtype, returntype, exceptiontype) ::= <<
+@Signature (
+  "$text$",
+  @TypeParam$if(typeparam)$ (
+    $typeparam; separator=",\n"$
+  )$endif$,
+  @ParamTypes$if(paramtype)$ (
+    $paramtype; separator=",\n"$
+  )$endif$,
+  $returntype$,
+  @ExceptionTypes$if(exceptiontype)$ (
+    $exceptiontype; separator=",\n"$
+  )$endif$
+)
+>>
+
+typesigdef(text, element) ::= <<
+@Signature (
+  "$text$", 
+  $element$
+)
+>>
+
+typeparamsigdef(name, classbound, interfacebound) ::= <<
+@TypeParam (
+  $name$$if(classbound)$,
+  $classbound$$endif$$if(interfacebound)$,
+  $interfacebound; separator=",\n"$$endif$
+)
+>>
+
+classboundsigdef(element) ::= <<
+@ClassBound (
+  $element$
+)
+>>
+
+interfaceboundsigdef(element) ::= <<
+@InterfaceBound (
+  $element$
+)
+>>
+
+paramtypesigdef(element) ::= <<
+@ParamType (
+  $element$
+)
+>>
+
+superclasssigdef(element) ::= <<
+@SuperClass (
+  $element$
+)
+>>
+
+interfacesigdef(element) ::= <<
+@Interface (
+  $element$
+)
+>>
+
+returntypesigdef(element) ::= <<
+@ReturnType (
+  $element$
+)
+>>
+
+exceptionatypesigdef(element) ::= <<
+@ExceptionType (
+  $element$
+)
+>>
+
+basetypesigdef(desc) ::= <<
+@BaseType `$desc$
+>>
+
+typevarsigdef(name) ::= <<
+@TypeVar $name$
+>>
+
+arraytypesigdef(element) ::= <<
+@ArrayType (
+  $element$
+)
+>>
+
+classtypesigdef(name, typearg, innerclass) ::= <<
+@ClassType (
+  $name$$if(typearg)$,
+  $typearg; separator=",\n"$$endif$$if(innerclass)$,
+  $innerclass; separator=",\n"$$endif$
+)
+>>
+
+innerclasstypesigdef(name, typearg, innerclass) ::= <<
+@InnerClassType (
+  $name$$if(typearg)$,
+  $typearg; separator=",\n"$$endif$
+)
+>>
+
+typeargsigdef(name, element) ::= <<
+@$name$TypeArg (
+  $element$
+)
+>>
+
+NOP(id, frame) ::= <<
+#$if(id)$$id$. $frame$
+ 
+$else$
+$frame$
+
+$endif$ NOP;
+>>
+
+ACONST_NULL(id, frame) ::= <<
+#$if(id)$$id$. $frame$
+ 
+$else$
+$frame$
+
+$endif$ ACONST_NULL;
+>>
+
+yCONST_x(id, x,y, frame) ::= <<
+#$if(id)$$id$. $frame$
+ 
+$else$
+$frame$
+
+$endif$ $y$CONST_$x$;
+>>
+
+yALOAD(id, y, frame) ::= <<
+#$if(id)$$id$. $frame$
+ 
+$else$
+$frame$
+
+$endif$ $y$ALOAD;
+>>
+
+yASTORE(id, y, frame) ::= <<
+#$if(id)$$id$. $frame$
+ 
+$else$
+$frame$
+
+$endif$ $y$ASTORE;
+>>
+
+DUPy_x(id, x, y, frame) ::= <<
+$if(x)$
+#$if(id)$$id$. $frame$
+ 
+$else$
+$frame$
+
+$endif$ DUP$y$_$x$;
+$else$
+#$if(id)$$id$. $frame$
+ 
+$else$
+$frame$
+
+$endif$ DUP$y$;
+$endif$
+>>
+
+yADD(id, y, frame) ::= <<
+#$if(id)$$id$. $frame$
+ 
+$else$
+$frame$
+
+$endif$ $y$ADD;
+>>
+
+ySUB(id, y, frame) ::= <<
+#$if(id)$$id$. $frame$
+ 
+$else$
+$frame$
+
+$endif$ $y$SUB;
+>>
+
+yMUL(id, y, frame) ::= <<
+#$if(id)$$id$. $frame$
+ 
+$else$
+$frame$
+
+$endif$ $y$MUL;
+>>
+
+yDIV(id, y, frame) ::= <<
+#$if(id)$$id$. $frame$
+ 
+$else$
+$frame$
+
+$endif$ $y$DIV;
+>>
+
+yREM(id, y, frame) ::= <<
+#$if(id)$$id$. $frame$
+ 
+$else$
+$frame$
+
+$endif$ $y$REM;
+>>
+
+yNEG(id, y, frame) ::= <<
+#$if(id)$$id$. $frame$
+ 
+$else$
+$frame$
+
+$endif$ $y$NEG;
+>>
+
+ySHL(id, y, frame) ::= <<
+#$if(id)$$id$. $frame$
+ 
+$else$
+$frame$
+
+$endif$ $y$SHL;
+>>
+
+ySHR(id, y, frame) ::= <<
+#$if(id)$$id$. $frame$
+ 
+$else$
+$frame$
+
+$endif$ $y$SHR;
+>>
+
+yAND(id, y, frame) ::= <<
+#$if(id)$$id$. $frame$
+ 
+$else$
+$frame$
+
+$endif$ $y$AND;
+>>
+
+yOR(id, y, frame) ::= <<
+#$if(id)$$id$. $frame$
+ 
+$else$
+$frame$
+
+$endif$ $y$OR;
+>>
+
+I2y(id, y, frame) ::= <<
+#$if(id)$$id$. $frame$
+ 
+$else$
+$frame$
+
+$endif$ I2$y$;
+>>
+
+L2y(id, y, frame) ::= <<
+#$if(id)$$id$. $frame$
+ 
+$else$
+$frame$
+
+$endif$ L2$y$;
+>>
+
+F2y(id, y, frame) ::= <<
+#$if(id)$$id$. $frame$
+ 
+$else$
+$frame$
+
+$endif$ F2$y$;
+>>
+
+D2y(id, y, frame) ::= <<
+#$if(id)$$id$. $frame$
+ 
+$else$
+$frame$
+
+$endif$ D2$y$;
+>>
+
+yCMPx(id, x, y, frame) ::= <<
+#$if(id)$$id$. $frame$
+ 
+$else$
+$frame$
+
+$endif$ $y$CMP$x$;
+>>
+
+yRETURN(id, y, frame) ::= <<
+#$if(id)$$id$. $frame$
+ 
+$else$
+$frame$
+
+$endif$ jmp $y$RETURN;
+>>
+
+GOTO(id, x, frame) ::= <<
+#$if(id)$$id$. $frame$
+ 
+$else$
+$frame$
+
+$endif$ jmp GOTO :$x$;
+>>
+
+IFy(id, x, y, frame) ::= <<
+#$if(id)$$id$. $frame$
+ 
+$else$
+$frame$
+
+$endif$ jmp IF$y$ :$x$;
+>>
+
+yLOAD(id, x, y, frame) ::= <<
+#$if(id)$$id$. $frame$
+ 
+$else$
+$frame$
+
+$endif$ $y$LOAD $x$;
+>>
+
+ySTORE(id, x, y, frame) ::= <<
+#$if(id)$$id$. $frame$
+ 
+$else$
+$frame$
+
+$endif$ $y$STORE $x$;
+>>
+
+POP(id, frame) ::= <<
+#$if(id)$$id$. $frame$
+ 
+$else$
+$frame$
+
+$endif$ POP;
+>>
+
+POP2(id, frame) ::= <<
+#$if(id)$$id$. $frame$
+ 
+$else$
+$frame$
+
+$endif$ POP2;
+>>
+
+LDC(id, x, string, frame) ::= <<
+$if(string)$
+#$if(id)$$id$. $frame$
+ 
+$else$
+$frame$
+
+$endif$ LDC "$x$";
+$else$
+#$if(id)$$id$. $frame$
+ 
+$else$
+$frame$
+
+$endif$ LDC $x$;
+$endif$
+>>
+
+NEW(id, desc, frame) ::= <<
+#$if(id)$$id$. $frame$
+ 
+$else$
+$frame$
+
+$endif$ NEW $desc$;
+>>
+
+ANEWARRAY(id, desc, frame) ::= <<
+#$if(id)$$id$. $frame$
+ 
+$else$
+$frame$
+
+$endif$ ANEWARRAY `$desc$;
+>>
+
+CHECKCAST(id, desc, frame) ::= <<
+#$if(id)$$id$. $frame$
+ 
+$else$
+$frame$
+
+$endif$ CHECKCAST `$desc$;
+>>
+
+INSTANCEOF(id, desc, frame) ::= <<
+#$if(id)$$id$. $frame$
+ 
+$else$
+$frame$
+
+$endif$ INSTANCEOF `$desc$;
+>>
+
+INVOKEw(id, w, owner, name, desc, frame) ::= <<
+#$if(id)$$id$. $frame$
+ 
+$else$
+$frame$
+
+$endif$ jmp INVOKE$w$ (:$name$, $owner$, $desc$); $! $endif$ jmp INVOKE$w$ (:$name$, /* Owner */ $owner$, /* Descriptor */ $desc$); !$
+>>
+
+wSTATIC(id, w, package, owner, name, desc, frame) ::= <<
+#$if(id)$$id$. $frame$
+ 
+$else$
+$frame$
+
+$endif$ $w$STATIC (:$name$, $owner$, `$desc$); $! $endif$ $w$STATIC ($name$, /* Owner */ $owner$, /* Type */ `$desc$); !$
+>>
+
+wFIELD(id, w, owner, name, desc, frame) ::= <<
+#$if(id)$$id$. $frame$
+ 
+$else$
+$frame$
+
+$endif$ $w$FIELD (:$name$, $owner$, `$desc$); $! $endif$ $w$FIELD (:$name$, /* Owner */ $owner$, /* Type */ `$desc$); !$
+>>
+
+IINC(id, x, y, frame) ::= <<
+#$if(id)$$id$. $frame$
+ 
+$else$
+$frame$
+
+$endif$ IINC ($x$, $y$);
+>>
+
+yPUSH(id, x, y, frame) ::= <<
+#$if(id)$$id$. $frame$
+ 
+$else$
+$frame$
+
+$endif$ $y$PUSH $x$;
+>>
+
+NEWARRAY(id, x, frame) ::= <<
+#$if(id)$$id$. $frame$
+ 
+$else$
+$frame$
+
+$endif$ NEWARRAY $x$;
+>>
+
+MULTIANEWARRAY(id, desc, dims, frame) ::= <<
+#$if(id)$$id$. $frame$
+ 
+$else$
+$frame$
+
+$endif$ MULTIANEWARRAY (`$desc$, $dims$);
+>>
+
+SWAP(id, frame) ::= <<
+#$if(id)$$id$. $frame$
+ 
+$else$
+$frame$
+
+$endif$ SWAP;
+>>
+
+ARRAYLENGTH(id, frame) ::= <<
+#$if(id)$$id$. $frame$
+ 
+$else$
+$frame$
+
+$endif$ ARRAYLENGTH;
+>>
+
+LABEL(id, frame) ::= <<
+#$id$.
+>>
+
+LOOKUPSWITCH(id, key, label, dflt, frame) ::= <<
+#$if(id)$$id$. $frame$
+ 
+$else$
+$frame$
+
+$endif$ jmp LOOKUPSWITCH (
+    `[$key; separator=", "$],
+    `[$if(label)$:$label; separator=", :"$$endif$],
+    :$dflt$);
+>>
+
+TABLESWITCH(id, min, max, label, dflt, frame) ::= <<
+#$if(id)$$id$. $frame$
+ 
+$else$
+$frame$
+
+$endif$ jmp TABLESWITCH (
+    $min$, $max$,
+    `[$if(label)$:$label; separator=", :"$$endif$],
+    :$dflt$);
+>>
+
+CATCH(type, start, end, handler, frame) ::= <<
+catch $if(type)$$type$ $endif$@[$start$ .. $end$] goto $handler$;
+>>
+
+ATHROW(id, frame) ::= <<
+#$if(id)$$id$. $frame$
+ 
+$else$
+$frame$
+
+$endif$ ATHROW;
+>>
+
+MONITORENTER(id, frame) ::= <<
+#$if(id)$$id$. $frame$
+ 
+$else$
+$frame$
+
+$endif$ MONITORENTER;
+>>
+
+MONITOREXIT(id, frame) ::= <<
+#$if(id)$$id$. $frame$
+ 
+$else$
+$frame$
+
+$endif$ MONITOREXIT;
+>>
