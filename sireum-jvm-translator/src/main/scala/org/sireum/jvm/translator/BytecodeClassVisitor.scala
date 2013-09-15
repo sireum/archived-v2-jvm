@@ -8,14 +8,14 @@ import org.stringtemplate.v4.STGroupFile
 import org.sireum.jvm.util.Util
 import org.sireum.jvm.models._
 
-class BytecodeClassVisitor(api:Int, cv:ClassVisitor) extends ClassVisitor(api, cv) {
+class BytecodeClassVisitor(api:Int, cv:ClassVisitor, methodLocalMap: Map[String, Map[Int, String]]) extends ClassVisitor(api, cv) {
 	val stg = new STGroupFile("pilar.stg")
 	val stRecord = stg.getInstanceOf("recorddef")
 	
 	var record: Record = null
 	
-	def this() = this(Opcodes.ASM4, null)
-	def this(api: Int) = this(api, null)
+	def this() = this(Opcodes.ASM4, null, null)
+	def this(methodLocalMap: Map[String, Map[Int, String]]) = this(Opcodes.ASM4, null, methodLocalMap)
 	
 	def addAnnotations(key: String, value: String): Unit = 
 	  addAnnotations(key, value, false)
@@ -25,7 +25,7 @@ class BytecodeClassVisitor(api:Int, cv:ClassVisitor) extends ClassVisitor(api, c
 	  else record.annotations.put(key, value)
 	
 	override def visit(version: Int, access: Int, name:String, signature: String, supername:String, interfaces:Array[String]) = {
-	  record = new Record(access, name, supername, signature, interfaces)
+	  record = new Record(access, name, supername, signature, interfaces, methodLocalMap)
 	  
 	  stRecord.add("record", record)
 	}

@@ -12,16 +12,25 @@ object ClassTranslator {
         + ".class");
     val cr:ClassReader = new ClassReader(is);
     
-    val bcv: BytecodeClassVisitor = new BytecodeClassVisitor();
+    val lcv: LocalVariableClassVisitor = new LocalVariableClassVisitor();
+    cr.accept(lcv, ClassReader.EXPAND_FRAMES)
+    
+    val methodLocalVariableMap = lcv.methodLocalVariableMap.toMap map (x => x._1 -> x._2.toMap)
+    
+    val bcv: BytecodeClassVisitor = new BytecodeClassVisitor(methodLocalVariableMap);
     cr.accept(bcv, ClassReader.EXPAND_FRAMES);
     output ++= bcv.stRecord.render()
     val it = bcv.record.innerClasses.iterator()
     while(it.hasNext()) {
-      val bcv: BytecodeClassVisitor = new BytecodeClassVisitor();
       val is:InputStream = cl.getResourceAsStream(it.next().replace(".", System.getProperty("file.separator"))
         + ".class");
       val cr:ClassReader = new ClassReader(is)
-      cr.accept(bcv, 0)
+      val lcv: LocalVariableClassVisitor = new LocalVariableClassVisitor();
+      cr.accept(lcv, ClassReader.EXPAND_FRAMES)
+      
+      val methodLocalVariableMap = lcv.methodLocalVariableMap.toMap map (x => x._1 -> x._2.toMap)
+      val bcv: BytecodeClassVisitor = new BytecodeClassVisitor(methodLocalVariableMap);
+      cr.accept(bcv, ClassReader.EXPAND_FRAMES)
       output ++= bcv.stRecord.render()
     }
     output.toString

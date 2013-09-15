@@ -7,7 +7,7 @@ record (|InstanceOf|)
 {
 }
 
-  procedure (|void|) {|InstanceOf.<init>|} ((|InstanceOf|) v0 @type this) 
+  procedure (|void|) {|InstanceOf.<init>|} ((|InstanceOf|) [|this|]) 
     @MaxLocals 1
     @MaxStack 1
     @Owner (|InstanceOf|)
@@ -16,12 +16,12 @@ record (|InstanceOf|)
   {
     local temp;
     cmp;
-    v1;
+    [|unk|];
 
-    #L00000a. call temp:= {|java.lang.Object.<init>|}(v0) @signature "java/lang/Object.<init>:()V" @classDescriptor [|java.lang.Object|] @type special;
+    #L00000a. call temp:= {|java.lang.Object.<init>|}([|this|]) @signature "java/lang/Object.<init>:()V" @classDescriptor [|java.lang.Object|] @type special;
     #L00000b. return @void;
   }
-  procedure (|void|) {|InstanceOf.main|} ((|java.lang.String|) v0) 
+  procedure (|void|) {|InstanceOf.main|} ((|java.lang.String|) [|args|]) 
     @MaxLocals 4
     @MaxStack 3
     @Owner (|InstanceOf|)
@@ -31,25 +31,25 @@ record (|InstanceOf|)
     local temp;
     cmp;
     s0;
-    v1;
-    v2;
-    v3;
-    v4;
+    [|a|];
+    [|b|];
+    [|c|];
+    [|unk|];
 
     #L00000a. s0:= new (|java.lang.String|);
     #L00000b. call temp:= {|java.lang.String.<init>|}(s0,"hello") @signature "java/lang/String.<init>:(Ljava/lang/String;)V" @classDescriptor [|java.lang.String|] @type special;
-    #L00000c. v1:= s0 @type (|java.lang.Object|);
+    #L00000c. [|a|]:= s0 @type (|java.lang.Object|);
     #L00001a. s0:= new (|java.lang.String|);
     #L00001b. call temp:= {|java.lang.String.<init>|}(s0,"world") @signature "java/lang/String.<init>:(Ljava/lang/String;)V" @classDescriptor [|java.lang.String|] @type special;
-    #L00001c. v2:= s0 @type (|java.lang.Object|);
-    #L00002a. v3:= v2 @type object;
-    #L00003a. s0:= instanceof @varname v3 @type "(|java.lang.String|)";
+    #L00001c. [|b|]:= s0 @type (|java.lang.Object|);
+    #L00002a. [|c|]:= [|b|] @type object;
+    #L00003a. s0:= instanceof @varname [|c|] @type "(|java.lang.String|)";
     #L00003b. if s0 == 0 then goto L00004a;
-    #L00005a. checkcast v3 @type (|java.lang.String|);
-    #L00005b. v1:= v3 @type object;
+    #L00005a. checkcast [|c|] @type (|java.lang.String|);
+    #L00005b. [|a|]:= [|c|] @type object;
     #L00006a. goto L00007;
-    #L00004a. s0:= [|java.lang.System.out|];
-    #L00004b. call temp:= {|java.io.PrintStream.println|}(s0,v1) @signature "java/io/PrintStream.println:(Ljava/lang/String;)V" @classDescriptor [|java.io.PrintStream|] @type virtual;
+    #L00004a. s0:= +|java.lang.System.out|+;
+    #L00004b. call temp:= {|java.io.PrintStream.println|}(s0,[|a|]) @signature "java/io/PrintStream.println:(Ljava/lang/String;)V" @classDescriptor [|java.io.PrintStream|] @type virtual;
     #L00007a. return @void;
   }
 

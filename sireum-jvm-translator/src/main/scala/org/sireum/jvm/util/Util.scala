@@ -113,8 +113,6 @@ object Util {
     else ""
   }
   
-  def getVarName(i: Int) = "v" + i
-  
   def getFunctionCall(className:String, functionName: String, desc: String, functionType: String, args: List[String]) = {
     val functionCall = new StringBuilder
     functionCall ++= getPilarMethod(className+"."+functionName)

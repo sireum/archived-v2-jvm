@@ -11,6 +11,8 @@ class Procedure(val access:Int,val name:String,val desc:String,val signature: St
     val code = new ArrayList[String]()
     val locals = new ArrayList[String]()
     val catchExceptions = new ArrayList[CatchException]()
+    val localVariableMap = if (owner.methodLocalMap == null) null 
+    	else owner.methodLocalMap.getOrElse(name, null)
     
     // Getters for StringTemplate
 	val getName = Util.getPilarMethod(owner.getClassName+"."+name)
@@ -21,11 +23,11 @@ class Procedure(val access:Int,val name:String,val desc:String,val signature: St
 	val getParameters = {
       var i = 0
       if (!Util.isStatic(access)) {
-        parameters.add(owner.getName +" "+Util.getVarName(i)+" @type this")
+        parameters.add(owner.getName +" "+getVarName(i))
         i+=1
       }
       for (argument <- Type.getArgumentTypes(desc)) {
-        parameters.add(Util.getTypeString(argument.getDescriptor())+" "+Util.getVarName(i))
+        parameters.add(Util.getTypeString(argument.getDescriptor())+" "+ getVarName(i))
         i+=1
       }
       parameters
@@ -41,10 +43,16 @@ class Procedure(val access:Int,val name:String,val desc:String,val signature: St
       annotations
     }
     
+    
+    
     def getCatch() = catchExceptions
     def addCatch(typ: String, start: String, end: String, handler: String) = 
       catchExceptions.add(new CatchException(typ, start, end, handler))
     
+    def getVarName(i: Int) = 
+      if(localVariableMap == null) "[|v"+i+"|]" 
+      else "[|"+localVariableMap.getOrElse(i, "v"+i)+"|]"
+      
     override def toString() = {
       getReturnType + getName
     }

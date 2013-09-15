@@ -76,7 +76,7 @@ public class HelloWorld2 {
 	}
 
 	public int sum(int i, int j) {
-		return 5;
+		return i+j;
 	}
 
 	class Point {

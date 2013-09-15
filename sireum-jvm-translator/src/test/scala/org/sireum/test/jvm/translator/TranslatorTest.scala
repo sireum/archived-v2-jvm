@@ -17,7 +17,7 @@ class TranslatorTest extends FunSuite{
 //      val cl = ClassLoader.getSystemClassLoader()
 //      val qname = "org.sireum.jvm.samples.HelloWorld2"
 //      PilarParser.apply(Left(ClassTranslator.translate(cl, qname)), reporter)
-	  //BytecodeTranslator.main(Array("org.sireum.jvm.samples.HelloWorld2"))
+	  BytecodeTranslator.main(Array("org.sireum.jvm.samples.HelloWorld2"))
 	  PilarParser.apply(Right("file:/Users/Vidit/Dropbox/Classes/Spring2013/FinalProject/Sireum2Workspace/sireum-translator/sireum-jvm-translator/output"), reporter)
       //PilarParser.apply(Right("file:/Users/Vidit/Dropbox/AndroidStuff/classes.pilar"), reporter)
       assertTrue(reporter.errorAsString, reporter.errorAsString.isEmpty())
