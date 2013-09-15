@@ -53,3 +53,124 @@ switch <var>
             <blocks.keys: {k| | <k> => goto <blocks.(k)>}; separator="\n">
             | => goto <dflt>
 >> 
+
+classsigdef(text, typeparam, superclass, interface) ::= <<
+(
+  "$text$",
+  @TypeParam$if(typeparam)$ (
+    $typeparam; separator=",\n"$
+  )$endif$,
+  $superclass$,
+  @InterfaceBounds$if(interface)$ (
+    $interface; separator=",\n"$
+  )$endif$
+)
+>>
+
+methodsigdef(text, typeparam, paramtype, returntype, exceptiontype) ::= <<
+(
+  "$text$",
+  @TypeParam$if(typeparam)$ (
+    $typeparam; separator=",\n"$
+  )$endif$,
+  @ParamTypes$if(paramtype)$ (
+    $paramtype; separator=",\n"$
+  )$endif$,
+  $returntype$,
+  @ExceptionTypes$if(exceptiontype)$ (
+    $exceptiontype; separator=",\n"$
+  )$endif$
+)
+>>
+
+typesigdef(text, element) ::= <<
+(
+  "$text$", 
+  $element$
+)
+>>
+
+typeparamsigdef(name, classbound, interfacebound) ::= <<
+@TypeParam (
+  $name$$if(classbound)$,
+  $classbound$$endif$$if(interfacebound)$,
+  $interfacebound; separator=",\n"$$endif$
+)
+>>
+
+classboundsigdef(element) ::= <<
+@ClassBound (
+  $element$
+)
+>>
+
+interfaceboundsigdef(element) ::= <<
+@InterfaceBound (
+  $element$
+)
+>>
+
+paramtypesigdef(element) ::= <<
+@ParamType (
+  $element$
+)
+>>
+
+superclasssigdef(element) ::= <<
+@SuperClass (
+  $element$
+)
+>>
+
+interfacesigdef(element) ::= <<
+@Interface (
+  $element$
+)
+>>
+
+returntypesigdef(element) ::= <<
+@ReturnType (
+  $element$
+)
+>>
+
+exceptionatypesigdef(element) ::= <<
+@ExceptionType (
+  $element$
+)
+>>
+
+basetypesigdef(desc) ::= <<
+@BaseType `$desc$
+>>
+
+typevarsigdef(name) ::= <<
+@TypeVar $name$
+>>
+
+arraytypesigdef(element) ::= <<
+@ArrayType (
+  $element$
+)
+>>
+
+classtypesigdef(name, typearg, innerclass) ::= <<
+@ClassType (
+  $name$$if(typearg)$,
+  $typearg; separator=",\n"$$endif$$if(innerclass)$,
+  $innerclass; separator=",\n"$$endif$
+)
+>>
+
+innerclasstypesigdef(name, typearg, innerclass) ::= <<
+@InnerClassType (
+  $name$$if(typearg)$,
+  $typearg; separator=",\n"$$endif$
+)
+>>
+
+typeargsigdef(name, element) ::= <<
+@$name$TypeArg (
+  $element$
+)
+>>

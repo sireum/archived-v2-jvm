@@ -1,23 +1,25 @@
 package org.sireum.jvm.translator
 
+import scala.Array.canBuildFrom
+import scala.annotation.elidable
+import scala.annotation.elidable.ASSERTION
+import scala.collection.JavaConversions.mapAsJavaMap
+import scala.collection.mutable
+import scala.tools.asm.Label
 import scala.tools.asm.MethodVisitor
 import scala.tools.asm.Opcodes
-import scala.tools.asm.Label
-import scala.collection.mutable.Map
-import scala.collection.mutable.Stack
-import org.sireum.jvm.models.StackVar
-import org.sireum.jvm.models.Procedure
-import org.sireum.jvm.util.Util
 import scala.tools.asm.Type
+
+import org.sireum.jvm.models.Procedure
 import org.sireum.jvm.models.StackVar
+import org.sireum.jvm.util.Util
 import org.stringtemplate.v4.STGroupFile
-import scala.collection.JavaConversions._
 
 class BytecodeMethodVisitor(api: Int, mv: MethodVisitor, procedure: Procedure) extends MethodVisitor(api, mv) {
   def this(proc: Procedure) = this(Opcodes.ASM4, null, proc)
 
-  val labelMap = Map[Label, Int]()
-  val varStack = Stack[StackVar]()
+  val labelMap = mutable.Map[Label, Int]()
+  val varStack = mutable.Stack[StackVar]()
   val a2z = ('a' to 'z').toList
   val stg = new STGroupFile("pilar.stg")
 
@@ -56,6 +58,7 @@ class BytecodeMethodVisitor(api: Int, mv: MethodVisitor, procedure: Procedure) e
   }
   
   def getVarName(i: Int) = procedure.getVarName(i)
+  
   
   def getFrameLocalType(o : Object) = {
     if (o.isInstanceOf[String]) {
