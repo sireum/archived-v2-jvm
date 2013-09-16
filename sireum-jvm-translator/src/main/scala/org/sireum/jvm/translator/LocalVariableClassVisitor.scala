@@ -17,7 +17,8 @@ class LocalVariableClassVisitor(api: Int, cv: ClassVisitor) extends ClassVisitor
 	  methodLocalVariableMap += (name -> localVariables)
 	  lmv
 	}
-	override def visitEnd() = {
-	   println(methodLocalVariableMap)
+	override def visitEnd() = { 
+	  //println(methodLocalVariableMap)
 	}
+	
 }

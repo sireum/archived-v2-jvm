@@ -16,7 +16,7 @@ record (|HelloWorld2|)
 }
   global (|int|) @@+|HelloWorld2.field|+ @AccessFlag (PUBLIC,STATIC,FINAL);
 
-  procedure (|void|) {|HelloWorld2.<init>|} ((|HelloWorld2|) [|this|]) 
+  procedure (|void|) {|HelloWorld2.<init>|} ((|HelloWorld2|) @anc [|this|]) 
     @MaxLocals 1
     @MaxStack 6
     @Owner (|HelloWorld2|)
@@ -48,77 +48,81 @@ record (|HelloWorld2|)
     s1;
     s2;
     s3;
-    i;
-    j;
-    k;
-    l;
-    l2;
-    hw;
-    arr;
-    adf;
-    laf;
-    hw2;
+    [|i|];
+    [|j|];
+    [|k|];
+    [|l|];
+    [|l2|];
+    [|hw|];
+    [|arr|];
+    [|adf|];
+    [|laf|];
+    [|hw2|];
 
-    #L00003a. s0:= +|java.lang.System.out|+;
-    #L00003b. call temp:= {|java.io.PrintStream.println|}(s0,"hello") @signature "java/io/PrintStream.println:(Ljava/lang/String;)V" @classDescriptor [|java.io.PrintStream|] @type virtual;
-    #L00004a. [|i|]:= 1 @type int;
-    #L00005a. [|j|]:= 2 @type int;
-    #L00006a. [|k|]:= [|i|]+[|j|] @type int;
-    #L00007a. [|l|]:= -[|i|] @type int;
-    #L00008a. [|l2|]:= [|i|] @type long;
-    #L00009a. s0:= new (|org.sireum.jvm.samples.HelloWorld2|);
-    #L00009b. call temp:= {|org.sireum.jvm.samples.HelloWorld2.<init>|}(s0) @signature "org/sireum/jvm/samples/HelloWorld2.<init>:()V" @classDescriptor [|org.sireum.jvm.samples.HelloWorld2|] @type special;
-    #L00009c. [|hw|]:= s0 @type (|java.lang.Object|);
-    #L00010a. s0:= new (|org.sireum.jvm.samples.HelloWorld2|);
-    #L00010b. call temp:= {|org.sireum.jvm.samples.HelloWorld2.<init>|}(s0) @signature "org/sireum/jvm/samples/HelloWorld2.<init>:()V" @classDescriptor [|org.sireum.jvm.samples.HelloWorld2|] @type special;
-    #L00010c. s1:= s0.<|org.sireum.jvm.samples.HelloWorld2.field2|>;
-    #L00010d. s2:= new (|org.sireum.jvm.samples.HelloWorld2|);
-    #L00010e. call temp:= {|org.sireum.jvm.samples.HelloWorld2.<init>|}(s2) @signature "org/sireum/jvm/samples/HelloWorld2.<init>:()V" @classDescriptor [|org.sireum.jvm.samples.HelloWorld2|] @type special;
-    #L00010f. s3:= s2.<|org.sireum.jvm.samples.HelloWorld2.field2|>;
-    #L00010g. [|hw|].<|org.sireum.jvm.samples.HelloWorld2.field2|>:= 9+s1+s3;
-    #L00011a. s0:= [|hw|].<|org.sireum.jvm.samples.HelloWorld2.p|>;
-    #L00011b. s0.<|org.sireum.jvm.samples.HelloWorld2$Point.x|>:= 3;
-    #L00012a. s0:= new (|int|)[10];
-    #L00012b. [|arr|]:= s0 @type int;
-    #L00013a. [|l|]:= [|l|] + 1 @type int;
-    #L00014a. [|adf|]:= [|i|]+[|j|]*3-4 @type int;
-    #L00015a. if [|i|] <= [|j|] then goto L00016a;
-    #L00017a. s0:= +|java.lang.System.out|+;
-    #L00017b. call temp:= {|java.io.PrintStream.println|}(s0,"less than") @signature "java/io/PrintStream.println:(Ljava/lang/String;)V" @classDescriptor [|java.io.PrintStream|] @type virtual;
-    #L00016a. if [|i|] != 0 then goto L00018a;
-    #L00019a. if [|hw|] == null then goto L00018a;
-    #L00020a. call temp:= {|org.sireum.jvm.samples.HelloWorld2.sum|}([|hw|],[|i|],[|j|]) @signature "org/sireum/jvm/samples/HelloWorld2.sum:(II)I" @classDescriptor [|org.sireum.jvm.samples.HelloWorld2|] @type virtual;
-    #L00018a. [|hw2|]:= 0 @type int;
-    #L00021a. goto L00022;
-    #L00023a. call temp:= {|org.sireum.jvm.samples.HelloWorld2.sum|}([|hw|],[|hw2|],[|j|]) @signature "org/sireum/jvm/samples/HelloWorld2.sum:(II)I" @classDescriptor [|org.sireum.jvm.samples.HelloWorld2|] @type virtual;
-    #L00024a. [|hw2|]:= [|hw2|] + 1 @type int;
-    #L00022a. if [|hw2|] > 10 then goto L00023a;
-    #L00025a. s0:= instanceof @varname [|hw|] @type "(|org.sireum.jvm.samples.HelloWorld2|)";
-    #L00025b. if s0 == 0 then goto L00026a;
-    #L00027a. call temp:= {|org.sireum.jvm.samples.HelloWorld2.sum|}([|hw|],[|i|],[|j|]) @signature "org/sireum/jvm/samples/HelloWorld2.sum:(II)I" @classDescriptor [|org.sireum.jvm.samples.HelloWorld2|] @type virtual;
-    #L00026a. s0:= new (|org.sireum.jvm.samples.HelloWorld2|)[10];
-    #L00026b. [|hw2|]:= s0 @type (|java.lang.Object|);
+    #L00006a. s0:= +|java.lang.System.out|+;
+    #L00006b. call temp:= {|java.io.PrintStream.println|}(s0,"hello") @signature "java/io/PrintStream.println:(Ljava/lang/String;)V" @classDescriptor [|java.io.PrintStream|] @type virtual;
+    #L00007a. [|i|]:= 1 @type int;
+    #L00008a. [|j|]:= 2 @type int;
+    #L00009a. [|k|]:= [|i|]+[|j|] @type int;
+    #L00010a. [|l|]:= -[|i|] @type int;
+    #L00011a. [|l2|]:= [|i|] @type long;
+    #L00012a. s0:= new (|org.sireum.jvm.samples.HelloWorld2|);
+    #L00012b. call temp:= {|org.sireum.jvm.samples.HelloWorld2.<init>|}(s0) @signature "org/sireum/jvm/samples/HelloWorld2.<init>:()V" @classDescriptor [|org.sireum.jvm.samples.HelloWorld2|] @type special;
+    #L00012c. [|hw|]:= s0 @type (|java.lang.Object|);
+    #L00013a. s0:= new (|org.sireum.jvm.samples.HelloWorld2|);
+    #L00013b. call temp:= {|org.sireum.jvm.samples.HelloWorld2.<init>|}(s0) @signature "org/sireum/jvm/samples/HelloWorld2.<init>:()V" @classDescriptor [|org.sireum.jvm.samples.HelloWorld2|] @type special;
+    #L00013c. s1:= s0.<|org.sireum.jvm.samples.HelloWorld2.field2|>;
+    #L00013d. s2:= new (|org.sireum.jvm.samples.HelloWorld2|);
+    #L00013e. call temp:= {|org.sireum.jvm.samples.HelloWorld2.<init>|}(s2) @signature "org/sireum/jvm/samples/HelloWorld2.<init>:()V" @classDescriptor [|org.sireum.jvm.samples.HelloWorld2|] @type special;
+    #L00013f. s3:= s2.<|org.sireum.jvm.samples.HelloWorld2.field2|>;
+    #L00013g. [|hw|].<|org.sireum.jvm.samples.HelloWorld2.field2|>:= 9+s1+s3;
+    #L00014a. s0:= [|hw|].<|org.sireum.jvm.samples.HelloWorld2.p|>;
+    #L00014b. s0.<|org.sireum.jvm.samples.HelloWorld2$Point.x|>:= 3;
+    #L00015a. s0:= new (|int|)[10];
+    #L00015b. [|arr|]:= s0 @type int;
+    #L00016a. [|l|]:= [|l|] + 1 @type int;
+    #L00017a. [|adf|]:= [|i|]+[|j|]*3-4 @type int;
+    #L00018a. if [|i|] <= [|j|] then goto L00019a;
+    #L00020a. s0:= +|java.lang.System.out|+;
+    #L00020b. call temp:= {|java.io.PrintStream.println|}(s0,"less than") @signature "java/io/PrintStream.println:(Ljava/lang/String;)V" @classDescriptor [|java.io.PrintStream|] @type virtual;
+    #L00019a. if [|i|] != 0 then goto L00021a;
+    #L00022a. if [|hw|] == null then goto L00021a;
+    #L00023a. call temp:= {|org.sireum.jvm.samples.HelloWorld2.sum|}([|hw|],[|i|],[|j|]) @signature "org/sireum/jvm/samples/HelloWorld2.sum:(II)I" @classDescriptor [|org.sireum.jvm.samples.HelloWorld2|] @type virtual;
+    #L00021a. [|laf|]:= 0 @type int;
+    #L00024a. goto L00025;
+    #L00026a. call temp:= {|org.sireum.jvm.samples.HelloWorld2.sum|}([|hw|],[|laf|],[|j|]) @signature "org/sireum/jvm/samples/HelloWorld2.sum:(II)I" @classDescriptor [|org.sireum.jvm.samples.HelloWorld2|] @type virtual;
+    #L00027a. [|laf|]:= [|laf|] + 1 @type int;
+    #L00025a. if [|laf|] > 10 then goto L00026a;
+    #L00028a. s0:= instanceof @varname [|hw|] @type "(|org.sireum.jvm.samples.HelloWorld2|)";
+    #L00028b. if s0 == 0 then goto L00029a;
+    #L00030a. call temp:= {|org.sireum.jvm.samples.HelloWorld2.sum|}([|hw|],[|i|],[|j|]) @signature "org/sireum/jvm/samples/HelloWorld2.sum:(II)I" @classDescriptor [|org.sireum.jvm.samples.HelloWorld2|] @type virtual;
+    #L00029a. s0:= new (|org.sireum.jvm.samples.HelloWorld2|)[10];
+    #L00029b. [|hw2|]:= s0 @type (|java.lang.Object|);
     #L00000a. [|i|]:= 2 @type int;
-    #L00001a. goto L00028;
+    #L00001a. goto L00003;
     #L00002a. [|v11|]:= "Exception" @type object;
-    #L00028a. switch [|i|]
-                | 1 => goto L00029a
-                | 200 => goto L00030a
-                | 3000 => goto L00031a
-                | => goto L00032a;
-    #L00029a. return @void;
-    #L00030a. return @void;
-    #L00031a. return @void;
-    #L00032a. switch [|i|]
-                | 1 => goto L00034a
-                | 2 => goto L00035a
-                | 3 => goto L00036a
-                | => goto L00033a;
-    #L00034a. return @void;
-    #L00035a. return @void;
-    #L00036a. return @void;
+    #L00003a. [|i|]:= 2 @type int;
+    #L00004a. goto L00031;
+    #L00005a. [|v11|]:= "Exception" @type object;
+    #L00031a. switch [|i|]
+                | 1 => goto L00032a
+                | 200 => goto L00033a
+                | 3000 => goto L00034a
+                | => goto L00035a;
+    #L00032a. return @void;
     #L00033a. return @void;
+    #L00034a. return @void;
+    #L00035a. switch [|i|]
+                | 1 => goto L00037a
+                | 2 => goto L00038a
+                | 3 => goto L00039a
+                | => goto L00036a;
+    #L00037a. return @void;
+    #L00038a. return @void;
+    #L00039a. return @void;
+    #L00036a. return @void;
       catch (|java.lang.ArithmeticException|) @[L00000..L00001] goto L00002;
+      catch (|java.lang.ArithmeticException|) @[L00003..L00004] goto L00005;
   }
   procedure (|int|) {|HelloWorld2.sum|} ((|HelloWorld2|) [|this|], (|int|) [|i|], (|int|) [|j|]) 
     @MaxLocals 3

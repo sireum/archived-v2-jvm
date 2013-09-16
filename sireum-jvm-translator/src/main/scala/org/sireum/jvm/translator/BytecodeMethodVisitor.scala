@@ -28,7 +28,6 @@ class BytecodeMethodVisitor(api: Int, mv: MethodVisitor, procedure: Procedure) e
   var currentLine: Int = 0
   var currentLocal: Int = 0
   var currentStack: Int = 0
-  var currentLabel: Label = null
   var maxStack: Int = -1
 
   def popValue() = varStack.pop.value
@@ -48,23 +47,23 @@ class BytecodeMethodVisitor(api: Int, mv: MethodVisitor, procedure: Procedure) e
     currentLine += 1
   }
 
-  def addCodeLine(code: String, typ: String) {
-    procedure.code.add(labelStr + a2z(currentLine) + ". " + code+" @type "+typ)
+  def addCodeLine(code: String, typ: String) = {
+    procedure.code.add(labelStr + a2z(currentLine) + ". " + code + " @type " + typ)
     currentLine += 1
   }
-  
+
   def getLabelId(l: Label) = {
     val i = labelMap.getOrElseUpdate(l, labelMap.size)
     f"L$i%05d"
   }
-  
+
   def getVarName(i: Int) = procedure.getVarName(i, labelStr)
-  
-  def getFrameLocalType(o : Object) = {
+
+  def getFrameLocalType(o: Object) = {
     if (o.isInstanceOf[String]) {
       Util.getPilarClassName(Util.convertType(o.asInstanceOf[String]))
     } else if (o.isInstanceOf[Label]) {
-      ":"+getLabelId(o.asInstanceOf[Label])
+      ":" + getLabelId(o.asInstanceOf[Label])
     } else {
       Util.frameLocalTypeMap.getOrElse(o.asInstanceOf[Int], "unk")
     }
@@ -77,9 +76,7 @@ class BytecodeMethodVisitor(api: Int, mv: MethodVisitor, procedure: Procedure) e
   }
 
   override def visitCode() = {
-    println(procedure.name)
     procedure.locals.add("local temp")
-    procedure.locals.add("cmp")
   }
 
   override def visitEnd() = {
@@ -114,10 +111,10 @@ class BytecodeMethodVisitor(api: Int, mv: MethodVisitor, procedure: Procedure) e
     val stFrame = stg.getInstanceOf("framedef")
     stFrame.add("type", Util.getFrameType(typ))
     stFrame.add("nLocal", nLocal)
-    stFrame.add("local", local map (x=> getFrameLocalType(x)))
+    stFrame.add("local", local map (x => getFrameLocalType(x)))
     stFrame.add("nStack", nStack)
-    stFrame.add("stack", stack map (x=> getFrameLocalType(x)))
-    
+    stFrame.add("stack", stack map (x => getFrameLocalType(x)))
+
     //addCodeLine(stFrame.render)
   }
 
@@ -141,7 +138,7 @@ class BytecodeMethodVisitor(api: Int, mv: MethodVisitor, procedure: Procedure) e
       val index = popValue
       val arrayref = popValue
       val stackVar = getStackVar
-      
+
       addCodeLine(stackVar + ":= " + arrayref + "[" + index + "]")
       varStack.push(new StackVar(Util.getOpcodeType(opcode), stackVar))
     }
@@ -150,7 +147,7 @@ class BytecodeMethodVisitor(api: Int, mv: MethodVisitor, procedure: Procedure) e
       val value = popValue
       val index = popValue
       val arrayref = popValue
-      
+
       addCodeLine(arrayref + "[" + index + "]" + ":= " + value)
     }
     case Opcodes.POP => { varStack.pop }
@@ -227,7 +224,7 @@ class BytecodeMethodVisitor(api: Int, mv: MethodVisitor, procedure: Procedure) e
       Opcodes.IXOR | Opcodes.LXOR => {
       val value1 = popValue
       val value2 = popValue
-      
+
       varStack.push(new StackVar(Util.getOpcodeType(opcode), value2 + Util.getOperator(opcode) + value1))
     }
     case Opcodes.INEG | Opcodes.LNEG | Opcodes.FNEG | Opcodes.DNEG => {
@@ -239,12 +236,23 @@ class BytecodeMethodVisitor(api: Int, mv: MethodVisitor, procedure: Procedure) e
       Opcodes.I2C | Opcodes.I2S => {
       varStack.push(new StackVar(Util.getOpcodeType(opcode), popValue))
     }
-    case Opcodes.LCMP => { /* TODO : LCMP talk about this */ }
-    case Opcodes.FCMPL => { /* TODO : FCMPL talk about this */ }
-    case Opcodes.FCMPG => { /* TODO : FCMPG talk about this */ }
-    case Opcodes.DCMPL => { /* TODO : DCMPL talk about this */ }
-    case Opcodes.DCMPG => { /* TODO : DCMPG talk about this */ }
-    case Opcodes.IRETURN | Opcodes.LRETURN | Opcodes.FRETURN | Opcodes.DRETURN | Opcodes.ARETURN => {
+    case Opcodes.LCMP | Opcodes.FCMPL | Opcodes.FCMPG | Opcodes.DCMPL |
+      Opcodes.DCMPG => {
+      val stackVar = getStackVar
+      val value1 = popValue
+      val value2 = popValue
+
+      opcode match {
+        case Opcodes.LCMP  => addCodeLine(stackVar + ":= lcmp(" + value1 + "," + value2 + ")")
+        case Opcodes.FCMPG => addCodeLine(stackVar + ":= fcmpg(" + value1 + "," + value2 + ")")
+        case Opcodes.FCMPL => addCodeLine(stackVar + ":= fcmpl(" + value1 + "," + value2 + ")")
+        case Opcodes.DCMPG => addCodeLine(stackVar + ":= dcmpg(" + value1 + "," + value2 + ")")
+        case Opcodes.DCMPL => addCodeLine(stackVar + ":= dcmpl(" + value1 + "," + value2 + ")")
+      }
+      varStack.push(new StackVar("int", stackVar))
+    }
+    case Opcodes.IRETURN | Opcodes.LRETURN | Opcodes.FRETURN | Opcodes.DRETURN | 
+      Opcodes.ARETURN => {
       addCodeLine("return " + popValue)
     }
     case Opcodes.RETURN => {
@@ -272,7 +280,7 @@ class BytecodeMethodVisitor(api: Int, mv: MethodVisitor, procedure: Procedure) e
     case Opcodes.NEWARRAY => {
       val typ = Util.getPilarClassName(Util.typeMap.getOrElse(operand, "int"))
       val stackVar = getStackVar()
-      
+
       addCodeLine(stackVar + ":= new " + typ + "[" + popValue + "]")
       varStack.push(new StackVar(Util.typeMap.getOrElse(operand, "int") + "",
         stackVar))
@@ -284,15 +292,15 @@ class BytecodeMethodVisitor(api: Int, mv: MethodVisitor, procedure: Procedure) e
     case Opcodes.IFEQ | Opcodes.IFNE | Opcodes.IFLT | Opcodes.IFGE |
       Opcodes.IFGT | Opcodes.IFLE => {
       val value1 = popValue
-      
-      addCodeLine("if " + value1 + " " + Util.getOperator(opcode) + " 0 then goto " + getLabelId(label)+"a")
+
+      addCodeLine("if " + value1 + " " + Util.getOperator(opcode) + " 0 then goto " + getLabelId(label) + "a")
     }
     case Opcodes.IF_ICMPEQ | Opcodes.IF_ICMPNE | Opcodes.IF_ICMPLT | Opcodes.IF_ICMPGE |
       Opcodes.IF_ICMPGT | Opcodes.IF_ACMPEQ | Opcodes.IF_ACMPNE => {
       val value1 = popValue
       val value2 = popValue
-      
-      addCodeLine("if " + value2 + " " + Util.getOperator(opcode) + " " + value1 + " then goto " + getLabelId(label)+"a")
+
+      addCodeLine("if " + value2 + " " + Util.getOperator(opcode) + " " + value1 + " then goto " + getLabelId(label) + "a")
     }
     case Opcodes.GOTO => {
       addCodeLine("goto " + getLabelId(label))
@@ -300,8 +308,8 @@ class BytecodeMethodVisitor(api: Int, mv: MethodVisitor, procedure: Procedure) e
     case Opcodes.JSR => { /* I don't like you */ }
     case Opcodes.IFNULL | Opcodes.IFNONNULL => {
       val value1 = popValue
-      
-      addCodeLine("if " + value1 + " " + Util.getOperator(opcode) + " null then goto " + getLabelId(label)+"a")
+
+      addCodeLine("if " + value1 + " " + Util.getOperator(opcode) + " null then goto " + getLabelId(label) + "a")
     }
     case _ => { /*Oh God! how can this happen?*/ }
   }
@@ -310,17 +318,16 @@ class BytecodeMethodVisitor(api: Int, mv: MethodVisitor, procedure: Procedure) e
     labelStr = getLabelId(label)
     currentLine = 0
     currentStack = 0
-    currentLabel = label
-    println(label)
+    //println(labelStr)
   }
 
   override def visitLdcInsn(cst: Object) = {
     if (cst.isInstanceOf[String]) {
       varStack.push(new StackVar("string", "\"" + cst.toString + "\""))
-    } else if(cst.isInstanceOf[Float]) {
-      varStack.push(new StackVar("float", "\"" + cst.toString + "\""))
-    } else if(cst.isInstanceOf[Long]) {
-      varStack.push(new StackVar("long", "\""+ cst.toString + "\""))
+    } else if (cst.isInstanceOf[Float]) {
+      varStack.push(new StackVar("float", cst.toString))
+    } else if (cst.isInstanceOf[Long]) {
+      varStack.push(new StackVar("long", cst.toString))
     } else {
       varStack.push(new StackVar("", cst.toString()))
     }
@@ -336,11 +343,11 @@ class BytecodeMethodVisitor(api: Int, mv: MethodVisitor, procedure: Procedure) e
     val stLocal = stg.getInstanceOf("localdef")
     stLocal.add("i", index)
     stLocal.add("id", name)
-    stLocal.add("start", getLabelId(start)+"a")
-    stLocal.add("end", getLabelId(end)+"a")
+    stLocal.add("start", getLabelId(start) + "a")
+    stLocal.add("end", getLabelId(end) + "a")
     stLocal.add("type", Util.getTypeString(desc))
-    
-    if (index >= procedure.parameters.size()) procedure.locals.add(name)
+
+    if (index >= procedure.parameters.size()) procedure.locals.add("[|" + name + "|]")
 
     //procedure.annotations.put("Local"+currentLocal, stLocal.render())
   }
@@ -348,16 +355,15 @@ class BytecodeMethodVisitor(api: Int, mv: MethodVisitor, procedure: Procedure) e
   override def visitLookupSwitchInsn(dflt: Label, keys: Array[Int], labels: Array[Label]) = {
     val stSwitch = stg.getInstanceOf("switchins")
     stSwitch.add("var", popValue)
-    
-    val blocks = mapAsJavaMap(keys zip (labels map (x => getLabelId(x)+"a")) toMap)
+
+    val blocks = mapAsJavaMap(keys zip (labels map (x => getLabelId(x) + "a")) toMap)
     stSwitch.add("blocks", blocks)
-    stSwitch.add("dflt", getLabelId(dflt)+"a")
-    
+    stSwitch.add("dflt", getLabelId(dflt) + "a")
+
     addCodeLine(stSwitch.render())
   }
 
   override def visitMaxs(maxStack: Int, maxLocals: Int) = {
-    localVariableCount = maxLocals
     procedure.annotations.put("MaxStack", maxStack.toString)
     procedure.annotations.put("MaxLocals", maxLocals.toString)
   }
@@ -370,7 +376,7 @@ class BytecodeMethodVisitor(api: Int, mv: MethodVisitor, procedure: Procedure) e
         case Opcodes.INVOKEVIRTUAL | Opcodes.INVOKESPECIAL | Opcodes.INVOKEINTERFACE => argLength = Type.getArgumentTypes(desc).length
         case Opcodes.INVOKESTATIC => argLength = (Type.getArgumentTypes(desc).length - 1)
       }
-      
+
       0 to argLength foreach (_ => { args = varStack.pop.value :: args })
       addCodeLine("call temp:= " + Util.getFunctionCall(owner, name, desc, Util.getMethodType(opcode), args))
       if (!desc.endsWith("V")) {
@@ -383,8 +389,8 @@ class BytecodeMethodVisitor(api: Int, mv: MethodVisitor, procedure: Procedure) e
 
   override def visitMultiANewArrayInsn(desc: String, dims: Int) = {
     var dim = List[String]()
-	0 until dims foreach (_ => dim = "["+popValue+"]":: dim)
-    
+    0 until dims foreach (_ => dim = "[" + popValue + "]" :: dim)
+
     val stackVar = getStackVar
     addCodeLine(stackVar + ":= new " + Util.getTypeString(desc) + dim.mkString(""))
     varStack.push(new StackVar("", stackVar))
@@ -392,24 +398,25 @@ class BytecodeMethodVisitor(api: Int, mv: MethodVisitor, procedure: Procedure) e
 
   override def visitParameterAnnotation(parameter: Int, desc: String, visible: Boolean) = {
     val bav = new BytecodeAnnotationVisitor(procedure)
+    procedure.paramAnnotationsMap += (parameter -> Util.getTypeString(desc))
     bav
   }
 
   override def visitTableSwitchInsn(min: Int, max: Int, dflt: Label, labels: Label*) = {
     val stSwitch = stg.getInstanceOf("switchins")
     stSwitch.add("var", popValue)
-    stSwitch.add("dflt", getLabelId(dflt)+"a")
-    
-    val blocks = mapAsJavaMap(min to max zip (labels map (x=>getLabelId(x)+"a")) toMap)
+    stSwitch.add("dflt", getLabelId(dflt) + "a")
+
+    val blocks = mapAsJavaMap(min to max zip (labels map (x => getLabelId(x) + "a")) toMap)
     stSwitch.add("blocks", blocks)
     addCodeLine(stSwitch.render)
   }
 
   override def visitTryCatchBlock(start: Label, end: Label, handler: Label, typ: String) = {
     varStack.push(new StackVar("object", "\"Exception\""))
-    
-	procedure.addCatch(Util.getPilarClassName(typ), getLabelId(start), 
-	    getLabelId(end), getLabelId(handler))
+
+    procedure.addCatch(Util.getPilarClassName(typ), getLabelId(start),
+      getLabelId(end), getLabelId(handler))
   }
 
   override def visitTypeInsn(opcode: Int, desc: String) = opcode match {
@@ -423,10 +430,10 @@ class BytecodeMethodVisitor(api: Int, mv: MethodVisitor, procedure: Procedure) e
       addCodeLine(stackVar + ":= new " + Util.getPilarClassName(desc) + "[" + popValue + "]")
       varStack.push(new StackVar(Util.getTypeString(desc), stackVar))
     }
-    case Opcodes.CHECKCAST => { 
+    case Opcodes.CHECKCAST => {
       /* TODO : CheckCast .. talk about this */
       val stackVar = varStack.top
-      addCodeLine("checkcast "+stackVar.value+" @type "+Util.getPilarClassName(desc))
+      addCodeLine("checkcast " + stackVar.value + " @type " + Util.getPilarClassName(desc))
     }
     case Opcodes.INSTANCEOF => {
       val stackVar = getStackVar
@@ -443,8 +450,8 @@ class BytecodeMethodVisitor(api: Int, mv: MethodVisitor, procedure: Procedure) e
       varStack.push(new StackVar(Util.varTypeMap.getOrElse(opcode, "unk"),
         getVarName(vr)))
     }
-    case Opcodes.ISTORE | Opcodes.LSTORE | Opcodes.FSTORE | Opcodes.DSTORE | 
-    	Opcodes.ASTORE=> {
+    case Opcodes.ISTORE | Opcodes.LSTORE | Opcodes.FSTORE | Opcodes.DSTORE |
+      Opcodes.ASTORE => {
       val arg1 = varStack.pop
       addCodeLine(getVarName(vr) + ":= " + arg1.value, arg1.typ)
     }

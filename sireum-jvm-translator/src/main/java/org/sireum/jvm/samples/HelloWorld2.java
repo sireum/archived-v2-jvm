@@ -59,6 +59,12 @@ public class HelloWorld2 {
 			
 		}
 		
+		try {
+			i=2;
+		} catch (ArithmeticException ae) {
+			
+		}
+		
 		switch(i) {
 		case 1: return;
 		case 200: return;

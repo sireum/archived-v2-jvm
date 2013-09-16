@@ -19,13 +19,14 @@ class LocalVariableMethodVisitor(api: Int, mv: MethodVisitor, val localMap: Loca
   override def visitLocalVariable(name: String, desc: String, signature: String, start: Label, end: Label, index: Int) = {
     localMap.localVariable += (index -> (new LocalVariable(name, getLabelId(start), getLabelId(end)) :: localMap.localVariable.getOrElse(index, List())))
   }
-  override def visitLabel(l : Label) = { localMap.labelLineMap += l.toString }
+  override def visitLabel(l : Label) = { localMap.labelLineMap += getLabelId(l) }
   
   override def visitTryCatchBlock(start: Label, end: Label, handler: Label, typ: String) = {
     getLabelId(start) 
     getLabelId(end)
     getLabelId(handler)
   }
+  override def visitJumpInsn(opcode: Int, l: Label) = getLabelId(l)
   
 
 }

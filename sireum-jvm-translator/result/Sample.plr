@@ -1,0 +1,68 @@
+record (|Sample|)
+    @source "Sample.java"
+    @type class
+    @AccessFlag (PUBLIC) 
+  extends 
+    (|java.lang.Object|) 
+{
+}
+  global (|int|) @@+|Sample.field|+ @AccessFlag (PUBLIC,STATIC,FINAL);
+
+  procedure (|void|) {|Sample.<init>|} ((|Sample|) [|this|]) 
+    @MaxLocals 1
+    @MaxStack 1
+    @Owner (|Sample|)
+    @Access (PUBLIC,CONSTRUCTOR)
+    @Signature "Sample.<init>:()V" 
+  {
+    local temp;
+    cmp;
+
+    #L00000a. call temp:= {|java.lang.Object.<init>|}([|this|]) @signature "java/lang/Object.<init>:()V" @classDescriptor [|java.lang.Object|] @type special;
+    #L00000b. return @void;
+  }
+  procedure (|void|) {|Sample.main|} ((|java.lang.String|) [|args|]) 
+    @MaxLocals 3
+    @MaxStack 3
+    @Owner (|Sample|)
+    @Access (PUBLIC,STATIC)
+    @Signature "Sample.main:([Ljava/lang/String;)V" 
+  {
+    local temp;
+    cmp;
+    s0;
+    s1;
+    laf;
+    abc;
+    hw2;
+
+    #L00006a. [|laf|]:= 0 @type int;
+    #L00007a. goto L00008;
+    #L00009a. s0:= +|java.lang.System.out|+;
+    #L00009b. call temp:= {|java.io.PrintStream.println|}(s0,[|laf|]) @signature "java/io/PrintStream.println:(I)V" @classDescriptor [|java.io.PrintStream|] @type virtual;
+    #L00010a. [|laf|]:= [|laf|] + 1 @type int;
+    #L00008a. if [|laf|] > 10 then goto L00009a;
+    #L00011a. [|abc|]:= 0 @type int;
+    #L00012a. goto L00013;
+    #L00014a. s0:= +|java.lang.System.out|+;
+    #L00014b. call temp:= {|java.io.PrintStream.println|}(s0,[|abc|]) @signature "java/io/PrintStream.println:(I)V" @classDescriptor [|java.io.PrintStream|] @type virtual;
+    #L00015a. [|abc|]:= [|abc|] + 1 @type int;
+    #L00013a. if [|abc|] > 10 then goto L00014a;
+    #L00016a. s0:= new (|org.sireum.jvm.samples.Sample|)[10];
+    #L00016b. [|hw2|]:= s0 @type (|java.lang.Object|);
+    #L00000a. s0:= +|java.lang.System.out|+;
+    #L00000b. s1:= [|hw2|][1];
+    #L00000c. call temp:= {|java.io.PrintStream.println|}(s0,9) @signature "java/io/PrintStream.println:(I)V" @classDescriptor [|java.io.PrintStream|] @type virtual;
+    #L00001a. goto L00003;
+    #L00002a. [|v2|]:= "Exception" @type object;
+    #L00003a. s0:= +|java.lang.System.out|+;
+    #L00003b. s1:= [|hw2|][2];
+    #L00003c. call temp:= {|java.io.PrintStream.println|}(s0,9) @signature "java/io/PrintStream.println:(I)V" @classDescriptor [|java.io.PrintStream|] @type virtual;
+    #L00004a. goto L00017;
+    #L00005a. [|v2|]:= "Exception" @type object;
+    #L00017a. return @void;
+      catch (|java.lang.ArithmeticException|) @[L00000..L00001] goto L00002;
+      catch (|java.lang.ArrayIndexOutOfBoundsException|) @[L00003..L00004] goto L00005;
+  }
+
+

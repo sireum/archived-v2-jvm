@@ -76,7 +76,7 @@ object Util {
       
   val frameLocalTypeMap = Map(Opcodes.INTEGER ->"int", Opcodes.FLOAT -> "float", Opcodes.LONG -> "long",
       Opcodes.DOUBLE -> "double", Opcodes.TOP-> ":top", Opcodes.NULL -> "null", Opcodes.UNINITIALIZED_THIS -> ":this")
-  
+      
   def getMethodType(opcode: Int) = methodTypeMap.getOrElse(opcode, "virtual")
   def getFrameType(opcode: Int) = frameTypeMap.getOrElse(opcode, "unk")
   def getOpcodeType(opcode: Int) = insnTypeMap.getOrElse(opcode, "unk")

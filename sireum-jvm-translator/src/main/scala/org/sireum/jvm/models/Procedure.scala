@@ -6,12 +6,14 @@ import java.util.HashMap
 import java.util.ArrayList
 import java.util.HashSet
 import scala.tools.asm.Label
+import scala.collection.mutable
 
 class Procedure(val access:Int,val name:String,val desc:String,val signature: String,val exceptions: Array[String],val owner: Record) extends BaseModel{
     val parameters = new ArrayList[String]()
     val code = new ArrayList[String]()
     val locals = new ArrayList[String]()
     val catchExceptions = new ArrayList[CatchException]()
+    val paramAnnotationsMap = mutable.Map[Int, String]()
     val localVariableMap = if (owner.methodLocalMap == null) null 
     	else owner.methodLocalMap.getOrElse(name, null)
     
@@ -27,6 +29,7 @@ class Procedure(val access:Int,val name:String,val desc:String,val signature: St
         parameters.add(owner.getName +" "+getVarName(i))
         i+=1
       }
+      
       for (argument <- Type.getArgumentTypes(desc)) {
         parameters.add(Util.getTypeString(argument.getDescriptor())+" "+ getVarName(i))
         i+=1
@@ -67,9 +70,8 @@ class Procedure(val access:Int,val name:String,val desc:String,val signature: St
             val start = localVariableMap.labelLineMap.indexOf(x.start)
             val end = localVariableMap.labelLineMap.indexOf(x.end)
             //println(s"$x index: $index $l start: $start end: $end")
-            index >= start-1 && index <=end+1
+            index >= start-1 && index <=end
           })
-          //println(result.get.name)
           if (result.isDefined) "[|" + result.get.name + "|]"
           else "[|v"+i+"|]"
         }
