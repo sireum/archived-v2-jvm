@@ -28,6 +28,7 @@ class BytecodeMethodVisitor(api: Int, mv: MethodVisitor, procedure: Procedure) e
   var currentLine: Int = 0
   var currentLocal: Int = 0
   var currentStack: Int = 0
+  var currentLabel: Label = null
   var maxStack: Int = -1
 
   def popValue() = varStack.pop.value
@@ -57,8 +58,7 @@ class BytecodeMethodVisitor(api: Int, mv: MethodVisitor, procedure: Procedure) e
     f"L$i%05d"
   }
   
-  def getVarName(i: Int) = procedure.getVarName(i)
-  
+  def getVarName(i: Int) = procedure.getVarName(i, labelStr)
   
   def getFrameLocalType(o : Object) = {
     if (o.isInstanceOf[String]) {
@@ -77,6 +77,7 @@ class BytecodeMethodVisitor(api: Int, mv: MethodVisitor, procedure: Procedure) e
   }
 
   override def visitCode() = {
+    println(procedure.name)
     procedure.locals.add("local temp")
     procedure.locals.add("cmp")
   }
@@ -309,6 +310,8 @@ class BytecodeMethodVisitor(api: Int, mv: MethodVisitor, procedure: Procedure) e
     labelStr = getLabelId(label)
     currentLine = 0
     currentStack = 0
+    currentLabel = label
+    println(label)
   }
 
   override def visitLdcInsn(cst: Object) = {
@@ -324,7 +327,7 @@ class BytecodeMethodVisitor(api: Int, mv: MethodVisitor, procedure: Procedure) e
   }
 
   override def visitLineNumber(line: Int, start: Label) = {
-    println(getLabelId(start) + "->" + line)
+    //println(getLabelId(start) + "->" + line)
   }
 
   override def visitLocalVariable(name: String, desc: String, signature: String, start: Label, end: Label, index: Int) = {
@@ -337,7 +340,7 @@ class BytecodeMethodVisitor(api: Int, mv: MethodVisitor, procedure: Procedure) e
     stLocal.add("end", getLabelId(end)+"a")
     stLocal.add("type", Util.getTypeString(desc))
     
-    if (index >= procedure.parameters.size()) procedure.locals.add(getVarName(index))
+    if (index >= procedure.parameters.size()) procedure.locals.add(name)
 
     //procedure.annotations.put("Local"+currentLocal, stLocal.render())
   }

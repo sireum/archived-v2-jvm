@@ -5,6 +5,7 @@ import scala.tools.asm.Type
 import java.util.HashMap
 import java.util.ArrayList
 import java.util.HashSet
+import scala.tools.asm.Label
 
 class Procedure(val access:Int,val name:String,val desc:String,val signature: String,val exceptions: Array[String],val owner: Record) extends BaseModel{
     val parameters = new ArrayList[String]()
@@ -49,9 +50,31 @@ class Procedure(val access:Int,val name:String,val desc:String,val signature: St
     def addCatch(typ: String, start: String, end: String, handler: String) = 
       catchExceptions.add(new CatchException(typ, start, end, handler))
     
-    def getVarName(i: Int) = 
-      if(localVariableMap == null) "[|v"+i+"|]" 
-      else "[|"+localVariableMap.getOrElse(i, "v"+i)+"|]"
+    def getVarName(i: Int): String = getVarName(i, null)
+    /* this is black magic, and needs to be turned into white */
+    def getVarName(i: Int, l: String): String = {
+      if (localVariableMap == null) {
+        "[|v"+i+"|]"
+      } else {
+        val variables = localVariableMap.localVariable.getOrElse(i, null)
+        if (variables == null) {
+          "[|v"+i+"|]"
+        } else if (variables.size == 1) {
+          "[|"+variables(0).name+"|]"
+        } else {
+          val index = localVariableMap.labelLineMap.indexOf(l)
+          val result = variables.find(x=> {
+            val start = localVariableMap.labelLineMap.indexOf(x.start)
+            val end = localVariableMap.labelLineMap.indexOf(x.end)
+            //println(s"$x index: $index $l start: $start end: $end")
+            index >= start-1 && index <=end+1
+          })
+          //println(result.get.name)
+          if (result.isDefined) "[|" + result.get.name + "|]"
+          else "[|v"+i+"|]"
+        }
+      }
+    }
       
     override def toString() = {
       getReturnType + getName

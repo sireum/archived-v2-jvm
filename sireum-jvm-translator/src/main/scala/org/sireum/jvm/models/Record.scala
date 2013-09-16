@@ -3,7 +3,7 @@ import org.sireum.jvm.util.Util
 import java.util.HashMap
 import java.util.ArrayList
 
-class Record(access: Int, name: String, supername: String, signature: String, interfaces: Array[String], val methodLocalMap: Map[String, Map[Int, String]]) extends BaseModel {
+class Record(access: Int, name: String, supername: String, signature: String, interfaces: Array[String], val methodLocalMap: Map[String, LocalInfo]) extends BaseModel {
     val globals = new ArrayList[Field]()
     val members = new ArrayList[Field]()
     val procedures = new ArrayList[Procedure]()
@@ -37,10 +37,6 @@ class Record(access: Int, name: String, supername: String, signature: String, in
 	def getGlobals = globals
 	
 	def getProcedures = procedures
-	
-	def getSignature() = {
-	  ???
-	}
 		
 	def addFields(field: Field) = 
 	  if(field.isGlobal) globals.add(field)

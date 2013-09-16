@@ -48,16 +48,16 @@ record (|HelloWorld2|)
     s1;
     s2;
     s3;
-    [|i|];
-    [|j|];
-    [|k|];
-    [|l|];
-    [|l2|];
-    [|hw|];
-    [|arr|];
-    [|adf|];
-    [|hw2|];
-    [|hw2|];
+    i;
+    j;
+    k;
+    l;
+    l2;
+    hw;
+    arr;
+    adf;
+    laf;
+    hw2;
 
     #L00003a. s0:= +|java.lang.System.out|+;
     #L00003b. call temp:= {|java.io.PrintStream.println|}(s0,"hello") @signature "java/io/PrintStream.println:(Ljava/lang/String;)V" @classDescriptor [|java.io.PrintStream|] @type virtual;

@@ -15,7 +15,7 @@ object ClassTranslator {
     val lcv: LocalVariableClassVisitor = new LocalVariableClassVisitor();
     cr.accept(lcv, ClassReader.EXPAND_FRAMES)
     
-    val methodLocalVariableMap = lcv.methodLocalVariableMap.toMap map (x => x._1 -> x._2.toMap)
+    val methodLocalVariableMap = lcv.methodLocalVariableMap.toMap map (x => x._1 -> x._2)
     
     val bcv: BytecodeClassVisitor = new BytecodeClassVisitor(methodLocalVariableMap);
     cr.accept(bcv, ClassReader.EXPAND_FRAMES);
@@ -28,7 +28,7 @@ object ClassTranslator {
       val lcv: LocalVariableClassVisitor = new LocalVariableClassVisitor();
       cr.accept(lcv, ClassReader.EXPAND_FRAMES)
       
-      val methodLocalVariableMap = lcv.methodLocalVariableMap.toMap map (x => x._1 -> x._2.toMap)
+      val methodLocalVariableMap = lcv.methodLocalVariableMap.toMap map (x => x._1 -> x._2)
       val bcv: BytecodeClassVisitor = new BytecodeClassVisitor(methodLocalVariableMap);
       cr.accept(bcv, ClassReader.EXPAND_FRAMES)
       output ++= bcv.stRecord.render()

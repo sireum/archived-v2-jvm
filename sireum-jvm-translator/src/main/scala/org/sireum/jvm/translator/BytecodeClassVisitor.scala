@@ -8,14 +8,14 @@ import org.sireum.jvm.util.Util
 import org.sireum.jvm.models._
 import scala.tools.asm.signature.SignatureReader
 
-class BytecodeClassVisitor(api:Int, cv:ClassVisitor, methodLocalMap: Map[String, Map[Int, String]]) extends ClassVisitor(api, cv) {
+class BytecodeClassVisitor(api:Int, cv:ClassVisitor, methodLocalMap: Map[String, LocalInfo]) extends ClassVisitor(api, cv) {
 	val stg = new STGroupFile("pilar.stg")
 	val stRecord = stg.getInstanceOf("recorddef")
 	
 	var record: Record = null
 	
 	def this() = this(Opcodes.ASM4, null, null)
-	def this(methodLocalMap: Map[String, Map[Int, String]]) = this(Opcodes.ASM4, null, methodLocalMap)
+	def this(methodLocalMap: Map[String, LocalInfo]) = this(Opcodes.ASM4, null, methodLocalMap)
 	
 	def addAnnotations(key: String, value: String): Unit = 
 	  addAnnotations(key, value, false)
