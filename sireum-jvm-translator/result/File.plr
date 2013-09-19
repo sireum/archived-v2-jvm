@@ -1,0 +1,2362 @@
+record (|java.io.File|)
+    @source "File.java"
+    @type class
+    @AccessFlag (PUBLIC)
+    @InnerClass (
+      @Name (|java.io.ObjectInputStream$GetField|), 
+      @OuterName (|java.io.ObjectInputStream|), 
+      @InnerName GetField, 
+      @AccessFlag (PUBLIC,STATIC)
+     ) 
+  extends 
+    (|java.lang.Object|) 
+{
+  (|java.io.FileSystem|) <|File.fs|> @AccessFlag (PRIVATE,STATIC);
+  (|java.lang.String|) <|File.path|> @AccessFlag (PRIVATE);
+  (|java.io.File$PathStatus|) <|File.status|> @AccessFlag (PRIVATE,TRANSIENT,VARARGS);
+  (|int|) <|File.prefixLength|> @AccessFlag (PRIVATE,TRANSIENT,VARARGS);
+  (|long|) <|File.serialVersionUID|> @AccessFlag (PRIVATE,STATIC,FINAL);
+  (|java.nio.file.Path|) <|File.filePath|> @AccessFlag (PRIVATE,TRANSIENT,VOLATILE,VARARGS);
+  (|boolean|) <|File.$assertionsDisabled|> @AccessFlag (STATIC,FINAL,SYNTHETIC);
+}
+  global (|char|) @@+|File.separatorChar|+ @AccessFlag (PUBLIC,STATIC,FINAL);
+  global (|java.lang.String|) @@+|File.separator|+ @AccessFlag (PUBLIC,STATIC,FINAL);
+  global (|char|) @@+|File.pathSeparatorChar|+ @AccessFlag (PUBLIC,STATIC,FINAL);
+  global (|java.lang.String|) @@+|File.pathSeparator|+ @AccessFlag (PUBLIC,STATIC,FINAL);
+
+  procedure (|boolean|) {|java.io.File.isInvalid()Z|} ((|java.io.File|) [|v0|]) 
+    @MaxLocals 1
+    @MaxStack 3
+    @Owner (|java.io.File|)
+    @Access (FINAL)
+    @Signature "java.io.File.isInvalid()Z" 
+  {
+    local temp;
+    s0;
+    s1;
+    s2;
+
+
+    #L00000a. <@Frame (@New, 1, `[(|java.lang.Object|)], 0, `[:top, :top, :top])>
+    #L00000b. s0:= [|v0|].<|java.io.File.status|>;
+    #L00000c. if s0 != null then goto L00001a;
+    #L00002a. s0:= [|v0|].<|java.io.File.path|>;
+    #L00002b. call s1:= {|java.lang.String.indexOf(I)I|}(s0,0) @signature "java.lang.String.indexOf(I)I" @classDescriptor [|java.lang.String|] @type virtual;
+    #L00002c. if s1 <= 0 then goto L00003a;
+    #L00002d. s2:= +|java.io.File$PathStatus.CHECKED|+;
+    #L00002e. goto L00004a;
+    #L00003a. <@Frame (@New, 1, `[(|java.lang.Object|)], 1, `[(|java.lang.Object|), :top, :top])>
+    #L00003b. s0:= +|java.io.File$PathStatus.INVALID|+;
+    #L00004a. <@Frame (@New, 1, `[(|java.lang.Object|)], 2, `[(|java.lang.Object|), (|java.lang.Object|), :top])>
+    #L00004b. s2.<|java.io.File.status|>:= s0;
+    #L00001a. <@Frame (@New, 1, `[(|java.lang.Object|)], 0, `[(|java.lang.Object|), (|java.lang.Object|), :top])>
+    #L00001b. s0:= [|v0|].<|java.io.File.status|>;
+    #L00001c. s1:= +|java.io.File$PathStatus.INVALID|+;
+    #L00001d. if s0 != s1 then goto L00005a;
+    #L00001e. goto L00006a;
+    #L00005a. <@Frame (@New, 1, `[(|java.lang.Object|)], 0, `[(|java.lang.Object|), (|java.lang.Object|), :top])>
+    #L00006a. <@Frame (@New, 1, `[(|java.lang.Object|)], 1, `[int, (|java.lang.Object|), :top])>
+    #L00006b. return 0;
+  }
+  procedure (|int|) {|java.io.File.getPrefixLength()I|} ((|java.io.File|) [|v0|]) 
+    @MaxLocals 1
+    @MaxStack 1
+    @Owner (|java.io.File|)
+    @Access ()
+    @Signature "java.io.File.getPrefixLength()I" 
+  {
+    local temp;
+    s0;
+
+
+    #L00000a. s0:= [|v0|].<|java.io.File.prefixLength|>;
+    #L00000b. return s0;
+  }
+  procedure (|void|) {|java.io.File.<init>(Ljava.lang.String;I)V|} ((|java.io.File|) [|v0|], (|java.lang.String|) [|v1|], (|int|) [|v2|]) 
+    @MaxLocals 3
+    @MaxStack 2
+    @Owner (|java.io.File|)
+    @Access (PRIVATE,CONSTRUCTOR)
+    @Signature "java.io.File.<init>(Ljava/lang/String;I)V" 
+  {
+    local temp;
+    s0;
+
+
+    #L00000a. call s0:= {|java.lang.Object.<init>()V|}([|v0|]) @signature "java.lang.Object.<init>()V" @classDescriptor [|java.lang.Object|] @type special;
+    #L00001a. [|v0|].<|java.io.File.status|>:= null;
+    #L00002a. [|v0|].<|java.io.File.path|>:= [|v1|];
+    #L00003a. [|v0|].<|java.io.File.prefixLength|>:= [|v2|];
+    #L00004a. return @void;
+  }
+  procedure (|void|) {|java.io.File.<init>(Ljava.lang.String;Ljava.io.File;)V|} ((|java.io.File|) [|v0|], (|java.lang.String|) [|v1|], (|java.io.File|) [|v2|]) 
+    @MaxLocals 3
+    @MaxStack 4
+    @Owner (|java.io.File|)
+    @Access (PRIVATE,CONSTRUCTOR)
+    @Signature "java.io.File.<init>(Ljava/lang/String;Ljava/io/File;)V" 
+  {
+    local temp;
+    s0;
+    s1;
+    s2;
+    s3;
+    s4;
+
+
+    #L00000a. <@Frame (@New, 3, `[:this, (|java.lang.Object|), (|java.lang.Object|)], 0, `[:top, :top, :top, :top])>
+    #L00000b. call s0:= {|java.lang.Object.<init>()V|}([|v0|]) @signature "java.lang.Object.<init>()V" @classDescriptor [|java.lang.Object|] @type special;
+    #L00001a. [|v0|].<|java.io.File.status|>:= null;
+    #L00002a. s0:= +|java.io.File.$assertionsDisabled|+;
+    #L00002b. if s0 != 0 then goto L00003a;
+    #L00002c. s1:= [|v2|].<|java.io.File.path|>;
+    #L00002d. if s1 != null then goto L00003a;
+    #L00002e. s2:= new (|java.lang.AssertionError|);
+    #L00002f. call s3:= {|java.lang.AssertionError.<init>()V|}(s2) @signature "java.lang.AssertionError.<init>()V" @classDescriptor [|java.lang.AssertionError|] @type special;
+    #L00002g. throw s2;
+    #L00003a. <@Frame (@New, 3, `[(|java.lang.Object|), (|java.lang.Object|), (|java.lang.Object|)], 0, `[:top, :top, :top, :top])>
+    #L00003b. s0:= +|java.io.File.$assertionsDisabled|+;
+    #L00003c. if s0 != 0 then goto L00004a;
+    #L00003d. s1:= [|v2|].<|java.io.File.path|>;
+    #L00003e. call s2:= {|java.lang.String.equals(Ljava.lang.Object;)Z|}(s1,"") @signature "java.lang.String.equals(Ljava/lang/Object;)Z" @classDescriptor [|java.lang.String|] @type virtual;
+    #L00003f. if s2 == 0 then goto L00004a;
+    #L00003g. s3:= new (|java.lang.AssertionError|);
+    #L00003h. call s4:= {|java.lang.AssertionError.<init>()V|}(s3) @signature "java.lang.AssertionError.<init>()V" @classDescriptor [|java.lang.AssertionError|] @type special;
+    #L00003i. throw s3;
+    #L00004a. <@Frame (@New, 3, `[(|java.lang.Object|), (|java.lang.Object|), (|java.lang.Object|)], 0, `[:top, :top, :top, :top])>
+    #L00004b. s0:= +|java.io.File.fs|+;
+    #L00004c. s1:= [|v2|].<|java.io.File.path|>;
+    #L00004d. call s2:= {|java.io.FileSystem.resolve(Ljava.lang.String;Ljava.lang.String;)Ljava.lang.String;|}(s0,s1,[|v1|]) @signature "java.io.FileSystem.resolve(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;" @classDescriptor [|java.io.FileSystem|] @type virtual;
+    #L00004e. [|v0|].<|java.io.File.path|>:= s2;
+    #L00005a. s0:= [|v2|].<|java.io.File.prefixLength|>;
+    #L00005b. [|v0|].<|java.io.File.prefixLength|>:= s0;
+    #L00006a. return @void;
+  }
+  procedure (|void|) {|java.io.File.<init>(Ljava.lang.String;)V|} ((|java.io.File|) [|v0|], (|java.lang.String|) [|v1|]) 
+    @MaxLocals 2
+    @MaxStack 3
+    @Owner (|java.io.File|)
+    @Access (PUBLIC,CONSTRUCTOR)
+    @Signature "java.io.File.<init>(Ljava/lang/String;)V" 
+  {
+    local temp;
+    s0;
+    s1;
+    s2;
+
+
+    #L00000a. <@Frame (@New, 2, `[:this, (|java.lang.Object|)], 0, `[:top, :top, :top])>
+    #L00000b. call s0:= {|java.lang.Object.<init>()V|}([|v0|]) @signature "java.lang.Object.<init>()V" @classDescriptor [|java.lang.Object|] @type special;
+    #L00001a. [|v0|].<|java.io.File.status|>:= null;
+    #L00002a. if [|v1|] != null then goto L00003a;
+    #L00004a. s0:= new (|java.lang.NullPointerException|);
+    #L00004b. call s1:= {|java.lang.NullPointerException.<init>()V|}(s0) @signature "java.lang.NullPointerException.<init>()V" @classDescriptor [|java.lang.NullPointerException|] @type special;
+    #L00004c. throw s0;
+    #L00003a. <@Frame (@New, 2, `[(|java.lang.Object|), (|java.lang.Object|)], 0, `[:top, :top, :top])>
+    #L00003b. s0:= +|java.io.File.fs|+;
+    #L00003c. call s1:= {|java.io.FileSystem.normalize(Ljava.lang.String;)Ljava.lang.String;|}(s0,[|v1|]) @signature "java.io.FileSystem.normalize(Ljava/lang/String;)Ljava/lang/String;" @classDescriptor [|java.io.FileSystem|] @type virtual;
+    #L00003d. [|v0|].<|java.io.File.path|>:= s1;
+    #L00005a. s0:= +|java.io.File.fs|+;
+    #L00005b. s1:= [|v0|].<|java.io.File.path|>;
+    #L00005c. call s2:= {|java.io.FileSystem.prefixLength(Ljava.lang.String;)I|}(s0,s1) @signature "java.io.FileSystem.prefixLength(Ljava/lang/String;)I" @classDescriptor [|java.io.FileSystem|] @type virtual;
+    #L00005d. [|v0|].<|java.io.File.prefixLength|>:= s2;
+    #L00006a. return @void;
+  }
+  procedure (|void|) {|java.io.File.<init>(Ljava.lang.String;Ljava.lang.String;)V|} ((|java.io.File|) [|v0|], (|java.lang.String|) [|v1|], (|java.lang.String|) [|v2|]) 
+    @MaxLocals 3
+    @MaxStack 5
+    @Owner (|java.io.File|)
+    @Access (PUBLIC,CONSTRUCTOR)
+    @Signature "java.io.File.<init>(Ljava/lang/String;Ljava/lang/String;)V" 
+  {
+    local temp;
+    s0;
+    s1;
+    s2;
+    s3;
+    s4;
+    s5;
+
+
+    #L00000a. <@Frame (@New, 3, `[:this, (|java.lang.Object|), (|java.lang.Object|)], 0, `[:top, :top, :top, :top, :top])>
+    #L00000b. call s0:= {|java.lang.Object.<init>()V|}([|v0|]) @signature "java.lang.Object.<init>()V" @classDescriptor [|java.lang.Object|] @type special;
+    #L00001a. [|v0|].<|java.io.File.status|>:= null;
+    #L00002a. if [|v2|] != null then goto L00003a;
+    #L00004a. s0:= new (|java.lang.NullPointerException|);
+    #L00004b. call s1:= {|java.lang.NullPointerException.<init>()V|}(s0) @signature "java.lang.NullPointerException.<init>()V" @classDescriptor [|java.lang.NullPointerException|] @type special;
+    #L00004c. throw s0;
+    #L00003a. <@Frame (@New, 3, `[(|java.lang.Object|), (|java.lang.Object|), (|java.lang.Object|)], 0, `[:top, :top, :top, :top, :top])>
+    #L00003b. if [|v1|] == null then goto L00005a;
+    #L00006a. call s0:= {|java.lang.String.equals(Ljava.lang.Object;)Z|}([|v1|],"") @signature "java.lang.String.equals(Ljava/lang/Object;)Z" @classDescriptor [|java.lang.String|] @type virtual;
+    #L00006b. if s0 == 0 then goto L00007a;
+    #L00008a. s0:= +|java.io.File.fs|+;
+    #L00008b. s1:= +|java.io.File.fs|+;
+    #L00008c. call s2:= {|java.io.FileSystem.getDefaultParent()Ljava.lang.String;|}(s1) @signature "java.io.FileSystem.getDefaultParent()Ljava/lang/String;" @classDescriptor [|java.io.FileSystem|] @type virtual;
+    #L00008d. s3:= +|java.io.File.fs|+;
+    #L00008e. call s4:= {|java.io.FileSystem.normalize(Ljava.lang.String;)Ljava.lang.String;|}(s3,[|v2|]) @signature "java.io.FileSystem.normalize(Ljava/lang/String;)Ljava/lang/String;" @classDescriptor [|java.io.FileSystem|] @type virtual;
+    #L00008f. call s5:= {|java.io.FileSystem.resolve(Ljava.lang.String;Ljava.lang.String;)Ljava.lang.String;|}(s0,s2,s4) @signature "java.io.FileSystem.resolve(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;" @classDescriptor [|java.io.FileSystem|] @type virtual;
+    #L00008g. [|v0|].<|java.io.File.path|>:= s5;
+    #L00008h. goto L00009a;
+    #L00007a. <@Frame (@New, 3, `[(|java.lang.Object|), (|java.lang.Object|), (|java.lang.Object|)], 0, `[:top, :top, :top, :top, :top])>
+    #L00007b. s0:= +|java.io.File.fs|+;
+    #L00007c. s1:= +|java.io.File.fs|+;
+    #L00007d. call s2:= {|java.io.FileSystem.normalize(Ljava.lang.String;)Ljava.lang.String;|}(s1,[|v1|]) @signature "java.io.FileSystem.normalize(Ljava/lang/String;)Ljava/lang/String;" @classDescriptor [|java.io.FileSystem|] @type virtual;
+    #L00007e. s3:= +|java.io.File.fs|+;
+    #L00007f. call s4:= {|java.io.FileSystem.normalize(Ljava.lang.String;)Ljava.lang.String;|}(s3,[|v2|]) @signature "java.io.FileSystem.normalize(Ljava/lang/String;)Ljava/lang/String;" @classDescriptor [|java.io.FileSystem|] @type virtual;
+    #L00007g. call s5:= {|java.io.FileSystem.resolve(Ljava.lang.String;Ljava.lang.String;)Ljava.lang.String;|}(s0,s2,s4) @signature "java.io.FileSystem.resolve(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;" @classDescriptor [|java.io.FileSystem|] @type virtual;
+    #L00007h. [|v0|].<|java.io.File.path|>:= s5;
+    #L00007i. goto L00009a;
+    #L00005a. <@Frame (@New, 3, `[(|java.lang.Object|), (|java.lang.Object|), (|java.lang.Object|)], 0, `[:top, :top, :top, :top, :top])>
+    #L00005b. s0:= +|java.io.File.fs|+;
+    #L00005c. call s1:= {|java.io.FileSystem.normalize(Ljava.lang.String;)Ljava.lang.String;|}(s0,[|v2|]) @signature "java.io.FileSystem.normalize(Ljava/lang/String;)Ljava/lang/String;" @classDescriptor [|java.io.FileSystem|] @type virtual;
+    #L00005d. [|v0|].<|java.io.File.path|>:= s1;
+    #L00009a. <@Frame (@New, 3, `[(|java.lang.Object|), (|java.lang.Object|), (|java.lang.Object|)], 0, `[:top, :top, :top, :top, :top])>
+    #L00009b. s0:= +|java.io.File.fs|+;
+    #L00009c. s1:= [|v0|].<|java.io.File.path|>;
+    #L00009d. call s2:= {|java.io.FileSystem.prefixLength(Ljava.lang.String;)I|}(s0,s1) @signature "java.io.FileSystem.prefixLength(Ljava/lang/String;)I" @classDescriptor [|java.io.FileSystem|] @type virtual;
+    #L00009e. [|v0|].<|java.io.File.prefixLength|>:= s2;
+    #L00010a. return @void;
+  }
+  procedure (|void|) {|java.io.File.<init>(Ljava.io.File;Ljava.lang.String;)V|} ((|java.io.File|) [|v0|], (|java.io.File|) [|v1|], (|java.lang.String|) [|v2|]) 
+    @MaxLocals 3
+    @MaxStack 5
+    @Owner (|java.io.File|)
+    @Access (PUBLIC,CONSTRUCTOR)
+    @Signature "java.io.File.<init>(Ljava/io/File;Ljava/lang/String;)V" 
+  {
+    local temp;
+    s0;
+    s1;
+    s2;
+    s3;
+    s4;
+    s5;
+
+
+    #L00000a. <@Frame (@New, 3, `[:this, (|java.lang.Object|), (|java.lang.Object|)], 0, `[:top, :top, :top, :top, :top])>
+    #L00000b. call s0:= {|java.lang.Object.<init>()V|}([|v0|]) @signature "java.lang.Object.<init>()V" @classDescriptor [|java.lang.Object|] @type special;
+    #L00001a. [|v0|].<|java.io.File.status|>:= null;
+    #L00002a. if [|v2|] != null then goto L00003a;
+    #L00004a. s0:= new (|java.lang.NullPointerException|);
+    #L00004b. call s1:= {|java.lang.NullPointerException.<init>()V|}(s0) @signature "java.lang.NullPointerException.<init>()V" @classDescriptor [|java.lang.NullPointerException|] @type special;
+    #L00004c. throw s0;
+    #L00003a. <@Frame (@New, 3, `[(|java.lang.Object|), (|java.lang.Object|), (|java.lang.Object|)], 0, `[:top, :top, :top, :top, :top])>
+    #L00003b. if [|v1|] == null then goto L00005a;
+    #L00006a. s0:= [|v1|].<|java.io.File.path|>;
+    #L00006b. call s1:= {|java.lang.String.equals(Ljava.lang.Object;)Z|}(s0,"") @signature "java.lang.String.equals(Ljava/lang/Object;)Z" @classDescriptor [|java.lang.String|] @type virtual;
+    #L00006c. if s1 == 0 then goto L00007a;
+    #L00008a. s0:= +|java.io.File.fs|+;
+    #L00008b. s1:= +|java.io.File.fs|+;
+    #L00008c. call s2:= {|java.io.FileSystem.getDefaultParent()Ljava.lang.String;|}(s1) @signature "java.io.FileSystem.getDefaultParent()Ljava/lang/String;" @classDescriptor [|java.io.FileSystem|] @type virtual;
+    #L00008d. s3:= +|java.io.File.fs|+;
+    #L00008e. call s4:= {|java.io.FileSystem.normalize(Ljava.lang.String;)Ljava.lang.String;|}(s3,[|v2|]) @signature "java.io.FileSystem.normalize(Ljava/lang/String;)Ljava/lang/String;" @classDescriptor [|java.io.FileSystem|] @type virtual;
+    #L00008f. call s5:= {|java.io.FileSystem.resolve(Ljava.lang.String;Ljava.lang.String;)Ljava.lang.String;|}(s0,s2,s4) @signature "java.io.FileSystem.resolve(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;" @classDescriptor [|java.io.FileSystem|] @type virtual;
+    #L00008g. [|v0|].<|java.io.File.path|>:= s5;
+    #L00008h. goto L00009a;
+    #L00007a. <@Frame (@New, 3, `[(|java.lang.Object|), (|java.lang.Object|), (|java.lang.Object|)], 0, `[:top, :top, :top, :top, :top])>
+    #L00007b. s0:= +|java.io.File.fs|+;
+    #L00007c. s1:= [|v1|].<|java.io.File.path|>;
+    #L00007d. s2:= +|java.io.File.fs|+;
+    #L00007e. call s3:= {|java.io.FileSystem.normalize(Ljava.lang.String;)Ljava.lang.String;|}(s2,[|v2|]) @signature "java.io.FileSystem.normalize(Ljava/lang/String;)Ljava/lang/String;" @classDescriptor [|java.io.FileSystem|] @type virtual;
+    #L00007f. call s4:= {|java.io.FileSystem.resolve(Ljava.lang.String;Ljava.lang.String;)Ljava.lang.String;|}(s0,s1,s3) @signature "java.io.FileSystem.resolve(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;" @classDescriptor [|java.io.FileSystem|] @type virtual;
+    #L00007g. [|v0|].<|java.io.File.path|>:= s4;
+    #L00007h. goto L00009a;
+    #L00005a. <@Frame (@New, 3, `[(|java.lang.Object|), (|java.lang.Object|), (|java.lang.Object|)], 0, `[:top, :top, :top, :top, :top])>
+    #L00005b. s0:= +|java.io.File.fs|+;
+    #L00005c. call s1:= {|java.io.FileSystem.normalize(Ljava.lang.String;)Ljava.lang.String;|}(s0,[|v2|]) @signature "java.io.FileSystem.normalize(Ljava/lang/String;)Ljava/lang/String;" @classDescriptor [|java.io.FileSystem|] @type virtual;
+    #L00005d. [|v0|].<|java.io.File.path|>:= s1;
+    #L00009a. <@Frame (@New, 3, `[(|java.lang.Object|), (|java.lang.Object|), (|java.lang.Object|)], 0, `[:top, :top, :top, :top, :top])>
+    #L00009b. s0:= +|java.io.File.fs|+;
+    #L00009c. s1:= [|v0|].<|java.io.File.path|>;
+    #L00009d. call s2:= {|java.io.FileSystem.prefixLength(Ljava.lang.String;)I|}(s0,s1) @signature "java.io.FileSystem.prefixLength(Ljava/lang/String;)I" @classDescriptor [|java.io.FileSystem|] @type virtual;
+    #L00009e. [|v0|].<|java.io.File.prefixLength|>:= s2;
+    #L00010a. return @void;
+  }
+  procedure (|void|) {|java.io.File.<init>(Ljava.net.URI;)V|} ((|java.io.File|) [|v0|], (|java.net.URI|) [|v1|]) 
+    @MaxLocals 4
+    @MaxStack 3
+    @Owner (|java.io.File|)
+    @Access (PUBLIC,CONSTRUCTOR)
+    @Signature "java.io.File.<init>(Ljava/net/URI;)V" 
+  {
+    local temp;
+    s0;
+    s1;
+    s2;
+    [|v2|];
+    [|v3|];
+
+
+    #L00000a. <@Frame (@New, 2, `[:this, (|java.lang.Object|), :top, :top], 0, `[:top, :top, :top])>
+    #L00000b. call s0:= {|java.lang.Object.<init>()V|}([|v0|]) @signature "java.lang.Object.<init>()V" @classDescriptor [|java.lang.Object|] @type special;
+    #L00001a. [|v0|].<|java.io.File.status|>:= null;
+    #L00002a. call s0:= {|java.net.URI.isAbsolute()Z|}([|v1|]) @signature "java.net.URI.isAbsolute()Z" @classDescriptor [|java.net.URI|] @type virtual;
+    #L00002b. if s0 != 0 then goto L00003a;
+    #L00004a. s0:= new (|java.lang.IllegalArgumentException|);
+    #L00004b. call s1:= {|java.lang.IllegalArgumentException.<init>(Ljava.lang.String;)V|}(s0,"URI is not absolute") @signature "java.lang.IllegalArgumentException.<init>(Ljava/lang/String;)V" @classDescriptor [|java.lang.IllegalArgumentException|] @type special;
+    #L00004c. throw s0;
+    #L00003a. <@Frame (@New, 2, `[(|java.lang.Object|), (|java.lang.Object|), :top, :top], 0, `[:top, :top, :top])>
+    #L00003b. call s0:= {|java.net.URI.isOpaque()Z|}([|v1|]) @signature "java.net.URI.isOpaque()Z" @classDescriptor [|java.net.URI|] @type virtual;
+    #L00003c. if s0 == 0 then goto L00005a;
+    #L00006a. s0:= new (|java.lang.IllegalArgumentException|);
+    #L00006b. call s1:= {|java.lang.IllegalArgumentException.<init>(Ljava.lang.String;)V|}(s0,"URI is not hierarchical") @signature "java.lang.IllegalArgumentException.<init>(Ljava/lang/String;)V" @classDescriptor [|java.lang.IllegalArgumentException|] @type special;
+    #L00006c. throw s0;
+    #L00005a. <@Frame (@New, 2, `[(|java.lang.Object|), (|java.lang.Object|), :top, :top], 0, `[:top, :top, :top])>
+    #L00005b. call s0:= {|java.net.URI.getScheme()Ljava.lang.String;|}([|v1|]) @signature "java.net.URI.getScheme()Ljava/lang/String;" @classDescriptor [|java.net.URI|] @type virtual;
+    #L00005c. [|v2|]:= s0 @type (|java.lang.Object|);
+    #L00007a. if [|v2|] == null then goto L00008a;
+    #L00007b. call s0:= {|java.lang.String.equalsIgnoreCase(Ljava.lang.String;)Z|}([|v2|],"file") @signature "java.lang.String.equalsIgnoreCase(Ljava/lang/String;)Z" @classDescriptor [|java.lang.String|] @type virtual;
+    #L00007c. if s0 != 0 then goto L00009a;
+    #L00008a. <@Frame (@New, 3, `[(|java.lang.Object|), (|java.lang.Object|), (|java.lang.Object|), :top], 0, `[:top, :top, :top])>
+    #L00008b. s0:= new (|java.lang.IllegalArgumentException|);
+    #L00008c. call s1:= {|java.lang.IllegalArgumentException.<init>(Ljava.lang.String;)V|}(s0,"URI scheme is not \"file\"") @signature "java.lang.IllegalArgumentException.<init>(Ljava/lang/String;)V" @classDescriptor [|java.lang.IllegalArgumentException|] @type special;
+    #L00008d. throw s0;
+    #L00009a. <@Frame (@New, 3, `[(|java.lang.Object|), (|java.lang.Object|), (|java.lang.Object|), :top], 0, `[:top, :top, :top])>
+    #L00009b. call s0:= {|java.net.URI.getAuthority()Ljava.lang.String;|}([|v1|]) @signature "java.net.URI.getAuthority()Ljava/lang/String;" @classDescriptor [|java.net.URI|] @type virtual;
+    #L00009c. if s0 == null then goto L00010a;
+    #L00011a. s0:= new (|java.lang.IllegalArgumentException|);
+    #L00011b. call s1:= {|java.lang.IllegalArgumentException.<init>(Ljava.lang.String;)V|}(s0,"URI has an authority component") @signature "java.lang.IllegalArgumentException.<init>(Ljava/lang/String;)V" @classDescriptor [|java.lang.IllegalArgumentException|] @type special;
+    #L00011c. throw s0;
+    #L00010a. <@Frame (@New, 3, `[(|java.lang.Object|), (|java.lang.Object|), (|java.lang.Object|), :top], 0, `[:top, :top, :top])>
+    #L00010b. call s0:= {|java.net.URI.getFragment()Ljava.lang.String;|}([|v1|]) @signature "java.net.URI.getFragment()Ljava/lang/String;" @classDescriptor [|java.net.URI|] @type virtual;
+    #L00010c. if s0 == null then goto L00012a;
+    #L00013a. s0:= new (|java.lang.IllegalArgumentException|);
+    #L00013b. call s1:= {|java.lang.IllegalArgumentException.<init>(Ljava.lang.String;)V|}(s0,"URI has a fragment component") @signature "java.lang.IllegalArgumentException.<init>(Ljava/lang/String;)V" @classDescriptor [|java.lang.IllegalArgumentException|] @type special;
+    #L00013c. throw s0;
+    #L00012a. <@Frame (@New, 3, `[(|java.lang.Object|), (|java.lang.Object|), (|java.lang.Object|), :top], 0, `[:top, :top, :top])>
+    #L00012b. call s0:= {|java.net.URI.getQuery()Ljava.lang.String;|}([|v1|]) @signature "java.net.URI.getQuery()Ljava/lang/String;" @classDescriptor [|java.net.URI|] @type virtual;
+    #L00012c. if s0 == null then goto L00014a;
+    #L00015a. s0:= new (|java.lang.IllegalArgumentException|);
+    #L00015b. call s1:= {|java.lang.IllegalArgumentException.<init>(Ljava.lang.String;)V|}(s0,"URI has a query component") @signature "java.lang.IllegalArgumentException.<init>(Ljava/lang/String;)V" @classDescriptor [|java.lang.IllegalArgumentException|] @type special;
+    #L00015c. throw s0;
+    #L00014a. <@Frame (@New, 3, `[(|java.lang.Object|), (|java.lang.Object|), (|java.lang.Object|), :top], 0, `[:top, :top, :top])>
+    #L00014b. call s0:= {|java.net.URI.getPath()Ljava.lang.String;|}([|v1|]) @signature "java.net.URI.getPath()Ljava/lang/String;" @classDescriptor [|java.net.URI|] @type virtual;
+    #L00014c. [|v3|]:= s0 @type (|java.lang.Object|);
+    #L00016a. call s0:= {|java.lang.String.equals(Ljava.lang.Object;)Z|}([|v3|],"") @signature "java.lang.String.equals(Ljava/lang/Object;)Z" @classDescriptor [|java.lang.String|] @type virtual;
+    #L00016b. if s0 == 0 then goto L00017a;
+    #L00018a. s0:= new (|java.lang.IllegalArgumentException|);
+    #L00018b. call s1:= {|java.lang.IllegalArgumentException.<init>(Ljava.lang.String;)V|}(s0,"URI path component is empty") @signature "java.lang.IllegalArgumentException.<init>(Ljava/lang/String;)V" @classDescriptor [|java.lang.IllegalArgumentException|] @type special;
+    #L00018c. throw s0;
+    #L00017a. <@Frame (@New, 4, `[(|java.lang.Object|), (|java.lang.Object|), (|java.lang.Object|), (|java.lang.Object|)], 0, `[:top, :top, :top])>
+    #L00017b. s0:= +|java.io.File.fs|+;
+    #L00017c. call s1:= {|java.io.FileSystem.fromURIPath(Ljava.lang.String;)Ljava.lang.String;|}(s0,[|v3|]) @signature "java.io.FileSystem.fromURIPath(Ljava/lang/String;)Ljava/lang/String;" @classDescriptor [|java.io.FileSystem|] @type virtual;
+    #L00017d. [|v3|]:= s1 @type (|java.lang.Object|);
+    #L00019a. s0:= +|java.io.File.separatorChar|+;
+    #L00019b. if s0 == 47 then goto L00020a;
+    #L00021a. s0:= +|java.io.File.separatorChar|+;
+    #L00021b. call s1:= {|java.lang.String.replace(CC)Ljava.lang.String;|}([|v3|],47,s0) @signature "java.lang.String.replace(CC)Ljava/lang/String;" @classDescriptor [|java.lang.String|] @type virtual;
+    #L00021c. [|v3|]:= s1 @type (|java.lang.Object|);
+    #L00020a. <@Frame (@New, 4, `[(|java.lang.Object|), (|java.lang.Object|), (|java.lang.Object|), (|java.lang.Object|)], 0, `[:top, :top, :top])>
+    #L00020b. s0:= +|java.io.File.fs|+;
+    #L00020c. call s1:= {|java.io.FileSystem.normalize(Ljava.lang.String;)Ljava.lang.String;|}(s0,[|v3|]) @signature "java.io.FileSystem.normalize(Ljava/lang/String;)Ljava/lang/String;" @classDescriptor [|java.io.FileSystem|] @type virtual;
+    #L00020d. [|v0|].<|java.io.File.path|>:= s1;
+    #L00022a. s0:= +|java.io.File.fs|+;
+    #L00022b. s1:= [|v0|].<|java.io.File.path|>;
+    #L00022c. call s2:= {|java.io.FileSystem.prefixLength(Ljava.lang.String;)I|}(s0,s1) @signature "java.io.FileSystem.prefixLength(Ljava/lang/String;)I" @classDescriptor [|java.io.FileSystem|] @type virtual;
+    #L00022d. [|v0|].<|java.io.File.prefixLength|>:= s2;
+    #L00023a. return @void;
+  }
+  procedure (|java.lang.String|) {|java.io.File.getName()Ljava.lang.String;|} ((|java.io.File|) [|v0|]) 
+    @MaxLocals 2
+    @MaxStack 3
+    @Owner (|java.io.File|)
+    @Access (PUBLIC)
+    @Signature "java.io.File.getName()Ljava/lang/String;" 
+  {
+    local temp;
+    s0;
+    s1;
+    s2;
+    s3;
+    [|v1|];
+
+
+    #L00000a. <@Frame (@New, 1, `[(|java.lang.Object|), :top], 0, `[:top, :top, :top])>
+    #L00000b. s0:= [|v0|].<|java.io.File.path|>;
+    #L00000c. s1:= +|java.io.File.separatorChar|+;
+    #L00000d. call s2:= {|java.lang.String.lastIndexOf(I)I|}(s0,s1) @signature "java.lang.String.lastIndexOf(I)I" @classDescriptor [|java.lang.String|] @type virtual;
+    #L00000e. [|v1|]:= s2 @type (|java.lang.Object|);
+    #L00001a. s0:= [|v0|].<|java.io.File.prefixLength|>;
+    #L00001b. if [|v1|] <= s0 then goto L00002a;
+    #L00001c. s1:= [|v0|].<|java.io.File.path|>;
+    #L00001d. s2:= [|v0|].<|java.io.File.prefixLength|>;
+    #L00001e. call s3:= {|java.lang.String.substring(I)Ljava.lang.String;|}(s1,s2) @signature "java.lang.String.substring(I)Ljava/lang/String;" @classDescriptor [|java.lang.String|] @type virtual;
+    #L00001f. return s3;
+    #L00002a. <@Frame (@New, 2, `[(|java.lang.Object|), int], 0, `[:top, :top, :top])>
+    #L00002b. s0:= [|v0|].<|java.io.File.path|>;
+    #L00002c. call s1:= {|java.lang.String.substring(I)Ljava.lang.String;|}(s0,[|v1|]+1) @signature "java.lang.String.substring(I)Ljava/lang/String;" @classDescriptor [|java.lang.String|] @type virtual;
+    #L00002d. return s1;
+  }
+  procedure (|java.lang.String|) {|java.io.File.getParent()Ljava.lang.String;|} ((|java.io.File|) [|v0|]) 
+    @MaxLocals 2
+    @MaxStack 3
+    @Owner (|java.io.File|)
+    @Access (PUBLIC)
+    @Signature "java.io.File.getParent()Ljava/lang/String;" 
+  {
+    local temp;
+    s0;
+    s1;
+    s2;
+    s3;
+    [|v1|];
+
+
+    #L00000a. <@Frame (@New, 1, `[(|java.lang.Object|), :top], 0, `[:top, :top, :top])>
+    #L00000b. s0:= [|v0|].<|java.io.File.path|>;
+    #L00000c. s1:= +|java.io.File.separatorChar|+;
+    #L00000d. call s2:= {|java.lang.String.lastIndexOf(I)I|}(s0,s1) @signature "java.lang.String.lastIndexOf(I)I" @classDescriptor [|java.lang.String|] @type virtual;
+    #L00000e. [|v1|]:= s2 @type (|java.lang.Object|);
+    #L00001a. s0:= [|v0|].<|java.io.File.prefixLength|>;
+    #L00001b. if [|v1|] <= s0 then goto L00002a;
+    #L00003a. s0:= [|v0|].<|java.io.File.prefixLength|>;
+    #L00003b. if s0 >= 0 then goto L00004a;
+    #L00003c. s1:= [|v0|].<|java.io.File.path|>;
+    #L00003d. call s2:= {|java.lang.String.length()I|}(s1) @signature "java.lang.String.length()I" @classDescriptor [|java.lang.String|] @type virtual;
+    #L00003e. s3:= [|v0|].<|java.io.File.prefixLength|>;
+    #L00005a. s0:= [|v0|].<|java.io.File.path|>;
+    #L00005b. s1:= [|v0|].<|java.io.File.prefixLength|>;
+    #L00005c. call s2:= {|java.lang.String.substring(II)Ljava.lang.String;|}(s0,0,s1) @signature "java.lang.String.substring(II)Ljava/lang/String;" @classDescriptor [|java.lang.String|] @type virtual;
+    #L00005d. return s2;
+    #L00004a. <@Frame (@New, 2, `[(|java.lang.Object|), int], 0, `[:top, :top, :top])>
+    #L00004b. return null;
+    #L00002a. <@Frame (@New, 2, `[(|java.lang.Object|), int], 0, `[:top, :top, :top])>
+    #L00002b. s0:= [|v0|].<|java.io.File.path|>;
+    #L00002c. call s1:= {|java.lang.String.substring(II)Ljava.lang.String;|}(s0,0,[|v1|]) @signature "java.lang.String.substring(II)Ljava/lang/String;" @classDescriptor [|java.lang.String|] @type virtual;
+    #L00002d. return s1;
+  }
+  procedure (|java.io.File|) {|java.io.File.getParentFile()Ljava.io.File;|} ((|java.io.File|) [|v0|]) 
+    @MaxLocals 2
+    @MaxStack 4
+    @Owner (|java.io.File|)
+    @Access (PUBLIC)
+    @Signature "java.io.File.getParentFile()Ljava/io/File;" 
+  {
+    local temp;
+    s0;
+    s1;
+    s2;
+    [|v1|];
+
+
+    #L00000a. <@Frame (@New, 1, `[(|java.lang.Object|), :top], 0, `[:top, :top, :top, :top])>
+    #L00000b. call s0:= {|java.io.File.getParent()Ljava.lang.String;|}([|v0|]) @signature "java.io.File.getParent()Ljava/lang/String;" @classDescriptor [|java.io.File|] @type virtual;
+    #L00000c. [|v1|]:= s0 @type (|java.lang.Object|);
+    #L00001a. if [|v1|] != null then goto L00002a;
+    #L00001b. return null;
+    #L00002a. <@Frame (@New, 2, `[(|java.lang.Object|), (|java.lang.Object|)], 0, `[:top, :top, :top, :top])>
+    #L00002b. s0:= new (|java.io.File|);
+    #L00002c. s1:= [|v0|].<|java.io.File.prefixLength|>;
+    #L00002d. call s2:= {|java.io.File.<init>(Ljava.lang.String;I)V|}(s0,[|v1|],s1) @signature "java.io.File.<init>(Ljava/lang/String;I)V" @classDescriptor [|java.io.File|] @type special;
+    #L00002e. return s0;
+  }
+  procedure (|java.lang.String|) {|java.io.File.getPath()Ljava.lang.String;|} ((|java.io.File|) [|v0|]) 
+    @MaxLocals 1
+    @MaxStack 1
+    @Owner (|java.io.File|)
+    @Access (PUBLIC)
+    @Signature "java.io.File.getPath()Ljava/lang/String;" 
+  {
+    local temp;
+    s0;
+
+
+    #L00000a. s0:= [|v0|].<|java.io.File.path|>;
+    #L00000b. return s0;
+  }
+  procedure (|boolean|) {|java.io.File.isAbsolute()Z|} ((|java.io.File|) [|v0|]) 
+    @MaxLocals 1
+    @MaxStack 2
+    @Owner (|java.io.File|)
+    @Access (PUBLIC)
+    @Signature "java.io.File.isAbsolute()Z" 
+  {
+    local temp;
+    s0;
+    s1;
+
+
+    #L00000a. s0:= +|java.io.File.fs|+;
+    #L00000b. call s1:= {|java.io.FileSystem.isAbsolute(Ljava.io.File;)Z|}(s0,[|v0|]) @signature "java.io.FileSystem.isAbsolute(Ljava/io/File;)Z" @classDescriptor [|java.io.FileSystem|] @type virtual;
+    #L00000c. return s1;
+  }
+  procedure (|java.lang.String|) {|java.io.File.getAbsolutePath()Ljava.lang.String;|} ((|java.io.File|) [|v0|]) 
+    @MaxLocals 1
+    @MaxStack 2
+    @Owner (|java.io.File|)
+    @Access (PUBLIC)
+    @Signature "java.io.File.getAbsolutePath()Ljava/lang/String;" 
+  {
+    local temp;
+    s0;
+    s1;
+
+
+    #L00000a. s0:= +|java.io.File.fs|+;
+    #L00000b. call s1:= {|java.io.FileSystem.resolve(Ljava.io.File;)Ljava.lang.String;|}(s0,[|v0|]) @signature "java.io.FileSystem.resolve(Ljava/io/File;)Ljava/lang/String;" @classDescriptor [|java.io.FileSystem|] @type virtual;
+    #L00000c. return s1;
+  }
+  procedure (|java.io.File|) {|java.io.File.getAbsoluteFile()Ljava.io.File;|} ((|java.io.File|) [|v0|]) 
+    @MaxLocals 2
+    @MaxStack 5
+    @Owner (|java.io.File|)
+    @Access (PUBLIC)
+    @Signature "java.io.File.getAbsoluteFile()Ljava/io/File;" 
+  {
+    local temp;
+    s0;
+    s1;
+    s2;
+    s3;
+    [|v1|];
+
+
+    #L00000a. call s0:= {|java.io.File.getAbsolutePath()Ljava.lang.String;|}([|v0|]) @signature "java.io.File.getAbsolutePath()Ljava/lang/String;" @classDescriptor [|java.io.File|] @type virtual;
+    #L00000b. [|v1|]:= s0 @type (|java.lang.Object|);
+    #L00001a. s0:= new (|java.io.File|);
+    #L00001b. s1:= +|java.io.File.fs|+;
+    #L00001c. call s2:= {|java.io.FileSystem.prefixLength(Ljava.lang.String;)I|}(s1,[|v1|]) @signature "java.io.FileSystem.prefixLength(Ljava/lang/String;)I" @classDescriptor [|java.io.FileSystem|] @type virtual;
+    #L00001d. call s3:= {|java.io.File.<init>(Ljava.lang.String;I)V|}(s0,[|v1|],s2) @signature "java.io.File.<init>(Ljava/lang/String;I)V" @classDescriptor [|java.io.File|] @type special;
+    #L00001e. return s0;
+  }
+  procedure (|java.lang.String|) {|java.io.File.getCanonicalPath()Ljava.lang.String;|} ((|java.io.File|) [|v0|]) 
+    @Throws [|java.io.IOException|]
+    @MaxLocals 1
+    @MaxStack 3
+    @Owner (|java.io.File|)
+    @Access (PUBLIC)
+    @Signature "java.io.File.getCanonicalPath()Ljava/lang/String;" 
+  {
+    local temp;
+    s0;
+    s1;
+    s2;
+    s3;
+
+
+    #L00000a. <@Frame (@New, 1, `[(|java.lang.Object|)], 0, `[:top, :top, :top])>
+    #L00000b. call s0:= {|java.io.File.isInvalid()Z|}([|v0|]) @signature "java.io.File.isInvalid()Z" @classDescriptor [|java.io.File|] @type virtual;
+    #L00000c. if s0 == 0 then goto L00001a;
+    #L00002a. s0:= new (|java.io.IOException|);
+    #L00002b. call s1:= {|java.io.IOException.<init>(Ljava.lang.String;)V|}(s0,"Invalid file path") @signature "java.io.IOException.<init>(Ljava/lang/String;)V" @classDescriptor [|java.io.IOException|] @type special;
+    #L00002c. throw s0;
+    #L00001a. <@Frame (@New, 1, `[(|java.lang.Object|)], 0, `[:top, :top, :top])>
+    #L00001b. s0:= +|java.io.File.fs|+;
+    #L00001c. s1:= +|java.io.File.fs|+;
+    #L00001d. call s2:= {|java.io.FileSystem.resolve(Ljava.io.File;)Ljava.lang.String;|}(s1,[|v0|]) @signature "java.io.FileSystem.resolve(Ljava/io/File;)Ljava/lang/String;" @classDescriptor [|java.io.FileSystem|] @type virtual;
+    #L00001e. call s3:= {|java.io.FileSystem.canonicalize(Ljava.lang.String;)Ljava.lang.String;|}(s0,s2) @signature "java.io.FileSystem.canonicalize(Ljava/lang/String;)Ljava/lang/String;" @classDescriptor [|java.io.FileSystem|] @type virtual;
+    #L00001f. return s3;
+  }
+  procedure (|java.io.File|) {|java.io.File.getCanonicalFile()Ljava.io.File;|} ((|java.io.File|) [|v0|]) 
+    @Throws [|java.io.IOException|]
+    @MaxLocals 2
+    @MaxStack 5
+    @Owner (|java.io.File|)
+    @Access (PUBLIC)
+    @Signature "java.io.File.getCanonicalFile()Ljava/io/File;" 
+  {
+    local temp;
+    s0;
+    s1;
+    s2;
+    s3;
+    [|v1|];
+
+
+    #L00000a. call s0:= {|java.io.File.getCanonicalPath()Ljava.lang.String;|}([|v0|]) @signature "java.io.File.getCanonicalPath()Ljava/lang/String;" @classDescriptor [|java.io.File|] @type virtual;
+    #L00000b. [|v1|]:= s0 @type (|java.lang.Object|);
+    #L00001a. s0:= new (|java.io.File|);
+    #L00001b. s1:= +|java.io.File.fs|+;
+    #L00001c. call s2:= {|java.io.FileSystem.prefixLength(Ljava.lang.String;)I|}(s1,[|v1|]) @signature "java.io.FileSystem.prefixLength(Ljava/lang/String;)I" @classDescriptor [|java.io.FileSystem|] @type virtual;
+    #L00001d. call s3:= {|java.io.File.<init>(Ljava.lang.String;I)V|}(s0,[|v1|],s2) @signature "java.io.File.<init>(Ljava/lang/String;I)V" @classDescriptor [|java.io.File|] @type special;
+    #L00001e. return s0;
+  }
+  procedure (|java.lang.String|) {|java.io.File.slashify(Ljava.lang.String;Z)Ljava.lang.String;|} ((|java.lang.String|) [|v0|], (|boolean|) [|v1|]) 
+    @MaxLocals 3
+    @MaxStack 3
+    @Owner (|java.io.File|)
+    @Access (PRIVATE,STATIC)
+    @Signature "java.io.File.slashify(Ljava/lang/String;Z)Ljava/lang/String;" 
+  {
+    local temp;
+    s0;
+    s1;
+    s2;
+    s3;
+    s4;
+    [|v2|];
+
+
+    #L00000a. <@Frame (@New, 2, `[(|java.lang.Object|), int, :top], 0, `[:top, :top, :top])>
+    #L00000b. [|v2|]:= [|v0|] @type object;
+    #L00001a. s0:= +|java.io.File.separatorChar|+;
+    #L00001b. if s0 == 47 then goto L00002a;
+    #L00003a. s0:= +|java.io.File.separatorChar|+;
+    #L00003b. call s1:= {|java.lang.String.replace(CC)Ljava.lang.String;|}([|v2|],s0,47) @signature "java.lang.String.replace(CC)Ljava/lang/String;" @classDescriptor [|java.lang.String|] @type virtual;
+    #L00003c. [|v2|]:= s1 @type (|java.lang.Object|);
+    #L00002a. <@Frame (@New, 3, `[(|java.lang.Object|), int, (|java.lang.Object|)], 0, `[:top, :top, :top])>
+    #L00002b. call s0:= {|java.lang.String.startsWith(Ljava.lang.String;)Z|}([|v2|],"/") @signature "java.lang.String.startsWith(Ljava/lang/String;)Z" @classDescriptor [|java.lang.String|] @type virtual;
+    #L00002c. if s0 != 0 then goto L00004a;
+    #L00005a. s0:= new (|java.lang.StringBuilder|);
+    #L00005b. call s1:= {|java.lang.StringBuilder.<init>()V|}(s0) @signature "java.lang.StringBuilder.<init>()V" @classDescriptor [|java.lang.StringBuilder|] @type special;
+    #L00005c. call s2:= {|java.lang.StringBuilder.append(Ljava.lang.String;)Ljava.lang.StringBuilder;|}(s0,"/") @signature "java.lang.StringBuilder.append(Ljava/lang/String;)Ljava/lang/StringBuilder;" @classDescriptor [|java.lang.StringBuilder|] @type virtual;
+    #L00005d. call s3:= {|java.lang.StringBuilder.append(Ljava.lang.String;)Ljava.lang.StringBuilder;|}(s2,[|v2|]) @signature "java.lang.StringBuilder.append(Ljava/lang/String;)Ljava/lang/StringBuilder;" @classDescriptor [|java.lang.StringBuilder|] @type virtual;
+    #L00005e. call s4:= {|java.lang.StringBuilder.toString()Ljava.lang.String;|}(s3) @signature "java.lang.StringBuilder.toString()Ljava/lang/String;" @classDescriptor [|java.lang.StringBuilder|] @type virtual;
+    #L00005f. [|v2|]:= s4 @type (|java.lang.Object|);
+    #L00004a. <@Frame (@New, 3, `[(|java.lang.Object|), int, (|java.lang.Object|)], 0, `[:top, :top, :top])>
+    #L00004b. call s0:= {|java.lang.String.endsWith(Ljava.lang.String;)Z|}([|v2|],"/") @signature "java.lang.String.endsWith(Ljava/lang/String;)Z" @classDescriptor [|java.lang.String|] @type virtual;
+    #L00004c. if s0 != 0 then goto L00006a;
+    #L00004d. if [|v1|] == 0 then goto L00006a;
+    #L00007a. s0:= new (|java.lang.StringBuilder|);
+    #L00007b. call s1:= {|java.lang.StringBuilder.<init>()V|}(s0) @signature "java.lang.StringBuilder.<init>()V" @classDescriptor [|java.lang.StringBuilder|] @type special;
+    #L00007c. call s2:= {|java.lang.StringBuilder.append(Ljava.lang.String;)Ljava.lang.StringBuilder;|}(s0,[|v2|]) @signature "java.lang.StringBuilder.append(Ljava/lang/String;)Ljava/lang/StringBuilder;" @classDescriptor [|java.lang.StringBuilder|] @type virtual;
+    #L00007d. call s3:= {|java.lang.StringBuilder.append(Ljava.lang.String;)Ljava.lang.StringBuilder;|}(s2,"/") @signature "java.lang.StringBuilder.append(Ljava/lang/String;)Ljava/lang/StringBuilder;" @classDescriptor [|java.lang.StringBuilder|] @type virtual;
+    #L00007e. call s4:= {|java.lang.StringBuilder.toString()Ljava.lang.String;|}(s3) @signature "java.lang.StringBuilder.toString()Ljava/lang/String;" @classDescriptor [|java.lang.StringBuilder|] @type virtual;
+    #L00007f. [|v2|]:= s4 @type (|java.lang.Object|);
+    #L00006a. <@Frame (@New, 3, `[(|java.lang.Object|), int, (|java.lang.Object|)], 0, `[:top, :top, :top])>
+    #L00006b. return [|v2|];
+  }
+  procedure (|java.net.URL|) {|java.io.File.toURL()Ljava.net.URL;|} ((|java.io.File|) [|v0|]) 
+    @Throws [|java.net.MalformedURLException|]
+    @MaxLocals 1
+    @MaxStack 6
+    @Owner (|java.io.File|)
+    @(|java.lang.Deprecated|) 
+    @Access (PUBLIC)
+    @Signature "java.io.File.toURL()Ljava/net/URL;" 
+  {
+    local temp;
+    s0;
+    s1;
+    s2;
+    s3;
+    s4;
+
+
+    #L00000a. <@Frame (@New, 1, `[(|java.lang.Object|)], 0, `[:top, :top, :top, :top, :top, :top])>
+    #L00000b. call s0:= {|java.io.File.isInvalid()Z|}([|v0|]) @signature "java.io.File.isInvalid()Z" @classDescriptor [|java.io.File|] @type virtual;
+    #L00000c. if s0 == 0 then goto L00001a;
+    #L00002a. s0:= new (|java.net.MalformedURLException|);
+    #L00002b. call s1:= {|java.net.MalformedURLException.<init>(Ljava.lang.String;)V|}(s0,"Invalid file path") @signature "java.net.MalformedURLException.<init>(Ljava/lang/String;)V" @classDescriptor [|java.net.MalformedURLException|] @type special;
+    #L00002c. throw s0;
+    #L00001a. <@Frame (@New, 1, `[(|java.lang.Object|)], 0, `[:top, :top, :top, :top, :top, :top])>
+    #L00001b. s0:= new (|java.net.URL|);
+    #L00001c. call s1:= {|java.io.File.getAbsolutePath()Ljava.lang.String;|}([|v0|]) @signature "java.io.File.getAbsolutePath()Ljava/lang/String;" @classDescriptor [|java.io.File|] @type virtual;
+    #L00001d. call s2:= {|java.io.File.isDirectory()Z|}([|v0|]) @signature "java.io.File.isDirectory()Z" @classDescriptor [|java.io.File|] @type virtual;
+    #L00001e. call s3:= {|java.io.File.slashify(Ljava.lang.String;Z)Ljava.lang.String;|}(s1,s2) @signature "java.io.File.slashify(Ljava/lang/String;Z)Ljava/lang/String;" @classDescriptor [|java.io.File|] @type direct;
+    #L00001f. call s4:= {|java.net.URL.<init>(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;)V|}(s0,"file","",s3) @signature "java.net.URL.<init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V" @classDescriptor [|java.net.URL|] @type special;
+    #L00001g. return s0;
+  }
+  procedure (|java.net.URI|) {|java.io.File.toURI()Ljava.net.URI;|} ((|java.io.File|) [|v0|]) 
+    @MaxLocals 3
+    @MaxStack 6
+    @Owner (|java.io.File|)
+    @Access (PUBLIC)
+    @Signature "java.io.File.toURI()Ljava/net/URI;" 
+  {
+    local temp;
+    s0;
+    s1;
+    s2;
+    s3;
+    s4;
+    [|v1|];
+    [|v2|];
+
+
+    #L00000a. <@Frame (@New, 1, `[(|java.lang.Object|), :top, :top], 0, `[:top, :top, :top, :top, :top, :top])>
+    #L00000b. call s0:= {|java.io.File.getAbsoluteFile()Ljava.io.File;|}([|v0|]) @signature "java.io.File.getAbsoluteFile()Ljava/io/File;" @classDescriptor [|java.io.File|] @type virtual;
+    #L00000c. [|v1|]:= s0 @type (|java.lang.Object|);
+    #L00003a. call s0:= {|java.io.File.getPath()Ljava.lang.String;|}([|v1|]) @signature "java.io.File.getPath()Ljava/lang/String;" @classDescriptor [|java.io.File|] @type virtual;
+    #L00003b. call s1:= {|java.io.File.isDirectory()Z|}([|v1|]) @signature "java.io.File.isDirectory()Z" @classDescriptor [|java.io.File|] @type virtual;
+    #L00003c. call s2:= {|java.io.File.slashify(Ljava.lang.String;Z)Ljava.lang.String;|}(s0,s1) @signature "java.io.File.slashify(Ljava/lang/String;Z)Ljava/lang/String;" @classDescriptor [|java.io.File|] @type direct;
+    #L00003d. [|v2|]:= s2 @type (|java.lang.Object|);
+    #L00004a. call s0:= {|java.lang.String.startsWith(Ljava.lang.String;)Z|}([|v2|],"//") @signature "java.lang.String.startsWith(Ljava/lang/String;)Z" @classDescriptor [|java.lang.String|] @type virtual;
+    #L00004b. if s0 == 0 then goto L00005a;
+    #L00006a. s0:= new (|java.lang.StringBuilder|);
+    #L00006b. call s1:= {|java.lang.StringBuilder.<init>()V|}(s0) @signature "java.lang.StringBuilder.<init>()V" @classDescriptor [|java.lang.StringBuilder|] @type special;
+    #L00006c. call s2:= {|java.lang.StringBuilder.append(Ljava.lang.String;)Ljava.lang.StringBuilder;|}(s0,"//") @signature "java.lang.StringBuilder.append(Ljava/lang/String;)Ljava/lang/StringBuilder;" @classDescriptor [|java.lang.StringBuilder|] @type virtual;
+    #L00006d. call s3:= {|java.lang.StringBuilder.append(Ljava.lang.String;)Ljava.lang.StringBuilder;|}(s2,[|v2|]) @signature "java.lang.StringBuilder.append(Ljava/lang/String;)Ljava/lang/StringBuilder;" @classDescriptor [|java.lang.StringBuilder|] @type virtual;
+    #L00006e. call s4:= {|java.lang.StringBuilder.toString()Ljava.lang.String;|}(s3) @signature "java.lang.StringBuilder.toString()Ljava/lang/String;" @classDescriptor [|java.lang.StringBuilder|] @type virtual;
+    #L00006f. [|v2|]:= s4 @type (|java.lang.Object|);
+    #L00005a. <@Frame (@New, 3, `[(|java.lang.Object|), (|java.lang.Object|), (|java.lang.Object|)], 0, `[:top, :top, :top, :top, :top, :top])>
+    #L00005b. s0:= new (|java.net.URI|);
+    #L00005c. call s1:= {|java.net.URI.<init>(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;)V|}(s0,"file",null,[|v2|],null) @signature "java.net.URI.<init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V" @classDescriptor [|java.net.URI|] @type special;
+    #L00001a. return s0;
+    #L00002a. <@Frame (@New, 1, `[(|java.lang.Object|), (|java.lang.Object|), (|java.lang.Object|)], 1, `[(|java.lang.Object|), :top, :top, :top, :top, :top])>
+    #L00002b. [|v1|]:= "Exception" @type object;
+    #L00007a. s0:= new (|java.lang.Error|);
+    #L00007b. call s1:= {|java.lang.Error.<init>(Ljava.lang.Throwable;)V|}(s0,[|v1|]) @signature "java.lang.Error.<init>(Ljava/lang/Throwable;)V" @classDescriptor [|java.lang.Error|] @type special;
+    #L00007c. throw s0;
+      catch (|java.net.URISyntaxException|) @[L00000a..L00001a] goto L00002a;
+  }
+  procedure (|boolean|) {|java.io.File.canRead()Z|} ((|java.io.File|) [|v0|]) 
+    @MaxLocals 2
+    @MaxStack 3
+    @Owner (|java.io.File|)
+    @Access (PUBLIC)
+    @Signature "java.io.File.canRead()Z" 
+  {
+    local temp;
+    s0;
+    s1;
+    [|v1|];
+
+
+    #L00000a. <@Frame (@New, 1, `[(|java.lang.Object|), :top], 0, `[:top, :top, :top])>
+    #L00000b. call s0:= {|java.lang.System.getSecurityManager()Ljava.lang.SecurityManager;|}() @signature "java.lang.System.getSecurityManager()Ljava/lang/SecurityManager;" @classDescriptor [|java.lang.System|] @type direct;
+    #L00000c. [|v1|]:= s0 @type (|java.lang.Object|);
+    #L00001a. if [|v1|] == null then goto L00002a;
+    #L00003a. s0:= [|v0|].<|java.io.File.path|>;
+    #L00003b. call s1:= {|java.lang.SecurityManager.checkRead(Ljava.lang.String;)V|}([|v1|],s0) @signature "java.lang.SecurityManager.checkRead(Ljava/lang/String;)V" @classDescriptor [|java.lang.SecurityManager|] @type virtual;
+    #L00002a. <@Frame (@New, 2, `[(|java.lang.Object|), (|java.lang.Object|)], 0, `[:top, :top, :top])>
+    #L00002b. call s0:= {|java.io.File.isInvalid()Z|}([|v0|]) @signature "java.io.File.isInvalid()Z" @classDescriptor [|java.io.File|] @type virtual;
+    #L00002c. if s0 == 0 then goto L00004a;
+    #L00005a. return 0;
+    #L00004a. <@Frame (@New, 2, `[(|java.lang.Object|), (|java.lang.Object|)], 0, `[:top, :top, :top])>
+    #L00004b. s0:= +|java.io.File.fs|+;
+    #L00004c. call s1:= {|java.io.FileSystem.checkAccess(Ljava.io.File;I)Z|}(s0,[|v0|],4) @signature "java.io.FileSystem.checkAccess(Ljava/io/File;I)Z" @classDescriptor [|java.io.FileSystem|] @type virtual;
+    #L00004d. return s1;
+  }
+  procedure (|boolean|) {|java.io.File.canWrite()Z|} ((|java.io.File|) [|v0|]) 
+    @MaxLocals 2
+    @MaxStack 3
+    @Owner (|java.io.File|)
+    @Access (PUBLIC)
+    @Signature "java.io.File.canWrite()Z" 
+  {
+    local temp;
+    s0;
+    s1;
+    [|v1|];
+
+
+    #L00000a. <@Frame (@New, 1, `[(|java.lang.Object|), :top], 0, `[:top, :top, :top])>
+    #L00000b. call s0:= {|java.lang.System.getSecurityManager()Ljava.lang.SecurityManager;|}() @signature "java.lang.System.getSecurityManager()Ljava/lang/SecurityManager;" @classDescriptor [|java.lang.System|] @type direct;
+    #L00000c. [|v1|]:= s0 @type (|java.lang.Object|);
+    #L00001a. if [|v1|] == null then goto L00002a;
+    #L00003a. s0:= [|v0|].<|java.io.File.path|>;
+    #L00003b. call s1:= {|java.lang.SecurityManager.checkWrite(Ljava.lang.String;)V|}([|v1|],s0) @signature "java.lang.SecurityManager.checkWrite(Ljava/lang/String;)V" @classDescriptor [|java.lang.SecurityManager|] @type virtual;
+    #L00002a. <@Frame (@New, 2, `[(|java.lang.Object|), (|java.lang.Object|)], 0, `[:top, :top, :top])>
+    #L00002b. call s0:= {|java.io.File.isInvalid()Z|}([|v0|]) @signature "java.io.File.isInvalid()Z" @classDescriptor [|java.io.File|] @type virtual;
+    #L00002c. if s0 == 0 then goto L00004a;
+    #L00005a. return 0;
+    #L00004a. <@Frame (@New, 2, `[(|java.lang.Object|), (|java.lang.Object|)], 0, `[:top, :top, :top])>
+    #L00004b. s0:= +|java.io.File.fs|+;
+    #L00004c. call s1:= {|java.io.FileSystem.checkAccess(Ljava.io.File;I)Z|}(s0,[|v0|],2) @signature "java.io.FileSystem.checkAccess(Ljava/io/File;I)Z" @classDescriptor [|java.io.FileSystem|] @type virtual;
+    #L00004d. return s1;
+  }
+  procedure (|boolean|) {|java.io.File.exists()Z|} ((|java.io.File|) [|v0|]) 
+    @MaxLocals 2
+    @MaxStack 2
+    @Owner (|java.io.File|)
+    @Access (PUBLIC)
+    @Signature "java.io.File.exists()Z" 
+  {
+    local temp;
+    s0;
+    s1;
+    [|v1|];
+
+
+    #L00000a. <@Frame (@New, 1, `[(|java.lang.Object|), :top], 0, `[:top, :top])>
+    #L00000b. call s0:= {|java.lang.System.getSecurityManager()Ljava.lang.SecurityManager;|}() @signature "java.lang.System.getSecurityManager()Ljava/lang/SecurityManager;" @classDescriptor [|java.lang.System|] @type direct;
+    #L00000c. [|v1|]:= s0 @type (|java.lang.Object|);
+    #L00001a. if [|v1|] == null then goto L00002a;
+    #L00003a. s0:= [|v0|].<|java.io.File.path|>;
+    #L00003b. call s1:= {|java.lang.SecurityManager.checkRead(Ljava.lang.String;)V|}([|v1|],s0) @signature "java.lang.SecurityManager.checkRead(Ljava/lang/String;)V" @classDescriptor [|java.lang.SecurityManager|] @type virtual;
+    #L00002a. <@Frame (@New, 2, `[(|java.lang.Object|), (|java.lang.Object|)], 0, `[:top, :top])>
+    #L00002b. call s0:= {|java.io.File.isInvalid()Z|}([|v0|]) @signature "java.io.File.isInvalid()Z" @classDescriptor [|java.io.File|] @type virtual;
+    #L00002c. if s0 == 0 then goto L00004a;
+    #L00005a. return 0;
+    #L00004a. <@Frame (@New, 2, `[(|java.lang.Object|), (|java.lang.Object|)], 0, `[:top, :top])>
+    #L00004b. s0:= +|java.io.File.fs|+;
+    #L00004c. call s1:= {|java.io.FileSystem.getBooleanAttributes(Ljava.io.File;)I|}(s0,[|v0|]) @signature "java.io.FileSystem.getBooleanAttributes(Ljava/io/File;)I" @classDescriptor [|java.io.FileSystem|] @type virtual;
+    #L00004d. if s1^&1 == 0 then goto L00006a;
+    #L00004e. goto L00007a;
+    #L00006a. <@Frame (@New, 2, `[(|java.lang.Object|), (|java.lang.Object|)], 0, `[:top, :top])>
+    #L00007a. <@Frame (@New, 2, `[(|java.lang.Object|), (|java.lang.Object|)], 1, `[int, :top])>
+    #L00007b. return 0;
+  }
+  procedure (|boolean|) {|java.io.File.isDirectory()Z|} ((|java.io.File|) [|v0|]) 
+    @MaxLocals 2
+    @MaxStack 2
+    @Owner (|java.io.File|)
+    @Access (PUBLIC)
+    @Signature "java.io.File.isDirectory()Z" 
+  {
+    local temp;
+    s0;
+    s1;
+    [|v1|];
+
+
+    #L00000a. <@Frame (@New, 1, `[(|java.lang.Object|), :top], 0, `[:top, :top])>
+    #L00000b. call s0:= {|java.lang.System.getSecurityManager()Ljava.lang.SecurityManager;|}() @signature "java.lang.System.getSecurityManager()Ljava/lang/SecurityManager;" @classDescriptor [|java.lang.System|] @type direct;
+    #L00000c. [|v1|]:= s0 @type (|java.lang.Object|);
+    #L00001a. if [|v1|] == null then goto L00002a;
+    #L00003a. s0:= [|v0|].<|java.io.File.path|>;
+    #L00003b. call s1:= {|java.lang.SecurityManager.checkRead(Ljava.lang.String;)V|}([|v1|],s0) @signature "java.lang.SecurityManager.checkRead(Ljava/lang/String;)V" @classDescriptor [|java.lang.SecurityManager|] @type virtual;
+    #L00002a. <@Frame (@New, 2, `[(|java.lang.Object|), (|java.lang.Object|)], 0, `[:top, :top])>
+    #L00002b. call s0:= {|java.io.File.isInvalid()Z|}([|v0|]) @signature "java.io.File.isInvalid()Z" @classDescriptor [|java.io.File|] @type virtual;
+    #L00002c. if s0 == 0 then goto L00004a;
+    #L00005a. return 0;
+    #L00004a. <@Frame (@New, 2, `[(|java.lang.Object|), (|java.lang.Object|)], 0, `[:top, :top])>
+    #L00004b. s0:= +|java.io.File.fs|+;
+    #L00004c. call s1:= {|java.io.FileSystem.getBooleanAttributes(Ljava.io.File;)I|}(s0,[|v0|]) @signature "java.io.FileSystem.getBooleanAttributes(Ljava/io/File;)I" @classDescriptor [|java.io.FileSystem|] @type virtual;
+    #L00004d. if s1^&4 == 0 then goto L00006a;
+    #L00004e. goto L00007a;
+    #L00006a. <@Frame (@New, 2, `[(|java.lang.Object|), (|java.lang.Object|)], 0, `[:top, :top])>
+    #L00007a. <@Frame (@New, 2, `[(|java.lang.Object|), (|java.lang.Object|)], 1, `[int, :top])>
+    #L00007b. return 0;
+  }
+  procedure (|boolean|) {|java.io.File.isFile()Z|} ((|java.io.File|) [|v0|]) 
+    @MaxLocals 2
+    @MaxStack 2
+    @Owner (|java.io.File|)
+    @Access (PUBLIC)
+    @Signature "java.io.File.isFile()Z" 
+  {
+    local temp;
+    s0;
+    s1;
+    [|v1|];
+
+
+    #L00000a. <@Frame (@New, 1, `[(|java.lang.Object|), :top], 0, `[:top, :top])>
+    #L00000b. call s0:= {|java.lang.System.getSecurityManager()Ljava.lang.SecurityManager;|}() @signature "java.lang.System.getSecurityManager()Ljava/lang/SecurityManager;" @classDescriptor [|java.lang.System|] @type direct;
+    #L00000c. [|v1|]:= s0 @type (|java.lang.Object|);
+    #L00001a. if [|v1|] == null then goto L00002a;
+    #L00003a. s0:= [|v0|].<|java.io.File.path|>;
+    #L00003b. call s1:= {|java.lang.SecurityManager.checkRead(Ljava.lang.String;)V|}([|v1|],s0) @signature "java.lang.SecurityManager.checkRead(Ljava/lang/String;)V" @classDescriptor [|java.lang.SecurityManager|] @type virtual;
+    #L00002a. <@Frame (@New, 2, `[(|java.lang.Object|), (|java.lang.Object|)], 0, `[:top, :top])>
+    #L00002b. call s0:= {|java.io.File.isInvalid()Z|}([|v0|]) @signature "java.io.File.isInvalid()Z" @classDescriptor [|java.io.File|] @type virtual;
+    #L00002c. if s0 == 0 then goto L00004a;
+    #L00005a. return 0;
+    #L00004a. <@Frame (@New, 2, `[(|java.lang.Object|), (|java.lang.Object|)], 0, `[:top, :top])>
+    #L00004b. s0:= +|java.io.File.fs|+;
+    #L00004c. call s1:= {|java.io.FileSystem.getBooleanAttributes(Ljava.io.File;)I|}(s0,[|v0|]) @signature "java.io.FileSystem.getBooleanAttributes(Ljava/io/File;)I" @classDescriptor [|java.io.FileSystem|] @type virtual;
+    #L00004d. if s1^&2 == 0 then goto L00006a;
+    #L00004e. goto L00007a;
+    #L00006a. <@Frame (@New, 2, `[(|java.lang.Object|), (|java.lang.Object|)], 0, `[:top, :top])>
+    #L00007a. <@Frame (@New, 2, `[(|java.lang.Object|), (|java.lang.Object|)], 1, `[int, :top])>
+    #L00007b. return 0;
+  }
+  procedure (|boolean|) {|java.io.File.isHidden()Z|} ((|java.io.File|) [|v0|]) 
+    @MaxLocals 2
+    @MaxStack 2
+    @Owner (|java.io.File|)
+    @Access (PUBLIC)
+    @Signature "java.io.File.isHidden()Z" 
+  {
+    local temp;
+    s0;
+    s1;
+    [|v1|];
+
+
+    #L00000a. <@Frame (@New, 1, `[(|java.lang.Object|), :top], 0, `[:top, :top])>
+    #L00000b. call s0:= {|java.lang.System.getSecurityManager()Ljava.lang.SecurityManager;|}() @signature "java.lang.System.getSecurityManager()Ljava/lang/SecurityManager;" @classDescriptor [|java.lang.System|] @type direct;
+    #L00000c. [|v1|]:= s0 @type (|java.lang.Object|);
+    #L00001a. if [|v1|] == null then goto L00002a;
+    #L00003a. s0:= [|v0|].<|java.io.File.path|>;
+    #L00003b. call s1:= {|java.lang.SecurityManager.checkRead(Ljava.lang.String;)V|}([|v1|],s0) @signature "java.lang.SecurityManager.checkRead(Ljava/lang/String;)V" @classDescriptor [|java.lang.SecurityManager|] @type virtual;
+    #L00002a. <@Frame (@New, 2, `[(|java.lang.Object|), (|java.lang.Object|)], 0, `[:top, :top])>
+    #L00002b. call s0:= {|java.io.File.isInvalid()Z|}([|v0|]) @signature "java.io.File.isInvalid()Z" @classDescriptor [|java.io.File|] @type virtual;
+    #L00002c. if s0 == 0 then goto L00004a;
+    #L00005a. return 0;
+    #L00004a. <@Frame (@New, 2, `[(|java.lang.Object|), (|java.lang.Object|)], 0, `[:top, :top])>
+    #L00004b. s0:= +|java.io.File.fs|+;
+    #L00004c. call s1:= {|java.io.FileSystem.getBooleanAttributes(Ljava.io.File;)I|}(s0,[|v0|]) @signature "java.io.FileSystem.getBooleanAttributes(Ljava/io/File;)I" @classDescriptor [|java.io.FileSystem|] @type virtual;
+    #L00004d. if s1^&8 == 0 then goto L00006a;
+    #L00004e. goto L00007a;
+    #L00006a. <@Frame (@New, 2, `[(|java.lang.Object|), (|java.lang.Object|)], 0, `[:top, :top])>
+    #L00007a. <@Frame (@New, 2, `[(|java.lang.Object|), (|java.lang.Object|)], 1, `[int, :top])>
+    #L00007b. return 0;
+  }
+  procedure (|long|) {|java.io.File.lastModified()J|} ((|java.io.File|) [|v0|]) 
+    @MaxLocals 2
+    @MaxStack 2
+    @Owner (|java.io.File|)
+    @Access (PUBLIC)
+    @Signature "java.io.File.lastModified()J" 
+  {
+    local temp;
+    s0;
+    s1;
+    [|v1|];
+
+
+    #L00000a. <@Frame (@New, 1, `[(|java.lang.Object|), :top], 0, `[:top, :top])>
+    #L00000b. call s0:= {|java.lang.System.getSecurityManager()Ljava.lang.SecurityManager;|}() @signature "java.lang.System.getSecurityManager()Ljava/lang/SecurityManager;" @classDescriptor [|java.lang.System|] @type direct;
+    #L00000c. [|v1|]:= s0 @type (|java.lang.Object|);
+    #L00001a. if [|v1|] == null then goto L00002a;
+    #L00003a. s0:= [|v0|].<|java.io.File.path|>;
+    #L00003b. call s1:= {|java.lang.SecurityManager.checkRead(Ljava.lang.String;)V|}([|v1|],s0) @signature "java.lang.SecurityManager.checkRead(Ljava/lang/String;)V" @classDescriptor [|java.lang.SecurityManager|] @type virtual;
+    #L00002a. <@Frame (@New, 2, `[(|java.lang.Object|), (|java.lang.Object|)], 0, `[:top, :top])>
+    #L00002b. call s0:= {|java.io.File.isInvalid()Z|}([|v0|]) @signature "java.io.File.isInvalid()Z" @classDescriptor [|java.io.File|] @type virtual;
+    #L00002c. if s0 == 0 then goto L00004a;
+    #L00005a. return 0;
+    #L00004a. <@Frame (@New, 2, `[(|java.lang.Object|), (|java.lang.Object|)], 0, `[:top, :top])>
+    #L00004b. s0:= +|java.io.File.fs|+;
+    #L00004c. call s1:= {|java.io.FileSystem.getLastModifiedTime(Ljava.io.File;)J|}(s0,[|v0|]) @signature "java.io.FileSystem.getLastModifiedTime(Ljava/io/File;)J" @classDescriptor [|java.io.FileSystem|] @type virtual;
+    #L00004d. return s1;
+  }
+  procedure (|long|) {|java.io.File.length()J|} ((|java.io.File|) [|v0|]) 
+    @MaxLocals 2
+    @MaxStack 2
+    @Owner (|java.io.File|)
+    @Access (PUBLIC)
+    @Signature "java.io.File.length()J" 
+  {
+    local temp;
+    s0;
+    s1;
+    [|v1|];
+
+
+    #L00000a. <@Frame (@New, 1, `[(|java.lang.Object|), :top], 0, `[:top, :top])>
+    #L00000b. call s0:= {|java.lang.System.getSecurityManager()Ljava.lang.SecurityManager;|}() @signature "java.lang.System.getSecurityManager()Ljava/lang/SecurityManager;" @classDescriptor [|java.lang.System|] @type direct;
+    #L00000c. [|v1|]:= s0 @type (|java.lang.Object|);
+    #L00001a. if [|v1|] == null then goto L00002a;
+    #L00003a. s0:= [|v0|].<|java.io.File.path|>;
+    #L00003b. call s1:= {|java.lang.SecurityManager.checkRead(Ljava.lang.String;)V|}([|v1|],s0) @signature "java.lang.SecurityManager.checkRead(Ljava/lang/String;)V" @classDescriptor [|java.lang.SecurityManager|] @type virtual;
+    #L00002a. <@Frame (@New, 2, `[(|java.lang.Object|), (|java.lang.Object|)], 0, `[:top, :top])>
+    #L00002b. call s0:= {|java.io.File.isInvalid()Z|}([|v0|]) @signature "java.io.File.isInvalid()Z" @classDescriptor [|java.io.File|] @type virtual;
+    #L00002c. if s0 == 0 then goto L00004a;
+    #L00005a. return 0;
+    #L00004a. <@Frame (@New, 2, `[(|java.lang.Object|), (|java.lang.Object|)], 0, `[:top, :top])>
+    #L00004b. s0:= +|java.io.File.fs|+;
+    #L00004c. call s1:= {|java.io.FileSystem.getLength(Ljava.io.File;)J|}(s0,[|v0|]) @signature "java.io.FileSystem.getLength(Ljava/io/File;)J" @classDescriptor [|java.io.FileSystem|] @type virtual;
+    #L00004d. return s1;
+  }
+  procedure (|boolean|) {|java.io.File.createNewFile()Z|} ((|java.io.File|) [|v0|]) 
+    @Throws [|java.io.IOException|]
+    @MaxLocals 2
+    @MaxStack 3
+    @Owner (|java.io.File|)
+    @Access (PUBLIC)
+    @Signature "java.io.File.createNewFile()Z" 
+  {
+    local temp;
+    s0;
+    s1;
+    s2;
+    [|v1|];
+
+
+    #L00000a. <@Frame (@New, 1, `[(|java.lang.Object|), :top], 0, `[:top, :top, :top])>
+    #L00000b. call s0:= {|java.lang.System.getSecurityManager()Ljava.lang.SecurityManager;|}() @signature "java.lang.System.getSecurityManager()Ljava/lang/SecurityManager;" @classDescriptor [|java.lang.System|] @type direct;
+    #L00000c. [|v1|]:= s0 @type (|java.lang.Object|);
+    #L00001a. if [|v1|] == null then goto L00002a;
+    #L00001b. s0:= [|v0|].<|java.io.File.path|>;
+    #L00001c. call s1:= {|java.lang.SecurityManager.checkWrite(Ljava.lang.String;)V|}([|v1|],s0) @signature "java.lang.SecurityManager.checkWrite(Ljava/lang/String;)V" @classDescriptor [|java.lang.SecurityManager|] @type virtual;
+    #L00002a. <@Frame (@New, 2, `[(|java.lang.Object|), (|java.lang.Object|)], 0, `[:top, :top, :top])>
+    #L00002b. call s0:= {|java.io.File.isInvalid()Z|}([|v0|]) @signature "java.io.File.isInvalid()Z" @classDescriptor [|java.io.File|] @type virtual;
+    #L00002c. if s0 == 0 then goto L00003a;
+    #L00004a. s0:= new (|java.io.IOException|);
+    #L00004b. call s1:= {|java.io.IOException.<init>(Ljava.lang.String;)V|}(s0,"Invalid file path") @signature "java.io.IOException.<init>(Ljava/lang/String;)V" @classDescriptor [|java.io.IOException|] @type special;
+    #L00004c. throw s0;
+    #L00003a. <@Frame (@New, 2, `[(|java.lang.Object|), (|java.lang.Object|)], 0, `[:top, :top, :top])>
+    #L00003b. s0:= +|java.io.File.fs|+;
+    #L00003c. s1:= [|v0|].<|java.io.File.path|>;
+    #L00003d. call s2:= {|java.io.FileSystem.createFileExclusively(Ljava.lang.String;)Z|}(s0,s1) @signature "java.io.FileSystem.createFileExclusively(Ljava/lang/String;)Z" @classDescriptor [|java.io.FileSystem|] @type virtual;
+    #L00003e. return s2;
+  }
+  procedure (|boolean|) {|java.io.File.delete()Z|} ((|java.io.File|) [|v0|]) 
+    @MaxLocals 2
+    @MaxStack 2
+    @Owner (|java.io.File|)
+    @Access (PUBLIC)
+    @Signature "java.io.File.delete()Z" 
+  {
+    local temp;
+    s0;
+    s1;
+    [|v1|];
+
+
+    #L00000a. <@Frame (@New, 1, `[(|java.lang.Object|), :top], 0, `[:top, :top])>
+    #L00000b. call s0:= {|java.lang.System.getSecurityManager()Ljava.lang.SecurityManager;|}() @signature "java.lang.System.getSecurityManager()Ljava/lang/SecurityManager;" @classDescriptor [|java.lang.System|] @type direct;
+    #L00000c. [|v1|]:= s0 @type (|java.lang.Object|);
+    #L00001a. if [|v1|] == null then goto L00002a;
+    #L00003a. s0:= [|v0|].<|java.io.File.path|>;
+    #L00003b. call s1:= {|java.lang.SecurityManager.checkDelete(Ljava.lang.String;)V|}([|v1|],s0) @signature "java.lang.SecurityManager.checkDelete(Ljava/lang/String;)V" @classDescriptor [|java.lang.SecurityManager|] @type virtual;
+    #L00002a. <@Frame (@New, 2, `[(|java.lang.Object|), (|java.lang.Object|)], 0, `[:top, :top])>
+    #L00002b. call s0:= {|java.io.File.isInvalid()Z|}([|v0|]) @signature "java.io.File.isInvalid()Z" @classDescriptor [|java.io.File|] @type virtual;
+    #L00002c. if s0 == 0 then goto L00004a;
+    #L00005a. return 0;
+    #L00004a. <@Frame (@New, 2, `[(|java.lang.Object|), (|java.lang.Object|)], 0, `[:top, :top])>
+    #L00004b. s0:= +|java.io.File.fs|+;
+    #L00004c. call s1:= {|java.io.FileSystem.delete(Ljava.io.File;)Z|}(s0,[|v0|]) @signature "java.io.FileSystem.delete(Ljava/io/File;)Z" @classDescriptor [|java.io.FileSystem|] @type virtual;
+    #L00004d. return s1;
+  }
+  procedure (|void|) {|java.io.File.deleteOnExit()V|} ((|java.io.File|) [|v0|]) 
+    @MaxLocals 2
+    @MaxStack 2
+    @Owner (|java.io.File|)
+    @Access (PUBLIC)
+    @Signature "java.io.File.deleteOnExit()V" 
+  {
+    local temp;
+    s0;
+    s1;
+    [|v1|];
+
+
+    #L00000a. <@Frame (@New, 1, `[(|java.lang.Object|), :top], 0, `[:top, :top])>
+    #L00000b. call s0:= {|java.lang.System.getSecurityManager()Ljava.lang.SecurityManager;|}() @signature "java.lang.System.getSecurityManager()Ljava/lang/SecurityManager;" @classDescriptor [|java.lang.System|] @type direct;
+    #L00000c. [|v1|]:= s0 @type (|java.lang.Object|);
+    #L00001a. if [|v1|] == null then goto L00002a;
+    #L00003a. s0:= [|v0|].<|java.io.File.path|>;
+    #L00003b. call s1:= {|java.lang.SecurityManager.checkDelete(Ljava.lang.String;)V|}([|v1|],s0) @signature "java.lang.SecurityManager.checkDelete(Ljava/lang/String;)V" @classDescriptor [|java.lang.SecurityManager|] @type virtual;
+    #L00002a. <@Frame (@New, 2, `[(|java.lang.Object|), (|java.lang.Object|)], 0, `[:top, :top])>
+    #L00002b. call s0:= {|java.io.File.isInvalid()Z|}([|v0|]) @signature "java.io.File.isInvalid()Z" @classDescriptor [|java.io.File|] @type virtual;
+    #L00002c. if s0 == 0 then goto L00004a;
+    #L00005a. return @void;
+    #L00004a. <@Frame (@New, 2, `[(|java.lang.Object|), (|java.lang.Object|)], 0, `[:top, :top])>
+    #L00004b. s0:= [|v0|].<|java.io.File.path|>;
+    #L00004c. call s1:= {|java.io.DeleteOnExitHook.add(Ljava.lang.String;)V|}(s0) @signature "java.io.DeleteOnExitHook.add(Ljava/lang/String;)V" @classDescriptor [|java.io.DeleteOnExitHook|] @type direct;
+    #L00006a. return @void;
+  }
+  procedure (|java.lang.String|) {|java.io.File.list()[Ljava.lang.String;|} ((|java.io.File|) [|v0|]) 
+    @MaxLocals 2
+    @MaxStack 2
+    @Owner (|java.io.File|)
+    @Access (PUBLIC)
+    @Signature "java.io.File.list()[Ljava/lang/String;" 
+  {
+    local temp;
+    s0;
+    s1;
+    [|v1|];
+
+
+    #L00000a. <@Frame (@New, 1, `[(|java.lang.Object|), :top], 0, `[:top, :top])>
+    #L00000b. call s0:= {|java.lang.System.getSecurityManager()Ljava.lang.SecurityManager;|}() @signature "java.lang.System.getSecurityManager()Ljava/lang/SecurityManager;" @classDescriptor [|java.lang.System|] @type direct;
+    #L00000c. [|v1|]:= s0 @type (|java.lang.Object|);
+    #L00001a. if [|v1|] == null then goto L00002a;
+    #L00003a. s0:= [|v0|].<|java.io.File.path|>;
+    #L00003b. call s1:= {|java.lang.SecurityManager.checkRead(Ljava.lang.String;)V|}([|v1|],s0) @signature "java.lang.SecurityManager.checkRead(Ljava/lang/String;)V" @classDescriptor [|java.lang.SecurityManager|] @type virtual;
+    #L00002a. <@Frame (@New, 2, `[(|java.lang.Object|), (|java.lang.Object|)], 0, `[:top, :top])>
+    #L00002b. call s0:= {|java.io.File.isInvalid()Z|}([|v0|]) @signature "java.io.File.isInvalid()Z" @classDescriptor [|java.io.File|] @type virtual;
+    #L00002c. if s0 == 0 then goto L00004a;
+    #L00005a. return null;
+    #L00004a. <@Frame (@New, 2, `[(|java.lang.Object|), (|java.lang.Object|)], 0, `[:top, :top])>
+    #L00004b. s0:= +|java.io.File.fs|+;
+    #L00004c. call s1:= {|java.io.FileSystem.list(Ljava.io.File;)[Ljava.lang.String;|}(s0,[|v0|]) @signature "java.io.FileSystem.list(Ljava/io/File;)[Ljava/lang/String;" @classDescriptor [|java.io.FileSystem|] @type virtual;
+    #L00004d. return s1;
+  }
+  procedure (|java.lang.String|) {|java.io.File.list(Ljava.io.FilenameFilter;)[Ljava.lang.String;|} ((|java.io.File|) [|v0|], (|java.io.FilenameFilter|) [|v1|]) 
+    @MaxLocals 5
+    @MaxStack 4
+    @Owner (|java.io.File|)
+    @Access (PUBLIC)
+    @Signature "java.io.File.list(Ljava/io/FilenameFilter;)[Ljava/lang/String;" 
+  {
+    local temp;
+    s0;
+    s1;
+    s2;
+    [|v2|];
+    [|v3|];
+    [|v4|];
+
+
+    #L00000a. <@Frame (@New, 2, `[(|java.lang.Object|), (|java.lang.Object|), :top, :top, :top], 0, `[:top, :top, :top, :top])>
+    #L00000b. call s0:= {|java.io.File.list()[Ljava.lang.String;|}([|v0|]) @signature "java.io.File.list()[Ljava/lang/String;" @classDescriptor [|java.io.File|] @type virtual;
+    #L00000c. [|v2|]:= s0 @type (|java.lang.Object|);
+    #L00001a. if [|v2|] == null then goto L00002a;
+    #L00001b. if [|v1|] != null then goto L00003a;
+    #L00002a. <@Frame (@New, 3, `[(|java.lang.Object|), (|java.lang.Object|), (|java.lang.String|), :top, :top], 0, `[:top, :top, :top, :top])>
+    #L00002b. return [|v2|];
+    #L00003a. <@Frame (@New, 3, `[(|java.lang.Object|), (|java.lang.Object|), (|java.lang.String|), :top, :top], 0, `[:top, :top, :top, :top])>
+    #L00003b. s0:= new (|java.util.ArrayList|);
+    #L00003c. call s1:= {|java.util.ArrayList.<init>()V|}(s0) @signature "java.util.ArrayList.<init>()V" @classDescriptor [|java.util.ArrayList|] @type special;
+    #L00003d. [|v3|]:= s0 @type (|java.lang.Object|);
+    #L00004a. [|v4|]:= 0 @type int;
+    #L00005a. <@Frame (@New, 5, `[(|java.lang.Object|), (|java.lang.Object|), (|java.lang.String|), (|java.lang.Object|), int], 0, `[:top, :top, :top, :top])>
+    #L00005b. if [|v4|] <= [|v2|].length then goto L00006a;
+    #L00007a. s0:= [|v2|][[|v4|]];
+    #L00007b. call s1:= {|java.io.FilenameFilter.accept(Ljava.io.File;Ljava.lang.String;)Z|}([|v1|],[|v0|],s0) @signature "java.io.FilenameFilter.accept(Ljava/io/File;Ljava/lang/String;)Z" @classDescriptor [|java.io.FilenameFilter|] @type interface;
+    #L00007c. if s1 == 0 then goto L00008a;
+    #L00009a. s0:= [|v2|][[|v4|]];
+    #L00009b. call s1:= {|java.util.List.add(Ljava.lang.Object;)Z|}([|v3|],s0) @signature "java.util.List.add(Ljava/lang/Object;)Z" @classDescriptor [|java.util.List|] @type interface;
+    #L00008a. <@Frame (@New, 5, `[(|java.lang.Object|), (|java.lang.Object|), (|java.lang.String|), (|java.lang.Object|), int], 0, `[:top, :top, :top, :top])>
+    #L00008b. [|v4|]:= [|v4|] + 1 @type int;
+    #L00008c. goto L00005a;
+    #L00006a. <@Frame (@New, 4, `[(|java.lang.Object|), (|java.lang.Object|), (|java.lang.String|), (|java.lang.Object|), int], 0, `[:top, :top, :top, :top])>
+    #L00006b. call s0:= {|java.util.List.size()I|}([|v3|]) @signature "java.util.List.size()I" @classDescriptor [|java.util.List|] @type interface;
+    #L00006c. s1:= new (|java.lang.String|)[s0];
+    #L00006d. call s2:= {|java.util.List.toArray([Ljava.lang.Object;)[Ljava.lang.Object;|}([|v3|],s1) @signature "java.util.List.toArray([Ljava/lang/Object;)[Ljava/lang/Object;" @classDescriptor [|java.util.List|] @type interface;
+    #L00006e. checkcast s2 @type (|[Ljava.lang.String;|);
+    #L00006f. return s2;
+  }
+  procedure (|java.io.File|) {|java.io.File.listFiles()[Ljava.io.File;|} ((|java.io.File|) [|v0|]) 
+    @MaxLocals 5
+    @MaxStack 6
+    @Owner (|java.io.File|)
+    @Access (PUBLIC)
+    @Signature "java.io.File.listFiles()[Ljava/io/File;" 
+  {
+    local temp;
+    s0;
+    s1;
+    s2;
+    [|v1|];
+    [|v2|];
+    [|v3|];
+    [|v4|];
+
+
+    #L00000a. <@Frame (@New, 1, `[(|java.lang.Object|), :top, :top, :top, :top], 0, `[:top, :top, :top, :top, :top, :top])>
+    #L00000b. call s0:= {|java.io.File.list()[Ljava.lang.String;|}([|v0|]) @signature "java.io.File.list()[Ljava/lang/String;" @classDescriptor [|java.io.File|] @type virtual;
+    #L00000c. [|v1|]:= s0 @type (|java.lang.Object|);
+    #L00001a. if [|v1|] != null then goto L00002a;
+    #L00001b. return null;
+    #L00002a. <@Frame (@New, 2, `[(|java.lang.Object|), (|java.lang.String|), :top, :top, :top], 0, `[:top, :top, :top, :top, :top, :top])>
+    #L00002b. [|v2|]:= [|v1|].length @type int;
+    #L00003a. s0:= new (|java.io.File|)[[|v2|]];
+    #L00003b. [|v3|]:= s0 @type (|java.lang.Object|);
+    #L00004a. [|v4|]:= 0 @type int;
+    #L00005a. <@Frame (@New, 5, `[(|java.lang.Object|), (|java.lang.String|), int, (|java.io.File|), int], 0, `[:top, :top, :top, :top, :top, :top])>
+    #L00005b. if [|v4|] <= [|v2|] then goto L00006a;
+    #L00007a. s0:= new (|java.io.File|);
+    #L00007b. s1:= [|v1|][[|v4|]];
+    #L00007c. call s2:= {|java.io.File.<init>(Ljava.lang.String;Ljava.io.File;)V|}(s0,s1,[|v0|]) @signature "java.io.File.<init>(Ljava/lang/String;Ljava/io/File;)V" @classDescriptor [|java.io.File|] @type special;
+    #L00007d. [|v3|][[|v4|]]:= s0;
+    #L00008a. [|v4|]:= [|v4|] + 1 @type int;
+    #L00008b. goto L00005a;
+    #L00006a. <@Frame (@New, 4, `[(|java.lang.Object|), (|java.lang.String|), int, (|java.io.File|), int], 0, `[:top, :top, :top, :top, :top, :top])>
+    #L00006b. return [|v3|];
+  }
+  procedure (|java.io.File|) {|java.io.File.listFiles(Ljava.io.FilenameFilter;)[Ljava.io.File;|} ((|java.io.File|) [|v0|], (|java.io.FilenameFilter|) [|v1|]) 
+    @MaxLocals 8
+    @MaxStack 5
+    @Owner (|java.io.File|)
+    @Access (PUBLIC)
+    @Signature "java.io.File.listFiles(Ljava/io/FilenameFilter;)[Ljava/io/File;" 
+  {
+    local temp;
+    s0;
+    s1;
+    s2;
+    [|v2|];
+    [|v3|];
+    [|v4|];
+    [|v5|];
+    [|v6|];
+    [|v7|];
+
+
+    #L00000a. <@Frame (@New, 2, `[(|java.lang.Object|), (|java.lang.Object|), :top, :top, :top, :top, :top, :top], 0, `[:top, :top, :top, :top, :top])>
+    #L00000b. call s0:= {|java.io.File.list()[Ljava.lang.String;|}([|v0|]) @signature "java.io.File.list()[Ljava/lang/String;" @classDescriptor [|java.io.File|] @type virtual;
+    #L00000c. [|v2|]:= s0 @type (|java.lang.Object|);
+    #L00001a. if [|v2|] != null then goto L00002a;
+    #L00001b. return null;
+    #L00002a. <@Frame (@New, 3, `[(|java.lang.Object|), (|java.lang.Object|), (|java.lang.String|), :top, :top, :top, :top, :top], 0, `[:top, :top, :top, :top, :top])>
+    #L00002b. s0:= new (|java.util.ArrayList|);
+    #L00002c. call s1:= {|java.util.ArrayList.<init>()V|}(s0) @signature "java.util.ArrayList.<init>()V" @classDescriptor [|java.util.ArrayList|] @type special;
+    #L00002d. [|v3|]:= s0 @type (|java.lang.Object|);
+    #L00003a. [|v4|]:= [|v2|] @type object;
+    #L00003b. [|v5|]:= [|v4|].length @type int;
+    #L00003c. [|v6|]:= 0 @type int;
+    #L00004a. <@Frame (@New, 7, `[(|java.lang.Object|), (|java.lang.Object|), (|java.lang.String|), (|java.lang.Object|), (|java.lang.String|), int, int, :top], 0, `[:top, :top, :top, :top, :top])>
+    #L00004b. if [|v6|] <= [|v5|] then goto L00005a;
+    #L00004c. s0:= [|v4|][[|v6|]];
+    #L00004d. [|v7|]:= s0 @type object;
+    #L00006a. if [|v1|] == null then goto L00007a;
+    #L00006b. call s0:= {|java.io.FilenameFilter.accept(Ljava.io.File;Ljava.lang.String;)Z|}([|v1|],[|v0|],[|v7|]) @signature "java.io.FilenameFilter.accept(Ljava/io/File;Ljava/lang/String;)Z" @classDescriptor [|java.io.FilenameFilter|] @type interface;
+    #L00006c. if s0 == 0 then goto L00008a;
+    #L00007a. <@Frame (@New, 8, `[(|java.lang.Object|), (|java.lang.Object|), (|java.lang.String|), (|java.lang.Object|), (|java.lang.String|), int, int, (|java.lang.Object|)], 0, `[:top, :top, :top, :top, :top])>
+    #L00007b. s0:= new (|java.io.File|);
+    #L00007c. call s1:= {|java.io.File.<init>(Ljava.lang.String;Ljava.io.File;)V|}(s0,[|v7|],[|v0|]) @signature "java.io.File.<init>(Ljava/lang/String;Ljava/io/File;)V" @classDescriptor [|java.io.File|] @type special;
+    #L00007d. call s2:= {|java.util.ArrayList.add(Ljava.lang.Object;)Z|}([|v3|],s0) @signature "java.util.ArrayList.add(Ljava/lang/Object;)Z" @classDescriptor [|java.util.ArrayList|] @type virtual;
+    #L00008a. <@Frame (@New, 7, `[(|java.lang.Object|), (|java.lang.Object|), (|java.lang.String|), (|java.lang.Object|), (|java.lang.String|), int, int, (|java.lang.Object|)], 0, `[:top, :top, :top, :top, :top])>
+    #L00008b. [|v6|]:= [|v6|] + 1 @type int;
+    #L00008c. goto L00004a;
+    #L00005a. <@Frame (@New, 4, `[(|java.lang.Object|), (|java.lang.Object|), (|java.lang.String|), (|java.lang.Object|), (|java.lang.String|), int, int, (|java.lang.Object|)], 0, `[:top, :top, :top, :top, :top])>
+    #L00005b. call s0:= {|java.util.ArrayList.size()I|}([|v3|]) @signature "java.util.ArrayList.size()I" @classDescriptor [|java.util.ArrayList|] @type virtual;
+    #L00005c. s1:= new (|java.io.File|)[s0];
+    #L00005d. call s2:= {|java.util.ArrayList.toArray([Ljava.lang.Object;)[Ljava.lang.Object;|}([|v3|],s1) @signature "java.util.ArrayList.toArray([Ljava/lang/Object;)[Ljava/lang/Object;" @classDescriptor [|java.util.ArrayList|] @type virtual;
+    #L00005e. checkcast s2 @type (|[Ljava.io.File;|);
+    #L00005f. return s2;
+  }
+  procedure (|java.io.File|) {|java.io.File.listFiles(Ljava.io.FileFilter;)[Ljava.io.File;|} ((|java.io.File|) [|v0|], (|java.io.FileFilter|) [|v1|]) 
+    @MaxLocals 9
+    @MaxStack 4
+    @Owner (|java.io.File|)
+    @Access (PUBLIC)
+    @Signature "java.io.File.listFiles(Ljava/io/FileFilter;)[Ljava/io/File;" 
+  {
+    local temp;
+    s0;
+    s1;
+    s2;
+    [|v2|];
+    [|v3|];
+    [|v4|];
+    [|v5|];
+    [|v6|];
+    [|v7|];
+    [|v8|];
+
+
+    #L00000a. <@Frame (@New, 2, `[(|java.lang.Object|), (|java.lang.Object|), :top, :top, :top, :top, :top, :top, :top], 0, `[:top, :top, :top, :top])>
+    #L00000b. call s0:= {|java.io.File.list()[Ljava.lang.String;|}([|v0|]) @signature "java.io.File.list()[Ljava/lang/String;" @classDescriptor [|java.io.File|] @type virtual;
+    #L00000c. [|v2|]:= s0 @type (|java.lang.Object|);
+    #L00001a. if [|v2|] != null then goto L00002a;
+    #L00001b. return null;
+    #L00002a. <@Frame (@New, 3, `[(|java.lang.Object|), (|java.lang.Object|), (|java.lang.String|), :top, :top, :top, :top, :top, :top], 0, `[:top, :top, :top, :top])>
+    #L00002b. s0:= new (|java.util.ArrayList|);
+    #L00002c. call s1:= {|java.util.ArrayList.<init>()V|}(s0) @signature "java.util.ArrayList.<init>()V" @classDescriptor [|java.util.ArrayList|] @type special;
+    #L00002d. [|v3|]:= s0 @type (|java.lang.Object|);
+    #L00003a. [|v4|]:= [|v2|] @type object;
+    #L00003b. [|v5|]:= [|v4|].length @type int;
+    #L00003c. [|v6|]:= 0 @type int;
+    #L00004a. <@Frame (@New, 7, `[(|java.lang.Object|), (|java.lang.Object|), (|java.lang.String|), (|java.lang.Object|), (|java.lang.String|), int, int, :top, :top], 0, `[:top, :top, :top, :top])>
+    #L00004b. if [|v6|] <= [|v5|] then goto L00005a;
+    #L00004c. s0:= [|v4|][[|v6|]];
+    #L00004d. [|v7|]:= s0 @type object;
+    #L00006a. s0:= new (|java.io.File|);
+    #L00006b. call s1:= {|java.io.File.<init>(Ljava.lang.String;Ljava.io.File;)V|}(s0,[|v7|],[|v0|]) @signature "java.io.File.<init>(Ljava/lang/String;Ljava/io/File;)V" @classDescriptor [|java.io.File|] @type special;
+    #L00006c. [|v8|]:= s0 @type (|java.lang.Object|);
+    #L00007a. if [|v1|] == null then goto L00008a;
+    #L00007b. call s0:= {|java.io.FileFilter.accept(Ljava.io.File;)Z|}([|v1|],[|v8|]) @signature "java.io.FileFilter.accept(Ljava/io/File;)Z" @classDescriptor [|java.io.FileFilter|] @type interface;
+    #L00007c. if s0 == 0 then goto L00009a;
+    #L00008a. <@Frame (@New, 9, `[(|java.lang.Object|), (|java.lang.Object|), (|java.lang.String|), (|java.lang.Object|), (|java.lang.String|), int, int, (|java.lang.Object|), (|java.lang.Object|)], 0, `[:top, :top, :top, :top])>
+    #L00008b. call s0:= {|java.util.ArrayList.add(Ljava.lang.Object;)Z|}([|v3|],[|v8|]) @signature "java.util.ArrayList.add(Ljava/lang/Object;)Z" @classDescriptor [|java.util.ArrayList|] @type virtual;
+    #L00009a. <@Frame (@New, 7, `[(|java.lang.Object|), (|java.lang.Object|), (|java.lang.String|), (|java.lang.Object|), (|java.lang.String|), int, int, (|java.lang.Object|), (|java.lang.Object|)], 0, `[:top, :top, :top, :top])>
+    #L00009b. [|v6|]:= [|v6|] + 1 @type int;
+    #L00009c. goto L00004a;
+    #L00005a. <@Frame (@New, 4, `[(|java.lang.Object|), (|java.lang.Object|), (|java.lang.String|), (|java.lang.Object|), (|java.lang.String|), int, int, (|java.lang.Object|), (|java.lang.Object|)], 0, `[:top, :top, :top, :top])>
+    #L00005b. call s0:= {|java.util.ArrayList.size()I|}([|v3|]) @signature "java.util.ArrayList.size()I" @classDescriptor [|java.util.ArrayList|] @type virtual;
+    #L00005c. s1:= new (|java.io.File|)[s0];
+    #L00005d. call s2:= {|java.util.ArrayList.toArray([Ljava.lang.Object;)[Ljava.lang.Object;|}([|v3|],s1) @signature "java.util.ArrayList.toArray([Ljava/lang/Object;)[Ljava/lang/Object;" @classDescriptor [|java.util.ArrayList|] @type virtual;
+    #L00005e. checkcast s2 @type (|[Ljava.io.File;|);
+    #L00005f. return s2;
+  }
+  procedure (|boolean|) {|java.io.File.mkdir()Z|} ((|java.io.File|) [|v0|]) 
+    @MaxLocals 2
+    @MaxStack 2
+    @Owner (|java.io.File|)
+    @Access (PUBLIC)
+    @Signature "java.io.File.mkdir()Z" 
+  {
+    local temp;
+    s0;
+    s1;
+    [|v1|];
+
+
+    #L00000a. <@Frame (@New, 1, `[(|java.lang.Object|), :top], 0, `[:top, :top])>
+    #L00000b. call s0:= {|java.lang.System.getSecurityManager()Ljava.lang.SecurityManager;|}() @signature "java.lang.System.getSecurityManager()Ljava/lang/SecurityManager;" @classDescriptor [|java.lang.System|] @type direct;
+    #L00000c. [|v1|]:= s0 @type (|java.lang.Object|);
+    #L00001a. if [|v1|] == null then goto L00002a;
+    #L00003a. s0:= [|v0|].<|java.io.File.path|>;
+    #L00003b. call s1:= {|java.lang.SecurityManager.checkWrite(Ljava.lang.String;)V|}([|v1|],s0) @signature "java.lang.SecurityManager.checkWrite(Ljava/lang/String;)V" @classDescriptor [|java.lang.SecurityManager|] @type virtual;
+    #L00002a. <@Frame (@New, 2, `[(|java.lang.Object|), (|java.lang.Object|)], 0, `[:top, :top])>
+    #L00002b. call s0:= {|java.io.File.isInvalid()Z|}([|v0|]) @signature "java.io.File.isInvalid()Z" @classDescriptor [|java.io.File|] @type virtual;
+    #L00002c. if s0 == 0 then goto L00004a;
+    #L00005a. return 0;
+    #L00004a. <@Frame (@New, 2, `[(|java.lang.Object|), (|java.lang.Object|)], 0, `[:top, :top])>
+    #L00004b. s0:= +|java.io.File.fs|+;
+    #L00004c. call s1:= {|java.io.FileSystem.createDirectory(Ljava.io.File;)Z|}(s0,[|v0|]) @signature "java.io.FileSystem.createDirectory(Ljava/io/File;)Z" @classDescriptor [|java.io.FileSystem|] @type virtual;
+    #L00004d. return s1;
+  }
+  procedure (|boolean|) {|java.io.File.mkdirs()Z|} ((|java.io.File|) [|v0|]) 
+    @MaxLocals 3
+    @MaxStack 1
+    @Owner (|java.io.File|)
+    @Access (PUBLIC)
+    @Signature "java.io.File.mkdirs()Z" 
+  {
+    local temp;
+    s0;
+    s1;
+    [|v1|];
+    [|v2|];
+
+
+    #L00003a. <@Frame (@New, 1, `[(|java.lang.Object|), :top, :top], 0, `[:top])>
+    #L00003b. call s0:= {|java.io.File.exists()Z|}([|v0|]) @signature "java.io.File.exists()Z" @classDescriptor [|java.io.File|] @type virtual;
+    #L00003c. if s0 == 0 then goto L00004a;
+    #L00005a. return 0;
+    #L00004a. <@Frame (@New, 1, `[(|java.lang.Object|), :top, :top], 0, `[:top])>
+    #L00004b. call s0:= {|java.io.File.mkdir()Z|}([|v0|]) @signature "java.io.File.mkdir()Z" @classDescriptor [|java.io.File|] @type virtual;
+    #L00004c. if s0 == 0 then goto L00006a;
+    #L00007a. return 1;
+    #L00006a. <@Frame (@New, 1, `[(|java.lang.Object|), :top, :top], 0, `[:top])>
+    #L00006b. [|v1|]:= null @type object;
+    #L00000a. call s0:= {|java.io.File.getCanonicalFile()Ljava.io.File;|}([|v0|]) @signature "java.io.File.getCanonicalFile()Ljava/io/File;" @classDescriptor [|java.io.File|] @type virtual;
+    #L00000b. [|v1|]:= s0 @type (|java.lang.Object|);
+    #L00001a. goto L00008a;
+    #L00002a. <@Frame (@New, 2, `[(|java.lang.Object|), (|java.lang.Object|), :top], 1, `[(|java.lang.Object|)])>
+    #L00002b. [|v2|]:= "Exception" @type object;
+    #L00009a. return 0;
+    #L00008a. <@Frame (@New, 2, `[(|java.lang.Object|), (|java.lang.Object|), :top], 0, `[(|java.lang.Object|)])>
+    #L00008b. call s0:= {|java.io.File.getParentFile()Ljava.io.File;|}([|v1|]) @signature "java.io.File.getParentFile()Ljava/io/File;" @classDescriptor [|java.io.File|] @type virtual;
+    #L00008c. [|v2|]:= s0 @type (|java.lang.Object|);
+    #L00010a. if [|v2|] == null then goto L00011a;
+    #L00010b. call s0:= {|java.io.File.mkdirs()Z|}([|v2|]) @signature "java.io.File.mkdirs()Z" @classDescriptor [|java.io.File|] @type virtual;
+    #L00010c. if s0 != 0 then goto L00012a;
+    #L00010d. call s1:= {|java.io.File.exists()Z|}([|v2|]) @signature "java.io.File.exists()Z" @classDescriptor [|java.io.File|] @type virtual;
+    #L00010e. if s1 == 0 then goto L00011a;
+    #L00012a. <@Frame (@New, 3, `[(|java.lang.Object|), (|java.lang.Object|), (|java.lang.Object|)], 0, `[(|java.lang.Object|)])>
+    #L00012b. call s0:= {|java.io.File.mkdir()Z|}([|v1|]) @signature "java.io.File.mkdir()Z" @classDescriptor [|java.io.File|] @type virtual;
+    #L00012c. if s0 == 0 then goto L00011a;
+    #L00012d. goto L00013a;
+    #L00011a. <@Frame (@New, 3, `[(|java.lang.Object|), (|java.lang.Object|), (|java.lang.Object|)], 0, `[(|java.lang.Object|)])>
+    #L00013a. <@Frame (@New, 3, `[(|java.lang.Object|), (|java.lang.Object|), (|java.lang.Object|)], 1, `[int])>
+    #L00013b. return 0;
+      catch (|java.io.IOException|) @[L00000a..L00001a] goto L00002a;
+  }
+  procedure (|boolean|) {|java.io.File.renameTo(Ljava.io.File;)Z|} ((|java.io.File|) [|v0|], (|java.io.File|) [|v1|]) 
+    @MaxLocals 3
+    @MaxStack 3
+    @Owner (|java.io.File|)
+    @Access (PUBLIC)
+    @Signature "java.io.File.renameTo(Ljava/io/File;)Z" 
+  {
+    local temp;
+    s0;
+    s1;
+    [|v2|];
+
+
+    #L00000a. <@Frame (@New, 2, `[(|java.lang.Object|), (|java.lang.Object|), :top], 0, `[:top, :top, :top])>
+    #L00000b. call s0:= {|java.lang.System.getSecurityManager()Ljava.lang.SecurityManager;|}() @signature "java.lang.System.getSecurityManager()Ljava/lang/SecurityManager;" @classDescriptor [|java.lang.System|] @type direct;
+    #L00000c. [|v2|]:= s0 @type (|java.lang.Object|);
+    #L00001a. if [|v2|] == null then goto L00002a;
+    #L00003a. s0:= [|v0|].<|java.io.File.path|>;
+    #L00003b. call s1:= {|java.lang.SecurityManager.checkWrite(Ljava.lang.String;)V|}([|v2|],s0) @signature "java.lang.SecurityManager.checkWrite(Ljava/lang/String;)V" @classDescriptor [|java.lang.SecurityManager|] @type virtual;
+    #L00004a. s0:= [|v1|].<|java.io.File.path|>;
+    #L00004b. call s1:= {|java.lang.SecurityManager.checkWrite(Ljava.lang.String;)V|}([|v2|],s0) @signature "java.lang.SecurityManager.checkWrite(Ljava/lang/String;)V" @classDescriptor [|java.lang.SecurityManager|] @type virtual;
+    #L00002a. <@Frame (@New, 3, `[(|java.lang.Object|), (|java.lang.Object|), (|java.lang.Object|)], 0, `[:top, :top, :top])>
+    #L00002b. if [|v1|] != null then goto L00005a;
+    #L00006a. s0:= new (|java.lang.NullPointerException|);
+    #L00006b. call s1:= {|java.lang.NullPointerException.<init>()V|}(s0) @signature "java.lang.NullPointerException.<init>()V" @classDescriptor [|java.lang.NullPointerException|] @type special;
+    #L00006c. throw s0;
+    #L00005a. <@Frame (@New, 3, `[(|java.lang.Object|), (|java.lang.Object|), (|java.lang.Object|)], 0, `[:top, :top, :top])>
+    #L00005b. call s0:= {|java.io.File.isInvalid()Z|}([|v0|]) @signature "java.io.File.isInvalid()Z" @classDescriptor [|java.io.File|] @type virtual;
+    #L00005c. if s0 != 0 then goto L00007a;
+    #L00005d. call s1:= {|java.io.File.isInvalid()Z|}([|v1|]) @signature "java.io.File.isInvalid()Z" @classDescriptor [|java.io.File|] @type virtual;
+    #L00005e. if s1 == 0 then goto L00008a;
+    #L00007a. <@Frame (@New, 3, `[(|java.lang.Object|), (|java.lang.Object|), (|java.lang.Object|)], 0, `[:top, :top, :top])>
+    #L00007b. return 0;
+    #L00008a. <@Frame (@New, 3, `[(|java.lang.Object|), (|java.lang.Object|), (|java.lang.Object|)], 0, `[:top, :top, :top])>
+    #L00008b. s0:= +|java.io.File.fs|+;
+    #L00008c. call s1:= {|java.io.FileSystem.rename(Ljava.io.File;Ljava.io.File;)Z|}(s0,[|v0|],[|v1|]) @signature "java.io.FileSystem.rename(Ljava/io/File;Ljava/io/File;)Z" @classDescriptor [|java.io.FileSystem|] @type virtual;
+    #L00008d. return s1;
+  }
+  procedure (|boolean|) {|java.io.File.setLastModified(J)Z|} ((|java.io.File|) [|v0|], (|long|) [|v1|]) 
+    @MaxLocals 4
+    @MaxStack 4
+    @Owner (|java.io.File|)
+    @Access (PUBLIC)
+    @Signature "java.io.File.setLastModified(J)Z" 
+  {
+    local temp;
+    s0;
+    s1;
+    s2;
+    [|v2|];
+    [|v3|];
+
+
+    #L00000a. <@Frame (@New, 2, `[(|java.lang.Object|), long, :top, :top], 0, `[:top, :top, :top, :top])>
+    #L00000b. s0:= lcmp(0,[|v1|]);
+    #L00000c. if s0 <= 0 then goto L00001a;
+    #L00000d. s1:= new (|java.lang.IllegalArgumentException|);
+    #L00000e. call s2:= {|java.lang.IllegalArgumentException.<init>(Ljava.lang.String;)V|}(s1,"Negative time") @signature "java.lang.IllegalArgumentException.<init>(Ljava/lang/String;)V" @classDescriptor [|java.lang.IllegalArgumentException|] @type special;
+    #L00000f. throw s1;
+    #L00001a. <@Frame (@New, 2, `[(|java.lang.Object|), long, :top, :top], 0, `[:top, :top, :top, :top])>
+    #L00001b. call s0:= {|java.lang.System.getSecurityManager()Ljava.lang.SecurityManager;|}() @signature "java.lang.System.getSecurityManager()Ljava/lang/SecurityManager;" @classDescriptor [|java.lang.System|] @type direct;
+    #L00001c. [|v3|]:= s0 @type (|java.lang.Object|);
+    #L00002a. if [|v3|] == null then goto L00003a;
+    #L00004a. s0:= [|v0|].<|java.io.File.path|>;
+    #L00004b. call s1:= {|java.lang.SecurityManager.checkWrite(Ljava.lang.String;)V|}([|v3|],s0) @signature "java.lang.SecurityManager.checkWrite(Ljava/lang/String;)V" @classDescriptor [|java.lang.SecurityManager|] @type virtual;
+    #L00003a. <@Frame (@New, 3, `[(|java.lang.Object|), long, (|java.lang.Object|), :top], 0, `[:top, :top, :top, :top])>
+    #L00003b. call s0:= {|java.io.File.isInvalid()Z|}([|v0|]) @signature "java.io.File.isInvalid()Z" @classDescriptor [|java.io.File|] @type virtual;
+    #L00003c. if s0 == 0 then goto L00005a;
+    #L00006a. return 0;
+    #L00005a. <@Frame (@New, 3, `[(|java.lang.Object|), long, (|java.lang.Object|), :top], 0, `[:top, :top, :top, :top])>
+    #L00005b. s0:= +|java.io.File.fs|+;
+    #L00005c. call s1:= {|java.io.FileSystem.setLastModifiedTime(Ljava.io.File;J)Z|}(s0,[|v0|],[|v1|]) @signature "java.io.FileSystem.setLastModifiedTime(Ljava/io/File;J)Z" @classDescriptor [|java.io.FileSystem|] @type virtual;
+    #L00005d. return s1;
+  }
+  procedure (|boolean|) {|java.io.File.setReadOnly()Z|} ((|java.io.File|) [|v0|]) 
+    @MaxLocals 2
+    @MaxStack 2
+    @Owner (|java.io.File|)
+    @Access (PUBLIC)
+    @Signature "java.io.File.setReadOnly()Z" 
+  {
+    local temp;
+    s0;
+    s1;
+    [|v1|];
+
+
+    #L00000a. <@Frame (@New, 1, `[(|java.lang.Object|), :top], 0, `[:top, :top])>
+    #L00000b. call s0:= {|java.lang.System.getSecurityManager()Ljava.lang.SecurityManager;|}() @signature "java.lang.System.getSecurityManager()Ljava/lang/SecurityManager;" @classDescriptor [|java.lang.System|] @type direct;
+    #L00000c. [|v1|]:= s0 @type (|java.lang.Object|);
+    #L00001a. if [|v1|] == null then goto L00002a;
+    #L00003a. s0:= [|v0|].<|java.io.File.path|>;
+    #L00003b. call s1:= {|java.lang.SecurityManager.checkWrite(Ljava.lang.String;)V|}([|v1|],s0) @signature "java.lang.SecurityManager.checkWrite(Ljava/lang/String;)V" @classDescriptor [|java.lang.SecurityManager|] @type virtual;
+    #L00002a. <@Frame (@New, 2, `[(|java.lang.Object|), (|java.lang.Object|)], 0, `[:top, :top])>
+    #L00002b. call s0:= {|java.io.File.isInvalid()Z|}([|v0|]) @signature "java.io.File.isInvalid()Z" @classDescriptor [|java.io.File|] @type virtual;
+    #L00002c. if s0 == 0 then goto L00004a;
+    #L00005a. return 0;
+    #L00004a. <@Frame (@New, 2, `[(|java.lang.Object|), (|java.lang.Object|)], 0, `[:top, :top])>
+    #L00004b. s0:= +|java.io.File.fs|+;
+    #L00004c. call s1:= {|java.io.FileSystem.setReadOnly(Ljava.io.File;)Z|}(s0,[|v0|]) @signature "java.io.FileSystem.setReadOnly(Ljava/io/File;)Z" @classDescriptor [|java.io.FileSystem|] @type virtual;
+    #L00004d. return s1;
+  }
+  procedure (|boolean|) {|java.io.File.setWritable(ZZ)Z|} ((|java.io.File|) [|v0|], (|boolean|) [|v1|], (|boolean|) [|v2|]) 
+    @MaxLocals 4
+    @MaxStack 5
+    @Owner (|java.io.File|)
+    @Access (PUBLIC)
+    @Signature "java.io.File.setWritable(ZZ)Z" 
+  {
+    local temp;
+    s0;
+    s1;
+    [|v3|];
+
+
+    #L00000a. <@Frame (@New, 3, `[(|java.lang.Object|), int, int, :top], 0, `[:top, :top, :top, :top, :top])>
+    #L00000b. call s0:= {|java.lang.System.getSecurityManager()Ljava.lang.SecurityManager;|}() @signature "java.lang.System.getSecurityManager()Ljava/lang/SecurityManager;" @classDescriptor [|java.lang.System|] @type direct;
+    #L00000c. [|v3|]:= s0 @type (|java.lang.Object|);
+    #L00001a. if [|v3|] == null then goto L00002a;
+    #L00003a. s0:= [|v0|].<|java.io.File.path|>;
+    #L00003b. call s1:= {|java.lang.SecurityManager.checkWrite(Ljava.lang.String;)V|}([|v3|],s0) @signature "java.lang.SecurityManager.checkWrite(Ljava/lang/String;)V" @classDescriptor [|java.lang.SecurityManager|] @type virtual;
+    #L00002a. <@Frame (@New, 4, `[(|java.lang.Object|), int, int, (|java.lang.Object|)], 0, `[:top, :top, :top, :top, :top])>
+    #L00002b. call s0:= {|java.io.File.isInvalid()Z|}([|v0|]) @signature "java.io.File.isInvalid()Z" @classDescriptor [|java.io.File|] @type virtual;
+    #L00002c. if s0 == 0 then goto L00004a;
+    #L00005a. return 0;
+    #L00004a. <@Frame (@New, 4, `[(|java.lang.Object|), int, int, (|java.lang.Object|)], 0, `[:top, :top, :top, :top, :top])>
+    #L00004b. s0:= +|java.io.File.fs|+;
+    #L00004c. call s1:= {|java.io.FileSystem.setPermission(Ljava.io.File;IZZ)Z|}(s0,[|v0|],2,[|v1|],[|v2|]) @signature "java.io.FileSystem.setPermission(Ljava/io/File;IZZ)Z" @classDescriptor [|java.io.FileSystem|] @type virtual;
+    #L00004d. return s1;
+  }
+  procedure (|boolean|) {|java.io.File.setWritable(Z)Z|} ((|java.io.File|) [|v0|], (|boolean|) [|v1|]) 
+    @MaxLocals 2
+    @MaxStack 3
+    @Owner (|java.io.File|)
+    @Access (PUBLIC)
+    @Signature "java.io.File.setWritable(Z)Z" 
+  {
+    local temp;
+    s0;
+
+
+    #L00000a. call s0:= {|java.io.File.setWritable(ZZ)Z|}([|v0|],[|v1|],1) @signature "java.io.File.setWritable(ZZ)Z" @classDescriptor [|java.io.File|] @type virtual;
+    #L00000b. return s0;
+  }
+  procedure (|boolean|) {|java.io.File.setReadable(ZZ)Z|} ((|java.io.File|) [|v0|], (|boolean|) [|v1|], (|boolean|) [|v2|]) 
+    @MaxLocals 4
+    @MaxStack 5
+    @Owner (|java.io.File|)
+    @Access (PUBLIC)
+    @Signature "java.io.File.setReadable(ZZ)Z" 
+  {
+    local temp;
+    s0;
+    s1;
+    [|v3|];
+
+
+    #L00000a. <@Frame (@New, 3, `[(|java.lang.Object|), int, int, :top], 0, `[:top, :top, :top, :top, :top])>
+    #L00000b. call s0:= {|java.lang.System.getSecurityManager()Ljava.lang.SecurityManager;|}() @signature "java.lang.System.getSecurityManager()Ljava/lang/SecurityManager;" @classDescriptor [|java.lang.System|] @type direct;
+    #L00000c. [|v3|]:= s0 @type (|java.lang.Object|);
+    #L00001a. if [|v3|] == null then goto L00002a;
+    #L00003a. s0:= [|v0|].<|java.io.File.path|>;
+    #L00003b. call s1:= {|java.lang.SecurityManager.checkWrite(Ljava.lang.String;)V|}([|v3|],s0) @signature "java.lang.SecurityManager.checkWrite(Ljava/lang/String;)V" @classDescriptor [|java.lang.SecurityManager|] @type virtual;
+    #L00002a. <@Frame (@New, 4, `[(|java.lang.Object|), int, int, (|java.lang.Object|)], 0, `[:top, :top, :top, :top, :top])>
+    #L00002b. call s0:= {|java.io.File.isInvalid()Z|}([|v0|]) @signature "java.io.File.isInvalid()Z" @classDescriptor [|java.io.File|] @type virtual;
+    #L00002c. if s0 == 0 then goto L00004a;
+    #L00005a. return 0;
+    #L00004a. <@Frame (@New, 4, `[(|java.lang.Object|), int, int, (|java.lang.Object|)], 0, `[:top, :top, :top, :top, :top])>
+    #L00004b. s0:= +|java.io.File.fs|+;
+    #L00004c. call s1:= {|java.io.FileSystem.setPermission(Ljava.io.File;IZZ)Z|}(s0,[|v0|],4,[|v1|],[|v2|]) @signature "java.io.FileSystem.setPermission(Ljava/io/File;IZZ)Z" @classDescriptor [|java.io.FileSystem|] @type virtual;
+    #L00004d. return s1;
+  }
+  procedure (|boolean|) {|java.io.File.setReadable(Z)Z|} ((|java.io.File|) [|v0|], (|boolean|) [|v1|]) 
+    @MaxLocals 2
+    @MaxStack 3
+    @Owner (|java.io.File|)
+    @Access (PUBLIC)
+    @Signature "java.io.File.setReadable(Z)Z" 
+  {
+    local temp;
+    s0;
+
+
+    #L00000a. call s0:= {|java.io.File.setReadable(ZZ)Z|}([|v0|],[|v1|],1) @signature "java.io.File.setReadable(ZZ)Z" @classDescriptor [|java.io.File|] @type virtual;
+    #L00000b. return s0;
+  }
+  procedure (|boolean|) {|java.io.File.setExecutable(ZZ)Z|} ((|java.io.File|) [|v0|], (|boolean|) [|v1|], (|boolean|) [|v2|]) 
+    @MaxLocals 4
+    @MaxStack 5
+    @Owner (|java.io.File|)
+    @Access (PUBLIC)
+    @Signature "java.io.File.setExecutable(ZZ)Z" 
+  {
+    local temp;
+    s0;
+    s1;
+    [|v3|];
+
+
+    #L00000a. <@Frame (@New, 3, `[(|java.lang.Object|), int, int, :top], 0, `[:top, :top, :top, :top, :top])>
+    #L00000b. call s0:= {|java.lang.System.getSecurityManager()Ljava.lang.SecurityManager;|}() @signature "java.lang.System.getSecurityManager()Ljava/lang/SecurityManager;" @classDescriptor [|java.lang.System|] @type direct;
+    #L00000c. [|v3|]:= s0 @type (|java.lang.Object|);
+    #L00001a. if [|v3|] == null then goto L00002a;
+    #L00003a. s0:= [|v0|].<|java.io.File.path|>;
+    #L00003b. call s1:= {|java.lang.SecurityManager.checkWrite(Ljava.lang.String;)V|}([|v3|],s0) @signature "java.lang.SecurityManager.checkWrite(Ljava/lang/String;)V" @classDescriptor [|java.lang.SecurityManager|] @type virtual;
+    #L00002a. <@Frame (@New, 4, `[(|java.lang.Object|), int, int, (|java.lang.Object|)], 0, `[:top, :top, :top, :top, :top])>
+    #L00002b. call s0:= {|java.io.File.isInvalid()Z|}([|v0|]) @signature "java.io.File.isInvalid()Z" @classDescriptor [|java.io.File|] @type virtual;
+    #L00002c. if s0 == 0 then goto L00004a;
+    #L00005a. return 0;
+    #L00004a. <@Frame (@New, 4, `[(|java.lang.Object|), int, int, (|java.lang.Object|)], 0, `[:top, :top, :top, :top, :top])>
+    #L00004b. s0:= +|java.io.File.fs|+;
+    #L00004c. call s1:= {|java.io.FileSystem.setPermission(Ljava.io.File;IZZ)Z|}(s0,[|v0|],1,[|v1|],[|v2|]) @signature "java.io.FileSystem.setPermission(Ljava/io/File;IZZ)Z" @classDescriptor [|java.io.FileSystem|] @type virtual;
+    #L00004d. return s1;
+  }
+  procedure (|boolean|) {|java.io.File.setExecutable(Z)Z|} ((|java.io.File|) [|v0|], (|boolean|) [|v1|]) 
+    @MaxLocals 2
+    @MaxStack 3
+    @Owner (|java.io.File|)
+    @Access (PUBLIC)
+    @Signature "java.io.File.setExecutable(Z)Z" 
+  {
+    local temp;
+    s0;
+
+
+    #L00000a. call s0:= {|java.io.File.setExecutable(ZZ)Z|}([|v0|],[|v1|],1) @signature "java.io.File.setExecutable(ZZ)Z" @classDescriptor [|java.io.File|] @type virtual;
+    #L00000b. return s0;
+  }
+  procedure (|boolean|) {|java.io.File.canExecute()Z|} ((|java.io.File|) [|v0|]) 
+    @MaxLocals 2
+    @MaxStack 3
+    @Owner (|java.io.File|)
+    @Access (PUBLIC)
+    @Signature "java.io.File.canExecute()Z" 
+  {
+    local temp;
+    s0;
+    s1;
+    [|v1|];
+
+
+    #L00000a. <@Frame (@New, 1, `[(|java.lang.Object|), :top], 0, `[:top, :top, :top])>
+    #L00000b. call s0:= {|java.lang.System.getSecurityManager()Ljava.lang.SecurityManager;|}() @signature "java.lang.System.getSecurityManager()Ljava/lang/SecurityManager;" @classDescriptor [|java.lang.System|] @type direct;
+    #L00000c. [|v1|]:= s0 @type (|java.lang.Object|);
+    #L00001a. if [|v1|] == null then goto L00002a;
+    #L00003a. s0:= [|v0|].<|java.io.File.path|>;
+    #L00003b. call s1:= {|java.lang.SecurityManager.checkExec(Ljava.lang.String;)V|}([|v1|],s0) @signature "java.lang.SecurityManager.checkExec(Ljava/lang/String;)V" @classDescriptor [|java.lang.SecurityManager|] @type virtual;
+    #L00002a. <@Frame (@New, 2, `[(|java.lang.Object|), (|java.lang.Object|)], 0, `[:top, :top, :top])>
+    #L00002b. call s0:= {|java.io.File.isInvalid()Z|}([|v0|]) @signature "java.io.File.isInvalid()Z" @classDescriptor [|java.io.File|] @type virtual;
+    #L00002c. if s0 == 0 then goto L00004a;
+    #L00005a. return 0;
+    #L00004a. <@Frame (@New, 2, `[(|java.lang.Object|), (|java.lang.Object|)], 0, `[:top, :top, :top])>
+    #L00004b. s0:= +|java.io.File.fs|+;
+    #L00004c. call s1:= {|java.io.FileSystem.checkAccess(Ljava.io.File;I)Z|}(s0,[|v0|],1) @signature "java.io.FileSystem.checkAccess(Ljava/io/File;I)Z" @classDescriptor [|java.io.FileSystem|] @type virtual;
+    #L00004d. return s1;
+  }
+  procedure (|java.io.File|) {|java.io.File.listRoots()[Ljava.io.File;|} () 
+    @MaxLocals 0
+    @MaxStack 1
+    @Owner (|java.io.File|)
+    @Access (PUBLIC,STATIC)
+    @Signature "java.io.File.listRoots()[Ljava/io/File;" 
+  {
+    local temp;
+    s0;
+    s1;
+
+
+    #L00000a. s0:= +|java.io.File.fs|+;
+    #L00000b. call s1:= {|java.io.FileSystem.listRoots()[Ljava.io.File;|}(s0) @signature "java.io.FileSystem.listRoots()[Ljava/io/File;" @classDescriptor [|java.io.FileSystem|] @type virtual;
+    #L00000c. return s1;
+  }
+  procedure (|long|) {|java.io.File.getTotalSpace()J|} ((|java.io.File|) [|v0|]) 
+    @MaxLocals 2
+    @MaxStack 4
+    @Owner (|java.io.File|)
+    @Access (PUBLIC)
+    @Signature "java.io.File.getTotalSpace()J" 
+  {
+    local temp;
+    s0;
+    s1;
+    s2;
+    [|v1|];
+
+
+    #L00000a. <@Frame (@New, 1, `[(|java.lang.Object|), :top], 0, `[:top, :top, :top, :top])>
+    #L00000b. call s0:= {|java.lang.System.getSecurityManager()Ljava.lang.SecurityManager;|}() @signature "java.lang.System.getSecurityManager()Ljava/lang/SecurityManager;" @classDescriptor [|java.lang.System|] @type direct;
+    #L00000c. [|v1|]:= s0 @type (|java.lang.Object|);
+    #L00001a. if [|v1|] == null then goto L00002a;
+    #L00003a. s0:= new (|java.lang.RuntimePermission|);
+    #L00003b. call s1:= {|java.lang.RuntimePermission.<init>(Ljava.lang.String;)V|}(s0,"getFileSystemAttributes") @signature "java.lang.RuntimePermission.<init>(Ljava/lang/String;)V" @classDescriptor [|java.lang.RuntimePermission|] @type special;
+    #L00003c. call s2:= {|java.lang.SecurityManager.checkPermission(Ljava.security.Permission;)V|}([|v1|],s0) @signature "java.lang.SecurityManager.checkPermission(Ljava/security/Permission;)V" @classDescriptor [|java.lang.SecurityManager|] @type virtual;
+    #L00004a. s0:= [|v0|].<|java.io.File.path|>;
+    #L00004b. call s1:= {|java.lang.SecurityManager.checkRead(Ljava.lang.String;)V|}([|v1|],s0) @signature "java.lang.SecurityManager.checkRead(Ljava/lang/String;)V" @classDescriptor [|java.lang.SecurityManager|] @type virtual;
+    #L00002a. <@Frame (@New, 2, `[(|java.lang.Object|), (|java.lang.Object|)], 0, `[:top, :top, :top, :top])>
+    #L00002b. call s0:= {|java.io.File.isInvalid()Z|}([|v0|]) @signature "java.io.File.isInvalid()Z" @classDescriptor [|java.io.File|] @type virtual;
+    #L00002c. if s0 == 0 then goto L00005a;
+    #L00006a. return 0;
+    #L00005a. <@Frame (@New, 2, `[(|java.lang.Object|), (|java.lang.Object|)], 0, `[:top, :top, :top, :top])>
+    #L00005b. s0:= +|java.io.File.fs|+;
+    #L00005c. call s1:= {|java.io.FileSystem.getSpace(Ljava.io.File;I)J|}(s0,[|v0|],0) @signature "java.io.FileSystem.getSpace(Ljava/io/File;I)J" @classDescriptor [|java.io.FileSystem|] @type virtual;
+    #L00005d. return s1;
+  }
+  procedure (|long|) {|java.io.File.getFreeSpace()J|} ((|java.io.File|) [|v0|]) 
+    @MaxLocals 2
+    @MaxStack 4
+    @Owner (|java.io.File|)
+    @Access (PUBLIC)
+    @Signature "java.io.File.getFreeSpace()J" 
+  {
+    local temp;
+    s0;
+    s1;
+    s2;
+    [|v1|];
+
+
+    #L00000a. <@Frame (@New, 1, `[(|java.lang.Object|), :top], 0, `[:top, :top, :top, :top])>
+    #L00000b. call s0:= {|java.lang.System.getSecurityManager()Ljava.lang.SecurityManager;|}() @signature "java.lang.System.getSecurityManager()Ljava/lang/SecurityManager;" @classDescriptor [|java.lang.System|] @type direct;
+    #L00000c. [|v1|]:= s0 @type (|java.lang.Object|);
+    #L00001a. if [|v1|] == null then goto L00002a;
+    #L00003a. s0:= new (|java.lang.RuntimePermission|);
+    #L00003b. call s1:= {|java.lang.RuntimePermission.<init>(Ljava.lang.String;)V|}(s0,"getFileSystemAttributes") @signature "java.lang.RuntimePermission.<init>(Ljava/lang/String;)V" @classDescriptor [|java.lang.RuntimePermission|] @type special;
+    #L00003c. call s2:= {|java.lang.SecurityManager.checkPermission(Ljava.security.Permission;)V|}([|v1|],s0) @signature "java.lang.SecurityManager.checkPermission(Ljava/security/Permission;)V" @classDescriptor [|java.lang.SecurityManager|] @type virtual;
+    #L00004a. s0:= [|v0|].<|java.io.File.path|>;
+    #L00004b. call s1:= {|java.lang.SecurityManager.checkRead(Ljava.lang.String;)V|}([|v1|],s0) @signature "java.lang.SecurityManager.checkRead(Ljava/lang/String;)V" @classDescriptor [|java.lang.SecurityManager|] @type virtual;
+    #L00002a. <@Frame (@New, 2, `[(|java.lang.Object|), (|java.lang.Object|)], 0, `[:top, :top, :top, :top])>
+    #L00002b. call s0:= {|java.io.File.isInvalid()Z|}([|v0|]) @signature "java.io.File.isInvalid()Z" @classDescriptor [|java.io.File|] @type virtual;
+    #L00002c. if s0 == 0 then goto L00005a;
+    #L00006a. return 0;
+    #L00005a. <@Frame (@New, 2, `[(|java.lang.Object|), (|java.lang.Object|)], 0, `[:top, :top, :top, :top])>
+    #L00005b. s0:= +|java.io.File.fs|+;
+    #L00005c. call s1:= {|java.io.FileSystem.getSpace(Ljava.io.File;I)J|}(s0,[|v0|],1) @signature "java.io.FileSystem.getSpace(Ljava/io/File;I)J" @classDescriptor [|java.io.FileSystem|] @type virtual;
+    #L00005d. return s1;
+  }
+  procedure (|long|) {|java.io.File.getUsableSpace()J|} ((|java.io.File|) [|v0|]) 
+    @MaxLocals 2
+    @MaxStack 4
+    @Owner (|java.io.File|)
+    @Access (PUBLIC)
+    @Signature "java.io.File.getUsableSpace()J" 
+  {
+    local temp;
+    s0;
+    s1;
+    s2;
+    [|v1|];
+
+
+    #L00000a. <@Frame (@New, 1, `[(|java.lang.Object|), :top], 0, `[:top, :top, :top, :top])>
+    #L00000b. call s0:= {|java.lang.System.getSecurityManager()Ljava.lang.SecurityManager;|}() @signature "java.lang.System.getSecurityManager()Ljava/lang/SecurityManager;" @classDescriptor [|java.lang.System|] @type direct;
+    #L00000c. [|v1|]:= s0 @type (|java.lang.Object|);
+    #L00001a. if [|v1|] == null then goto L00002a;
+    #L00004a. s0:= new (|java.lang.RuntimePermission|);
+    #L00004b. call s1:= {|java.lang.RuntimePermission.<init>(Ljava.lang.String;)V|}(s0,"getFileSystemAttributes") @signature "java.lang.RuntimePermission.<init>(Ljava/lang/String;)V" @classDescriptor [|java.lang.RuntimePermission|] @type special;
+    #L00004c. call s2:= {|java.lang.SecurityManager.checkPermission(Ljava.security.Permission;)V|}([|v1|],s0) @signature "java.lang.SecurityManager.checkPermission(Ljava/security/Permission;)V" @classDescriptor [|java.lang.SecurityManager|] @type virtual;
+    #L00005a. s0:= [|v0|].<|java.io.File.path|>;
+    #L00005b. call s1:= {|java.lang.SecurityManager.checkRead(Ljava.lang.String;)V|}([|v1|],s0) @signature "java.lang.SecurityManager.checkRead(Ljava/lang/String;)V" @classDescriptor [|java.lang.SecurityManager|] @type virtual;
+    #L00002a. <@Frame (@New, 2, `[(|java.lang.Object|), (|java.lang.Object|)], 0, `[:top, :top, :top, :top])>
+    #L00002b. call s0:= {|java.io.File.isInvalid()Z|}([|v0|]) @signature "java.io.File.isInvalid()Z" @classDescriptor [|java.io.File|] @type virtual;
+    #L00002c. if s0 == 0 then goto L00006a;
+    #L00007a. return 0;
+    #L00006a. <@Frame (@New, 2, `[(|java.lang.Object|), (|java.lang.Object|)], 0, `[:top, :top, :top, :top])>
+    #L00006b. s0:= +|java.io.File.fs|+;
+    #L00006c. call s1:= {|java.io.FileSystem.getSpace(Ljava.io.File;I)J|}(s0,[|v0|],2) @signature "java.io.FileSystem.getSpace(Ljava/io/File;I)J" @classDescriptor [|java.io.FileSystem|] @type virtual;
+    #L00006d. return s1;
+  }
+  procedure (|java.io.File|) {|java.io.File.createTempFile(Ljava.lang.String;Ljava.lang.String;Ljava.io.File;)Ljava.io.File;|} ((|java.lang.String|) [|v0|], (|java.lang.String|) [|v1|], (|java.io.File|) [|v2|]) 
+    @Throws [|java.io.IOException|]
+    @MaxLocals 6
+    @MaxStack 3
+    @Owner (|java.io.File|)
+    @Access (PUBLIC,STATIC)
+    @Signature "java.io.File.createTempFile(Ljava/lang/String;Ljava/lang/String;Ljava/io/File;)Ljava/io/File;" 
+  {
+    local temp;
+    s0;
+    s1;
+    [|v3|];
+    [|v4|];
+    [|v5|];
+
+
+    #L00003a. <@Frame (@New, 3, `[(|java.lang.Object|), (|java.lang.Object|), (|java.lang.Object|), :top, :top, :top], 0, `[:top, :top, :top])>
+    #L00003b. call s0:= {|java.lang.String.length()I|}([|v0|]) @signature "java.lang.String.length()I" @classDescriptor [|java.lang.String|] @type virtual;
+    #L00003c. if s0 <= 3 then goto L00004a;
+    #L00005a. s0:= new (|java.lang.IllegalArgumentException|);
+    #L00005b. call s1:= {|java.lang.IllegalArgumentException.<init>(Ljava.lang.String;)V|}(s0,"Prefix string too short") @signature "java.lang.IllegalArgumentException.<init>(Ljava/lang/String;)V" @classDescriptor [|java.lang.IllegalArgumentException|] @type special;
+    #L00005c. throw s0;
+    #L00004a. <@Frame (@New, 3, `[(|java.lang.Object|), (|java.lang.Object|), (|java.lang.Object|), :top, :top, :top], 0, `[:top, :top, :top])>
+    #L00004b. if [|v1|] != null then goto L00006a;
+    #L00007a. [|v1|]:= ".tmp" @type string;
+    #L00006a. <@Frame (@New, 3, `[(|java.lang.Object|), (|java.lang.Object|), (|java.lang.Object|), :top, :top, :top], 0, `[:top, :top, :top])>
+    #L00006b. if [|v2|] == null then goto L00008a;
+    #L00006c. goto L00009a;
+    #L00008a. <@Frame (@New, 3, `[(|java.lang.Object|), (|java.lang.Object|), (|java.lang.Object|), :top, :top, :top], 0, `[:top, :top, :top])>
+    #L00008b. call s0:= {|java.io.File$TempDirectory.location()Ljava.io.File;|}() @signature "java.io.File$TempDirectory.location()Ljava/io/File;" @classDescriptor [|java.io.File$TempDirectory|] @type direct;
+    #L00009a. <@Frame (@New, 3, `[(|java.lang.Object|), (|java.lang.Object|), (|java.lang.Object|), :top, :top, :top], 1, `[(|java.lang.Object|), :top, :top])>
+    #L00009b. [|v3|]:= s0 @type (|java.lang.Object|);
+    #L00000a. <@Frame (@New, 4, `[(|java.lang.Object|), (|java.lang.Object|), (|java.lang.Object|), (|java.lang.Object|), :top, :top], 0, `[(|java.lang.Object|), :top, :top])>
+    #L00000b. call s0:= {|java.io.File$TempDirectory.generateFile(Ljava.lang.String;Ljava.lang.String;Ljava.io.File;)Ljava.io.File;|}([|v0|],[|v1|],[|v3|]) @signature "java.io.File$TempDirectory.generateFile(Ljava/lang/String;Ljava/lang/String;Ljava/io/File;)Ljava/io/File;" @classDescriptor [|java.io.File$TempDirectory|] @type direct;
+    #L00000c. [|v4|]:= s0 @type (|java.lang.Object|);
+    #L00010a. call s0:= {|java.io.File.exists()Z|}([|v4|]) @signature "java.io.File.exists()Z" @classDescriptor [|java.io.File|] @type virtual;
+    #L00010b. if s0 != 0 then goto L00000a;
+    #L00011a. call s0:= {|java.io.File.createNewFile()Z|}([|v4|]) @signature "java.io.File.createNewFile()Z" @classDescriptor [|java.io.File|] @type virtual;
+    #L00011b. if s0 != 0 then goto L00001a;
+    #L00012a. s0:= new (|java.io.IOException|);
+    #L00012b. call s1:= {|java.io.IOException.<init>(Ljava.lang.String;)V|}(s0,"Unable to create temporary file") @signature "java.io.IOException.<init>(Ljava/lang/String;)V" @classDescriptor [|java.io.IOException|] @type special;
+    #L00012c. throw s0;
+    #L00001a. <@Frame (@New, 5, `[(|java.lang.Object|), (|java.lang.Object|), (|java.lang.Object|), (|java.lang.Object|), (|java.lang.Object|), :top], 0, `[(|java.lang.Object|), :top, :top])>
+    #L00001b. goto L00013a;
+    #L00002a. <@Frame (@New, 4, `[(|java.lang.Object|), (|java.lang.Object|), (|java.lang.Object|), (|java.lang.Object|), (|java.lang.Object|), :top], 1, `[(|java.lang.Object|), :top, :top])>
+    #L00002b. [|v5|]:= [|v2|] @type object;
+    #L00014a. if [|v2|] != null then goto L00015a;
+    #L00016a. s0:= new (|java.lang.SecurityException|);
+    #L00016b. call s1:= {|java.lang.SecurityException.<init>(Ljava.lang.String;)V|}(s0,"Unable to create temporary file") @signature "java.lang.SecurityException.<init>(Ljava/lang/String;)V" @classDescriptor [|java.lang.SecurityException|] @type special;
+    #L00016c. throw s0;
+    #L00015a. <@Frame (@New, 6, `[(|java.lang.Object|), (|java.lang.Object|), (|java.lang.Object|), (|java.lang.Object|), :top, (|java.lang.Object|)], 0, `[(|java.lang.Object|), :top, :top])>
+    #L00015b. throw [|v5|];
+    #L00013a. <@Frame (@New, 5, `[(|java.lang.Object|), (|java.lang.Object|), (|java.lang.Object|), (|java.lang.Object|), (|java.lang.Object|), (|java.lang.Object|)], 0, `[(|java.lang.Object|), :top, :top])>
+    #L00013b. return [|v4|];
+      catch (|java.lang.SecurityException|) @[L00000a..L00001a] goto L00002a;
+  }
+  procedure (|java.io.File|) {|java.io.File.createTempFile(Ljava.lang.String;Ljava.lang.String;)Ljava.io.File;|} ((|java.lang.String|) [|v0|], (|java.lang.String|) [|v1|]) 
+    @Throws [|java.io.IOException|]
+    @MaxLocals 2
+    @MaxStack 3
+    @Owner (|java.io.File|)
+    @Access (PUBLIC,STATIC)
+    @Signature "java.io.File.createTempFile(Ljava/lang/String;Ljava/lang/String;)Ljava/io/File;" 
+  {
+    local temp;
+    s0;
+
+
+    #L00000a. call s0:= {|java.io.File.createTempFile(Ljava.lang.String;Ljava.lang.String;Ljava.io.File;)Ljava.io.File;|}([|v0|],[|v1|],null) @signature "java.io.File.createTempFile(Ljava/lang/String;Ljava/lang/String;Ljava/io/File;)Ljava/io/File;" @classDescriptor [|java.io.File|] @type direct;
+    #L00000b. return s0;
+  }
+  procedure (|int|) {|java.io.File.compareTo(Ljava.io.File;)I|} ((|java.io.File|) [|v0|], (|java.io.File|) [|v1|]) 
+    @MaxLocals 2
+    @MaxStack 3
+    @Owner (|java.io.File|)
+    @Access (PUBLIC)
+    @Signature "java.io.File.compareTo(Ljava/io/File;)I" 
+  {
+    local temp;
+    s0;
+    s1;
+
+
+    #L00000a. s0:= +|java.io.File.fs|+;
+    #L00000b. call s1:= {|java.io.FileSystem.compare(Ljava.io.File;Ljava.io.File;)I|}(s0,[|v0|],[|v1|]) @signature "java.io.FileSystem.compare(Ljava/io/File;Ljava/io/File;)I" @classDescriptor [|java.io.FileSystem|] @type virtual;
+    #L00000c. return s1;
+  }
+  procedure (|boolean|) {|java.io.File.equals(Ljava.lang.Object;)Z|} ((|java.io.File|) [|v0|], (|java.lang.Object|) [|v1|]) 
+    @MaxLocals 2
+    @MaxStack 2
+    @Owner (|java.io.File|)
+    @Access (PUBLIC)
+    @Signature "java.io.File.equals(Ljava/lang/Object;)Z" 
+  {
+    local temp;
+    s0;
+
+
+    #L00000a. <@Frame (@New, 2, `[(|java.lang.Object|), (|java.lang.Object|)], 0, `[:top, :top])>
+    #L00000b. if [|v1|] == null then goto L00001a;
+    #L00000c. s0:= instanceof @varname [|v1|] @type "(|java.io.File|)";
+    #L00000d. if s0 == 0 then goto L00001a;
+    #L00002a. checkcast [|v1|] @type (|java.io.File|);
+    #L00002b. call s0:= {|java.io.File.compareTo(Ljava.io.File;)I|}([|v0|],[|v1|]) @signature "java.io.File.compareTo(Ljava/io/File;)I" @classDescriptor [|java.io.File|] @type virtual;
+    #L00002c. if s0 != 0 then goto L00003a;
+    #L00002d. goto L00004a;
+    #L00003a. <@Frame (@New, 2, `[(|java.lang.Object|), (|java.lang.Object|)], 0, `[:top, :top])>
+    #L00004a. <@Frame (@New, 2, `[(|java.lang.Object|), (|java.lang.Object|)], 1, `[int, :top])>
+    #L00004b. return 0;
+    #L00001a. <@Frame (@New, 2, `[(|java.lang.Object|), (|java.lang.Object|)], 0, `[int, :top])>
+    #L00001b. return 0;
+  }
+  procedure (|int|) {|java.io.File.hashCode()I|} ((|java.io.File|) [|v0|]) 
+    @MaxLocals 1
+    @MaxStack 2
+    @Owner (|java.io.File|)
+    @Access (PUBLIC)
+    @Signature "java.io.File.hashCode()I" 
+  {
+    local temp;
+    s0;
+    s1;
+
+
+    #L00000a. s0:= +|java.io.File.fs|+;
+    #L00000b. call s1:= {|java.io.FileSystem.hashCode(Ljava.io.File;)I|}(s0,[|v0|]) @signature "java.io.FileSystem.hashCode(Ljava/io/File;)I" @classDescriptor [|java.io.FileSystem|] @type virtual;
+    #L00000c. return s1;
+  }
+  procedure (|java.lang.String|) {|java.io.File.toString()Ljava.lang.String;|} ((|java.io.File|) [|v0|]) 
+    @MaxLocals 1
+    @MaxStack 1
+    @Owner (|java.io.File|)
+    @Access (PUBLIC)
+    @Signature "java.io.File.toString()Ljava/lang/String;" 
+  {
+    local temp;
+    s0;
+
+
+    #L00000a. call s0:= {|java.io.File.getPath()Ljava.lang.String;|}([|v0|]) @signature "java.io.File.getPath()Ljava/lang/String;" @classDescriptor [|java.io.File|] @type virtual;
+    #L00000b. return s0;
+  }
+  procedure (|void|) {|java.io.File.writeObject(Ljava.io.ObjectOutputStream;)V|} ((|java.io.File|) [|v0|], (|java.io.ObjectOutputStream|) [|v1|]) 
+    @Throws [|java.io.IOException|]
+    @MaxLocals 2
+    @MaxStack 2
+    @Owner (|java.io.File|)
+    @Access (PRIVATE)
+    @Signature "java.io.File.writeObject(Ljava/io/ObjectOutputStream;)V" 
+  {
+    local temp;
+    s0;
+    s1;
+
+
+    #L00000a. call s0:= {|java.io.ObjectOutputStream.defaultWriteObject()V|}([|v1|]) @signature "java.io.ObjectOutputStream.defaultWriteObject()V" @classDescriptor [|java.io.ObjectOutputStream|] @type virtual;
+    #L00001a. s0:= +|java.io.File.separatorChar|+;
+    #L00001b. call s1:= {|java.io.ObjectOutputStream.writeChar(I)V|}([|v1|],s0) @signature "java.io.ObjectOutputStream.writeChar(I)V" @classDescriptor [|java.io.ObjectOutputStream|] @type virtual;
+    #L00002a. return @void;
+  }
+  procedure (|void|) {|java.io.File.readObject(Ljava.io.ObjectInputStream;)V|} ((|java.io.File|) [|v0|], (|java.io.ObjectInputStream|) [|v1|]) 
+    @Throws [|java.io.IOException|],[|java.lang.ClassNotFoundException|]
+    @MaxLocals 5
+    @MaxStack 3
+    @Owner (|java.io.File|)
+    @Access (PRIVATE)
+    @Signature "java.io.File.readObject(Ljava/io/ObjectInputStream;)V" 
+  {
+    local temp;
+    s0;
+    s1;
+    s2;
+    [|v2|];
+    [|v3|];
+    [|v4|];
+
+
+    #L00000a. <@Frame (@New, 2, `[(|java.lang.Object|), (|java.lang.Object|), :top, :top, :top], 0, `[:top, :top, :top])>
+    #L00000b. call s0:= {|java.io.ObjectInputStream.readFields()Ljava.io.ObjectInputStream$GetField;|}([|v1|]) @signature "java.io.ObjectInputStream.readFields()Ljava/io/ObjectInputStream$GetField;" @classDescriptor [|java.io.ObjectInputStream|] @type virtual;
+    #L00000c. [|v2|]:= s0 @type (|java.lang.Object|);
+    #L00001a. call s0:= {|java.io.ObjectInputStream$GetField.get(Ljava.lang.String;Ljava.lang.Object;)Ljava.lang.Object;|}([|v2|],"path",null) @signature "java.io.ObjectInputStream$GetField.get(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;" @classDescriptor [|java.io.ObjectInputStream$GetField|] @type virtual;
+    #L00001b. checkcast s0 @type (|java.lang.String|);
+    #L00001c. [|v3|]:= s0 @type (|java.lang.Object|);
+    #L00002a. call s0:= {|java.io.ObjectInputStream.readChar()C|}([|v1|]) @signature "java.io.ObjectInputStream.readChar()C" @classDescriptor [|java.io.ObjectInputStream|] @type virtual;
+    #L00002b. [|v4|]:= s0 @type (|java.lang.Object|);
+    #L00003a. s0:= +|java.io.File.separatorChar|+;
+    #L00003b. if [|v4|] == s0 then goto L00004a;
+    #L00005a. s0:= +|java.io.File.separatorChar|+;
+    #L00005b. call s1:= {|java.lang.String.replace(CC)Ljava.lang.String;|}([|v3|],[|v4|],s0) @signature "java.lang.String.replace(CC)Ljava/lang/String;" @classDescriptor [|java.lang.String|] @type virtual;
+    #L00005c. [|v3|]:= s1 @type (|java.lang.Object|);
+    #L00004a. <@Frame (@New, 5, `[(|java.lang.Object|), (|java.lang.Object|), (|java.lang.Object|), (|java.lang.Object|), int], 0, `[:top, :top, :top])>
+    #L00004b. s0:= +|java.io.File.fs|+;
+    #L00004c. call s1:= {|java.io.FileSystem.normalize(Ljava.lang.String;)Ljava.lang.String;|}(s0,[|v3|]) @signature "java.io.FileSystem.normalize(Ljava/lang/String;)Ljava/lang/String;" @classDescriptor [|java.io.FileSystem|] @type virtual;
+    #L00004d. [|v0|].<|java.io.File.path|>:= s1;
+    #L00006a. s0:= +|java.io.File.fs|+;
+    #L00006b. s1:= [|v0|].<|java.io.File.path|>;
+    #L00006c. call s2:= {|java.io.FileSystem.prefixLength(Ljava.lang.String;)I|}(s0,s1) @signature "java.io.FileSystem.prefixLength(Ljava/lang/String;)I" @classDescriptor [|java.io.FileSystem|] @type virtual;
+    #L00006d. [|v0|].<|java.io.File.prefixLength|>:= s2;
+    #L00007a. return @void;
+  }
+  procedure (|java.nio.file.Path|) {|java.io.File.toPath()Ljava.nio.file.Path;|} ((|java.io.File|) [|v0|]) 
+    @MaxLocals 4
+    @MaxStack 3
+    @Owner (|java.io.File|)
+    @Access (PUBLIC)
+    @Signature "java.io.File.toPath()Ljava/nio/file/Path;" 
+  {
+    local temp;
+    s0;
+    s1;
+    s2;
+    s3;
+    [|v1|];
+    [|v2|];
+    [|v3|];
+
+
+    #L00004a. <@Frame (@New, 1, `[(|java.lang.Object|), :top, :top, :top], 0, `[:top, :top, :top])>
+    #L00004b. s0:= [|v0|].<|java.io.File.filePath|>;
+    #L00004c. [|v1|]:= s0 @type (|java.nio.file.Path|);
+    #L00005a. if [|v1|] != null then goto L00006a;
+    #L00007a. [|v2|]:= [|v0|] @type object;
+    #L00007b. (@monitorenter [|v0|])
+    #L00000a. s0:= [|v0|].<|java.io.File.filePath|>;
+    #L00000b. [|v1|]:= s0 @type (|java.nio.file.Path|);
+    #L00008a. if [|v1|] != null then goto L00009a;
+    #L00010a. call s0:= {|java.nio.file.FileSystems.getDefault()Ljava.nio.file.FileSystem;|}() @signature "java.nio.file.FileSystems.getDefault()Ljava/nio/file/FileSystem;" @classDescriptor [|java.nio.file.FileSystems|] @type direct;
+    #L00010b. s1:= [|v0|].<|java.io.File.path|>;
+    #L00010c. s2:= new (|java.lang.String|)[0];
+    #L00010d. call s3:= {|java.nio.file.FileSystem.getPath(Ljava.lang.String;[Ljava.lang.String;)Ljava.nio.file.Path;|}(s0,s1,s2) @signature "java.nio.file.FileSystem.getPath(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;" @classDescriptor [|java.nio.file.FileSystem|] @type virtual;
+    #L00010e. [|v1|]:= s3 @type (|java.lang.Object|);
+    #L00011a. [|v0|].<|java.io.File.filePath|>:= [|v1|];
+    #L00009a. <@Frame (@New, 3, `[(|java.lang.Object|), (|java.lang.Object|), (|java.lang.Object|), :top], 0, `[:top, :top, :top])>
+    #L00009b. (@monitorexit [|v2|])
+    #L00001a. goto L00006a;
+    #L00002a. <@Frame (@New, 3, `[(|java.lang.Object|), (|java.lang.Object|), (|java.lang.Object|), :top], 1, `[(|java.lang.Object|), :top, :top])>
+    #L00002b. [|v3|]:= "Exception" @type object;
+    #L00002c. (@monitorexit [|v2|])
+    #L00003a. throw [|v3|];
+    #L00006a. <@Frame (@New, 2, `[(|java.lang.Object|), (|java.lang.Object|), (|java.lang.Object|), :top], 0, `[(|java.lang.Object|), :top, :top])>
+    #L00006b. return [|v1|];
+      catch (|unk|) @[L00000a..L00001a] goto L00002a;
+      catch (|unk|) @[L00002a..L00003a] goto L00002a;
+  }
+  procedure (|int|) {|java.io.File.compareTo(Ljava.lang.Object;)I|} ((|java.io.File|) [|v0|], (|java.lang.Object|) [|v1|]) 
+    @MaxLocals 2
+    @MaxStack 2
+    @Owner (|java.io.File|)
+    @Access (PUBLIC,SYNTHETIC,VOLATILE)
+    @Signature "java.io.File.compareTo(Ljava/lang/Object;)I" 
+  {
+    local temp;
+    s0;
+
+
+    #L00000a. checkcast [|v1|] @type (|java.io.File|);
+    #L00000b. call s0:= {|java.io.File.compareTo(Ljava.io.File;)I|}([|v0|],[|v1|]) @signature "java.io.File.compareTo(Ljava/io/File;)I" @classDescriptor [|java.io.File|] @type virtual;
+    #L00000c. return s0;
+  }
+  procedure (|void|) {|java.io.File.<clinit>()V|} () 
+    @MaxLocals 0
+    @MaxStack 2
+    @Owner (|java.io.File|)
+    @Access (STATIC)
+    @Signature "java.io.File.<clinit>()V" 
+  {
+    local temp;
+    s0;
+    s1;
+    s2;
+    s3;
+    s4;
+    s5;
+
+
+    #L00000a. <@Frame (@New, 0, `[], 0, `[:top, :top])>
+    #L00000b. call s0:= {|java.lang.Class.desiredAssertionStatus()Z|}("Ljava/io/File;") @signature "java.lang.Class.desiredAssertionStatus()Z" @classDescriptor [|java.lang.Class|] @type virtual;
+    #L00000c. if s0 != 0 then goto L00001a;
+    #L00000d. goto L00002a;
+    #L00001a. <@Frame (@New, 0, `[], 0, `[:top, :top])>
+    #L00002a. <@Frame (@New, 0, `[], 1, `[int, :top])>
+    #L00002b. +|java.io.File.$assertionsDisabled|+:= 0;
+    #L00003a. call s0:= {|java.io.FileSystem.getFileSystem()Ljava.io.FileSystem;|}() @signature "java.io.FileSystem.getFileSystem()Ljava/io/FileSystem;" @classDescriptor [|java.io.FileSystem|] @type direct;
+    #L00003b. +|java.io.File.fs|+:= s0;
+    #L00004a. s0:= +|java.io.File.fs|+;
+    #L00004b. call s1:= {|java.io.FileSystem.getSeparator()C|}(s0) @signature "java.io.FileSystem.getSeparator()C" @classDescriptor [|java.io.FileSystem|] @type virtual;
+    #L00004c. +|java.io.File.separatorChar|+:= s1;
+    #L00005a. s0:= new (|java.lang.StringBuilder|);
+    #L00005b. call s1:= {|java.lang.StringBuilder.<init>()V|}(s0) @signature "java.lang.StringBuilder.<init>()V" @classDescriptor [|java.lang.StringBuilder|] @type special;
+    #L00005c. call s2:= {|java.lang.StringBuilder.append(Ljava.lang.String;)Ljava.lang.StringBuilder;|}(s0,"") @signature "java.lang.StringBuilder.append(Ljava/lang/String;)Ljava/lang/StringBuilder;" @classDescriptor [|java.lang.StringBuilder|] @type virtual;
+    #L00005d. s3:= +|java.io.File.separatorChar|+;
+    #L00005e. call s4:= {|java.lang.StringBuilder.append(C)Ljava.lang.StringBuilder;|}(s2,s3) @signature "java.lang.StringBuilder.append(C)Ljava/lang/StringBuilder;" @classDescriptor [|java.lang.StringBuilder|] @type virtual;
+    #L00005f. call s5:= {|java.lang.StringBuilder.toString()Ljava.lang.String;|}(s4) @signature "java.lang.StringBuilder.toString()Ljava/lang/String;" @classDescriptor [|java.lang.StringBuilder|] @type virtual;
+    #L00005g. +|java.io.File.separator|+:= s5;
+    #L00006a. s0:= +|java.io.File.fs|+;
+    #L00006b. call s1:= {|java.io.FileSystem.getPathSeparator()C|}(s0) @signature "java.io.FileSystem.getPathSeparator()C" @classDescriptor [|java.io.FileSystem|] @type virtual;
+    #L00006c. +|java.io.File.pathSeparatorChar|+:= s1;
+    #L00007a. s0:= new (|java.lang.StringBuilder|);
+    #L00007b. call s1:= {|java.lang.StringBuilder.<init>()V|}(s0) @signature "java.lang.StringBuilder.<init>()V" @classDescriptor [|java.lang.StringBuilder|] @type special;
+    #L00007c. call s2:= {|java.lang.StringBuilder.append(Ljava.lang.String;)Ljava.lang.StringBuilder;|}(s0,"") @signature "java.lang.StringBuilder.append(Ljava/lang/String;)Ljava/lang/StringBuilder;" @classDescriptor [|java.lang.StringBuilder|] @type virtual;
+    #L00007d. s3:= +|java.io.File.pathSeparatorChar|+;
+    #L00007e. call s4:= {|java.lang.StringBuilder.append(C)Ljava.lang.StringBuilder;|}(s2,s3) @signature "java.lang.StringBuilder.append(C)Ljava/lang/StringBuilder;" @classDescriptor [|java.lang.StringBuilder|] @type virtual;
+    #L00007f. call s5:= {|java.lang.StringBuilder.toString()Ljava.lang.String;|}(s4) @signature "java.lang.StringBuilder.toString()Ljava/lang/String;" @classDescriptor [|java.lang.StringBuilder|] @type virtual;
+    #L00007g. +|java.io.File.pathSeparator|+:= s5;
+    #L00007h. return @void;
+  }
+
+record (|java.io.File$TempDirectory|)
+    @source "File.java"
+    @type class
+    @AccessFlag ()
+    @InnerClass (
+      @Name (|java.io.File$TempDirectory|), 
+      @OuterName (|java.io.File|), 
+      @InnerName TempDirectory, 
+      @AccessFlag (PRIVATE,STATIC)
+     ) 
+  extends 
+    (|java.lang.Object|) 
+{
+  (|java.io.File|) <|File$TempDirectory.tmpdir|> @AccessFlag (PRIVATE,STATIC,FINAL);
+  (|java.security.SecureRandom|) <|File$TempDirectory.random|> @AccessFlag (PRIVATE,STATIC,FINAL);
+}
+
+  procedure (|void|) {|java.io.File$TempDirectory.<init>()V|} ((|java.io.File$TempDirectory|) [|v0|]) 
+    @MaxLocals 1
+    @MaxStack 1
+    @Owner (|java.io.File$TempDirectory|)
+    @Access (PRIVATE,CONSTRUCTOR)
+    @Signature "java.io.File$TempDirectory.<init>()V" 
+  {
+    local temp;
+    s0;
+
+
+    #L00000a. call s0:= {|java.lang.Object.<init>()V|}([|v0|]) @signature "java.lang.Object.<init>()V" @classDescriptor [|java.lang.Object|] @type special;
+    #L00000b. return @void;
+  }
+  procedure (|java.io.File|) {|java.io.File$TempDirectory.location()Ljava.io.File;|} () 
+    @MaxLocals 0
+    @MaxStack 1
+    @Owner (|java.io.File$TempDirectory|)
+    @Access (STATIC)
+    @Signature "java.io.File$TempDirectory.location()Ljava/io/File;" 
+  {
+    local temp;
+    s0;
+
+
+    #L00000a. s0:= +|java.io.File$TempDirectory.tmpdir|+;
+    #L00000b. return s0;
+  }
+  procedure (|java.io.File|) {|java.io.File$TempDirectory.generateFile(Ljava.lang.String;Ljava.lang.String;Ljava.io.File;)Ljava.io.File;|} ((|java.lang.String|) [|v0|], (|java.lang.String|) [|v1|], (|java.io.File|) [|v2|]) 
+    @Throws [|java.io.IOException|]
+    @MaxLocals 7
+    @MaxStack 4
+    @Owner (|java.io.File$TempDirectory|)
+    @Access (STATIC)
+    @Signature "java.io.File$TempDirectory.generateFile(Ljava/lang/String;Ljava/lang/String;Ljava/io/File;)Ljava/io/File;" 
+  {
+    local temp;
+    s0;
+    s1;
+    s2;
+    s3;
+    s4;
+    s5;
+    s6;
+    [|v3|];
+    [|v4|];
+    [|v5|];
+    [|v6|];
+
+
+    #L00000a. <@Frame (@New, 3, `[(|java.lang.Object|), (|java.lang.Object|), (|java.lang.Object|), :top, :top, :top, :top], 0, `[:top, :top, :top, :top])>
+    #L00000b. s0:= +|java.io.File$TempDirectory.random|+;
+    #L00000c. call s1:= {|java.security.SecureRandom.nextLong()J|}(s0) @signature "java.security.SecureRandom.nextLong()J" @classDescriptor [|java.security.SecureRandom|] @type virtual;
+    #L00000d. [|v3|]:= s1 @type (|java.lang.Object|);
+    #L00001a. s0:= lcmp(-9223372036854775808L,[|v3|]);
+    #L00001b. if s0 != 0 then goto L00002a;
+    #L00003a. [|v3|]:= 0 @type long;
+    #L00003b. goto L00004a;
+    #L00002a. <@Frame (@New, 4, `[(|java.lang.Object|), (|java.lang.Object|), (|java.lang.Object|), long, :top, :top, :top], 0, `[:top, :top, :top, :top])>
+    #L00002b. call s0:= {|java.lang.Math.abs(J)J|}([|v3|]) @signature "java.lang.Math.abs(J)J" @classDescriptor [|java.lang.Math|] @type direct;
+    #L00002c. [|v3|]:= s0 @type (|java.lang.Object|);
+    #L00004a. <@Frame (@New, 4, `[(|java.lang.Object|), (|java.lang.Object|), (|java.lang.Object|), long, :top, :top, :top], 0, `[:top, :top, :top, :top])>
+    #L00004b. s0:= new (|java.lang.StringBuilder|);
+    #L00004c. call s1:= {|java.lang.StringBuilder.<init>()V|}(s0) @signature "java.lang.StringBuilder.<init>()V" @classDescriptor [|java.lang.StringBuilder|] @type special;
+    #L00004d. call s2:= {|java.lang.StringBuilder.append(Ljava.lang.String;)Ljava.lang.StringBuilder;|}(s0,[|v0|]) @signature "java.lang.StringBuilder.append(Ljava/lang/String;)Ljava/lang/StringBuilder;" @classDescriptor [|java.lang.StringBuilder|] @type virtual;
+    #L00004e. call s3:= {|java.lang.Long.toString(J)Ljava.lang.String;|}([|v3|]) @signature "java.lang.Long.toString(J)Ljava/lang/String;" @classDescriptor [|java.lang.Long|] @type direct;
+    #L00004f. call s4:= {|java.lang.StringBuilder.append(Ljava.lang.String;)Ljava.lang.StringBuilder;|}(s2,s3) @signature "java.lang.StringBuilder.append(Ljava/lang/String;)Ljava/lang/StringBuilder;" @classDescriptor [|java.lang.StringBuilder|] @type virtual;
+    #L00004g. call s5:= {|java.lang.StringBuilder.append(Ljava.lang.String;)Ljava.lang.StringBuilder;|}(s4,[|v1|]) @signature "java.lang.StringBuilder.append(Ljava/lang/String;)Ljava/lang/StringBuilder;" @classDescriptor [|java.lang.StringBuilder|] @type virtual;
+    #L00004h. call s6:= {|java.lang.StringBuilder.toString()Ljava.lang.String;|}(s5) @signature "java.lang.StringBuilder.toString()Ljava/lang/String;" @classDescriptor [|java.lang.StringBuilder|] @type virtual;
+    #L00004i. [|v5|]:= s6 @type (|java.lang.Object|);
+    #L00005a. s0:= new (|java.io.File|);
+    #L00005b. call s1:= {|java.io.File.<init>(Ljava.io.File;Ljava.lang.String;)V|}(s0,[|v2|],[|v5|]) @signature "java.io.File.<init>(Ljava/io/File;Ljava/lang/String;)V" @classDescriptor [|java.io.File|] @type special;
+    #L00005c. [|v6|]:= s0 @type (|java.lang.Object|);
+    #L00006a. call s0:= {|java.io.File.getName()Ljava.lang.String;|}([|v6|]) @signature "java.io.File.getName()Ljava/lang/String;" @classDescriptor [|java.io.File|] @type virtual;
+    #L00006b. call s1:= {|java.lang.String.equals(Ljava.lang.Object;)Z|}([|v5|],s0) @signature "java.lang.String.equals(Ljava/lang/Object;)Z" @classDescriptor [|java.lang.String|] @type virtual;
+    #L00006c. if s1 != 0 then goto L00007a;
+    #L00008a. s0:= new (|java.io.IOException|);
+    #L00008b. call s1:= {|java.io.IOException.<init>(Ljava.lang.String;)V|}(s0,"Unable to create temporary file") @signature "java.io.IOException.<init>(Ljava/lang/String;)V" @classDescriptor [|java.io.IOException|] @type special;
+    #L00008c. throw s0;
+    #L00007a. <@Frame (@New, 6, `[(|java.lang.Object|), (|java.lang.Object|), (|java.lang.Object|), long, (|java.lang.Object|), (|java.lang.Object|), :top], 0, `[:top, :top, :top, :top])>
+    #L00007b. return [|v6|];
+  }
+  procedure (|void|) {|java.io.File$TempDirectory.<clinit>()V|} () 
+    @MaxLocals 0
+    @MaxStack 5
+    @Owner (|java.io.File$TempDirectory|)
+    @Access (STATIC)
+    @Signature "java.io.File$TempDirectory.<clinit>()V" 
+  {
+    local temp;
+    s0;
+    s1;
+    s2;
+    s3;
+    s4;
+
+
+    #L00000a. s0:= new (|java.io.File|);
+    #L00000b. s1:= new (|sun.security.action.GetPropertyAction|);
+    #L00000c. call s2:= {|sun.security.action.GetPropertyAction.<init>(Ljava.lang.String;)V|}(s1,"java.io.tmpdir") @signature "sun.security.action.GetPropertyAction.<init>(Ljava/lang/String;)V" @classDescriptor [|sun.security.action.GetPropertyAction|] @type special;
+    #L00000d. call s3:= {|java.security.AccessController.doPrivileged(Ljava.security.PrivilegedAction;)Ljava.lang.Object;|}(s1) @signature "java.security.AccessController.doPrivileged(Ljava/security/PrivilegedAction;)Ljava/lang/Object;" @classDescriptor [|java.security.AccessController|] @type direct;
+    #L00000e. checkcast s3 @type (|java.lang.String|);
+    #L00000f. call s4:= {|java.io.File.<init>(Ljava.lang.String;)V|}(s0,s3) @signature "java.io.File.<init>(Ljava/lang/String;)V" @classDescriptor [|java.io.File|] @type special;
+    #L00000g. +|java.io.File$TempDirectory.tmpdir|+:= s0;
+    #L00001a. s0:= new (|java.security.SecureRandom|);
+    #L00001b. call s1:= {|java.security.SecureRandom.<init>()V|}(s0) @signature "java.security.SecureRandom.<init>()V" @classDescriptor [|java.security.SecureRandom|] @type special;
+    #L00001c. +|java.io.File$TempDirectory.random|+:= s0;
+    #L00001d. return @void;
+  }
+
+record (|java.io.File$PathStatus|)
+    @source "File.java"
+    @type class
+    @AccessFlag (FINAL,ENUM)
+    @InnerClass (
+      @Name (|java.io.File$PathStatus|), 
+      @OuterName (|java.io.File|), 
+      @InnerName PathStatus, 
+      @AccessFlag (PRIVATE,STATIC,FINAL,ENUM)
+     ) 
+  extends 
+    (|java.lang.Enum|) 
+{
+  (|java.io.File$PathStatus|) <|File$PathStatus.$VALUES|> @AccessFlag (PRIVATE,STATIC,FINAL,SYNTHETIC);
+}
+  global (|java.io.File$PathStatus|) @@+|File$PathStatus.INVALID|+ @AccessFlag (PUBLIC,STATIC,FINAL,ENUM);
+  global (|java.io.File$PathStatus|) @@+|File$PathStatus.CHECKED|+ @AccessFlag (PUBLIC,STATIC,FINAL,ENUM);
+
+  procedure (|java.io.File$PathStatus|) {|java.io.File$PathStatus.values()[Ljava.io.File$PathStatus;|} () 
+    @MaxLocals 0
+    @MaxStack 1
+    @Owner (|java.io.File$PathStatus|)
+    @Access (PUBLIC,STATIC)
+    @Signature "java.io.File$PathStatus.values()[Ljava/io/File$PathStatus;" 
+  {
+    local temp;
+    s0;
+    s1;
+
+
+    #L00000a. s0:= +|java.io.File$PathStatus.$VALUES|+;
+    #L00000b. call s1:= {|[Ljava.io.File$PathStatus;.clone()Ljava.lang.Object;|}(s0) @signature "[Ljava.io.File$PathStatus;.clone()Ljava/lang/Object;" @classDescriptor [|[Ljava.io.File$PathStatus;|] @type virtual;
+    #L00000c. checkcast s1 @type (|[Ljava.io.File$PathStatus;|);
+    #L00000d. return s1;
+  }
+  procedure (|java.io.File$PathStatus|) {|java.io.File$PathStatus.valueOf(Ljava.lang.String;)Ljava.io.File$PathStatus;|} ((|java.lang.String|) [|v0|]) 
+    @MaxLocals 1
+    @MaxStack 2
+    @Owner (|java.io.File$PathStatus|)
+    @Access (PUBLIC,STATIC)
+    @Signature "java.io.File$PathStatus.valueOf(Ljava/lang/String;)Ljava/io/File$PathStatus;" 
+  {
+    local temp;
+    s0;
+
+
+    #L00000a. call s0:= {|java.lang.Enum.valueOf(Ljava.lang.Class;Ljava.lang.String;)Ljava.lang.Enum;|}("Ljava/io/File$PathStatus;",[|v0|]) @signature "java.lang.Enum.valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;" @classDescriptor [|java.lang.Enum|] @type direct;
+    #L00000b. checkcast s0 @type (|java.io.File$PathStatus|);
+    #L00000c. return s0;
+  }
+  procedure (|void|) {|java.io.File$PathStatus.<init>(Ljava.lang.String;I)V|} ((|java.io.File$PathStatus|) [|v0|], (|java.lang.String|) [|v1|], (|int|) [|v2|]) 
+    @MaxLocals 3
+    @MaxStack 3
+    @Owner (|java.io.File$PathStatus|)
+    @Access (PRIVATE,CONSTRUCTOR)
+    @Signature "java.io.File$PathStatus.<init>(Ljava/lang/String;I)V" 
+  {
+    local temp;
+    s0;
+
+
+    #L00000a. call s0:= {|java.lang.Enum.<init>(Ljava.lang.String;I)V|}([|v0|],[|v1|],[|v2|]) @signature "java.lang.Enum.<init>(Ljava/lang/String;I)V" @classDescriptor [|java.lang.Enum|] @type special;
+    #L00000b. return @void;
+  }
+  procedure (|void|) {|java.io.File$PathStatus.<clinit>()V|} () 
+    @MaxLocals 0
+    @MaxStack 4
+    @Owner (|java.io.File$PathStatus|)
+    @Access (STATIC)
+    @Signature "java.io.File$PathStatus.<clinit>()V" 
+  {
+    local temp;
+    s0;
+    s1;
+    s2;
+    s3;
+    s4;
+    s5;
+    s6;
+
+
+    #L00000a. s0:= new (|java.io.File$PathStatus|);
+    #L00000b. call s1:= {|java.io.File$PathStatus.<init>(Ljava.lang.String;I)V|}(s0,"INVALID",0) @signature "java.io.File$PathStatus.<init>(Ljava/lang/String;I)V" @classDescriptor [|java.io.File$PathStatus|] @type special;
+    #L00000c. +|java.io.File$PathStatus.INVALID|+:= s0;
+    #L00000d. s2:= new (|java.io.File$PathStatus|);
+    #L00000e. call s3:= {|java.io.File$PathStatus.<init>(Ljava.lang.String;I)V|}(s2,"CHECKED",1) @signature "java.io.File$PathStatus.<init>(Ljava/lang/String;I)V" @classDescriptor [|java.io.File$PathStatus|] @type special;
+    #L00000f. +|java.io.File$PathStatus.CHECKED|+:= s2;
+    #L00000g. s4:= new (|java.io.File$PathStatus|)[2];
+    #L00000h. s5:= +|java.io.File$PathStatus.INVALID|+;
+    #L00000i. s4[0]:= s5;
+    #L00000j. s6:= +|java.io.File$PathStatus.CHECKED|+;
+    #L00000k. s4[1]:= s6;
+    #L00000l. +|java.io.File$PathStatus.$VALUES|+:= s4;
+    #L00000m. return @void;
+  }
+
+record (|java.io.ObjectInputStream$GetField|)
+    @source "ObjectInputStream.java"
+    @type class
+    @AccessFlag (PUBLIC)
+    @InnerClass (
+      @Name (|java.io.ObjectInputStream$GetField|), 
+      @OuterName (|java.io.ObjectInputStream|), 
+      @InnerName GetField, 
+      @AccessFlag (PUBLIC,STATIC)
+     ) 
+  extends 
+    (|java.lang.Object|) 
+{
+}
+
+  procedure (|void|) {|java.io.ObjectInputStream$GetField.<init>()V|} ((|java.io.ObjectInputStream$GetField|) [|v0|]) 
+    @MaxLocals 1
+    @MaxStack 1
+    @Owner (|java.io.ObjectInputStream$GetField|)
+    @Access (PUBLIC,CONSTRUCTOR)
+    @Signature "java.io.ObjectInputStream$GetField.<init>()V" 
+  {
+    local temp;
+    s0;
+
+
+    #L00000a. call s0:= {|java.lang.Object.<init>()V|}([|v0|]) @signature "java.lang.Object.<init>()V" @classDescriptor [|java.lang.Object|] @type special;
+    #L00000b. return @void;
+  }
+  procedure (|java.io.ObjectStreamClass|) {|java.io.ObjectInputStream$GetField.getObjectStreamClass()Ljava.io.ObjectStreamClass;|} ((|java.io.ObjectInputStream$GetField|) [|v0|]) 
+    @Owner (|java.io.ObjectInputStream$GetField|)
+    @Access (PUBLIC)
+    @Signature "java.io.ObjectInputStream$GetField.getObjectStreamClass()Ljava/io/ObjectStreamClass;" 
+  {
+
+
+
+    #nulla. return @void;
+  }
+  procedure (|boolean|) {|java.io.ObjectInputStream$GetField.defaulted(Ljava.lang.String;)Z|} ((|java.io.ObjectInputStream$GetField|) [|v0|], (|java.lang.String|) [|v1|]) 
+    @Throws [|java.io.IOException|]
+    @Owner (|java.io.ObjectInputStream$GetField|)
+    @Access (PUBLIC)
+    @Signature "java.io.ObjectInputStream$GetField.defaulted(Ljava/lang/String;)Z" 
+  {
+
+
+
+    #nulla. return @void;
+  }
+  procedure (|boolean|) {|java.io.ObjectInputStream$GetField.get(Ljava.lang.String;Z)Z|} ((|java.io.ObjectInputStream$GetField|) [|v0|], (|java.lang.String|) [|v1|], (|boolean|) [|v2|]) 
+    @Throws [|java.io.IOException|]
+    @Owner (|java.io.ObjectInputStream$GetField|)
+    @Access (PUBLIC)
+    @Signature "java.io.ObjectInputStream$GetField.get(Ljava/lang/String;Z)Z" 
+  {
+
+
+
+    #nulla. return @void;
+  }
+  procedure (|byte|) {|java.io.ObjectInputStream$GetField.get(Ljava.lang.String;B)B|} ((|java.io.ObjectInputStream$GetField|) [|v0|], (|java.lang.String|) [|v1|], (|byte|) [|v2|]) 
+    @Throws [|java.io.IOException|]
+    @Owner (|java.io.ObjectInputStream$GetField|)
+    @Access (PUBLIC)
+    @Signature "java.io.ObjectInputStream$GetField.get(Ljava/lang/String;B)B" 
+  {
+
+
+
+    #nulla. return @void;
+  }
+  procedure (|char|) {|java.io.ObjectInputStream$GetField.get(Ljava.lang.String;C)C|} ((|java.io.ObjectInputStream$GetField|) [|v0|], (|java.lang.String|) [|v1|], (|char|) [|v2|]) 
+    @Throws [|java.io.IOException|]
+    @Owner (|java.io.ObjectInputStream$GetField|)
+    @Access (PUBLIC)
+    @Signature "java.io.ObjectInputStream$GetField.get(Ljava/lang/String;C)C" 
+  {
+
+
+
+    #nulla. return @void;
+  }
+  procedure (|short|) {|java.io.ObjectInputStream$GetField.get(Ljava.lang.String;S)S|} ((|java.io.ObjectInputStream$GetField|) [|v0|], (|java.lang.String|) [|v1|], (|short|) [|v2|]) 
+    @Throws [|java.io.IOException|]
+    @Owner (|java.io.ObjectInputStream$GetField|)
+    @Access (PUBLIC)
+    @Signature "java.io.ObjectInputStream$GetField.get(Ljava/lang/String;S)S" 
+  {
+
+
+
+    #nulla. return @void;
+  }
+  procedure (|int|) {|java.io.ObjectInputStream$GetField.get(Ljava.lang.String;I)I|} ((|java.io.ObjectInputStream$GetField|) [|v0|], (|java.lang.String|) [|v1|], (|int|) [|v2|]) 
+    @Throws [|java.io.IOException|]
+    @Owner (|java.io.ObjectInputStream$GetField|)
+    @Access (PUBLIC)
+    @Signature "java.io.ObjectInputStream$GetField.get(Ljava/lang/String;I)I" 
+  {
+
+
+
+    #nulla. return @void;
+  }
+  procedure (|long|) {|java.io.ObjectInputStream$GetField.get(Ljava.lang.String;J)J|} ((|java.io.ObjectInputStream$GetField|) [|v0|], (|java.lang.String|) [|v1|], (|long|) [|v2|]) 
+    @Throws [|java.io.IOException|]
+    @Owner (|java.io.ObjectInputStream$GetField|)
+    @Access (PUBLIC)
+    @Signature "java.io.ObjectInputStream$GetField.get(Ljava/lang/String;J)J" 
+  {
+
+
+
+    #nulla. return @void;
+  }
+  procedure (|float|) {|java.io.ObjectInputStream$GetField.get(Ljava.lang.String;F)F|} ((|java.io.ObjectInputStream$GetField|) [|v0|], (|java.lang.String|) [|v1|], (|float|) [|v2|]) 
+    @Throws [|java.io.IOException|]
+    @Owner (|java.io.ObjectInputStream$GetField|)
+    @Access (PUBLIC)
+    @Signature "java.io.ObjectInputStream$GetField.get(Ljava/lang/String;F)F" 
+  {
+
+
+
+    #nulla. return @void;
+  }
+  procedure (|double|) {|java.io.ObjectInputStream$GetField.get(Ljava.lang.String;D)D|} ((|java.io.ObjectInputStream$GetField|) [|v0|], (|java.lang.String|) [|v1|], (|double|) [|v2|]) 
+    @Throws [|java.io.IOException|]
+    @Owner (|java.io.ObjectInputStream$GetField|)
+    @Access (PUBLIC)
+    @Signature "java.io.ObjectInputStream$GetField.get(Ljava/lang/String;D)D" 
+  {
+
+
+
+    #nulla. return @void;
+  }
+  procedure (|java.lang.Object|) {|java.io.ObjectInputStream$GetField.get(Ljava.lang.String;Ljava.lang.Object;)Ljava.lang.Object;|} ((|java.io.ObjectInputStream$GetField|) [|v0|], (|java.lang.String|) [|v1|], (|java.lang.Object|) [|v2|]) 
+    @Throws [|java.io.IOException|]
+    @Owner (|java.io.ObjectInputStream$GetField|)
+    @Access (PUBLIC)
+    @Signature "java.io.ObjectInputStream$GetField.get(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;" 
+  {
+
+
+
+    #nulla. return @void;
+  }
+
+

@@ -1,0 +1,211 @@
+record (|List|)
+    @source "List.java"
+    @type interface
+    @AccessFlag (PUBLIC,INTERFACE) 
+  extends 
+    (|java.lang.Object|) 
+{
+}
+
+  procedure (|int|) {|List.size|} ((|List|) [|v0|]) 
+    @Owner (|List|)
+    @Access (PUBLIC)
+    @Signature "List.size:()I" 
+  {
+
+    #nulla. return @void;
+  }
+  procedure (|boolean|) {|List.isEmpty|} ((|List|) [|v0|]) 
+    @Owner (|List|)
+    @Access (PUBLIC)
+    @Signature "List.isEmpty:()Z" 
+  {
+
+    #nulla. return @void;
+  }
+  procedure (|boolean|) {|List.contains|} ((|List|) [|v0|], (|java.lang.Object|) [|v1|]) 
+    @Owner (|List|)
+    @Access (PUBLIC)
+    @Signature "List.contains:(Ljava/lang/Object;)Z" 
+  {
+
+    #nulla. return @void;
+  }
+  procedure (|java.util.Iterator|) {|List.iterator|} ((|List|) [|v0|]) 
+    @Owner (|List|)
+    @Access (PUBLIC)
+    @Signature "List.iterator:()Ljava/util/Iterator;" 
+  {
+
+    #nulla. return @void;
+  }
+  procedure (|java.lang.Object|) {|List.toArray|} ((|List|) [|v0|]) 
+    @Owner (|List|)
+    @Access (PUBLIC)
+    @Signature "List.toArray:()[Ljava/lang/Object;" 
+  {
+
+    #nulla. return @void;
+  }
+  procedure (|java.lang.Object|) {|List.toArray|} ((|List|) [|v0|], (|java.lang.Object|) [|v1|]) 
+    @Owner (|List|)
+    @Access (PUBLIC)
+    @Signature "List.toArray:([Ljava/lang/Object;)[Ljava/lang/Object;" 
+  {
+
+    #nulla. return @void;
+  }
+  procedure (|boolean|) {|List.add|} ((|List|) [|v0|], (|java.lang.Object|) [|v1|]) 
+    @Owner (|List|)
+    @Access (PUBLIC)
+    @Signature "List.add:(Ljava/lang/Object;)Z" 
+  {
+
+    #nulla. return @void;
+  }
+  procedure (|boolean|) {|List.remove|} ((|List|) [|v0|], (|java.lang.Object|) [|v1|]) 
+    @Owner (|List|)
+    @Access (PUBLIC)
+    @Signature "List.remove:(Ljava/lang/Object;)Z" 
+  {
+
+    #nulla. return @void;
+  }
+  procedure (|boolean|) {|List.containsAll|} ((|List|) [|v0|], (|java.util.Collection|) [|v1|]) 
+    @Owner (|List|)
+    @Access (PUBLIC)
+    @Signature "List.containsAll:(Ljava/util/Collection;)Z" 
+  {
+
+    #nulla. return @void;
+  }
+  procedure (|boolean|) {|List.addAll|} ((|List|) [|v0|], (|java.util.Collection|) [|v1|]) 
+    @Owner (|List|)
+    @Access (PUBLIC)
+    @Signature "List.addAll:(Ljava/util/Collection;)Z" 
+  {
+
+    #nulla. return @void;
+  }
+  procedure (|boolean|) {|List.addAll|} ((|List|) [|v0|], (|int|) [|v1|], (|java.util.Collection|) [|v2|]) 
+    @Owner (|List|)
+    @Access (PUBLIC)
+    @Signature "List.addAll:(ILjava/util/Collection;)Z" 
+  {
+
+    #nulla. return @void;
+  }
+  procedure (|boolean|) {|List.removeAll|} ((|List|) [|v0|], (|java.util.Collection|) [|v1|]) 
+    @Owner (|List|)
+    @Access (PUBLIC)
+    @Signature "List.removeAll:(Ljava/util/Collection;)Z" 
+  {
+
+    #nulla. return @void;
+  }
+  procedure (|boolean|) {|List.retainAll|} ((|List|) [|v0|], (|java.util.Collection|) [|v1|]) 
+    @Owner (|List|)
+    @Access (PUBLIC)
+    @Signature "List.retainAll:(Ljava/util/Collection;)Z" 
+  {
+
+    #nulla. return @void;
+  }
+  procedure (|void|) {|List.clear|} ((|List|) [|v0|]) 
+    @Owner (|List|)
+    @Access (PUBLIC)
+    @Signature "List.clear:()V" 
+  {
+
+    #nulla. return @void;
+  }
+  procedure (|boolean|) {|List.equals|} ((|List|) [|v0|], (|java.lang.Object|) [|v1|]) 
+    @Owner (|List|)
+    @Access (PUBLIC)
+    @Signature "List.equals:(Ljava/lang/Object;)Z" 
+  {
+
+    #nulla. return @void;
+  }
+  procedure (|int|) {|List.hashCode|} ((|List|) [|v0|]) 
+    @Owner (|List|)
+    @Access (PUBLIC)
+    @Signature "List.hashCode:()I" 
+  {
+
+    #nulla. return @void;
+  }
+  procedure (|java.lang.Object|) {|List.get|} ((|List|) [|v0|], (|int|) [|v1|]) 
+    @Owner (|List|)
+    @Access (PUBLIC)
+    @Signature "List.get:(I)Ljava/lang/Object;" 
+  {
+
+    #nulla. return @void;
+  }
+  procedure (|java.lang.Object|) {|List.set|} ((|List|) [|v0|], (|int|) [|v1|], (|java.lang.Object|) [|v2|]) 
+    @Owner (|List|)
+    @Access (PUBLIC)
+    @Signature "List.set:(ILjava/lang/Object;)Ljava/lang/Object;" 
+  {
+
+    #nulla. return @void;
+  }
+  procedure (|void|) {|List.add|} ((|List|) [|v0|], (|int|) [|v1|], (|java.lang.Object|) [|v2|]) 
+    @Owner (|List|)
+    @Access (PUBLIC)
+    @Signature "List.add:(ILjava/lang/Object;)V" 
+  {
+
+    #nulla. return @void;
+  }
+  procedure (|java.lang.Object|) {|List.remove|} ((|List|) [|v0|], (|int|) [|v1|]) 
+    @Owner (|List|)
+    @Access (PUBLIC)
+    @Signature "List.remove:(I)Ljava/lang/Object;" 
+  {
+
+    #nulla. return @void;
+  }
+  procedure (|int|) {|List.indexOf|} ((|List|) [|v0|], (|java.lang.Object|) [|v1|]) 
+    @Owner (|List|)
+    @Access (PUBLIC)
+    @Signature "List.indexOf:(Ljava/lang/Object;)I" 
+  {
+
+    #nulla. return @void;
+  }
+  procedure (|int|) {|List.lastIndexOf|} ((|List|) [|v0|], (|java.lang.Object|) [|v1|]) 
+    @Owner (|List|)
+    @Access (PUBLIC)
+    @Signature "List.lastIndexOf:(Ljava/lang/Object;)I" 
+  {
+
+    #nulla. return @void;
+  }
+  procedure (|java.util.ListIterator|) {|List.listIterator|} ((|List|) [|v0|]) 
+    @Owner (|List|)
+    @Access (PUBLIC)
+    @Signature "List.listIterator:()Ljava/util/ListIterator;" 
+  {
+
+    #nulla. return @void;
+  }
+  procedure (|java.util.ListIterator|) {|List.listIterator|} ((|List|) [|v0|], (|int|) [|v1|]) 
+    @Owner (|List|)
+    @Access (PUBLIC)
+    @Signature "List.listIterator:(I)Ljava/util/ListIterator;" 
+  {
+
+    #nulla. return @void;
+  }
+  procedure (|java.util.List|) {|List.subList|} ((|List|) [|v0|], (|int|) [|v1|], (|int|) [|v2|]) 
+    @Owner (|List|)
+    @Access (PUBLIC)
+    @Signature "List.subList:(II)Ljava/util/List;" 
+  {
+
+    #nulla. return @void;
+  }
+
+

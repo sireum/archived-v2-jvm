@@ -1,0 +1,51 @@
+record (|SimpleScala|)
+    @source "SimpleScala.scala"
+    @(|scala.reflect.ScalaSignature|) 
+    @type class
+    @AccessFlag (PUBLIC) 
+  extends 
+    (|java.lang.Object|) 
+{
+  (|java.lang.String|) <|SimpleScala.hello|> @AccessFlag (PRIVATE,FINAL);
+}
+
+  procedure (|java.lang.String|) {|SimpleScala.hello|} ((|SimpleScala|) [|this|]) 
+    @MaxLocals 1
+    @MaxStack 1
+    @Owner (|SimpleScala|)
+    @Access (PUBLIC)
+    @Signature "SimpleScala.hello:()Ljava/lang/String;" 
+  {
+    local temp;
+    s0;
+
+    #L00000a. s0:= [|this|].<|org.sireum.jvm.samples.SimpleScala.hello|>;
+    #L00000b. return s0;
+  }
+  procedure (|java.lang.String|) {|SimpleScala.sayHello|} ((|SimpleScala|) [|this|]) 
+    @MaxLocals 1
+    @MaxStack 1
+    @Owner (|SimpleScala|)
+    @Access (PUBLIC)
+    @Signature "SimpleScala.sayHello:()Ljava/lang/String;" 
+  {
+    local temp;
+
+    #L00000a. call temp:= {|org.sireum.jvm.samples.SimpleScala.hello|}([|this|]) @signature "org/sireum/jvm/samples/SimpleScala.hello:()Ljava/lang/String;" @classDescriptor [|org.sireum.jvm.samples.SimpleScala|] @type virtual;
+    #L00000b. return temp;
+  }
+  procedure (|void|) {|SimpleScala.<init>|} ((|SimpleScala|) [|this|]) 
+    @MaxLocals 1
+    @MaxStack 2
+    @Owner (|SimpleScala|)
+    @Access (PUBLIC,CONSTRUCTOR)
+    @Signature "SimpleScala.<init>:()V" 
+  {
+    local temp;
+
+    #L00000a. call temp:= {|java.lang.Object.<init>|}([|this|]) @signature "java/lang/Object.<init>:()V" @classDescriptor [|java.lang.Object|] @type special;
+    #L00001a. [|this|].<|org.sireum.jvm.samples.SimpleScala.hello|>:= "Namaste";
+    #L00001b. return @void;
+  }
+
+

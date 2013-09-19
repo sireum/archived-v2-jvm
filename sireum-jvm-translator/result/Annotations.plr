@@ -1,0 +1,28 @@
+record (|Annotations|)
+    @bytes "akljfla"
+    @source "Annotations.java"
+    @name "abc"
+    @Array nested
+    @type class
+    @AccessFlag (PUBLIC)
+    @(|org.sireum.jvm.samples.WithValue|)  
+  extends 
+    (|java.lang.Object|) 
+{
+  (|int|) <|Annotations.x|> @AccessFlag ();
+}
+
+  procedure (|void|) {|Annotations.<init>|} ((|Annotations|) [|this|]) 
+    @MaxLocals 1
+    @MaxStack 1
+    @Owner (|Annotations|)
+    @Access (PUBLIC,CONSTRUCTOR)
+    @Signature "Annotations.<init>:()V" 
+  {
+    local temp;
+
+    #L00000a. call temp:= {|java.lang.Object.<init>|}([|this|]) @signature "java/lang/Object.<init>:()V" @classDescriptor [|java.lang.Object|] @type special;
+    #L00000b. return @void;
+  }
+
+

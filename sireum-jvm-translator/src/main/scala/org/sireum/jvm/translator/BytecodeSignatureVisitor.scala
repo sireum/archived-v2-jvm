@@ -9,10 +9,10 @@ import scala.collection.mutable
 
 class BytecodeSignatureVisitor(api: Int, val st: ST) extends SignatureVisitor(api) {
   val stg = new STGroupFile("pilar.stg")
-  var currentSt : ST = null
+  var currentSt: ST = null
   val stClassTypes = mutable.Stack[ST]()
   def this(st: ST) = this(Opcodes.ASM4, st)
-  
+
   override def visitArrayType() = {
     val stArray = stg.getInstanceOf("arraytypesigdef")
     currentSt.add("element", stArray)
@@ -52,7 +52,7 @@ class BytecodeSignatureVisitor(api: Int, val st: ST) extends SignatureVisitor(ap
   override def visitInnerClassType(name: String) = {
     val stInnerClassType = stg.getInstanceOf("innerclasstypesigdef")
     stInnerClassType.add("name", name)
-    stClassTypes.top.add("typeparam", stInnerClassType)    
+    stClassTypes.top.add("typeparam", stInnerClassType)
   }
   override def visitInterface() = {
     currentSt = stg.getInstanceOf("interfacesigdef")
@@ -90,7 +90,7 @@ class BytecodeSignatureVisitor(api: Int, val st: ST) extends SignatureVisitor(ap
       case SignatureVisitor.EXTENDS => currentSt.add("name", "Extends")
       case SignatureVisitor.INSTANCEOF => currentSt.add("name", "InstanceOf")
       case SignatureVisitor.SUPER => currentSt.add("name", "Super")
-      case _ => {/* How can this happen */}
+      case _ => { /* How can this happen */ }
     }
     st.add("typearg", currentSt)
     this

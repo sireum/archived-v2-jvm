@@ -1,0 +1,282 @@
+record (|BytecodeAnnotationVisitor|)
+    @bytes "\u0006\u0001i3A!\u0001\u0002\u0001\u0017\tI\")\u001F;fG>$W-\u00118o_R\fG/[8o-&\u001C\u0018\u000E^8s\u0015\t\u0019A!\u0001\u0006ue\u0006t7\u000F\\1u_JT!!\u0002\u0004\u0002\u0007)4XN\u0003\u0002\b\u0011\u000511/\u001B:fk6T\u0011!C\u0001\u0004_J<7\u0001A\n\u0003\u00011\u0001\"!\u0004\u000B\u000E\u00039Q!a\u0004\t\u0002\u0007\u0005\u001CXN\u0003\u0002\u0012%\u0005)Ao\\8mg*\t1#A\u0003tG\u0006d\u0017-\u0003\u0002\u0016\u001D\t\t\u0012I\u001C8pi\u0006$\u0018n\u001C8WSNLGo\u001C:\t\u0011]\u0001!\u0011!Q\u0001\na\t1!\u00199j!\tI\"$D\u0001\u0013\u0013\tY\"CA\u0002J]RD\u0001\"\b\u0001\u0003\u0002\u0003\u0006I\u0001D\u0001\u0003CZD\u0001b\b\u0001\u0003\u0002\u0003\u0006I\u0001I\u0001\nE\u0006\u001CX-T8eK2\u0004\"!\t\u0013\u000E\u0003\tR!a\t\u0003\u0002\r5|G-\u001A7t\u0013\t)#EA\u0005CCN,Wj\u001C3fY\")q\u0005\u0001C\u0001Q\u00051A(\u001B8jiz\"B!K\u0016-[A\u0011!\u0006A\u0007\u0002\u0005!)qC\na\u00011!)QD\na\u0001\u0019!)qD\na\u0001A!)q\u0005\u0001C\u0001_Q\u0011\u0011\u0006\r\u0005\u0006?9\u0002\r\u0001\t\u0005\u0006e\u0001!\teM\u0001\u0006m&\u001C\u0018\u000E\u001E\u000B\u0004i]\u0002\u0005CA\r6\u0013\t1$C\u0001\u0003V]&$\b\"\u0002\u001D2\u0001\u0004I\u0014\u0001\u00028b[\u0016\u0004\"AO\u001F\u000F\u0005eY\u0014B\u0001\u001F\u0013\u0003\u0019\u0001&/\u001A3fM&\u0011ah\u0010\u0002\u0007'R\u0014\u0018N\\4\u000B\u0005q\u0012\u0002\"B!2\u0001\u0004\u0011\u0015!\u0002<bYV,\u0007CA\"I\u001B\u0005!%BA#G\u0003\u0011a\u0017M\\4\u000B\u0003\u001D\u000BAA[1wC&\u0011\u0011\n\u0012\u0002\u0007\u001F\nTWm\u0019;\t\u000B-\u0003A\u0011\t'\u0002\u001FYL7/\u001B;B]:|G/\u0019;j_:$2!K'O\u0011\u0015A$\n1\u0001:\u0011\u0015y%\n1\u0001:\u0003\u0011!Wm]2\t\u000BE\u0003A\u0011\t*\u0002\u0015YL7/\u001B;BeJ\f\u0017\u0010\u0006\u0002*'\")\u0001\b\u0015a\u0001s!)Q\u000B\u0001C!-\u0006Ia/[:ji\u0016sW/\u001C\u000B\u0005i]C\u0016\fC\u00039)\u0002\u0007\u0011\bC\u0003P)\u0002\u0007\u0011\bC\u0003B)\u0002\u0007\u0011\b"
+    @source "BytecodeAnnotationVisitor.scala"
+    @(|scala.reflect.ScalaSignature|) 
+    @type class
+    @AccessFlag (PUBLIC)
+    @InnerClass (
+      @Name (|org.sireum.jvm.translator.BytecodeAnnotationVisitor$$anonfun$visit$1|), 
+      @AccessFlag (PUBLIC)
+     ) 
+  extends 
+    (|scala.tools.asm.AnnotationVisitor|) 
+{
+  (|org.sireum.jvm.models.BaseModel|) <|BytecodeAnnotationVisitor.baseModel|> @AccessFlag (PRIVATE,FINAL);
+}
+
+  procedure (|void|) {|BytecodeAnnotationVisitor.visit|} ((|BytecodeAnnotationVisitor|) [|this|], (|java.lang.String|) [|name|], (|java.lang.Object|) [|value|]) 
+    @MaxLocals 5
+    @MaxStack 6
+    @Owner (|BytecodeAnnotationVisitor|)
+    @Access (PUBLIC)
+    @Signature "BytecodeAnnotationVisitor.visit:(Ljava/lang/String;Ljava/lang/Object;)V" 
+  {
+    local temp;
+    s0;
+    s1;
+    s2;
+    [|l|];
+    [|elements|];
+
+    #L00000a. s0:= instanceof @varname [|value|] @type "(|scala.tools.asm.Type|)";
+    #L00000b. if s0 == 0 then goto L00001a;
+    #L00002a. s0:= [|this|].<|org.sireum.jvm.translator.BytecodeAnnotationVisitor.baseModel|>;
+    #L00002b. call temp:= {|org.sireum.jvm.models.BaseModel.annotations|}(s0) @signature "org/sireum/jvm/models/BaseModel.annotations:()Ljava/util/HashMap;" @classDescriptor [|org.sireum.jvm.models.BaseModel|] @type interface;
+    #L00003a. s0:= +|org.sireum.jvm.util.Util$.MODULE$|+;
+    #L00003b. s1:= +|org.sireum.jvm.util.Util$.MODULE$|+;
+    #L00003c. checkcast [|value|] @type (|scala.tools.asm.Type|);
+    #L00003d. call temp:= {|org.sireum.jvm.util.Util$.convertType|}(s1,[|value|]) @signature "org/sireum/jvm/util/Util$.convertType:(Lscala/tools/asm/Type;)Ljava/lang/String;" @classDescriptor [|org.sireum.jvm.util.Util$|] @type virtual;
+    #L00003e. call temp:= {|org.sireum.jvm.util.Util$.getPilarClassName|}(s0,temp) @signature "org/sireum/jvm/util/Util$.getPilarClassName:(Ljava/lang/String;)Ljava/lang/String;" @classDescriptor [|org.sireum.jvm.util.Util$|] @type virtual;
+    #L00004a. call temp:= {|java.util.HashMap.put|}(temp,[|name|],temp) @signature "java/util/HashMap.put:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;" @classDescriptor [|java.util.HashMap|] @type virtual;
+    #L00004b. goto L00005;
+    #L00001a. call temp:= {|java.lang.Object.getClass|}([|value|]) @signature "java/lang/Object.getClass:()Ljava/lang/Class;" @classDescriptor [|java.lang.Object|] @type virtual;
+    #L00001b. call temp:= {|java.lang.Class.isArray|}(temp) @signature "java/lang/Class.isArray:()Z" @classDescriptor [|java.lang.Class|] @type virtual;
+    #L00001c. if temp == 0 then goto L00006a;
+    #L00007a. call temp:= {|java.lang.reflect.Array.getLength|}([|value|]) @signature "java/lang/reflect/Array.getLength:(Ljava/lang/Object;)I" @classDescriptor [|java.lang.reflect.Array|] @type direct;
+    #L00007b. [|l|]:= temp @type (|java.lang.Object|);
+    #L00008a. s0:= new (|scala.runtime.ObjectRef|);
+    #L00008b. s1:= +|scala.collection.immutable.Nil$.MODULE$|+;
+    #L00008c. call temp:= {|scala.runtime.ObjectRef.<init>|}(s0,s1) @signature "scala/runtime/ObjectRef.<init>:(Ljava/lang/Object;)V" @classDescriptor [|scala.runtime.ObjectRef|] @type special;
+    #L00008d. [|elements|]:= s0 @type (|java.lang.Object|);
+    #L00009a. s0:= +|scala.runtime.RichInt$.MODULE$|+;
+    #L00010a. s0:= +|scala.Predef$.MODULE$|+;
+    #L00010b. call temp:= {|scala.Predef$.intWrapper|}(s0,0) @signature "scala/Predef$.intWrapper:(I)I" @classDescriptor [|scala.Predef$|] @type virtual;
+    #L00010c. call temp:= {|scala.runtime.RichInt$.until$extension0|}(s0,temp,[|l|]) @signature "scala/runtime/RichInt$.until$extension0:(II)Lscala/collection/immutable/Range;" @classDescriptor [|scala.runtime.RichInt$|] @type virtual;
+    #L00010d. s1:= new (|org.sireum.jvm.translator.BytecodeAnnotationVisitor$$anonfun$visit$1|);
+    #L00010e. call temp:= {|org.sireum.jvm.translator.BytecodeAnnotationVisitor$$anonfun$visit$1.<init>|}(s1,[|this|],[|value|],[|elements|]) @signature "org/sireum/jvm/translator/BytecodeAnnotationVisitor$$anonfun$visit$1.<init>:(Lorg/sireum/jvm/translator/BytecodeAnnotationVisitor;Ljava/lang/Object;Lscala/runtime/ObjectRef;)V" @classDescriptor [|org.sireum.jvm.translator.BytecodeAnnotationVisitor$$anonfun$visit$1|] @type special;
+    #L00010f. call temp:= {|scala.collection.immutable.Range.foreach$mVc$sp|}(temp,s1) @signature "scala/collection/immutable/Range.foreach$mVc$sp:(Lscala/Function1;)V" @classDescriptor [|scala.collection.immutable.Range|] @type virtual;
+    #L00011a. s0:= [|this|].<|org.sireum.jvm.translator.BytecodeAnnotationVisitor.baseModel|>;
+    #L00011b. call temp:= {|org.sireum.jvm.models.BaseModel.annotations|}(s0) @signature "org/sireum/jvm/models/BaseModel.annotations:()Ljava/util/HashMap;" @classDescriptor [|org.sireum.jvm.models.BaseModel|] @type interface;
+    #L00011c. s1:= new (|scala.collection.mutable.StringBuilder|);
+    #L00011d. call temp:= {|scala.collection.mutable.StringBuilder.<init>|}(s1) @signature "scala/collection/mutable/StringBuilder.<init>:()V" @classDescriptor [|scala.collection.mutable.StringBuilder|] @type special;
+    #L00011e. call temp:= {|scala.collection.mutable.StringBuilder.append|}(s1,[|name|]) @signature "scala/collection/mutable/StringBuilder.append:(Ljava/lang/Object;)Lscala/collection/mutable/StringBuilder;" @classDescriptor [|scala.collection.mutable.StringBuilder|] @type virtual;
+    #L00011f. call temp:= {|scala.collection.mutable.StringBuilder.append|}(temp,"`[") @signature "scala/collection/mutable/StringBuilder.append:(Ljava/lang/Object;)Lscala/collection/mutable/StringBuilder;" @classDescriptor [|scala.collection.mutable.StringBuilder|] @type virtual;
+    #L00011g. s2:= [|elements|].<|scala.runtime.ObjectRef.elem|>;
+    #L00011h. checkcast s2 @type (|scala.collection.immutable.List|);
+    #L00011i. call temp:= {|scala.collection.immutable.List.mkString|}(s2,", ") @signature "scala/collection/immutable/List.mkString:(Ljava/lang/String;)Ljava/lang/String;" @classDescriptor [|scala.collection.immutable.List|] @type virtual;
+    #L00011j. call temp:= {|scala.collection.mutable.StringBuilder.append|}(temp,temp) @signature "scala/collection/mutable/StringBuilder.append:(Ljava/lang/Object;)Lscala/collection/mutable/StringBuilder;" @classDescriptor [|scala.collection.mutable.StringBuilder|] @type virtual;
+    #L00011k. call temp:= {|scala.collection.mutable.StringBuilder.append|}(temp,"]") @signature "scala/collection/mutable/StringBuilder.append:(Ljava/lang/Object;)Lscala/collection/mutable/StringBuilder;" @classDescriptor [|scala.collection.mutable.StringBuilder|] @type virtual;
+    #L00011l. call temp:= {|scala.collection.mutable.StringBuilder.toString|}(temp) @signature "scala/collection/mutable/StringBuilder.toString:()Ljava/lang/String;" @classDescriptor [|scala.collection.mutable.StringBuilder|] @type virtual;
+    #L00011m. call temp:= {|java.util.HashMap.put|}(temp,"Array",temp) @signature "java/util/HashMap.put:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;" @classDescriptor [|java.util.HashMap|] @type virtual;
+    #L00012a. goto L00005;
+    #L00006a. s0:= [|this|].<|org.sireum.jvm.translator.BytecodeAnnotationVisitor.baseModel|>;
+    #L00006b. call temp:= {|org.sireum.jvm.models.BaseModel.annotations|}(s0) @signature "org/sireum/jvm/models/BaseModel.annotations:()Ljava/util/HashMap;" @classDescriptor [|org.sireum.jvm.models.BaseModel|] @type interface;
+    #L00006c. s1:= new (|scala.collection.mutable.StringBuilder|);
+    #L00006d. call temp:= {|scala.collection.mutable.StringBuilder.<init>|}(s1) @signature "scala/collection/mutable/StringBuilder.<init>:()V" @classDescriptor [|scala.collection.mutable.StringBuilder|] @type special;
+    #L00006e. call temp:= {|scala.collection.mutable.StringBuilder.append|}(s1,""") @signature "scala/collection/mutable/StringBuilder.append:(Ljava/lang/Object;)Lscala/collection/mutable/StringBuilder;" @classDescriptor [|scala.collection.mutable.StringBuilder|] @type virtual;
+    #L00006f. call temp:= {|java.lang.Object.toString|}([|value|]) @signature "java/lang/Object.toString:()Ljava/lang/String;" @classDescriptor [|java.lang.Object|] @type virtual;
+    #L00006g. call temp:= {|org.apache.commons.lang3.StringEscapeUtils.escapeJava|}(temp) @signature "org/apache/commons/lang3/StringEscapeUtils.escapeJava:(Ljava/lang/String;)Ljava/lang/String;" @classDescriptor [|org.apache.commons.lang3.StringEscapeUtils|] @type direct;
+    #L00006h. call temp:= {|scala.collection.mutable.StringBuilder.append|}(temp,temp) @signature "scala/collection/mutable/StringBuilder.append:(Ljava/lang/Object;)Lscala/collection/mutable/StringBuilder;" @classDescriptor [|scala.collection.mutable.StringBuilder|] @type virtual;
+    #L00006i. call temp:= {|scala.collection.mutable.StringBuilder.append|}(temp,""") @signature "scala/collection/mutable/StringBuilder.append:(Ljava/lang/Object;)Lscala/collection/mutable/StringBuilder;" @classDescriptor [|scala.collection.mutable.StringBuilder|] @type virtual;
+    #L00006j. call temp:= {|scala.collection.mutable.StringBuilder.toString|}(temp) @signature "scala/collection/mutable/StringBuilder.toString:()Ljava/lang/String;" @classDescriptor [|scala.collection.mutable.StringBuilder|] @type virtual;
+    #L00006k. call temp:= {|java.util.HashMap.put|}(temp,[|name|],temp) @signature "java/util/HashMap.put:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;" @classDescriptor [|java.util.HashMap|] @type virtual;
+    #L00005a. return @void;
+  }
+  procedure (|org.sireum.jvm.translator.BytecodeAnnotationVisitor|) {|BytecodeAnnotationVisitor.visitAnnotation|} ((|BytecodeAnnotationVisitor|) [|this|], (|java.lang.String|) [|x$1|], (|java.lang.String|) [|x$2|]) 
+    @MaxLocals 3
+    @MaxStack 5
+    @Owner (|BytecodeAnnotationVisitor|)
+    @Access (PUBLIC)
+    @Signature "BytecodeAnnotationVisitor.visitAnnotation:(Ljava/lang/String;Ljava/lang/String;)Lorg/sireum/jvm/translator/BytecodeAnnotationVisitor;" 
+  {
+    local temp;
+    s0;
+    s1;
+    s2;
+
+    #L00000a. s0:= [|this|].<|org.sireum.jvm.translator.BytecodeAnnotationVisitor.baseModel|>;
+    #L00000b. call temp:= {|org.sireum.jvm.models.BaseModel.annotations|}(s0) @signature "org/sireum/jvm/models/BaseModel.annotations:()Ljava/util/HashMap;" @classDescriptor [|org.sireum.jvm.models.BaseModel|] @type interface;
+    #L00000c. s1:= +|org.sireum.jvm.util.Util$.MODULE$|+;
+    #L00000d. s2:= +|org.sireum.jvm.util.Util$.MODULE$|+;
+    #L00000e. call temp:= {|org.sireum.jvm.util.Util$.convertType|}(s2,[|x$2|]) @signature "org/sireum/jvm/util/Util$.convertType:(Ljava/lang/String;)Ljava/lang/String;" @classDescriptor [|org.sireum.jvm.util.Util$|] @type virtual;
+    #L00000f. call temp:= {|org.sireum.jvm.util.Util$.getPilarClassName|}(s1,temp) @signature "org/sireum/jvm/util/Util$.getPilarClassName:(Ljava/lang/String;)Ljava/lang/String;" @classDescriptor [|org.sireum.jvm.util.Util$|] @type virtual;
+    #L00000g. call temp:= {|java.util.HashMap.put|}(temp,[|x$1|],temp) @signature "java/util/HashMap.put:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;" @classDescriptor [|java.util.HashMap|] @type virtual;
+    #L00001a. return [|this|];
+  }
+  procedure (|org.sireum.jvm.translator.BytecodeAnnotationVisitor|) {|BytecodeAnnotationVisitor.visitArray|} ((|BytecodeAnnotationVisitor|) [|this|], (|java.lang.String|) [|x$1|]) 
+    @MaxLocals 2
+    @MaxStack 3
+    @Owner (|BytecodeAnnotationVisitor|)
+    @Access (PUBLIC)
+    @Signature "BytecodeAnnotationVisitor.visitArray:(Ljava/lang/String;)Lorg/sireum/jvm/translator/BytecodeAnnotationVisitor;" 
+  {
+    local temp;
+    s0;
+
+    #L00000a. s0:= [|this|].<|org.sireum.jvm.translator.BytecodeAnnotationVisitor.baseModel|>;
+    #L00000b. call temp:= {|org.sireum.jvm.models.BaseModel.annotations|}(s0) @signature "org/sireum/jvm/models/BaseModel.annotations:()Ljava/util/HashMap;" @classDescriptor [|org.sireum.jvm.models.BaseModel|] @type interface;
+    #L00000c. call temp:= {|java.util.HashMap.put|}(temp,"Array",[|x$1|]) @signature "java/util/HashMap.put:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;" @classDescriptor [|java.util.HashMap|] @type virtual;
+    #L00001a. return [|this|];
+  }
+  procedure (|void|) {|BytecodeAnnotationVisitor.visitEnum|} ((|BytecodeAnnotationVisitor|) [|this|], (|java.lang.String|) [|name|], (|java.lang.String|) [|desc|], (|java.lang.String|) [|value|]) 
+    @MaxLocals 4
+    @MaxStack 6
+    @Owner (|BytecodeAnnotationVisitor|)
+    @Access (PUBLIC)
+    @Signature "BytecodeAnnotationVisitor.visitEnum:(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V" 
+  {
+    local temp;
+    s0;
+    s1;
+
+    #L00000a. s0:= [|this|].<|org.sireum.jvm.translator.BytecodeAnnotationVisitor.baseModel|>;
+    #L00000b. call temp:= {|org.sireum.jvm.models.BaseModel.annotations|}(s0) @signature "org/sireum/jvm/models/BaseModel.annotations:()Ljava/util/HashMap;" @classDescriptor [|org.sireum.jvm.models.BaseModel|] @type interface;
+    #L00001a. s0:= new (|scala.collection.mutable.StringBuilder|);
+    #L00001b. call temp:= {|scala.collection.mutable.StringBuilder.<init>|}(s0) @signature "scala/collection/mutable/StringBuilder.<init>:()V" @classDescriptor [|scala.collection.mutable.StringBuilder|] @type special;
+    #L00002a. call temp:= {|scala.collection.mutable.StringBuilder.append|}(s0,[|name|]) @signature "scala/collection/mutable/StringBuilder.append:(Ljava/lang/Object;)Lscala/collection/mutable/StringBuilder;" @classDescriptor [|scala.collection.mutable.StringBuilder|] @type virtual;
+    #L00002b. call temp:= {|scala.collection.mutable.StringBuilder.append|}(temp," ") @signature "scala/collection/mutable/StringBuilder.append:(Ljava/lang/Object;)Lscala/collection/mutable/StringBuilder;" @classDescriptor [|scala.collection.mutable.StringBuilder|] @type virtual;
+    #L00003a. s0:= +|org.sireum.jvm.util.Util$.MODULE$|+;
+    #L00003b. s1:= +|org.sireum.jvm.util.Util$.MODULE$|+;
+    #L00003c. call temp:= {|org.sireum.jvm.util.Util$.convertType|}(s1,[|desc|]) @signature "org/sireum/jvm/util/Util$.convertType:(Ljava/lang/String;)Ljava/lang/String;" @classDescriptor [|org.sireum.jvm.util.Util$|] @type virtual;
+    #L00003d. call temp:= {|org.sireum.jvm.util.Util$.getPilarClassName|}(s0,temp) @signature "org/sireum/jvm/util/Util$.getPilarClassName:(Ljava/lang/String;)Ljava/lang/String;" @classDescriptor [|org.sireum.jvm.util.Util$|] @type virtual;
+    #L00003e. call temp:= {|scala.collection.mutable.StringBuilder.append|}(temp,temp) @signature "scala/collection/mutable/StringBuilder.append:(Ljava/lang/Object;)Lscala/collection/mutable/StringBuilder;" @classDescriptor [|scala.collection.mutable.StringBuilder|] @type virtual;
+    #L00003f. call temp:= {|scala.collection.mutable.StringBuilder.append|}(temp," ") @signature "scala/collection/mutable/StringBuilder.append:(Ljava/lang/Object;)Lscala/collection/mutable/StringBuilder;" @classDescriptor [|scala.collection.mutable.StringBuilder|] @type virtual;
+    #L00003g. call temp:= {|scala.collection.mutable.StringBuilder.append|}(temp,[|value|]) @signature "scala/collection/mutable/StringBuilder.append:(Ljava/lang/Object;)Lscala/collection/mutable/StringBuilder;" @classDescriptor [|scala.collection.mutable.StringBuilder|] @type virtual;
+    #L00003h. call temp:= {|scala.collection.mutable.StringBuilder.toString|}(temp) @signature "scala/collection/mutable/StringBuilder.toString:()Ljava/lang/String;" @classDescriptor [|scala.collection.mutable.StringBuilder|] @type virtual;
+    #L00004a. call temp:= {|java.util.HashMap.put|}(temp,"Enum",temp) @signature "java/util/HashMap.put:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;" @classDescriptor [|java.util.HashMap|] @type virtual;
+    #L00004b. return @void;
+  }
+  procedure (|scala.tools.asm.AnnotationVisitor|) {|BytecodeAnnotationVisitor.visitArray|} ((|BytecodeAnnotationVisitor|) [|this|], (|java.lang.String|) [|x$1|]) 
+    @MaxLocals 2
+    @MaxStack 2
+    @Owner (|BytecodeAnnotationVisitor|)
+    @Access (PUBLIC,SYNTHETIC,VOLATILE)
+    @Signature "BytecodeAnnotationVisitor.visitArray:(Ljava/lang/String;)Lscala/tools/asm/AnnotationVisitor;" 
+  {
+    local temp;
+
+    #L00000a. call temp:= {|org.sireum.jvm.translator.BytecodeAnnotationVisitor.visitArray|}([|this|],[|x$1|]) @signature "org/sireum/jvm/translator/BytecodeAnnotationVisitor.visitArray:(Ljava/lang/String;)Lorg/sireum/jvm/translator/BytecodeAnnotationVisitor;" @classDescriptor [|org.sireum.jvm.translator.BytecodeAnnotationVisitor|] @type virtual;
+    #L00000b. return temp;
+  }
+  procedure (|scala.tools.asm.AnnotationVisitor|) {|BytecodeAnnotationVisitor.visitAnnotation|} ((|BytecodeAnnotationVisitor|) [|this|], (|java.lang.String|) [|x$1|], (|java.lang.String|) [|x$2|]) 
+    @MaxLocals 3
+    @MaxStack 3
+    @Owner (|BytecodeAnnotationVisitor|)
+    @Access (PUBLIC,SYNTHETIC,VOLATILE)
+    @Signature "BytecodeAnnotationVisitor.visitAnnotation:(Ljava/lang/String;Ljava/lang/String;)Lscala/tools/asm/AnnotationVisitor;" 
+  {
+    local temp;
+
+    #L00000a. call temp:= {|org.sireum.jvm.translator.BytecodeAnnotationVisitor.visitAnnotation|}([|this|],[|x$1|],[|x$2|]) @signature "org/sireum/jvm/translator/BytecodeAnnotationVisitor.visitAnnotation:(Ljava/lang/String;Ljava/lang/String;)Lorg/sireum/jvm/translator/BytecodeAnnotationVisitor;" @classDescriptor [|org.sireum.jvm.translator.BytecodeAnnotationVisitor|] @type virtual;
+    #L00000b. return temp;
+  }
+  procedure (|void|) {|BytecodeAnnotationVisitor.<init>|} ((|BytecodeAnnotationVisitor|) [|this|], (|int|) [|baseModel|], (|scala.tools.asm.AnnotationVisitor|) [|v2|], (|org.sireum.jvm.models.BaseModel|) [|v3|]) 
+    @MaxLocals 4
+    @MaxStack 3
+    @Owner (|BytecodeAnnotationVisitor|)
+    @Access (PUBLIC,CONSTRUCTOR)
+    @Signature "BytecodeAnnotationVisitor.<init>:(ILscala/tools/asm/AnnotationVisitor;Lorg/sireum/jvm/models/BaseModel;)V" 
+  {
+    local temp;
+
+    #L00000a. [|this|].<|org.sireum.jvm.translator.BytecodeAnnotationVisitor.baseModel|>:= [|v3|];
+    #L00000b. call temp:= {|scala.tools.asm.AnnotationVisitor.<init>|}([|this|],[|baseModel|],[|v2|]) @signature "scala/tools/asm/AnnotationVisitor.<init>:(ILscala/tools/asm/AnnotationVisitor;)V" @classDescriptor [|scala.tools.asm.AnnotationVisitor|] @type special;
+    #L00000c. return @void;
+  }
+  procedure (|void|) {|BytecodeAnnotationVisitor.<init>|} ((|BytecodeAnnotationVisitor|) [|this|], (|org.sireum.jvm.models.BaseModel|) [|baseModel|]) 
+    @MaxLocals 2
+    @MaxStack 4
+    @Owner (|BytecodeAnnotationVisitor|)
+    @Access (PUBLIC,CONSTRUCTOR)
+    @Signature "BytecodeAnnotationVisitor.<init>:(Lorg/sireum/jvm/models/BaseModel;)V" 
+  {
+    local temp;
+
+    #L00000a. call temp:= {|org.sireum.jvm.translator.BytecodeAnnotationVisitor.<init>|}([|this|],262144,null,[|baseModel|]) @signature "org/sireum/jvm/translator/BytecodeAnnotationVisitor.<init>:(ILscala/tools/asm/AnnotationVisitor;Lorg/sireum/jvm/models/BaseModel;)V" @classDescriptor [|org.sireum.jvm.translator.BytecodeAnnotationVisitor|] @type special;
+    #L00000b. return @void;
+  }
+
+record (|BytecodeAnnotationVisitor$$anonfun$visit$1|)
+    @OuterClass org/sireum/jvm/translator/BytecodeAnnotationVisitor, {|visit(Ljava/lang/String;Ljava/lang/Object;)V|}
+    @source "BytecodeAnnotationVisitor.scala"
+    @type class
+    @AccessFlag (PUBLIC,FINAL)
+    @InnerClass (
+      @Name (|org.sireum.jvm.translator.BytecodeAnnotationVisitor$$anonfun$visit$1|), 
+      @AccessFlag (PUBLIC)
+     ) 
+  extends 
+    (|scala.runtime.AbstractFunction1$mcVI$sp|) 
+{
+  (|java.lang.Object|) <|BytecodeAnnotationVisitor$$anonfun$visit$1.value$1|> @AccessFlag (PRIVATE,FINAL);
+  (|scala.runtime.ObjectRef|) <|BytecodeAnnotationVisitor$$anonfun$visit$1.elements$1|> @AccessFlag (PRIVATE,FINAL);
+}
+  global (|long|) @@+|BytecodeAnnotationVisitor$$anonfun$visit$1.serialVersionUID|+ @AccessFlag (PUBLIC,STATIC,FINAL);
+
+  procedure (|void|) {|BytecodeAnnotationVisitor$$anonfun$visit$1.apply|} ((|BytecodeAnnotationVisitor$$anonfun$visit$1|) [|this|], (|int|) [|v1|]) 
+    @MaxLocals 2
+    @MaxStack 2
+    @Owner (|BytecodeAnnotationVisitor$$anonfun$visit$1|)
+    @Access (PUBLIC,FINAL)
+    @Signature "BytecodeAnnotationVisitor$$anonfun$visit$1.apply:(I)V" 
+  {
+    local temp;
+
+    #L00000a. call temp:= {|org.sireum.jvm.translator.BytecodeAnnotationVisitor$$anonfun$visit$1.apply$mcVI$sp|}([|this|],[|v1|]) @signature "org/sireum/jvm/translator/BytecodeAnnotationVisitor$$anonfun$visit$1.apply$mcVI$sp:(I)V" @classDescriptor [|org.sireum.jvm.translator.BytecodeAnnotationVisitor$$anonfun$visit$1|] @type virtual;
+    #L00000b. return @void;
+  }
+  procedure (|void|) {|BytecodeAnnotationVisitor$$anonfun$visit$1.apply$mcVI$sp|} ((|BytecodeAnnotationVisitor$$anonfun$visit$1|) [|this|], (|int|) [|i|]) 
+    @MaxLocals 3
+    @MaxStack 3
+    @Owner (|BytecodeAnnotationVisitor$$anonfun$visit$1|)
+    @Access (PUBLIC)
+    @Signature "BytecodeAnnotationVisitor$$anonfun$visit$1.apply$mcVI$sp:(I)V" 
+  {
+    local temp;
+    s0;
+    s1;
+    s2;
+    s3;
+
+    #L00000a. s0:= [|this|].<|org.sireum.jvm.translator.BytecodeAnnotationVisitor$$anonfun$visit$1.elements$1|>;
+    #L00000b. s1:= [|this|].<|org.sireum.jvm.translator.BytecodeAnnotationVisitor$$anonfun$visit$1.value$1|>;
+    #L00000c. call temp:= {|java.lang.reflect.Array.get|}(s1,[|i|]) @signature "java/lang/reflect/Array.get:(Ljava/lang/Object;I)Ljava/lang/Object;" @classDescriptor [|java.lang.reflect.Array|] @type direct;
+    #L00000d. [|v2|]:= temp @type (|java.lang.Object|);
+    #L00000e. s2:= [|this|].<|org.sireum.jvm.translator.BytecodeAnnotationVisitor$$anonfun$visit$1.elements$1|>;
+    #L00000f. s3:= s2.<|scala.runtime.ObjectRef.elem|>;
+    #L00000g. checkcast s3 @type (|scala.collection.immutable.List|);
+    #L00000h. call temp:= {|scala.collection.immutable.List.$colon$colon|}(s3,[|v2|]) @signature "scala/collection/immutable/List.$colon$colon:(Ljava/lang/Object;)Lscala/collection/immutable/List;" @classDescriptor [|scala.collection.immutable.List|] @type virtual;
+    #L00000i. s0.<|scala.runtime.ObjectRef.elem|>:= temp;
+    #L00000j. return @void;
+  }
+  procedure (|java.lang.Object|) {|BytecodeAnnotationVisitor$$anonfun$visit$1.apply|} ((|BytecodeAnnotationVisitor$$anonfun$visit$1|) [|this|], (|java.lang.Object|) [|v1|]) 
+    @MaxLocals 2
+    @MaxStack 2
+    @Owner (|BytecodeAnnotationVisitor$$anonfun$visit$1|)
+    @Access (PUBLIC,FINAL,SYNTHETIC,VOLATILE)
+    @Signature "BytecodeAnnotationVisitor$$anonfun$visit$1.apply:(Ljava/lang/Object;)Ljava/lang/Object;" 
+  {
+    local temp;
+    s0;
+
+    #L00000a. call temp:= {|scala.runtime.BoxesRunTime.unboxToInt|}([|v1|]) @signature "scala/runtime/BoxesRunTime.unboxToInt:(Ljava/lang/Object;)I" @classDescriptor [|scala.runtime.BoxesRunTime|] @type direct;
+    #L00000b. call temp:= {|org.sireum.jvm.translator.BytecodeAnnotationVisitor$$anonfun$visit$1.apply|}([|this|],temp) @signature "org/sireum/jvm/translator/BytecodeAnnotationVisitor$$anonfun$visit$1.apply:(I)V" @classDescriptor [|org.sireum.jvm.translator.BytecodeAnnotationVisitor$$anonfun$visit$1|] @type virtual;
+    #L00000c. s0:= +|scala.runtime.BoxedUnit.UNIT|+;
+    #L00000d. return s0;
+  }
+  procedure (|void|) {|BytecodeAnnotationVisitor$$anonfun$visit$1.<init>|} ((|BytecodeAnnotationVisitor$$anonfun$visit$1|) [|this|], (|org.sireum.jvm.translator.BytecodeAnnotationVisitor|) [|$outer|], (|java.lang.Object|) [|value$1|], (|scala.runtime.ObjectRef|) [|elements$1|]) 
+    @MaxLocals 4
+    @MaxStack 2
+    @Owner (|BytecodeAnnotationVisitor$$anonfun$visit$1|)
+    @Access (PUBLIC,CONSTRUCTOR)
+    @Signature "BytecodeAnnotationVisitor$$anonfun$visit$1.<init>:(Lorg/sireum/jvm/translator/BytecodeAnnotationVisitor;Ljava/lang/Object;Lscala/runtime/ObjectRef;)V" 
+  {
+    local temp;
+
+    #L00000a. [|this|].<|org.sireum.jvm.translator.BytecodeAnnotationVisitor$$anonfun$visit$1.value$1|>:= [|value$1|];
+    #L00000b. [|this|].<|org.sireum.jvm.translator.BytecodeAnnotationVisitor$$anonfun$visit$1.elements$1|>:= [|elements$1|];
+    #L00000c. call temp:= {|scala.runtime.AbstractFunction1$mcVI$sp.<init>|}([|this|]) @signature "scala/runtime/AbstractFunction1$mcVI$sp.<init>:()V" @classDescriptor [|scala.runtime.AbstractFunction1$mcVI$sp|] @type special;
+    #L00000d. return @void;
+  }
+
+

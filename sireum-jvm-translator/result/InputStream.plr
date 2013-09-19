@@ -1,0 +1,210 @@
+record (|InputStream|)
+    @source "InputStream.java"
+    @type class
+    @AccessFlag (PUBLIC) 
+  extends 
+    (|java.lang.Object|) 
+{
+  (|int|) <|InputStream.MAX_SKIP_BUFFER_SIZE|> @AccessFlag (PRIVATE,STATIC,FINAL);
+}
+
+  procedure (|void|) {|InputStream.<init>|} ((|InputStream|) [|v0|]) 
+    @MaxLocals 1
+    @MaxStack 1
+    @Owner (|InputStream|)
+    @Access (PUBLIC,CONSTRUCTOR)
+    @Signature "InputStream.<init>:()V" 
+  {
+    local temp;
+    s0;
+
+
+    #L00000a. call s0:= {|java.lang.Object.<init>|}([|v0|]) @signature "java/lang/Object.<init>:()V" @classDescriptor [|java.lang.Object|] @type special;
+    #L00000b. return @void;
+  }
+  procedure (|int|) {|InputStream.read|} ((|InputStream|) [|v0|]) 
+    @Throws [|java.io.IOException|]
+    @Owner (|InputStream|)
+    @Access (PUBLIC)
+    @Signature "InputStream.read:()I" 
+  {
+
+
+
+    #nulla. return @void;
+  }
+  procedure (|int|) {|InputStream.read|} ((|InputStream|) [|v0|], (|byte|) [|v1|]) 
+    @Throws [|java.io.IOException|]
+    @MaxLocals 2
+    @MaxStack 4
+    @Owner (|InputStream|)
+    @Access (PUBLIC)
+    @Signature "InputStream.read:([B)I" 
+  {
+    local temp;
+    s0;
+
+
+    #L00000a. call s0:= {|java.io.InputStream.read|}([|v0|],[|v1|],0,[|v1|].length) @signature "java/io/InputStream.read:([BII)I" @classDescriptor [|java.io.InputStream|] @type virtual;
+    #L00000b. return s0;
+  }
+  procedure (|int|) {|InputStream.read|} ((|InputStream|) [|v0|], (|byte|) [|v1|], (|int|) [|v2|], (|int|) [|v3|]) 
+    @Throws [|java.io.IOException|]
+    @MaxLocals 7
+    @MaxStack 3
+    @Owner (|InputStream|)
+    @Access (PUBLIC)
+    @Signature "InputStream.read:([BII)I" 
+  {
+    local temp;
+    s0;
+    s1;
+
+
+    #L00003a. <@Frame (@New, 4, `[(|java.lang.Object|), (|byte|), int, int, :top, :top, :top], 0, `[:top, :top, :top])>
+    #L00003b. if [|v1|] != null then goto L00004a;
+    #L00005a. s0:= new (|java.lang.NullPointerException|);
+    #L00005b. call s1:= {|java.lang.NullPointerException.<init>|}(s0) @signature "java/lang/NullPointerException.<init>:()V" @classDescriptor [|java.lang.NullPointerException|] @type special;
+    #L00005c. throw s0;
+    #L00004a. <@Frame (@New, 4, `[(|java.lang.Object|), (|byte|), int, int, :top, :top, :top], 0, `[:top, :top, :top])>
+    #L00004b. if [|v2|] > 0 then goto L00006a;
+    #L00004c. if [|v3|] > 0 then goto L00006a;
+    #L00006a. <@Frame (@New, 4, `[(|java.lang.Object|), (|byte|), int, int, :top, :top, :top], 0, `[:top, :top, :top])>
+    #L00006b. s0:= new (|java.lang.IndexOutOfBoundsException|);
+    #L00006c. call s1:= {|java.lang.IndexOutOfBoundsException.<init>|}(s0) @signature "java/lang/IndexOutOfBoundsException.<init>:()V" @classDescriptor [|java.lang.IndexOutOfBoundsException|] @type special;
+    #L00006d. throw s0;
+    #L00007a. <@Frame (@New, 4, `[(|java.lang.Object|), (|byte|), int, int, :top, :top, :top], 0, `[:top, :top, :top])>
+    #L00007b. if [|v3|] != 0 then goto L00008a;
+    #L00009a. return 0;
+    #L00008a. <@Frame (@New, 4, `[(|java.lang.Object|), (|byte|), int, int, :top, :top, :top], 0, `[:top, :top, :top])>
+    #L00008b. call s0:= {|java.io.InputStream.read|}([|v0|]) @signature "java/io/InputStream.read:()I" @classDescriptor [|java.io.InputStream|] @type virtual;
+    #L00008c. [|v4|]:= s0 @type (|java.lang.Object|);
+    #L00010a. if [|v4|] != -1 then goto L00011a;
+    #L00012a. return -1;
+    #L00011a. <@Frame (@New, 5, `[(|java.lang.Object|), (|byte|), int, int, int, :top, :top], 0, `[:top, :top, :top])>
+    #L00011b. [|v1|][[|v2|]]:= [|v4|];
+    #L00013a. [|v5|]:= 1 @type int;
+    #L00000a. <@Frame (@New, 6, `[(|java.lang.Object|), (|byte|), int, int, int, int, :top], 0, `[:top, :top, :top])>
+    #L00000b. if [|v5|] <= [|v3|] then goto L00001a;
+    #L00014a. call s0:= {|java.io.InputStream.read|}([|v0|]) @signature "java/io/InputStream.read:()I" @classDescriptor [|java.io.InputStream|] @type virtual;
+    #L00014b. [|v4|]:= s0 @type (|java.lang.Object|);
+    #L00015a. if [|v4|] != -1 then goto L00016a;
+    #L00017a. goto L00001;
+    #L00016a. <@Frame (@New, 6, `[(|java.lang.Object|), (|byte|), int, int, int, int, :top], 0, `[:top, :top, :top])>
+    #L00016b. [|v1|][[|v2|]+[|v5|]]:= [|v4|];
+    #L00018a. [|v5|]:= [|v5|] + 1 @type int;
+    #L00018b. goto L00000;
+    #L00001a. <@Frame (@New, 6, `[(|java.lang.Object|), (|byte|), int, int, int, int, :top], 0, `[:top, :top, :top])>
+    #L00001b. goto L00019;
+    #L00002a. <@Frame (@New, 6, `[(|java.lang.Object|), (|byte|), int, int, int, int, :top], 1, `[(|java.lang.Object|), :top, :top])>
+    #L00002b. [|v6|]:= [|v1|].length-[|v2|] @type int;
+    #L00019a. <@Frame (@New, 6, `[(|java.lang.Object|), (|byte|), int, int, int, int, :top], 0, `[(|java.lang.Object|), :top, :top])>
+    #L00019b. return [|v5|];
+      catch (|java.io.IOException|) @[L00000..L00001] goto L00002;
+  }
+  procedure (|long|) {|InputStream.skip|} ((|InputStream|) [|v0|], (|long|) [|v1|]) 
+    @Throws [|java.io.IOException|]
+    @MaxLocals 8
+    @MaxStack 7
+    @Owner (|InputStream|)
+    @Access (PUBLIC)
+    @Signature "InputStream.skip:(J)J" 
+  {
+    local temp;
+    s0;
+    s1;
+
+
+    #L00000a. <@Frame (@New, 2, `[(|java.lang.Object|), long, :top, :top, :top, :top, :top, :top], 0, `[:top, :top, :top, :top, :top, :top, :top])>
+    #L00000b. [|v3|]:= [|v1|] @type long;
+    #L00001a. s0:= lcmp(0,[|v1|]);
+    #L00001b. if s0 < 0 then goto L00002a;
+    #L00003a. return 0;
+    #L00002a. <@Frame (@New, 3, `[(|java.lang.Object|), long, long, :top, :top, :top, :top, :top], 0, `[:top, :top, :top, :top, :top, :top, :top])>
+    #L00002b. call s0:= {|java.lang.Math.min|}(2048,[|v3|]) @signature "java/lang/Math.min:(JJ)J" @classDescriptor [|java.lang.Math|] @type direct;
+    #L00002c. [|v6|]:= s0 @type integer;
+    #L00004a. s0:= new (|byte|)[[|v6|]];
+    #L00004b. [|v7|]:= s0 @type byte;
+    #L00005a. <@Frame (@New, 6, `[(|java.lang.Object|), long, long, :top, int, (|byte|), :top, :top], 0, `[:top, :top, :top, :top, :top, :top, :top])>
+    #L00005b. s0:= lcmp(0,[|v3|]);
+    #L00005c. if s0 >= 0 then goto L00006a;
+    #L00007a. call s0:= {|java.lang.Math.min|}([|v6|],[|v3|]) @signature "java/lang/Math.min:(JJ)J" @classDescriptor [|java.lang.Math|] @type direct;
+    #L00007b. call s1:= {|java.io.InputStream.read|}([|v0|],[|v7|],0,s0) @signature "java/io/InputStream.read:([BII)I" @classDescriptor [|java.io.InputStream|] @type virtual;
+    #L00007c. [|v5|]:= s1 @type (|java.lang.Object|);
+    #L00008a. if [|v5|] <= 0 then goto L00009a;
+    #L00010a. goto L00006;
+    #L00009a. <@Frame (@New, 6, `[(|java.lang.Object|), long, long, int, int, (|byte|), :top, :top], 0, `[:top, :top, :top, :top, :top, :top, :top])>
+    #L00009b. [|v3|]:= [|v3|]-[|v5|] @type long;
+    #L00009c. goto L00005;
+    #L00006a. <@Frame (@New, 6, `[(|java.lang.Object|), long, long, :top, int, (|byte|), :top, :top], 0, `[:top, :top, :top, :top, :top, :top, :top])>
+    #L00006b. return [|v1|]-[|v3|];
+  }
+  procedure (|int|) {|InputStream.available|} ((|InputStream|) [|v0|]) 
+    @Throws [|java.io.IOException|]
+    @MaxLocals 1
+    @MaxStack 1
+    @Owner (|InputStream|)
+    @Access (PUBLIC)
+    @Signature "InputStream.available:()I" 
+  {
+    local temp;
+
+
+    #L00000a. return 0;
+  }
+  procedure (|void|) {|InputStream.close|} ((|InputStream|) [|v0|]) 
+    @Throws [|java.io.IOException|]
+    @MaxLocals 1
+    @MaxStack 0
+    @Owner (|InputStream|)
+    @Access (PUBLIC)
+    @Signature "InputStream.close:()V" 
+  {
+    local temp;
+
+
+    #L00000a. return @void;
+  }
+  procedure (|void|) {|InputStream.mark|} ((|InputStream|) [|v0|], (|int|) [|v1|]) 
+    @MaxLocals 2
+    @MaxStack 0
+    @Owner (|InputStream|)
+    @Access (PUBLIC)
+    @Signature "InputStream.mark:(I)V" 
+  {
+    local temp;
+
+
+    #L00000a. return @void;
+  }
+  procedure (|void|) {|InputStream.reset|} ((|InputStream|) [|v0|]) 
+    @Throws [|java.io.IOException|]
+    @MaxLocals 1
+    @MaxStack 3
+    @Owner (|InputStream|)
+    @Access (PUBLIC)
+    @Signature "InputStream.reset:()V" 
+  {
+    local temp;
+    s0;
+    s1;
+
+
+    #L00000a. s0:= new (|java.io.IOException|);
+    #L00000b. call s1:= {|java.io.IOException.<init>|}(s0,"mark/reset not supported") @signature "java/io/IOException.<init>:(Ljava/lang/String;)V" @classDescriptor [|java.io.IOException|] @type special;
+    #L00000c. throw s0;
+  }
+  procedure (|boolean|) {|InputStream.markSupported|} ((|InputStream|) [|v0|]) 
+    @MaxLocals 1
+    @MaxStack 1
+    @Owner (|InputStream|)
+    @Access (PUBLIC)
+    @Signature "InputStream.markSupported:()Z" 
+  {
+    local temp;
+
+
+    #L00000a. return 0;
+  }
+
+

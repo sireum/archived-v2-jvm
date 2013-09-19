@@ -1,0 +1,57 @@
+record [|HelloWorld|]  @type class @AccessFlag PUBLIC  {
+   }
+    procedure [|void|] [|HelloWorld.<init>|] ([|HelloWorld|] v2 @type (this)) @owner [|HelloWorld|] @signature [|LHelloWorld;.<init>:()V|] @Access PUBLIC_CONSTRUCTOR {
+      local temp ;
+        v0;
+        v1;
+      
+#L000164.   v0:= v2  @type object;
+#L000166.   v1:= v0  @type object;
+#L000168.   call temp:=  [|java:lang:Object.<init>|](v1) @signature [|Ljava/lang/Object;.<init>:()V|] @classDescriptor [|java:lang:Object|] @type direct;
+#L00016e.   return @void ;
+
+   }
+    procedure [|void|] [|HelloWorld.main|] ([|java:lang:String|][] v7 @type (object)) @owner [|HelloWorld|] @signature [|LHelloWorld;.main:([Ljava/lang/String;)V|] @Access PUBLIC_STATIC {
+      local temp ;
+        v0;
+        v1;
+        v2;
+        v3;
+        v4;
+        v5;
+        v6;
+      
+#L000180.   v0:= v7  @type object;
+#L000182.   v5:= "Hello World!" @type (object, string);
+#L000186.   v1:= v5  @type object;
+#L000188.   v5:= 0  @length 4;
+#L00018a.   v2:= v5;
+#L00018c.   v5:= 1  @length 4;
+#L00018e.   v3:= v5;
+#L000190.   v5:= v2;
+#L000192.   v6:= v3;
+#L000194.   call temp:=  [|HelloWorld.sum|](v5, v6) @signature [|LHelloWorld;.sum:(II)I|] @classDescriptor [|HelloWorld|] @type static;
+#L00019a.   v5:= temp;
+#L00019c.   v4:= v5;
+#L00019e.   v5:= @@[|java:lang:System.out|]   @type object;
+#L0001a2.   v6:= v1  @type object;
+#L0001a4.   call temp:=  [|java:io:PrintStream.println|](v5, v6) @signature [|Ljava/io/PrintStream;.println:(Ljava/lang/String;)V|] @classDescriptor [|java:io:PrintStream|] @type virtual;
+#L0001aa.   return @void ;
+
+   }
+    procedure [|int|] [|HelloWorld.sum|] ([|int|] v4, [|int|] v5) @owner [|HelloWorld|] @signature [|LHelloWorld;.sum:(II)I|] @Access PUBLIC_STATIC {
+      local temp ;
+        v0;
+        v1;
+        v2;
+        v3;
+      
+#L0001bc.   v0:= v4;
+#L0001be.   v1:= v5;
+#L0001c0.   v2:= v0;
+#L0001c2.   v3:= v1;
+#L0001c4.   v2:= v2 + v3  @type int;
+#L0001c6.   v0:= v2;
+#L0001c8.   return v0;
+
+   }

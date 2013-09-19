@@ -23,8 +23,9 @@ methoddef(it) ::= <<
 procedure <it.returnType> <it.name> (<it.parameters; separator=", ">) 
   <it.annotations.keys: {k| @<k> <it.annotations.(k)>}; separator="\n"> 
 {
-  <it.locals; separator=";\n">;<\n>
-  <it.code : {x| #<x>;}; separator="\n">
+  <it.locals : {l| <l>;}; separator="\n"><\n>
+  
+  <it.code : {x| #<x>}; separator="\n">
     <it.catch: {x| catch <x.typ> @[<x.start>..<x.end>] goto <x.handler>;}; separator="\n">
 }
 >>

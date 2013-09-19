@@ -4,11 +4,11 @@ public class Sample {
 	public static final int field = 9;
 
 	public static void main(String[] args) {
-		
+
 		for (int laf = 0; laf < 10; laf++) {
 			System.out.println(laf);
 		}
-		
+
 		for (int abc = 0; abc < 10; abc++) {
 			System.out.println(abc);
 		}
@@ -19,12 +19,11 @@ public class Sample {
 		} catch (ArithmeticException ae) {
 
 		}
-		
-		
+
 		try {
 			System.out.println(hw2[2].field);
 		} catch (ArrayIndexOutOfBoundsException ab) {
-			
+
 		}
 	}
 

@@ -1,0 +1,57 @@
+record (|ObjectCreation|)
+    @source "ObjectCreation.java"
+    @type class
+    @AccessFlag (PUBLIC) 
+  extends 
+    (|java.lang.Object|) 
+{
+  (|java.lang.String|) <|ObjectCreation.hello|> @AccessFlag ();
+}
+
+  procedure (|void|) {|ObjectCreation.<init>|} ((|ObjectCreation|) [|this|]) 
+    @MaxLocals 1
+    @MaxStack 2
+    @Owner (|ObjectCreation|)
+    @Access (PUBLIC,CONSTRUCTOR)
+    @Signature "ObjectCreation.<init>:()V" 
+  {
+    local temp;
+
+    #L00000a. call temp:= {|java.lang.Object.<init>|}([|this|]) @signature "java/lang/Object.<init>:()V" @classDescriptor [|java.lang.Object|] @type special;
+    #L00001a. [|this|].<|org.sireum.jvm.samples.ObjectCreation.hello|>:= "Namaste";
+    #L00002a. return @void;
+  }
+  procedure (|void|) {|ObjectCreation.main|} ((|java.lang.String|) [|args|]) 
+    @MaxLocals 2
+    @MaxStack 2
+    @Owner (|ObjectCreation|)
+    @Access (PUBLIC,STATIC)
+    @Signature "ObjectCreation.main:([Ljava/lang/String;)V" 
+  {
+    local temp;
+    s0;
+    [|oc|];
+
+    #L00000a. s0:= new (|org.sireum.jvm.samples.ObjectCreation|);
+    #L00000b. call temp:= {|org.sireum.jvm.samples.ObjectCreation.<init>|}(s0) @signature "org/sireum/jvm/samples/ObjectCreation.<init>:()V" @classDescriptor [|org.sireum.jvm.samples.ObjectCreation|] @type special;
+    #L00000c. [|oc|]:= s0 @type (|java.lang.Object|);
+    #L00001a. s0:= +|java.lang.System.out|+;
+    #L00001b. call temp:= {|org.sireum.jvm.samples.ObjectCreation.getHello|}([|oc|]) @signature "org/sireum/jvm/samples/ObjectCreation.getHello:()Ljava/lang/String;" @classDescriptor [|org.sireum.jvm.samples.ObjectCreation|] @type virtual;
+    #L00001c. call temp:= {|java.io.PrintStream.println|}(s0,temp) @signature "java/io/PrintStream.println:(Ljava/lang/String;)V" @classDescriptor [|java.io.PrintStream|] @type virtual;
+    #L00002a. return @void;
+  }
+  procedure (|java.lang.String|) {|ObjectCreation.getHello|} ((|ObjectCreation|) [|this|]) 
+    @MaxLocals 1
+    @MaxStack 1
+    @Owner (|ObjectCreation|)
+    @Access (PUBLIC)
+    @Signature "ObjectCreation.getHello:()Ljava/lang/String;" 
+  {
+    local temp;
+    s0;
+
+    #L00000a. s0:= [|this|].<|org.sireum.jvm.samples.ObjectCreation.hello|>;
+    #L00000b. return s0;
+  }
+
+
