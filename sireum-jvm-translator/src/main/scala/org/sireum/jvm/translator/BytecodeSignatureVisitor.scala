@@ -1,11 +1,12 @@
 package org.sireum.jvm.translator
 
-import scala.tools.asm.signature.SignatureVisitor
-import org.stringtemplate.v4.ST
-import scala.tools.asm.Opcodes
-import org.stringtemplate.v4.STGroupFile
-import org.sireum.jvm.util.Util
 import scala.collection.mutable
+import scala.tools.asm.Opcodes
+import scala.tools.asm.signature.SignatureVisitor
+
+import org.sireum.jvm.util.Util
+import org.stringtemplate.v4.ST
+import org.stringtemplate.v4.STGroupFile
 
 class BytecodeSignatureVisitor(api: Int, val st: ST) extends SignatureVisitor(api) {
   val stg = new STGroupFile("pilar.stg")
@@ -30,14 +31,15 @@ class BytecodeSignatureVisitor(api: Int, val st: ST) extends SignatureVisitor(ap
     this
   }
   override def visitClassType(name: String) = {
-    val stClassType = stg.getInstanceOf("classtypesigdef")
-    stClassType.add("name", Util.getPilarClassName(name))
-    if (stClassTypes.size == 0) {
-      currentSt.add("element", stClassType)
-    } else {
-      stClassTypes.top.add("typearg", stClassType)
-    }
-    stClassTypes.push(stClassType)
+    println(name)
+//    val stClassType = stg.getInstanceOf("classtypesigdef")
+//    stClassType.add("name", Util.getPilarClassName(name))
+//    if (stClassTypes.size == 0) {
+//      currentSt.add("element", stClassType)
+//    } else {
+//      stClassTypes.top.add("typearg", stClassType)
+//    }
+//    stClassTypes.push(stClassType)
   }
   override def visitExceptionType() = {
     currentSt = stg.getInstanceOf("exceptiontypesigdef")

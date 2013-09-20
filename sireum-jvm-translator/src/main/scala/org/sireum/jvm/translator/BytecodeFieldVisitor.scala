@@ -9,8 +9,7 @@ class BytecodeFieldVisitor(api: Int, fv: FieldVisitor, f: Field) extends FieldVi
   def this(f: Field) = this(Opcodes.ASM4, null, f)
 
   override def visitAnnotation(desc: String, visible: Boolean) = {
-    val bav: BytecodeAnnotationVisitor = new BytecodeAnnotationVisitor(f)
-    f.annotations.put(Util.getTypeString(desc), "")
+    val bav: BytecodeAnnotationVisitor = new BytecodeAnnotationVisitor(Util.getTypeString(desc), f)
     bav
   }
 

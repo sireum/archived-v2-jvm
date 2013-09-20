@@ -13,6 +13,12 @@ public class Conditions {
 		} else {
 			cmp(i, j);
 		}
+		
+		boolean abc = i != j;
+		int x = i > j ? i : j;
+		if (abc) {
+			System.out.println(x);
+		}
 	}
 
 	public static int cmp(int i, int j) {

@@ -27,7 +27,8 @@ class BytecodeClassVisitor(api: Int, cv: ClassVisitor, methodLocalMap: Map[Strin
   override def visit(version: Int, access: Int, name: String, signature: String, supername: String, interfaces: Array[String]) = {
     record = new Record(access, name, supername, signature, interfaces, methodLocalMap)
     if (false && signature != null) {
-      val stClassSigDef = stg.getInstanceOf("classssigdef")
+      println(signature)
+      val stClassSigDef = stg.getInstanceOf("classsigdef")
       stClassSigDef.add("text", signature)
 
       val sr: SignatureReader = new SignatureReader(signature)
@@ -45,8 +46,8 @@ class BytecodeClassVisitor(api: Int, cv: ClassVisitor, methodLocalMap: Map[Strin
   }
 
   override def visitAnnotation(desc: String, visible: Boolean) = {
-    val bav = new BytecodeAnnotationVisitor(record)
-    addAnnotations(Util.getTypeString(desc), "")
+    val bav = new BytecodeAnnotationVisitor(desc, record)
+    //addAnnotations(Util.getTypeString(desc), "")
     //super.visitAnnotation(desc, visible)
     bav
   }

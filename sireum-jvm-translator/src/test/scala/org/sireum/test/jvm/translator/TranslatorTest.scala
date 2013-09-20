@@ -24,7 +24,7 @@ class TranslatorTest extends FunSuite {
     //      val cl = ClassLoader.getSystemClassLoader()
     //      val qname = "org.sireum.jvm.samples.HelloWorld2"
     //      PilarParser.apply(Left(ClassTranslator.translate(cl, qname)), reporter)
-     BytecodeTranslator.main(Array("java.util.HashMap"))  
+     BytecodeTranslator.main(Array("java.io.File"))  
      val ms = ChunkingPilarParser.apply(Right("file:/Users/Vidit/Dropbox/Classes/Spring2013/FinalProject/Sireum2Workspace/sireum-translator/sireum-jvm-translator/output"), reporter)
 //     val fst = {_:Unit => new ST }
 //    val ast = SymbolTable.apply(List(ms.get), fst, false)
@@ -33,7 +33,7 @@ class TranslatorTest extends FunSuite {
 //    cfgs foreach (cfg => cfg.toDot(new PrintWriter(System.out)))
     //PilarParser.apply(Right("file:/Users/Vidit/Dropbox/AndroidStuff/classes.pilar"), reporter)
     assertTrue(reporter.errorAsString, reporter.errorAsString.isEmpty())
-    new java.util.HashMap[String, String]
+    //new java.util.HashMap[String, String]
   }
     
    class ST extends SymbolTable with SymbolTableProducer {

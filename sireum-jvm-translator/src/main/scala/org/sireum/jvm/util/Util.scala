@@ -16,9 +16,9 @@ object Util {
     Opcodes.IAND -> "^&", Opcodes.LAND -> "^&",
     Opcodes.IOR -> "^|", Opcodes.LOR -> "^|",
     Opcodes.IXOR -> "^~", Opcodes.LXOR -> "^~",
-    Opcodes.IFEQ -> "==", Opcodes.IFNE -> "!=", Opcodes.IFLE -> ">=", Opcodes.IFLT -> ">",
-    Opcodes.IFGE -> "<=", Opcodes.IFGT -> "<", Opcodes.IF_ICMPEQ -> "==", Opcodes.IF_ICMPNE -> "!=",
-    Opcodes.IF_ICMPGE -> "<=", Opcodes.IF_ICMPGT -> "<", Opcodes.IF_ICMPLE -> ">=", Opcodes.IF_ICMPLT -> ">",
+    Opcodes.IFEQ -> "==", Opcodes.IFNE -> "!=", Opcodes.IFLE -> "<=", Opcodes.IFLT -> "<",
+    Opcodes.IFGE -> ">=", Opcodes.IFGT -> ">", Opcodes.IF_ICMPEQ -> "==", Opcodes.IF_ICMPNE -> "!=",
+    Opcodes.IF_ICMPGE -> ">=", Opcodes.IF_ICMPGT -> ">", Opcodes.IF_ICMPLE -> "<=", Opcodes.IF_ICMPLT -> "<",
     Opcodes.IF_ACMPEQ -> "==", Opcodes.IF_ACMPNE -> "!=", Opcodes.IFNULL -> "==", Opcodes.IFNONNULL -> "!=")
 
   val typeMap = Map(
@@ -64,7 +64,7 @@ object Util {
     Opcodes.ICONST_3 -> "3", Opcodes.ICONST_4 -> "4", Opcodes.ICONST_5 -> "5",
     Opcodes.ICONST_M1 -> "-1", Opcodes.LCONST_0 -> "0", Opcodes.LCONST_1 -> "1",
     Opcodes.FCONST_0 -> "0.0", Opcodes.FCONST_1 -> "1.0", Opcodes.FCONST_2 -> "2.0",
-    Opcodes.DCONST_0 -> "0.0", Opcodes.DCONST_1 -> "1.0")
+    Opcodes.DCONST_0 -> "0.0", Opcodes.DCONST_1 -> "1.0", Opcodes.ACONST_NULL -> "null")
 
   val methodTypeMap = Map(Opcodes.INVOKEVIRTUAL -> "virtual", Opcodes.INVOKESTATIC -> "direct",
     Opcodes.INVOKESPECIAL -> "special", Opcodes.INVOKEINTERFACE -> "interface")
