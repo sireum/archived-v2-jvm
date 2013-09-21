@@ -2,9 +2,10 @@ package org.sireum.jvm.translator
 
 import java.lang.reflect.Array
 
-import scala.tools.asm.AnnotationVisitor
-import scala.tools.asm.Opcodes
-import scala.tools.asm.Type
+import org.objectweb.asm.AnnotationVisitor
+import org.objectweb.asm.Opcodes
+import org.objectweb.asm.Type
+
 import scala.collection.mutable
 
 import org.apache.commons.lang3.StringEscapeUtils

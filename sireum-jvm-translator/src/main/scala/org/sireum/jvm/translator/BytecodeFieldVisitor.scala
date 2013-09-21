@@ -1,7 +1,7 @@
 package org.sireum.jvm.translator
 
-import scala.tools.asm.FieldVisitor
-import scala.tools.asm.Opcodes
+import org.objectweb.asm.FieldVisitor
+import org.objectweb.asm.Opcodes
 import org.sireum.jvm.models.Field
 import org.sireum.jvm.util.Util
 

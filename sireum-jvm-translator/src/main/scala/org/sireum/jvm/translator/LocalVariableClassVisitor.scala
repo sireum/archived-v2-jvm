@@ -1,9 +1,9 @@
 package org.sireum.jvm.translator
 
-import scala.tools.asm.ClassVisitor
 import scala.collection.mutable.Map
-import scala.tools.asm.Opcodes
 import org.sireum.jvm.models.LocalInfo
+import org.objectweb.asm.ClassVisitor
+import org.objectweb.asm.Opcodes
 
 class LocalVariableClassVisitor(api: Int, cv: ClassVisitor) extends ClassVisitor(api, cv) {
   val methodLocalVariableMap = Map[String, LocalInfo]()

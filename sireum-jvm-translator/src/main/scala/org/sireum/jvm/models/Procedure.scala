@@ -4,8 +4,8 @@ import java.util.ArrayList
 
 import scala.Array.canBuildFrom
 import scala.collection.mutable
-import scala.tools.asm.Type
 
+import org.objectweb.asm.Type
 import org.sireum.jvm.util.Util
 
 class Procedure(val access: Int, val name: String, val desc: String, val signature: String, val exceptions: Array[String], val owner: Record) extends BaseModel {

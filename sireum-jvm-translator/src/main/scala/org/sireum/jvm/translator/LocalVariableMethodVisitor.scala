@@ -1,12 +1,11 @@
 package org.sireum.jvm.translator
 
-import scala.tools.asm.MethodVisitor
-import scala.tools.asm.Opcodes
-import scala.tools.asm.Label
 import scala.collection.mutable
+
+import org.objectweb.asm.Label
+import org.objectweb.asm.MethodVisitor
+import org.objectweb.asm.Opcodes
 import org.sireum.jvm.models.LocalInfo
-import org.sireum.jvm.util.Util
-import org.sireum.jvm.models.Variable
 import org.sireum.jvm.models.LocalVariable
 
 class LocalVariableMethodVisitor(api: Int, mv: MethodVisitor, val localMap: LocalInfo) extends MethodVisitor(api, mv) {

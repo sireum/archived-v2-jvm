@@ -4,10 +4,8 @@ import scala.Array.canBuildFrom
 import scala.annotation.elidable
 import scala.collection.JavaConversions.mapAsJavaMap
 import scala.collection.mutable
-import scala.tools.asm.Label
-import scala.tools.asm.MethodVisitor
-import scala.tools.asm.Opcodes
-import scala.tools.asm.Type
+import org.objectweb.asm._
+
 import org.sireum.jvm.models.Procedure
 import org.sireum.jvm.models.Variable
 import org.sireum.jvm.util.Util
@@ -16,18 +14,18 @@ import scala.collection.immutable.Stack
 
 class BytecodeMethodVisitor(api: Int, mv: MethodVisitor, procedure: Procedure) extends MethodVisitor(api, mv) {
   def this(proc: Procedure) = this(Opcodes.ASM4, null, proc)
-
+  
   val exceptionMap = mutable.Set[Label]()
   val stackMap = mutable.Map[Label, Stack[Variable]]()
   val labelMap = mutable.Map[Label, Int]()
-  val a2z = { val alphaList=('a' to 'z'); 
-  	for(x<-alphaList; y<-alphaList) yield (s"$x$y") 
+  val a2z = { 
+  	for(x<-('A' to 'Z'); y<-('a' to 'z')) yield (s"$x$y") 
   }
   val stg = new STGroupFile("pilar.stg")
 
   var varStack = Stack[Variable]()
   var localVariableCount: Int = -1
-  var labelStr: String = null
+  var labelStr: String = "L00000"
   var currentLine: Int = 0
   var currentLocal: Int = 0
   var currentStack: Int = 0
@@ -108,6 +106,10 @@ class BytecodeMethodVisitor(api: Int, mv: MethodVisitor, procedure: Procedure) e
         (procedure.locals.add(getVarName(i))))
     }
     assert(varStack.isEmpty, varStack)
+    varStack = null
+    stackMap.clear
+    exceptionMap.clear
+    labelMap.clear
   }
 
   override def visitFieldInsn(opcode: Int, owner: String, name: String, desc: String) = opcode match {
@@ -142,9 +144,8 @@ class BytecodeMethodVisitor(api: Int, mv: MethodVisitor, procedure: Procedure) e
     typ match {
       case Opcodes.F_CHOP => varStack = Stack()
       case Opcodes.F_SAME => varStack = Stack()
-      case Opcodes.F_SAME1 => { if (varStack.size!=1) println(procedure.code.toArray.mkString("\n"));
-      	assert(varStack.size == 1, varStack)
-      }
+      case Opcodes.F_SAME1 => { assert(varStack.size == 1, varStack) }
+      case Opcodes.F_FULL => { assert(varStack.size == nStack) }
       case _ => {}
     }
     addCodeLine(stFrame.render, nosemicolon = true)
@@ -327,7 +328,7 @@ class BytecodeMethodVisitor(api: Int, mv: MethodVisitor, procedure: Procedure) e
       val value1 = popValue
 
       changeLastVar()
-      addCodeLine("if " + value1 + " " + Util.getOperator(opcode) + " 0 then goto " + getLabelId(label) + "aa")
+      addCodeLine("if " + value1 + " " + Util.getOperator(opcode) + " 0 then goto " + getLabelId(label) + "Aa")
       stackMap += (label -> varStack)
     }
     case Opcodes.IF_ICMPEQ | Opcodes.IF_ICMPNE | Opcodes.IF_ICMPLT | Opcodes.IF_ICMPGE |
@@ -336,19 +337,19 @@ class BytecodeMethodVisitor(api: Int, mv: MethodVisitor, procedure: Procedure) e
       val value2 = popValue
 
       changeLastVar()
-      addCodeLine("if " + value2 + " " + Util.getOperator(opcode) + " " + value1 + " then goto " + getLabelId(label) + "aa")
+      addCodeLine("if " + value2 + " " + Util.getOperator(opcode) + " " + value1 + " then goto " + getLabelId(label) + "Aa")
       stackMap += (label -> varStack)
     }
     case Opcodes.GOTO => {
       changeLastVar()
-      addCodeLine("goto " + getLabelId(label) + "aa")
+      addCodeLine("goto " + getLabelId(label) + "Aa")
       stackMap += (label -> varStack)
     }
     case Opcodes.JSR => { /* I don't like you */ }
     case Opcodes.IFNULL | Opcodes.IFNONNULL => {
       val value1 = popValue
 
-      addCodeLine("if " + value1 + " " + Util.getOperator(opcode) + " null then goto " + getLabelId(label) + "aa")
+      addCodeLine("if " + value1 + " " + Util.getOperator(opcode) + " null then goto " + getLabelId(label) + "Aa")
       changeLastVar()
       stackMap += (label -> varStack)
     }
@@ -380,7 +381,7 @@ class BytecodeMethodVisitor(api: Int, mv: MethodVisitor, procedure: Procedure) e
   }
 
   override def visitLineNumber(line: Int, start: Label) = {
-    //println(getLabelId(start) + "->" + line)
+    // Do we need this?
   }
 
   override def visitLocalVariable(name: String, desc: String, signature: String, start: Label, end: Label, index: Int) = {
@@ -389,23 +390,22 @@ class BytecodeMethodVisitor(api: Int, mv: MethodVisitor, procedure: Procedure) e
     val stLocal = stg.getInstanceOf("localdef")
     stLocal.add("i", index)
     stLocal.add("id", name)
-    stLocal.add("start", getLabelId(start) + "aa")
-    stLocal.add("end", getLabelId(end) + "aa")
+    stLocal.add("start", getLabelId(start) + "Aa")
+    stLocal.add("end", getLabelId(end) + "Aa")
     stLocal.add("type", Util.getTypeString(desc))
 
-    if (index >= procedure.parameters.size()) procedure.locals.add(Util.getTypeString(desc) + " [|" + name + "|]")
+    if (index >= procedure.parameters.size())  procedure.locals.add(Util.getTypeString(desc) + " [|" + name + "|]") 
 
     localVariableCount = 0
-    //procedure.annotations.put("Local"+currentLocal, stLocal.render())
   }
 
   override def visitLookupSwitchInsn(dflt: Label, keys: Array[Int], labels: Array[Label]) = {
     val stSwitch = stg.getInstanceOf("switchins")
     stSwitch.add("var", popValue)
 
-    val blocks = mapAsJavaMap(keys zip (labels map (x => getLabelId(x) + "aa")) toMap)
+    val blocks = mapAsJavaMap(keys zip (labels map (x => getLabelId(x) + "Aa")) toMap)
     stSwitch.add("blocks", blocks)
-    stSwitch.add("dflt", getLabelId(dflt) + "aa")
+    stSwitch.add("dflt", getLabelId(dflt) + "Aa")
 
     addCodeLine(stSwitch.render())
   }
@@ -429,7 +429,7 @@ class BytecodeMethodVisitor(api: Int, mv: MethodVisitor, procedure: Procedure) e
 
       val stackVar = getStackVar
       addCodeLine("call " + stackVar + ":= " + Util.getFunctionCall(owner, name, desc, Util.getMethodType(opcode), args))
-      if (!desc.endsWith("V")) {
+      if (Type.getReturnType(desc) != Type.VOID_TYPE) {
         pushValue(new Variable(Util.getTypeString(desc), stackVar))
       }
     }
@@ -455,9 +455,9 @@ class BytecodeMethodVisitor(api: Int, mv: MethodVisitor, procedure: Procedure) e
   override def visitTableSwitchInsn(min: Int, max: Int, dflt: Label, labels: Label*) = {
     val stSwitch = stg.getInstanceOf("switchins")
     stSwitch.add("var", popValue)
-    stSwitch.add("dflt", getLabelId(dflt) + "aa")
+    stSwitch.add("dflt", getLabelId(dflt) + "Aa")
 
-    val blocks = mapAsJavaMap(min to max zip (labels map (x => getLabelId(x) + "aa")) toMap)
+    val blocks = mapAsJavaMap(min to max zip (labels map (x => getLabelId(x) + "Aa")) toMap)
     stSwitch.add("blocks", blocks)
     addCodeLine(stSwitch.render)
   }
@@ -465,8 +465,8 @@ class BytecodeMethodVisitor(api: Int, mv: MethodVisitor, procedure: Procedure) e
   override def visitTryCatchBlock(start: Label, end: Label, handler: Label, typ: String) = {
     exceptionMap += (handler)
 
-    procedure.addCatch(Util.getPilarClassName(typ), getLabelId(start) + "aa",
-      getLabelId(end) + "aa", getLabelId(handler) + "aa")
+    procedure.addCatch(Util.getPilarClassName(typ), getLabelId(start) + "Aa",
+      getLabelId(end) + "Aa", getLabelId(handler) + "Aa")
   }
 
   override def visitTypeInsn(opcode: Int, desc: String) = opcode match {

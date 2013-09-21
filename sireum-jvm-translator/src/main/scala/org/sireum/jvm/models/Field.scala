@@ -1,8 +1,6 @@
 package org.sireum.jvm.models
 
 import org.sireum.jvm.util.Util
-import java.util.HashMap
-import scala.tools.asm.Type
 
 class Field(access: Int, name: String, desc: String, signature: String, value: Object) extends BaseModel {
 

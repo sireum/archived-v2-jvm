@@ -15,6 +15,8 @@ import org.sireum.pilar.ast._
 import org.sireum.alir.ControlFlowGraph
 import org.sireum.alir.AlirIntraProceduralGraph
 import java.io.PrintWriter
+import scala.collection.immutable.Stack
+import java.io.StringWriter
 
 @RunWith(classOf[JUnitRunner])
 class TranslatorTest extends FunSuite {
@@ -24,15 +26,21 @@ class TranslatorTest extends FunSuite {
     //      val cl = ClassLoader.getSystemClassLoader()
     //      val qname = "org.sireum.jvm.samples.HelloWorld2"
     //      PilarParser.apply(Left(ClassTranslator.translate(cl, qname)), reporter)
-     BytecodeTranslator.main(Array("java.io.File"))  
-     val ms = ChunkingPilarParser.apply(Right("file:/Users/Vidit/Dropbox/Classes/Spring2013/FinalProject/Sireum2Workspace/sireum-translator/sireum-jvm-translator/output"), reporter)
+     BytecodeTranslator.main(Array("java.util.HashMap"))  
+     //val ms = ChunkingPilarParser.apply(Right("file:/Users/Vidit/Dropbox/Classes/Spring2013/FinalProject/Sireum2Workspace/sireum-translator/sireum-jvm-translator/output"), reporter)
 //     val fst = {_:Unit => new ST }
 //    val ast = SymbolTable.apply(List(ms.get), fst, false)
 //    val pl : AlirIntraProceduralGraph.NodePool = mmapEmpty
 //    val cfgs = ast.procedureSymbolTables map (pst => ControlFlowGraph[String](pst, "Entry", "Exit", pl, { (_: LocationDecl,_:Iterable[CatchClause]) => (Array.empty[CatchClause], false) }))
-//    cfgs foreach (cfg => cfg.toDot(new PrintWriter(System.out)))
+//    val dotOutput = new StringWriter
+//    cfgs foreach (cfg => cfg.toDot(new PrintWriter(dotOutput)))
+//    
+//    val printer = new PrintWriter(new java.io.File("cfg.dot"))
+//    printer.write(dotOutput.toString())
+//    printer.close()
     //PilarParser.apply(Right("file:/Users/Vidit/Dropbox/AndroidStuff/classes.pilar"), reporter)
     assertTrue(reporter.errorAsString, reporter.errorAsString.isEmpty())
+    //Map
     //new java.util.HashMap[String, String]
   }
     

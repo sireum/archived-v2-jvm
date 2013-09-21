@@ -1,12 +1,15 @@
 package org.sireum.jvm.translator
 
-import scala.tools.asm.ClassVisitor
-import scala.tools.asm.Attribute
-import scala.tools.asm.Opcodes
-import org.stringtemplate.v4.STGroupFile
+import org.objectweb.asm.ClassVisitor
+import org.objectweb.asm.Opcodes
+import org.objectweb.asm.signature.SignatureReader
+import org.objectweb.asm.util.TraceSignatureVisitor
+import org.sireum.jvm.models.Field
+import org.sireum.jvm.models.LocalInfo
+import org.sireum.jvm.models.Procedure
+import org.sireum.jvm.models.Record
 import org.sireum.jvm.util.Util
-import org.sireum.jvm.models._
-import scala.tools.asm.signature.SignatureReader
+import org.stringtemplate.v4.STGroupFile
 
 class BytecodeClassVisitor(api: Int, cv: ClassVisitor, methodLocalMap: Map[String, LocalInfo]) extends ClassVisitor(api, cv) {
   val stg = new STGroupFile("pilar.stg")
@@ -26,14 +29,14 @@ class BytecodeClassVisitor(api: Int, cv: ClassVisitor, methodLocalMap: Map[Strin
 
   override def visit(version: Int, access: Int, name: String, signature: String, supername: String, interfaces: Array[String]) = {
     record = new Record(access, name, supername, signature, interfaces, methodLocalMap)
-    if (false && signature != null) {
+    if (signature != null) {
       println(signature)
       val stClassSigDef = stg.getInstanceOf("classsigdef")
       stClassSigDef.add("text", signature)
 
       val sr: SignatureReader = new SignatureReader(signature)
-      val bsv: BytecodeSignatureVisitor = new BytecodeSignatureVisitor(stClassSigDef)
-      sr.acceptType(bsv)
+      val tsv = new BytecodeSignatureVisitor
+      sr.acceptType(tsv)
 
       addAnnotations("Signature", stClassSigDef.render)
     }
@@ -78,13 +81,13 @@ class BytecodeClassVisitor(api: Int, cv: ClassVisitor, methodLocalMap: Map[Strin
     val field = new Field(access, record.getClassName + "." + name, desc, signature, value)
     val bfv = new BytecodeFieldVisitor(field)
 
-    if (false && signature != null) {
+    if (signature != null) {
       val stType = stg.getInstanceOf("typesigdef")
       stType.add("text", signature)
 
       val sr: SignatureReader = new SignatureReader(signature)
-      val bsv: BytecodeSignatureVisitor = new BytecodeSignatureVisitor(stType)
-      sr.acceptType(bsv)
+      val tsv = new BytecodeSignatureVisitor
+      sr.acceptType(tsv)
 
       field.annotations.put("Signature", stType.render)
     }
@@ -96,13 +99,13 @@ class BytecodeClassVisitor(api: Int, cv: ClassVisitor, methodLocalMap: Map[Strin
     val procedure = new Procedure(access, name, desc, signature, exceptions, record)
     val bmv = new BytecodeMethodVisitor(procedure)
 
-    if (false && signature != null) {
+    if (signature != null) {
       val stMethod = stg.getInstanceOf("methodsigdef")
       stMethod.add("text", signature)
 
       val sr: SignatureReader = new SignatureReader(signature)
-      val bsv: BytecodeSignatureVisitor = new BytecodeSignatureVisitor(stMethod)
-      sr.acceptType(bsv)
+      val tsv = new BytecodeSignatureVisitor
+      sr.acceptType(tsv)
 
       procedure.annotations.put("Signature", stMethod.render)
     }

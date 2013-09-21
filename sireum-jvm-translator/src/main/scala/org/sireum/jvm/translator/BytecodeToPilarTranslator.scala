@@ -12,7 +12,7 @@ object BytecodeToPilarTranslator {
     val classesIt = classes.iterator()
     while (classesIt.hasNext()) {
       val cls = classesIt.next()
-      val output = ClassTranslator.translate(ClassLoader.getSystemClassLoader(), cls.getName())
+      val output = ClassTranslator.translate(Left(cls.getName()))
       val pw = new java.io.PrintWriter(new java.io.File("result/" + cls.getSimpleName()))
       pw.println(output)
       pw.close()

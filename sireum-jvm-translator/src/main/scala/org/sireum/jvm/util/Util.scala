@@ -1,8 +1,9 @@
 package org.sireum.jvm.util
 
-import scala.tools.asm.Opcodes
-import scala.tools.asm.Type
+
 import org.apache.commons.lang3.StringEscapeUtils
+import org.objectweb.asm.Opcodes
+import org.objectweb.asm.Type
 
 object Util {
 
