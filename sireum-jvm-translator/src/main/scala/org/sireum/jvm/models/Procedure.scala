@@ -41,7 +41,7 @@ class Procedure(val access: Int, val name: String, val desc: String, val signatu
   val getAnnotations = {
     annotations.put("Owner", owner.getName)
     annotations.put("Access", Util.getAccessFlag(access, name.equals("<init>")))
-    annotations.put("Signature", "\""+ Util.getFunctionSignature(owner.getQName.replace("/", "."), name, desc) +"\"")
+    annotations.put("Signature", "\""+ Util.getFunctionSignature(owner.getQName.replace("/", "."), name, desc.replace("/",".")) +"\"")
     if (exceptions != null) {
       annotations.put("Throws", (exceptions map (x => { Util.getPilarName(x) })).mkString(","))
     }
