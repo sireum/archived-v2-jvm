@@ -80,7 +80,7 @@ record (|java.io.File|)
     @MaxStack 2
     @Owner (|java.io.File|)
     @Access (PRIVATE,CONSTRUCTOR)
-    @Signature "java.io.File.<init>(Ljava/lang/String;I)V" 
+    @Signature "java.io.File.<init>(Ljava.lang.String;I)V" 
   {
     local jmp;
     s0;
@@ -96,7 +96,7 @@ record (|java.io.File|)
     @MaxStack 4
     @Owner (|java.io.File|)
     @Access (PRIVATE,CONSTRUCTOR)
-    @Signature "java.io.File.<init>(Ljava/lang/String;Ljava/io/File;)V" 
+    @Signature "java.io.File.<init>(Ljava.lang.String;Ljava.io.File;)V" 
   {
     local jmp;
     s0;
@@ -137,7 +137,7 @@ record (|java.io.File|)
     @MaxStack 3
     @Owner (|java.io.File|)
     @Access (PUBLIC,CONSTRUCTOR)
-    @Signature "java.io.File.<init>(Ljava/lang/String;)V" 
+    @Signature "java.io.File.<init>(Ljava.lang.String;)V" 
   {
     local jmp;
     s0;
@@ -165,7 +165,7 @@ record (|java.io.File|)
     @MaxStack 5
     @Owner (|java.io.File|)
     @Access (PUBLIC,CONSTRUCTOR)
-    @Signature "java.io.File.<init>(Ljava/lang/String;Ljava/lang/String;)V" 
+    @Signature "java.io.File.<init>(Ljava.lang.String;Ljava.lang.String;)V" 
   {
     local jmp;
     s0;
@@ -218,7 +218,7 @@ record (|java.io.File|)
     @MaxStack 5
     @Owner (|java.io.File|)
     @Access (PUBLIC,CONSTRUCTOR)
-    @Signature "java.io.File.<init>(Ljava/io/File;Ljava/lang/String;)V" 
+    @Signature "java.io.File.<init>(Ljava.io.File;Ljava.lang.String;)V" 
   {
     local jmp;
     s0;
@@ -271,7 +271,7 @@ record (|java.io.File|)
     @MaxStack 3
     @Owner (|java.io.File|)
     @Access (PUBLIC,CONSTRUCTOR)
-    @Signature "java.io.File.<init>(Ljava/net/URI;)V" 
+    @Signature "java.io.File.<init>(Ljava.net.URI;)V" 
   {
     local jmp;
     s0;
@@ -353,7 +353,7 @@ record (|java.io.File|)
     @MaxStack 3
     @Owner (|java.io.File|)
     @Access (PUBLIC)
-    @Signature "java.io.File.getName()Ljava/lang/String;" 
+    @Signature "java.io.File.getName()Ljava.lang.String;" 
   {
     local jmp;
     s0;
@@ -382,7 +382,7 @@ record (|java.io.File|)
     @MaxStack 3
     @Owner (|java.io.File|)
     @Access (PUBLIC)
-    @Signature "java.io.File.getParent()Ljava/lang/String;" 
+    @Signature "java.io.File.getParent()Ljava.lang.String;" 
   {
     local jmp;
     s0;
@@ -419,7 +419,7 @@ record (|java.io.File|)
     @MaxStack 4
     @Owner (|java.io.File|)
     @Access (PUBLIC)
-    @Signature "java.io.File.getParentFile()Ljava/io/File;" 
+    @Signature "java.io.File.getParentFile()Ljava.io.File;" 
   {
     local jmp;
     s0;
@@ -442,7 +442,7 @@ record (|java.io.File|)
     @MaxStack 1
     @Owner (|java.io.File|)
     @Access (PUBLIC)
-    @Signature "java.io.File.getPath()Ljava/lang/String;" 
+    @Signature "java.io.File.getPath()Ljava.lang.String;" 
   {
     local jmp;
     s0;
@@ -470,7 +470,7 @@ record (|java.io.File|)
     @MaxStack 2
     @Owner (|java.io.File|)
     @Access (PUBLIC)
-    @Signature "java.io.File.getAbsolutePath()Ljava/lang/String;" 
+    @Signature "java.io.File.getAbsolutePath()Ljava.lang.String;" 
   {
     local jmp;
     s0;
@@ -485,7 +485,7 @@ record (|java.io.File|)
     @MaxStack 5
     @Owner (|java.io.File|)
     @Access (PUBLIC)
-    @Signature "java.io.File.getAbsoluteFile()Ljava/io/File;" 
+    @Signature "java.io.File.getAbsoluteFile()Ljava.io.File;" 
   {
     local jmp;
     s0;
@@ -508,7 +508,7 @@ record (|java.io.File|)
     @MaxStack 3
     @Owner (|java.io.File|)
     @Access (PUBLIC)
-    @Signature "java.io.File.getCanonicalPath()Ljava/lang/String;" 
+    @Signature "java.io.File.getCanonicalPath()Ljava.lang.String;" 
   {
     local jmp;
     s0;
@@ -534,7 +534,7 @@ record (|java.io.File|)
     @MaxStack 5
     @Owner (|java.io.File|)
     @Access (PUBLIC)
-    @Signature "java.io.File.getCanonicalFile()Ljava/io/File;" 
+    @Signature "java.io.File.getCanonicalFile()Ljava.io.File;" 
   {
     local jmp;
     s0;
@@ -556,7 +556,7 @@ record (|java.io.File|)
     @MaxStack 3
     @Owner (|java.io.File|)
     @Access (PRIVATE,STATIC)
-    @Signature "java.io.File.slashify(Ljava/lang/String;Z)Ljava/lang/String;" 
+    @Signature "java.io.File.slashify(Ljava.lang.String;Z)Ljava.lang.String;" 
   {
     local jmp;
     s0;
@@ -601,7 +601,7 @@ record (|java.io.File|)
     @Owner (|java.io.File|)
     @(|Ljava.lang.Deprecated;|) 
     @Access (PUBLIC)
-    @Signature "java.io.File.toURL()Ljava/net/URL;" 
+    @Signature "java.io.File.toURL()Ljava.net.URL;" 
   {
     local jmp;
     s0;
@@ -628,7 +628,7 @@ record (|java.io.File|)
     @MaxStack 6
     @Owner (|java.io.File|)
     @Access (PUBLIC)
-    @Signature "java.io.File.toURI()Ljava/net/URI;" 
+    @Signature "java.io.File.toURI()Ljava.net.URI;" 
   {
     local jmp;
     s0;
@@ -984,7 +984,7 @@ record (|java.io.File|)
     @MaxStack 2
     @Owner (|java.io.File|)
     @Access (PUBLIC)
-    @Signature "java.io.File.list()[Ljava/lang/String;" 
+    @Signature "java.io.File.list()[Ljava.lang.String;" 
   {
     local jmp;
     s0;
@@ -1010,7 +1010,7 @@ record (|java.io.File|)
     @MaxStack 4
     @Owner (|java.io.File|)
     @Access (PUBLIC)
-    @Signature "java.io.File.list(Ljava/io/FilenameFilter;)[Ljava/lang/String;" 
+    @Signature "java.io.File.list(Ljava.io.FilenameFilter;)[Ljava.lang.String;" 
   {
     local jmp;
     s0;
@@ -1052,7 +1052,7 @@ record (|java.io.File|)
     @MaxStack 6
     @Owner (|java.io.File|)
     @Access (PUBLIC)
-    @Signature "java.io.File.listFiles()[Ljava/io/File;" 
+    @Signature "java.io.File.listFiles()[Ljava.io.File;" 
   {
     local jmp;
     s0;
@@ -1088,7 +1088,7 @@ record (|java.io.File|)
     @MaxStack 5
     @Owner (|java.io.File|)
     @Access (PUBLIC)
-    @Signature "java.io.File.listFiles(Ljava/io/FilenameFilter;)[Ljava/io/File;" 
+    @Signature "java.io.File.listFiles(Ljava.io.FilenameFilter;)[Ljava.io.File;" 
   {
     local jmp;
     s0;
@@ -1137,7 +1137,7 @@ record (|java.io.File|)
     @MaxStack 4
     @Owner (|java.io.File|)
     @Access (PUBLIC)
-    @Signature "java.io.File.listFiles(Ljava/io/FileFilter;)[Ljava/io/File;" 
+    @Signature "java.io.File.listFiles(Ljava.io.FileFilter;)[Ljava.io.File;" 
   {
     local jmp;
     s0;
@@ -1261,7 +1261,7 @@ record (|java.io.File|)
     @MaxStack 3
     @Owner (|java.io.File|)
     @Access (PUBLIC)
-    @Signature "java.io.File.renameTo(Ljava/io/File;)Z" 
+    @Signature "java.io.File.renameTo(Ljava.io.File;)Z" 
   {
     local jmp;
     s0;
@@ -1500,7 +1500,7 @@ record (|java.io.File|)
     @MaxStack 1
     @Owner (|java.io.File|)
     @Access (PUBLIC,STATIC)
-    @Signature "java.io.File.listRoots()[Ljava/io/File;" 
+    @Signature "java.io.File.listRoots()[Ljava.io.File;" 
   {
     local jmp;
     s0;
@@ -1606,7 +1606,7 @@ record (|java.io.File|)
     @MaxStack 3
     @Owner (|java.io.File|)
     @Access (PUBLIC,STATIC)
-    @Signature "java.io.File.createTempFile(Ljava/lang/String;Ljava/lang/String;Ljava/io/File;)Ljava/io/File;" 
+    @Signature "java.io.File.createTempFile(Ljava.lang.String;Ljava.lang.String;Ljava.io.File;)Ljava.io.File;" 
   {
     local jmp;
     s0;
@@ -1662,7 +1662,7 @@ record (|java.io.File|)
     @MaxStack 3
     @Owner (|java.io.File|)
     @Access (PUBLIC,STATIC)
-    @Signature "java.io.File.createTempFile(Ljava/lang/String;Ljava/lang/String;)Ljava/io/File;" 
+    @Signature "java.io.File.createTempFile(Ljava.lang.String;Ljava.lang.String;)Ljava.io.File;" 
   {
     local jmp;
     s0;
@@ -1675,7 +1675,7 @@ record (|java.io.File|)
     @MaxStack 3
     @Owner (|java.io.File|)
     @Access (PUBLIC)
-    @Signature "java.io.File.compareTo(Ljava/io/File;)I" 
+    @Signature "java.io.File.compareTo(Ljava.io.File;)I" 
   {
     local jmp;
     s0;
@@ -1690,7 +1690,7 @@ record (|java.io.File|)
     @MaxStack 2
     @Owner (|java.io.File|)
     @Access (PUBLIC)
-    @Signature "java.io.File.equals(Ljava/lang/Object;)Z" 
+    @Signature "java.io.File.equals(Ljava.lang.Object;)Z" 
   {
     local jmp;
     s0;
@@ -1729,7 +1729,7 @@ record (|java.io.File|)
     @MaxStack 1
     @Owner (|java.io.File|)
     @Access (PUBLIC)
-    @Signature "java.io.File.toString()Ljava/lang/String;" 
+    @Signature "java.io.File.toString()Ljava.lang.String;" 
   {
     local jmp;
     s0;
@@ -1743,7 +1743,7 @@ record (|java.io.File|)
     @MaxStack 2
     @Owner (|java.io.File|)
     @Access (PRIVATE)
-    @Signature "java.io.File.writeObject(Ljava/io/ObjectOutputStream;)V" 
+    @Signature "java.io.File.writeObject(Ljava.io.ObjectOutputStream;)V" 
   {
     local jmp;
     s0;
@@ -1760,7 +1760,7 @@ record (|java.io.File|)
     @MaxStack 3
     @Owner (|java.io.File|)
     @Access (PRIVATE)
-    @Signature "java.io.File.readObject(Ljava/io/ObjectInputStream;)V" 
+    @Signature "java.io.File.readObject(Ljava.io.ObjectInputStream;)V" 
   {
     local jmp;
     s0;
@@ -1796,7 +1796,7 @@ record (|java.io.File|)
     @MaxStack 3
     @Owner (|java.io.File|)
     @Access (PUBLIC)
-    @Signature "java.io.File.toPath()Ljava/nio/file/Path;" 
+    @Signature "java.io.File.toPath()Ljava.nio.file.Path;" 
   {
     local jmp;
     s0;
@@ -1838,7 +1838,7 @@ record (|java.io.File|)
     @MaxStack 2
     @Owner (|java.io.File|)
     @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Signature "java.io.File.compareTo(Ljava/lang/Object;)I" 
+    @Signature "java.io.File.compareTo(Ljava.lang.Object;)I" 
   {
     local jmp;
     s0;
@@ -1929,7 +1929,7 @@ record (|java.io.File$TempDirectory|)
     @MaxStack 1
     @Owner (|java.io.File$TempDirectory|)
     @Access (STATIC)
-    @Signature "java.io.File$TempDirectory.location()Ljava/io/File;" 
+    @Signature "java.io.File$TempDirectory.location()Ljava.io.File;" 
   {
     local jmp;
     s0;
@@ -1943,7 +1943,7 @@ record (|java.io.File$TempDirectory|)
     @MaxStack 4
     @Owner (|java.io.File$TempDirectory|)
     @Access (STATIC)
-    @Signature "java.io.File$TempDirectory.generateFile(Ljava/lang/String;Ljava/lang/String;Ljava/io/File;)Ljava/io/File;" 
+    @Signature "java.io.File$TempDirectory.generateFile(Ljava.lang.String;Ljava.lang.String;Ljava.io.File;)Ljava.io.File;" 
   {
     local jmp;
     s0;
@@ -2039,7 +2039,7 @@ record (|java.io.File$PathStatus|)
     @MaxStack 1
     @Owner (|java.io.File$PathStatus|)
     @Access (PUBLIC,STATIC)
-    @Signature "java.io.File$PathStatus.values()[Ljava/io/File$PathStatus;" 
+    @Signature "java.io.File$PathStatus.values()[Ljava.io.File$PathStatus;" 
   {
     local jmp;
     s0;
@@ -2054,7 +2054,7 @@ record (|java.io.File$PathStatus|)
     @MaxStack 2
     @Owner (|java.io.File$PathStatus|)
     @Access (PUBLIC,STATIC)
-    @Signature "java.io.File$PathStatus.valueOf(Ljava/lang/String;)Ljava/io/File$PathStatus;" 
+    @Signature "java.io.File$PathStatus.valueOf(Ljava.lang.String;)Ljava.io.File$PathStatus;" 
   {
     local jmp;
     s0;
@@ -2068,7 +2068,7 @@ record (|java.io.File$PathStatus|)
     @GenericSignature "()V"
     @Owner (|java.io.File$PathStatus|)
     @Access (PRIVATE,CONSTRUCTOR)
-    @Signature "java.io.File$PathStatus.<init>(Ljava/lang/String;I)V" 
+    @Signature "java.io.File$PathStatus.<init>(Ljava.lang.String;I)V" 
   {
     local jmp;
     s0;
@@ -2138,7 +2138,7 @@ record (|java.io.ObjectInputStream$GetField|)
   procedure (|java.io.ObjectStreamClass|) {|java.io.ObjectInputStream$GetField.getObjectStreamClass()Ljava.io.ObjectStreamClass;|} ((|java.io.ObjectInputStream$GetField|) [|v0|]) 
     @Owner (|java.io.ObjectInputStream$GetField|)
     @Access (PUBLIC)
-    @Signature "java.io.ObjectInputStream$GetField.getObjectStreamClass()Ljava/io/ObjectStreamClass;" 
+    @Signature "java.io.ObjectInputStream$GetField.getObjectStreamClass()Ljava.io.ObjectStreamClass;" 
   {
 
     #L00000Aa. return @void;
@@ -2147,7 +2147,7 @@ record (|java.io.ObjectInputStream$GetField|)
     @Throws [|java.io.IOException|]
     @Owner (|java.io.ObjectInputStream$GetField|)
     @Access (PUBLIC)
-    @Signature "java.io.ObjectInputStream$GetField.defaulted(Ljava/lang/String;)Z" 
+    @Signature "java.io.ObjectInputStream$GetField.defaulted(Ljava.lang.String;)Z" 
   {
 
     #L00000Aa. return @void;
@@ -2156,7 +2156,7 @@ record (|java.io.ObjectInputStream$GetField|)
     @Throws [|java.io.IOException|]
     @Owner (|java.io.ObjectInputStream$GetField|)
     @Access (PUBLIC)
-    @Signature "java.io.ObjectInputStream$GetField.get(Ljava/lang/String;Z)Z" 
+    @Signature "java.io.ObjectInputStream$GetField.get(Ljava.lang.String;Z)Z" 
   {
 
     #L00000Aa. return @void;
@@ -2165,7 +2165,7 @@ record (|java.io.ObjectInputStream$GetField|)
     @Throws [|java.io.IOException|]
     @Owner (|java.io.ObjectInputStream$GetField|)
     @Access (PUBLIC)
-    @Signature "java.io.ObjectInputStream$GetField.get(Ljava/lang/String;B)B" 
+    @Signature "java.io.ObjectInputStream$GetField.get(Ljava.lang.String;B)B" 
   {
 
     #L00000Aa. return @void;
@@ -2174,7 +2174,7 @@ record (|java.io.ObjectInputStream$GetField|)
     @Throws [|java.io.IOException|]
     @Owner (|java.io.ObjectInputStream$GetField|)
     @Access (PUBLIC)
-    @Signature "java.io.ObjectInputStream$GetField.get(Ljava/lang/String;C)C" 
+    @Signature "java.io.ObjectInputStream$GetField.get(Ljava.lang.String;C)C" 
   {
 
     #L00000Aa. return @void;
@@ -2183,7 +2183,7 @@ record (|java.io.ObjectInputStream$GetField|)
     @Throws [|java.io.IOException|]
     @Owner (|java.io.ObjectInputStream$GetField|)
     @Access (PUBLIC)
-    @Signature "java.io.ObjectInputStream$GetField.get(Ljava/lang/String;S)S" 
+    @Signature "java.io.ObjectInputStream$GetField.get(Ljava.lang.String;S)S" 
   {
 
     #L00000Aa. return @void;
@@ -2192,7 +2192,7 @@ record (|java.io.ObjectInputStream$GetField|)
     @Throws [|java.io.IOException|]
     @Owner (|java.io.ObjectInputStream$GetField|)
     @Access (PUBLIC)
-    @Signature "java.io.ObjectInputStream$GetField.get(Ljava/lang/String;I)I" 
+    @Signature "java.io.ObjectInputStream$GetField.get(Ljava.lang.String;I)I" 
   {
 
     #L00000Aa. return @void;
@@ -2201,7 +2201,7 @@ record (|java.io.ObjectInputStream$GetField|)
     @Throws [|java.io.IOException|]
     @Owner (|java.io.ObjectInputStream$GetField|)
     @Access (PUBLIC)
-    @Signature "java.io.ObjectInputStream$GetField.get(Ljava/lang/String;J)J" 
+    @Signature "java.io.ObjectInputStream$GetField.get(Ljava.lang.String;J)J" 
   {
 
     #L00000Aa. return @void;
@@ -2210,7 +2210,7 @@ record (|java.io.ObjectInputStream$GetField|)
     @Throws [|java.io.IOException|]
     @Owner (|java.io.ObjectInputStream$GetField|)
     @Access (PUBLIC)
-    @Signature "java.io.ObjectInputStream$GetField.get(Ljava/lang/String;F)F" 
+    @Signature "java.io.ObjectInputStream$GetField.get(Ljava.lang.String;F)F" 
   {
 
     #L00000Aa. return @void;
@@ -2219,7 +2219,7 @@ record (|java.io.ObjectInputStream$GetField|)
     @Throws [|java.io.IOException|]
     @Owner (|java.io.ObjectInputStream$GetField|)
     @Access (PUBLIC)
-    @Signature "java.io.ObjectInputStream$GetField.get(Ljava/lang/String;D)D" 
+    @Signature "java.io.ObjectInputStream$GetField.get(Ljava.lang.String;D)D" 
   {
 
     #L00000Aa. return @void;
@@ -2228,7 +2228,7 @@ record (|java.io.ObjectInputStream$GetField|)
     @Throws [|java.io.IOException|]
     @Owner (|java.io.ObjectInputStream$GetField|)
     @Access (PUBLIC)
-    @Signature "java.io.ObjectInputStream$GetField.get(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;" 
+    @Signature "java.io.ObjectInputStream$GetField.get(Ljava.lang.String;Ljava.lang.Object;)Ljava.lang.Object;" 
   {
 
     #L00000Aa. return @void;

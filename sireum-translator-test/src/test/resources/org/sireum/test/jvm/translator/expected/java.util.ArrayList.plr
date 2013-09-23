@@ -72,7 +72,7 @@ record (|java.util.ArrayList|)
     @GenericSignature "(Ljava/util/Collection<+TE;>;)V"
     @Owner (|java.util.ArrayList|)
     @Access (PUBLIC,CONSTRUCTOR)
-    @Signature "java.util.ArrayList.<init>(Ljava/util/Collection;)V" 
+    @Signature "java.util.ArrayList.<init>(Ljava.util.Collection;)V" 
   {
     local jmp;
     s0;
@@ -271,7 +271,7 @@ record (|java.util.ArrayList|)
     @MaxStack 2
     @Owner (|java.util.ArrayList|)
     @Access (PUBLIC)
-    @Signature "java.util.ArrayList.contains(Ljava/lang/Object;)Z" 
+    @Signature "java.util.ArrayList.contains(Ljava.lang.Object;)Z" 
   {
     local jmp;
     s0;
@@ -290,7 +290,7 @@ record (|java.util.ArrayList|)
     @MaxStack 3
     @Owner (|java.util.ArrayList|)
     @Access (PUBLIC)
-    @Signature "java.util.ArrayList.indexOf(Ljava/lang/Object;)I" 
+    @Signature "java.util.ArrayList.indexOf(Ljava.lang.Object;)I" 
   {
     local jmp;
     s0;
@@ -333,7 +333,7 @@ record (|java.util.ArrayList|)
     @MaxStack 3
     @Owner (|java.util.ArrayList|)
     @Access (PUBLIC)
-    @Signature "java.util.ArrayList.lastIndexOf(Ljava/lang/Object;)I" 
+    @Signature "java.util.ArrayList.lastIndexOf(Ljava.lang.Object;)I" 
   {
     local jmp;
     s0;
@@ -376,7 +376,7 @@ record (|java.util.ArrayList|)
     @MaxStack 3
     @Owner (|java.util.ArrayList|)
     @Access (PUBLIC)
-    @Signature "java.util.ArrayList.clone()Ljava/lang/Object;" 
+    @Signature "java.util.ArrayList.clone()Ljava.lang.Object;" 
   {
     local jmp;
     s0;
@@ -404,7 +404,7 @@ record (|java.util.ArrayList|)
     @MaxStack 2
     @Owner (|java.util.ArrayList|)
     @Access (PUBLIC)
-    @Signature "java.util.ArrayList.toArray()[Ljava/lang/Object;" 
+    @Signature "java.util.ArrayList.toArray()[Ljava.lang.Object;" 
   {
     local jmp;
     s0;
@@ -422,7 +422,7 @@ record (|java.util.ArrayList|)
     @GenericSignature "<T:Ljava/lang/Object;>([TT;)[TT;"
     @Owner (|java.util.ArrayList|)
     @Access (PUBLIC)
-    @Signature "java.util.ArrayList.toArray([Ljava/lang/Object;)[Ljava/lang/Object;" 
+    @Signature "java.util.ArrayList.toArray([Ljava.lang.Object;)[Ljava.lang.Object;" 
   {
     local jmp;
     s0;
@@ -454,7 +454,7 @@ record (|java.util.ArrayList|)
     @GenericSignature "(I)TE;"
     @Owner (|java.util.ArrayList|)
     @Access ()
-    @Signature "java.util.ArrayList.elementData(I)Ljava/lang/Object;" 
+    @Signature "java.util.ArrayList.elementData(I)Ljava.lang.Object;" 
   {
     local jmp;
     s0;
@@ -470,7 +470,7 @@ record (|java.util.ArrayList|)
     @GenericSignature "(I)TE;"
     @Owner (|java.util.ArrayList|)
     @Access (PUBLIC)
-    @Signature "java.util.ArrayList.get(I)Ljava/lang/Object;" 
+    @Signature "java.util.ArrayList.get(I)Ljava.lang.Object;" 
   {
     local jmp;
     s0;
@@ -485,7 +485,7 @@ record (|java.util.ArrayList|)
     @GenericSignature "(ITE;)TE;"
     @Owner (|java.util.ArrayList|)
     @Access (PUBLIC)
-    @Signature "java.util.ArrayList.set(ILjava/lang/Object;)Ljava/lang/Object;" 
+    @Signature "java.util.ArrayList.set(ILjava.lang.Object;)Ljava.lang.Object;" 
   {
     local jmp;
     s0;
@@ -504,7 +504,7 @@ record (|java.util.ArrayList|)
     @GenericSignature "(TE;)Z"
     @Owner (|java.util.ArrayList|)
     @Access (PUBLIC)
-    @Signature "java.util.ArrayList.add(Ljava/lang/Object;)Z" 
+    @Signature "java.util.ArrayList.add(Ljava.lang.Object;)Z" 
   {
     local jmp;
     s0;
@@ -524,7 +524,7 @@ record (|java.util.ArrayList|)
     @GenericSignature "(ITE;)V"
     @Owner (|java.util.ArrayList|)
     @Access (PUBLIC)
-    @Signature "java.util.ArrayList.add(ILjava/lang/Object;)V" 
+    @Signature "java.util.ArrayList.add(ILjava.lang.Object;)V" 
   {
     local jmp;
     s0;
@@ -551,7 +551,7 @@ record (|java.util.ArrayList|)
     @GenericSignature "(I)TE;"
     @Owner (|java.util.ArrayList|)
     @Access (PUBLIC)
-    @Signature "java.util.ArrayList.remove(I)Ljava/lang/Object;" 
+    @Signature "java.util.ArrayList.remove(I)Ljava.lang.Object;" 
   {
     local jmp;
     s0;
@@ -583,7 +583,7 @@ record (|java.util.ArrayList|)
     @MaxStack 3
     @Owner (|java.util.ArrayList|)
     @Access (PUBLIC)
-    @Signature "java.util.ArrayList.remove(Ljava/lang/Object;)Z" 
+    @Signature "java.util.ArrayList.remove(Ljava.lang.Object;)Z" 
   {
     local jmp;
     s0;
@@ -682,7 +682,7 @@ record (|java.util.ArrayList|)
     @GenericSignature "(Ljava/util/Collection<+TE;>;)Z"
     @Owner (|java.util.ArrayList|)
     @Access (PUBLIC)
-    @Signature "java.util.ArrayList.addAll(Ljava/util/Collection;)Z" 
+    @Signature "java.util.ArrayList.addAll(Ljava.util.Collection;)Z" 
   {
     local jmp;
     s0;
@@ -715,7 +715,7 @@ record (|java.util.ArrayList|)
     @GenericSignature "(ILjava/util/Collection<+TE;>;)Z"
     @Owner (|java.util.ArrayList|)
     @Access (PUBLIC)
-    @Signature "java.util.ArrayList.addAll(ILjava/util/Collection;)Z" 
+    @Signature "java.util.ArrayList.addAll(ILjava.util.Collection;)Z" 
   {
     local jmp;
     s0;
@@ -835,7 +835,7 @@ record (|java.util.ArrayList|)
     @MaxStack 2
     @Owner (|java.util.ArrayList|)
     @Access (PRIVATE)
-    @Signature "java.util.ArrayList.outOfBoundsMsg(I)Ljava/lang/String;" 
+    @Signature "java.util.ArrayList.outOfBoundsMsg(I)Ljava.lang.String;" 
   {
     local jmp;
     s0;
@@ -863,7 +863,7 @@ record (|java.util.ArrayList|)
     @GenericSignature "(Ljava/util/Collection<*>;)Z"
     @Owner (|java.util.ArrayList|)
     @Access (PUBLIC)
-    @Signature "java.util.ArrayList.removeAll(Ljava/util/Collection;)Z" 
+    @Signature "java.util.ArrayList.removeAll(Ljava.util.Collection;)Z" 
   {
     local jmp;
     s0;
@@ -877,7 +877,7 @@ record (|java.util.ArrayList|)
     @GenericSignature "(Ljava/util/Collection<*>;)Z"
     @Owner (|java.util.ArrayList|)
     @Access (PUBLIC)
-    @Signature "java.util.ArrayList.retainAll(Ljava/util/Collection;)Z" 
+    @Signature "java.util.ArrayList.retainAll(Ljava.util.Collection;)Z" 
   {
     local jmp;
     s0;
@@ -891,7 +891,7 @@ record (|java.util.ArrayList|)
     @GenericSignature "(Ljava/util/Collection<*>;Z)Z"
     @Owner (|java.util.ArrayList|)
     @Access (PRIVATE)
-    @Signature "java.util.ArrayList.batchRemove(Ljava/util/Collection;Z)Z" 
+    @Signature "java.util.ArrayList.batchRemove(Ljava.util.Collection;Z)Z" 
   {
     local jmp;
     s0;
@@ -982,7 +982,7 @@ record (|java.util.ArrayList|)
     @MaxStack 3
     @Owner (|java.util.ArrayList|)
     @Access (PRIVATE)
-    @Signature "java.util.ArrayList.writeObject(Ljava/io/ObjectOutputStream;)V" 
+    @Signature "java.util.ArrayList.writeObject(Ljava.io.ObjectOutputStream;)V" 
   {
     local jmp;
     s0;
@@ -1020,7 +1020,7 @@ record (|java.util.ArrayList|)
     @MaxStack 3
     @Owner (|java.util.ArrayList|)
     @Access (PRIVATE)
-    @Signature "java.util.ArrayList.readObject(Ljava/io/ObjectInputStream;)V" 
+    @Signature "java.util.ArrayList.readObject(Ljava.io.ObjectInputStream;)V" 
   {
     local jmp;
     s0;
@@ -1055,7 +1055,7 @@ record (|java.util.ArrayList|)
     @GenericSignature "(I)Ljava/util/ListIterator<TE;>;"
     @Owner (|java.util.ArrayList|)
     @Access (PUBLIC)
-    @Signature "java.util.ArrayList.listIterator(I)Ljava/util/ListIterator;" 
+    @Signature "java.util.ArrayList.listIterator(I)Ljava.util.ListIterator;" 
   {
     local jmp;
     s0;
@@ -1089,7 +1089,7 @@ record (|java.util.ArrayList|)
     @GenericSignature "()Ljava/util/ListIterator<TE;>;"
     @Owner (|java.util.ArrayList|)
     @Access (PUBLIC)
-    @Signature "java.util.ArrayList.listIterator()Ljava/util/ListIterator;" 
+    @Signature "java.util.ArrayList.listIterator()Ljava.util.ListIterator;" 
   {
     local jmp;
     s0;
@@ -1105,7 +1105,7 @@ record (|java.util.ArrayList|)
     @GenericSignature "()Ljava/util/Iterator<TE;>;"
     @Owner (|java.util.ArrayList|)
     @Access (PUBLIC)
-    @Signature "java.util.ArrayList.iterator()Ljava/util/Iterator;" 
+    @Signature "java.util.ArrayList.iterator()Ljava.util.Iterator;" 
   {
     local jmp;
     s0;
@@ -1121,7 +1121,7 @@ record (|java.util.ArrayList|)
     @GenericSignature "(II)Ljava/util/List<TE;>;"
     @Owner (|java.util.ArrayList|)
     @Access (PUBLIC)
-    @Signature "java.util.ArrayList.subList(II)Ljava/util/List;" 
+    @Signature "java.util.ArrayList.subList(II)Ljava.util.List;" 
   {
     local jmp;
     s0;
@@ -1192,7 +1192,7 @@ record (|java.util.ArrayList|)
     @MaxStack 1
     @Owner (|java.util.ArrayList|)
     @Access (STATIC,SYNTHETIC)
-    @Signature "java.util.ArrayList.access$100(Ljava/util/ArrayList;)I" 
+    @Signature "java.util.ArrayList.access$100(Ljava.util.ArrayList;)I" 
   {
     local jmp;
     s0;
@@ -1205,7 +1205,7 @@ record (|java.util.ArrayList|)
     @MaxStack 1
     @Owner (|java.util.ArrayList|)
     @Access (STATIC,SYNTHETIC)
-    @Signature "java.util.ArrayList.access$200(Ljava/util/ArrayList;)[Ljava/lang/Object;" 
+    @Signature "java.util.ArrayList.access$200(Ljava.util.ArrayList;)[Ljava.lang.Object;" 
   {
     local jmp;
     s0;
@@ -1271,7 +1271,7 @@ record (|java.util.ArrayList$SubList|)
     @GenericSignature "(Ljava/util/AbstractList<TE;>;III)V"
     @Owner (|java.util.ArrayList$SubList|)
     @Access (CONSTRUCTOR)
-    @Signature "java.util.ArrayList$SubList.<init>(Ljava/util/ArrayList;Ljava/util/AbstractList;III)V" 
+    @Signature "java.util.ArrayList$SubList.<init>(Ljava.util.ArrayList;Ljava.util.AbstractList;III)V" 
   {
     local jmp;
     s0;
@@ -1292,7 +1292,7 @@ record (|java.util.ArrayList$SubList|)
     @GenericSignature "(ITE;)TE;"
     @Owner (|java.util.ArrayList$SubList|)
     @Access (PUBLIC)
-    @Signature "java.util.ArrayList$SubList.set(ILjava/lang/Object;)Ljava/lang/Object;" 
+    @Signature "java.util.ArrayList$SubList.set(ILjava.lang.Object;)Ljava.lang.Object;" 
   {
     local jmp;
     s0;
@@ -1318,7 +1318,7 @@ record (|java.util.ArrayList$SubList|)
     @GenericSignature "(I)TE;"
     @Owner (|java.util.ArrayList$SubList|)
     @Access (PUBLIC)
-    @Signature "java.util.ArrayList$SubList.get(I)Ljava/lang/Object;" 
+    @Signature "java.util.ArrayList$SubList.get(I)Ljava.lang.Object;" 
   {
     local jmp;
     s0;
@@ -1352,7 +1352,7 @@ record (|java.util.ArrayList$SubList|)
     @GenericSignature "(ITE;)V"
     @Owner (|java.util.ArrayList$SubList|)
     @Access (PUBLIC)
-    @Signature "java.util.ArrayList$SubList.add(ILjava/lang/Object;)V" 
+    @Signature "java.util.ArrayList$SubList.add(ILjava.lang.Object;)V" 
   {
     local jmp;
     s0;
@@ -1377,7 +1377,7 @@ record (|java.util.ArrayList$SubList|)
     @GenericSignature "(I)TE;"
     @Owner (|java.util.ArrayList$SubList|)
     @Access (PUBLIC)
-    @Signature "java.util.ArrayList$SubList.remove(I)Ljava/lang/Object;" 
+    @Signature "java.util.ArrayList$SubList.remove(I)Ljava.lang.Object;" 
   {
     local jmp;
     s0;
@@ -1429,7 +1429,7 @@ record (|java.util.ArrayList$SubList|)
     @GenericSignature "(Ljava/util/Collection<+TE;>;)Z"
     @Owner (|java.util.ArrayList$SubList|)
     @Access (PUBLIC)
-    @Signature "java.util.ArrayList$SubList.addAll(Ljava/util/Collection;)Z" 
+    @Signature "java.util.ArrayList$SubList.addAll(Ljava.util.Collection;)Z" 
   {
     local jmp;
     s0;
@@ -1445,7 +1445,7 @@ record (|java.util.ArrayList$SubList|)
     @GenericSignature "(ILjava/util/Collection<+TE;>;)Z"
     @Owner (|java.util.ArrayList$SubList|)
     @Access (PUBLIC)
-    @Signature "java.util.ArrayList$SubList.addAll(ILjava/util/Collection;)Z" 
+    @Signature "java.util.ArrayList$SubList.addAll(ILjava.util.Collection;)Z" 
   {
     local jmp;
     s0;
@@ -1476,7 +1476,7 @@ record (|java.util.ArrayList$SubList|)
     @GenericSignature "()Ljava/util/Iterator<TE;>;"
     @Owner (|java.util.ArrayList$SubList|)
     @Access (PUBLIC)
-    @Signature "java.util.ArrayList$SubList.iterator()Ljava/util/Iterator;" 
+    @Signature "java.util.ArrayList$SubList.iterator()Ljava.util.Iterator;" 
   {
     local jmp;
     s0;
@@ -1490,7 +1490,7 @@ record (|java.util.ArrayList$SubList|)
     @GenericSignature "(I)Ljava/util/ListIterator<TE;>;"
     @Owner (|java.util.ArrayList$SubList|)
     @Access (PUBLIC)
-    @Signature "java.util.ArrayList$SubList.listIterator(I)Ljava/util/ListIterator;" 
+    @Signature "java.util.ArrayList$SubList.listIterator(I)Ljava.util.ListIterator;" 
   {
     local jmp;
     s0;
@@ -1511,7 +1511,7 @@ record (|java.util.ArrayList$SubList|)
     @GenericSignature "(II)Ljava/util/List<TE;>;"
     @Owner (|java.util.ArrayList$SubList|)
     @Access (PUBLIC)
-    @Signature "java.util.ArrayList$SubList.subList(II)Ljava/util/List;" 
+    @Signature "java.util.ArrayList$SubList.subList(II)Ljava.util.List;" 
   {
     local jmp;
     s0;
@@ -1578,7 +1578,7 @@ record (|java.util.ArrayList$SubList|)
     @MaxStack 2
     @Owner (|java.util.ArrayList$SubList|)
     @Access (PRIVATE)
-    @Signature "java.util.ArrayList$SubList.outOfBoundsMsg(I)Ljava/lang/String;" 
+    @Signature "java.util.ArrayList$SubList.outOfBoundsMsg(I)Ljava.lang.String;" 
   {
     local jmp;
     s0;
@@ -1644,7 +1644,7 @@ record (|java.util.ArrayList$ListItr|)
     @MaxStack 3
     @Owner (|java.util.ArrayList$ListItr|)
     @Access (CONSTRUCTOR)
-    @Signature "java.util.ArrayList$ListItr.<init>(Ljava/util/ArrayList;I)V" 
+    @Signature "java.util.ArrayList$ListItr.<init>(Ljava.util.ArrayList;I)V" 
   {
     local jmp;
     s0;
@@ -1705,7 +1705,7 @@ record (|java.util.ArrayList$ListItr|)
     @GenericSignature "()TE;"
     @Owner (|java.util.ArrayList$ListItr|)
     @Access (PUBLIC)
-    @Signature "java.util.ArrayList$ListItr.previous()Ljava/lang/Object;" 
+    @Signature "java.util.ArrayList$ListItr.previous()Ljava.lang.Object;" 
   {
     local jmp;
     s0;
@@ -1740,7 +1740,7 @@ record (|java.util.ArrayList$ListItr|)
     @GenericSignature "(TE;)V"
     @Owner (|java.util.ArrayList$ListItr|)
     @Access (PUBLIC)
-    @Signature "java.util.ArrayList$ListItr.set(Ljava/lang/Object;)V" 
+    @Signature "java.util.ArrayList$ListItr.set(Ljava.lang.Object;)V" 
   {
     local jmp;
     s0;
@@ -1774,7 +1774,7 @@ record (|java.util.ArrayList$ListItr|)
     @GenericSignature "(TE;)V"
     @Owner (|java.util.ArrayList$ListItr|)
     @Access (PUBLIC)
-    @Signature "java.util.ArrayList$ListItr.add(Ljava/lang/Object;)V" 
+    @Signature "java.util.ArrayList$ListItr.add(Ljava.lang.Object;)V" 
   {
     local jmp;
     s0;
@@ -1827,7 +1827,7 @@ record (|java.util.ArrayList$Itr|)
     @MaxStack 2
     @Owner (|java.util.ArrayList$Itr|)
     @Access (PRIVATE,CONSTRUCTOR)
-    @Signature "java.util.ArrayList$Itr.<init>(Ljava/util/ArrayList;)V" 
+    @Signature "java.util.ArrayList$Itr.<init>(Ljava.util.ArrayList;)V" 
   {
     local jmp;
     s0;
@@ -1870,7 +1870,7 @@ record (|java.util.ArrayList$Itr|)
     @GenericSignature "()TE;"
     @Owner (|java.util.ArrayList$Itr|)
     @Access (PUBLIC)
-    @Signature "java.util.ArrayList$Itr.next()Ljava/lang/Object;" 
+    @Signature "java.util.ArrayList$Itr.next()Ljava.lang.Object;" 
   {
     local jmp;
     s0;
@@ -1967,7 +1967,7 @@ record (|java.util.ArrayList$Itr|)
     @MaxStack 2
     @Owner (|java.util.ArrayList$Itr|)
     @Access (SYNTHETIC,CONSTRUCTOR)
-    @Signature "java.util.ArrayList$Itr.<init>(Ljava/util/ArrayList;Ljava/util/ArrayList$1;)V" 
+    @Signature "java.util.ArrayList$Itr.<init>(Ljava.util.ArrayList;Ljava.util.ArrayList$1;)V" 
   {
     local jmp;
     s0;

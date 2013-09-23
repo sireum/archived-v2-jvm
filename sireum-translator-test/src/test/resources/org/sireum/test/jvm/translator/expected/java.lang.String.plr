@@ -42,7 +42,7 @@ record (|java.lang.String|)
     @MaxStack 2
     @Owner (|java.lang.String|)
     @Access (PUBLIC,CONSTRUCTOR)
-    @Signature "java.lang.String.<init>(Ljava/lang/String;)V" 
+    @Signature "java.lang.String.<init>(Ljava.lang.String;)V" 
   {
     local jmp;
     s0;
@@ -274,7 +274,7 @@ record (|java.lang.String|)
     @MaxStack 5
     @Owner (|java.lang.String|)
     @Access (PUBLIC,CONSTRUCTOR)
-    @Signature "java.lang.String.<init>([BIILjava/lang/String;)V" 
+    @Signature "java.lang.String.<init>([BIILjava.lang.String;)V" 
   {
     local jmp;
     s0;
@@ -297,7 +297,7 @@ record (|java.lang.String|)
     @MaxStack 5
     @Owner (|java.lang.String|)
     @Access (PUBLIC,CONSTRUCTOR)
-    @Signature "java.lang.String.<init>([BIILjava/nio/charset/Charset;)V" 
+    @Signature "java.lang.String.<init>([BIILjava.nio.charset.Charset;)V" 
   {
     local jmp;
     s0;
@@ -321,7 +321,7 @@ record (|java.lang.String|)
     @MaxStack 5
     @Owner (|java.lang.String|)
     @Access (PUBLIC,CONSTRUCTOR)
-    @Signature "java.lang.String.<init>([BLjava/lang/String;)V" 
+    @Signature "java.lang.String.<init>([BLjava.lang.String;)V" 
   {
     local jmp;
     s0;
@@ -334,7 +334,7 @@ record (|java.lang.String|)
     @MaxStack 5
     @Owner (|java.lang.String|)
     @Access (PUBLIC,CONSTRUCTOR)
-    @Signature "java.lang.String.<init>([BLjava/nio/charset/Charset;)V" 
+    @Signature "java.lang.String.<init>([BLjava.nio.charset.Charset;)V" 
   {
     local jmp;
     s0;
@@ -377,7 +377,7 @@ record (|java.lang.String|)
     @MaxStack 3
     @Owner (|java.lang.String|)
     @Access (PUBLIC,CONSTRUCTOR)
-    @Signature "java.lang.String.<init>(Ljava/lang/StringBuffer;)V" 
+    @Signature "java.lang.String.<init>(Ljava.lang.StringBuffer;)V" 
   {
     local jmp;
     s0;
@@ -410,7 +410,7 @@ record (|java.lang.String|)
     @MaxStack 3
     @Owner (|java.lang.String|)
     @Access (PUBLIC,CONSTRUCTOR)
-    @Signature "java.lang.String.<init>(Ljava/lang/StringBuilder;)V" 
+    @Signature "java.lang.String.<init>(Ljava.lang.StringBuilder;)V" 
   {
     local jmp;
     s0;
@@ -709,7 +709,7 @@ record (|java.lang.String|)
     @MaxStack 4
     @Owner (|java.lang.String|)
     @Access (PUBLIC)
-    @Signature "java.lang.String.getBytes(Ljava/lang/String;)[B" 
+    @Signature "java.lang.String.getBytes(Ljava.lang.String;)[B" 
   {
     local jmp;
     s0;
@@ -731,7 +731,7 @@ record (|java.lang.String|)
     @MaxStack 4
     @Owner (|java.lang.String|)
     @Access (PUBLIC)
-    @Signature "java.lang.String.getBytes(Ljava/nio/charset/Charset;)[B" 
+    @Signature "java.lang.String.getBytes(Ljava.nio.charset.Charset;)[B" 
   {
     local jmp;
     s0;
@@ -770,7 +770,7 @@ record (|java.lang.String|)
     @MaxStack 3
     @Owner (|java.lang.String|)
     @Access (PUBLIC)
-    @Signature "java.lang.String.equals(Ljava/lang/Object;)Z" 
+    @Signature "java.lang.String.equals(Ljava.lang.Object;)Z" 
   {
     local jmp;
     s0;
@@ -816,7 +816,7 @@ record (|java.lang.String|)
     @MaxStack 2
     @Owner (|java.lang.String|)
     @Access (PUBLIC)
-    @Signature "java.lang.String.contentEquals(Ljava/lang/StringBuffer;)Z" 
+    @Signature "java.lang.String.contentEquals(Ljava.lang.StringBuffer;)Z" 
   {
     local jmp;
     s0;
@@ -840,7 +840,7 @@ record (|java.lang.String|)
     @MaxStack 3
     @Owner (|java.lang.String|)
     @Access (PUBLIC)
-    @Signature "java.lang.String.contentEquals(Ljava/lang/CharSequence;)Z" 
+    @Signature "java.lang.String.contentEquals(Ljava.lang.CharSequence;)Z" 
   {
     local jmp;
     s0;
@@ -904,7 +904,7 @@ record (|java.lang.String|)
     @MaxStack 6
     @Owner (|java.lang.String|)
     @Access (PUBLIC)
-    @Signature "java.lang.String.equalsIgnoreCase(Ljava/lang/String;)Z" 
+    @Signature "java.lang.String.equalsIgnoreCase(Ljava.lang.String;)Z" 
   {
     local jmp;
     s0;
@@ -935,7 +935,7 @@ record (|java.lang.String|)
     @MaxStack 2
     @Owner (|java.lang.String|)
     @Access (PUBLIC)
-    @Signature "java.lang.String.compareTo(Ljava/lang/String;)I" 
+    @Signature "java.lang.String.compareTo(Ljava.lang.String;)I" 
   {
     local jmp;
     s0;
@@ -978,7 +978,7 @@ record (|java.lang.String|)
     @MaxStack 3
     @Owner (|java.lang.String|)
     @Access (PUBLIC)
-    @Signature "java.lang.String.compareToIgnoreCase(Ljava/lang/String;)I" 
+    @Signature "java.lang.String.compareToIgnoreCase(Ljava.lang.String;)I" 
   {
     local jmp;
     s0;
@@ -993,7 +993,7 @@ record (|java.lang.String|)
     @MaxStack 6
     @Owner (|java.lang.String|)
     @Access (PUBLIC)
-    @Signature "java.lang.String.regionMatches(ILjava/lang/String;II)Z" 
+    @Signature "java.lang.String.regionMatches(ILjava.lang.String;II)Z" 
   {
     local jmp;
     s0;
@@ -1038,7 +1038,7 @@ record (|java.lang.String|)
     @MaxStack 6
     @Owner (|java.lang.String|)
     @Access (PUBLIC)
-    @Signature "java.lang.String.regionMatches(ZILjava/lang/String;II)Z" 
+    @Signature "java.lang.String.regionMatches(ZILjava.lang.String;II)Z" 
   {
     local jmp;
     s0;
@@ -1104,7 +1104,7 @@ record (|java.lang.String|)
     @MaxStack 3
     @Owner (|java.lang.String|)
     @Access (PUBLIC)
-    @Signature "java.lang.String.startsWith(Ljava/lang/String;I)Z" 
+    @Signature "java.lang.String.startsWith(Ljava.lang.String;I)Z" 
   {
     local jmp;
     s0;
@@ -1145,7 +1145,7 @@ record (|java.lang.String|)
     @MaxStack 3
     @Owner (|java.lang.String|)
     @Access (PUBLIC)
-    @Signature "java.lang.String.startsWith(Ljava/lang/String;)Z" 
+    @Signature "java.lang.String.startsWith(Ljava.lang.String;)Z" 
   {
     local jmp;
     s0;
@@ -1158,7 +1158,7 @@ record (|java.lang.String|)
     @MaxStack 4
     @Owner (|java.lang.String|)
     @Access (PUBLIC)
-    @Signature "java.lang.String.endsWith(Ljava/lang/String;)Z" 
+    @Signature "java.lang.String.endsWith(Ljava.lang.String;)Z" 
   {
     local jmp;
     s0;
@@ -1384,7 +1384,7 @@ record (|java.lang.String|)
     @MaxStack 3
     @Owner (|java.lang.String|)
     @Access (PUBLIC)
-    @Signature "java.lang.String.indexOf(Ljava/lang/String;)I" 
+    @Signature "java.lang.String.indexOf(Ljava.lang.String;)I" 
   {
     local jmp;
     s0;
@@ -1397,7 +1397,7 @@ record (|java.lang.String|)
     @MaxStack 7
     @Owner (|java.lang.String|)
     @Access (PUBLIC)
-    @Signature "java.lang.String.indexOf(Ljava/lang/String;I)I" 
+    @Signature "java.lang.String.indexOf(Ljava.lang.String;I)I" 
   {
     local jmp;
     s0;
@@ -1486,7 +1486,7 @@ record (|java.lang.String|)
     @MaxStack 3
     @Owner (|java.lang.String|)
     @Access (PUBLIC)
-    @Signature "java.lang.String.lastIndexOf(Ljava/lang/String;)I" 
+    @Signature "java.lang.String.lastIndexOf(Ljava.lang.String;)I" 
   {
     local jmp;
     s0;
@@ -1501,7 +1501,7 @@ record (|java.lang.String|)
     @MaxStack 7
     @Owner (|java.lang.String|)
     @Access (PUBLIC)
-    @Signature "java.lang.String.lastIndexOf(Ljava/lang/String;I)I" 
+    @Signature "java.lang.String.lastIndexOf(Ljava.lang.String;I)I" 
   {
     local jmp;
     s0;
@@ -1581,7 +1581,7 @@ record (|java.lang.String|)
     @MaxStack 5
     @Owner (|java.lang.String|)
     @Access (PUBLIC)
-    @Signature "java.lang.String.substring(I)Ljava/lang/String;" 
+    @Signature "java.lang.String.substring(I)Ljava.lang.String;" 
   {
     local jmp;
     s0;
@@ -1617,7 +1617,7 @@ record (|java.lang.String|)
     @MaxStack 5
     @Owner (|java.lang.String|)
     @Access (PUBLIC)
-    @Signature "java.lang.String.substring(II)Ljava/lang/String;" 
+    @Signature "java.lang.String.substring(II)Ljava.lang.String;" 
   {
     local jmp;
     s0;
@@ -1660,7 +1660,7 @@ record (|java.lang.String|)
     @MaxStack 3
     @Owner (|java.lang.String|)
     @Access (PUBLIC)
-    @Signature "java.lang.String.subSequence(II)Ljava/lang/CharSequence;" 
+    @Signature "java.lang.String.subSequence(II)Ljava.lang.CharSequence;" 
   {
     local jmp;
     s0;
@@ -1673,7 +1673,7 @@ record (|java.lang.String|)
     @MaxStack 4
     @Owner (|java.lang.String|)
     @Access (PUBLIC)
-    @Signature "java.lang.String.concat(Ljava/lang/String;)Ljava/lang/String;" 
+    @Signature "java.lang.String.concat(Ljava.lang.String;)Ljava.lang.String;" 
   {
     local jmp;
     s0;
@@ -1702,7 +1702,7 @@ record (|java.lang.String|)
     @MaxStack 4
     @Owner (|java.lang.String|)
     @Access (PUBLIC)
-    @Signature "java.lang.String.replace(CC)Ljava/lang/String;" 
+    @Signature "java.lang.String.replace(CC)Ljava.lang.String;" 
   {
     local jmp;
     s0;
@@ -1762,7 +1762,7 @@ record (|java.lang.String|)
     @MaxStack 2
     @Owner (|java.lang.String|)
     @Access (PUBLIC)
-    @Signature "java.lang.String.matches(Ljava/lang/String;)Z" 
+    @Signature "java.lang.String.matches(Ljava.lang.String;)Z" 
   {
     local jmp;
     s0;
@@ -1775,7 +1775,7 @@ record (|java.lang.String|)
     @MaxStack 2
     @Owner (|java.lang.String|)
     @Access (PUBLIC)
-    @Signature "java.lang.String.contains(Ljava/lang/CharSequence;)Z" 
+    @Signature "java.lang.String.contains(Ljava.lang.CharSequence;)Z" 
   {
     local jmp;
     s0;
@@ -1796,7 +1796,7 @@ record (|java.lang.String|)
     @MaxStack 2
     @Owner (|java.lang.String|)
     @Access (PUBLIC)
-    @Signature "java.lang.String.replaceFirst(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;" 
+    @Signature "java.lang.String.replaceFirst(Ljava.lang.String;Ljava.lang.String;)Ljava.lang.String;" 
   {
     local jmp;
     s0;
@@ -1813,7 +1813,7 @@ record (|java.lang.String|)
     @MaxStack 2
     @Owner (|java.lang.String|)
     @Access (PUBLIC)
-    @Signature "java.lang.String.replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;" 
+    @Signature "java.lang.String.replaceAll(Ljava.lang.String;Ljava.lang.String;)Ljava.lang.String;" 
   {
     local jmp;
     s0;
@@ -1830,7 +1830,7 @@ record (|java.lang.String|)
     @MaxStack 2
     @Owner (|java.lang.String|)
     @Access (PUBLIC)
-    @Signature "java.lang.String.replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;" 
+    @Signature "java.lang.String.replace(Ljava.lang.CharSequence;Ljava.lang.CharSequence;)Ljava.lang.String;" 
   {
     local jmp;
     s0;
@@ -1853,7 +1853,7 @@ record (|java.lang.String|)
     @MaxStack 4
     @Owner (|java.lang.String|)
     @Access (PUBLIC)
-    @Signature "java.lang.String.split(Ljava/lang/String;I)[Ljava/lang/String;" 
+    @Signature "java.lang.String.split(Ljava.lang.String;I)[Ljava.lang.String;" 
   {
     local jmp;
     s0;
@@ -1959,7 +1959,7 @@ record (|java.lang.String|)
     @MaxStack 3
     @Owner (|java.lang.String|)
     @Access (PUBLIC)
-    @Signature "java.lang.String.split(Ljava/lang/String;)[Ljava/lang/String;" 
+    @Signature "java.lang.String.split(Ljava.lang.String;)[Ljava.lang.String;" 
   {
     local jmp;
     s0;
@@ -1972,7 +1972,7 @@ record (|java.lang.String|)
     @MaxStack 6
     @Owner (|java.lang.String|)
     @Access (PUBLIC)
-    @Signature "java.lang.String.toLowerCase(Ljava/util/Locale;)Ljava/lang/String;" 
+    @Signature "java.lang.String.toLowerCase(Ljava.util.Locale;)Ljava.lang.String;" 
   {
     local jmp;
     s0;
@@ -2128,7 +2128,7 @@ record (|java.lang.String|)
     @MaxStack 2
     @Owner (|java.lang.String|)
     @Access (PUBLIC)
-    @Signature "java.lang.String.toLowerCase()Ljava/lang/String;" 
+    @Signature "java.lang.String.toLowerCase()Ljava.lang.String;" 
   {
     local jmp;
     s0;
@@ -2143,7 +2143,7 @@ record (|java.lang.String|)
     @MaxStack 6
     @Owner (|java.lang.String|)
     @Access (PUBLIC)
-    @Signature "java.lang.String.toUpperCase(Ljava/util/Locale;)Ljava/lang/String;" 
+    @Signature "java.lang.String.toUpperCase(Ljava.util.Locale;)Ljava.lang.String;" 
   {
     local jmp;
     s0;
@@ -2290,7 +2290,7 @@ record (|java.lang.String|)
     @MaxStack 2
     @Owner (|java.lang.String|)
     @Access (PUBLIC)
-    @Signature "java.lang.String.toUpperCase()Ljava/lang/String;" 
+    @Signature "java.lang.String.toUpperCase()Ljava.lang.String;" 
   {
     local jmp;
     s0;
@@ -2305,7 +2305,7 @@ record (|java.lang.String|)
     @MaxStack 3
     @Owner (|java.lang.String|)
     @Access (PUBLIC)
-    @Signature "java.lang.String.trim()Ljava/lang/String;" 
+    @Signature "java.lang.String.trim()Ljava.lang.String;" 
   {
     local jmp;
     s0;
@@ -2348,7 +2348,7 @@ record (|java.lang.String|)
     @MaxStack 1
     @Owner (|java.lang.String|)
     @Access (PUBLIC)
-    @Signature "java.lang.String.toString()Ljava/lang/String;" 
+    @Signature "java.lang.String.toString()Ljava.lang.String;" 
   {
     local jmp;
 
@@ -2380,7 +2380,7 @@ record (|java.lang.String|)
     @MaxStack 3
     @Owner (|java.lang.String|)
     @Access (PUBLIC,STATIC,TRANSIENT,VARARGS)
-    @Signature "java.lang.String.format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;" 
+    @Signature "java.lang.String.format(Ljava.lang.String;[Ljava.lang.Object;)Ljava.lang.String;" 
   {
     local jmp;
     s0;
@@ -2399,7 +2399,7 @@ record (|java.lang.String|)
     @MaxStack 3
     @Owner (|java.lang.String|)
     @Access (PUBLIC,STATIC,TRANSIENT,VARARGS)
-    @Signature "java.lang.String.format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;" 
+    @Signature "java.lang.String.format(Ljava.util.Locale;Ljava.lang.String;[Ljava.lang.Object;)Ljava.lang.String;" 
   {
     local jmp;
     s0;
@@ -2418,7 +2418,7 @@ record (|java.lang.String|)
     @MaxStack 1
     @Owner (|java.lang.String|)
     @Access (PUBLIC,STATIC)
-    @Signature "java.lang.String.valueOf(Ljava/lang/Object;)Ljava/lang/String;" 
+    @Signature "java.lang.String.valueOf(Ljava.lang.Object;)Ljava.lang.String;" 
   {
     local jmp;
     s0;
@@ -2437,7 +2437,7 @@ record (|java.lang.String|)
     @MaxStack 3
     @Owner (|java.lang.String|)
     @Access (PUBLIC,STATIC)
-    @Signature "java.lang.String.valueOf([C)Ljava/lang/String;" 
+    @Signature "java.lang.String.valueOf([C)Ljava.lang.String;" 
   {
     local jmp;
     s0;
@@ -2452,7 +2452,7 @@ record (|java.lang.String|)
     @MaxStack 5
     @Owner (|java.lang.String|)
     @Access (PUBLIC,STATIC)
-    @Signature "java.lang.String.valueOf([CII)Ljava/lang/String;" 
+    @Signature "java.lang.String.valueOf([CII)Ljava.lang.String;" 
   {
     local jmp;
     s0;
@@ -2467,7 +2467,7 @@ record (|java.lang.String|)
     @MaxStack 5
     @Owner (|java.lang.String|)
     @Access (PUBLIC,STATIC)
-    @Signature "java.lang.String.copyValueOf([CII)Ljava/lang/String;" 
+    @Signature "java.lang.String.copyValueOf([CII)Ljava.lang.String;" 
   {
     local jmp;
     s0;
@@ -2482,7 +2482,7 @@ record (|java.lang.String|)
     @MaxStack 3
     @Owner (|java.lang.String|)
     @Access (PUBLIC,STATIC)
-    @Signature "java.lang.String.copyValueOf([C)Ljava/lang/String;" 
+    @Signature "java.lang.String.copyValueOf([C)Ljava.lang.String;" 
   {
     local jmp;
     s0;
@@ -2497,7 +2497,7 @@ record (|java.lang.String|)
     @MaxStack 1
     @Owner (|java.lang.String|)
     @Access (PUBLIC,STATIC)
-    @Signature "java.lang.String.valueOf(Z)Ljava/lang/String;" 
+    @Signature "java.lang.String.valueOf(Z)Ljava.lang.String;" 
   {
     local jmp;
 
@@ -2514,7 +2514,7 @@ record (|java.lang.String|)
     @MaxStack 4
     @Owner (|java.lang.String|)
     @Access (PUBLIC,STATIC)
-    @Signature "java.lang.String.valueOf(C)Ljava/lang/String;" 
+    @Signature "java.lang.String.valueOf(C)Ljava.lang.String;" 
   {
     local jmp;
     s0;
@@ -2533,7 +2533,7 @@ record (|java.lang.String|)
     @MaxStack 1
     @Owner (|java.lang.String|)
     @Access (PUBLIC,STATIC)
-    @Signature "java.lang.String.valueOf(I)Ljava/lang/String;" 
+    @Signature "java.lang.String.valueOf(I)Ljava.lang.String;" 
   {
     local jmp;
     s0;
@@ -2546,7 +2546,7 @@ record (|java.lang.String|)
     @MaxStack 2
     @Owner (|java.lang.String|)
     @Access (PUBLIC,STATIC)
-    @Signature "java.lang.String.valueOf(J)Ljava/lang/String;" 
+    @Signature "java.lang.String.valueOf(J)Ljava.lang.String;" 
   {
     local jmp;
     s0;
@@ -2560,7 +2560,7 @@ record (|java.lang.String|)
     @MaxStack 1
     @Owner (|java.lang.String|)
     @Access (PUBLIC,STATIC)
-    @Signature "java.lang.String.valueOf(F)Ljava/lang/String;" 
+    @Signature "java.lang.String.valueOf(F)Ljava.lang.String;" 
   {
     local jmp;
     s0;
@@ -2573,7 +2573,7 @@ record (|java.lang.String|)
     @MaxStack 2
     @Owner (|java.lang.String|)
     @Access (PUBLIC,STATIC)
-    @Signature "java.lang.String.valueOf(D)Ljava/lang/String;" 
+    @Signature "java.lang.String.valueOf(D)Ljava.lang.String;" 
   {
     local jmp;
     s0;
@@ -2585,7 +2585,7 @@ record (|java.lang.String|)
   procedure (|java.lang.String|) {|java.lang.String.intern()Ljava.lang.String;|} ((|java.lang.String|) [|v0|]) 
     @Owner (|java.lang.String|)
     @Access (PUBLIC,NATIVE)
-    @Signature "java.lang.String.intern()Ljava/lang/String;" 
+    @Signature "java.lang.String.intern()Ljava.lang.String;" 
   {
 
     #L00000Aa. return @void;
@@ -2628,7 +2628,7 @@ record (|java.lang.String|)
     @MaxStack 2
     @Owner (|java.lang.String|)
     @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Signature "java.lang.String.compareTo(Ljava/lang/Object;)I" 
+    @Signature "java.lang.String.compareTo(Ljava.lang.Object;)I" 
   {
     local jmp;
     s0;
@@ -2759,7 +2759,7 @@ record (|java.lang.String$CaseInsensitiveComparator|)
     @MaxStack 2
     @Owner (|java.lang.String$CaseInsensitiveComparator|)
     @Access (PUBLIC)
-    @Signature "java.lang.String$CaseInsensitiveComparator.compare(Ljava/lang/String;Ljava/lang/String;)I" 
+    @Signature "java.lang.String$CaseInsensitiveComparator.compare(Ljava.lang.String;Ljava.lang.String;)I" 
   {
     local jmp;
     s0;
@@ -2806,7 +2806,7 @@ record (|java.lang.String$CaseInsensitiveComparator|)
     @MaxStack 3
     @Owner (|java.lang.String$CaseInsensitiveComparator|)
     @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Signature "java.lang.String$CaseInsensitiveComparator.compare(Ljava/lang/Object;Ljava/lang/Object;)I" 
+    @Signature "java.lang.String$CaseInsensitiveComparator.compare(Ljava.lang.Object;Ljava.lang.Object;)I" 
   {
     local jmp;
     s0;
@@ -2819,7 +2819,7 @@ record (|java.lang.String$CaseInsensitiveComparator|)
     @MaxStack 1
     @Owner (|java.lang.String$CaseInsensitiveComparator|)
     @Access (SYNTHETIC,CONSTRUCTOR)
-    @Signature "java.lang.String$CaseInsensitiveComparator.<init>(Ljava/lang/String$1;)V" 
+    @Signature "java.lang.String$CaseInsensitiveComparator.<init>(Ljava.lang.String$1;)V" 
   {
     local jmp;
     s0;

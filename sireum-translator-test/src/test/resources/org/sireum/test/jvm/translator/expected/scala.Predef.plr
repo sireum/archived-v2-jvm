@@ -20,7 +20,7 @@ record (|scala.Predef|)
     @GenericSignature "<A:Ljava/lang/Object;>()Lscala/Predef$$less$colon$less<TA;TA;>;"
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.conforms()Lscala/Predef$$less$colon$less;" 
+    @Signature "scala.Predef.conforms()Lscala.Predef$$less$colon$less;" 
   {
     local jmp;
     s0;
@@ -36,7 +36,7 @@ record (|scala.Predef|)
     @GenericSignature "()Lscala/collection/generic/CanBuildFrom<Ljava/lang/String;Ljava/lang/Object;Ljava/lang/String;>;"
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.StringCanBuildFrom()Lscala/collection/generic/CanBuildFrom;" 
+    @Signature "scala.Predef.StringCanBuildFrom()Lscala.collection.generic.CanBuildFrom;" 
   {
     local jmp;
     s0;
@@ -52,7 +52,7 @@ record (|scala.Predef|)
     @GenericSignature "()Lscala/collection/generic/CanBuildFrom<Ljava/lang/String;Ljava/lang/Object;Ljava/lang/String;>;"
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.stringCanBuildFrom()Lscala/collection/generic/CanBuildFrom;" 
+    @Signature "scala.Predef.stringCanBuildFrom()Lscala.collection.generic.CanBuildFrom;" 
   {
     local jmp;
     s0;
@@ -67,7 +67,7 @@ record (|scala.Predef|)
     @MaxStack 2
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.unaugmentString(Ljava/lang/String;)Ljava/lang/String;" 
+    @Signature "scala.Predef.unaugmentString(Ljava.lang.String;)Ljava.lang.String;" 
   {
     local jmp;
     s0;
@@ -82,7 +82,7 @@ record (|scala.Predef|)
     @MaxStack 2
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.any2stringadd(Ljava/lang/Object;)Ljava/lang/Object;" 
+    @Signature "scala.Predef.any2stringadd(Ljava.lang.Object;)Ljava.lang.Object;" 
   {
     local jmp;
     s0;
@@ -97,7 +97,7 @@ record (|scala.Predef|)
     @MaxStack 2
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.augmentString(Ljava/lang/String;)Ljava/lang/String;" 
+    @Signature "scala.Predef.augmentString(Ljava.lang.String;)Ljava.lang.String;" 
   {
     local jmp;
     s0;
@@ -112,7 +112,7 @@ record (|scala.Predef|)
     @MaxStack 2
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.any2stringfmt(Ljava/lang/Object;)Ljava/lang/Object;" 
+    @Signature "scala.Predef.any2stringfmt(Ljava.lang.Object;)Ljava.lang.Object;" 
   {
     local jmp;
     s0;
@@ -127,7 +127,7 @@ record (|scala.Predef|)
     @MaxStack 2
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.Boolean2boolean(Ljava/lang/Boolean;)Z" 
+    @Signature "scala.Predef.Boolean2boolean(Ljava.lang.Boolean;)Z" 
   {
     local jmp;
     s0;
@@ -142,7 +142,7 @@ record (|scala.Predef|)
     @MaxStack 2
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.Double2double(Ljava/lang/Double;)D" 
+    @Signature "scala.Predef.Double2double(Ljava.lang.Double;)D" 
   {
     local jmp;
     s0;
@@ -157,7 +157,7 @@ record (|scala.Predef|)
     @MaxStack 2
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.Float2float(Ljava/lang/Float;)F" 
+    @Signature "scala.Predef.Float2float(Ljava.lang.Float;)F" 
   {
     local jmp;
     s0;
@@ -172,7 +172,7 @@ record (|scala.Predef|)
     @MaxStack 2
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.Long2long(Ljava/lang/Long;)J" 
+    @Signature "scala.Predef.Long2long(Ljava.lang.Long;)J" 
   {
     local jmp;
     s0;
@@ -187,7 +187,7 @@ record (|scala.Predef|)
     @MaxStack 2
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.Integer2int(Ljava/lang/Integer;)I" 
+    @Signature "scala.Predef.Integer2int(Ljava.lang.Integer;)I" 
   {
     local jmp;
     s0;
@@ -202,7 +202,7 @@ record (|scala.Predef|)
     @MaxStack 2
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.Character2char(Ljava/lang/Character;)C" 
+    @Signature "scala.Predef.Character2char(Ljava.lang.Character;)C" 
   {
     local jmp;
     s0;
@@ -217,7 +217,7 @@ record (|scala.Predef|)
     @MaxStack 2
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.Short2short(Ljava/lang/Short;)S" 
+    @Signature "scala.Predef.Short2short(Ljava.lang.Short;)S" 
   {
     local jmp;
     s0;
@@ -232,7 +232,7 @@ record (|scala.Predef|)
     @MaxStack 2
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.Byte2byte(Ljava/lang/Byte;)B" 
+    @Signature "scala.Predef.Byte2byte(Ljava.lang.Byte;)B" 
   {
     local jmp;
     s0;
@@ -247,7 +247,7 @@ record (|scala.Predef|)
     @MaxStack 2
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.boolean2BooleanConflict(Z)Ljava/lang/Object;" 
+    @Signature "scala.Predef.boolean2BooleanConflict(Z)Ljava.lang.Object;" 
   {
     local jmp;
     s0;
@@ -262,7 +262,7 @@ record (|scala.Predef|)
     @MaxStack 3
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.double2DoubleConflict(D)Ljava/lang/Object;" 
+    @Signature "scala.Predef.double2DoubleConflict(D)Ljava.lang.Object;" 
   {
     local jmp;
     s0;
@@ -278,7 +278,7 @@ record (|scala.Predef|)
     @MaxStack 2
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.float2FloatConflict(F)Ljava/lang/Object;" 
+    @Signature "scala.Predef.float2FloatConflict(F)Ljava.lang.Object;" 
   {
     local jmp;
     s0;
@@ -293,7 +293,7 @@ record (|scala.Predef|)
     @MaxStack 3
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.long2LongConflict(J)Ljava/lang/Object;" 
+    @Signature "scala.Predef.long2LongConflict(J)Ljava.lang.Object;" 
   {
     local jmp;
     s0;
@@ -309,7 +309,7 @@ record (|scala.Predef|)
     @MaxStack 2
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.int2IntegerConflict(I)Ljava/lang/Object;" 
+    @Signature "scala.Predef.int2IntegerConflict(I)Ljava.lang.Object;" 
   {
     local jmp;
     s0;
@@ -324,7 +324,7 @@ record (|scala.Predef|)
     @MaxStack 2
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.char2CharacterConflict(C)Ljava/lang/Object;" 
+    @Signature "scala.Predef.char2CharacterConflict(C)Ljava.lang.Object;" 
   {
     local jmp;
     s0;
@@ -339,7 +339,7 @@ record (|scala.Predef|)
     @MaxStack 2
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.short2ShortConflict(S)Ljava/lang/Object;" 
+    @Signature "scala.Predef.short2ShortConflict(S)Ljava.lang.Object;" 
   {
     local jmp;
     s0;
@@ -354,7 +354,7 @@ record (|scala.Predef|)
     @MaxStack 2
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.byte2ByteConflict(B)Ljava/lang/Object;" 
+    @Signature "scala.Predef.byte2ByteConflict(B)Ljava.lang.Object;" 
   {
     local jmp;
     s0;
@@ -369,7 +369,7 @@ record (|scala.Predef|)
     @MaxStack 2
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.boolean2Boolean(Z)Ljava/lang/Boolean;" 
+    @Signature "scala.Predef.boolean2Boolean(Z)Ljava.lang.Boolean;" 
   {
     local jmp;
     s0;
@@ -384,7 +384,7 @@ record (|scala.Predef|)
     @MaxStack 3
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.double2Double(D)Ljava/lang/Double;" 
+    @Signature "scala.Predef.double2Double(D)Ljava.lang.Double;" 
   {
     local jmp;
     s0;
@@ -400,7 +400,7 @@ record (|scala.Predef|)
     @MaxStack 2
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.float2Float(F)Ljava/lang/Float;" 
+    @Signature "scala.Predef.float2Float(F)Ljava.lang.Float;" 
   {
     local jmp;
     s0;
@@ -415,7 +415,7 @@ record (|scala.Predef|)
     @MaxStack 3
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.long2Long(J)Ljava/lang/Long;" 
+    @Signature "scala.Predef.long2Long(J)Ljava.lang.Long;" 
   {
     local jmp;
     s0;
@@ -431,7 +431,7 @@ record (|scala.Predef|)
     @MaxStack 2
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.int2Integer(I)Ljava/lang/Integer;" 
+    @Signature "scala.Predef.int2Integer(I)Ljava.lang.Integer;" 
   {
     local jmp;
     s0;
@@ -446,7 +446,7 @@ record (|scala.Predef|)
     @MaxStack 2
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.char2Character(C)Ljava/lang/Character;" 
+    @Signature "scala.Predef.char2Character(C)Ljava.lang.Character;" 
   {
     local jmp;
     s0;
@@ -461,7 +461,7 @@ record (|scala.Predef|)
     @MaxStack 2
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.short2Short(S)Ljava/lang/Short;" 
+    @Signature "scala.Predef.short2Short(S)Ljava.lang.Short;" 
   {
     local jmp;
     s0;
@@ -476,7 +476,7 @@ record (|scala.Predef|)
     @MaxStack 2
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.byte2Byte(B)Ljava/lang/Byte;" 
+    @Signature "scala.Predef.byte2Byte(B)Ljava.lang.Byte;" 
   {
     local jmp;
     s0;
@@ -779,7 +779,7 @@ record (|scala.Predef|)
     @GenericSignature "([Lscala/runtime/BoxedUnit;)Lscala/collection/mutable/ArrayOps<Lscala/runtime/BoxedUnit;>;"
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.unitArrayOps([Lscala/runtime/BoxedUnit;)Lscala/collection/mutable/ArrayOps;" 
+    @Signature "scala.Predef.unitArrayOps([Lscala.runtime.BoxedUnit;)Lscala.collection.mutable.ArrayOps;" 
   {
     local jmp;
     s0;
@@ -795,7 +795,7 @@ record (|scala.Predef|)
     @GenericSignature "([S)Lscala/collection/mutable/ArrayOps<Ljava/lang/Object;>;"
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.shortArrayOps([S)Lscala/collection/mutable/ArrayOps;" 
+    @Signature "scala.Predef.shortArrayOps([S)Lscala.collection.mutable.ArrayOps;" 
   {
     local jmp;
     s0;
@@ -811,7 +811,7 @@ record (|scala.Predef|)
     @GenericSignature "<T:Ljava/lang/Object;>([TT;)Lscala/collection/mutable/ArrayOps<TT;>;"
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.refArrayOps([Ljava/lang/Object;)Lscala/collection/mutable/ArrayOps;" 
+    @Signature "scala.Predef.refArrayOps([Ljava.lang.Object;)Lscala.collection.mutable.ArrayOps;" 
   {
     local jmp;
     s0;
@@ -827,7 +827,7 @@ record (|scala.Predef|)
     @GenericSignature "([J)Lscala/collection/mutable/ArrayOps<Ljava/lang/Object;>;"
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.longArrayOps([J)Lscala/collection/mutable/ArrayOps;" 
+    @Signature "scala.Predef.longArrayOps([J)Lscala.collection.mutable.ArrayOps;" 
   {
     local jmp;
     s0;
@@ -843,7 +843,7 @@ record (|scala.Predef|)
     @GenericSignature "([I)Lscala/collection/mutable/ArrayOps<Ljava/lang/Object;>;"
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.intArrayOps([I)Lscala/collection/mutable/ArrayOps;" 
+    @Signature "scala.Predef.intArrayOps([I)Lscala.collection.mutable.ArrayOps;" 
   {
     local jmp;
     s0;
@@ -859,7 +859,7 @@ record (|scala.Predef|)
     @GenericSignature "([F)Lscala/collection/mutable/ArrayOps<Ljava/lang/Object;>;"
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.floatArrayOps([F)Lscala/collection/mutable/ArrayOps;" 
+    @Signature "scala.Predef.floatArrayOps([F)Lscala.collection.mutable.ArrayOps;" 
   {
     local jmp;
     s0;
@@ -875,7 +875,7 @@ record (|scala.Predef|)
     @GenericSignature "([D)Lscala/collection/mutable/ArrayOps<Ljava/lang/Object;>;"
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.doubleArrayOps([D)Lscala/collection/mutable/ArrayOps;" 
+    @Signature "scala.Predef.doubleArrayOps([D)Lscala.collection.mutable.ArrayOps;" 
   {
     local jmp;
     s0;
@@ -891,7 +891,7 @@ record (|scala.Predef|)
     @GenericSignature "([C)Lscala/collection/mutable/ArrayOps<Ljava/lang/Object;>;"
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.charArrayOps([C)Lscala/collection/mutable/ArrayOps;" 
+    @Signature "scala.Predef.charArrayOps([C)Lscala.collection.mutable.ArrayOps;" 
   {
     local jmp;
     s0;
@@ -907,7 +907,7 @@ record (|scala.Predef|)
     @GenericSignature "([B)Lscala/collection/mutable/ArrayOps<Ljava/lang/Object;>;"
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.byteArrayOps([B)Lscala/collection/mutable/ArrayOps;" 
+    @Signature "scala.Predef.byteArrayOps([B)Lscala.collection.mutable.ArrayOps;" 
   {
     local jmp;
     s0;
@@ -923,7 +923,7 @@ record (|scala.Predef|)
     @GenericSignature "([Z)Lscala/collection/mutable/ArrayOps<Ljava/lang/Object;>;"
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.booleanArrayOps([Z)Lscala/collection/mutable/ArrayOps;" 
+    @Signature "scala.Predef.booleanArrayOps([Z)Lscala.collection.mutable.ArrayOps;" 
   {
     local jmp;
     s0;
@@ -939,7 +939,7 @@ record (|scala.Predef|)
     @GenericSignature "<T:Ljava/lang/Object;>(Ljava/lang/Object;)Lscala/collection/mutable/ArrayOps<TT;>;"
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.genericArrayOps(Ljava/lang/Object;)Lscala/collection/mutable/ArrayOps;" 
+    @Signature "scala.Predef.genericArrayOps(Ljava.lang.Object;)Lscala.collection.mutable.ArrayOps;" 
   {
     local jmp;
     s0;
@@ -954,7 +954,7 @@ record (|scala.Predef|)
     @MaxStack 2
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.arrayToCharSequence([C)Ljava/lang/CharSequence;" 
+    @Signature "scala.Predef.arrayToCharSequence([C)Ljava.lang.CharSequence;" 
   {
     local jmp;
     s0;
@@ -970,7 +970,7 @@ record (|scala.Predef|)
     @GenericSignature "(Lscala/collection/IndexedSeq<Ljava/lang/Object;>;)Ljava/lang/CharSequence;"
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.seqToCharSequence(Lscala/collection/IndexedSeq;)Ljava/lang/CharSequence;" 
+    @Signature "scala.Predef.seqToCharSequence(Lscala.collection.IndexedSeq;)Ljava.lang.CharSequence;" 
   {
     local jmp;
     s0;
@@ -986,7 +986,7 @@ record (|scala.Predef|)
     @GenericSignature "<T1:Ljava/lang/Object;T2:Ljava/lang/Object;T3:Ljava/lang/Object;>(Lscala/Tuple3<TT1;TT2;TT3;>;)Lscala/Tuple3<TT1;TT2;TT3;>;"
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.tuple3ToZippedOps(Lscala/Tuple3;)Lscala/Tuple3;" 
+    @Signature "scala.Predef.tuple3ToZippedOps(Lscala.Tuple3;)Lscala.Tuple3;" 
   {
     local jmp;
     s0;
@@ -1002,7 +1002,7 @@ record (|scala.Predef|)
     @GenericSignature "<T1:Ljava/lang/Object;T2:Ljava/lang/Object;>(Lscala/Tuple2<TT1;TT2;>;)Lscala/Tuple2<TT1;TT2;>;"
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.tuple2ToZippedOps(Lscala/Tuple2;)Lscala/Tuple2;" 
+    @Signature "scala.Predef.tuple2ToZippedOps(Lscala.Tuple2;)Lscala.Tuple2;" 
   {
     local jmp;
     s0;
@@ -1017,7 +1017,7 @@ record (|scala.Predef|)
     @MaxStack 2
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.exceptionWrapper(Ljava/lang/Throwable;)Lscala/runtime/RichException;" 
+    @Signature "scala.Predef.exceptionWrapper(Ljava.lang.Throwable;)Lscala.runtime.RichException;" 
   {
     local jmp;
     s0;
@@ -1033,7 +1033,7 @@ record (|scala.Predef|)
     @GenericSignature "(Ljava/lang/String;)Lscala/Tuple3<Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;>;"
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.readf3(Ljava/lang/String;)Lscala/Tuple3;" 
+    @Signature "scala.Predef.readf3(Ljava.lang.String;)Lscala.Tuple3;" 
   {
     local jmp;
     s0;
@@ -1049,7 +1049,7 @@ record (|scala.Predef|)
     @GenericSignature "(Ljava/lang/String;)Lscala/Tuple2<Ljava/lang/Object;Ljava/lang/Object;>;"
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.readf2(Ljava/lang/String;)Lscala/Tuple2;" 
+    @Signature "scala.Predef.readf2(Ljava.lang.String;)Lscala.Tuple2;" 
   {
     local jmp;
     s0;
@@ -1064,7 +1064,7 @@ record (|scala.Predef|)
     @MaxStack 2
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.readf1(Ljava/lang/String;)Ljava/lang/Object;" 
+    @Signature "scala.Predef.readf1(Ljava.lang.String;)Ljava.lang.Object;" 
   {
     local jmp;
     s0;
@@ -1080,7 +1080,7 @@ record (|scala.Predef|)
     @GenericSignature "(Ljava/lang/String;)Lscala/collection/immutable/List<Ljava/lang/Object;>;"
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.readf(Ljava/lang/String;)Lscala/collection/immutable/List;" 
+    @Signature "scala.Predef.readf(Ljava.lang.String;)Lscala.collection.immutable.List;" 
   {
     local jmp;
     s0;
@@ -1216,7 +1216,7 @@ record (|scala.Predef|)
     @GenericSignature "(Ljava/lang/String;Lscala/collection/Seq<Ljava/lang/Object;>;)Ljava/lang/String;"
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.readLine(Ljava/lang/String;Lscala/collection/Seq;)Ljava/lang/String;" 
+    @Signature "scala.Predef.readLine(Ljava.lang.String;Lscala.collection.Seq;)Ljava.lang.String;" 
   {
     local jmp;
     s0;
@@ -1231,7 +1231,7 @@ record (|scala.Predef|)
     @MaxStack 1
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.readLine()Ljava/lang/String;" 
+    @Signature "scala.Predef.readLine()Ljava.lang.String;" 
   {
     local jmp;
     s0;
@@ -1247,7 +1247,7 @@ record (|scala.Predef|)
     @GenericSignature "(Ljava/lang/String;Lscala/collection/Seq<Ljava/lang/Object;>;)V"
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.printf(Ljava/lang/String;Lscala/collection/Seq;)V" 
+    @Signature "scala.Predef.printf(Ljava.lang.String;Lscala.collection.Seq;)V" 
   {
     local jmp;
     s0;
@@ -1262,7 +1262,7 @@ record (|scala.Predef|)
     @MaxStack 2
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.println(Ljava/lang/Object;)V" 
+    @Signature "scala.Predef.println(Ljava.lang.Object;)V" 
   {
     local jmp;
     s0;
@@ -1292,7 +1292,7 @@ record (|scala.Predef|)
     @MaxStack 2
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.print(Ljava/lang/Object;)V" 
+    @Signature "scala.Predef.print(Ljava.lang.Object;)V" 
   {
     local jmp;
     s0;
@@ -1308,7 +1308,7 @@ record (|scala.Predef|)
     @GenericSignature "<A:Ljava/lang/Object;>(TA;)TA;"
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.any2ArrowAssoc(Ljava/lang/Object;)Ljava/lang/Object;" 
+    @Signature "scala.Predef.any2ArrowAssoc(Ljava.lang.Object;)Ljava.lang.Object;" 
   {
     local jmp;
     s0;
@@ -1323,7 +1323,7 @@ record (|scala.Predef|)
     @MaxStack 1
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.$qmark$qmark$qmark()Lscala/runtime/Nothing$;" 
+    @Signature "scala.Predef.$qmark$qmark$qmark()Lscala.runtime.Nothing$;" 
   {
     local jmp;
     s0;
@@ -1339,7 +1339,7 @@ record (|scala.Predef|)
     @GenericSignature "<A:Ljava/lang/Object;>(TA;)TA;"
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.any2Ensuring(Ljava/lang/Object;)Ljava/lang/Object;" 
+    @Signature "scala.Predef.any2Ensuring(Ljava.lang.Object;)Ljava.lang.Object;" 
   {
     local jmp;
     s0;
@@ -1355,7 +1355,7 @@ record (|scala.Predef|)
     @GenericSignature "(ZLscala/Function0<Ljava/lang/Object;>;)V"
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.require(ZLscala/Function0;)V" 
+    @Signature "scala.Predef.require(ZLscala.Function0;)V" 
   {
     local jmp;
     s0;
@@ -1386,7 +1386,7 @@ record (|scala.Predef|)
     @GenericSignature "(ZLscala/Function0<Ljava/lang/Object;>;)V"
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.assume(ZLscala/Function0;)V" 
+    @Signature "scala.Predef.assume(ZLscala.Function0;)V" 
   {
     local jmp;
     s0;
@@ -1417,7 +1417,7 @@ record (|scala.Predef|)
     @GenericSignature "(ZLscala/Function0<Ljava/lang/Object;>;)V"
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.assert(ZLscala/Function0;)V" 
+    @Signature "scala.Predef.assert(ZLscala.Function0;)V" 
   {
     local jmp;
     s0;
@@ -1448,7 +1448,7 @@ record (|scala.Predef|)
     @GenericSignature "(Ljava/lang/String;Lscala/collection/Seq<Ljava/lang/Object;>;)Ljava/lang/String;"
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.format(Ljava/lang/String;Lscala/collection/Seq;)Ljava/lang/String;" 
+    @Signature "scala.Predef.format(Ljava.lang.String;Lscala.collection.Seq;)Ljava.lang.String;" 
   {
     local jmp;
     s0;
@@ -1463,7 +1463,7 @@ record (|scala.Predef|)
     @MaxStack 2
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.exit(I)Lscala/runtime/Nothing$;" 
+    @Signature "scala.Predef.exit(I)Lscala.runtime.Nothing$;" 
   {
     local jmp;
     s0;
@@ -1478,7 +1478,7 @@ record (|scala.Predef|)
     @MaxStack 1
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.exit()Lscala/runtime/Nothing$;" 
+    @Signature "scala.Predef.exit()Lscala.runtime.Nothing$;" 
   {
     local jmp;
     s0;
@@ -1493,7 +1493,7 @@ record (|scala.Predef|)
     @MaxStack 2
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.error(Ljava/lang/String;)Lscala/runtime/Nothing$;" 
+    @Signature "scala.Predef.error(Ljava.lang.String;)Lscala.runtime.Nothing$;" 
   {
     local jmp;
     s0;
@@ -1508,7 +1508,7 @@ record (|scala.Predef|)
     @MaxStack 1
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.$scope()Lscala/xml/TopScope$;" 
+    @Signature "scala.Predef.$scope()Lscala.xml.TopScope$;" 
   {
     local jmp;
     s0;
@@ -1524,7 +1524,7 @@ record (|scala.Predef|)
     @GenericSignature "<T:Ljava/lang/Object;>(TT;)TT;"
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.locally(Ljava/lang/Object;)Ljava/lang/Object;" 
+    @Signature "scala.Predef.locally(Ljava.lang.Object;)Ljava.lang.Object;" 
   {
     local jmp;
     s0;
@@ -1540,7 +1540,7 @@ record (|scala.Predef|)
     @GenericSignature "<T:Ljava/lang/Object;>(TT;)TT;"
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.implicitly(Ljava/lang/Object;)Ljava/lang/Object;" 
+    @Signature "scala.Predef.implicitly(Ljava.lang.Object;)Ljava.lang.Object;" 
   {
     local jmp;
     s0;
@@ -1556,7 +1556,7 @@ record (|scala.Predef|)
     @GenericSignature "<A:Ljava/lang/Object;>(TA;)TA;"
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.identity(Ljava/lang/Object;)Ljava/lang/Object;" 
+    @Signature "scala.Predef.identity(Ljava.lang.Object;)Ljava.lang.Object;" 
   {
     local jmp;
     s0;
@@ -1572,7 +1572,7 @@ record (|scala.Predef|)
     @GenericSignature "<T:Ljava/lang/Object;>(Lscala/reflect/OptManifest<TT;>;)Lscala/reflect/OptManifest<TT;>;"
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.optManifest(Lscala/reflect/OptManifest;)Lscala/reflect/OptManifest;" 
+    @Signature "scala.Predef.optManifest(Lscala.reflect.OptManifest;)Lscala.reflect.OptManifest;" 
   {
     local jmp;
     s0;
@@ -1588,7 +1588,7 @@ record (|scala.Predef|)
     @GenericSignature "<T:Ljava/lang/Object;>(Lscala/reflect/ClassTag<TT;>;)Lscala/reflect/ClassTag<TT;>;"
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.classManifest(Lscala/reflect/ClassTag;)Lscala/reflect/ClassTag;" 
+    @Signature "scala.Predef.classManifest(Lscala.reflect.ClassTag;)Lscala.reflect.ClassTag;" 
   {
     local jmp;
     s0;
@@ -1604,7 +1604,7 @@ record (|scala.Predef|)
     @GenericSignature "<T:Ljava/lang/Object;>(Lscala/reflect/Manifest<TT;>;)Lscala/reflect/Manifest<TT;>;"
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.manifest(Lscala/reflect/Manifest;)Lscala/reflect/Manifest;" 
+    @Signature "scala.Predef.manifest(Lscala.reflect.Manifest;)Lscala.reflect.Manifest;" 
   {
     local jmp;
     s0;
@@ -1619,7 +1619,7 @@ record (|scala.Predef|)
     @MaxStack 1
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.NoManifest()Lscala/reflect/NoManifest$;" 
+    @Signature "scala.Predef.NoManifest()Lscala.reflect.NoManifest$;" 
   {
     local jmp;
     s0;
@@ -1634,7 +1634,7 @@ record (|scala.Predef|)
     @MaxStack 1
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.Manifest()Lscala/reflect/ManifestFactory$;" 
+    @Signature "scala.Predef.Manifest()Lscala.reflect.ManifestFactory$;" 
   {
     local jmp;
     s0;
@@ -1649,7 +1649,7 @@ record (|scala.Predef|)
     @MaxStack 1
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.ClassManifest()Lscala/reflect/ClassManifestFactory$;" 
+    @Signature "scala.Predef.ClassManifest()Lscala.reflect.ClassManifestFactory$;" 
   {
     local jmp;
     s0;
@@ -1664,7 +1664,7 @@ record (|scala.Predef|)
     @MaxStack 1
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.Set()Lscala/collection/immutable/Set$;" 
+    @Signature "scala.Predef.Set()Lscala.collection.immutable.Set$;" 
   {
     local jmp;
     s0;
@@ -1679,7 +1679,7 @@ record (|scala.Predef|)
     @MaxStack 1
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.Map()Lscala/collection/immutable/Map$;" 
+    @Signature "scala.Predef.Map()Lscala.collection.immutable.Map$;" 
   {
     local jmp;
     s0;
@@ -1695,7 +1695,7 @@ record (|scala.Predef|)
     @GenericSignature "<T:Ljava/lang/Object;>()Ljava/lang/Class<TT;>;"
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.classOf()Ljava/lang/Class;" 
+    @Signature "scala.Predef.classOf()Ljava.lang.Class;" 
   {
     local jmp;
     s0;
@@ -1711,7 +1711,7 @@ record (|scala.Predef|)
     @GenericSignature "<T:Ljava/lang/Object;>()Lscala/collection/generic/CanBuildFrom<Ljava/lang/String;TT;Lscala/collection/immutable/IndexedSeq<TT;>;>;"
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.fallbackStringCanBuildFrom()Lscala/collection/generic/CanBuildFrom;" 
+    @Signature "scala.Predef.fallbackStringCanBuildFrom()Lscala.collection.generic.CanBuildFrom;" 
   {
     local jmp;
     s0;
@@ -1726,7 +1726,7 @@ record (|scala.Predef|)
     @MaxStack 2
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.unwrapString(Lscala/collection/immutable/WrappedString;)Ljava/lang/String;" 
+    @Signature "scala.Predef.unwrapString(Lscala.collection.immutable.WrappedString;)Ljava.lang.String;" 
   {
     local jmp;
     s0;
@@ -1741,7 +1741,7 @@ record (|scala.Predef|)
     @MaxStack 2
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.wrapString(Ljava/lang/String;)Lscala/collection/immutable/WrappedString;" 
+    @Signature "scala.Predef.wrapString(Ljava.lang.String;)Lscala.collection.immutable.WrappedString;" 
   {
     local jmp;
     s0;
@@ -1757,7 +1757,7 @@ record (|scala.Predef|)
     @GenericSignature "([Lscala/runtime/BoxedUnit;)Lscala/collection/mutable/WrappedArray<Lscala/runtime/BoxedUnit;>;"
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.wrapUnitArray([Lscala/runtime/BoxedUnit;)Lscala/collection/mutable/WrappedArray;" 
+    @Signature "scala.Predef.wrapUnitArray([Lscala.runtime.BoxedUnit;)Lscala.collection.mutable.WrappedArray;" 
   {
     local jmp;
     s0;
@@ -1773,7 +1773,7 @@ record (|scala.Predef|)
     @GenericSignature "([Z)Lscala/collection/mutable/WrappedArray<Ljava/lang/Object;>;"
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.wrapBooleanArray([Z)Lscala/collection/mutable/WrappedArray;" 
+    @Signature "scala.Predef.wrapBooleanArray([Z)Lscala.collection.mutable.WrappedArray;" 
   {
     local jmp;
     s0;
@@ -1789,7 +1789,7 @@ record (|scala.Predef|)
     @GenericSignature "([S)Lscala/collection/mutable/WrappedArray<Ljava/lang/Object;>;"
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.wrapShortArray([S)Lscala/collection/mutable/WrappedArray;" 
+    @Signature "scala.Predef.wrapShortArray([S)Lscala.collection.mutable.WrappedArray;" 
   {
     local jmp;
     s0;
@@ -1805,7 +1805,7 @@ record (|scala.Predef|)
     @GenericSignature "([B)Lscala/collection/mutable/WrappedArray<Ljava/lang/Object;>;"
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.wrapByteArray([B)Lscala/collection/mutable/WrappedArray;" 
+    @Signature "scala.Predef.wrapByteArray([B)Lscala.collection.mutable.WrappedArray;" 
   {
     local jmp;
     s0;
@@ -1821,7 +1821,7 @@ record (|scala.Predef|)
     @GenericSignature "([C)Lscala/collection/mutable/WrappedArray<Ljava/lang/Object;>;"
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.wrapCharArray([C)Lscala/collection/mutable/WrappedArray;" 
+    @Signature "scala.Predef.wrapCharArray([C)Lscala.collection.mutable.WrappedArray;" 
   {
     local jmp;
     s0;
@@ -1837,7 +1837,7 @@ record (|scala.Predef|)
     @GenericSignature "([F)Lscala/collection/mutable/WrappedArray<Ljava/lang/Object;>;"
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.wrapFloatArray([F)Lscala/collection/mutable/WrappedArray;" 
+    @Signature "scala.Predef.wrapFloatArray([F)Lscala.collection.mutable.WrappedArray;" 
   {
     local jmp;
     s0;
@@ -1853,7 +1853,7 @@ record (|scala.Predef|)
     @GenericSignature "([J)Lscala/collection/mutable/WrappedArray<Ljava/lang/Object;>;"
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.wrapLongArray([J)Lscala/collection/mutable/WrappedArray;" 
+    @Signature "scala.Predef.wrapLongArray([J)Lscala.collection.mutable.WrappedArray;" 
   {
     local jmp;
     s0;
@@ -1869,7 +1869,7 @@ record (|scala.Predef|)
     @GenericSignature "([D)Lscala/collection/mutable/WrappedArray<Ljava/lang/Object;>;"
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.wrapDoubleArray([D)Lscala/collection/mutable/WrappedArray;" 
+    @Signature "scala.Predef.wrapDoubleArray([D)Lscala.collection.mutable.WrappedArray;" 
   {
     local jmp;
     s0;
@@ -1885,7 +1885,7 @@ record (|scala.Predef|)
     @GenericSignature "([I)Lscala/collection/mutable/WrappedArray<Ljava/lang/Object;>;"
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.wrapIntArray([I)Lscala/collection/mutable/WrappedArray;" 
+    @Signature "scala.Predef.wrapIntArray([I)Lscala.collection.mutable.WrappedArray;" 
   {
     local jmp;
     s0;
@@ -1901,7 +1901,7 @@ record (|scala.Predef|)
     @GenericSignature "<T:Ljava/lang/Object;>([TT;)Lscala/collection/mutable/WrappedArray<TT;>;"
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.wrapRefArray([Ljava/lang/Object;)Lscala/collection/mutable/WrappedArray;" 
+    @Signature "scala.Predef.wrapRefArray([Ljava.lang.Object;)Lscala.collection.mutable.WrappedArray;" 
   {
     local jmp;
     s0;
@@ -1917,7 +1917,7 @@ record (|scala.Predef|)
     @GenericSignature "<T:Ljava/lang/Object;>(Ljava/lang/Object;)Lscala/collection/mutable/WrappedArray<TT;>;"
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.genericWrapArray(Ljava/lang/Object;)Lscala/collection/mutable/WrappedArray;" 
+    @Signature "scala.Predef.genericWrapArray(Ljava.lang.Object;)Lscala.collection.mutable.WrappedArray;" 
   {
     local jmp;
     s0;
@@ -1932,7 +1932,7 @@ record (|scala.Predef|)
     @MaxStack 2
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.Boolean2booleanNullConflict(Lscala/runtime/Null$;)Z" 
+    @Signature "scala.Predef.Boolean2booleanNullConflict(Lscala.runtime.Null$;)Z" 
   {
     local jmp;
     s0;
@@ -1947,7 +1947,7 @@ record (|scala.Predef|)
     @MaxStack 2
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.Double2doubleNullConflict(Lscala/runtime/Null$;)D" 
+    @Signature "scala.Predef.Double2doubleNullConflict(Lscala.runtime.Null$;)D" 
   {
     local jmp;
     s0;
@@ -1962,7 +1962,7 @@ record (|scala.Predef|)
     @MaxStack 2
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.Float2floatNullConflict(Lscala/runtime/Null$;)F" 
+    @Signature "scala.Predef.Float2floatNullConflict(Lscala.runtime.Null$;)F" 
   {
     local jmp;
     s0;
@@ -1977,7 +1977,7 @@ record (|scala.Predef|)
     @MaxStack 2
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.Long2longNullConflict(Lscala/runtime/Null$;)J" 
+    @Signature "scala.Predef.Long2longNullConflict(Lscala.runtime.Null$;)J" 
   {
     local jmp;
     s0;
@@ -1992,7 +1992,7 @@ record (|scala.Predef|)
     @MaxStack 2
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.Integer2intNullConflict(Lscala/runtime/Null$;)I" 
+    @Signature "scala.Predef.Integer2intNullConflict(Lscala.runtime.Null$;)I" 
   {
     local jmp;
     s0;
@@ -2007,7 +2007,7 @@ record (|scala.Predef|)
     @MaxStack 2
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.Character2charNullConflict(Lscala/runtime/Null$;)C" 
+    @Signature "scala.Predef.Character2charNullConflict(Lscala.runtime.Null$;)C" 
   {
     local jmp;
     s0;
@@ -2022,7 +2022,7 @@ record (|scala.Predef|)
     @MaxStack 2
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.Short2shortNullConflict(Lscala/runtime/Null$;)S" 
+    @Signature "scala.Predef.Short2shortNullConflict(Lscala.runtime.Null$;)S" 
   {
     local jmp;
     s0;
@@ -2037,7 +2037,7 @@ record (|scala.Predef|)
     @MaxStack 2
     @Owner (|scala.Predef|)
     @Access (PUBLIC,STATIC)
-    @Signature "scala.Predef.Byte2byteNullConflict(Lscala/runtime/Null$;)B" 
+    @Signature "scala.Predef.Byte2byteNullConflict(Lscala.runtime.Null$;)B" 
   {
     local jmp;
     s0;
@@ -2207,7 +2207,7 @@ record (|scala.Predef$Pair$|)
     @GenericSignature "<A:Ljava/lang/Object;B:Ljava/lang/Object;>(TA;TB;)Lscala/Tuple2<TA;TB;>;"
     @Owner (|scala.Predef$Pair$|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$Pair$.apply(Ljava/lang/Object;Ljava/lang/Object;)Lscala/Tuple2;" 
+    @Signature "scala.Predef$Pair$.apply(Ljava.lang.Object;Ljava.lang.Object;)Lscala.Tuple2;" 
   {
     local jmp;
     s0;
@@ -2223,7 +2223,7 @@ record (|scala.Predef$Pair$|)
     @GenericSignature "<A:Ljava/lang/Object;B:Ljava/lang/Object;>(Lscala/Tuple2<TA;TB;>;)Lscala/Option<Lscala/Tuple2<TA;TB;>;>;"
     @Owner (|scala.Predef$Pair$|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$Pair$.unapply(Lscala/Tuple2;)Lscala/Option;" 
+    @Signature "scala.Predef$Pair$.unapply(Lscala.Tuple2;)Lscala.Option;" 
   {
     local jmp;
     s0;
@@ -2285,7 +2285,7 @@ record (|scala.Predef$Triple$|)
     @GenericSignature "<A:Ljava/lang/Object;B:Ljava/lang/Object;C:Ljava/lang/Object;>(TA;TB;TC;)Lscala/Tuple3<TA;TB;TC;>;"
     @Owner (|scala.Predef$Triple$|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$Triple$.apply(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Lscala/Tuple3;" 
+    @Signature "scala.Predef$Triple$.apply(Ljava.lang.Object;Ljava.lang.Object;Ljava.lang.Object;)Lscala.Tuple3;" 
   {
     local jmp;
     s0;
@@ -2301,7 +2301,7 @@ record (|scala.Predef$Triple$|)
     @GenericSignature "<A:Ljava/lang/Object;B:Ljava/lang/Object;C:Ljava/lang/Object;>(Lscala/Tuple3<TA;TB;TC;>;)Lscala/Option<Lscala/Tuple3<TA;TB;TC;>;>;"
     @Owner (|scala.Predef$Triple$|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$Triple$.unapply(Lscala/Tuple3;)Lscala/Option;" 
+    @Signature "scala.Predef$Triple$.unapply(Lscala.Tuple3;)Lscala.Option;" 
   {
     local jmp;
     s0;
@@ -2347,7 +2347,7 @@ record (|scala.Predef$$anon$3|)
     @MaxStack 1
     @Owner (|scala.Predef$$anon$3|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$anon$3.apply(Ljava/lang/String;)Lscala/collection/mutable/StringBuilder;" 
+    @Signature "scala.Predef$$anon$3.apply(Ljava.lang.String;)Lscala.collection.mutable.StringBuilder;" 
   {
     local jmp;
     s0;
@@ -2360,7 +2360,7 @@ record (|scala.Predef$$anon$3|)
     @MaxStack 1
     @Owner (|scala.Predef$$anon$3|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$anon$3.apply()Lscala/collection/mutable/StringBuilder;" 
+    @Signature "scala.Predef$$anon$3.apply()Lscala.collection.mutable.StringBuilder;" 
   {
     local jmp;
     s0;
@@ -2375,7 +2375,7 @@ record (|scala.Predef$$anon$3|)
     @MaxStack 1
     @Owner (|scala.Predef$$anon$3|)
     @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Signature "scala.Predef$$anon$3.apply()Lscala/collection/mutable/Builder;" 
+    @Signature "scala.Predef$$anon$3.apply()Lscala.collection.mutable.Builder;" 
   {
     local jmp;
     s0;
@@ -2388,7 +2388,7 @@ record (|scala.Predef$$anon$3|)
     @MaxStack 2
     @Owner (|scala.Predef$$anon$3|)
     @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Signature "scala.Predef$$anon$3.apply(Ljava/lang/Object;)Lscala/collection/mutable/Builder;" 
+    @Signature "scala.Predef$$anon$3.apply(Ljava.lang.Object;)Lscala.collection.mutable.Builder;" 
   {
     local jmp;
     s0;
@@ -2432,7 +2432,7 @@ record (|scala.Predef$$anon$1|)
     @MaxStack 1
     @Owner (|scala.Predef$$anon$1|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$anon$1.apply(Ljava/lang/Object;)Ljava/lang/Object;" 
+    @Signature "scala.Predef$$anon$1.apply(Ljava.lang.Object;)Ljava.lang.Object;" 
   {
     local jmp;
 
@@ -2474,7 +2474,7 @@ record (|scala.Predef$$anon$2|)
     @MaxStack 1
     @Owner (|scala.Predef$$anon$2|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$anon$2.apply(Ljava/lang/Object;)Ljava/lang/Object;" 
+    @Signature "scala.Predef$$anon$2.apply(Ljava.lang.Object;)Ljava.lang.Object;" 
   {
     local jmp;
 
@@ -2517,7 +2517,7 @@ record (|scala.Predef$Ensuring|)
     @GenericSignature "()TA;"
     @Owner (|scala.Predef$Ensuring|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$Ensuring.__resultOfEnsuring()Ljava/lang/Object;" 
+    @Signature "scala.Predef$Ensuring.__resultOfEnsuring()Ljava.lang.Object;" 
   {
     local jmp;
     s0;
@@ -2531,7 +2531,7 @@ record (|scala.Predef$Ensuring|)
     @GenericSignature "()TA;"
     @Owner (|scala.Predef$Ensuring|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$Ensuring.x()Ljava/lang/Object;" 
+    @Signature "scala.Predef$Ensuring.x()Ljava.lang.Object;" 
   {
     local jmp;
     s0;
@@ -2549,7 +2549,7 @@ record (|scala.Predef$Ensuring|)
     @GenericSignature "(Z)TA;"
     @Owner (|scala.Predef$Ensuring|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$Ensuring.ensuring(Z)Ljava/lang/Object;" 
+    @Signature "scala.Predef$Ensuring.ensuring(Z)Ljava.lang.Object;" 
   {
     local jmp;
     s0;
@@ -2567,7 +2567,7 @@ record (|scala.Predef$Ensuring|)
     @GenericSignature "(ZLscala/Function0<Ljava/lang/Object;>;)TA;"
     @Owner (|scala.Predef$Ensuring|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$Ensuring.ensuring(ZLscala/Function0;)Ljava/lang/Object;" 
+    @Signature "scala.Predef$Ensuring.ensuring(ZLscala.Function0;)Ljava.lang.Object;" 
   {
     local jmp;
     s0;
@@ -2604,7 +2604,7 @@ record (|scala.Predef$Ensuring|)
     @GenericSignature "(Lscala/Function1<TA;Ljava/lang/Object;>;)TA;"
     @Owner (|scala.Predef$Ensuring|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$Ensuring.ensuring(Lscala/Function1;)Ljava/lang/Object;" 
+    @Signature "scala.Predef$Ensuring.ensuring(Lscala.Function1;)Ljava.lang.Object;" 
   {
     local jmp;
     s0;
@@ -2630,7 +2630,7 @@ record (|scala.Predef$Ensuring|)
     @GenericSignature "(Lscala/Function1<TA;Ljava/lang/Object;>;Lscala/Function0<Ljava/lang/Object;>;)TA;"
     @Owner (|scala.Predef$Ensuring|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$Ensuring.ensuring(Lscala/Function1;Lscala/Function0;)Ljava/lang/Object;" 
+    @Signature "scala.Predef$Ensuring.ensuring(Lscala.Function1;Lscala.Function0;)Ljava.lang.Object;" 
   {
     local jmp;
     s0;
@@ -2686,7 +2686,7 @@ record (|scala.Predef$Ensuring|)
     @MaxStack 3
     @Owner (|scala.Predef$Ensuring|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$Ensuring.equals(Ljava/lang/Object;)Z" 
+    @Signature "scala.Predef$Ensuring.equals(Ljava.lang.Object;)Z" 
   {
     local jmp;
     s0;
@@ -2704,7 +2704,7 @@ record (|scala.Predef$Ensuring|)
     @GenericSignature "(TA;)V"
     @Owner (|scala.Predef$Ensuring|)
     @Access (PUBLIC,CONSTRUCTOR)
-    @Signature "scala.Predef$Ensuring.<init>(Ljava/lang/Object;)V" 
+    @Signature "scala.Predef$Ensuring.<init>(Ljava.lang.Object;)V" 
   {
     local jmp;
     s0;
@@ -2751,7 +2751,7 @@ record (|scala.Predef$Ensuring$|)
     @GenericSignature "<A:Ljava/lang/Object;>(TA;)TA;"
     @Owner (|scala.Predef$Ensuring$|)
     @Access (PUBLIC,FINAL)
-    @Signature "scala.Predef$Ensuring$.x$extension(Ljava/lang/Object;)Ljava/lang/Object;" 
+    @Signature "scala.Predef$Ensuring$.x$extension(Ljava.lang.Object;)Ljava.lang.Object;" 
   {
     local jmp;
 
@@ -2763,7 +2763,7 @@ record (|scala.Predef$Ensuring$|)
     @GenericSignature "<A:Ljava/lang/Object;>(TA;Z)TA;"
     @Owner (|scala.Predef$Ensuring$|)
     @Access (PUBLIC,FINAL)
-    @Signature "scala.Predef$Ensuring$.ensuring$extension0(Ljava/lang/Object;Z)Ljava/lang/Object;" 
+    @Signature "scala.Predef$Ensuring$.ensuring$extension0(Ljava.lang.Object;Z)Ljava.lang.Object;" 
   {
     local jmp;
     s0;
@@ -2779,7 +2779,7 @@ record (|scala.Predef$Ensuring$|)
     @GenericSignature "<A:Ljava/lang/Object;>(TA;ZLscala/Function0<Ljava/lang/Object;>;)TA;"
     @Owner (|scala.Predef$Ensuring$|)
     @Access (PUBLIC,FINAL)
-    @Signature "scala.Predef$Ensuring$.ensuring$extension1(Ljava/lang/Object;ZLscala/Function0;)Ljava/lang/Object;" 
+    @Signature "scala.Predef$Ensuring$.ensuring$extension1(Ljava.lang.Object;ZLscala.Function0;)Ljava.lang.Object;" 
   {
     local jmp;
     s0;
@@ -2812,7 +2812,7 @@ record (|scala.Predef$Ensuring$|)
     @GenericSignature "<A:Ljava/lang/Object;>(TA;Lscala/Function1<TA;Ljava/lang/Object;>;)TA;"
     @Owner (|scala.Predef$Ensuring$|)
     @Access (PUBLIC,FINAL)
-    @Signature "scala.Predef$Ensuring$.ensuring$extension2(Ljava/lang/Object;Lscala/Function1;)Ljava/lang/Object;" 
+    @Signature "scala.Predef$Ensuring$.ensuring$extension2(Ljava.lang.Object;Lscala.Function1;)Ljava.lang.Object;" 
   {
     local jmp;
     s0;
@@ -2832,7 +2832,7 @@ record (|scala.Predef$Ensuring$|)
     @GenericSignature "<A:Ljava/lang/Object;>(TA;Lscala/Function1<TA;Ljava/lang/Object;>;Lscala/Function0<Ljava/lang/Object;>;)TA;"
     @Owner (|scala.Predef$Ensuring$|)
     @Access (PUBLIC,FINAL)
-    @Signature "scala.Predef$Ensuring$.ensuring$extension3(Ljava/lang/Object;Lscala/Function1;Lscala/Function0;)Ljava/lang/Object;" 
+    @Signature "scala.Predef$Ensuring$.ensuring$extension3(Ljava.lang.Object;Lscala.Function1;Lscala.Function0;)Ljava.lang.Object;" 
   {
     local jmp;
     s0;
@@ -2868,7 +2868,7 @@ record (|scala.Predef$Ensuring$|)
     @GenericSignature "<A:Ljava/lang/Object;>(TA;)I"
     @Owner (|scala.Predef$Ensuring$|)
     @Access (PUBLIC,FINAL)
-    @Signature "scala.Predef$Ensuring$.hashCode$extension(Ljava/lang/Object;)I" 
+    @Signature "scala.Predef$Ensuring$.hashCode$extension(Ljava.lang.Object;)I" 
   {
     local jmp;
     s0;
@@ -2882,7 +2882,7 @@ record (|scala.Predef$Ensuring$|)
     @GenericSignature "<A:Ljava/lang/Object;>(TA;Ljava/lang/Object;)Z"
     @Owner (|scala.Predef$Ensuring$|)
     @Access (PUBLIC,FINAL)
-    @Signature "scala.Predef$Ensuring$.equals$extension(Ljava/lang/Object;Ljava/lang/Object;)Z" 
+    @Signature "scala.Predef$Ensuring$.equals$extension(Ljava.lang.Object;Ljava.lang.Object;)Z" 
   {
     local jmp;
     s0;
@@ -2979,7 +2979,7 @@ record (|scala.Predef$ArrowAssoc|)
     @GenericSignature "()TA;"
     @Owner (|scala.Predef$ArrowAssoc|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$ArrowAssoc.__leftOfArrow()Ljava/lang/Object;" 
+    @Signature "scala.Predef$ArrowAssoc.__leftOfArrow()Ljava.lang.Object;" 
   {
     local jmp;
     s0;
@@ -2993,7 +2993,7 @@ record (|scala.Predef$ArrowAssoc|)
     @GenericSignature "()TA;"
     @Owner (|scala.Predef$ArrowAssoc|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$ArrowAssoc.x()Ljava/lang/Object;" 
+    @Signature "scala.Predef$ArrowAssoc.x()Ljava.lang.Object;" 
   {
     local jmp;
     s0;
@@ -3011,7 +3011,7 @@ record (|scala.Predef$ArrowAssoc|)
     @GenericSignature "<B:Ljava/lang/Object;>(TB;)Lscala/Tuple2<TA;TB;>;"
     @Owner (|scala.Predef$ArrowAssoc|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$ArrowAssoc.$minus$greater(Ljava/lang/Object;)Lscala/Tuple2;" 
+    @Signature "scala.Predef$ArrowAssoc.$minus$greater(Ljava.lang.Object;)Lscala.Tuple2;" 
   {
     local jmp;
     s0;
@@ -3029,7 +3029,7 @@ record (|scala.Predef$ArrowAssoc|)
     @GenericSignature "<B:Ljava/lang/Object;>(TB;)Lscala/Tuple2<TA;TB;>;"
     @Owner (|scala.Predef$ArrowAssoc|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$ArrowAssoc.$u2192(Ljava/lang/Object;)Lscala/Tuple2;" 
+    @Signature "scala.Predef$ArrowAssoc.$u2192(Ljava.lang.Object;)Lscala.Tuple2;" 
   {
     local jmp;
     s0;
@@ -3063,7 +3063,7 @@ record (|scala.Predef$ArrowAssoc|)
     @MaxStack 3
     @Owner (|scala.Predef$ArrowAssoc|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$ArrowAssoc.equals(Ljava/lang/Object;)Z" 
+    @Signature "scala.Predef$ArrowAssoc.equals(Ljava.lang.Object;)Z" 
   {
     local jmp;
     s0;
@@ -3081,7 +3081,7 @@ record (|scala.Predef$ArrowAssoc|)
     @GenericSignature "(TA;)V"
     @Owner (|scala.Predef$ArrowAssoc|)
     @Access (PUBLIC,CONSTRUCTOR)
-    @Signature "scala.Predef$ArrowAssoc.<init>(Ljava/lang/Object;)V" 
+    @Signature "scala.Predef$ArrowAssoc.<init>(Ljava.lang.Object;)V" 
   {
     local jmp;
     s0;
@@ -3128,7 +3128,7 @@ record (|scala.Predef$ArrowAssoc$|)
     @GenericSignature "<A:Ljava/lang/Object;>(TA;)TA;"
     @Owner (|scala.Predef$ArrowAssoc$|)
     @Access (PUBLIC,FINAL)
-    @Signature "scala.Predef$ArrowAssoc$.x$extension(Ljava/lang/Object;)Ljava/lang/Object;" 
+    @Signature "scala.Predef$ArrowAssoc$.x$extension(Ljava.lang.Object;)Ljava.lang.Object;" 
   {
     local jmp;
 
@@ -3140,7 +3140,7 @@ record (|scala.Predef$ArrowAssoc$|)
     @GenericSignature "<B:Ljava/lang/Object;A:Ljava/lang/Object;>(TA;TB;)Lscala/Tuple2<TA;TB;>;"
     @Owner (|scala.Predef$ArrowAssoc$|)
     @Access (PUBLIC,FINAL)
-    @Signature "scala.Predef$ArrowAssoc$.$minus$greater$extension(Ljava/lang/Object;Ljava/lang/Object;)Lscala/Tuple2;" 
+    @Signature "scala.Predef$ArrowAssoc$.$minus$greater$extension(Ljava.lang.Object;Ljava.lang.Object;)Lscala.Tuple2;" 
   {
     local jmp;
     s0;
@@ -3156,7 +3156,7 @@ record (|scala.Predef$ArrowAssoc$|)
     @GenericSignature "<B:Ljava/lang/Object;A:Ljava/lang/Object;>(TA;TB;)Lscala/Tuple2<TA;TB;>;"
     @Owner (|scala.Predef$ArrowAssoc$|)
     @Access (PUBLIC,FINAL)
-    @Signature "scala.Predef$ArrowAssoc$.$u2192$extension(Ljava/lang/Object;Ljava/lang/Object;)Lscala/Tuple2;" 
+    @Signature "scala.Predef$ArrowAssoc$.$u2192$extension(Ljava.lang.Object;Ljava.lang.Object;)Lscala.Tuple2;" 
   {
     local jmp;
     s0;
@@ -3172,7 +3172,7 @@ record (|scala.Predef$ArrowAssoc$|)
     @GenericSignature "<A:Ljava/lang/Object;>(TA;)I"
     @Owner (|scala.Predef$ArrowAssoc$|)
     @Access (PUBLIC,FINAL)
-    @Signature "scala.Predef$ArrowAssoc$.hashCode$extension(Ljava/lang/Object;)I" 
+    @Signature "scala.Predef$ArrowAssoc$.hashCode$extension(Ljava.lang.Object;)I" 
   {
     local jmp;
     s0;
@@ -3186,7 +3186,7 @@ record (|scala.Predef$ArrowAssoc$|)
     @GenericSignature "<A:Ljava/lang/Object;>(TA;Ljava/lang/Object;)Z"
     @Owner (|scala.Predef$ArrowAssoc$|)
     @Access (PUBLIC,FINAL)
-    @Signature "scala.Predef$ArrowAssoc$.equals$extension(Ljava/lang/Object;Ljava/lang/Object;)Z" 
+    @Signature "scala.Predef$ArrowAssoc$.equals$extension(Ljava.lang.Object;Ljava.lang.Object;)Z" 
   {
     local jmp;
     s0;
@@ -3594,7 +3594,7 @@ record (|scala.Predef$$eq$colon$eq|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<TA;TFrom;>;)Lscala/Function1<TA;TTo;>;"
     @Owner (|scala.Predef$$eq$colon$eq|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$eq$colon$eq.compose(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$eq$colon$eq.compose(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -3608,7 +3608,7 @@ record (|scala.Predef$$eq$colon$eq|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<TA;Ljava/lang/Object;>;)Lscala/Function1<TA;Ljava/lang/Object;>;"
     @Owner (|scala.Predef$$eq$colon$eq|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$eq$colon$eq.compose$mcZD$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$eq$colon$eq.compose$mcZD$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -3622,7 +3622,7 @@ record (|scala.Predef$$eq$colon$eq|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<TA;Ljava/lang/Object;>;)Lscala/Function1<TA;Ljava/lang/Object;>;"
     @Owner (|scala.Predef$$eq$colon$eq|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$eq$colon$eq.compose$mcDD$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$eq$colon$eq.compose$mcDD$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -3636,7 +3636,7 @@ record (|scala.Predef$$eq$colon$eq|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<TA;Ljava/lang/Object;>;)Lscala/Function1<TA;Ljava/lang/Object;>;"
     @Owner (|scala.Predef$$eq$colon$eq|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$eq$colon$eq.compose$mcFD$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$eq$colon$eq.compose$mcFD$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -3650,7 +3650,7 @@ record (|scala.Predef$$eq$colon$eq|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<TA;Ljava/lang/Object;>;)Lscala/Function1<TA;Ljava/lang/Object;>;"
     @Owner (|scala.Predef$$eq$colon$eq|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$eq$colon$eq.compose$mcID$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$eq$colon$eq.compose$mcID$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -3664,7 +3664,7 @@ record (|scala.Predef$$eq$colon$eq|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<TA;Ljava/lang/Object;>;)Lscala/Function1<TA;Ljava/lang/Object;>;"
     @Owner (|scala.Predef$$eq$colon$eq|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$eq$colon$eq.compose$mcJD$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$eq$colon$eq.compose$mcJD$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -3678,7 +3678,7 @@ record (|scala.Predef$$eq$colon$eq|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<TA;Ljava/lang/Object;>;)Lscala/Function1<TA;Lscala/runtime/BoxedUnit;>;"
     @Owner (|scala.Predef$$eq$colon$eq|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$eq$colon$eq.compose$mcVD$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$eq$colon$eq.compose$mcVD$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -3692,7 +3692,7 @@ record (|scala.Predef$$eq$colon$eq|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<TA;Ljava/lang/Object;>;)Lscala/Function1<TA;Ljava/lang/Object;>;"
     @Owner (|scala.Predef$$eq$colon$eq|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$eq$colon$eq.compose$mcZF$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$eq$colon$eq.compose$mcZF$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -3706,7 +3706,7 @@ record (|scala.Predef$$eq$colon$eq|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<TA;Ljava/lang/Object;>;)Lscala/Function1<TA;Ljava/lang/Object;>;"
     @Owner (|scala.Predef$$eq$colon$eq|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$eq$colon$eq.compose$mcDF$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$eq$colon$eq.compose$mcDF$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -3720,7 +3720,7 @@ record (|scala.Predef$$eq$colon$eq|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<TA;Ljava/lang/Object;>;)Lscala/Function1<TA;Ljava/lang/Object;>;"
     @Owner (|scala.Predef$$eq$colon$eq|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$eq$colon$eq.compose$mcFF$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$eq$colon$eq.compose$mcFF$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -3734,7 +3734,7 @@ record (|scala.Predef$$eq$colon$eq|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<TA;Ljava/lang/Object;>;)Lscala/Function1<TA;Ljava/lang/Object;>;"
     @Owner (|scala.Predef$$eq$colon$eq|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$eq$colon$eq.compose$mcIF$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$eq$colon$eq.compose$mcIF$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -3748,7 +3748,7 @@ record (|scala.Predef$$eq$colon$eq|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<TA;Ljava/lang/Object;>;)Lscala/Function1<TA;Ljava/lang/Object;>;"
     @Owner (|scala.Predef$$eq$colon$eq|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$eq$colon$eq.compose$mcJF$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$eq$colon$eq.compose$mcJF$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -3762,7 +3762,7 @@ record (|scala.Predef$$eq$colon$eq|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<TA;Ljava/lang/Object;>;)Lscala/Function1<TA;Lscala/runtime/BoxedUnit;>;"
     @Owner (|scala.Predef$$eq$colon$eq|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$eq$colon$eq.compose$mcVF$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$eq$colon$eq.compose$mcVF$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -3776,7 +3776,7 @@ record (|scala.Predef$$eq$colon$eq|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<TA;Ljava/lang/Object;>;)Lscala/Function1<TA;Ljava/lang/Object;>;"
     @Owner (|scala.Predef$$eq$colon$eq|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$eq$colon$eq.compose$mcZI$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$eq$colon$eq.compose$mcZI$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -3790,7 +3790,7 @@ record (|scala.Predef$$eq$colon$eq|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<TA;Ljava/lang/Object;>;)Lscala/Function1<TA;Ljava/lang/Object;>;"
     @Owner (|scala.Predef$$eq$colon$eq|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$eq$colon$eq.compose$mcDI$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$eq$colon$eq.compose$mcDI$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -3804,7 +3804,7 @@ record (|scala.Predef$$eq$colon$eq|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<TA;Ljava/lang/Object;>;)Lscala/Function1<TA;Ljava/lang/Object;>;"
     @Owner (|scala.Predef$$eq$colon$eq|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$eq$colon$eq.compose$mcFI$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$eq$colon$eq.compose$mcFI$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -3818,7 +3818,7 @@ record (|scala.Predef$$eq$colon$eq|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<TA;Ljava/lang/Object;>;)Lscala/Function1<TA;Ljava/lang/Object;>;"
     @Owner (|scala.Predef$$eq$colon$eq|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$eq$colon$eq.compose$mcII$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$eq$colon$eq.compose$mcII$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -3832,7 +3832,7 @@ record (|scala.Predef$$eq$colon$eq|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<TA;Ljava/lang/Object;>;)Lscala/Function1<TA;Ljava/lang/Object;>;"
     @Owner (|scala.Predef$$eq$colon$eq|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$eq$colon$eq.compose$mcJI$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$eq$colon$eq.compose$mcJI$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -3846,7 +3846,7 @@ record (|scala.Predef$$eq$colon$eq|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<TA;Ljava/lang/Object;>;)Lscala/Function1<TA;Lscala/runtime/BoxedUnit;>;"
     @Owner (|scala.Predef$$eq$colon$eq|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$eq$colon$eq.compose$mcVI$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$eq$colon$eq.compose$mcVI$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -3860,7 +3860,7 @@ record (|scala.Predef$$eq$colon$eq|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<TA;Ljava/lang/Object;>;)Lscala/Function1<TA;Ljava/lang/Object;>;"
     @Owner (|scala.Predef$$eq$colon$eq|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$eq$colon$eq.compose$mcZJ$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$eq$colon$eq.compose$mcZJ$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -3874,7 +3874,7 @@ record (|scala.Predef$$eq$colon$eq|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<TA;Ljava/lang/Object;>;)Lscala/Function1<TA;Ljava/lang/Object;>;"
     @Owner (|scala.Predef$$eq$colon$eq|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$eq$colon$eq.compose$mcDJ$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$eq$colon$eq.compose$mcDJ$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -3888,7 +3888,7 @@ record (|scala.Predef$$eq$colon$eq|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<TA;Ljava/lang/Object;>;)Lscala/Function1<TA;Ljava/lang/Object;>;"
     @Owner (|scala.Predef$$eq$colon$eq|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$eq$colon$eq.compose$mcFJ$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$eq$colon$eq.compose$mcFJ$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -3902,7 +3902,7 @@ record (|scala.Predef$$eq$colon$eq|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<TA;Ljava/lang/Object;>;)Lscala/Function1<TA;Ljava/lang/Object;>;"
     @Owner (|scala.Predef$$eq$colon$eq|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$eq$colon$eq.compose$mcIJ$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$eq$colon$eq.compose$mcIJ$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -3916,7 +3916,7 @@ record (|scala.Predef$$eq$colon$eq|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<TA;Ljava/lang/Object;>;)Lscala/Function1<TA;Ljava/lang/Object;>;"
     @Owner (|scala.Predef$$eq$colon$eq|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$eq$colon$eq.compose$mcJJ$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$eq$colon$eq.compose$mcJJ$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -3930,7 +3930,7 @@ record (|scala.Predef$$eq$colon$eq|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<TA;Ljava/lang/Object;>;)Lscala/Function1<TA;Lscala/runtime/BoxedUnit;>;"
     @Owner (|scala.Predef$$eq$colon$eq|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$eq$colon$eq.compose$mcVJ$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$eq$colon$eq.compose$mcVJ$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -3944,7 +3944,7 @@ record (|scala.Predef$$eq$colon$eq|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<TTo;TA;>;)Lscala/Function1<TFrom;TA;>;"
     @Owner (|scala.Predef$$eq$colon$eq|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$eq$colon$eq.andThen(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$eq$colon$eq.andThen(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -3958,7 +3958,7 @@ record (|scala.Predef$$eq$colon$eq|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<Ljava/lang/Object;TA;>;)Lscala/Function1<Ljava/lang/Object;TA;>;"
     @Owner (|scala.Predef$$eq$colon$eq|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$eq$colon$eq.andThen$mcZD$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$eq$colon$eq.andThen$mcZD$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -3972,7 +3972,7 @@ record (|scala.Predef$$eq$colon$eq|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<Ljava/lang/Object;TA;>;)Lscala/Function1<Ljava/lang/Object;TA;>;"
     @Owner (|scala.Predef$$eq$colon$eq|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$eq$colon$eq.andThen$mcDD$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$eq$colon$eq.andThen$mcDD$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -3986,7 +3986,7 @@ record (|scala.Predef$$eq$colon$eq|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<Ljava/lang/Object;TA;>;)Lscala/Function1<Ljava/lang/Object;TA;>;"
     @Owner (|scala.Predef$$eq$colon$eq|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$eq$colon$eq.andThen$mcFD$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$eq$colon$eq.andThen$mcFD$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -4000,7 +4000,7 @@ record (|scala.Predef$$eq$colon$eq|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<Ljava/lang/Object;TA;>;)Lscala/Function1<Ljava/lang/Object;TA;>;"
     @Owner (|scala.Predef$$eq$colon$eq|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$eq$colon$eq.andThen$mcID$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$eq$colon$eq.andThen$mcID$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -4014,7 +4014,7 @@ record (|scala.Predef$$eq$colon$eq|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<Ljava/lang/Object;TA;>;)Lscala/Function1<Ljava/lang/Object;TA;>;"
     @Owner (|scala.Predef$$eq$colon$eq|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$eq$colon$eq.andThen$mcJD$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$eq$colon$eq.andThen$mcJD$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -4028,7 +4028,7 @@ record (|scala.Predef$$eq$colon$eq|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<Lscala/runtime/BoxedUnit;TA;>;)Lscala/Function1<Ljava/lang/Object;TA;>;"
     @Owner (|scala.Predef$$eq$colon$eq|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$eq$colon$eq.andThen$mcVD$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$eq$colon$eq.andThen$mcVD$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -4042,7 +4042,7 @@ record (|scala.Predef$$eq$colon$eq|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<Ljava/lang/Object;TA;>;)Lscala/Function1<Ljava/lang/Object;TA;>;"
     @Owner (|scala.Predef$$eq$colon$eq|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$eq$colon$eq.andThen$mcZF$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$eq$colon$eq.andThen$mcZF$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -4056,7 +4056,7 @@ record (|scala.Predef$$eq$colon$eq|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<Ljava/lang/Object;TA;>;)Lscala/Function1<Ljava/lang/Object;TA;>;"
     @Owner (|scala.Predef$$eq$colon$eq|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$eq$colon$eq.andThen$mcDF$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$eq$colon$eq.andThen$mcDF$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -4070,7 +4070,7 @@ record (|scala.Predef$$eq$colon$eq|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<Ljava/lang/Object;TA;>;)Lscala/Function1<Ljava/lang/Object;TA;>;"
     @Owner (|scala.Predef$$eq$colon$eq|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$eq$colon$eq.andThen$mcFF$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$eq$colon$eq.andThen$mcFF$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -4084,7 +4084,7 @@ record (|scala.Predef$$eq$colon$eq|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<Ljava/lang/Object;TA;>;)Lscala/Function1<Ljava/lang/Object;TA;>;"
     @Owner (|scala.Predef$$eq$colon$eq|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$eq$colon$eq.andThen$mcIF$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$eq$colon$eq.andThen$mcIF$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -4098,7 +4098,7 @@ record (|scala.Predef$$eq$colon$eq|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<Ljava/lang/Object;TA;>;)Lscala/Function1<Ljava/lang/Object;TA;>;"
     @Owner (|scala.Predef$$eq$colon$eq|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$eq$colon$eq.andThen$mcJF$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$eq$colon$eq.andThen$mcJF$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -4112,7 +4112,7 @@ record (|scala.Predef$$eq$colon$eq|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<Lscala/runtime/BoxedUnit;TA;>;)Lscala/Function1<Ljava/lang/Object;TA;>;"
     @Owner (|scala.Predef$$eq$colon$eq|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$eq$colon$eq.andThen$mcVF$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$eq$colon$eq.andThen$mcVF$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -4126,7 +4126,7 @@ record (|scala.Predef$$eq$colon$eq|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<Ljava/lang/Object;TA;>;)Lscala/Function1<Ljava/lang/Object;TA;>;"
     @Owner (|scala.Predef$$eq$colon$eq|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$eq$colon$eq.andThen$mcZI$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$eq$colon$eq.andThen$mcZI$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -4140,7 +4140,7 @@ record (|scala.Predef$$eq$colon$eq|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<Ljava/lang/Object;TA;>;)Lscala/Function1<Ljava/lang/Object;TA;>;"
     @Owner (|scala.Predef$$eq$colon$eq|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$eq$colon$eq.andThen$mcDI$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$eq$colon$eq.andThen$mcDI$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -4154,7 +4154,7 @@ record (|scala.Predef$$eq$colon$eq|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<Ljava/lang/Object;TA;>;)Lscala/Function1<Ljava/lang/Object;TA;>;"
     @Owner (|scala.Predef$$eq$colon$eq|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$eq$colon$eq.andThen$mcFI$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$eq$colon$eq.andThen$mcFI$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -4168,7 +4168,7 @@ record (|scala.Predef$$eq$colon$eq|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<Ljava/lang/Object;TA;>;)Lscala/Function1<Ljava/lang/Object;TA;>;"
     @Owner (|scala.Predef$$eq$colon$eq|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$eq$colon$eq.andThen$mcII$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$eq$colon$eq.andThen$mcII$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -4182,7 +4182,7 @@ record (|scala.Predef$$eq$colon$eq|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<Ljava/lang/Object;TA;>;)Lscala/Function1<Ljava/lang/Object;TA;>;"
     @Owner (|scala.Predef$$eq$colon$eq|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$eq$colon$eq.andThen$mcJI$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$eq$colon$eq.andThen$mcJI$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -4196,7 +4196,7 @@ record (|scala.Predef$$eq$colon$eq|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<Lscala/runtime/BoxedUnit;TA;>;)Lscala/Function1<Ljava/lang/Object;TA;>;"
     @Owner (|scala.Predef$$eq$colon$eq|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$eq$colon$eq.andThen$mcVI$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$eq$colon$eq.andThen$mcVI$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -4210,7 +4210,7 @@ record (|scala.Predef$$eq$colon$eq|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<Ljava/lang/Object;TA;>;)Lscala/Function1<Ljava/lang/Object;TA;>;"
     @Owner (|scala.Predef$$eq$colon$eq|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$eq$colon$eq.andThen$mcZJ$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$eq$colon$eq.andThen$mcZJ$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -4224,7 +4224,7 @@ record (|scala.Predef$$eq$colon$eq|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<Ljava/lang/Object;TA;>;)Lscala/Function1<Ljava/lang/Object;TA;>;"
     @Owner (|scala.Predef$$eq$colon$eq|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$eq$colon$eq.andThen$mcDJ$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$eq$colon$eq.andThen$mcDJ$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -4238,7 +4238,7 @@ record (|scala.Predef$$eq$colon$eq|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<Ljava/lang/Object;TA;>;)Lscala/Function1<Ljava/lang/Object;TA;>;"
     @Owner (|scala.Predef$$eq$colon$eq|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$eq$colon$eq.andThen$mcFJ$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$eq$colon$eq.andThen$mcFJ$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -4252,7 +4252,7 @@ record (|scala.Predef$$eq$colon$eq|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<Ljava/lang/Object;TA;>;)Lscala/Function1<Ljava/lang/Object;TA;>;"
     @Owner (|scala.Predef$$eq$colon$eq|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$eq$colon$eq.andThen$mcIJ$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$eq$colon$eq.andThen$mcIJ$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -4266,7 +4266,7 @@ record (|scala.Predef$$eq$colon$eq|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<Ljava/lang/Object;TA;>;)Lscala/Function1<Ljava/lang/Object;TA;>;"
     @Owner (|scala.Predef$$eq$colon$eq|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$eq$colon$eq.andThen$mcJJ$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$eq$colon$eq.andThen$mcJJ$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -4280,7 +4280,7 @@ record (|scala.Predef$$eq$colon$eq|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<Lscala/runtime/BoxedUnit;TA;>;)Lscala/Function1<Ljava/lang/Object;TA;>;"
     @Owner (|scala.Predef$$eq$colon$eq|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$eq$colon$eq.andThen$mcVJ$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$eq$colon$eq.andThen$mcVJ$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -4293,7 +4293,7 @@ record (|scala.Predef$$eq$colon$eq|)
     @MaxStack 1
     @Owner (|scala.Predef$$eq$colon$eq|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$eq$colon$eq.toString()Ljava/lang/String;" 
+    @Signature "scala.Predef$$eq$colon$eq.toString()Ljava.lang.String;" 
   {
     local jmp;
     s0;
@@ -4355,7 +4355,7 @@ record (|scala.Predef$$eq$colon$eq$|)
     @GenericSignature "<A:Ljava/lang/Object;>()Lscala/Predef$$eq$colon$eq<TA;TA;>;"
     @Owner (|scala.Predef$$eq$colon$eq$|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$eq$colon$eq$.tpEquals()Lscala/Predef$$eq$colon$eq;" 
+    @Signature "scala.Predef$$eq$colon$eq$.tpEquals()Lscala.Predef$$eq$colon$eq;" 
   {
     local jmp;
     s0;
@@ -4370,7 +4370,7 @@ record (|scala.Predef$$eq$colon$eq$|)
     @MaxStack 1
     @Owner (|scala.Predef$$eq$colon$eq$|)
     @Access (PRIVATE)
-    @Signature "scala.Predef$$eq$colon$eq$.readResolve()Ljava/lang/Object;" 
+    @Signature "scala.Predef$$eq$colon$eq$.readResolve()Ljava.lang.Object;" 
   {
     local jmp;
     s0;
@@ -4458,7 +4458,7 @@ record (|scala.Predef$DummyImplicit$|)
     @MaxStack 2
     @Owner (|scala.Predef$DummyImplicit$|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$DummyImplicit$.dummyImplicit()Lscala/Predef$DummyImplicit;" 
+    @Signature "scala.Predef$DummyImplicit$.dummyImplicit()Lscala.Predef$DummyImplicit;" 
   {
     local jmp;
     s0;
@@ -4817,7 +4817,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<TA;TFrom;>;)Lscala/Function1<TA;TTo;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.compose(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.compose(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -4831,7 +4831,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<TA;Ljava/lang/Object;>;)Lscala/Function1<TA;Ljava/lang/Object;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.compose$mcZD$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.compose$mcZD$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -4845,7 +4845,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<TA;Ljava/lang/Object;>;)Lscala/Function1<TA;Ljava/lang/Object;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.compose$mcDD$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.compose$mcDD$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -4859,7 +4859,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<TA;Ljava/lang/Object;>;)Lscala/Function1<TA;Ljava/lang/Object;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.compose$mcFD$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.compose$mcFD$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -4873,7 +4873,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<TA;Ljava/lang/Object;>;)Lscala/Function1<TA;Ljava/lang/Object;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.compose$mcID$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.compose$mcID$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -4887,7 +4887,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<TA;Ljava/lang/Object;>;)Lscala/Function1<TA;Ljava/lang/Object;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.compose$mcJD$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.compose$mcJD$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -4901,7 +4901,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<TA;Ljava/lang/Object;>;)Lscala/Function1<TA;Lscala/runtime/BoxedUnit;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.compose$mcVD$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.compose$mcVD$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -4915,7 +4915,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<TA;Ljava/lang/Object;>;)Lscala/Function1<TA;Ljava/lang/Object;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.compose$mcZF$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.compose$mcZF$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -4929,7 +4929,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<TA;Ljava/lang/Object;>;)Lscala/Function1<TA;Ljava/lang/Object;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.compose$mcDF$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.compose$mcDF$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -4943,7 +4943,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<TA;Ljava/lang/Object;>;)Lscala/Function1<TA;Ljava/lang/Object;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.compose$mcFF$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.compose$mcFF$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -4957,7 +4957,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<TA;Ljava/lang/Object;>;)Lscala/Function1<TA;Ljava/lang/Object;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.compose$mcIF$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.compose$mcIF$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -4971,7 +4971,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<TA;Ljava/lang/Object;>;)Lscala/Function1<TA;Ljava/lang/Object;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.compose$mcJF$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.compose$mcJF$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -4985,7 +4985,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<TA;Ljava/lang/Object;>;)Lscala/Function1<TA;Lscala/runtime/BoxedUnit;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.compose$mcVF$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.compose$mcVF$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -4999,7 +4999,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<TA;Ljava/lang/Object;>;)Lscala/Function1<TA;Ljava/lang/Object;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.compose$mcZI$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.compose$mcZI$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -5013,7 +5013,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<TA;Ljava/lang/Object;>;)Lscala/Function1<TA;Ljava/lang/Object;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.compose$mcDI$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.compose$mcDI$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -5027,7 +5027,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<TA;Ljava/lang/Object;>;)Lscala/Function1<TA;Ljava/lang/Object;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.compose$mcFI$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.compose$mcFI$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -5041,7 +5041,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<TA;Ljava/lang/Object;>;)Lscala/Function1<TA;Ljava/lang/Object;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.compose$mcII$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.compose$mcII$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -5055,7 +5055,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<TA;Ljava/lang/Object;>;)Lscala/Function1<TA;Ljava/lang/Object;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.compose$mcJI$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.compose$mcJI$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -5069,7 +5069,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<TA;Ljava/lang/Object;>;)Lscala/Function1<TA;Lscala/runtime/BoxedUnit;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.compose$mcVI$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.compose$mcVI$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -5083,7 +5083,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<TA;Ljava/lang/Object;>;)Lscala/Function1<TA;Ljava/lang/Object;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.compose$mcZJ$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.compose$mcZJ$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -5097,7 +5097,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<TA;Ljava/lang/Object;>;)Lscala/Function1<TA;Ljava/lang/Object;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.compose$mcDJ$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.compose$mcDJ$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -5111,7 +5111,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<TA;Ljava/lang/Object;>;)Lscala/Function1<TA;Ljava/lang/Object;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.compose$mcFJ$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.compose$mcFJ$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -5125,7 +5125,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<TA;Ljava/lang/Object;>;)Lscala/Function1<TA;Ljava/lang/Object;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.compose$mcIJ$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.compose$mcIJ$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -5139,7 +5139,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<TA;Ljava/lang/Object;>;)Lscala/Function1<TA;Ljava/lang/Object;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.compose$mcJJ$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.compose$mcJJ$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -5153,7 +5153,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<TA;Ljava/lang/Object;>;)Lscala/Function1<TA;Lscala/runtime/BoxedUnit;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.compose$mcVJ$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.compose$mcVJ$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -5167,7 +5167,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<TTo;TA;>;)Lscala/Function1<TFrom;TA;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.andThen(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.andThen(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -5181,7 +5181,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<Ljava/lang/Object;TA;>;)Lscala/Function1<Ljava/lang/Object;TA;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.andThen$mcZD$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.andThen$mcZD$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -5195,7 +5195,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<Ljava/lang/Object;TA;>;)Lscala/Function1<Ljava/lang/Object;TA;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.andThen$mcDD$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.andThen$mcDD$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -5209,7 +5209,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<Ljava/lang/Object;TA;>;)Lscala/Function1<Ljava/lang/Object;TA;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.andThen$mcFD$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.andThen$mcFD$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -5223,7 +5223,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<Ljava/lang/Object;TA;>;)Lscala/Function1<Ljava/lang/Object;TA;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.andThen$mcID$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.andThen$mcID$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -5237,7 +5237,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<Ljava/lang/Object;TA;>;)Lscala/Function1<Ljava/lang/Object;TA;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.andThen$mcJD$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.andThen$mcJD$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -5251,7 +5251,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<Lscala/runtime/BoxedUnit;TA;>;)Lscala/Function1<Ljava/lang/Object;TA;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.andThen$mcVD$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.andThen$mcVD$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -5265,7 +5265,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<Ljava/lang/Object;TA;>;)Lscala/Function1<Ljava/lang/Object;TA;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.andThen$mcZF$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.andThen$mcZF$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -5279,7 +5279,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<Ljava/lang/Object;TA;>;)Lscala/Function1<Ljava/lang/Object;TA;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.andThen$mcDF$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.andThen$mcDF$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -5293,7 +5293,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<Ljava/lang/Object;TA;>;)Lscala/Function1<Ljava/lang/Object;TA;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.andThen$mcFF$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.andThen$mcFF$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -5307,7 +5307,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<Ljava/lang/Object;TA;>;)Lscala/Function1<Ljava/lang/Object;TA;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.andThen$mcIF$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.andThen$mcIF$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -5321,7 +5321,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<Ljava/lang/Object;TA;>;)Lscala/Function1<Ljava/lang/Object;TA;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.andThen$mcJF$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.andThen$mcJF$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -5335,7 +5335,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<Lscala/runtime/BoxedUnit;TA;>;)Lscala/Function1<Ljava/lang/Object;TA;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.andThen$mcVF$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.andThen$mcVF$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -5349,7 +5349,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<Ljava/lang/Object;TA;>;)Lscala/Function1<Ljava/lang/Object;TA;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.andThen$mcZI$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.andThen$mcZI$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -5363,7 +5363,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<Ljava/lang/Object;TA;>;)Lscala/Function1<Ljava/lang/Object;TA;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.andThen$mcDI$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.andThen$mcDI$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -5377,7 +5377,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<Ljava/lang/Object;TA;>;)Lscala/Function1<Ljava/lang/Object;TA;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.andThen$mcFI$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.andThen$mcFI$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -5391,7 +5391,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<Ljava/lang/Object;TA;>;)Lscala/Function1<Ljava/lang/Object;TA;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.andThen$mcII$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.andThen$mcII$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -5405,7 +5405,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<Ljava/lang/Object;TA;>;)Lscala/Function1<Ljava/lang/Object;TA;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.andThen$mcJI$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.andThen$mcJI$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -5419,7 +5419,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<Lscala/runtime/BoxedUnit;TA;>;)Lscala/Function1<Ljava/lang/Object;TA;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.andThen$mcVI$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.andThen$mcVI$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -5433,7 +5433,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<Ljava/lang/Object;TA;>;)Lscala/Function1<Ljava/lang/Object;TA;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.andThen$mcZJ$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.andThen$mcZJ$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -5447,7 +5447,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<Ljava/lang/Object;TA;>;)Lscala/Function1<Ljava/lang/Object;TA;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.andThen$mcDJ$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.andThen$mcDJ$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -5461,7 +5461,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<Ljava/lang/Object;TA;>;)Lscala/Function1<Ljava/lang/Object;TA;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.andThen$mcFJ$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.andThen$mcFJ$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -5475,7 +5475,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<Ljava/lang/Object;TA;>;)Lscala/Function1<Ljava/lang/Object;TA;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.andThen$mcIJ$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.andThen$mcIJ$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -5489,7 +5489,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<Ljava/lang/Object;TA;>;)Lscala/Function1<Ljava/lang/Object;TA;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.andThen$mcJJ$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.andThen$mcJJ$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -5503,7 +5503,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<Lscala/runtime/BoxedUnit;TA;>;)Lscala/Function1<Ljava/lang/Object;TA;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.andThen$mcVJ$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.andThen$mcVJ$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -5516,7 +5516,7 @@ record (|scala.Predef$$less$colon$less|)
     @MaxStack 1
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.toString()Ljava/lang/String;" 
+    @Signature "scala.Predef$$less$colon$less.toString()Ljava.lang.String;" 
   {
     local jmp;
     s0;

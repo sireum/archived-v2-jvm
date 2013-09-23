@@ -45,7 +45,7 @@ record (|java.lang.System|)
     @MaxStack 1
     @Owner (|java.lang.System|)
     @Access (PUBLIC,STATIC)
-    @Signature "java.lang.System.setIn(Ljava/io/InputStream;)V" 
+    @Signature "java.lang.System.setIn(Ljava.io.InputStream;)V" 
   {
     local jmp;
     s0;
@@ -59,7 +59,7 @@ record (|java.lang.System|)
     @MaxStack 1
     @Owner (|java.lang.System|)
     @Access (PUBLIC,STATIC)
-    @Signature "java.lang.System.setOut(Ljava/io/PrintStream;)V" 
+    @Signature "java.lang.System.setOut(Ljava.io.PrintStream;)V" 
   {
     local jmp;
     s0;
@@ -73,7 +73,7 @@ record (|java.lang.System|)
     @MaxStack 1
     @Owner (|java.lang.System|)
     @Access (PUBLIC,STATIC)
-    @Signature "java.lang.System.setErr(Ljava/io/PrintStream;)V" 
+    @Signature "java.lang.System.setErr(Ljava.io.PrintStream;)V" 
   {
     local jmp;
     s0;
@@ -87,7 +87,7 @@ record (|java.lang.System|)
     @MaxStack 2
     @Owner (|java.lang.System|)
     @Access (PUBLIC,STATIC)
-    @Signature "java.lang.System.console()Ljava/io/Console;" 
+    @Signature "java.lang.System.console()Ljava.io.Console;" 
   {
     local jmp;
     s0;
@@ -120,7 +120,7 @@ record (|java.lang.System|)
     @MaxStack 1
     @Owner (|java.lang.System|)
     @Access (PUBLIC,STATIC)
-    @Signature "java.lang.System.inheritedChannel()Ljava/nio/channels/Channel;" 
+    @Signature "java.lang.System.inheritedChannel()Ljava.nio.channels.Channel;" 
   {
     local jmp;
     s0;
@@ -155,7 +155,7 @@ record (|java.lang.System|)
   procedure (|void|) {|java.lang.System.setIn0(Ljava.io.InputStream;)V|} ((|java.io.InputStream|) [|v0|]) 
     @Owner (|java.lang.System|)
     @Access (PRIVATE,STATIC,NATIVE)
-    @Signature "java.lang.System.setIn0(Ljava/io/InputStream;)V" 
+    @Signature "java.lang.System.setIn0(Ljava.io.InputStream;)V" 
   {
 
     #L00000Aa. return @void;
@@ -163,7 +163,7 @@ record (|java.lang.System|)
   procedure (|void|) {|java.lang.System.setOut0(Ljava.io.PrintStream;)V|} ((|java.io.PrintStream|) [|v0|]) 
     @Owner (|java.lang.System|)
     @Access (PRIVATE,STATIC,NATIVE)
-    @Signature "java.lang.System.setOut0(Ljava/io/PrintStream;)V" 
+    @Signature "java.lang.System.setOut0(Ljava.io.PrintStream;)V" 
   {
 
     #L00000Aa. return @void;
@@ -171,7 +171,7 @@ record (|java.lang.System|)
   procedure (|void|) {|java.lang.System.setErr0(Ljava.io.PrintStream;)V|} ((|java.io.PrintStream|) [|v0|]) 
     @Owner (|java.lang.System|)
     @Access (PRIVATE,STATIC,NATIVE)
-    @Signature "java.lang.System.setErr0(Ljava/io/PrintStream;)V" 
+    @Signature "java.lang.System.setErr0(Ljava.io.PrintStream;)V" 
   {
 
     #L00000Aa. return @void;
@@ -181,7 +181,7 @@ record (|java.lang.System|)
     @MaxStack 2
     @Owner (|java.lang.System|)
     @Access (PUBLIC,STATIC)
-    @Signature "java.lang.System.setSecurityManager(Ljava/lang/SecurityManager;)V" 
+    @Signature "java.lang.System.setSecurityManager(Ljava.lang.SecurityManager;)V" 
   {
     local jmp;
     s0;
@@ -201,7 +201,7 @@ record (|java.lang.System|)
     @MaxStack 4
     @Owner (|java.lang.System|)
     @Access (PRIVATE,STATIC)
-    @Signature "java.lang.System.setSecurityManager0(Ljava/lang/SecurityManager;)V" 
+    @Signature "java.lang.System.setSecurityManager0(Ljava.lang.SecurityManager;)V" 
   {
     local jmp;
     s0;
@@ -232,7 +232,7 @@ record (|java.lang.System|)
     @MaxStack 1
     @Owner (|java.lang.System|)
     @Access (PUBLIC,STATIC)
-    @Signature "java.lang.System.getSecurityManager()Ljava/lang/SecurityManager;" 
+    @Signature "java.lang.System.getSecurityManager()Ljava.lang.SecurityManager;" 
   {
     local jmp;
     s0;
@@ -259,7 +259,7 @@ record (|java.lang.System|)
   procedure (|void|) {|java.lang.System.arraycopy(Ljava.lang.Object;ILjava.lang.Object;II)V|} ((|java.lang.Object|) [|v0|], (|int|) [|v1|], (|java.lang.Object|) [|v2|], (|int|) [|v3|], (|int|) [|v4|]) 
     @Owner (|java.lang.System|)
     @Access (PUBLIC,STATIC,NATIVE)
-    @Signature "java.lang.System.arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V" 
+    @Signature "java.lang.System.arraycopy(Ljava.lang.Object;ILjava.lang.Object;II)V" 
   {
 
     #L00000Aa. return @void;
@@ -267,7 +267,7 @@ record (|java.lang.System|)
   procedure (|int|) {|java.lang.System.identityHashCode(Ljava.lang.Object;)I|} ((|java.lang.Object|) [|v0|]) 
     @Owner (|java.lang.System|)
     @Access (PUBLIC,STATIC,NATIVE)
-    @Signature "java.lang.System.identityHashCode(Ljava/lang/Object;)I" 
+    @Signature "java.lang.System.identityHashCode(Ljava.lang.Object;)I" 
   {
 
     #L00000Aa. return @void;
@@ -275,7 +275,7 @@ record (|java.lang.System|)
   procedure (|java.util.Properties|) {|java.lang.System.initProperties(Ljava.util.Properties;)Ljava.util.Properties;|} ((|java.util.Properties|) [|v0|]) 
     @Owner (|java.lang.System|)
     @Access (PRIVATE,STATIC,NATIVE)
-    @Signature "java.lang.System.initProperties(Ljava/util/Properties;)Ljava/util/Properties;" 
+    @Signature "java.lang.System.initProperties(Ljava.util.Properties;)Ljava.util.Properties;" 
   {
 
     #L00000Aa. return @void;
@@ -285,7 +285,7 @@ record (|java.lang.System|)
     @MaxStack 1
     @Owner (|java.lang.System|)
     @Access (PUBLIC,STATIC)
-    @Signature "java.lang.System.getProperties()Ljava/util/Properties;" 
+    @Signature "java.lang.System.getProperties()Ljava.util.Properties;" 
   {
     local jmp;
     s0;
@@ -304,7 +304,7 @@ record (|java.lang.System|)
     @MaxStack 1
     @Owner (|java.lang.System|)
     @Access (PUBLIC,STATIC)
-    @Signature "java.lang.System.lineSeparator()Ljava/lang/String;" 
+    @Signature "java.lang.System.lineSeparator()Ljava.lang.String;" 
   {
     local jmp;
     s0;
@@ -317,7 +317,7 @@ record (|java.lang.System|)
     @MaxStack 2
     @Owner (|java.lang.System|)
     @Access (PUBLIC,STATIC)
-    @Signature "java.lang.System.setProperties(Ljava/util/Properties;)V" 
+    @Signature "java.lang.System.setProperties(Ljava.util.Properties;)V" 
   {
     local jmp;
     s0;
@@ -343,7 +343,7 @@ record (|java.lang.System|)
     @MaxStack 2
     @Owner (|java.lang.System|)
     @Access (PUBLIC,STATIC)
-    @Signature "java.lang.System.getProperty(Ljava/lang/String;)Ljava/lang/String;" 
+    @Signature "java.lang.System.getProperty(Ljava.lang.String;)Ljava.lang.String;" 
   {
     local jmp;
     s0;
@@ -365,7 +365,7 @@ record (|java.lang.System|)
     @MaxStack 3
     @Owner (|java.lang.System|)
     @Access (PUBLIC,STATIC)
-    @Signature "java.lang.System.getProperty(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;" 
+    @Signature "java.lang.System.getProperty(Ljava.lang.String;Ljava.lang.String;)Ljava.lang.String;" 
   {
     local jmp;
     s0;
@@ -387,7 +387,7 @@ record (|java.lang.System|)
     @MaxStack 5
     @Owner (|java.lang.System|)
     @Access (PUBLIC,STATIC)
-    @Signature "java.lang.System.setProperty(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;" 
+    @Signature "java.lang.System.setProperty(Ljava.lang.String;Ljava.lang.String;)Ljava.lang.String;" 
   {
     local jmp;
     s0;
@@ -412,7 +412,7 @@ record (|java.lang.System|)
     @MaxStack 5
     @Owner (|java.lang.System|)
     @Access (PUBLIC,STATIC)
-    @Signature "java.lang.System.clearProperty(Ljava/lang/String;)Ljava/lang/String;" 
+    @Signature "java.lang.System.clearProperty(Ljava.lang.String;)Ljava.lang.String;" 
   {
     local jmp;
     s0;
@@ -437,7 +437,7 @@ record (|java.lang.System|)
     @MaxStack 3
     @Owner (|java.lang.System|)
     @Access (PRIVATE,STATIC)
-    @Signature "java.lang.System.checkKey(Ljava/lang/String;)V" 
+    @Signature "java.lang.System.checkKey(Ljava.lang.String;)V" 
   {
     local jmp;
     s0;
@@ -461,7 +461,7 @@ record (|java.lang.System|)
     @MaxStack 5
     @Owner (|java.lang.System|)
     @Access (PUBLIC,STATIC)
-    @Signature "java.lang.System.getenv(Ljava/lang/String;)Ljava/lang/String;" 
+    @Signature "java.lang.System.getenv(Ljava.lang.String;)Ljava.lang.String;" 
   {
     local jmp;
     s0;
@@ -495,7 +495,7 @@ record (|java.lang.System|)
     @GenericSignature "()Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
     @Owner (|java.lang.System|)
     @Access (PUBLIC,STATIC)
-    @Signature "java.lang.System.getenv()Ljava/util/Map;" 
+    @Signature "java.lang.System.getenv()Ljava.util.Map;" 
   {
     local jmp;
     s0;
@@ -580,7 +580,7 @@ record (|java.lang.System|)
     @Owner (|java.lang.System|)
     @(|Lsun.reflect.CallerSensitive;|) 
     @Access (PUBLIC,STATIC)
-    @Signature "java.lang.System.load(Ljava/lang/String;)V" 
+    @Signature "java.lang.System.load(Ljava.lang.String;)V" 
   {
     local jmp;
     s0;
@@ -598,7 +598,7 @@ record (|java.lang.System|)
     @Owner (|java.lang.System|)
     @(|Lsun.reflect.CallerSensitive;|) 
     @Access (PUBLIC,STATIC)
-    @Signature "java.lang.System.loadLibrary(Ljava/lang/String;)V" 
+    @Signature "java.lang.System.loadLibrary(Ljava.lang.String;)V" 
   {
     local jmp;
     s0;
@@ -613,7 +613,7 @@ record (|java.lang.System|)
   procedure (|java.lang.String|) {|java.lang.System.mapLibraryName(Ljava.lang.String;)Ljava.lang.String;|} ((|java.lang.String|) [|v0|]) 
     @Owner (|java.lang.System|)
     @Access (PUBLIC,STATIC,NATIVE)
-    @Signature "java.lang.System.mapLibraryName(Ljava/lang/String;)Ljava/lang/String;" 
+    @Signature "java.lang.System.mapLibraryName(Ljava.lang.String;)Ljava.lang.String;" 
   {
 
     #L00000Aa. return @void;
@@ -752,7 +752,7 @@ record (|java.lang.System$2|)
     @MaxStack 1
     @Owner (|java.lang.System$2|)
     @Access (PUBLIC)
-    @Signature "java.lang.System$2.getConstantPool(Ljava/lang/Class;)Lsun/reflect/ConstantPool;" 
+    @Signature "java.lang.System$2.getConstantPool(Ljava.lang.Class;)Lsun.reflect.ConstantPool;" 
   {
     local jmp;
     s0;
@@ -765,7 +765,7 @@ record (|java.lang.System$2|)
     @MaxStack 2
     @Owner (|java.lang.System$2|)
     @Access (PUBLIC)
-    @Signature "java.lang.System$2.setAnnotationType(Ljava/lang/Class;Lsun/reflect/annotation/AnnotationType;)V" 
+    @Signature "java.lang.System$2.setAnnotationType(Ljava.lang.Class;Lsun.reflect.annotation.AnnotationType;)V" 
   {
     local jmp;
     s0;
@@ -778,7 +778,7 @@ record (|java.lang.System$2|)
     @MaxStack 1
     @Owner (|java.lang.System$2|)
     @Access (PUBLIC)
-    @Signature "java.lang.System$2.getAnnotationType(Ljava/lang/Class;)Lsun/reflect/annotation/AnnotationType;" 
+    @Signature "java.lang.System$2.getAnnotationType(Ljava.lang.Class;)Lsun.reflect.annotation.AnnotationType;" 
   {
     local jmp;
     s0;
@@ -792,7 +792,7 @@ record (|java.lang.System$2|)
     @GenericSignature "<E:Ljava/lang/Enum<TE;>;>(Ljava/lang/Class<TE;>;)[TE;"
     @Owner (|java.lang.System$2|)
     @Access (PUBLIC)
-    @Signature "java.lang.System$2.getEnumConstantsShared(Ljava/lang/Class;)[Ljava/lang/Enum;" 
+    @Signature "java.lang.System$2.getEnumConstantsShared(Ljava.lang.Class;)[Ljava.lang.Enum;" 
   {
     local jmp;
     s0;
@@ -805,7 +805,7 @@ record (|java.lang.System$2|)
     @MaxStack 2
     @Owner (|java.lang.System$2|)
     @Access (PUBLIC)
-    @Signature "java.lang.System$2.blockedOn(Ljava/lang/Thread;Lsun/nio/ch/Interruptible;)V" 
+    @Signature "java.lang.System$2.blockedOn(Ljava.lang.Thread;Lsun.nio.ch.Interruptible;)V" 
   {
     local jmp;
     s0;
@@ -818,7 +818,7 @@ record (|java.lang.System$2|)
     @MaxStack 3
     @Owner (|java.lang.System$2|)
     @Access (PUBLIC)
-    @Signature "java.lang.System$2.registerShutdownHook(IZLjava/lang/Runnable;)V" 
+    @Signature "java.lang.System$2.registerShutdownHook(IZLjava.lang.Runnable;)V" 
   {
     local jmp;
     s0;
@@ -831,7 +831,7 @@ record (|java.lang.System$2|)
     @MaxStack 1
     @Owner (|java.lang.System$2|)
     @Access (PUBLIC)
-    @Signature "java.lang.System$2.getStackTraceDepth(Ljava/lang/Throwable;)I" 
+    @Signature "java.lang.System$2.getStackTraceDepth(Ljava.lang.Throwable;)I" 
   {
     local jmp;
     s0;
@@ -844,7 +844,7 @@ record (|java.lang.System$2|)
     @MaxStack 2
     @Owner (|java.lang.System$2|)
     @Access (PUBLIC)
-    @Signature "java.lang.System$2.getStackTraceElement(Ljava/lang/Throwable;I)Ljava/lang/StackTraceElement;" 
+    @Signature "java.lang.System$2.getStackTraceElement(Ljava.lang.Throwable;I)Ljava.lang.StackTraceElement;" 
   {
     local jmp;
     s0;
@@ -857,7 +857,7 @@ record (|java.lang.System$2|)
     @MaxStack 1
     @Owner (|java.lang.System$2|)
     @Access (PUBLIC)
-    @Signature "java.lang.System$2.getStringHash32(Ljava/lang/String;)I" 
+    @Signature "java.lang.System$2.getStringHash32(Ljava.lang.String;)I" 
   {
     local jmp;
     s0;
@@ -888,7 +888,7 @@ record (|java.lang.System$1|)
     @MaxStack 2
     @Owner (|java.lang.System$1|)
     @Access (CONSTRUCTOR)
-    @Signature "java.lang.System$1.<init>(Ljava/lang/SecurityManager;)V" 
+    @Signature "java.lang.System$1.<init>(Ljava.lang.SecurityManager;)V" 
   {
     local jmp;
     s0;
@@ -902,7 +902,7 @@ record (|java.lang.System$1|)
     @MaxStack 2
     @Owner (|java.lang.System$1|)
     @Access (PUBLIC)
-    @Signature "java.lang.System$1.run()Ljava/lang/Object;" 
+    @Signature "java.lang.System$1.run()Ljava.lang.Object;" 
   {
     local jmp;
     s0;

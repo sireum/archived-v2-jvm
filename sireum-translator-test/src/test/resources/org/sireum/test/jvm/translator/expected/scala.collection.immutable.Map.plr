@@ -18,7 +18,7 @@ record (|scala.collection.immutable.Map|)
     @GenericSignature "()Lscala/collection/immutable/Map<TA;TB;>;"
     @Owner (|scala.collection.immutable.Map|)
     @Access (PUBLIC)
-    @Signature "scala.collection.immutable.Map.empty()Lscala/collection/immutable/Map;" 
+    @Signature "scala.collection.immutable.Map.empty()Lscala.collection.immutable.Map;" 
   {
 
     #L00000Aa. return @void;
@@ -27,7 +27,7 @@ record (|scala.collection.immutable.Map|)
     @GenericSignature "<T:Ljava/lang/Object;U:Ljava/lang/Object;>(Lscala/Predef$$less$colon$less<Lscala/Tuple2<TA;TB;>;Lscala/Tuple2<TT;TU;>;>;)Lscala/collection/immutable/Map<TT;TU;>;"
     @Owner (|scala.collection.immutable.Map|)
     @Access (PUBLIC)
-    @Signature "scala.collection.immutable.Map.toMap(Lscala/Predef$$less$colon$less;)Lscala/collection/immutable/Map;" 
+    @Signature "scala.collection.immutable.Map.toMap(Lscala.Predef$$less$colon$less;)Lscala.collection.immutable.Map;" 
   {
 
     #L00000Aa. return @void;
@@ -36,7 +36,7 @@ record (|scala.collection.immutable.Map|)
     @GenericSignature "()Lscala/collection/immutable/Map<TA;TB;>;"
     @Owner (|scala.collection.immutable.Map|)
     @Access (PUBLIC)
-    @Signature "scala.collection.immutable.Map.seq()Lscala/collection/immutable/Map;" 
+    @Signature "scala.collection.immutable.Map.seq()Lscala.collection.immutable.Map;" 
   {
 
     #L00000Aa. return @void;
@@ -45,7 +45,7 @@ record (|scala.collection.immutable.Map|)
     @GenericSignature "<B1:Ljava/lang/Object;>(Lscala/Function1<TA;TB1;>;)Lscala/collection/immutable/Map<TA;TB1;>;"
     @Owner (|scala.collection.immutable.Map|)
     @Access (PUBLIC)
-    @Signature "scala.collection.immutable.Map.withDefault(Lscala/Function1;)Lscala/collection/immutable/Map;" 
+    @Signature "scala.collection.immutable.Map.withDefault(Lscala.Function1;)Lscala.collection.immutable.Map;" 
   {
 
     #L00000Aa. return @void;
@@ -54,7 +54,7 @@ record (|scala.collection.immutable.Map|)
     @GenericSignature "<B1:Ljava/lang/Object;>(TB1;)Lscala/collection/immutable/Map<TA;TB1;>;"
     @Owner (|scala.collection.immutable.Map|)
     @Access (PUBLIC)
-    @Signature "scala.collection.immutable.Map.withDefaultValue(Ljava/lang/Object;)Lscala/collection/immutable/Map;" 
+    @Signature "scala.collection.immutable.Map.withDefaultValue(Ljava.lang.Object;)Lscala.collection.immutable.Map;" 
   {
 
     #L00000Aa. return @void;
@@ -63,7 +63,7 @@ record (|scala.collection.immutable.Map|)
     @GenericSignature "<B1:Ljava/lang/Object;>(TA;TB1;)Lscala/collection/immutable/Map<TA;TB1;>;"
     @Owner (|scala.collection.immutable.Map|)
     @Access (PUBLIC)
-    @Signature "scala.collection.immutable.Map.updated(Ljava/lang/Object;Ljava/lang/Object;)Lscala/collection/immutable/Map;" 
+    @Signature "scala.collection.immutable.Map.updated(Ljava.lang.Object;Ljava.lang.Object;)Lscala.collection.immutable.Map;" 
   {
 
     #L00000Aa. return @void;
@@ -72,7 +72,7 @@ record (|scala.collection.immutable.Map|)
     @GenericSignature "<B1:Ljava/lang/Object;>(Lscala/Tuple2<TA;TB1;>;)Lscala/collection/immutable/Map<TA;TB1;>;"
     @Owner (|scala.collection.immutable.Map|)
     @Access (PUBLIC)
-    @Signature "scala.collection.immutable.Map.$plus(Lscala/Tuple2;)Lscala/collection/immutable/Map;" 
+    @Signature "scala.collection.immutable.Map.$plus(Lscala.Tuple2;)Lscala.collection.immutable.Map;" 
   {
 
     #L00000Aa. return @void;
@@ -113,7 +113,7 @@ record (|scala.collection.immutable.Map$Map1|)
     @GenericSignature "(TA;)Lscala/Option<TB;>;"
     @Owner (|scala.collection.immutable.Map$Map1|)
     @Access (PUBLIC)
-    @Signature "scala.collection.immutable.Map$Map1.get(Ljava/lang/Object;)Lscala/Option;" 
+    @Signature "scala.collection.immutable.Map$Map1.get(Ljava.lang.Object;)Lscala.Option;" 
   {
     local jmp;
     s0;
@@ -163,7 +163,7 @@ record (|scala.collection.immutable.Map$Map1|)
     @GenericSignature "()Lscala/collection/Iterator<Lscala/Tuple2<TA;TB;>;>;"
     @Owner (|scala.collection.immutable.Map$Map1|)
     @Access (PUBLIC)
-    @Signature "scala.collection.immutable.Map$Map1.iterator()Lscala/collection/Iterator;" 
+    @Signature "scala.collection.immutable.Map$Map1.iterator()Lscala.collection.Iterator;" 
   {
     local jmp;
     s0;
@@ -194,7 +194,7 @@ record (|scala.collection.immutable.Map$Map1|)
     @GenericSignature "<B1:Ljava/lang/Object;>(TA;TB1;)Lscala/collection/immutable/Map<TA;TB1;>;"
     @Owner (|scala.collection.immutable.Map$Map1|)
     @Access (PUBLIC)
-    @Signature "scala.collection.immutable.Map$Map1.updated(Ljava/lang/Object;Ljava/lang/Object;)Lscala/collection/immutable/Map;" 
+    @Signature "scala.collection.immutable.Map$Map1.updated(Ljava.lang.Object;Ljava.lang.Object;)Lscala.collection.immutable.Map;" 
   {
     local jmp;
     s0;
@@ -248,7 +248,7 @@ record (|scala.collection.immutable.Map$Map1|)
     @GenericSignature "<B1:Ljava/lang/Object;>(Lscala/Tuple2<TA;TB1;>;)Lscala/collection/immutable/Map<TA;TB1;>;"
     @Owner (|scala.collection.immutable.Map$Map1|)
     @Access (PUBLIC)
-    @Signature "scala.collection.immutable.Map$Map1.$plus(Lscala/Tuple2;)Lscala/collection/immutable/Map;" 
+    @Signature "scala.collection.immutable.Map$Map1.$plus(Lscala.Tuple2;)Lscala.collection.immutable.Map;" 
   {
     local jmp;
     s0;
@@ -266,7 +266,7 @@ record (|scala.collection.immutable.Map$Map1|)
     @GenericSignature "(TA;)Lscala/collection/immutable/Map<TA;TB;>;"
     @Owner (|scala.collection.immutable.Map$Map1|)
     @Access (PUBLIC)
-    @Signature "scala.collection.immutable.Map$Map1.$minus(Ljava/lang/Object;)Lscala/collection/immutable/Map;" 
+    @Signature "scala.collection.immutable.Map$Map1.$minus(Ljava.lang.Object;)Lscala.collection.immutable.Map;" 
   {
     local jmp;
     s0;
@@ -313,7 +313,7 @@ record (|scala.collection.immutable.Map$Map1|)
     @GenericSignature "<U:Ljava/lang/Object;>(Lscala/Function1<Lscala/Tuple2<TA;TB;>;TU;>;)V"
     @Owner (|scala.collection.immutable.Map$Map1|)
     @Access (PUBLIC)
-    @Signature "scala.collection.immutable.Map$Map1.foreach(Lscala/Function1;)V" 
+    @Signature "scala.collection.immutable.Map$Map1.foreach(Lscala.Function1;)V" 
   {
     local jmp;
     s0;
@@ -334,7 +334,7 @@ record (|scala.collection.immutable.Map$Map1|)
     @MaxStack 2
     @Owner (|scala.collection.immutable.Map$Map1|)
     @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Signature "scala.collection.immutable.Map$Map1.$minus(Ljava/lang/Object;)Ljava/lang/Object;" 
+    @Signature "scala.collection.immutable.Map$Map1.$minus(Ljava.lang.Object;)Ljava.lang.Object;" 
   {
     local jmp;
     s0;
@@ -347,7 +347,7 @@ record (|scala.collection.immutable.Map$Map1|)
     @MaxStack 2
     @Owner (|scala.collection.immutable.Map$Map1|)
     @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Signature "scala.collection.immutable.Map$Map1.$minus(Ljava/lang/Object;)Lscala/collection/generic/Subtractable;" 
+    @Signature "scala.collection.immutable.Map$Map1.$minus(Ljava.lang.Object;)Lscala.collection.generic.Subtractable;" 
   {
     local jmp;
     s0;
@@ -360,7 +360,7 @@ record (|scala.collection.immutable.Map$Map1|)
     @MaxStack 2
     @Owner (|scala.collection.immutable.Map$Map1|)
     @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Signature "scala.collection.immutable.Map$Map1.$minus(Ljava/lang/Object;)Lscala/collection/Map;" 
+    @Signature "scala.collection.immutable.Map$Map1.$minus(Ljava.lang.Object;)Lscala.collection.Map;" 
   {
     local jmp;
     s0;
@@ -373,7 +373,7 @@ record (|scala.collection.immutable.Map$Map1|)
     @MaxStack 2
     @Owner (|scala.collection.immutable.Map$Map1|)
     @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Signature "scala.collection.immutable.Map$Map1.$plus(Lscala/Tuple2;)Lscala/collection/GenMap;" 
+    @Signature "scala.collection.immutable.Map$Map1.$plus(Lscala.Tuple2;)Lscala.collection.GenMap;" 
   {
     local jmp;
     s0;
@@ -386,7 +386,7 @@ record (|scala.collection.immutable.Map$Map1|)
     @MaxStack 2
     @Owner (|scala.collection.immutable.Map$Map1|)
     @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Signature "scala.collection.immutable.Map$Map1.$plus(Lscala/Tuple2;)Lscala/collection/Map;" 
+    @Signature "scala.collection.immutable.Map$Map1.$plus(Lscala.Tuple2;)Lscala.collection.Map;" 
   {
     local jmp;
     s0;
@@ -399,7 +399,7 @@ record (|scala.collection.immutable.Map$Map1|)
     @MaxStack 3
     @Owner (|scala.collection.immutable.Map$Map1|)
     @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Signature "scala.collection.immutable.Map$Map1.updated(Ljava/lang/Object;Ljava/lang/Object;)Lscala/collection/GenMap;" 
+    @Signature "scala.collection.immutable.Map$Map1.updated(Ljava.lang.Object;Ljava.lang.Object;)Lscala.collection.GenMap;" 
   {
     local jmp;
     s0;
@@ -412,7 +412,7 @@ record (|scala.collection.immutable.Map$Map1|)
     @MaxStack 3
     @Owner (|scala.collection.immutable.Map$Map1|)
     @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Signature "scala.collection.immutable.Map$Map1.updated(Ljava/lang/Object;Ljava/lang/Object;)Lscala/collection/Map;" 
+    @Signature "scala.collection.immutable.Map$Map1.updated(Ljava.lang.Object;Ljava.lang.Object;)Lscala.collection.Map;" 
   {
     local jmp;
     s0;
@@ -426,7 +426,7 @@ record (|scala.collection.immutable.Map$Map1|)
     @GenericSignature "(TA;TB;)V"
     @Owner (|scala.collection.immutable.Map$Map1|)
     @Access (PUBLIC,CONSTRUCTOR)
-    @Signature "scala.collection.immutable.Map$Map1.<init>(Ljava/lang/Object;Ljava/lang/Object;)V" 
+    @Signature "scala.collection.immutable.Map$Map1.<init>(Ljava.lang.Object;Ljava.lang.Object;)V" 
   {
     local jmp;
     s0;
@@ -474,7 +474,7 @@ record (|scala.collection.immutable.Map$Map2|)
     @GenericSignature "(TA;)Lscala/Option<TB;>;"
     @Owner (|scala.collection.immutable.Map$Map2|)
     @Access (PUBLIC)
-    @Signature "scala.collection.immutable.Map$Map2.get(Ljava/lang/Object;)Lscala/Option;" 
+    @Signature "scala.collection.immutable.Map$Map2.get(Ljava.lang.Object;)Lscala.Option;" 
   {
     local jmp;
     s0;
@@ -556,7 +556,7 @@ record (|scala.collection.immutable.Map$Map2|)
     @GenericSignature "()Lscala/collection/Iterator<Lscala/Tuple2<TA;TB;>;>;"
     @Owner (|scala.collection.immutable.Map$Map2|)
     @Access (PUBLIC)
-    @Signature "scala.collection.immutable.Map$Map2.iterator()Lscala/collection/Iterator;" 
+    @Signature "scala.collection.immutable.Map$Map2.iterator()Lscala.collection.Iterator;" 
   {
     local jmp;
     s0;
@@ -596,7 +596,7 @@ record (|scala.collection.immutable.Map$Map2|)
     @GenericSignature "<B1:Ljava/lang/Object;>(TA;TB1;)Lscala/collection/immutable/Map<TA;TB1;>;"
     @Owner (|scala.collection.immutable.Map$Map2|)
     @Access (PUBLIC)
-    @Signature "scala.collection.immutable.Map$Map2.updated(Ljava/lang/Object;Ljava/lang/Object;)Lscala/collection/immutable/Map;" 
+    @Signature "scala.collection.immutable.Map$Map2.updated(Ljava.lang.Object;Ljava.lang.Object;)Lscala.collection.immutable.Map;" 
   {
     local jmp;
     s0;
@@ -690,7 +690,7 @@ record (|scala.collection.immutable.Map$Map2|)
     @GenericSignature "<B1:Ljava/lang/Object;>(Lscala/Tuple2<TA;TB1;>;)Lscala/collection/immutable/Map<TA;TB1;>;"
     @Owner (|scala.collection.immutable.Map$Map2|)
     @Access (PUBLIC)
-    @Signature "scala.collection.immutable.Map$Map2.$plus(Lscala/Tuple2;)Lscala/collection/immutable/Map;" 
+    @Signature "scala.collection.immutable.Map$Map2.$plus(Lscala.Tuple2;)Lscala.collection.immutable.Map;" 
   {
     local jmp;
     s0;
@@ -708,7 +708,7 @@ record (|scala.collection.immutable.Map$Map2|)
     @GenericSignature "(TA;)Lscala/collection/immutable/Map<TA;TB;>;"
     @Owner (|scala.collection.immutable.Map$Map2|)
     @Access (PUBLIC)
-    @Signature "scala.collection.immutable.Map$Map2.$minus(Ljava/lang/Object;)Lscala/collection/immutable/Map;" 
+    @Signature "scala.collection.immutable.Map$Map2.$minus(Ljava.lang.Object;)Lscala.collection.immutable.Map;" 
   {
     local jmp;
     s0;
@@ -792,7 +792,7 @@ record (|scala.collection.immutable.Map$Map2|)
     @GenericSignature "<U:Ljava/lang/Object;>(Lscala/Function1<Lscala/Tuple2<TA;TB;>;TU;>;)V"
     @Owner (|scala.collection.immutable.Map$Map2|)
     @Access (PUBLIC)
-    @Signature "scala.collection.immutable.Map$Map2.foreach(Lscala/Function1;)V" 
+    @Signature "scala.collection.immutable.Map$Map2.foreach(Lscala.Function1;)V" 
   {
     local jmp;
     s0;
@@ -823,7 +823,7 @@ record (|scala.collection.immutable.Map$Map2|)
     @MaxStack 2
     @Owner (|scala.collection.immutable.Map$Map2|)
     @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Signature "scala.collection.immutable.Map$Map2.$minus(Ljava/lang/Object;)Ljava/lang/Object;" 
+    @Signature "scala.collection.immutable.Map$Map2.$minus(Ljava.lang.Object;)Ljava.lang.Object;" 
   {
     local jmp;
     s0;
@@ -836,7 +836,7 @@ record (|scala.collection.immutable.Map$Map2|)
     @MaxStack 2
     @Owner (|scala.collection.immutable.Map$Map2|)
     @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Signature "scala.collection.immutable.Map$Map2.$minus(Ljava/lang/Object;)Lscala/collection/generic/Subtractable;" 
+    @Signature "scala.collection.immutable.Map$Map2.$minus(Ljava.lang.Object;)Lscala.collection.generic.Subtractable;" 
   {
     local jmp;
     s0;
@@ -849,7 +849,7 @@ record (|scala.collection.immutable.Map$Map2|)
     @MaxStack 2
     @Owner (|scala.collection.immutable.Map$Map2|)
     @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Signature "scala.collection.immutable.Map$Map2.$minus(Ljava/lang/Object;)Lscala/collection/Map;" 
+    @Signature "scala.collection.immutable.Map$Map2.$minus(Ljava.lang.Object;)Lscala.collection.Map;" 
   {
     local jmp;
     s0;
@@ -862,7 +862,7 @@ record (|scala.collection.immutable.Map$Map2|)
     @MaxStack 2
     @Owner (|scala.collection.immutable.Map$Map2|)
     @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Signature "scala.collection.immutable.Map$Map2.$plus(Lscala/Tuple2;)Lscala/collection/GenMap;" 
+    @Signature "scala.collection.immutable.Map$Map2.$plus(Lscala.Tuple2;)Lscala.collection.GenMap;" 
   {
     local jmp;
     s0;
@@ -875,7 +875,7 @@ record (|scala.collection.immutable.Map$Map2|)
     @MaxStack 2
     @Owner (|scala.collection.immutable.Map$Map2|)
     @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Signature "scala.collection.immutable.Map$Map2.$plus(Lscala/Tuple2;)Lscala/collection/Map;" 
+    @Signature "scala.collection.immutable.Map$Map2.$plus(Lscala.Tuple2;)Lscala.collection.Map;" 
   {
     local jmp;
     s0;
@@ -888,7 +888,7 @@ record (|scala.collection.immutable.Map$Map2|)
     @MaxStack 3
     @Owner (|scala.collection.immutable.Map$Map2|)
     @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Signature "scala.collection.immutable.Map$Map2.updated(Ljava/lang/Object;Ljava/lang/Object;)Lscala/collection/GenMap;" 
+    @Signature "scala.collection.immutable.Map$Map2.updated(Ljava.lang.Object;Ljava.lang.Object;)Lscala.collection.GenMap;" 
   {
     local jmp;
     s0;
@@ -901,7 +901,7 @@ record (|scala.collection.immutable.Map$Map2|)
     @MaxStack 3
     @Owner (|scala.collection.immutable.Map$Map2|)
     @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Signature "scala.collection.immutable.Map$Map2.updated(Ljava/lang/Object;Ljava/lang/Object;)Lscala/collection/Map;" 
+    @Signature "scala.collection.immutable.Map$Map2.updated(Ljava.lang.Object;Ljava.lang.Object;)Lscala.collection.Map;" 
   {
     local jmp;
     s0;
@@ -915,7 +915,7 @@ record (|scala.collection.immutable.Map$Map2|)
     @GenericSignature "(TA;TB;TA;TB;)V"
     @Owner (|scala.collection.immutable.Map$Map2|)
     @Access (PUBLIC,CONSTRUCTOR)
-    @Signature "scala.collection.immutable.Map$Map2.<init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V" 
+    @Signature "scala.collection.immutable.Map$Map2.<init>(Ljava.lang.Object;Ljava.lang.Object;Ljava.lang.Object;Ljava.lang.Object;)V" 
   {
     local jmp;
     s0;
@@ -967,7 +967,7 @@ record (|scala.collection.immutable.Map$Map3|)
     @GenericSignature "(TA;)Lscala/Option<TB;>;"
     @Owner (|scala.collection.immutable.Map$Map3|)
     @Access (PUBLIC)
-    @Signature "scala.collection.immutable.Map$Map3.get(Ljava/lang/Object;)Lscala/Option;" 
+    @Signature "scala.collection.immutable.Map$Map3.get(Ljava.lang.Object;)Lscala.Option;" 
   {
     local jmp;
     s0;
@@ -1081,7 +1081,7 @@ record (|scala.collection.immutable.Map$Map3|)
     @GenericSignature "()Lscala/collection/Iterator<Lscala/Tuple2<TA;TB;>;>;"
     @Owner (|scala.collection.immutable.Map$Map3|)
     @Access (PUBLIC)
-    @Signature "scala.collection.immutable.Map$Map3.iterator()Lscala/collection/Iterator;" 
+    @Signature "scala.collection.immutable.Map$Map3.iterator()Lscala.collection.Iterator;" 
   {
     local jmp;
     s0;
@@ -1130,7 +1130,7 @@ record (|scala.collection.immutable.Map$Map3|)
     @GenericSignature "<B1:Ljava/lang/Object;>(TA;TB1;)Lscala/collection/immutable/Map<TA;TB1;>;"
     @Owner (|scala.collection.immutable.Map$Map3|)
     @Access (PUBLIC)
-    @Signature "scala.collection.immutable.Map$Map3.updated(Ljava/lang/Object;Ljava/lang/Object;)Lscala/collection/immutable/Map;" 
+    @Signature "scala.collection.immutable.Map$Map3.updated(Ljava.lang.Object;Ljava.lang.Object;)Lscala.collection.immutable.Map;" 
   {
     local jmp;
     s0;
@@ -1268,7 +1268,7 @@ record (|scala.collection.immutable.Map$Map3|)
     @GenericSignature "<B1:Ljava/lang/Object;>(Lscala/Tuple2<TA;TB1;>;)Lscala/collection/immutable/Map<TA;TB1;>;"
     @Owner (|scala.collection.immutable.Map$Map3|)
     @Access (PUBLIC)
-    @Signature "scala.collection.immutable.Map$Map3.$plus(Lscala/Tuple2;)Lscala/collection/immutable/Map;" 
+    @Signature "scala.collection.immutable.Map$Map3.$plus(Lscala.Tuple2;)Lscala.collection.immutable.Map;" 
   {
     local jmp;
     s0;
@@ -1286,7 +1286,7 @@ record (|scala.collection.immutable.Map$Map3|)
     @GenericSignature "(TA;)Lscala/collection/immutable/Map<TA;TB;>;"
     @Owner (|scala.collection.immutable.Map$Map3|)
     @Access (PUBLIC)
-    @Signature "scala.collection.immutable.Map$Map3.$minus(Ljava/lang/Object;)Lscala/collection/immutable/Map;" 
+    @Signature "scala.collection.immutable.Map$Map3.$minus(Ljava.lang.Object;)Lscala.collection.immutable.Map;" 
   {
     local jmp;
     s0;
@@ -1411,7 +1411,7 @@ record (|scala.collection.immutable.Map$Map3|)
     @GenericSignature "<U:Ljava/lang/Object;>(Lscala/Function1<Lscala/Tuple2<TA;TB;>;TU;>;)V"
     @Owner (|scala.collection.immutable.Map$Map3|)
     @Access (PUBLIC)
-    @Signature "scala.collection.immutable.Map$Map3.foreach(Lscala/Function1;)V" 
+    @Signature "scala.collection.immutable.Map$Map3.foreach(Lscala.Function1;)V" 
   {
     local jmp;
     s0;
@@ -1452,7 +1452,7 @@ record (|scala.collection.immutable.Map$Map3|)
     @MaxStack 2
     @Owner (|scala.collection.immutable.Map$Map3|)
     @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Signature "scala.collection.immutable.Map$Map3.$minus(Ljava/lang/Object;)Ljava/lang/Object;" 
+    @Signature "scala.collection.immutable.Map$Map3.$minus(Ljava.lang.Object;)Ljava.lang.Object;" 
   {
     local jmp;
     s0;
@@ -1465,7 +1465,7 @@ record (|scala.collection.immutable.Map$Map3|)
     @MaxStack 2
     @Owner (|scala.collection.immutable.Map$Map3|)
     @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Signature "scala.collection.immutable.Map$Map3.$minus(Ljava/lang/Object;)Lscala/collection/generic/Subtractable;" 
+    @Signature "scala.collection.immutable.Map$Map3.$minus(Ljava.lang.Object;)Lscala.collection.generic.Subtractable;" 
   {
     local jmp;
     s0;
@@ -1478,7 +1478,7 @@ record (|scala.collection.immutable.Map$Map3|)
     @MaxStack 2
     @Owner (|scala.collection.immutable.Map$Map3|)
     @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Signature "scala.collection.immutable.Map$Map3.$minus(Ljava/lang/Object;)Lscala/collection/Map;" 
+    @Signature "scala.collection.immutable.Map$Map3.$minus(Ljava.lang.Object;)Lscala.collection.Map;" 
   {
     local jmp;
     s0;
@@ -1491,7 +1491,7 @@ record (|scala.collection.immutable.Map$Map3|)
     @MaxStack 2
     @Owner (|scala.collection.immutable.Map$Map3|)
     @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Signature "scala.collection.immutable.Map$Map3.$plus(Lscala/Tuple2;)Lscala/collection/GenMap;" 
+    @Signature "scala.collection.immutable.Map$Map3.$plus(Lscala.Tuple2;)Lscala.collection.GenMap;" 
   {
     local jmp;
     s0;
@@ -1504,7 +1504,7 @@ record (|scala.collection.immutable.Map$Map3|)
     @MaxStack 2
     @Owner (|scala.collection.immutable.Map$Map3|)
     @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Signature "scala.collection.immutable.Map$Map3.$plus(Lscala/Tuple2;)Lscala/collection/Map;" 
+    @Signature "scala.collection.immutable.Map$Map3.$plus(Lscala.Tuple2;)Lscala.collection.Map;" 
   {
     local jmp;
     s0;
@@ -1517,7 +1517,7 @@ record (|scala.collection.immutable.Map$Map3|)
     @MaxStack 3
     @Owner (|scala.collection.immutable.Map$Map3|)
     @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Signature "scala.collection.immutable.Map$Map3.updated(Ljava/lang/Object;Ljava/lang/Object;)Lscala/collection/GenMap;" 
+    @Signature "scala.collection.immutable.Map$Map3.updated(Ljava.lang.Object;Ljava.lang.Object;)Lscala.collection.GenMap;" 
   {
     local jmp;
     s0;
@@ -1530,7 +1530,7 @@ record (|scala.collection.immutable.Map$Map3|)
     @MaxStack 3
     @Owner (|scala.collection.immutable.Map$Map3|)
     @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Signature "scala.collection.immutable.Map$Map3.updated(Ljava/lang/Object;Ljava/lang/Object;)Lscala/collection/Map;" 
+    @Signature "scala.collection.immutable.Map$Map3.updated(Ljava.lang.Object;Ljava.lang.Object;)Lscala.collection.Map;" 
   {
     local jmp;
     s0;
@@ -1544,7 +1544,7 @@ record (|scala.collection.immutable.Map$Map3|)
     @GenericSignature "(TA;TB;TA;TB;TA;TB;)V"
     @Owner (|scala.collection.immutable.Map$Map3|)
     @Access (PUBLIC,CONSTRUCTOR)
-    @Signature "scala.collection.immutable.Map$Map3.<init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V" 
+    @Signature "scala.collection.immutable.Map$Map3.<init>(Ljava.lang.Object;Ljava.lang.Object;Ljava.lang.Object;Ljava.lang.Object;Ljava.lang.Object;Ljava.lang.Object;)V" 
   {
     local jmp;
     s0;
@@ -1600,7 +1600,7 @@ record (|scala.collection.immutable.Map$Map4|)
     @GenericSignature "(TA;)Lscala/Option<TB;>;"
     @Owner (|scala.collection.immutable.Map$Map4|)
     @Access (PUBLIC)
-    @Signature "scala.collection.immutable.Map$Map4.get(Ljava/lang/Object;)Lscala/Option;" 
+    @Signature "scala.collection.immutable.Map$Map4.get(Ljava.lang.Object;)Lscala.Option;" 
   {
     local jmp;
     s0;
@@ -1746,7 +1746,7 @@ record (|scala.collection.immutable.Map$Map4|)
     @GenericSignature "()Lscala/collection/Iterator<Lscala/Tuple2<TA;TB;>;>;"
     @Owner (|scala.collection.immutable.Map$Map4|)
     @Access (PUBLIC)
-    @Signature "scala.collection.immutable.Map$Map4.iterator()Lscala/collection/Iterator;" 
+    @Signature "scala.collection.immutable.Map$Map4.iterator()Lscala.collection.Iterator;" 
   {
     local jmp;
     s0;
@@ -1804,7 +1804,7 @@ record (|scala.collection.immutable.Map$Map4|)
     @GenericSignature "<B1:Ljava/lang/Object;>(TA;TB1;)Lscala/collection/immutable/Map<TA;TB1;>;"
     @Owner (|scala.collection.immutable.Map$Map4|)
     @Access (PUBLIC)
-    @Signature "scala.collection.immutable.Map$Map4.updated(Ljava/lang/Object;Ljava/lang/Object;)Lscala/collection/immutable/Map;" 
+    @Signature "scala.collection.immutable.Map$Map4.updated(Ljava.lang.Object;Ljava.lang.Object;)Lscala.collection.immutable.Map;" 
   {
     local jmp;
     s0;
@@ -2021,7 +2021,7 @@ record (|scala.collection.immutable.Map$Map4|)
     @GenericSignature "<B1:Ljava/lang/Object;>(Lscala/Tuple2<TA;TB1;>;)Lscala/collection/immutable/Map<TA;TB1;>;"
     @Owner (|scala.collection.immutable.Map$Map4|)
     @Access (PUBLIC)
-    @Signature "scala.collection.immutable.Map$Map4.$plus(Lscala/Tuple2;)Lscala/collection/immutable/Map;" 
+    @Signature "scala.collection.immutable.Map$Map4.$plus(Lscala.Tuple2;)Lscala.collection.immutable.Map;" 
   {
     local jmp;
     s0;
@@ -2039,7 +2039,7 @@ record (|scala.collection.immutable.Map$Map4|)
     @GenericSignature "(TA;)Lscala/collection/immutable/Map<TA;TB;>;"
     @Owner (|scala.collection.immutable.Map$Map4|)
     @Access (PUBLIC)
-    @Signature "scala.collection.immutable.Map$Map4.$minus(Ljava/lang/Object;)Lscala/collection/immutable/Map;" 
+    @Signature "scala.collection.immutable.Map$Map4.$minus(Ljava.lang.Object;)Lscala.collection.immutable.Map;" 
   {
     local jmp;
     s0;
@@ -2209,7 +2209,7 @@ record (|scala.collection.immutable.Map$Map4|)
     @GenericSignature "<U:Ljava/lang/Object;>(Lscala/Function1<Lscala/Tuple2<TA;TB;>;TU;>;)V"
     @Owner (|scala.collection.immutable.Map$Map4|)
     @Access (PUBLIC)
-    @Signature "scala.collection.immutable.Map$Map4.foreach(Lscala/Function1;)V" 
+    @Signature "scala.collection.immutable.Map$Map4.foreach(Lscala.Function1;)V" 
   {
     local jmp;
     s0;
@@ -2260,7 +2260,7 @@ record (|scala.collection.immutable.Map$Map4|)
     @MaxStack 2
     @Owner (|scala.collection.immutable.Map$Map4|)
     @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Signature "scala.collection.immutable.Map$Map4.$minus(Ljava/lang/Object;)Ljava/lang/Object;" 
+    @Signature "scala.collection.immutable.Map$Map4.$minus(Ljava.lang.Object;)Ljava.lang.Object;" 
   {
     local jmp;
     s0;
@@ -2273,7 +2273,7 @@ record (|scala.collection.immutable.Map$Map4|)
     @MaxStack 2
     @Owner (|scala.collection.immutable.Map$Map4|)
     @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Signature "scala.collection.immutable.Map$Map4.$minus(Ljava/lang/Object;)Lscala/collection/generic/Subtractable;" 
+    @Signature "scala.collection.immutable.Map$Map4.$minus(Ljava.lang.Object;)Lscala.collection.generic.Subtractable;" 
   {
     local jmp;
     s0;
@@ -2286,7 +2286,7 @@ record (|scala.collection.immutable.Map$Map4|)
     @MaxStack 2
     @Owner (|scala.collection.immutable.Map$Map4|)
     @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Signature "scala.collection.immutable.Map$Map4.$minus(Ljava/lang/Object;)Lscala/collection/Map;" 
+    @Signature "scala.collection.immutable.Map$Map4.$minus(Ljava.lang.Object;)Lscala.collection.Map;" 
   {
     local jmp;
     s0;
@@ -2299,7 +2299,7 @@ record (|scala.collection.immutable.Map$Map4|)
     @MaxStack 2
     @Owner (|scala.collection.immutable.Map$Map4|)
     @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Signature "scala.collection.immutable.Map$Map4.$plus(Lscala/Tuple2;)Lscala/collection/GenMap;" 
+    @Signature "scala.collection.immutable.Map$Map4.$plus(Lscala.Tuple2;)Lscala.collection.GenMap;" 
   {
     local jmp;
     s0;
@@ -2312,7 +2312,7 @@ record (|scala.collection.immutable.Map$Map4|)
     @MaxStack 2
     @Owner (|scala.collection.immutable.Map$Map4|)
     @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Signature "scala.collection.immutable.Map$Map4.$plus(Lscala/Tuple2;)Lscala/collection/Map;" 
+    @Signature "scala.collection.immutable.Map$Map4.$plus(Lscala.Tuple2;)Lscala.collection.Map;" 
   {
     local jmp;
     s0;
@@ -2325,7 +2325,7 @@ record (|scala.collection.immutable.Map$Map4|)
     @MaxStack 3
     @Owner (|scala.collection.immutable.Map$Map4|)
     @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Signature "scala.collection.immutable.Map$Map4.updated(Ljava/lang/Object;Ljava/lang/Object;)Lscala/collection/GenMap;" 
+    @Signature "scala.collection.immutable.Map$Map4.updated(Ljava.lang.Object;Ljava.lang.Object;)Lscala.collection.GenMap;" 
   {
     local jmp;
     s0;
@@ -2338,7 +2338,7 @@ record (|scala.collection.immutable.Map$Map4|)
     @MaxStack 3
     @Owner (|scala.collection.immutable.Map$Map4|)
     @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Signature "scala.collection.immutable.Map$Map4.updated(Ljava/lang/Object;Ljava/lang/Object;)Lscala/collection/Map;" 
+    @Signature "scala.collection.immutable.Map$Map4.updated(Ljava.lang.Object;Ljava.lang.Object;)Lscala.collection.Map;" 
   {
     local jmp;
     s0;
@@ -2352,7 +2352,7 @@ record (|scala.collection.immutable.Map$Map4|)
     @GenericSignature "(TA;TB;TA;TB;TA;TB;TA;TB;)V"
     @Owner (|scala.collection.immutable.Map$Map4|)
     @Access (PUBLIC,CONSTRUCTOR)
-    @Signature "scala.collection.immutable.Map$Map4.<init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V" 
+    @Signature "scala.collection.immutable.Map$Map4.<init>(Ljava.lang.Object;Ljava.lang.Object;Ljava.lang.Object;Ljava.lang.Object;Ljava.lang.Object;Ljava.lang.Object;Ljava.lang.Object;Ljava.lang.Object;)V" 
   {
     local jmp;
     s0;
@@ -2418,7 +2418,7 @@ record (|scala.collection.immutable.Map$EmptyMap$|)
     @GenericSignature "(Ljava/lang/Object;)Lscala/Option<Lscala/runtime/Nothing$;>;"
     @Owner (|scala.collection.immutable.Map$EmptyMap$|)
     @Access (PUBLIC)
-    @Signature "scala.collection.immutable.Map$EmptyMap$.get(Ljava/lang/Object;)Lscala/Option;" 
+    @Signature "scala.collection.immutable.Map$EmptyMap$.get(Ljava.lang.Object;)Lscala.Option;" 
   {
     local jmp;
     s0;
@@ -2432,7 +2432,7 @@ record (|scala.collection.immutable.Map$EmptyMap$|)
     @GenericSignature "()Lscala/collection/Iterator<Lscala/Tuple2<Ljava/lang/Object;Lscala/runtime/Nothing$;>;>;"
     @Owner (|scala.collection.immutable.Map$EmptyMap$|)
     @Access (PUBLIC)
-    @Signature "scala.collection.immutable.Map$EmptyMap$.iterator()Lscala/collection/Iterator;" 
+    @Signature "scala.collection.immutable.Map$EmptyMap$.iterator()Lscala.collection.Iterator;" 
   {
     local jmp;
     s0;
@@ -2448,7 +2448,7 @@ record (|scala.collection.immutable.Map$EmptyMap$|)
     @GenericSignature "<B1:Ljava/lang/Object;>(Ljava/lang/Object;TB1;)Lscala/collection/immutable/Map<Ljava/lang/Object;TB1;>;"
     @Owner (|scala.collection.immutable.Map$EmptyMap$|)
     @Access (PUBLIC)
-    @Signature "scala.collection.immutable.Map$EmptyMap$.updated(Ljava/lang/Object;Ljava/lang/Object;)Lscala/collection/immutable/Map;" 
+    @Signature "scala.collection.immutable.Map$EmptyMap$.updated(Ljava.lang.Object;Ljava.lang.Object;)Lscala.collection.immutable.Map;" 
   {
     local jmp;
     s0;
@@ -2464,7 +2464,7 @@ record (|scala.collection.immutable.Map$EmptyMap$|)
     @GenericSignature "<B1:Ljava/lang/Object;>(Lscala/Tuple2<Ljava/lang/Object;TB1;>;)Lscala/collection/immutable/Map<Ljava/lang/Object;TB1;>;"
     @Owner (|scala.collection.immutable.Map$EmptyMap$|)
     @Access (PUBLIC)
-    @Signature "scala.collection.immutable.Map$EmptyMap$.$plus(Lscala/Tuple2;)Lscala/collection/immutable/Map;" 
+    @Signature "scala.collection.immutable.Map$EmptyMap$.$plus(Lscala.Tuple2;)Lscala.collection.immutable.Map;" 
   {
     local jmp;
     s0;
@@ -2482,7 +2482,7 @@ record (|scala.collection.immutable.Map$EmptyMap$|)
     @GenericSignature "(Ljava/lang/Object;)Lscala/collection/immutable/Map<Ljava/lang/Object;Lscala/runtime/Nothing$;>;"
     @Owner (|scala.collection.immutable.Map$EmptyMap$|)
     @Access (PUBLIC)
-    @Signature "scala.collection.immutable.Map$EmptyMap$.$minus(Ljava/lang/Object;)Lscala/collection/immutable/Map;" 
+    @Signature "scala.collection.immutable.Map$EmptyMap$.$minus(Ljava.lang.Object;)Lscala.collection.immutable.Map;" 
   {
     local jmp;
 
@@ -2493,7 +2493,7 @@ record (|scala.collection.immutable.Map$EmptyMap$|)
     @MaxStack 1
     @Owner (|scala.collection.immutable.Map$EmptyMap$|)
     @Access (PRIVATE)
-    @Signature "scala.collection.immutable.Map$EmptyMap$.readResolve()Ljava/lang/Object;" 
+    @Signature "scala.collection.immutable.Map$EmptyMap$.readResolve()Ljava.lang.Object;" 
   {
     local jmp;
     s0;
@@ -2506,7 +2506,7 @@ record (|scala.collection.immutable.Map$EmptyMap$|)
     @MaxStack 2
     @Owner (|scala.collection.immutable.Map$EmptyMap$|)
     @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Signature "scala.collection.immutable.Map$EmptyMap$.$minus(Ljava/lang/Object;)Ljava/lang/Object;" 
+    @Signature "scala.collection.immutable.Map$EmptyMap$.$minus(Ljava.lang.Object;)Ljava.lang.Object;" 
   {
     local jmp;
     s0;
@@ -2519,7 +2519,7 @@ record (|scala.collection.immutable.Map$EmptyMap$|)
     @MaxStack 2
     @Owner (|scala.collection.immutable.Map$EmptyMap$|)
     @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Signature "scala.collection.immutable.Map$EmptyMap$.$minus(Ljava/lang/Object;)Lscala/collection/generic/Subtractable;" 
+    @Signature "scala.collection.immutable.Map$EmptyMap$.$minus(Ljava.lang.Object;)Lscala.collection.generic.Subtractable;" 
   {
     local jmp;
     s0;
@@ -2532,7 +2532,7 @@ record (|scala.collection.immutable.Map$EmptyMap$|)
     @MaxStack 2
     @Owner (|scala.collection.immutable.Map$EmptyMap$|)
     @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Signature "scala.collection.immutable.Map$EmptyMap$.$minus(Ljava/lang/Object;)Lscala/collection/Map;" 
+    @Signature "scala.collection.immutable.Map$EmptyMap$.$minus(Ljava.lang.Object;)Lscala.collection.Map;" 
   {
     local jmp;
     s0;
@@ -2545,7 +2545,7 @@ record (|scala.collection.immutable.Map$EmptyMap$|)
     @MaxStack 2
     @Owner (|scala.collection.immutable.Map$EmptyMap$|)
     @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Signature "scala.collection.immutable.Map$EmptyMap$.$plus(Lscala/Tuple2;)Lscala/collection/GenMap;" 
+    @Signature "scala.collection.immutable.Map$EmptyMap$.$plus(Lscala.Tuple2;)Lscala.collection.GenMap;" 
   {
     local jmp;
     s0;
@@ -2558,7 +2558,7 @@ record (|scala.collection.immutable.Map$EmptyMap$|)
     @MaxStack 2
     @Owner (|scala.collection.immutable.Map$EmptyMap$|)
     @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Signature "scala.collection.immutable.Map$EmptyMap$.$plus(Lscala/Tuple2;)Lscala/collection/Map;" 
+    @Signature "scala.collection.immutable.Map$EmptyMap$.$plus(Lscala.Tuple2;)Lscala.collection.Map;" 
   {
     local jmp;
     s0;
@@ -2571,7 +2571,7 @@ record (|scala.collection.immutable.Map$EmptyMap$|)
     @MaxStack 3
     @Owner (|scala.collection.immutable.Map$EmptyMap$|)
     @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Signature "scala.collection.immutable.Map$EmptyMap$.updated(Ljava/lang/Object;Ljava/lang/Object;)Lscala/collection/GenMap;" 
+    @Signature "scala.collection.immutable.Map$EmptyMap$.updated(Ljava.lang.Object;Ljava.lang.Object;)Lscala.collection.GenMap;" 
   {
     local jmp;
     s0;
@@ -2584,7 +2584,7 @@ record (|scala.collection.immutable.Map$EmptyMap$|)
     @MaxStack 3
     @Owner (|scala.collection.immutable.Map$EmptyMap$|)
     @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Signature "scala.collection.immutable.Map$EmptyMap$.updated(Ljava/lang/Object;Ljava/lang/Object;)Lscala/collection/Map;" 
+    @Signature "scala.collection.immutable.Map$EmptyMap$.updated(Ljava.lang.Object;Ljava.lang.Object;)Lscala.collection.Map;" 
   {
     local jmp;
     s0;
@@ -2630,7 +2630,7 @@ record (|scala.collection.immutable.Map$WithDefault|)
     @GenericSignature "<T:Ljava/lang/Object;U:Ljava/lang/Object;>(Lscala/Predef$$less$colon$less<Lscala/Tuple2<TA;TB;>;Lscala/Tuple2<TT;TU;>;>;)Lscala/collection/immutable/Map<TT;TU;>;"
     @Owner (|scala.collection.immutable.Map$WithDefault|)
     @Access (PUBLIC)
-    @Signature "scala.collection.immutable.Map$WithDefault.toMap(Lscala/Predef$$less$colon$less;)Lscala/collection/immutable/Map;" 
+    @Signature "scala.collection.immutable.Map$WithDefault.toMap(Lscala.Predef$$less$colon$less;)Lscala.collection.immutable.Map;" 
   {
     local jmp;
     s0;
@@ -2644,7 +2644,7 @@ record (|scala.collection.immutable.Map$WithDefault|)
     @GenericSignature "()Lscala/collection/immutable/Map<TA;TB;>;"
     @Owner (|scala.collection.immutable.Map$WithDefault|)
     @Access (PUBLIC)
-    @Signature "scala.collection.immutable.Map$WithDefault.seq()Lscala/collection/immutable/Map;" 
+    @Signature "scala.collection.immutable.Map$WithDefault.seq()Lscala.collection.immutable.Map;" 
   {
     local jmp;
     s0;
@@ -2658,7 +2658,7 @@ record (|scala.collection.immutable.Map$WithDefault|)
     @GenericSignature "()Lscala/collection/parallel/Combiner<Lscala/Tuple2<TA;TB;>;Lscala/collection/parallel/immutable/ParMap<TA;TB;>;>;"
     @Owner (|scala.collection.immutable.Map$WithDefault|)
     @Access (PUBLIC)
-    @Signature "scala.collection.immutable.Map$WithDefault.parCombiner()Lscala/collection/parallel/Combiner;" 
+    @Signature "scala.collection.immutable.Map$WithDefault.parCombiner()Lscala.collection.parallel.Combiner;" 
   {
     local jmp;
     s0;
@@ -2672,7 +2672,7 @@ record (|scala.collection.immutable.Map$WithDefault|)
     @GenericSignature "<B1:Ljava/lang/Object;>(Lscala/Tuple2<TA;TB1;>;Lscala/Tuple2<TA;TB1;>;Lscala/collection/Seq<Lscala/Tuple2<TA;TB1;>;>;)Lscala/collection/immutable/Map<TA;TB1;>;"
     @Owner (|scala.collection.immutable.Map$WithDefault|)
     @Access (PUBLIC)
-    @Signature "scala.collection.immutable.Map$WithDefault.$plus(Lscala/Tuple2;Lscala/Tuple2;Lscala/collection/Seq;)Lscala/collection/immutable/Map;" 
+    @Signature "scala.collection.immutable.Map$WithDefault.$plus(Lscala.Tuple2;Lscala.Tuple2;Lscala.collection.Seq;)Lscala.collection.immutable.Map;" 
   {
     local jmp;
     s0;
@@ -2686,7 +2686,7 @@ record (|scala.collection.immutable.Map$WithDefault|)
     @GenericSignature "<B1:Ljava/lang/Object;>(Lscala/collection/GenTraversableOnce<Lscala/Tuple2<TA;TB1;>;>;)Lscala/collection/immutable/Map<TA;TB1;>;"
     @Owner (|scala.collection.immutable.Map$WithDefault|)
     @Access (PUBLIC)
-    @Signature "scala.collection.immutable.Map$WithDefault.$plus$plus(Lscala/collection/GenTraversableOnce;)Lscala/collection/immutable/Map;" 
+    @Signature "scala.collection.immutable.Map$WithDefault.$plus$plus(Lscala.collection.GenTraversableOnce;)Lscala.collection.immutable.Map;" 
   {
     local jmp;
     s0;
@@ -2700,7 +2700,7 @@ record (|scala.collection.immutable.Map$WithDefault|)
     @GenericSignature "(Lscala/Function1<TA;Ljava/lang/Object;>;)Lscala/collection/immutable/Map<TA;TB;>;"
     @Owner (|scala.collection.immutable.Map$WithDefault|)
     @Access (PUBLIC)
-    @Signature "scala.collection.immutable.Map$WithDefault.filterKeys(Lscala/Function1;)Lscala/collection/immutable/Map;" 
+    @Signature "scala.collection.immutable.Map$WithDefault.filterKeys(Lscala.Function1;)Lscala.collection.immutable.Map;" 
   {
     local jmp;
     s0;
@@ -2714,7 +2714,7 @@ record (|scala.collection.immutable.Map$WithDefault|)
     @GenericSignature "<C:Ljava/lang/Object;>(Lscala/Function1<TB;TC;>;)Lscala/collection/immutable/Map<TA;TC;>;"
     @Owner (|scala.collection.immutable.Map$WithDefault|)
     @Access (PUBLIC)
-    @Signature "scala.collection.immutable.Map$WithDefault.mapValues(Lscala/Function1;)Lscala/collection/immutable/Map;" 
+    @Signature "scala.collection.immutable.Map$WithDefault.mapValues(Lscala.Function1;)Lscala.collection.immutable.Map;" 
   {
     local jmp;
     s0;
@@ -2728,7 +2728,7 @@ record (|scala.collection.immutable.Map$WithDefault|)
     @GenericSignature "()Lscala/collection/immutable/Set<TA;>;"
     @Owner (|scala.collection.immutable.Map$WithDefault|)
     @Access (PUBLIC)
-    @Signature "scala.collection.immutable.Map$WithDefault.keySet()Lscala/collection/immutable/Set;" 
+    @Signature "scala.collection.immutable.Map$WithDefault.keySet()Lscala.collection.immutable.Set;" 
   {
     local jmp;
     s0;
@@ -2742,7 +2742,7 @@ record (|scala.collection.immutable.Map$WithDefault|)
     @GenericSignature "<C:Ljava/lang/Object;That:Ljava/lang/Object;>(Lscala/Function2<TA;TB;TC;>;Lscala/collection/generic/CanBuildFrom<Lscala/collection/immutable/Map<TA;TB;>;Lscala/Tuple2<TA;TC;>;TThat;>;)TThat;"
     @Owner (|scala.collection.immutable.Map$WithDefault|)
     @Access (PUBLIC)
-    @Signature "scala.collection.immutable.Map$WithDefault.transform(Lscala/Function2;Lscala/collection/generic/CanBuildFrom;)Ljava/lang/Object;" 
+    @Signature "scala.collection.immutable.Map$WithDefault.transform(Lscala.Function2;Lscala.collection.generic.CanBuildFrom;)Ljava.lang.Object;" 
   {
     local jmp;
     s0;
@@ -2756,7 +2756,7 @@ record (|scala.collection.immutable.Map$WithDefault|)
     @GenericSignature "()Lscala/collection/generic/GenericCompanion<Lscala/collection/immutable/Iterable;>;"
     @Owner (|scala.collection.immutable.Map$WithDefault|)
     @Access (PUBLIC)
-    @Signature "scala.collection.immutable.Map$WithDefault.companion()Lscala/collection/generic/GenericCompanion;" 
+    @Signature "scala.collection.immutable.Map$WithDefault.companion()Lscala.collection.generic.GenericCompanion;" 
   {
     local jmp;
     s0;
@@ -2770,7 +2770,7 @@ record (|scala.collection.immutable.Map$WithDefault|)
     @GenericSignature "()Lscala/collection/immutable/Map$WithDefault<TA;TB;>;"
     @Owner (|scala.collection.immutable.Map$WithDefault|)
     @Access (PUBLIC)
-    @Signature "scala.collection.immutable.Map$WithDefault.empty()Lscala/collection/immutable/Map$WithDefault;" 
+    @Signature "scala.collection.immutable.Map$WithDefault.empty()Lscala.collection.immutable.Map$WithDefault;" 
   {
     local jmp;
     s0;
@@ -2792,7 +2792,7 @@ record (|scala.collection.immutable.Map$WithDefault|)
     @GenericSignature "<B1:Ljava/lang/Object;>(TA;TB1;)Lscala/collection/immutable/Map$WithDefault<TA;TB1;>;"
     @Owner (|scala.collection.immutable.Map$WithDefault|)
     @Access (PUBLIC)
-    @Signature "scala.collection.immutable.Map$WithDefault.updated(Ljava/lang/Object;Ljava/lang/Object;)Lscala/collection/immutable/Map$WithDefault;" 
+    @Signature "scala.collection.immutable.Map$WithDefault.updated(Ljava.lang.Object;Ljava.lang.Object;)Lscala.collection.immutable.Map$WithDefault;" 
   {
     local jmp;
     s0;
@@ -2814,7 +2814,7 @@ record (|scala.collection.immutable.Map$WithDefault|)
     @GenericSignature "<B1:Ljava/lang/Object;>(Lscala/Tuple2<TA;TB1;>;)Lscala/collection/immutable/Map$WithDefault<TA;TB1;>;"
     @Owner (|scala.collection.immutable.Map$WithDefault|)
     @Access (PUBLIC)
-    @Signature "scala.collection.immutable.Map$WithDefault.$plus(Lscala/Tuple2;)Lscala/collection/immutable/Map$WithDefault;" 
+    @Signature "scala.collection.immutable.Map$WithDefault.$plus(Lscala.Tuple2;)Lscala.collection.immutable.Map$WithDefault;" 
   {
     local jmp;
     s0;
@@ -2832,7 +2832,7 @@ record (|scala.collection.immutable.Map$WithDefault|)
     @GenericSignature "(TA;)Lscala/collection/immutable/Map$WithDefault<TA;TB;>;"
     @Owner (|scala.collection.immutable.Map$WithDefault|)
     @Access (PUBLIC)
-    @Signature "scala.collection.immutable.Map$WithDefault.$minus(Ljava/lang/Object;)Lscala/collection/immutable/Map$WithDefault;" 
+    @Signature "scala.collection.immutable.Map$WithDefault.$minus(Ljava.lang.Object;)Lscala.collection.immutable.Map$WithDefault;" 
   {
     local jmp;
     s0;
@@ -2854,7 +2854,7 @@ record (|scala.collection.immutable.Map$WithDefault|)
     @GenericSignature "<B1:Ljava/lang/Object;>(Lscala/Function1<TA;TB1;>;)Lscala/collection/immutable/Map<TA;TB1;>;"
     @Owner (|scala.collection.immutable.Map$WithDefault|)
     @Access (PUBLIC)
-    @Signature "scala.collection.immutable.Map$WithDefault.withDefault(Lscala/Function1;)Lscala/collection/immutable/Map;" 
+    @Signature "scala.collection.immutable.Map$WithDefault.withDefault(Lscala.Function1;)Lscala.collection.immutable.Map;" 
   {
     local jmp;
     s0;
@@ -2872,7 +2872,7 @@ record (|scala.collection.immutable.Map$WithDefault|)
     @GenericSignature "<B1:Ljava/lang/Object;>(TB1;)Lscala/collection/immutable/Map<TA;TB1;>;"
     @Owner (|scala.collection.immutable.Map$WithDefault|)
     @Access (PUBLIC)
-    @Signature "scala.collection.immutable.Map$WithDefault.withDefaultValue(Ljava/lang/Object;)Lscala/collection/immutable/Map;" 
+    @Signature "scala.collection.immutable.Map$WithDefault.withDefaultValue(Ljava.lang.Object;)Lscala.collection.immutable.Map;" 
   {
     local jmp;
     s0;
@@ -2893,7 +2893,7 @@ record (|scala.collection.immutable.Map$WithDefault|)
     @MaxStack 1
     @Owner (|scala.collection.immutable.Map$WithDefault|)
     @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Signature "scala.collection.immutable.Map$WithDefault.toTraversable()Lscala/collection/GenTraversable;" 
+    @Signature "scala.collection.immutable.Map$WithDefault.toTraversable()Lscala.collection.GenTraversable;" 
   {
     local jmp;
     s0;
@@ -2906,7 +2906,7 @@ record (|scala.collection.immutable.Map$WithDefault|)
     @MaxStack 2
     @Owner (|scala.collection.immutable.Map$WithDefault|)
     @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Signature "scala.collection.immutable.Map$WithDefault.groupBy(Lscala/Function1;)Lscala/collection/GenMap;" 
+    @Signature "scala.collection.immutable.Map$WithDefault.groupBy(Lscala.Function1;)Lscala.collection.GenMap;" 
   {
     local jmp;
     s0;
@@ -2919,7 +2919,7 @@ record (|scala.collection.immutable.Map$WithDefault|)
     @MaxStack 1
     @Owner (|scala.collection.immutable.Map$WithDefault|)
     @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Signature "scala.collection.immutable.Map$WithDefault.repr()Lscala/collection/generic/Subtractable;" 
+    @Signature "scala.collection.immutable.Map$WithDefault.repr()Lscala.collection.generic.Subtractable;" 
   {
     local jmp;
     s0;
@@ -2932,7 +2932,7 @@ record (|scala.collection.immutable.Map$WithDefault|)
     @MaxStack 3
     @Owner (|scala.collection.immutable.Map$WithDefault|)
     @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Signature "scala.collection.immutable.Map$WithDefault.view(II)Lscala/collection/TraversableView;" 
+    @Signature "scala.collection.immutable.Map$WithDefault.view(II)Lscala.collection.TraversableView;" 
   {
     local jmp;
     s0;
@@ -2945,7 +2945,7 @@ record (|scala.collection.immutable.Map$WithDefault|)
     @MaxStack 1
     @Owner (|scala.collection.immutable.Map$WithDefault|)
     @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Signature "scala.collection.immutable.Map$WithDefault.view()Lscala/collection/TraversableView;" 
+    @Signature "scala.collection.immutable.Map$WithDefault.view()Lscala.collection.TraversableView;" 
   {
     local jmp;
     s0;
@@ -2958,7 +2958,7 @@ record (|scala.collection.immutable.Map$WithDefault|)
     @MaxStack 1
     @Owner (|scala.collection.immutable.Map$WithDefault|)
     @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Signature "scala.collection.immutable.Map$WithDefault.toIterable()Lscala/collection/GenIterable;" 
+    @Signature "scala.collection.immutable.Map$WithDefault.toIterable()Lscala.collection.GenIterable;" 
   {
     local jmp;
     s0;
@@ -2971,7 +2971,7 @@ record (|scala.collection.immutable.Map$WithDefault|)
     @MaxStack 2
     @Owner (|scala.collection.immutable.Map$WithDefault|)
     @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Signature "scala.collection.immutable.Map$WithDefault.toCollection(Ljava/lang/Object;)Lscala/collection/Traversable;" 
+    @Signature "scala.collection.immutable.Map$WithDefault.toCollection(Ljava.lang.Object;)Lscala.collection.Traversable;" 
   {
     local jmp;
     s0;
@@ -2984,7 +2984,7 @@ record (|scala.collection.immutable.Map$WithDefault|)
     @MaxStack 1
     @Owner (|scala.collection.immutable.Map$WithDefault|)
     @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Signature "scala.collection.immutable.Map$WithDefault.thisCollection()Lscala/collection/Traversable;" 
+    @Signature "scala.collection.immutable.Map$WithDefault.thisCollection()Lscala.collection.Traversable;" 
   {
     local jmp;
     s0;
@@ -2997,7 +2997,7 @@ record (|scala.collection.immutable.Map$WithDefault|)
     @MaxStack 1
     @Owner (|scala.collection.immutable.Map$WithDefault|)
     @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Signature "scala.collection.immutable.Map$WithDefault.toSeq()Lscala/collection/GenSeq;" 
+    @Signature "scala.collection.immutable.Map$WithDefault.toSeq()Lscala.collection.GenSeq;" 
   {
     local jmp;
     s0;
@@ -3010,7 +3010,7 @@ record (|scala.collection.immutable.Map$WithDefault|)
     @MaxStack 2
     @Owner (|scala.collection.immutable.Map$WithDefault|)
     @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Signature "scala.collection.immutable.Map$WithDefault.filterNot(Lscala/Function1;)Ljava/lang/Object;" 
+    @Signature "scala.collection.immutable.Map$WithDefault.filterNot(Lscala.Function1;)Ljava.lang.Object;" 
   {
     local jmp;
     s0;
@@ -3023,7 +3023,7 @@ record (|scala.collection.immutable.Map$WithDefault|)
     @MaxStack 1
     @Owner (|scala.collection.immutable.Map$WithDefault|)
     @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Signature "scala.collection.immutable.Map$WithDefault.values()Lscala/collection/GenIterable;" 
+    @Signature "scala.collection.immutable.Map$WithDefault.values()Lscala.collection.GenIterable;" 
   {
     local jmp;
     s0;
@@ -3036,7 +3036,7 @@ record (|scala.collection.immutable.Map$WithDefault|)
     @MaxStack 1
     @Owner (|scala.collection.immutable.Map$WithDefault|)
     @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Signature "scala.collection.immutable.Map$WithDefault.keys()Lscala/collection/GenIterable;" 
+    @Signature "scala.collection.immutable.Map$WithDefault.keys()Lscala.collection.GenIterable;" 
   {
     local jmp;
     s0;
@@ -3049,7 +3049,7 @@ record (|scala.collection.immutable.Map$WithDefault|)
     @MaxStack 1
     @Owner (|scala.collection.immutable.Map$WithDefault|)
     @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Signature "scala.collection.immutable.Map$WithDefault.keySet()Lscala/collection/GenSet;" 
+    @Signature "scala.collection.immutable.Map$WithDefault.keySet()Lscala.collection.GenSet;" 
   {
     local jmp;
     s0;
@@ -3062,7 +3062,7 @@ record (|scala.collection.immutable.Map$WithDefault|)
     @MaxStack 1
     @Owner (|scala.collection.immutable.Map$WithDefault|)
     @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Signature "scala.collection.immutable.Map$WithDefault.keySet()Lscala/collection/Set;" 
+    @Signature "scala.collection.immutable.Map$WithDefault.keySet()Lscala.collection.Set;" 
   {
     local jmp;
     s0;
@@ -3075,7 +3075,7 @@ record (|scala.collection.immutable.Map$WithDefault|)
     @MaxStack 2
     @Owner (|scala.collection.immutable.Map$WithDefault|)
     @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Signature "scala.collection.immutable.Map$WithDefault.mapValues(Lscala/Function1;)Lscala/collection/GenMap;" 
+    @Signature "scala.collection.immutable.Map$WithDefault.mapValues(Lscala.Function1;)Lscala.collection.GenMap;" 
   {
     local jmp;
     s0;
@@ -3088,7 +3088,7 @@ record (|scala.collection.immutable.Map$WithDefault|)
     @MaxStack 2
     @Owner (|scala.collection.immutable.Map$WithDefault|)
     @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Signature "scala.collection.immutable.Map$WithDefault.mapValues(Lscala/Function1;)Lscala/collection/Map;" 
+    @Signature "scala.collection.immutable.Map$WithDefault.mapValues(Lscala.Function1;)Lscala.collection.Map;" 
   {
     local jmp;
     s0;
@@ -3101,7 +3101,7 @@ record (|scala.collection.immutable.Map$WithDefault|)
     @MaxStack 2
     @Owner (|scala.collection.immutable.Map$WithDefault|)
     @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Signature "scala.collection.immutable.Map$WithDefault.filterKeys(Lscala/Function1;)Lscala/collection/GenMap;" 
+    @Signature "scala.collection.immutable.Map$WithDefault.filterKeys(Lscala.Function1;)Lscala.collection.GenMap;" 
   {
     local jmp;
     s0;
@@ -3114,7 +3114,7 @@ record (|scala.collection.immutable.Map$WithDefault|)
     @MaxStack 2
     @Owner (|scala.collection.immutable.Map$WithDefault|)
     @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Signature "scala.collection.immutable.Map$WithDefault.filterKeys(Lscala/Function1;)Lscala/collection/Map;" 
+    @Signature "scala.collection.immutable.Map$WithDefault.filterKeys(Lscala.Function1;)Lscala.collection.Map;" 
   {
     local jmp;
     s0;
@@ -3127,7 +3127,7 @@ record (|scala.collection.immutable.Map$WithDefault|)
     @MaxStack 2
     @Owner (|scala.collection.immutable.Map$WithDefault|)
     @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Signature "scala.collection.immutable.Map$WithDefault.$plus$plus(Lscala/collection/GenTraversableOnce;)Lscala/collection/Map;" 
+    @Signature "scala.collection.immutable.Map$WithDefault.$plus$plus(Lscala.collection.GenTraversableOnce;)Lscala.collection.Map;" 
   {
     local jmp;
     s0;
@@ -3140,7 +3140,7 @@ record (|scala.collection.immutable.Map$WithDefault|)
     @MaxStack 4
     @Owner (|scala.collection.immutable.Map$WithDefault|)
     @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Signature "scala.collection.immutable.Map$WithDefault.$plus(Lscala/Tuple2;Lscala/Tuple2;Lscala/collection/Seq;)Lscala/collection/Map;" 
+    @Signature "scala.collection.immutable.Map$WithDefault.$plus(Lscala.Tuple2;Lscala.Tuple2;Lscala.collection.Seq;)Lscala.collection.Map;" 
   {
     local jmp;
     s0;
@@ -3153,7 +3153,7 @@ record (|scala.collection.immutable.Map$WithDefault|)
     @MaxStack 1
     @Owner (|scala.collection.immutable.Map$WithDefault|)
     @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Signature "scala.collection.immutable.Map$WithDefault.seq()Lscala/collection/TraversableOnce;" 
+    @Signature "scala.collection.immutable.Map$WithDefault.seq()Lscala.collection.TraversableOnce;" 
   {
     local jmp;
     s0;
@@ -3166,7 +3166,7 @@ record (|scala.collection.immutable.Map$WithDefault|)
     @MaxStack 1
     @Owner (|scala.collection.immutable.Map$WithDefault|)
     @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Signature "scala.collection.immutable.Map$WithDefault.seq()Lscala/collection/Traversable;" 
+    @Signature "scala.collection.immutable.Map$WithDefault.seq()Lscala.collection.Traversable;" 
   {
     local jmp;
     s0;
@@ -3179,7 +3179,7 @@ record (|scala.collection.immutable.Map$WithDefault|)
     @MaxStack 1
     @Owner (|scala.collection.immutable.Map$WithDefault|)
     @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Signature "scala.collection.immutable.Map$WithDefault.seq()Lscala/collection/Iterable;" 
+    @Signature "scala.collection.immutable.Map$WithDefault.seq()Lscala.collection.Iterable;" 
   {
     local jmp;
     s0;
@@ -3192,7 +3192,7 @@ record (|scala.collection.immutable.Map$WithDefault|)
     @MaxStack 1
     @Owner (|scala.collection.immutable.Map$WithDefault|)
     @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Signature "scala.collection.immutable.Map$WithDefault.seq()Lscala/collection/Map;" 
+    @Signature "scala.collection.immutable.Map$WithDefault.seq()Lscala.collection.Map;" 
   {
     local jmp;
     s0;
@@ -3205,7 +3205,7 @@ record (|scala.collection.immutable.Map$WithDefault|)
     @MaxStack 1
     @Owner (|scala.collection.immutable.Map$WithDefault|)
     @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Signature "scala.collection.immutable.Map$WithDefault.seq()Lscala/collection/immutable/Traversable;" 
+    @Signature "scala.collection.immutable.Map$WithDefault.seq()Lscala.collection.immutable.Traversable;" 
   {
     local jmp;
     s0;
@@ -3218,7 +3218,7 @@ record (|scala.collection.immutable.Map$WithDefault|)
     @MaxStack 1
     @Owner (|scala.collection.immutable.Map$WithDefault|)
     @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Signature "scala.collection.immutable.Map$WithDefault.seq()Lscala/collection/immutable/Iterable;" 
+    @Signature "scala.collection.immutable.Map$WithDefault.seq()Lscala.collection.immutable.Iterable;" 
   {
     local jmp;
     s0;
@@ -3231,7 +3231,7 @@ record (|scala.collection.immutable.Map$WithDefault|)
     @MaxStack 2
     @Owner (|scala.collection.immutable.Map$WithDefault|)
     @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Signature "scala.collection.immutable.Map$WithDefault.toMap(Lscala/Predef$$less$colon$less;)Lscala/collection/GenMap;" 
+    @Signature "scala.collection.immutable.Map$WithDefault.toMap(Lscala.Predef$$less$colon$less;)Lscala.collection.GenMap;" 
   {
     local jmp;
     s0;
@@ -3244,7 +3244,7 @@ record (|scala.collection.immutable.Map$WithDefault|)
     @MaxStack 2
     @Owner (|scala.collection.immutable.Map$WithDefault|)
     @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Signature "scala.collection.immutable.Map$WithDefault.$minus(Ljava/lang/Object;)Ljava/lang/Object;" 
+    @Signature "scala.collection.immutable.Map$WithDefault.$minus(Ljava.lang.Object;)Ljava.lang.Object;" 
   {
     local jmp;
     s0;
@@ -3257,7 +3257,7 @@ record (|scala.collection.immutable.Map$WithDefault|)
     @MaxStack 2
     @Owner (|scala.collection.immutable.Map$WithDefault|)
     @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Signature "scala.collection.immutable.Map$WithDefault.$minus(Ljava/lang/Object;)Lscala/collection/generic/Subtractable;" 
+    @Signature "scala.collection.immutable.Map$WithDefault.$minus(Ljava.lang.Object;)Lscala.collection.generic.Subtractable;" 
   {
     local jmp;
     s0;
@@ -3270,7 +3270,7 @@ record (|scala.collection.immutable.Map$WithDefault|)
     @MaxStack 2
     @Owner (|scala.collection.immutable.Map$WithDefault|)
     @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Signature "scala.collection.immutable.Map$WithDefault.$minus(Ljava/lang/Object;)Lscala/collection/Map;" 
+    @Signature "scala.collection.immutable.Map$WithDefault.$minus(Ljava.lang.Object;)Lscala.collection.Map;" 
   {
     local jmp;
     s0;
@@ -3283,7 +3283,7 @@ record (|scala.collection.immutable.Map$WithDefault|)
     @MaxStack 2
     @Owner (|scala.collection.immutable.Map$WithDefault|)
     @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Signature "scala.collection.immutable.Map$WithDefault.$plus(Lscala/Tuple2;)Lscala/collection/GenMap;" 
+    @Signature "scala.collection.immutable.Map$WithDefault.$plus(Lscala.Tuple2;)Lscala.collection.GenMap;" 
   {
     local jmp;
     s0;
@@ -3296,7 +3296,7 @@ record (|scala.collection.immutable.Map$WithDefault|)
     @MaxStack 2
     @Owner (|scala.collection.immutable.Map$WithDefault|)
     @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Signature "scala.collection.immutable.Map$WithDefault.$plus(Lscala/Tuple2;)Lscala/collection/Map;" 
+    @Signature "scala.collection.immutable.Map$WithDefault.$plus(Lscala.Tuple2;)Lscala.collection.Map;" 
   {
     local jmp;
     s0;
@@ -3309,7 +3309,7 @@ record (|scala.collection.immutable.Map$WithDefault|)
     @MaxStack 2
     @Owner (|scala.collection.immutable.Map$WithDefault|)
     @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Signature "scala.collection.immutable.Map$WithDefault.$plus(Lscala/Tuple2;)Lscala/collection/immutable/Map;" 
+    @Signature "scala.collection.immutable.Map$WithDefault.$plus(Lscala.Tuple2;)Lscala.collection.immutable.Map;" 
   {
     local jmp;
     s0;
@@ -3322,7 +3322,7 @@ record (|scala.collection.immutable.Map$WithDefault|)
     @MaxStack 3
     @Owner (|scala.collection.immutable.Map$WithDefault|)
     @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Signature "scala.collection.immutable.Map$WithDefault.updated(Ljava/lang/Object;Ljava/lang/Object;)Lscala/collection/GenMap;" 
+    @Signature "scala.collection.immutable.Map$WithDefault.updated(Ljava.lang.Object;Ljava.lang.Object;)Lscala.collection.GenMap;" 
   {
     local jmp;
     s0;
@@ -3335,7 +3335,7 @@ record (|scala.collection.immutable.Map$WithDefault|)
     @MaxStack 3
     @Owner (|scala.collection.immutable.Map$WithDefault|)
     @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Signature "scala.collection.immutable.Map$WithDefault.updated(Ljava/lang/Object;Ljava/lang/Object;)Lscala/collection/Map;" 
+    @Signature "scala.collection.immutable.Map$WithDefault.updated(Ljava.lang.Object;Ljava.lang.Object;)Lscala.collection.Map;" 
   {
     local jmp;
     s0;
@@ -3348,7 +3348,7 @@ record (|scala.collection.immutable.Map$WithDefault|)
     @MaxStack 3
     @Owner (|scala.collection.immutable.Map$WithDefault|)
     @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Signature "scala.collection.immutable.Map$WithDefault.updated(Ljava/lang/Object;Ljava/lang/Object;)Lscala/collection/immutable/Map;" 
+    @Signature "scala.collection.immutable.Map$WithDefault.updated(Ljava.lang.Object;Ljava.lang.Object;)Lscala.collection.immutable.Map;" 
   {
     local jmp;
     s0;
@@ -3361,7 +3361,7 @@ record (|scala.collection.immutable.Map$WithDefault|)
     @MaxStack 1
     @Owner (|scala.collection.immutable.Map$WithDefault|)
     @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Signature "scala.collection.immutable.Map$WithDefault.empty()Lscala/collection/Map;" 
+    @Signature "scala.collection.immutable.Map$WithDefault.empty()Lscala.collection.Map;" 
   {
     local jmp;
     s0;
@@ -3374,7 +3374,7 @@ record (|scala.collection.immutable.Map$WithDefault|)
     @MaxStack 1
     @Owner (|scala.collection.immutable.Map$WithDefault|)
     @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Signature "scala.collection.immutable.Map$WithDefault.empty()Lscala/collection/immutable/Map;" 
+    @Signature "scala.collection.immutable.Map$WithDefault.empty()Lscala.collection.immutable.Map;" 
   {
     local jmp;
     s0;
@@ -3388,7 +3388,7 @@ record (|scala.collection.immutable.Map$WithDefault|)
     @GenericSignature "(Lscala/collection/immutable/Map<TA;TB;>;Lscala/Function1<TA;TB;>;)V"
     @Owner (|scala.collection.immutable.Map$WithDefault|)
     @Access (PUBLIC,CONSTRUCTOR)
-    @Signature "scala.collection.immutable.Map$WithDefault.<init>(Lscala/collection/immutable/Map;Lscala/Function1;)V" 
+    @Signature "scala.collection.immutable.Map$WithDefault.<init>(Lscala.collection.immutable.Map;Lscala.Function1;)V" 
   {
     local jmp;
     s0;
@@ -3741,7 +3741,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<TA;TFrom;>;)Lscala/Function1<TA;TTo;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.compose(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.compose(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -3755,7 +3755,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<TA;Ljava/lang/Object;>;)Lscala/Function1<TA;Ljava/lang/Object;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.compose$mcZD$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.compose$mcZD$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -3769,7 +3769,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<TA;Ljava/lang/Object;>;)Lscala/Function1<TA;Ljava/lang/Object;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.compose$mcDD$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.compose$mcDD$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -3783,7 +3783,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<TA;Ljava/lang/Object;>;)Lscala/Function1<TA;Ljava/lang/Object;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.compose$mcFD$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.compose$mcFD$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -3797,7 +3797,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<TA;Ljava/lang/Object;>;)Lscala/Function1<TA;Ljava/lang/Object;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.compose$mcID$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.compose$mcID$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -3811,7 +3811,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<TA;Ljava/lang/Object;>;)Lscala/Function1<TA;Ljava/lang/Object;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.compose$mcJD$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.compose$mcJD$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -3825,7 +3825,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<TA;Ljava/lang/Object;>;)Lscala/Function1<TA;Lscala/runtime/BoxedUnit;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.compose$mcVD$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.compose$mcVD$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -3839,7 +3839,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<TA;Ljava/lang/Object;>;)Lscala/Function1<TA;Ljava/lang/Object;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.compose$mcZF$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.compose$mcZF$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -3853,7 +3853,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<TA;Ljava/lang/Object;>;)Lscala/Function1<TA;Ljava/lang/Object;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.compose$mcDF$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.compose$mcDF$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -3867,7 +3867,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<TA;Ljava/lang/Object;>;)Lscala/Function1<TA;Ljava/lang/Object;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.compose$mcFF$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.compose$mcFF$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -3881,7 +3881,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<TA;Ljava/lang/Object;>;)Lscala/Function1<TA;Ljava/lang/Object;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.compose$mcIF$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.compose$mcIF$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -3895,7 +3895,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<TA;Ljava/lang/Object;>;)Lscala/Function1<TA;Ljava/lang/Object;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.compose$mcJF$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.compose$mcJF$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -3909,7 +3909,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<TA;Ljava/lang/Object;>;)Lscala/Function1<TA;Lscala/runtime/BoxedUnit;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.compose$mcVF$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.compose$mcVF$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -3923,7 +3923,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<TA;Ljava/lang/Object;>;)Lscala/Function1<TA;Ljava/lang/Object;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.compose$mcZI$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.compose$mcZI$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -3937,7 +3937,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<TA;Ljava/lang/Object;>;)Lscala/Function1<TA;Ljava/lang/Object;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.compose$mcDI$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.compose$mcDI$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -3951,7 +3951,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<TA;Ljava/lang/Object;>;)Lscala/Function1<TA;Ljava/lang/Object;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.compose$mcFI$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.compose$mcFI$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -3965,7 +3965,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<TA;Ljava/lang/Object;>;)Lscala/Function1<TA;Ljava/lang/Object;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.compose$mcII$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.compose$mcII$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -3979,7 +3979,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<TA;Ljava/lang/Object;>;)Lscala/Function1<TA;Ljava/lang/Object;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.compose$mcJI$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.compose$mcJI$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -3993,7 +3993,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<TA;Ljava/lang/Object;>;)Lscala/Function1<TA;Lscala/runtime/BoxedUnit;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.compose$mcVI$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.compose$mcVI$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -4007,7 +4007,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<TA;Ljava/lang/Object;>;)Lscala/Function1<TA;Ljava/lang/Object;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.compose$mcZJ$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.compose$mcZJ$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -4021,7 +4021,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<TA;Ljava/lang/Object;>;)Lscala/Function1<TA;Ljava/lang/Object;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.compose$mcDJ$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.compose$mcDJ$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -4035,7 +4035,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<TA;Ljava/lang/Object;>;)Lscala/Function1<TA;Ljava/lang/Object;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.compose$mcFJ$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.compose$mcFJ$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -4049,7 +4049,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<TA;Ljava/lang/Object;>;)Lscala/Function1<TA;Ljava/lang/Object;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.compose$mcIJ$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.compose$mcIJ$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -4063,7 +4063,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<TA;Ljava/lang/Object;>;)Lscala/Function1<TA;Ljava/lang/Object;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.compose$mcJJ$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.compose$mcJJ$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -4077,7 +4077,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<TA;Ljava/lang/Object;>;)Lscala/Function1<TA;Lscala/runtime/BoxedUnit;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.compose$mcVJ$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.compose$mcVJ$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -4091,7 +4091,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<TTo;TA;>;)Lscala/Function1<TFrom;TA;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.andThen(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.andThen(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -4105,7 +4105,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<Ljava/lang/Object;TA;>;)Lscala/Function1<Ljava/lang/Object;TA;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.andThen$mcZD$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.andThen$mcZD$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -4119,7 +4119,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<Ljava/lang/Object;TA;>;)Lscala/Function1<Ljava/lang/Object;TA;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.andThen$mcDD$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.andThen$mcDD$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -4133,7 +4133,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<Ljava/lang/Object;TA;>;)Lscala/Function1<Ljava/lang/Object;TA;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.andThen$mcFD$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.andThen$mcFD$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -4147,7 +4147,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<Ljava/lang/Object;TA;>;)Lscala/Function1<Ljava/lang/Object;TA;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.andThen$mcID$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.andThen$mcID$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -4161,7 +4161,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<Ljava/lang/Object;TA;>;)Lscala/Function1<Ljava/lang/Object;TA;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.andThen$mcJD$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.andThen$mcJD$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -4175,7 +4175,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<Lscala/runtime/BoxedUnit;TA;>;)Lscala/Function1<Ljava/lang/Object;TA;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.andThen$mcVD$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.andThen$mcVD$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -4189,7 +4189,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<Ljava/lang/Object;TA;>;)Lscala/Function1<Ljava/lang/Object;TA;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.andThen$mcZF$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.andThen$mcZF$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -4203,7 +4203,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<Ljava/lang/Object;TA;>;)Lscala/Function1<Ljava/lang/Object;TA;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.andThen$mcDF$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.andThen$mcDF$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -4217,7 +4217,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<Ljava/lang/Object;TA;>;)Lscala/Function1<Ljava/lang/Object;TA;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.andThen$mcFF$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.andThen$mcFF$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -4231,7 +4231,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<Ljava/lang/Object;TA;>;)Lscala/Function1<Ljava/lang/Object;TA;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.andThen$mcIF$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.andThen$mcIF$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -4245,7 +4245,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<Ljava/lang/Object;TA;>;)Lscala/Function1<Ljava/lang/Object;TA;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.andThen$mcJF$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.andThen$mcJF$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -4259,7 +4259,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<Lscala/runtime/BoxedUnit;TA;>;)Lscala/Function1<Ljava/lang/Object;TA;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.andThen$mcVF$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.andThen$mcVF$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -4273,7 +4273,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<Ljava/lang/Object;TA;>;)Lscala/Function1<Ljava/lang/Object;TA;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.andThen$mcZI$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.andThen$mcZI$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -4287,7 +4287,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<Ljava/lang/Object;TA;>;)Lscala/Function1<Ljava/lang/Object;TA;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.andThen$mcDI$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.andThen$mcDI$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -4301,7 +4301,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<Ljava/lang/Object;TA;>;)Lscala/Function1<Ljava/lang/Object;TA;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.andThen$mcFI$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.andThen$mcFI$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -4315,7 +4315,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<Ljava/lang/Object;TA;>;)Lscala/Function1<Ljava/lang/Object;TA;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.andThen$mcII$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.andThen$mcII$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -4329,7 +4329,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<Ljava/lang/Object;TA;>;)Lscala/Function1<Ljava/lang/Object;TA;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.andThen$mcJI$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.andThen$mcJI$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -4343,7 +4343,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<Lscala/runtime/BoxedUnit;TA;>;)Lscala/Function1<Ljava/lang/Object;TA;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.andThen$mcVI$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.andThen$mcVI$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -4357,7 +4357,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<Ljava/lang/Object;TA;>;)Lscala/Function1<Ljava/lang/Object;TA;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.andThen$mcZJ$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.andThen$mcZJ$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -4371,7 +4371,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<Ljava/lang/Object;TA;>;)Lscala/Function1<Ljava/lang/Object;TA;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.andThen$mcDJ$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.andThen$mcDJ$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -4385,7 +4385,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<Ljava/lang/Object;TA;>;)Lscala/Function1<Ljava/lang/Object;TA;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.andThen$mcFJ$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.andThen$mcFJ$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -4399,7 +4399,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<Ljava/lang/Object;TA;>;)Lscala/Function1<Ljava/lang/Object;TA;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.andThen$mcIJ$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.andThen$mcIJ$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -4413,7 +4413,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<Ljava/lang/Object;TA;>;)Lscala/Function1<Ljava/lang/Object;TA;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.andThen$mcJJ$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.andThen$mcJJ$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -4427,7 +4427,7 @@ record (|scala.Predef$$less$colon$less|)
     @GenericSignature "<A:Ljava/lang/Object;>(Lscala/Function1<Lscala/runtime/BoxedUnit;TA;>;)Lscala/Function1<Ljava/lang/Object;TA;>;"
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.andThen$mcVJ$sp(Lscala/Function1;)Lscala/Function1;" 
+    @Signature "scala.Predef$$less$colon$less.andThen$mcVJ$sp(Lscala.Function1;)Lscala.Function1;" 
   {
     local jmp;
     s0;
@@ -4440,7 +4440,7 @@ record (|scala.Predef$$less$colon$less|)
     @MaxStack 1
     @Owner (|scala.Predef$$less$colon$less|)
     @Access (PUBLIC)
-    @Signature "scala.Predef$$less$colon$less.toString()Ljava/lang/String;" 
+    @Signature "scala.Predef$$less$colon$less.toString()Ljava.lang.String;" 
   {
     local jmp;
     s0;
@@ -4489,7 +4489,7 @@ record (|scala.collection.immutable.Map$$anonfun$withDefaultValue$1|)
     @GenericSignature "(TA;)TB1;"
     @Owner (|scala.collection.immutable.Map$$anonfun$withDefaultValue$1|)
     @Access (PUBLIC,FINAL)
-    @Signature "scala.collection.immutable.Map$$anonfun$withDefaultValue$1.apply(Ljava/lang/Object;)Ljava/lang/Object;" 
+    @Signature "scala.collection.immutable.Map$$anonfun$withDefaultValue$1.apply(Ljava.lang.Object;)Ljava.lang.Object;" 
   {
     local jmp;
     s0;
@@ -4503,7 +4503,7 @@ record (|scala.collection.immutable.Map$$anonfun$withDefaultValue$1|)
     @GenericSignature "(Lscala/collection/immutable/Map<TA;TB;>;)V"
     @Owner (|scala.collection.immutable.Map$$anonfun$withDefaultValue$1|)
     @Access (PUBLIC,CONSTRUCTOR)
-    @Signature "scala.collection.immutable.Map$$anonfun$withDefaultValue$1.<init>(Lscala/collection/immutable/Map;Ljava/lang/Object;)V" 
+    @Signature "scala.collection.immutable.Map$$anonfun$withDefaultValue$1.<init>(Lscala.collection.immutable.Map;Ljava.lang.Object;)V" 
   {
     local jmp;
     s0;
