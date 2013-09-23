@@ -9,5 +9,6 @@ class JVMTest extends JVMTestFramework {
 	    "java.util.Set", "scala.Predef", "java.lang.String", "java.lang.System", "java.util.ArrayList")
 	
 	 def forceGenerate = false
-	 classNames foreach { className => Translating className className }
+	 //classNames foreach { className => Translating className className }
+	 Translating className "org.sireum.test.jvm.samples.SimpleScala"
 }

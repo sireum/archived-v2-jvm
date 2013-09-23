@@ -1,0 +1,7 @@
+/bin
+/target
+/.scala_dependencies
+/.cache
+/src/test
+.settings
+.worksheet
