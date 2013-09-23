@@ -32,9 +32,9 @@ class BytecodeAnnotationVisitor(api: Int, av: AnnotationVisitor, parentName: Str
   }
   override def visitAnnotation(name: String, desc: String) = {
     if (name != null)
-      new BytecodeAnnotationVisitor(name + " (@"+Util.getPilarClassName(desc), values)
+      new BytecodeAnnotationVisitor(name + "= @"+Util.getPilarClassName(desc), values)
     else 
-      new BytecodeAnnotationVisitor("(@"+Util.getPilarClassName(desc), values)
+      new BytecodeAnnotationVisitor("@"+Util.getPilarClassName(desc), values)
   }
   override def visitArray(name: String) = {
     new BytecodeAnnotationVisitor(name+"= (", values)
@@ -50,7 +50,7 @@ class BytecodeAnnotationVisitor(api: Int, av: AnnotationVisitor, parentName: Str
     } else if (baseModel!=null) {
       baseModel.annotations.put(Util.getPilarClassName(parentName), "")
     } else if (oldValues!=null && values.size!=0) {
-      oldValues += (Util.getPilarClassName(parentName) + "(" + values.mkString(", ")+"))")
+      oldValues += (parentName + "(" + values.mkString(", ")+"))")
     } else {
       oldValues += (parentName)
     }

@@ -83,26 +83,26 @@ object Util {
   def getOperator(opcode: Int) = opMap.getOrElse(opcode, "#")
   def getIntInsnType(operand: Int) = getPilarClassName(typeMap.getOrElse(operand, "(|int|)"))
 
-  def getPilarName(name: String) = "[|" + name.replace("/", ".") + "|]"
+  def getPilarName(name: String) = if (name.length <= 0) "" else "[|" + name.replace("/", ".") + "|]"
 
   def getPilarClassName(name: String) = {
     if (name == null) "(|unk|)"
     else "(|" + name.replace("/", ".") + "|)"
   }
 
-  def getPilarMethod(name: String) = "{|" + name.replace("/", ".") + "|}"
+  def getPilarMethod(name: String) = if (name.length <= 0) "" else "{|" + name.replace("/", ".") + "|}"
 
-  def getPilarStaticField(name: String) = "+|" + name.replace("/", ".") + "|+"
+  def getPilarStaticField(name: String) = if (name.length <= 0) "" else "+|" + name.replace("/", ".") + "|+"
 
-  def getPilarField(name: String) = "<|" + name.replace("/", ".") + "|>"
+  def getPilarField(name: String) = if (name.length <= 0) "" else "<|" + name.replace("/", ".") + "|>"
   
-  def getTextString(s: String) = "\"" + StringEscapeUtils.escapeJava(s) + "\""
+  def getTextString(s: String) =  "\"" + StringEscapeUtils.escapeJava(s) + "\""
 
   def getFunctionCall(className: String, functionName: String, desc: String, functionType: String, args: List[String]) = {
     val functionCall = new StringBuilder
     functionCall ++= getPilarMethod(getFunctionSignature(className.replace("/","."), functionName, desc))
     functionCall ++= "(" + args.mkString(",") + ")"
-    functionCall ++= " @signature " + "\""+ getFunctionSignature(className.replace("/","."), functionName, desc) +"\""
+    functionCall ++= " @signature " + "\""+ getFunctionSignature(className.replace("/","."), functionName, desc.replace("/",".")) +"\""
     functionCall ++= " @classDescriptor " + getPilarName(className)
     functionCall ++= " @type " + functionType
     functionCall.toString

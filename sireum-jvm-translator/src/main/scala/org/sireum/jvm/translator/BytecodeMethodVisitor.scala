@@ -14,36 +14,34 @@ import scala.collection.immutable.Stack
 
 class BytecodeMethodVisitor(api: Int, mv: MethodVisitor, procedure: Procedure) extends MethodVisitor(api, mv) {
   def this(proc: Procedure) = this(Opcodes.ASM4, null, proc)
-  
+
+  val stg = new STGroupFile("pilar.stg")
   val exceptionMap = mutable.Set[Label]()
   val stackMap = mutable.Map[Label, Stack[Variable]]()
   val labelMap = mutable.Map[Label, Int]()
-  val a2z = { 
-  	for(x<-('A' to 'Z'); y<-('a' to 'z')) yield (s"$x$y") 
+  val a2z = {
+    for (x <- ('A' to 'Z'); y <- ('a' to 'z')) yield (s"$x$y")
   }
-  val stg = new STGroupFile("pilar.stg")
 
   var varStack = Stack[Variable]()
   var localVariableCount: Int = -1
   var labelStr: String = "L00000"
   var currentLine: Int = 0
-  var currentLocal: Int = 0
   var currentStack: Int = 0
   var maxStack: Int = -1
 
-  
   def getTopAndUpdate() = {
     val result = varStack.top
     varStack = varStack.pop
     result
   }
   def popValue() = getTopAndUpdate.value
-  def pushValue(va: Variable) {varStack = varStack.push(va)}
-  def changeLastVar() { 
+  def pushValue(va: Variable) { varStack = varStack.push(va) }
+  def changeLastVar() {
     if (!varStack.isEmpty && !varStack.top.value.equals("jmp")) {
-	    val l = getTopAndUpdate
-	    addCodeLine("jmp:= "+l.value)
-	    pushValue(Variable(l.typ, "jmp"))
+      val l = getTopAndUpdate
+      addCodeLine("jmp:= " + l.value)
+      pushValue(Variable(l.typ, "jmp"))
     }
   }
   def getStackVar() = {
@@ -91,8 +89,7 @@ class BytecodeMethodVisitor(api: Int, mv: MethodVisitor, procedure: Procedure) e
     bav
   }
 
-  override def visitCode() = {
-    //println(procedure.name + procedure.desc)
+  override def visitCode() {
     procedure.locals.add("local jmp")
   }
 
@@ -106,6 +103,7 @@ class BytecodeMethodVisitor(api: Int, mv: MethodVisitor, procedure: Procedure) e
         (procedure.locals.add(getVarName(i))))
     }
     assert(varStack.isEmpty, varStack)
+
     varStack = null
     stackMap.clear
     exceptionMap.clear
@@ -158,8 +156,8 @@ class BytecodeMethodVisitor(api: Int, mv: MethodVisitor, procedure: Procedure) e
 
   override def visitInsn(opcode: Int) = opcode match {
     case Opcodes.NOP => { /*Nope*/ }
-    case Opcodes.ACONST_NULL => { pushValue(Variable("java.lang.Object", "null")) }
-    case Opcodes.ICONST_M1 | Opcodes.ICONST_0 | Opcodes.ICONST_1 | Opcodes.ICONST_2 |
+    case Opcodes.ACONST_NULL |
+      Opcodes.ICONST_M1 | Opcodes.ICONST_0 | Opcodes.ICONST_1 | Opcodes.ICONST_2 |
       Opcodes.ICONST_3 | Opcodes.ICONST_4 | Opcodes.ICONST_5 |
       Opcodes.LCONST_0 | Opcodes.LCONST_1 | Opcodes.FCONST_0 |
       Opcodes.FCONST_1 | Opcodes.FCONST_2 | Opcodes.DCONST_0 |
@@ -257,8 +255,7 @@ class BytecodeMethodVisitor(api: Int, mv: MethodVisitor, procedure: Procedure) e
       Opcodes.IXOR | Opcodes.LXOR => {
       val value1 = popValue
       val value2 = popValue
-      val stackVar = getStackVar 
-      
+
       pushValue(new Variable(Util.getOpcodeType(opcode), value2 + Util.getOperator(opcode) + value1))
     }
     case Opcodes.INEG | Opcodes.LNEG | Opcodes.FNEG | Opcodes.DNEG => {
@@ -349,23 +346,22 @@ class BytecodeMethodVisitor(api: Int, mv: MethodVisitor, procedure: Procedure) e
     case Opcodes.IFNULL | Opcodes.IFNONNULL => {
       val value1 = popValue
 
-      addCodeLine("if " + value1 + " " + Util.getOperator(opcode) + " null then goto " + getLabelId(label) + "Aa")
       changeLastVar()
+      addCodeLine("if " + value1 + " " + Util.getOperator(opcode) + " null then goto " + getLabelId(label) + "Aa")
       stackMap += (label -> varStack)
     }
     case _ => { /*Oh God! how can this happen?*/ }
   }
 
   override def visitLabel(label: Label) = {
-   if (stackMap.contains(label)) {
+    if (stackMap.contains(label)) {
       changeLastVar()
       varStack = stackMap.getOrElse(label, Stack())
     }
+    if (exceptionMap.contains(label)) pushValue(Variable("java.lang.Object", "Exception"))
     labelStr = getLabelId(label)
     currentLine = 0
     currentStack = 0
-
-    if (exceptionMap.contains(label)) pushValue(Variable("java.lang.Object", "Exception"))
   }
 
   override def visitLdcInsn(cst: Object) = {
@@ -380,13 +376,7 @@ class BytecodeMethodVisitor(api: Int, mv: MethodVisitor, procedure: Procedure) e
     }
   }
 
-  override def visitLineNumber(line: Int, start: Label) = {
-    // Do we need this?
-  }
-
   override def visitLocalVariable(name: String, desc: String, signature: String, start: Label, end: Label, index: Int) = {
-    currentLocal += 1
-
     val stLocal = stg.getInstanceOf("localdef")
     stLocal.add("i", index)
     stLocal.add("id", name)
@@ -394,7 +384,7 @@ class BytecodeMethodVisitor(api: Int, mv: MethodVisitor, procedure: Procedure) e
     stLocal.add("end", getLabelId(end) + "Aa")
     stLocal.add("type", Util.getTypeString(desc))
 
-    if (index >= procedure.parameters.size())  procedure.locals.add(Util.getTypeString(desc) + " [|" + name + "|]") 
+    if (index >= procedure.parameters.size()) procedure.locals.add(Util.getTypeString(desc) + " [|" + name + "|]")
 
     localVariableCount = 0
   }

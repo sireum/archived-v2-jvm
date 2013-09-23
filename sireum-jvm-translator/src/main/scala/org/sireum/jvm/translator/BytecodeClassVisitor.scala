@@ -29,38 +29,24 @@ class BytecodeClassVisitor(api: Int, cv: ClassVisitor, methodLocalMap: Map[Strin
 
   override def visit(version: Int, access: Int, name: String, signature: String, supername: String, interfaces: Array[String]) = {
     record = new Record(access, name, supername, signature, interfaces, methodLocalMap)
-    if (signature != null) {
-      println(signature)
-      val stClassSigDef = stg.getInstanceOf("classsigdef")
-      stClassSigDef.add("text", signature)
-
-      val sr: SignatureReader = new SignatureReader(signature)
-      val tsv = new BytecodeSignatureVisitor
-      sr.acceptType(tsv)
-
-      addAnnotations("Signature", stClassSigDef.render)
-    }
+    if (signature!=null) addAnnotations("GenericSignature", Util.getTextString(signature))
     stRecord.add("record", record)
   }
 
   override def visitSource(source: String, debug: String) = {
-    if (source != null) addAnnotations("source", source, true)
-    if (debug != null) addAnnotations("debug", debug, true)
+    if (source != null) addAnnotations("Source", source, true)
+    if (debug != null) addAnnotations("Debug", debug, true)
   }
 
-  override def visitAnnotation(desc: String, visible: Boolean) = {
-    val bav = new BytecodeAnnotationVisitor(desc, record)
-    //addAnnotations(Util.getTypeString(desc), "")
-    //super.visitAnnotation(desc, visible)
-    bav
-  }
+  override def visitAnnotation(desc: String, visible: Boolean) = 
+    new BytecodeAnnotationVisitor(desc, record)
 
   override def visitInnerClass(name: String, outername: String, innername: String, access: Int) = {
     val stInnerClass = stg.getInstanceOf("innerclassdef")
     stInnerClass.add("name", Util.getPilarClassName(name))
-    if (outername!=null) stInnerClass.add("outerName", Util.getPilarClassName(outername))
+    stInnerClass.add("outerName", Util.getPilarClassName(outername))
     stInnerClass.add("innerName", innername)
-    if (access != 0) stInnerClass.add("access", Util.getAccessFlag(access))
+    stInnerClass.add("access", Util.getAccessFlag(access))
 
     addAnnotations("InnerClass", stInnerClass.render)
     record.innerClasses.add(name)
@@ -81,16 +67,7 @@ class BytecodeClassVisitor(api: Int, cv: ClassVisitor, methodLocalMap: Map[Strin
     val field = new Field(access, record.getClassName + "." + name, desc, signature, value)
     val bfv = new BytecodeFieldVisitor(field)
 
-    if (signature != null) {
-      val stType = stg.getInstanceOf("typesigdef")
-      stType.add("text", signature)
-
-      val sr: SignatureReader = new SignatureReader(signature)
-      val tsv = new BytecodeSignatureVisitor
-      sr.acceptType(tsv)
-
-      field.annotations.put("Signature", stType.render)
-    }
+    if (signature!=null) field.annotations.put("GenericSignature", Util.getTextString(signature))
     record.addFields(field)
     bfv
   }
@@ -99,16 +76,7 @@ class BytecodeClassVisitor(api: Int, cv: ClassVisitor, methodLocalMap: Map[Strin
     val procedure = new Procedure(access, name, desc, signature, exceptions, record)
     val bmv = new BytecodeMethodVisitor(procedure)
 
-    if (signature != null) {
-      val stMethod = stg.getInstanceOf("methodsigdef")
-      stMethod.add("text", signature)
-
-      val sr: SignatureReader = new SignatureReader(signature)
-      val tsv = new BytecodeSignatureVisitor
-      sr.acceptType(tsv)
-
-      procedure.annotations.put("Signature", stMethod.render)
-    }
+    if (signature!=null) procedure.annotations.put("GenericSignature", Util.getTextString(signature))
     record.procedures.add(procedure)
     bmv
   }

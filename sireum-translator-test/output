@@ -1,0 +1,1979 @@
+record (|java.util.ArrayList|)
+    @Source "ArrayList.java"
+    @GenericSignature "<E:Ljava/lang/Object;>Ljava/util/AbstractList<TE;>;Ljava/util/List<TE;>;Ljava/util/RandomAccess;Ljava/lang/Cloneable;Ljava/io/Serializable;"
+    @Type class
+    @AccessFlag (PUBLIC)
+    @InnerClass (
+      @Name (|java.util.ArrayList$Itr|), 
+      @OuterName (|java.util.ArrayList|), 
+      @InnerName Itr, 
+      @AccessFlag (PRIVATE)
+     ) 
+  extends 
+    (|java.util.AbstractList|) 
+{
+  (|long|) <|ArrayList.serialVersionUID|> @AccessFlag (PRIVATE,STATIC,FINAL);
+  (|int|) <|ArrayList.DEFAULT_CAPACITY|> @AccessFlag (PRIVATE,STATIC,FINAL);
+  (|java.lang.Object[]|) <|ArrayList.EMPTY_ELEMENTDATA|> @AccessFlag (PRIVATE,STATIC,FINAL);
+  (|java.lang.Object[]|) <|ArrayList.elementData|> @AccessFlag (PRIVATE,TRANSIENT,VARARGS);
+  (|int|) <|ArrayList.size|> @AccessFlag (PRIVATE);
+  (|int|) <|ArrayList.MAX_ARRAY_SIZE|> @AccessFlag (PRIVATE,STATIC,FINAL);
+}
+
+  procedure (|void|) {|java.util.ArrayList.<init>(I)V|} ((|java.util.ArrayList|) [|v0|], (|int|) [|v1|]) 
+    @MaxLocals 2
+    @MaxStack 4
+    @Owner (|java.util.ArrayList|)
+    @Access (PUBLIC,CONSTRUCTOR)
+    @Signature "java.util.ArrayList.<init>(I)V" 
+  {
+    local jmp;
+    s0;
+    s1;
+    s2;
+    s3;
+    s4;
+    s5;
+    s6;
+
+    #L00000Aa. call s0:= {|java.util.AbstractList.<init>()V|}([|v0|]) @signature "java.util.AbstractList.<init>()V" @classDescriptor [|java.util.AbstractList|] @type special;
+    #L00001Aa. if [|v1|] >= 0 then goto L00002Aa;
+    #L00003Aa. s0:= new (|java.lang.IllegalArgumentException|);
+    #L00003Ab. s1:= new (|java.lang.StringBuilder|);
+    #L00003Ac. call s2:= {|java.lang.StringBuilder.<init>()V|}(s1) @signature "java.lang.StringBuilder.<init>()V" @classDescriptor [|java.lang.StringBuilder|] @type special;
+    #L00003Ad. call s3:= {|java.lang.StringBuilder.append(Ljava.lang.String;)Ljava.lang.StringBuilder;|}(s1,"Illegal Capacity: ") @signature "java.lang.StringBuilder.append(Ljava/lang/String;)Ljava/lang/StringBuilder;" @classDescriptor [|java.lang.StringBuilder|] @type virtual;
+    #L00003Ae. call s4:= {|java.lang.StringBuilder.append(I)Ljava.lang.StringBuilder;|}(s3,[|v1|]) @signature "java.lang.StringBuilder.append(I)Ljava/lang/StringBuilder;" @classDescriptor [|java.lang.StringBuilder|] @type virtual;
+    #L00003Af. call s5:= {|java.lang.StringBuilder.toString()Ljava.lang.String;|}(s4) @signature "java.lang.StringBuilder.toString()Ljava/lang/String;" @classDescriptor [|java.lang.StringBuilder|] @type virtual;
+    #L00003Ag. call s6:= {|java.lang.IllegalArgumentException.<init>(Ljava.lang.String;)V|}(s0,s5) @signature "java.lang.IllegalArgumentException.<init>(Ljava/lang/String;)V" @classDescriptor [|java.lang.IllegalArgumentException|] @type special;
+    #L00003Ah. throw s0;
+    #L00002Aa. <@Frame (@Full, 2, `[(|java.lang.Object|), (|int|)], 0, `[(|top|), (|top|), (|top|), (|top|)])>
+    #L00002Ab. s0:= new (|java.lang.Object|)[[|v1|]];
+    #L00002Ac. [|v0|].<|java.util.ArrayList.elementData|>:= s0;
+    #L00004Aa. return @void;
+  }
+  procedure (|void|) {|java.util.ArrayList.<init>()V|} ((|java.util.ArrayList|) [|v0|]) 
+    @MaxLocals 1
+    @MaxStack 2
+    @Owner (|java.util.ArrayList|)
+    @Access (PUBLIC,CONSTRUCTOR)
+    @Signature "java.util.ArrayList.<init>()V" 
+  {
+    local jmp;
+    s0;
+
+    #L00000Aa. call s0:= {|java.util.AbstractList.<init>()V|}([|v0|]) @signature "java.util.AbstractList.<init>()V" @classDescriptor [|java.util.AbstractList|] @type special;
+    #L00001Aa. s0:= +|java.util.ArrayList.EMPTY_ELEMENTDATA|+;
+    #L00001Ab. [|v0|].<|java.util.ArrayList.elementData|>:= s0;
+    #L00002Aa. return @void;
+  }
+  procedure (|void|) {|java.util.ArrayList.<init>(Ljava.util.Collection;)V|} ((|java.util.ArrayList|) [|v0|], (|java.util.Collection|) [|v1|]) 
+    @MaxLocals 2
+    @MaxStack 4
+    @GenericSignature "(Ljava/util/Collection<+TE;>;)V"
+    @Owner (|java.util.ArrayList|)
+    @Access (PUBLIC,CONSTRUCTOR)
+    @Signature "java.util.ArrayList.<init>(Ljava/util/Collection;)V" 
+  {
+    local jmp;
+    s0;
+    s1;
+    s2;
+
+    #L00000Aa. call s0:= {|java.util.AbstractList.<init>()V|}([|v0|]) @signature "java.util.AbstractList.<init>()V" @classDescriptor [|java.util.AbstractList|] @type special;
+    #L00001Aa. call s0:= {|java.util.Collection.toArray()[Ljava.lang.Object;|}([|v1|]) @signature "java.util.Collection.toArray()[Ljava/lang/Object;" @classDescriptor [|java.util.Collection|] @type interface;
+    #L00001Ab. [|v0|].<|java.util.ArrayList.elementData|>:= s0;
+    #L00002Aa. s0:= [|v0|].<|java.util.ArrayList.elementData|>;
+    #L00002Ab. [|v0|].<|java.util.ArrayList.size|>:= s0.length;
+    #L00003Aa. s0:= [|v0|].<|java.util.ArrayList.elementData|>;
+    #L00003Ab. call s1:= {|java.lang.Object.getClass()Ljava.lang.Class;|}(s0) @signature "java.lang.Object.getClass()Ljava/lang/Class;" @classDescriptor [|java.lang.Object|] @type virtual;
+    #L00003Ac. if s1 == "[Ljava/lang/Object;" then goto L00004Aa;
+    #L00005Aa. s0:= [|v0|].<|java.util.ArrayList.elementData|>;
+    #L00005Ab. s1:= [|v0|].<|java.util.ArrayList.size|>;
+    #L00005Ac. call s2:= {|java.util.Arrays.copyOf([Ljava.lang.Object;ILjava.lang.Class;)[Ljava.lang.Object;|}(s0,s1,"[Ljava/lang/Object;") @signature "java.util.Arrays.copyOf([Ljava/lang/Object;ILjava/lang/Class;)[Ljava/lang/Object;" @classDescriptor [|java.util.Arrays|] @type direct;
+    #L00005Ad. [|v0|].<|java.util.ArrayList.elementData|>:= s2;
+    #L00004Aa. <@Frame (@Full, 2, `[(|java.lang.Object|), (|java.lang.Object|)], 0, `[(|top|), (|top|), (|top|), (|top|)])>
+    #L00004Ab. return @void;
+  }
+  procedure (|void|) {|java.util.ArrayList.trimToSize()V|} ((|java.util.ArrayList|) [|v0|]) 
+    @MaxLocals 1
+    @MaxStack 3
+    @Owner (|java.util.ArrayList|)
+    @Access (PUBLIC)
+    @Signature "java.util.ArrayList.trimToSize()V" 
+  {
+    local jmp;
+    s0;
+    s1;
+    s2;
+
+    #L00000Aa. s0:= [|v0|].<|java.util.ArrayList.modCount|>;
+    #L00000Ab. [|v0|].<|java.util.ArrayList.modCount|>:= s0+1;
+    #L00001Aa. s0:= [|v0|].<|java.util.ArrayList.size|>;
+    #L00001Ab. s1:= [|v0|].<|java.util.ArrayList.elementData|>;
+    #L00001Ac. if s0 >= s1.length then goto L00002Aa;
+    #L00003Aa. s0:= [|v0|].<|java.util.ArrayList.elementData|>;
+    #L00003Ab. s1:= [|v0|].<|java.util.ArrayList.size|>;
+    #L00003Ac. call s2:= {|java.util.Arrays.copyOf([Ljava.lang.Object;I)[Ljava.lang.Object;|}(s0,s1) @signature "java.util.Arrays.copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;" @classDescriptor [|java.util.Arrays|] @type direct;
+    #L00003Ad. [|v0|].<|java.util.ArrayList.elementData|>:= s2;
+    #L00002Aa. <@Frame (@Same, 0, `[(|top|)], 0, `[(|top|), (|top|), (|top|)])>
+    #L00002Ab. return @void;
+  }
+  procedure (|void|) {|java.util.ArrayList.ensureCapacity(I)V|} ((|java.util.ArrayList|) [|v0|], (|int|) [|v1|]) 
+    @MaxLocals 3
+    @MaxStack 2
+    @Owner (|java.util.ArrayList|)
+    @Access (PUBLIC)
+    @Signature "java.util.ArrayList.ensureCapacity(I)V" 
+  {
+    local jmp;
+    s0;
+    s1;
+    [|v2|];
+
+    #L00000Aa. s0:= [|v0|].<|java.util.ArrayList.elementData|>;
+    #L00000Ab. s1:= +|java.util.ArrayList.EMPTY_ELEMENTDATA|+;
+    #L00000Ac. if s0 == s1 then goto L00001Aa;
+    #L00000Ad. jmp:= 0;
+    #L00000Ae. goto L00002Aa;
+    #L00001Aa. <@Frame (@Same, 0, `[(|top|), (|top|), (|top|)], 0, `[(|top|), (|top|)])>
+    #L00001Ab. jmp:= 10;
+    #L00002Aa. <@Frame (@Same1, 0, `[(|top|), (|top|), (|top|)], 1, `[(|int|), (|top|)])>
+    #L00002Ab. [|v2|]:= jmp @type (|int|);
+    #L00003Aa. if [|v1|] <= [|v2|] then goto L00004Aa;
+    #L00005Aa. call s0:= {|java.util.ArrayList.ensureExplicitCapacity(I)V|}([|v0|],[|v1|]) @signature "java.util.ArrayList.ensureExplicitCapacity(I)V" @classDescriptor [|java.util.ArrayList|] @type special;
+    #L00004Aa. <@Frame (@Append, 1, `[(|int|), (|top|), (|top|)], 0, `[(|int|), (|top|)])>
+    #L00004Ab. return @void;
+  }
+  procedure (|void|) {|java.util.ArrayList.ensureCapacityInternal(I)V|} ((|java.util.ArrayList|) [|v0|], (|int|) [|v1|]) 
+    @MaxLocals 2
+    @MaxStack 2
+    @Owner (|java.util.ArrayList|)
+    @Access (PRIVATE)
+    @Signature "java.util.ArrayList.ensureCapacityInternal(I)V" 
+  {
+    local jmp;
+    s0;
+    s1;
+
+    #L00000Aa. s0:= [|v0|].<|java.util.ArrayList.elementData|>;
+    #L00000Ab. s1:= +|java.util.ArrayList.EMPTY_ELEMENTDATA|+;
+    #L00000Ac. if s0 != s1 then goto L00001Aa;
+    #L00002Aa. call s0:= {|java.lang.Math.max(II)I|}(10,[|v1|]) @signature "java.lang.Math.max(II)I" @classDescriptor [|java.lang.Math|] @type direct;
+    #L00002Ab. [|v1|]:= s0 @type (|java.lang.Object|);
+    #L00001Aa. <@Frame (@Same, 0, `[(|top|), (|top|)], 0, `[(|top|), (|top|)])>
+    #L00001Ab. call s0:= {|java.util.ArrayList.ensureExplicitCapacity(I)V|}([|v0|],[|v1|]) @signature "java.util.ArrayList.ensureExplicitCapacity(I)V" @classDescriptor [|java.util.ArrayList|] @type special;
+    #L00003Aa. return @void;
+  }
+  procedure (|void|) {|java.util.ArrayList.ensureExplicitCapacity(I)V|} ((|java.util.ArrayList|) [|v0|], (|int|) [|v1|]) 
+    @MaxLocals 2
+    @MaxStack 3
+    @Owner (|java.util.ArrayList|)
+    @Access (PRIVATE)
+    @Signature "java.util.ArrayList.ensureExplicitCapacity(I)V" 
+  {
+    local jmp;
+    s0;
+
+    #L00000Aa. s0:= [|v0|].<|java.util.ArrayList.modCount|>;
+    #L00000Ab. [|v0|].<|java.util.ArrayList.modCount|>:= s0+1;
+    #L00001Aa. s0:= [|v0|].<|java.util.ArrayList.elementData|>;
+    #L00001Ab. if [|v1|]-s0.length <= 0 then goto L00002Aa;
+    #L00003Aa. call s0:= {|java.util.ArrayList.grow(I)V|}([|v0|],[|v1|]) @signature "java.util.ArrayList.grow(I)V" @classDescriptor [|java.util.ArrayList|] @type special;
+    #L00002Aa. <@Frame (@Same, 0, `[(|top|), (|top|)], 0, `[(|top|), (|top|), (|top|)])>
+    #L00002Ab. return @void;
+  }
+  procedure (|void|) {|java.util.ArrayList.grow(I)V|} ((|java.util.ArrayList|) [|v0|], (|int|) [|v1|]) 
+    @MaxLocals 4
+    @MaxStack 3
+    @Owner (|java.util.ArrayList|)
+    @Access (PRIVATE)
+    @Signature "java.util.ArrayList.grow(I)V" 
+  {
+    local jmp;
+    s0;
+    s1;
+    [|v2|];
+    [|v3|];
+
+    #L00000Aa. s0:= [|v0|].<|java.util.ArrayList.elementData|>;
+    #L00000Ab. [|v2|]:= s0.length @type (|int|);
+    #L00001Aa. [|v3|]:= [|v2|]+[|v2|]^>>1 @type (|int|);
+    #L00002Aa. if [|v3|]-[|v1|] >= 0 then goto L00003Aa;
+    #L00004Aa. [|v3|]:= [|v1|] @type int;
+    #L00003Aa. <@Frame (@Append, 2, `[(|int|), (|int|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|)])>
+    #L00003Ab. if [|v3|]-"2147483639" <= 0 then goto L00005Aa;
+    #L00006Aa. call s0:= {|java.util.ArrayList.hugeCapacity(I)I|}([|v1|]) @signature "java.util.ArrayList.hugeCapacity(I)I" @classDescriptor [|java.util.ArrayList|] @type direct;
+    #L00006Ab. [|v3|]:= s0 @type (|java.lang.Object|);
+    #L00005Aa. <@Frame (@Same, 0, `[(|int|), (|int|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|)])>
+    #L00005Ab. s0:= [|v0|].<|java.util.ArrayList.elementData|>;
+    #L00005Ac. call s1:= {|java.util.Arrays.copyOf([Ljava.lang.Object;I)[Ljava.lang.Object;|}(s0,[|v3|]) @signature "java.util.Arrays.copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;" @classDescriptor [|java.util.Arrays|] @type direct;
+    #L00005Ad. [|v0|].<|java.util.ArrayList.elementData|>:= s1;
+    #L00007Aa. return @void;
+  }
+  procedure (|int|) {|java.util.ArrayList.hugeCapacity(I)I|} ((|int|) [|v0|]) 
+    @MaxLocals 1
+    @MaxStack 2
+    @Owner (|java.util.ArrayList|)
+    @Access (PRIVATE,STATIC)
+    @Signature "java.util.ArrayList.hugeCapacity(I)I" 
+  {
+    local jmp;
+    s0;
+    s1;
+
+    #L00000Aa. if [|v0|] >= 0 then goto L00001Aa;
+    #L00002Aa. s0:= new (|java.lang.OutOfMemoryError|);
+    #L00002Ab. call s1:= {|java.lang.OutOfMemoryError.<init>()V|}(s0) @signature "java.lang.OutOfMemoryError.<init>()V" @classDescriptor [|java.lang.OutOfMemoryError|] @type special;
+    #L00002Ac. throw s0;
+    #L00001Aa. <@Frame (@Same, 0, `[(|top|)], 0, `[(|top|), (|top|)])>
+    #L00001Ab. if [|v0|] <= "2147483639" then goto L00003Aa;
+    #L00001Ac. jmp:= "2147483647";
+    #L00001Ad. goto L00004Aa;
+    #L00003Aa. <@Frame (@Same, 0, `[(|top|)], 0, `[(|top|), (|top|)])>
+    #L00003Ab. jmp:= "2147483639";
+    #L00004Aa. <@Frame (@Same1, 0, `[(|top|)], 1, `[(|int|), (|top|)])>
+    #L00004Ab. return jmp;
+  }
+  procedure (|int|) {|java.util.ArrayList.size()I|} ((|java.util.ArrayList|) [|v0|]) 
+    @MaxLocals 1
+    @MaxStack 1
+    @Owner (|java.util.ArrayList|)
+    @Access (PUBLIC)
+    @Signature "java.util.ArrayList.size()I" 
+  {
+    local jmp;
+    s0;
+
+    #L00000Aa. s0:= [|v0|].<|java.util.ArrayList.size|>;
+    #L00000Ab. return s0;
+  }
+  procedure (|boolean|) {|java.util.ArrayList.isEmpty()Z|} ((|java.util.ArrayList|) [|v0|]) 
+    @MaxLocals 1
+    @MaxStack 1
+    @Owner (|java.util.ArrayList|)
+    @Access (PUBLIC)
+    @Signature "java.util.ArrayList.isEmpty()Z" 
+  {
+    local jmp;
+    s0;
+
+    #L00000Aa. s0:= [|v0|].<|java.util.ArrayList.size|>;
+    #L00000Ab. if s0 != 0 then goto L00001Aa;
+    #L00000Ac. jmp:= 1;
+    #L00000Ad. goto L00002Aa;
+    #L00001Aa. <@Frame (@Same, 0, `[(|top|)], 0, `[(|top|)])>
+    #L00001Ab. jmp:= 0;
+    #L00002Aa. <@Frame (@Same1, 0, `[(|top|)], 1, `[(|int|)])>
+    #L00002Ab. return jmp;
+  }
+  procedure (|boolean|) {|java.util.ArrayList.contains(Ljava.lang.Object;)Z|} ((|java.util.ArrayList|) [|v0|], (|java.lang.Object|) [|v1|]) 
+    @MaxLocals 2
+    @MaxStack 2
+    @Owner (|java.util.ArrayList|)
+    @Access (PUBLIC)
+    @Signature "java.util.ArrayList.contains(Ljava/lang/Object;)Z" 
+  {
+    local jmp;
+    s0;
+
+    #L00000Aa. call s0:= {|java.util.ArrayList.indexOf(Ljava.lang.Object;)I|}([|v0|],[|v1|]) @signature "java.util.ArrayList.indexOf(Ljava/lang/Object;)I" @classDescriptor [|java.util.ArrayList|] @type virtual;
+    #L00000Ab. if s0 < 0 then goto L00001Aa;
+    #L00000Ac. jmp:= 1;
+    #L00000Ad. goto L00002Aa;
+    #L00001Aa. <@Frame (@Same, 0, `[(|top|), (|top|)], 0, `[(|top|), (|top|)])>
+    #L00001Ab. jmp:= 0;
+    #L00002Aa. <@Frame (@Same1, 0, `[(|top|), (|top|)], 1, `[(|int|), (|top|)])>
+    #L00002Ab. return jmp;
+  }
+  procedure (|int|) {|java.util.ArrayList.indexOf(Ljava.lang.Object;)I|} ((|java.util.ArrayList|) [|v0|], (|java.lang.Object|) [|v1|]) 
+    @MaxLocals 3
+    @MaxStack 3
+    @Owner (|java.util.ArrayList|)
+    @Access (PUBLIC)
+    @Signature "java.util.ArrayList.indexOf(Ljava/lang/Object;)I" 
+  {
+    local jmp;
+    s0;
+    s1;
+    s2;
+    [|v2|];
+
+    #L00000Aa. if [|v1|] != null then goto L00001Aa;
+    #L00002Aa. [|v2|]:= 0 @type (|int|);
+    #L00003Aa. <@Frame (@Append, 1, `[(|int|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|)])>
+    #L00003Ab. s0:= [|v0|].<|java.util.ArrayList.size|>;
+    #L00003Ac. if [|v2|] >= s0 then goto L00004Aa;
+    #L00005Aa. s0:= [|v0|].<|java.util.ArrayList.elementData|>;
+    #L00005Ab. s1:= s0[[|v2|]];
+    #L00005Ac. if s1 != null then goto L00006Aa;
+    #L00007Aa. return [|v2|];
+    #L00006Aa. <@Frame (@Same, 0, `[(|int|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|)])>
+    #L00006Ab. [|v2|]:= [|v2|] + 1 @type (|int|);
+    #L00006Ac. goto L00003Aa;
+    #L00004Aa. <@Frame (@Chop, 1, `[(|int|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|)])>
+    #L00004Ab. goto L00008Aa;
+    #L00001Aa. <@Frame (@Same, 0, `[(|int|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|)])>
+    #L00001Ab. [|v2|]:= 0 @type (|int|);
+    #L00009Aa. <@Frame (@Append, 1, `[(|int|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|)])>
+    #L00009Ab. s0:= [|v0|].<|java.util.ArrayList.size|>;
+    #L00009Ac. if [|v2|] >= s0 then goto L00008Aa;
+    #L00010Aa. s0:= [|v0|].<|java.util.ArrayList.elementData|>;
+    #L00010Ab. s1:= s0[[|v2|]];
+    #L00010Ac. call s2:= {|java.lang.Object.equals(Ljava.lang.Object;)Z|}([|v1|],s1) @signature "java.lang.Object.equals(Ljava/lang/Object;)Z" @classDescriptor [|java.lang.Object|] @type virtual;
+    #L00010Ad. if s2 == 0 then goto L00011Aa;
+    #L00012Aa. return [|v2|];
+    #L00011Aa. <@Frame (@Same, 0, `[(|int|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|)])>
+    #L00011Ab. [|v2|]:= [|v2|] + 1 @type (|int|);
+    #L00011Ac. goto L00009Aa;
+    #L00008Aa. <@Frame (@Chop, 1, `[(|int|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|)])>
+    #L00008Ab. return -1;
+  }
+  procedure (|int|) {|java.util.ArrayList.lastIndexOf(Ljava.lang.Object;)I|} ((|java.util.ArrayList|) [|v0|], (|java.lang.Object|) [|v1|]) 
+    @MaxLocals 3
+    @MaxStack 3
+    @Owner (|java.util.ArrayList|)
+    @Access (PUBLIC)
+    @Signature "java.util.ArrayList.lastIndexOf(Ljava/lang/Object;)I" 
+  {
+    local jmp;
+    s0;
+    s1;
+    s2;
+    [|v2|];
+
+    #L00000Aa. if [|v1|] != null then goto L00001Aa;
+    #L00002Aa. s0:= [|v0|].<|java.util.ArrayList.size|>;
+    #L00002Ab. [|v2|]:= s0-1 @type (|int|);
+    #L00003Aa. <@Frame (@Append, 1, `[(|int|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|)])>
+    #L00003Ab. if [|v2|] < 0 then goto L00004Aa;
+    #L00005Aa. s0:= [|v0|].<|java.util.ArrayList.elementData|>;
+    #L00005Ab. s1:= s0[[|v2|]];
+    #L00005Ac. if s1 != null then goto L00006Aa;
+    #L00007Aa. return [|v2|];
+    #L00006Aa. <@Frame (@Same, 0, `[(|int|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|)])>
+    #L00006Ab. [|v2|]:= [|v2|] + -1 @type (|int|);
+    #L00006Ac. goto L00003Aa;
+    #L00004Aa. <@Frame (@Chop, 1, `[(|int|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|)])>
+    #L00004Ab. goto L00008Aa;
+    #L00001Aa. <@Frame (@Same, 0, `[(|int|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|)])>
+    #L00001Ab. s0:= [|v0|].<|java.util.ArrayList.size|>;
+    #L00001Ac. [|v2|]:= s0-1 @type (|int|);
+    #L00009Aa. <@Frame (@Append, 1, `[(|int|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|)])>
+    #L00009Ab. if [|v2|] < 0 then goto L00008Aa;
+    #L00010Aa. s0:= [|v0|].<|java.util.ArrayList.elementData|>;
+    #L00010Ab. s1:= s0[[|v2|]];
+    #L00010Ac. call s2:= {|java.lang.Object.equals(Ljava.lang.Object;)Z|}([|v1|],s1) @signature "java.lang.Object.equals(Ljava/lang/Object;)Z" @classDescriptor [|java.lang.Object|] @type virtual;
+    #L00010Ad. if s2 == 0 then goto L00011Aa;
+    #L00012Aa. return [|v2|];
+    #L00011Aa. <@Frame (@Same, 0, `[(|int|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|)])>
+    #L00011Ab. [|v2|]:= [|v2|] + -1 @type (|int|);
+    #L00011Ac. goto L00009Aa;
+    #L00008Aa. <@Frame (@Chop, 1, `[(|int|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|)])>
+    #L00008Ab. return -1;
+  }
+  procedure (|java.lang.Object|) {|java.util.ArrayList.clone()Ljava.lang.Object;|} ((|java.util.ArrayList|) [|v0|]) 
+    @MaxLocals 2
+    @MaxStack 3
+    @Owner (|java.util.ArrayList|)
+    @Access (PUBLIC)
+    @Signature "java.util.ArrayList.clone()Ljava/lang/Object;" 
+  {
+    local jmp;
+    s0;
+    s1;
+    s2;
+    [|v1|];
+
+    #L00000Aa. call s0:= {|java.lang.Object.clone()Ljava.lang.Object;|}([|v0|]) @signature "java.lang.Object.clone()Ljava/lang/Object;" @classDescriptor [|java.lang.Object|] @type special;
+    #L00000Ab. [|v1|]:= ((|java.util.ArrayList|)) s0 @type (|java.util.ArrayList|);
+    #L00003Aa. s0:= [|v0|].<|java.util.ArrayList.elementData|>;
+    #L00003Ab. s1:= [|v0|].<|java.util.ArrayList.size|>;
+    #L00003Ac. call s2:= {|java.util.Arrays.copyOf([Ljava.lang.Object;I)[Ljava.lang.Object;|}(s0,s1) @signature "java.util.Arrays.copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;" @classDescriptor [|java.util.Arrays|] @type direct;
+    #L00003Ad. [|v1|].<|java.util.ArrayList.elementData|>:= s2;
+    #L00004Aa. [|v1|].<|java.util.ArrayList.modCount|>:= 0;
+    #L00001Aa. return [|v1|];
+    #L00002Aa. <@Frame (@Same1, 0, `[(|top|), (|top|)], 1, `[(|java.lang.Object|), (|top|), (|top|)])>
+    #L00002Ab. [|v1|]:= Exception @type java.lang.Object;
+    #L00006Aa. s0:= new (|java.lang.InternalError|);
+    #L00006Ab. call s1:= {|java.lang.InternalError.<init>()V|}(s0) @signature "java.lang.InternalError.<init>()V" @classDescriptor [|java.lang.InternalError|] @type special;
+    #L00006Ac. throw s0;
+      catch (|java.lang.CloneNotSupportedException|) @[L00000Aa..L00001Aa] goto L00002Aa;
+  }
+  procedure (|java.lang.Object[]|) {|java.util.ArrayList.toArray()[Ljava.lang.Object;|} ((|java.util.ArrayList|) [|v0|]) 
+    @MaxLocals 1
+    @MaxStack 2
+    @Owner (|java.util.ArrayList|)
+    @Access (PUBLIC)
+    @Signature "java.util.ArrayList.toArray()[Ljava/lang/Object;" 
+  {
+    local jmp;
+    s0;
+    s1;
+    s2;
+
+    #L00000Aa. s0:= [|v0|].<|java.util.ArrayList.elementData|>;
+    #L00000Ab. s1:= [|v0|].<|java.util.ArrayList.size|>;
+    #L00000Ac. call s2:= {|java.util.Arrays.copyOf([Ljava.lang.Object;I)[Ljava.lang.Object;|}(s0,s1) @signature "java.util.Arrays.copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;" @classDescriptor [|java.util.Arrays|] @type direct;
+    #L00000Ad. return s2;
+  }
+  procedure (|java.lang.Object[]|) {|java.util.ArrayList.toArray([Ljava.lang.Object;)[Ljava.lang.Object;|} ((|java.util.ArrayList|) [|v0|], (|java.lang.Object[]|) [|v1|]) 
+    @MaxLocals 2
+    @MaxStack 5
+    @GenericSignature "<T:Ljava/lang/Object;>([TT;)[TT;"
+    @Owner (|java.util.ArrayList|)
+    @Access (PUBLIC)
+    @Signature "java.util.ArrayList.toArray([Ljava/lang/Object;)[Ljava/lang/Object;" 
+  {
+    local jmp;
+    s0;
+    s1;
+    s2;
+    s3;
+
+    #L00000Aa. s0:= [|v0|].<|java.util.ArrayList.size|>;
+    #L00000Ab. if [|v1|].length >= s0 then goto L00001Aa;
+    #L00002Aa. s0:= [|v0|].<|java.util.ArrayList.elementData|>;
+    #L00002Ab. s1:= [|v0|].<|java.util.ArrayList.size|>;
+    #L00002Ac. call s2:= {|java.lang.Object.getClass()Ljava.lang.Class;|}([|v1|]) @signature "java.lang.Object.getClass()Ljava/lang/Class;" @classDescriptor [|java.lang.Object|] @type virtual;
+    #L00002Ad. call s3:= {|java.util.Arrays.copyOf([Ljava.lang.Object;ILjava.lang.Class;)[Ljava.lang.Object;|}(s0,s1,s2) @signature "java.util.Arrays.copyOf([Ljava/lang/Object;ILjava/lang/Class;)[Ljava/lang/Object;" @classDescriptor [|java.util.Arrays|] @type direct;
+    #L00002Ae. return ((|[Ljava.lang.Object;|)) s3;
+    #L00001Aa. <@Frame (@Same, 0, `[(|top|), (|top|)], 0, `[(|top|), (|top|), (|top|), (|top|), (|top|)])>
+    #L00001Ab. s0:= [|v0|].<|java.util.ArrayList.elementData|>;
+    #L00001Ac. s1:= [|v0|].<|java.util.ArrayList.size|>;
+    #L00001Ad. call s2:= {|java.lang.System.arraycopy(Ljava.lang.Object;ILjava.lang.Object;II)V|}(s0,0,[|v1|],0,s1) @signature "java.lang.System.arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V" @classDescriptor [|java.lang.System|] @type direct;
+    #L00003Aa. s0:= [|v0|].<|java.util.ArrayList.size|>;
+    #L00003Ab. if [|v1|].length <= s0 then goto L00004Aa;
+    #L00005Aa. s0:= [|v0|].<|java.util.ArrayList.size|>;
+    #L00005Ab. [|v1|][s0]:= null;
+    #L00004Aa. <@Frame (@Same, 0, `[(|top|), (|top|)], 0, `[(|top|), (|top|), (|top|), (|top|), (|top|)])>
+    #L00004Ab. return [|v1|];
+  }
+  procedure (|java.lang.Object|) {|java.util.ArrayList.elementData(I)Ljava.lang.Object;|} ((|java.util.ArrayList|) [|v0|], (|int|) [|v1|]) 
+    @MaxLocals 2
+    @MaxStack 2
+    @GenericSignature "(I)TE;"
+    @Owner (|java.util.ArrayList|)
+    @Access ()
+    @Signature "java.util.ArrayList.elementData(I)Ljava/lang/Object;" 
+  {
+    local jmp;
+    s0;
+    s1;
+
+    #L00000Aa. s0:= [|v0|].<|java.util.ArrayList.elementData|>;
+    #L00000Ab. s1:= s0[[|v1|]];
+    #L00000Ac. return s1;
+  }
+  procedure (|java.lang.Object|) {|java.util.ArrayList.get(I)Ljava.lang.Object;|} ((|java.util.ArrayList|) [|v0|], (|int|) [|v1|]) 
+    @MaxLocals 2
+    @MaxStack 2
+    @GenericSignature "(I)TE;"
+    @Owner (|java.util.ArrayList|)
+    @Access (PUBLIC)
+    @Signature "java.util.ArrayList.get(I)Ljava/lang/Object;" 
+  {
+    local jmp;
+    s0;
+
+    #L00000Aa. call s0:= {|java.util.ArrayList.rangeCheck(I)V|}([|v0|],[|v1|]) @signature "java.util.ArrayList.rangeCheck(I)V" @classDescriptor [|java.util.ArrayList|] @type special;
+    #L00001Aa. call s0:= {|java.util.ArrayList.elementData(I)Ljava.lang.Object;|}([|v0|],[|v1|]) @signature "java.util.ArrayList.elementData(I)Ljava/lang/Object;" @classDescriptor [|java.util.ArrayList|] @type virtual;
+    #L00001Ab. return s0;
+  }
+  procedure (|java.lang.Object|) {|java.util.ArrayList.set(ILjava.lang.Object;)Ljava.lang.Object;|} ((|java.util.ArrayList|) [|v0|], (|int|) [|v1|], (|java.lang.Object|) [|v2|]) 
+    @MaxLocals 4
+    @MaxStack 3
+    @GenericSignature "(ITE;)TE;"
+    @Owner (|java.util.ArrayList|)
+    @Access (PUBLIC)
+    @Signature "java.util.ArrayList.set(ILjava/lang/Object;)Ljava/lang/Object;" 
+  {
+    local jmp;
+    s0;
+    [|v3|];
+
+    #L00000Aa. call s0:= {|java.util.ArrayList.rangeCheck(I)V|}([|v0|],[|v1|]) @signature "java.util.ArrayList.rangeCheck(I)V" @classDescriptor [|java.util.ArrayList|] @type special;
+    #L00001Aa. call s0:= {|java.util.ArrayList.elementData(I)Ljava.lang.Object;|}([|v0|],[|v1|]) @signature "java.util.ArrayList.elementData(I)Ljava/lang/Object;" @classDescriptor [|java.util.ArrayList|] @type virtual;
+    #L00001Ab. [|v3|]:= s0 @type (|java.lang.Object|);
+    #L00002Aa. s0:= [|v0|].<|java.util.ArrayList.elementData|>;
+    #L00002Ab. s0[[|v1|]]:= [|v2|];
+    #L00003Aa. return [|v3|];
+  }
+  procedure (|boolean|) {|java.util.ArrayList.add(Ljava.lang.Object;)Z|} ((|java.util.ArrayList|) [|v0|], (|java.lang.Object|) [|v1|]) 
+    @MaxLocals 2
+    @MaxStack 5
+    @GenericSignature "(TE;)Z"
+    @Owner (|java.util.ArrayList|)
+    @Access (PUBLIC)
+    @Signature "java.util.ArrayList.add(Ljava/lang/Object;)Z" 
+  {
+    local jmp;
+    s0;
+    s1;
+
+    #L00000Aa. s0:= [|v0|].<|java.util.ArrayList.size|>;
+    #L00000Ab. call s1:= {|java.util.ArrayList.ensureCapacityInternal(I)V|}([|v0|],s0+1) @signature "java.util.ArrayList.ensureCapacityInternal(I)V" @classDescriptor [|java.util.ArrayList|] @type special;
+    #L00001Aa. s0:= [|v0|].<|java.util.ArrayList.elementData|>;
+    #L00001Ab. s1:= [|v0|].<|java.util.ArrayList.size|>;
+    #L00001Ac. [|v0|].<|java.util.ArrayList.size|>:= s1+1;
+    #L00001Ad. s0[s1]:= [|v1|];
+    #L00002Aa. return 1;
+  }
+  procedure (|void|) {|java.util.ArrayList.add(ILjava.lang.Object;)V|} ((|java.util.ArrayList|) [|v0|], (|int|) [|v1|], (|java.lang.Object|) [|v2|]) 
+    @MaxLocals 3
+    @MaxStack 6
+    @GenericSignature "(ITE;)V"
+    @Owner (|java.util.ArrayList|)
+    @Access (PUBLIC)
+    @Signature "java.util.ArrayList.add(ILjava/lang/Object;)V" 
+  {
+    local jmp;
+    s0;
+    s1;
+    s2;
+    s3;
+
+    #L00000Aa. call s0:= {|java.util.ArrayList.rangeCheckForAdd(I)V|}([|v0|],[|v1|]) @signature "java.util.ArrayList.rangeCheckForAdd(I)V" @classDescriptor [|java.util.ArrayList|] @type special;
+    #L00001Aa. s0:= [|v0|].<|java.util.ArrayList.size|>;
+    #L00001Ab. call s1:= {|java.util.ArrayList.ensureCapacityInternal(I)V|}([|v0|],s0+1) @signature "java.util.ArrayList.ensureCapacityInternal(I)V" @classDescriptor [|java.util.ArrayList|] @type special;
+    #L00002Aa. s0:= [|v0|].<|java.util.ArrayList.elementData|>;
+    #L00002Ab. s1:= [|v0|].<|java.util.ArrayList.elementData|>;
+    #L00002Ac. s2:= [|v0|].<|java.util.ArrayList.size|>;
+    #L00002Ad. call s3:= {|java.lang.System.arraycopy(Ljava.lang.Object;ILjava.lang.Object;II)V|}(s0,[|v1|],s1,[|v1|]+1,s2-[|v1|]) @signature "java.lang.System.arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V" @classDescriptor [|java.lang.System|] @type direct;
+    #L00003Aa. s0:= [|v0|].<|java.util.ArrayList.elementData|>;
+    #L00003Ab. s0[[|v1|]]:= [|v2|];
+    #L00004Aa. s0:= [|v0|].<|java.util.ArrayList.size|>;
+    #L00004Ab. [|v0|].<|java.util.ArrayList.size|>:= s0+1;
+    #L00005Aa. return @void;
+  }
+  procedure (|java.lang.Object|) {|java.util.ArrayList.remove(I)Ljava.lang.Object;|} ((|java.util.ArrayList|) [|v0|], (|int|) [|v1|]) 
+    @MaxLocals 4
+    @MaxStack 5
+    @GenericSignature "(I)TE;"
+    @Owner (|java.util.ArrayList|)
+    @Access (PUBLIC)
+    @Signature "java.util.ArrayList.remove(I)Ljava/lang/Object;" 
+  {
+    local jmp;
+    s0;
+    s1;
+    s2;
+    [|v2|];
+    [|v3|];
+
+    #L00000Aa. call s0:= {|java.util.ArrayList.rangeCheck(I)V|}([|v0|],[|v1|]) @signature "java.util.ArrayList.rangeCheck(I)V" @classDescriptor [|java.util.ArrayList|] @type special;
+    #L00001Aa. s0:= [|v0|].<|java.util.ArrayList.modCount|>;
+    #L00001Ab. [|v0|].<|java.util.ArrayList.modCount|>:= s0+1;
+    #L00002Aa. call s0:= {|java.util.ArrayList.elementData(I)Ljava.lang.Object;|}([|v0|],[|v1|]) @signature "java.util.ArrayList.elementData(I)Ljava/lang/Object;" @classDescriptor [|java.util.ArrayList|] @type virtual;
+    #L00002Ab. [|v2|]:= s0 @type (|java.lang.Object|);
+    #L00003Aa. s0:= [|v0|].<|java.util.ArrayList.size|>;
+    #L00003Ab. [|v3|]:= s0-[|v1|]-1 @type (|int|);
+    #L00004Aa. if [|v3|] <= 0 then goto L00005Aa;
+    #L00006Aa. s0:= [|v0|].<|java.util.ArrayList.elementData|>;
+    #L00006Ab. s1:= [|v0|].<|java.util.ArrayList.elementData|>;
+    #L00006Ac. call s2:= {|java.lang.System.arraycopy(Ljava.lang.Object;ILjava.lang.Object;II)V|}(s0,[|v1|]+1,s1,[|v1|],[|v3|]) @signature "java.lang.System.arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V" @classDescriptor [|java.lang.System|] @type direct;
+    #L00005Aa. <@Frame (@Append, 2, `[(|java.lang.Object|), (|int|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|), (|top|), (|top|)])>
+    #L00005Ab. s0:= [|v0|].<|java.util.ArrayList.elementData|>;
+    #L00005Ac. s1:= [|v0|].<|java.util.ArrayList.size|>;
+    #L00005Ad. [|v0|].<|java.util.ArrayList.size|>:= s1-1;
+    #L00005Ae. s0[s1-1]:= null;
+    #L00007Aa. return [|v2|];
+  }
+  procedure (|boolean|) {|java.util.ArrayList.remove(Ljava.lang.Object;)Z|} ((|java.util.ArrayList|) [|v0|], (|java.lang.Object|) [|v1|]) 
+    @MaxLocals 3
+    @MaxStack 3
+    @Owner (|java.util.ArrayList|)
+    @Access (PUBLIC)
+    @Signature "java.util.ArrayList.remove(Ljava/lang/Object;)Z" 
+  {
+    local jmp;
+    s0;
+    s1;
+    s2;
+    [|v2|];
+
+    #L00000Aa. if [|v1|] != null then goto L00001Aa;
+    #L00002Aa. [|v2|]:= 0 @type (|int|);
+    #L00003Aa. <@Frame (@Append, 1, `[(|int|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|)])>
+    #L00003Ab. s0:= [|v0|].<|java.util.ArrayList.size|>;
+    #L00003Ac. if [|v2|] >= s0 then goto L00004Aa;
+    #L00005Aa. s0:= [|v0|].<|java.util.ArrayList.elementData|>;
+    #L00005Ab. s1:= s0[[|v2|]];
+    #L00005Ac. if s1 != null then goto L00006Aa;
+    #L00007Aa. call s0:= {|java.util.ArrayList.fastRemove(I)V|}([|v0|],[|v2|]) @signature "java.util.ArrayList.fastRemove(I)V" @classDescriptor [|java.util.ArrayList|] @type special;
+    #L00008Aa. return 1;
+    #L00006Aa. <@Frame (@Same, 0, `[(|int|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|)])>
+    #L00006Ab. [|v2|]:= [|v2|] + 1 @type (|int|);
+    #L00006Ac. goto L00003Aa;
+    #L00004Aa. <@Frame (@Chop, 1, `[(|int|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|)])>
+    #L00004Ab. goto L00009Aa;
+    #L00001Aa. <@Frame (@Same, 0, `[(|int|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|)])>
+    #L00001Ab. [|v2|]:= 0 @type (|int|);
+    #L00010Aa. <@Frame (@Append, 1, `[(|int|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|)])>
+    #L00010Ab. s0:= [|v0|].<|java.util.ArrayList.size|>;
+    #L00010Ac. if [|v2|] >= s0 then goto L00009Aa;
+    #L00011Aa. s0:= [|v0|].<|java.util.ArrayList.elementData|>;
+    #L00011Ab. s1:= s0[[|v2|]];
+    #L00011Ac. call s2:= {|java.lang.Object.equals(Ljava.lang.Object;)Z|}([|v1|],s1) @signature "java.lang.Object.equals(Ljava/lang/Object;)Z" @classDescriptor [|java.lang.Object|] @type virtual;
+    #L00011Ad. if s2 == 0 then goto L00012Aa;
+    #L00013Aa. call s0:= {|java.util.ArrayList.fastRemove(I)V|}([|v0|],[|v2|]) @signature "java.util.ArrayList.fastRemove(I)V" @classDescriptor [|java.util.ArrayList|] @type special;
+    #L00014Aa. return 1;
+    #L00012Aa. <@Frame (@Same, 0, `[(|int|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|)])>
+    #L00012Ab. [|v2|]:= [|v2|] + 1 @type (|int|);
+    #L00012Ac. goto L00010Aa;
+    #L00009Aa. <@Frame (@Chop, 1, `[(|int|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|)])>
+    #L00009Ab. return 0;
+  }
+  procedure (|void|) {|java.util.ArrayList.fastRemove(I)V|} ((|java.util.ArrayList|) [|v0|], (|int|) [|v1|]) 
+    @MaxLocals 3
+    @MaxStack 5
+    @Owner (|java.util.ArrayList|)
+    @Access (PRIVATE)
+    @Signature "java.util.ArrayList.fastRemove(I)V" 
+  {
+    local jmp;
+    s0;
+    s1;
+    s2;
+    [|v2|];
+
+    #L00000Aa. s0:= [|v0|].<|java.util.ArrayList.modCount|>;
+    #L00000Ab. [|v0|].<|java.util.ArrayList.modCount|>:= s0+1;
+    #L00001Aa. s0:= [|v0|].<|java.util.ArrayList.size|>;
+    #L00001Ab. [|v2|]:= s0-[|v1|]-1 @type (|int|);
+    #L00002Aa. if [|v2|] <= 0 then goto L00003Aa;
+    #L00004Aa. s0:= [|v0|].<|java.util.ArrayList.elementData|>;
+    #L00004Ab. s1:= [|v0|].<|java.util.ArrayList.elementData|>;
+    #L00004Ac. call s2:= {|java.lang.System.arraycopy(Ljava.lang.Object;ILjava.lang.Object;II)V|}(s0,[|v1|]+1,s1,[|v1|],[|v2|]) @signature "java.lang.System.arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V" @classDescriptor [|java.lang.System|] @type direct;
+    #L00003Aa. <@Frame (@Append, 1, `[(|int|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|), (|top|), (|top|)])>
+    #L00003Ab. s0:= [|v0|].<|java.util.ArrayList.elementData|>;
+    #L00003Ac. s1:= [|v0|].<|java.util.ArrayList.size|>;
+    #L00003Ad. [|v0|].<|java.util.ArrayList.size|>:= s1-1;
+    #L00003Ae. s0[s1-1]:= null;
+    #L00005Aa. return @void;
+  }
+  procedure (|void|) {|java.util.ArrayList.clear()V|} ((|java.util.ArrayList|) [|v0|]) 
+    @MaxLocals 2
+    @MaxStack 3
+    @Owner (|java.util.ArrayList|)
+    @Access (PUBLIC)
+    @Signature "java.util.ArrayList.clear()V" 
+  {
+    local jmp;
+    s0;
+    [|v1|];
+
+    #L00000Aa. s0:= [|v0|].<|java.util.ArrayList.modCount|>;
+    #L00000Ab. [|v0|].<|java.util.ArrayList.modCount|>:= s0+1;
+    #L00001Aa. [|v1|]:= 0 @type (|int|);
+    #L00002Aa. <@Frame (@Append, 1, `[(|int|), (|top|)], 0, `[(|top|), (|top|), (|top|)])>
+    #L00002Ab. s0:= [|v0|].<|java.util.ArrayList.size|>;
+    #L00002Ac. if [|v1|] >= s0 then goto L00003Aa;
+    #L00004Aa. s0:= [|v0|].<|java.util.ArrayList.elementData|>;
+    #L00004Ab. s0[[|v1|]]:= null;
+    #L00005Aa. [|v1|]:= [|v1|] + 1 @type (|int|);
+    #L00005Ab. goto L00002Aa;
+    #L00003Aa. <@Frame (@Chop, 1, `[(|int|), (|top|)], 0, `[(|top|), (|top|), (|top|)])>
+    #L00003Ab. [|v0|].<|java.util.ArrayList.size|>:= 0;
+    #L00006Aa. return @void;
+  }
+  procedure (|boolean|) {|java.util.ArrayList.addAll(Ljava.util.Collection;)Z|} ((|java.util.ArrayList|) [|v0|], (|java.util.Collection|) [|v1|]) 
+    @MaxLocals 4
+    @MaxStack 5
+    @GenericSignature "(Ljava/util/Collection<+TE;>;)Z"
+    @Owner (|java.util.ArrayList|)
+    @Access (PUBLIC)
+    @Signature "java.util.ArrayList.addAll(Ljava/util/Collection;)Z" 
+  {
+    local jmp;
+    s0;
+    s1;
+    s2;
+    [|v2|];
+    [|v3|];
+
+    #L00000Aa. call s0:= {|java.util.Collection.toArray()[Ljava.lang.Object;|}([|v1|]) @signature "java.util.Collection.toArray()[Ljava/lang/Object;" @classDescriptor [|java.util.Collection|] @type interface;
+    #L00000Ab. [|v2|]:= s0 @type (|java.lang.Object|);
+    #L00001Aa. [|v3|]:= [|v2|].length @type (|int|);
+    #L00002Aa. s0:= [|v0|].<|java.util.ArrayList.size|>;
+    #L00002Ab. call s1:= {|java.util.ArrayList.ensureCapacityInternal(I)V|}([|v0|],s0+[|v3|]) @signature "java.util.ArrayList.ensureCapacityInternal(I)V" @classDescriptor [|java.util.ArrayList|] @type special;
+    #L00003Aa. s0:= [|v0|].<|java.util.ArrayList.elementData|>;
+    #L00003Ab. s1:= [|v0|].<|java.util.ArrayList.size|>;
+    #L00003Ac. call s2:= {|java.lang.System.arraycopy(Ljava.lang.Object;ILjava.lang.Object;II)V|}([|v2|],0,s0,s1,[|v3|]) @signature "java.lang.System.arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V" @classDescriptor [|java.lang.System|] @type direct;
+    #L00004Aa. s0:= [|v0|].<|java.util.ArrayList.size|>;
+    #L00004Ab. [|v0|].<|java.util.ArrayList.size|>:= s0+[|v3|];
+    #L00005Aa. if [|v3|] == 0 then goto L00006Aa;
+    #L00005Ab. jmp:= 1;
+    #L00005Ac. goto L00007Aa;
+    #L00006Aa. <@Frame (@Append, 2, `[(|java.lang.Object[]|), (|int|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|), (|top|), (|top|)])>
+    #L00006Ab. jmp:= 0;
+    #L00007Aa. <@Frame (@Same1, 0, `[(|java.lang.Object[]|), (|int|), (|top|), (|top|)], 1, `[(|int|), (|top|), (|top|), (|top|), (|top|)])>
+    #L00007Ab. return jmp;
+  }
+  procedure (|boolean|) {|java.util.ArrayList.addAll(ILjava.util.Collection;)Z|} ((|java.util.ArrayList|) [|v0|], (|int|) [|v1|], (|java.util.Collection|) [|v2|]) 
+    @MaxLocals 6
+    @MaxStack 5
+    @GenericSignature "(ILjava/util/Collection<+TE;>;)Z"
+    @Owner (|java.util.ArrayList|)
+    @Access (PUBLIC)
+    @Signature "java.util.ArrayList.addAll(ILjava/util/Collection;)Z" 
+  {
+    local jmp;
+    s0;
+    s1;
+    s2;
+    [|v3|];
+    [|v4|];
+    [|v5|];
+
+    #L00000Aa. call s0:= {|java.util.ArrayList.rangeCheckForAdd(I)V|}([|v0|],[|v1|]) @signature "java.util.ArrayList.rangeCheckForAdd(I)V" @classDescriptor [|java.util.ArrayList|] @type special;
+    #L00001Aa. call s0:= {|java.util.Collection.toArray()[Ljava.lang.Object;|}([|v2|]) @signature "java.util.Collection.toArray()[Ljava/lang/Object;" @classDescriptor [|java.util.Collection|] @type interface;
+    #L00001Ab. [|v3|]:= s0 @type (|java.lang.Object|);
+    #L00002Aa. [|v4|]:= [|v3|].length @type (|int|);
+    #L00003Aa. s0:= [|v0|].<|java.util.ArrayList.size|>;
+    #L00003Ab. call s1:= {|java.util.ArrayList.ensureCapacityInternal(I)V|}([|v0|],s0+[|v4|]) @signature "java.util.ArrayList.ensureCapacityInternal(I)V" @classDescriptor [|java.util.ArrayList|] @type special;
+    #L00004Aa. s0:= [|v0|].<|java.util.ArrayList.size|>;
+    #L00004Ab. [|v5|]:= s0-[|v1|] @type (|int|);
+    #L00005Aa. if [|v5|] <= 0 then goto L00006Aa;
+    #L00007Aa. s0:= [|v0|].<|java.util.ArrayList.elementData|>;
+    #L00007Ab. s1:= [|v0|].<|java.util.ArrayList.elementData|>;
+    #L00007Ac. call s2:= {|java.lang.System.arraycopy(Ljava.lang.Object;ILjava.lang.Object;II)V|}(s0,[|v1|],s1,[|v1|]+[|v4|],[|v5|]) @signature "java.lang.System.arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V" @classDescriptor [|java.lang.System|] @type direct;
+    #L00006Aa. <@Frame (@Append, 3, `[(|java.lang.Object[]|), (|int|), (|int|), (|top|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|), (|top|), (|top|)])>
+    #L00006Ab. s0:= [|v0|].<|java.util.ArrayList.elementData|>;
+    #L00006Ac. call s1:= {|java.lang.System.arraycopy(Ljava.lang.Object;ILjava.lang.Object;II)V|}([|v3|],0,s0,[|v1|],[|v4|]) @signature "java.lang.System.arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V" @classDescriptor [|java.lang.System|] @type direct;
+    #L00008Aa. s0:= [|v0|].<|java.util.ArrayList.size|>;
+    #L00008Ab. [|v0|].<|java.util.ArrayList.size|>:= s0+[|v4|];
+    #L00009Aa. if [|v4|] == 0 then goto L00010Aa;
+    #L00009Ab. jmp:= 1;
+    #L00009Ac. goto L00011Aa;
+    #L00010Aa. <@Frame (@Same, 0, `[(|java.lang.Object[]|), (|int|), (|int|), (|top|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|), (|top|), (|top|)])>
+    #L00010Ab. jmp:= 0;
+    #L00011Aa. <@Frame (@Same1, 0, `[(|java.lang.Object[]|), (|int|), (|int|), (|top|), (|top|), (|top|)], 1, `[(|int|), (|top|), (|top|), (|top|), (|top|)])>
+    #L00011Ab. return jmp;
+  }
+  procedure (|void|) {|java.util.ArrayList.removeRange(II)V|} ((|java.util.ArrayList|) [|v0|], (|int|) [|v1|], (|int|) [|v2|]) 
+    @MaxLocals 6
+    @MaxStack 5
+    @Owner (|java.util.ArrayList|)
+    @Access (PROTECTED)
+    @Signature "java.util.ArrayList.removeRange(II)V" 
+  {
+    local jmp;
+    s0;
+    s1;
+    s2;
+    [|v3|];
+    [|v4|];
+    [|v5|];
+
+    #L00000Aa. s0:= [|v0|].<|java.util.ArrayList.modCount|>;
+    #L00000Ab. [|v0|].<|java.util.ArrayList.modCount|>:= s0+1;
+    #L00001Aa. s0:= [|v0|].<|java.util.ArrayList.size|>;
+    #L00001Ab. [|v3|]:= s0-[|v2|] @type (|int|);
+    #L00002Aa. s0:= [|v0|].<|java.util.ArrayList.elementData|>;
+    #L00002Ab. s1:= [|v0|].<|java.util.ArrayList.elementData|>;
+    #L00002Ac. call s2:= {|java.lang.System.arraycopy(Ljava.lang.Object;ILjava.lang.Object;II)V|}(s0,[|v2|],s1,[|v1|],[|v3|]) @signature "java.lang.System.arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V" @classDescriptor [|java.lang.System|] @type direct;
+    #L00003Aa. s0:= [|v0|].<|java.util.ArrayList.size|>;
+    #L00003Ab. [|v4|]:= s0-[|v2|]-[|v1|] @type (|int|);
+    #L00004Aa. [|v5|]:= [|v4|] @type int;
+    #L00005Aa. <@Frame (@Append, 3, `[(|int|), (|int|), (|int|), (|top|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|), (|top|), (|top|)])>
+    #L00005Ab. s0:= [|v0|].<|java.util.ArrayList.size|>;
+    #L00005Ac. if [|v5|] >= s0 then goto L00006Aa;
+    #L00007Aa. s0:= [|v0|].<|java.util.ArrayList.elementData|>;
+    #L00007Ab. s0[[|v5|]]:= null;
+    #L00008Aa. [|v5|]:= [|v5|] + 1 @type (|int|);
+    #L00008Ab. goto L00005Aa;
+    #L00006Aa. <@Frame (@Chop, 1, `[(|int|), (|int|), (|int|), (|top|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|), (|top|), (|top|)])>
+    #L00006Ab. [|v0|].<|java.util.ArrayList.size|>:= [|v4|];
+    #L00009Aa. return @void;
+  }
+  procedure (|void|) {|java.util.ArrayList.rangeCheck(I)V|} ((|java.util.ArrayList|) [|v0|], (|int|) [|v1|]) 
+    @MaxLocals 2
+    @MaxStack 4
+    @Owner (|java.util.ArrayList|)
+    @Access (PRIVATE)
+    @Signature "java.util.ArrayList.rangeCheck(I)V" 
+  {
+    local jmp;
+    s0;
+    s1;
+    s2;
+
+    #L00000Aa. s0:= [|v0|].<|java.util.ArrayList.size|>;
+    #L00000Ab. if [|v1|] < s0 then goto L00001Aa;
+    #L00002Aa. s0:= new (|java.lang.IndexOutOfBoundsException|);
+    #L00002Ab. call s1:= {|java.util.ArrayList.outOfBoundsMsg(I)Ljava.lang.String;|}([|v0|],[|v1|]) @signature "java.util.ArrayList.outOfBoundsMsg(I)Ljava/lang/String;" @classDescriptor [|java.util.ArrayList|] @type special;
+    #L00002Ac. call s2:= {|java.lang.IndexOutOfBoundsException.<init>(Ljava.lang.String;)V|}(s0,s1) @signature "java.lang.IndexOutOfBoundsException.<init>(Ljava/lang/String;)V" @classDescriptor [|java.lang.IndexOutOfBoundsException|] @type special;
+    #L00002Ad. throw s0;
+    #L00001Aa. <@Frame (@Same, 0, `[(|top|), (|top|)], 0, `[(|top|), (|top|), (|top|), (|top|)])>
+    #L00001Ab. return @void;
+  }
+  procedure (|void|) {|java.util.ArrayList.rangeCheckForAdd(I)V|} ((|java.util.ArrayList|) [|v0|], (|int|) [|v1|]) 
+    @MaxLocals 2
+    @MaxStack 4
+    @Owner (|java.util.ArrayList|)
+    @Access (PRIVATE)
+    @Signature "java.util.ArrayList.rangeCheckForAdd(I)V" 
+  {
+    local jmp;
+    s0;
+    s1;
+    s2;
+
+    #L00000Aa. s0:= [|v0|].<|java.util.ArrayList.size|>;
+    #L00000Ab. if [|v1|] > s0 then goto L00001Aa;
+    #L00000Ac. if [|v1|] >= 0 then goto L00002Aa;
+    #L00001Aa. <@Frame (@Same, 0, `[(|top|), (|top|)], 0, `[(|top|), (|top|), (|top|), (|top|)])>
+    #L00001Ab. s0:= new (|java.lang.IndexOutOfBoundsException|);
+    #L00001Ac. call s1:= {|java.util.ArrayList.outOfBoundsMsg(I)Ljava.lang.String;|}([|v0|],[|v1|]) @signature "java.util.ArrayList.outOfBoundsMsg(I)Ljava/lang/String;" @classDescriptor [|java.util.ArrayList|] @type special;
+    #L00001Ad. call s2:= {|java.lang.IndexOutOfBoundsException.<init>(Ljava.lang.String;)V|}(s0,s1) @signature "java.lang.IndexOutOfBoundsException.<init>(Ljava/lang/String;)V" @classDescriptor [|java.lang.IndexOutOfBoundsException|] @type special;
+    #L00001Ae. throw s0;
+    #L00002Aa. <@Frame (@Same, 0, `[(|top|), (|top|)], 0, `[(|top|), (|top|), (|top|), (|top|)])>
+    #L00002Ab. return @void;
+  }
+  procedure (|java.lang.String|) {|java.util.ArrayList.outOfBoundsMsg(I)Ljava.lang.String;|} ((|java.util.ArrayList|) [|v0|], (|int|) [|v1|]) 
+    @MaxLocals 2
+    @MaxStack 2
+    @Owner (|java.util.ArrayList|)
+    @Access (PRIVATE)
+    @Signature "java.util.ArrayList.outOfBoundsMsg(I)Ljava/lang/String;" 
+  {
+    local jmp;
+    s0;
+    s1;
+    s2;
+    s3;
+    s4;
+    s5;
+    s6;
+    s7;
+
+    #L00000Aa. s0:= new (|java.lang.StringBuilder|);
+    #L00000Ab. call s1:= {|java.lang.StringBuilder.<init>()V|}(s0) @signature "java.lang.StringBuilder.<init>()V" @classDescriptor [|java.lang.StringBuilder|] @type special;
+    #L00000Ac. call s2:= {|java.lang.StringBuilder.append(Ljava.lang.String;)Ljava.lang.StringBuilder;|}(s0,"Index: ") @signature "java.lang.StringBuilder.append(Ljava/lang/String;)Ljava/lang/StringBuilder;" @classDescriptor [|java.lang.StringBuilder|] @type virtual;
+    #L00000Ad. call s3:= {|java.lang.StringBuilder.append(I)Ljava.lang.StringBuilder;|}(s2,[|v1|]) @signature "java.lang.StringBuilder.append(I)Ljava/lang/StringBuilder;" @classDescriptor [|java.lang.StringBuilder|] @type virtual;
+    #L00000Ae. call s4:= {|java.lang.StringBuilder.append(Ljava.lang.String;)Ljava.lang.StringBuilder;|}(s3,", Size: ") @signature "java.lang.StringBuilder.append(Ljava/lang/String;)Ljava/lang/StringBuilder;" @classDescriptor [|java.lang.StringBuilder|] @type virtual;
+    #L00000Af. s5:= [|v0|].<|java.util.ArrayList.size|>;
+    #L00000Ag. call s6:= {|java.lang.StringBuilder.append(I)Ljava.lang.StringBuilder;|}(s4,s5) @signature "java.lang.StringBuilder.append(I)Ljava/lang/StringBuilder;" @classDescriptor [|java.lang.StringBuilder|] @type virtual;
+    #L00000Ah. call s7:= {|java.lang.StringBuilder.toString()Ljava.lang.String;|}(s6) @signature "java.lang.StringBuilder.toString()Ljava/lang/String;" @classDescriptor [|java.lang.StringBuilder|] @type virtual;
+    #L00000Ai. return s7;
+  }
+  procedure (|boolean|) {|java.util.ArrayList.removeAll(Ljava.util.Collection;)Z|} ((|java.util.ArrayList|) [|v0|], (|java.util.Collection|) [|v1|]) 
+    @MaxLocals 2
+    @MaxStack 3
+    @GenericSignature "(Ljava/util/Collection<*>;)Z"
+    @Owner (|java.util.ArrayList|)
+    @Access (PUBLIC)
+    @Signature "java.util.ArrayList.removeAll(Ljava/util/Collection;)Z" 
+  {
+    local jmp;
+    s0;
+
+    #L00000Aa. call s0:= {|java.util.ArrayList.batchRemove(Ljava.util.Collection;Z)Z|}([|v0|],[|v1|],0) @signature "java.util.ArrayList.batchRemove(Ljava/util/Collection;Z)Z" @classDescriptor [|java.util.ArrayList|] @type special;
+    #L00000Ab. return s0;
+  }
+  procedure (|boolean|) {|java.util.ArrayList.retainAll(Ljava.util.Collection;)Z|} ((|java.util.ArrayList|) [|v0|], (|java.util.Collection|) [|v1|]) 
+    @MaxLocals 2
+    @MaxStack 3
+    @GenericSignature "(Ljava/util/Collection<*>;)Z"
+    @Owner (|java.util.ArrayList|)
+    @Access (PUBLIC)
+    @Signature "java.util.ArrayList.retainAll(Ljava/util/Collection;)Z" 
+  {
+    local jmp;
+    s0;
+
+    #L00000Aa. call s0:= {|java.util.ArrayList.batchRemove(Ljava.util.Collection;Z)Z|}([|v0|],[|v1|],1) @signature "java.util.ArrayList.batchRemove(Ljava/util/Collection;Z)Z" @classDescriptor [|java.util.ArrayList|] @type special;
+    #L00000Ab. return s0;
+  }
+  procedure (|boolean|) {|java.util.ArrayList.batchRemove(Ljava.util.Collection;Z)Z|} ((|java.util.ArrayList|) [|v0|], (|java.util.Collection|) [|v1|], (|boolean|) [|v2|]) 
+    @MaxLocals 10
+    @MaxStack 6
+    @GenericSignature "(Ljava/util/Collection<*>;Z)Z"
+    @Owner (|java.util.ArrayList|)
+    @Access (PRIVATE)
+    @Signature "java.util.ArrayList.batchRemove(Ljava/util/Collection;Z)Z" 
+  {
+    local jmp;
+    s0;
+    s1;
+    [|v3|];
+    [|v4|];
+    [|v5|];
+    [|v6|];
+    [|v7|];
+    [|v8|];
+    [|v9|];
+
+    #L00004Aa. s0:= [|v0|].<|java.util.ArrayList.elementData|>;
+    #L00004Ab. [|v3|]:= s0 @type (|java.lang.Object[]|);
+    #L00005Aa. [|v4|]:= 0 @type (|int|);
+    #L00005Ab. [|v5|]:= 0 @type (|int|);
+    #L00006Aa. [|v6|]:= 0 @type (|int|);
+    #L00000Aa. <@Frame (@Full, 7, `[(|java.lang.Object|), (|java.lang.Object|), (|int|), (|java.lang.Object[]|), (|int|), (|int|), (|int|), (|top|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|), (|top|), (|top|), (|top|)])>
+    #L00000Ab. s0:= [|v0|].<|java.util.ArrayList.size|>;
+    #L00000Ac. if [|v4|] >= s0 then goto L00001Aa;
+    #L00007Aa. s0:= [|v3|][[|v4|]];
+    #L00007Ab. call s1:= {|java.util.Collection.contains(Ljava.lang.Object;)Z|}([|v1|],s0) @signature "java.util.Collection.contains(Ljava/lang/Object;)Z" @classDescriptor [|java.util.Collection|] @type interface;
+    #L00007Ac. if s1 != [|v2|] then goto L00008Aa;
+    #L00009Aa. [|v5|]:= [|v5|] + 1 @type (|int|);
+    #L00009Ab. s0:= [|v3|][[|v4|]];
+    #L00009Ac. [|v3|][[|v5|]]:= s0;
+    #L00008Aa. <@Frame (@Same, 0, `[(|java.lang.Object|), (|java.lang.Object|), (|int|), (|java.lang.Object[]|), (|int|), (|int|), (|int|), (|top|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|), (|top|), (|top|), (|top|)])>
+    #L00008Ab. [|v4|]:= [|v4|] + 1 @type (|int|);
+    #L00008Ac. goto L00000Aa;
+    #L00001Aa. <@Frame (@Same, 0, `[(|java.lang.Object|), (|java.lang.Object|), (|int|), (|java.lang.Object[]|), (|int|), (|int|), (|int|), (|top|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|), (|top|), (|top|), (|top|)])>
+    #L00001Ab. s0:= [|v0|].<|java.util.ArrayList.size|>;
+    #L00001Ac. if [|v4|] == s0 then goto L00010Aa;
+    #L00011Aa. s0:= [|v0|].<|java.util.ArrayList.size|>;
+    #L00011Ab. call s1:= {|java.lang.System.arraycopy(Ljava.lang.Object;ILjava.lang.Object;II)V|}([|v3|],[|v4|],[|v3|],[|v5|],s0-[|v4|]) @signature "java.lang.System.arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V" @classDescriptor [|java.lang.System|] @type direct;
+    #L00012Aa. s0:= [|v0|].<|java.util.ArrayList.size|>;
+    #L00012Ab. [|v5|]:= [|v5|]+s0-[|v4|] @type (|int|);
+    #L00010Aa. <@Frame (@Same, 0, `[(|java.lang.Object|), (|java.lang.Object|), (|int|), (|java.lang.Object[]|), (|int|), (|int|), (|int|), (|top|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|), (|top|), (|top|), (|top|)])>
+    #L00010Ab. s0:= [|v0|].<|java.util.ArrayList.size|>;
+    #L00010Ac. if [|v5|] == s0 then goto L00013Aa;
+    #L00014Aa. [|v7|]:= [|v5|] @type int;
+    #L00015Aa. <@Frame (@Append, 1, `[(|int|), (|java.lang.Object|), (|int|), (|java.lang.Object[]|), (|int|), (|int|), (|int|), (|top|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|), (|top|), (|top|), (|top|)])>
+    #L00015Ab. s0:= [|v0|].<|java.util.ArrayList.size|>;
+    #L00015Ac. if [|v7|] >= s0 then goto L00016Aa;
+    #L00017Aa. [|v3|][[|v7|]]:= null;
+    #L00018Aa. [|v7|]:= [|v7|] + 1 @type (|int|);
+    #L00018Ab. goto L00015Aa;
+    #L00016Aa. <@Frame (@Chop, 1, `[(|int|), (|java.lang.Object|), (|int|), (|java.lang.Object[]|), (|int|), (|int|), (|int|), (|top|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|), (|top|), (|top|), (|top|)])>
+    #L00016Ab. s0:= [|v0|].<|java.util.ArrayList.modCount|>;
+    #L00016Ac. s1:= [|v0|].<|java.util.ArrayList.size|>;
+    #L00016Ad. [|v0|].<|java.util.ArrayList.modCount|>:= s0+s1-[|v5|];
+    #L00019Aa. [|v0|].<|java.util.ArrayList.size|>:= [|v5|];
+    #L00020Aa. [|v6|]:= 1 @type (|int|);
+    #L00020Ab. goto L00013Aa;
+    #L00002Aa. <@Frame (@Same1, 0, `[(|int|), (|java.lang.Object|), (|int|), (|java.lang.Object[]|), (|int|), (|int|), (|int|), (|top|), (|top|), (|top|)], 1, `[(|java.lang.Object|), (|top|), (|top|), (|top|), (|top|), (|top|)])>
+    #L00002Ab. [|v8|]:= Exception @type java.lang.Object;
+    #L00003Aa. s0:= [|v0|].<|java.util.ArrayList.size|>;
+    #L00003Ab. if [|v4|] == s0 then goto L00021Aa;
+    #L00022Aa. s0:= [|v0|].<|java.util.ArrayList.size|>;
+    #L00022Ab. call s1:= {|java.lang.System.arraycopy(Ljava.lang.Object;ILjava.lang.Object;II)V|}([|v3|],[|v4|],[|v3|],[|v5|],s0-[|v4|]) @signature "java.lang.System.arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V" @classDescriptor [|java.lang.System|] @type direct;
+    #L00023Aa. s0:= [|v0|].<|java.util.ArrayList.size|>;
+    #L00023Ab. [|v5|]:= [|v5|]+s0-[|v4|] @type (|int|);
+    #L00021Aa. <@Frame (@Append, 2, `[(|top|), (|java.lang.Object|), (|int|), (|java.lang.Object[]|), (|int|), (|int|), (|int|), (|top|), (|top|), (|top|)], 0, `[(|java.lang.Object|), (|top|), (|top|), (|top|), (|top|), (|top|)])>
+    #L00021Ab. s0:= [|v0|].<|java.util.ArrayList.size|>;
+    #L00021Ac. if [|v5|] == s0 then goto L00024Aa;
+    #L00025Aa. [|v9|]:= [|v5|] @type int;
+    #L00026Aa. <@Frame (@Append, 1, `[(|int|), (|java.lang.Object|), (|int|), (|java.lang.Object[]|), (|int|), (|int|), (|int|), (|top|), (|top|), (|top|)], 0, `[(|java.lang.Object|), (|top|), (|top|), (|top|), (|top|), (|top|)])>
+    #L00026Ab. s0:= [|v0|].<|java.util.ArrayList.size|>;
+    #L00026Ac. if [|v9|] >= s0 then goto L00027Aa;
+    #L00028Aa. [|v3|][[|v9|]]:= null;
+    #L00029Aa. [|v9|]:= [|v9|] + 1 @type (|int|);
+    #L00029Ab. goto L00026Aa;
+    #L00027Aa. <@Frame (@Chop, 1, `[(|int|), (|java.lang.Object|), (|int|), (|java.lang.Object[]|), (|int|), (|int|), (|int|), (|top|), (|top|), (|top|)], 0, `[(|java.lang.Object|), (|top|), (|top|), (|top|), (|top|), (|top|)])>
+    #L00027Ab. s0:= [|v0|].<|java.util.ArrayList.modCount|>;
+    #L00027Ac. s1:= [|v0|].<|java.util.ArrayList.size|>;
+    #L00027Ad. [|v0|].<|java.util.ArrayList.modCount|>:= s0+s1-[|v5|];
+    #L00030Aa. [|v0|].<|java.util.ArrayList.size|>:= [|v5|];
+    #L00031Aa. [|v6|]:= 1 @type (|int|);
+    #L00024Aa. <@Frame (@Same, 0, `[(|int|), (|java.lang.Object|), (|int|), (|java.lang.Object[]|), (|int|), (|int|), (|int|), (|top|), (|top|), (|top|)], 0, `[(|java.lang.Object|), (|top|), (|top|), (|top|), (|top|), (|top|)])>
+    #L00024Ab. throw [|v8|];
+    #L00013Aa. <@Frame (@Chop, 2, `[(|int|), (|java.lang.Object|), (|int|), (|java.lang.Object[]|), (|int|), (|int|), (|int|), (|top|), (|top|), (|top|)], 0, `[(|java.lang.Object|), (|top|), (|top|), (|top|), (|top|), (|top|)])>
+    #L00013Ab. return [|v6|];
+      catch (|unk|) @[L00000Aa..L00001Aa] goto L00002Aa;
+      catch (|unk|) @[L00002Aa..L00003Aa] goto L00002Aa;
+  }
+  procedure (|void|) {|java.util.ArrayList.writeObject(Ljava.io.ObjectOutputStream;)V|} ((|java.util.ArrayList|) [|v0|], (|java.io.ObjectOutputStream|) [|v1|]) 
+    @Throws [|java.io.IOException|]
+    @MaxLocals 4
+    @MaxStack 3
+    @Owner (|java.util.ArrayList|)
+    @Access (PRIVATE)
+    @Signature "java.util.ArrayList.writeObject(Ljava/io/ObjectOutputStream;)V" 
+  {
+    local jmp;
+    s0;
+    s1;
+    s2;
+    [|v2|];
+    [|v3|];
+
+    #L00000Aa. s0:= [|v0|].<|java.util.ArrayList.modCount|>;
+    #L00000Ab. [|v2|]:= s0 @type (|int|);
+    #L00001Aa. call s0:= {|java.io.ObjectOutputStream.defaultWriteObject()V|}([|v1|]) @signature "java.io.ObjectOutputStream.defaultWriteObject()V" @classDescriptor [|java.io.ObjectOutputStream|] @type virtual;
+    #L00002Aa. s0:= [|v0|].<|java.util.ArrayList.size|>;
+    #L00002Ab. call s1:= {|java.io.ObjectOutputStream.writeInt(I)V|}([|v1|],s0) @signature "java.io.ObjectOutputStream.writeInt(I)V" @classDescriptor [|java.io.ObjectOutputStream|] @type virtual;
+    #L00003Aa. [|v3|]:= 0 @type (|int|);
+    #L00004Aa. <@Frame (@Append, 2, `[(|int|), (|int|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|)])>
+    #L00004Ab. s0:= [|v0|].<|java.util.ArrayList.size|>;
+    #L00004Ac. if [|v3|] >= s0 then goto L00005Aa;
+    #L00006Aa. s0:= [|v0|].<|java.util.ArrayList.elementData|>;
+    #L00006Ab. s1:= s0[[|v3|]];
+    #L00006Ac. call s2:= {|java.io.ObjectOutputStream.writeObject(Ljava.lang.Object;)V|}([|v1|],s1) @signature "java.io.ObjectOutputStream.writeObject(Ljava/lang/Object;)V" @classDescriptor [|java.io.ObjectOutputStream|] @type virtual;
+    #L00007Aa. [|v3|]:= [|v3|] + 1 @type (|int|);
+    #L00007Ab. goto L00004Aa;
+    #L00005Aa. <@Frame (@Chop, 1, `[(|int|), (|int|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|)])>
+    #L00005Ab. s0:= [|v0|].<|java.util.ArrayList.modCount|>;
+    #L00005Ac. if s0 == [|v2|] then goto L00008Aa;
+    #L00009Aa. s0:= new (|java.util.ConcurrentModificationException|);
+    #L00009Ab. call s1:= {|java.util.ConcurrentModificationException.<init>()V|}(s0) @signature "java.util.ConcurrentModificationException.<init>()V" @classDescriptor [|java.util.ConcurrentModificationException|] @type special;
+    #L00009Ac. throw s0;
+    #L00008Aa. <@Frame (@Same, 0, `[(|int|), (|int|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|)])>
+    #L00008Ab. return @void;
+  }
+  procedure (|void|) {|java.util.ArrayList.readObject(Ljava.io.ObjectInputStream;)V|} ((|java.util.ArrayList|) [|v0|], (|java.io.ObjectInputStream|) [|v1|]) 
+    @Throws [|java.io.IOException|],[|java.lang.ClassNotFoundException|]
+    @MaxLocals 4
+    @MaxStack 3
+    @Owner (|java.util.ArrayList|)
+    @Access (PRIVATE)
+    @Signature "java.util.ArrayList.readObject(Ljava/io/ObjectInputStream;)V" 
+  {
+    local jmp;
+    s0;
+    s1;
+    [|v2|];
+    [|v3|];
+
+    #L00000Aa. s0:= +|java.util.ArrayList.EMPTY_ELEMENTDATA|+;
+    #L00000Ab. [|v0|].<|java.util.ArrayList.elementData|>:= s0;
+    #L00001Aa. call s0:= {|java.io.ObjectInputStream.defaultReadObject()V|}([|v1|]) @signature "java.io.ObjectInputStream.defaultReadObject()V" @classDescriptor [|java.io.ObjectInputStream|] @type virtual;
+    #L00002Aa. call s0:= {|java.io.ObjectInputStream.readInt()I|}([|v1|]) @signature "java.io.ObjectInputStream.readInt()I" @classDescriptor [|java.io.ObjectInputStream|] @type virtual;
+    #L00003Aa. s0:= [|v0|].<|java.util.ArrayList.size|>;
+    #L00003Ab. if s0 <= 0 then goto L00004Aa;
+    #L00005Aa. s0:= [|v0|].<|java.util.ArrayList.size|>;
+    #L00005Ab. call s1:= {|java.util.ArrayList.ensureCapacityInternal(I)V|}([|v0|],s0) @signature "java.util.ArrayList.ensureCapacityInternal(I)V" @classDescriptor [|java.util.ArrayList|] @type special;
+    #L00006Aa. s0:= [|v0|].<|java.util.ArrayList.elementData|>;
+    #L00006Ab. [|v2|]:= s0 @type (|java.lang.Object[]|);
+    #L00007Aa. [|v3|]:= 0 @type (|int|);
+    #L00008Aa. <@Frame (@Append, 2, `[(|java.lang.Object[]|), (|int|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|)])>
+    #L00008Ab. s0:= [|v0|].<|java.util.ArrayList.size|>;
+    #L00008Ac. if [|v3|] >= s0 then goto L00004Aa;
+    #L00009Aa. call s0:= {|java.io.ObjectInputStream.readObject()Ljava.lang.Object;|}([|v1|]) @signature "java.io.ObjectInputStream.readObject()Ljava/lang/Object;" @classDescriptor [|java.io.ObjectInputStream|] @type virtual;
+    #L00009Ab. [|v2|][[|v3|]]:= s0;
+    #L00010Aa. [|v3|]:= [|v3|] + 1 @type (|int|);
+    #L00010Ab. goto L00008Aa;
+    #L00004Aa. <@Frame (@Chop, 2, `[(|java.lang.Object[]|), (|int|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|)])>
+    #L00004Ab. return @void;
+  }
+  procedure (|java.util.ListIterator|) {|java.util.ArrayList.listIterator(I)Ljava.util.ListIterator;|} ((|java.util.ArrayList|) [|v0|], (|int|) [|v1|]) 
+    @MaxLocals 2
+    @MaxStack 4
+    @GenericSignature "(I)Ljava/util/ListIterator<TE;>;"
+    @Owner (|java.util.ArrayList|)
+    @Access (PUBLIC)
+    @Signature "java.util.ArrayList.listIterator(I)Ljava/util/ListIterator;" 
+  {
+    local jmp;
+    s0;
+    s1;
+    s2;
+    s3;
+    s4;
+    s5;
+    s6;
+
+    #L00000Aa. if [|v1|] < 0 then goto L00001Aa;
+    #L00000Ab. s0:= [|v0|].<|java.util.ArrayList.size|>;
+    #L00000Ac. if [|v1|] <= s0 then goto L00002Aa;
+    #L00001Aa. <@Frame (@Same, 0, `[(|top|), (|top|)], 0, `[(|top|), (|top|), (|top|), (|top|)])>
+    #L00001Ab. s0:= new (|java.lang.IndexOutOfBoundsException|);
+    #L00001Ac. s1:= new (|java.lang.StringBuilder|);
+    #L00001Ad. call s2:= {|java.lang.StringBuilder.<init>()V|}(s1) @signature "java.lang.StringBuilder.<init>()V" @classDescriptor [|java.lang.StringBuilder|] @type special;
+    #L00001Ae. call s3:= {|java.lang.StringBuilder.append(Ljava.lang.String;)Ljava.lang.StringBuilder;|}(s1,"Index: ") @signature "java.lang.StringBuilder.append(Ljava/lang/String;)Ljava/lang/StringBuilder;" @classDescriptor [|java.lang.StringBuilder|] @type virtual;
+    #L00001Af. call s4:= {|java.lang.StringBuilder.append(I)Ljava.lang.StringBuilder;|}(s3,[|v1|]) @signature "java.lang.StringBuilder.append(I)Ljava/lang/StringBuilder;" @classDescriptor [|java.lang.StringBuilder|] @type virtual;
+    #L00001Ag. call s5:= {|java.lang.StringBuilder.toString()Ljava.lang.String;|}(s4) @signature "java.lang.StringBuilder.toString()Ljava/lang/String;" @classDescriptor [|java.lang.StringBuilder|] @type virtual;
+    #L00001Ah. call s6:= {|java.lang.IndexOutOfBoundsException.<init>(Ljava.lang.String;)V|}(s0,s5) @signature "java.lang.IndexOutOfBoundsException.<init>(Ljava/lang/String;)V" @classDescriptor [|java.lang.IndexOutOfBoundsException|] @type special;
+    #L00001Ai. throw s0;
+    #L00002Aa. <@Frame (@Same, 0, `[(|top|), (|top|)], 0, `[(|top|), (|top|), (|top|), (|top|)])>
+    #L00002Ab. s0:= new (|java.util.ArrayList$ListItr|);
+    #L00002Ac. call s1:= {|java.util.ArrayList$ListItr.<init>(Ljava.util.ArrayList;I)V|}(s0,[|v0|],[|v1|]) @signature "java.util.ArrayList$ListItr.<init>(Ljava/util/ArrayList;I)V" @classDescriptor [|java.util.ArrayList$ListItr|] @type special;
+    #L00002Ad. return s0;
+  }
+  procedure (|java.util.ListIterator|) {|java.util.ArrayList.listIterator()Ljava.util.ListIterator;|} ((|java.util.ArrayList|) [|v0|]) 
+    @MaxLocals 1
+    @MaxStack 4
+    @GenericSignature "()Ljava/util/ListIterator<TE;>;"
+    @Owner (|java.util.ArrayList|)
+    @Access (PUBLIC)
+    @Signature "java.util.ArrayList.listIterator()Ljava/util/ListIterator;" 
+  {
+    local jmp;
+    s0;
+    s1;
+
+    #L00000Aa. s0:= new (|java.util.ArrayList$ListItr|);
+    #L00000Ab. call s1:= {|java.util.ArrayList$ListItr.<init>(Ljava.util.ArrayList;I)V|}(s0,[|v0|],0) @signature "java.util.ArrayList$ListItr.<init>(Ljava/util/ArrayList;I)V" @classDescriptor [|java.util.ArrayList$ListItr|] @type special;
+    #L00000Ac. return s0;
+  }
+  procedure (|java.util.Iterator|) {|java.util.ArrayList.iterator()Ljava.util.Iterator;|} ((|java.util.ArrayList|) [|v0|]) 
+    @MaxLocals 1
+    @MaxStack 4
+    @GenericSignature "()Ljava/util/Iterator<TE;>;"
+    @Owner (|java.util.ArrayList|)
+    @Access (PUBLIC)
+    @Signature "java.util.ArrayList.iterator()Ljava/util/Iterator;" 
+  {
+    local jmp;
+    s0;
+    s1;
+
+    #L00000Aa. s0:= new (|java.util.ArrayList$Itr|);
+    #L00000Ab. call s1:= {|java.util.ArrayList$Itr.<init>(Ljava.util.ArrayList;Ljava.util.ArrayList$1;)V|}(s0,[|v0|],null) @signature "java.util.ArrayList$Itr.<init>(Ljava/util/ArrayList;Ljava/util/ArrayList$1;)V" @classDescriptor [|java.util.ArrayList$Itr|] @type special;
+    #L00000Ac. return s0;
+  }
+  procedure (|java.util.List|) {|java.util.ArrayList.subList(II)Ljava.util.List;|} ((|java.util.ArrayList|) [|v0|], (|int|) [|v1|], (|int|) [|v2|]) 
+    @MaxLocals 3
+    @MaxStack 7
+    @GenericSignature "(II)Ljava/util/List<TE;>;"
+    @Owner (|java.util.ArrayList|)
+    @Access (PUBLIC)
+    @Signature "java.util.ArrayList.subList(II)Ljava/util/List;" 
+  {
+    local jmp;
+    s0;
+    s1;
+
+    #L00000Aa. s0:= [|v0|].<|java.util.ArrayList.size|>;
+    #L00000Ab. call s1:= {|java.util.ArrayList.subListRangeCheck(III)V|}([|v1|],[|v2|],s0) @signature "java.util.ArrayList.subListRangeCheck(III)V" @classDescriptor [|java.util.ArrayList|] @type direct;
+    #L00001Aa. s0:= new (|java.util.ArrayList$SubList|);
+    #L00001Ab. call s1:= {|java.util.ArrayList$SubList.<init>(Ljava.util.ArrayList;Ljava.util.AbstractList;III)V|}(s0,[|v0|],[|v0|],0,[|v1|],[|v2|]) @signature "java.util.ArrayList$SubList.<init>(Ljava/util/ArrayList;Ljava/util/AbstractList;III)V" @classDescriptor [|java.util.ArrayList$SubList|] @type special;
+    #L00001Ac. return s0;
+  }
+  procedure (|void|) {|java.util.ArrayList.subListRangeCheck(III)V|} ((|int|) [|v0|], (|int|) [|v1|], (|int|) [|v2|]) 
+    @MaxLocals 3
+    @MaxStack 4
+    @Owner (|java.util.ArrayList|)
+    @Access (STATIC)
+    @Signature "java.util.ArrayList.subListRangeCheck(III)V" 
+  {
+    local jmp;
+    s0;
+    s1;
+    s2;
+    s3;
+    s4;
+    s5;
+    s6;
+    s7;
+    s8;
+    s9;
+
+    #L00000Aa. if [|v0|] >= 0 then goto L00001Aa;
+    #L00002Aa. s0:= new (|java.lang.IndexOutOfBoundsException|);
+    #L00002Ab. s1:= new (|java.lang.StringBuilder|);
+    #L00002Ac. call s2:= {|java.lang.StringBuilder.<init>()V|}(s1) @signature "java.lang.StringBuilder.<init>()V" @classDescriptor [|java.lang.StringBuilder|] @type special;
+    #L00002Ad. call s3:= {|java.lang.StringBuilder.append(Ljava.lang.String;)Ljava.lang.StringBuilder;|}(s1,"fromIndex = ") @signature "java.lang.StringBuilder.append(Ljava/lang/String;)Ljava/lang/StringBuilder;" @classDescriptor [|java.lang.StringBuilder|] @type virtual;
+    #L00002Ae. call s4:= {|java.lang.StringBuilder.append(I)Ljava.lang.StringBuilder;|}(s3,[|v0|]) @signature "java.lang.StringBuilder.append(I)Ljava/lang/StringBuilder;" @classDescriptor [|java.lang.StringBuilder|] @type virtual;
+    #L00002Af. call s5:= {|java.lang.StringBuilder.toString()Ljava.lang.String;|}(s4) @signature "java.lang.StringBuilder.toString()Ljava/lang/String;" @classDescriptor [|java.lang.StringBuilder|] @type virtual;
+    #L00002Ag. call s6:= {|java.lang.IndexOutOfBoundsException.<init>(Ljava.lang.String;)V|}(s0,s5) @signature "java.lang.IndexOutOfBoundsException.<init>(Ljava/lang/String;)V" @classDescriptor [|java.lang.IndexOutOfBoundsException|] @type special;
+    #L00002Ah. throw s0;
+    #L00001Aa. <@Frame (@Same, 0, `[(|top|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|), (|top|)])>
+    #L00001Ab. if [|v1|] <= [|v2|] then goto L00003Aa;
+    #L00004Aa. s0:= new (|java.lang.IndexOutOfBoundsException|);
+    #L00004Ab. s1:= new (|java.lang.StringBuilder|);
+    #L00004Ac. call s2:= {|java.lang.StringBuilder.<init>()V|}(s1) @signature "java.lang.StringBuilder.<init>()V" @classDescriptor [|java.lang.StringBuilder|] @type special;
+    #L00004Ad. call s3:= {|java.lang.StringBuilder.append(Ljava.lang.String;)Ljava.lang.StringBuilder;|}(s1,"toIndex = ") @signature "java.lang.StringBuilder.append(Ljava/lang/String;)Ljava/lang/StringBuilder;" @classDescriptor [|java.lang.StringBuilder|] @type virtual;
+    #L00004Ae. call s4:= {|java.lang.StringBuilder.append(I)Ljava.lang.StringBuilder;|}(s3,[|v1|]) @signature "java.lang.StringBuilder.append(I)Ljava/lang/StringBuilder;" @classDescriptor [|java.lang.StringBuilder|] @type virtual;
+    #L00004Af. call s5:= {|java.lang.StringBuilder.toString()Ljava.lang.String;|}(s4) @signature "java.lang.StringBuilder.toString()Ljava/lang/String;" @classDescriptor [|java.lang.StringBuilder|] @type virtual;
+    #L00004Ag. call s6:= {|java.lang.IndexOutOfBoundsException.<init>(Ljava.lang.String;)V|}(s0,s5) @signature "java.lang.IndexOutOfBoundsException.<init>(Ljava/lang/String;)V" @classDescriptor [|java.lang.IndexOutOfBoundsException|] @type special;
+    #L00004Ah. throw s0;
+    #L00003Aa. <@Frame (@Same, 0, `[(|top|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|), (|top|)])>
+    #L00003Ab. if [|v0|] <= [|v1|] then goto L00005Aa;
+    #L00006Aa. s0:= new (|java.lang.IllegalArgumentException|);
+    #L00006Ab. s1:= new (|java.lang.StringBuilder|);
+    #L00006Ac. call s2:= {|java.lang.StringBuilder.<init>()V|}(s1) @signature "java.lang.StringBuilder.<init>()V" @classDescriptor [|java.lang.StringBuilder|] @type special;
+    #L00006Ad. call s3:= {|java.lang.StringBuilder.append(Ljava.lang.String;)Ljava.lang.StringBuilder;|}(s1,"fromIndex(") @signature "java.lang.StringBuilder.append(Ljava/lang/String;)Ljava/lang/StringBuilder;" @classDescriptor [|java.lang.StringBuilder|] @type virtual;
+    #L00006Ae. call s4:= {|java.lang.StringBuilder.append(I)Ljava.lang.StringBuilder;|}(s3,[|v0|]) @signature "java.lang.StringBuilder.append(I)Ljava/lang/StringBuilder;" @classDescriptor [|java.lang.StringBuilder|] @type virtual;
+    #L00006Af. call s5:= {|java.lang.StringBuilder.append(Ljava.lang.String;)Ljava.lang.StringBuilder;|}(s4,") > toIndex(") @signature "java.lang.StringBuilder.append(Ljava/lang/String;)Ljava/lang/StringBuilder;" @classDescriptor [|java.lang.StringBuilder|] @type virtual;
+    #L00006Ag. call s6:= {|java.lang.StringBuilder.append(I)Ljava.lang.StringBuilder;|}(s5,[|v1|]) @signature "java.lang.StringBuilder.append(I)Ljava/lang/StringBuilder;" @classDescriptor [|java.lang.StringBuilder|] @type virtual;
+    #L00006Ah. call s7:= {|java.lang.StringBuilder.append(Ljava.lang.String;)Ljava.lang.StringBuilder;|}(s6,")") @signature "java.lang.StringBuilder.append(Ljava/lang/String;)Ljava/lang/StringBuilder;" @classDescriptor [|java.lang.StringBuilder|] @type virtual;
+    #L00006Ai. call s8:= {|java.lang.StringBuilder.toString()Ljava.lang.String;|}(s7) @signature "java.lang.StringBuilder.toString()Ljava/lang/String;" @classDescriptor [|java.lang.StringBuilder|] @type virtual;
+    #L00006Aj. call s9:= {|java.lang.IllegalArgumentException.<init>(Ljava.lang.String;)V|}(s0,s8) @signature "java.lang.IllegalArgumentException.<init>(Ljava/lang/String;)V" @classDescriptor [|java.lang.IllegalArgumentException|] @type special;
+    #L00006Ak. throw s0;
+    #L00005Aa. <@Frame (@Same, 0, `[(|top|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|), (|top|)])>
+    #L00005Ab. return @void;
+  }
+  procedure (|int|) {|java.util.ArrayList.access$100(Ljava.util.ArrayList;)I|} ((|java.util.ArrayList|) [|v0|]) 
+    @MaxLocals 1
+    @MaxStack 1
+    @Owner (|java.util.ArrayList|)
+    @Access (STATIC,SYNTHETIC)
+    @Signature "java.util.ArrayList.access$100(Ljava/util/ArrayList;)I" 
+  {
+    local jmp;
+    s0;
+
+    #L00000Aa. s0:= [|v0|].<|java.util.ArrayList.size|>;
+    #L00000Ab. return s0;
+  }
+  procedure (|java.lang.Object[]|) {|java.util.ArrayList.access$200(Ljava.util.ArrayList;)[Ljava.lang.Object;|} ((|java.util.ArrayList|) [|v0|]) 
+    @MaxLocals 1
+    @MaxStack 1
+    @Owner (|java.util.ArrayList|)
+    @Access (STATIC,SYNTHETIC)
+    @Signature "java.util.ArrayList.access$200(Ljava/util/ArrayList;)[Ljava/lang/Object;" 
+  {
+    local jmp;
+    s0;
+
+    #L00000Aa. s0:= [|v0|].<|java.util.ArrayList.elementData|>;
+    #L00000Ab. return s0;
+  }
+  procedure (|void|) {|java.util.ArrayList.<clinit>()V|} () 
+    @MaxLocals 0
+    @MaxStack 1
+    @Owner (|java.util.ArrayList|)
+    @Access (STATIC)
+    @Signature "java.util.ArrayList.<clinit>()V" 
+  {
+    local jmp;
+    s0;
+
+    #L00000Aa. s0:= new (|java.lang.Object|)[0];
+    #L00000Ab. +|java.util.ArrayList.EMPTY_ELEMENTDATA|+:= s0;
+    #L00000Ac. return @void;
+  }
+
+record (|java.util.ArrayList$1|)
+    @OuterClass java/util/ArrayList
+    @Source "ArrayList.java"
+    @Type class
+    @AccessFlag (SYNTHETIC)
+    @InnerClass (
+      @Name (|java.util.ArrayList$1|), 
+      @OuterName (|java.util.ArrayList|), 
+      @AccessFlag (STATIC,SYNTHETIC)
+     ) 
+  extends 
+    (|java.lang.Object|) 
+{
+}
+
+
+
+record (|java.util.ArrayList$SubList|)
+    @Source "ArrayList.java"
+    @GenericSignature "Ljava/util/AbstractList<TE;>;Ljava/util/RandomAccess;"
+    @Type class
+    @AccessFlag ()
+    @InnerClass (
+      @Name (|java.util.ArrayList$SubList$1|), 
+      @OuterName (|unk|), 
+      @AccessFlag ()
+     ) 
+  extends 
+    (|java.util.AbstractList|) 
+{
+  (|java.util.AbstractList|) <|ArrayList$SubList.parent|> @GenericSignature "Ljava/util/AbstractList<TE;>;" @AccessFlag (PRIVATE,FINAL);
+  (|int|) <|ArrayList$SubList.parentOffset|> @AccessFlag (PRIVATE,FINAL);
+  (|int|) <|ArrayList$SubList.offset|> @AccessFlag (PRIVATE,FINAL);
+  (|int|) <|ArrayList$SubList.size|> @AccessFlag ();
+  (|java.util.ArrayList|) <|ArrayList$SubList.this$0|> @AccessFlag (FINAL,SYNTHETIC);
+}
+
+  procedure (|void|) {|java.util.ArrayList$SubList.<init>(Ljava.util.ArrayList;Ljava.util.AbstractList;III)V|} ((|java.util.ArrayList$SubList|) [|v0|], (|java.util.ArrayList|) [|v1|], (|java.util.AbstractList|) [|v2|], (|int|) [|v3|], (|int|) [|v4|], (|int|) [|v5|]) 
+    @MaxLocals 6
+    @MaxStack 3
+    @GenericSignature "(Ljava/util/AbstractList<TE;>;III)V"
+    @Owner (|java.util.ArrayList$SubList|)
+    @Access (CONSTRUCTOR)
+    @Signature "java.util.ArrayList$SubList.<init>(Ljava/util/ArrayList;Ljava/util/AbstractList;III)V" 
+  {
+    local jmp;
+    s0;
+
+    #L00000Aa. [|v0|].<|java.util.ArrayList$SubList.this$0|>:= [|v1|];
+    #L00000Ab. call s0:= {|java.util.AbstractList.<init>()V|}([|v0|]) @signature "java.util.AbstractList.<init>()V" @classDescriptor [|java.util.AbstractList|] @type special;
+    #L00001Aa. [|v0|].<|java.util.ArrayList$SubList.parent|>:= [|v2|];
+    #L00002Aa. [|v0|].<|java.util.ArrayList$SubList.parentOffset|>:= [|v4|];
+    #L00003Aa. [|v0|].<|java.util.ArrayList$SubList.offset|>:= [|v3|]+[|v4|];
+    #L00004Aa. [|v0|].<|java.util.ArrayList$SubList.size|>:= [|v5|]-[|v4|];
+    #L00005Aa. s0:= [|v1|].<|java.util.ArrayList.modCount|>;
+    #L00005Ab. [|v0|].<|java.util.ArrayList$SubList.modCount|>:= s0;
+    #L00006Aa. return @void;
+  }
+  procedure (|java.lang.Object|) {|java.util.ArrayList$SubList.set(ILjava.lang.Object;)Ljava.lang.Object;|} ((|java.util.ArrayList$SubList|) [|v0|], (|int|) [|v1|], (|java.lang.Object|) [|v2|]) 
+    @MaxLocals 4
+    @MaxStack 3
+    @GenericSignature "(ITE;)TE;"
+    @Owner (|java.util.ArrayList$SubList|)
+    @Access (PUBLIC)
+    @Signature "java.util.ArrayList$SubList.set(ILjava/lang/Object;)Ljava/lang/Object;" 
+  {
+    local jmp;
+    s0;
+    s1;
+    s2;
+    [|v3|];
+
+    #L00000Aa. call s0:= {|java.util.ArrayList$SubList.rangeCheck(I)V|}([|v0|],[|v1|]) @signature "java.util.ArrayList$SubList.rangeCheck(I)V" @classDescriptor [|java.util.ArrayList$SubList|] @type special;
+    #L00001Aa. call s0:= {|java.util.ArrayList$SubList.checkForComodification()V|}([|v0|]) @signature "java.util.ArrayList$SubList.checkForComodification()V" @classDescriptor [|java.util.ArrayList$SubList|] @type special;
+    #L00002Aa. s0:= [|v0|].<|java.util.ArrayList$SubList.this$0|>;
+    #L00002Ab. s1:= [|v0|].<|java.util.ArrayList$SubList.offset|>;
+    #L00002Ac. call s2:= {|java.util.ArrayList.elementData(I)Ljava.lang.Object;|}(s0,s1+[|v1|]) @signature "java.util.ArrayList.elementData(I)Ljava/lang/Object;" @classDescriptor [|java.util.ArrayList|] @type virtual;
+    #L00002Ad. [|v3|]:= s2 @type (|java.lang.Object|);
+    #L00003Aa. s0:= [|v0|].<|java.util.ArrayList$SubList.this$0|>;
+    #L00003Ab. call s1:= {|java.util.ArrayList.access$200(Ljava.util.ArrayList;)[Ljava.lang.Object;|}(s0) @signature "java.util.ArrayList.access$200(Ljava/util/ArrayList;)[Ljava/lang/Object;" @classDescriptor [|java.util.ArrayList|] @type direct;
+    #L00003Ac. s2:= [|v0|].<|java.util.ArrayList$SubList.offset|>;
+    #L00003Ad. s1[s2+[|v1|]]:= [|v2|];
+    #L00004Aa. return [|v3|];
+  }
+  procedure (|java.lang.Object|) {|java.util.ArrayList$SubList.get(I)Ljava.lang.Object;|} ((|java.util.ArrayList$SubList|) [|v0|], (|int|) [|v1|]) 
+    @MaxLocals 2
+    @MaxStack 3
+    @GenericSignature "(I)TE;"
+    @Owner (|java.util.ArrayList$SubList|)
+    @Access (PUBLIC)
+    @Signature "java.util.ArrayList$SubList.get(I)Ljava/lang/Object;" 
+  {
+    local jmp;
+    s0;
+    s1;
+    s2;
+
+    #L00000Aa. call s0:= {|java.util.ArrayList$SubList.rangeCheck(I)V|}([|v0|],[|v1|]) @signature "java.util.ArrayList$SubList.rangeCheck(I)V" @classDescriptor [|java.util.ArrayList$SubList|] @type special;
+    #L00001Aa. call s0:= {|java.util.ArrayList$SubList.checkForComodification()V|}([|v0|]) @signature "java.util.ArrayList$SubList.checkForComodification()V" @classDescriptor [|java.util.ArrayList$SubList|] @type special;
+    #L00002Aa. s0:= [|v0|].<|java.util.ArrayList$SubList.this$0|>;
+    #L00002Ab. s1:= [|v0|].<|java.util.ArrayList$SubList.offset|>;
+    #L00002Ac. call s2:= {|java.util.ArrayList.elementData(I)Ljava.lang.Object;|}(s0,s1+[|v1|]) @signature "java.util.ArrayList.elementData(I)Ljava/lang/Object;" @classDescriptor [|java.util.ArrayList|] @type virtual;
+    #L00002Ad. return s2;
+  }
+  procedure (|int|) {|java.util.ArrayList$SubList.size()I|} ((|java.util.ArrayList$SubList|) [|v0|]) 
+    @MaxLocals 1
+    @MaxStack 1
+    @Owner (|java.util.ArrayList$SubList|)
+    @Access (PUBLIC)
+    @Signature "java.util.ArrayList$SubList.size()I" 
+  {
+    local jmp;
+    s0;
+
+    #L00000Aa. call s0:= {|java.util.ArrayList$SubList.checkForComodification()V|}([|v0|]) @signature "java.util.ArrayList$SubList.checkForComodification()V" @classDescriptor [|java.util.ArrayList$SubList|] @type special;
+    #L00001Aa. s0:= [|v0|].<|java.util.ArrayList$SubList.size|>;
+    #L00001Ab. return s0;
+  }
+  procedure (|void|) {|java.util.ArrayList$SubList.add(ILjava.lang.Object;)V|} ((|java.util.ArrayList$SubList|) [|v0|], (|int|) [|v1|], (|java.lang.Object|) [|v2|]) 
+    @MaxLocals 3
+    @MaxStack 3
+    @GenericSignature "(ITE;)V"
+    @Owner (|java.util.ArrayList$SubList|)
+    @Access (PUBLIC)
+    @Signature "java.util.ArrayList$SubList.add(ILjava/lang/Object;)V" 
+  {
+    local jmp;
+    s0;
+    s1;
+    s2;
+
+    #L00000Aa. call s0:= {|java.util.ArrayList$SubList.rangeCheckForAdd(I)V|}([|v0|],[|v1|]) @signature "java.util.ArrayList$SubList.rangeCheckForAdd(I)V" @classDescriptor [|java.util.ArrayList$SubList|] @type special;
+    #L00001Aa. call s0:= {|java.util.ArrayList$SubList.checkForComodification()V|}([|v0|]) @signature "java.util.ArrayList$SubList.checkForComodification()V" @classDescriptor [|java.util.ArrayList$SubList|] @type special;
+    #L00002Aa. s0:= [|v0|].<|java.util.ArrayList$SubList.parent|>;
+    #L00002Ab. s1:= [|v0|].<|java.util.ArrayList$SubList.parentOffset|>;
+    #L00002Ac. call s2:= {|java.util.AbstractList.add(ILjava.lang.Object;)V|}(s0,s1+[|v1|],[|v2|]) @signature "java.util.AbstractList.add(ILjava/lang/Object;)V" @classDescriptor [|java.util.AbstractList|] @type virtual;
+    #L00003Aa. s0:= [|v0|].<|java.util.ArrayList$SubList.parent|>;
+    #L00003Ab. s1:= s0.<|java.util.AbstractList.modCount|>;
+    #L00003Ac. [|v0|].<|java.util.ArrayList$SubList.modCount|>:= s1;
+    #L00004Aa. s0:= [|v0|].<|java.util.ArrayList$SubList.size|>;
+    #L00004Ab. [|v0|].<|java.util.ArrayList$SubList.size|>:= s0+1;
+    #L00005Aa. return @void;
+  }
+  procedure (|java.lang.Object|) {|java.util.ArrayList$SubList.remove(I)Ljava.lang.Object;|} ((|java.util.ArrayList$SubList|) [|v0|], (|int|) [|v1|]) 
+    @MaxLocals 3
+    @MaxStack 3
+    @GenericSignature "(I)TE;"
+    @Owner (|java.util.ArrayList$SubList|)
+    @Access (PUBLIC)
+    @Signature "java.util.ArrayList$SubList.remove(I)Ljava/lang/Object;" 
+  {
+    local jmp;
+    s0;
+    s1;
+    s2;
+    [|v2|];
+
+    #L00000Aa. call s0:= {|java.util.ArrayList$SubList.rangeCheck(I)V|}([|v0|],[|v1|]) @signature "java.util.ArrayList$SubList.rangeCheck(I)V" @classDescriptor [|java.util.ArrayList$SubList|] @type special;
+    #L00001Aa. call s0:= {|java.util.ArrayList$SubList.checkForComodification()V|}([|v0|]) @signature "java.util.ArrayList$SubList.checkForComodification()V" @classDescriptor [|java.util.ArrayList$SubList|] @type special;
+    #L00002Aa. s0:= [|v0|].<|java.util.ArrayList$SubList.parent|>;
+    #L00002Ab. s1:= [|v0|].<|java.util.ArrayList$SubList.parentOffset|>;
+    #L00002Ac. call s2:= {|java.util.AbstractList.remove(I)Ljava.lang.Object;|}(s0,s1+[|v1|]) @signature "java.util.AbstractList.remove(I)Ljava/lang/Object;" @classDescriptor [|java.util.AbstractList|] @type virtual;
+    #L00002Ad. [|v2|]:= s2 @type (|java.lang.Object|);
+    #L00003Aa. s0:= [|v0|].<|java.util.ArrayList$SubList.parent|>;
+    #L00003Ab. s1:= s0.<|java.util.AbstractList.modCount|>;
+    #L00003Ac. [|v0|].<|java.util.ArrayList$SubList.modCount|>:= s1;
+    #L00004Aa. s0:= [|v0|].<|java.util.ArrayList$SubList.size|>;
+    #L00004Ab. [|v0|].<|java.util.ArrayList$SubList.size|>:= s0-1;
+    #L00005Aa. return [|v2|];
+  }
+  procedure (|void|) {|java.util.ArrayList$SubList.removeRange(II)V|} ((|java.util.ArrayList$SubList|) [|v0|], (|int|) [|v1|], (|int|) [|v2|]) 
+    @MaxLocals 3
+    @MaxStack 4
+    @Owner (|java.util.ArrayList$SubList|)
+    @Access (PROTECTED)
+    @Signature "java.util.ArrayList$SubList.removeRange(II)V" 
+  {
+    local jmp;
+    s0;
+    s1;
+    s2;
+    s3;
+
+    #L00000Aa. call s0:= {|java.util.ArrayList$SubList.checkForComodification()V|}([|v0|]) @signature "java.util.ArrayList$SubList.checkForComodification()V" @classDescriptor [|java.util.ArrayList$SubList|] @type special;
+    #L00001Aa. s0:= [|v0|].<|java.util.ArrayList$SubList.parent|>;
+    #L00001Ab. s1:= [|v0|].<|java.util.ArrayList$SubList.parentOffset|>;
+    #L00001Ac. s2:= [|v0|].<|java.util.ArrayList$SubList.parentOffset|>;
+    #L00001Ad. call s3:= {|java.util.AbstractList.removeRange(II)V|}(s0,s1+[|v1|],s2+[|v2|]) @signature "java.util.AbstractList.removeRange(II)V" @classDescriptor [|java.util.AbstractList|] @type virtual;
+    #L00002Aa. s0:= [|v0|].<|java.util.ArrayList$SubList.parent|>;
+    #L00002Ab. s1:= s0.<|java.util.AbstractList.modCount|>;
+    #L00002Ac. [|v0|].<|java.util.ArrayList$SubList.modCount|>:= s1;
+    #L00003Aa. s0:= [|v0|].<|java.util.ArrayList$SubList.size|>;
+    #L00003Ab. [|v0|].<|java.util.ArrayList$SubList.size|>:= s0-[|v2|]-[|v1|];
+    #L00004Aa. return @void;
+  }
+  procedure (|boolean|) {|java.util.ArrayList$SubList.addAll(Ljava.util.Collection;)Z|} ((|java.util.ArrayList$SubList|) [|v0|], (|java.util.Collection|) [|v1|]) 
+    @MaxLocals 2
+    @MaxStack 3
+    @GenericSignature "(Ljava/util/Collection<+TE;>;)Z"
+    @Owner (|java.util.ArrayList$SubList|)
+    @Access (PUBLIC)
+    @Signature "java.util.ArrayList$SubList.addAll(Ljava/util/Collection;)Z" 
+  {
+    local jmp;
+    s0;
+    s1;
+
+    #L00000Aa. s0:= [|v0|].<|java.util.ArrayList$SubList.size|>;
+    #L00000Ab. call s1:= {|java.util.ArrayList$SubList.addAll(ILjava.util.Collection;)Z|}([|v0|],s0,[|v1|]) @signature "java.util.ArrayList$SubList.addAll(ILjava/util/Collection;)Z" @classDescriptor [|java.util.ArrayList$SubList|] @type virtual;
+    #L00000Ac. return s1;
+  }
+  procedure (|boolean|) {|java.util.ArrayList$SubList.addAll(ILjava.util.Collection;)Z|} ((|java.util.ArrayList$SubList|) [|v0|], (|int|) [|v1|], (|java.util.Collection|) [|v2|]) 
+    @MaxLocals 4
+    @MaxStack 3
+    @GenericSignature "(ILjava/util/Collection<+TE;>;)Z"
+    @Owner (|java.util.ArrayList$SubList|)
+    @Access (PUBLIC)
+    @Signature "java.util.ArrayList$SubList.addAll(ILjava/util/Collection;)Z" 
+  {
+    local jmp;
+    s0;
+    s1;
+    s2;
+    [|v3|];
+
+    #L00000Aa. call s0:= {|java.util.ArrayList$SubList.rangeCheckForAdd(I)V|}([|v0|],[|v1|]) @signature "java.util.ArrayList$SubList.rangeCheckForAdd(I)V" @classDescriptor [|java.util.ArrayList$SubList|] @type special;
+    #L00001Aa. call s0:= {|java.util.Collection.size()I|}([|v2|]) @signature "java.util.Collection.size()I" @classDescriptor [|java.util.Collection|] @type interface;
+    #L00001Ab. [|v3|]:= s0 @type (|java.lang.Object|);
+    #L00002Aa. if [|v3|] != 0 then goto L00003Aa;
+    #L00004Aa. return 0;
+    #L00003Aa. <@Frame (@Append, 1, `[(|int|), (|top|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|)])>
+    #L00003Ab. call s0:= {|java.util.ArrayList$SubList.checkForComodification()V|}([|v0|]) @signature "java.util.ArrayList$SubList.checkForComodification()V" @classDescriptor [|java.util.ArrayList$SubList|] @type special;
+    #L00005Aa. s0:= [|v0|].<|java.util.ArrayList$SubList.parent|>;
+    #L00005Ab. s1:= [|v0|].<|java.util.ArrayList$SubList.parentOffset|>;
+    #L00005Ac. call s2:= {|java.util.AbstractList.addAll(ILjava.util.Collection;)Z|}(s0,s1+[|v1|],[|v2|]) @signature "java.util.AbstractList.addAll(ILjava/util/Collection;)Z" @classDescriptor [|java.util.AbstractList|] @type virtual;
+    #L00006Aa. s0:= [|v0|].<|java.util.ArrayList$SubList.parent|>;
+    #L00006Ab. s1:= s0.<|java.util.AbstractList.modCount|>;
+    #L00006Ac. [|v0|].<|java.util.ArrayList$SubList.modCount|>:= s1;
+    #L00007Aa. s0:= [|v0|].<|java.util.ArrayList$SubList.size|>;
+    #L00007Ab. [|v0|].<|java.util.ArrayList$SubList.size|>:= s0+[|v3|];
+    #L00008Aa. return 1;
+  }
+  procedure (|java.util.Iterator|) {|java.util.ArrayList$SubList.iterator()Ljava.util.Iterator;|} ((|java.util.ArrayList$SubList|) [|v0|]) 
+    @MaxLocals 1
+    @MaxStack 1
+    @GenericSignature "()Ljava/util/Iterator<TE;>;"
+    @Owner (|java.util.ArrayList$SubList|)
+    @Access (PUBLIC)
+    @Signature "java.util.ArrayList$SubList.iterator()Ljava/util/Iterator;" 
+  {
+    local jmp;
+    s0;
+
+    #L00000Aa. call s0:= {|java.util.ArrayList$SubList.listIterator()Ljava.util.ListIterator;|}([|v0|]) @signature "java.util.ArrayList$SubList.listIterator()Ljava/util/ListIterator;" @classDescriptor [|java.util.ArrayList$SubList|] @type virtual;
+    #L00000Ab. return s0;
+  }
+  procedure (|java.util.ListIterator|) {|java.util.ArrayList$SubList.listIterator(I)Ljava.util.ListIterator;|} ((|java.util.ArrayList$SubList|) [|v0|], (|int|) [|v1|]) 
+    @MaxLocals 3
+    @MaxStack 5
+    @GenericSignature "(I)Ljava/util/ListIterator<TE;>;"
+    @Owner (|java.util.ArrayList$SubList|)
+    @Access (PUBLIC)
+    @Signature "java.util.ArrayList$SubList.listIterator(I)Ljava/util/ListIterator;" 
+  {
+    local jmp;
+    s0;
+    s1;
+    [|v2|];
+
+    #L00000Aa. call s0:= {|java.util.ArrayList$SubList.checkForComodification()V|}([|v0|]) @signature "java.util.ArrayList$SubList.checkForComodification()V" @classDescriptor [|java.util.ArrayList$SubList|] @type special;
+    #L00001Aa. call s0:= {|java.util.ArrayList$SubList.rangeCheckForAdd(I)V|}([|v0|],[|v1|]) @signature "java.util.ArrayList$SubList.rangeCheckForAdd(I)V" @classDescriptor [|java.util.ArrayList$SubList|] @type special;
+    #L00002Aa. s0:= [|v0|].<|java.util.ArrayList$SubList.offset|>;
+    #L00002Ab. [|v2|]:= s0 @type (|int|);
+    #L00003Aa. s0:= new (|java.util.ArrayList$SubList$1|);
+    #L00003Ab. call s1:= {|java.util.ArrayList$SubList$1.<init>(Ljava.util.ArrayList$SubList;II)V|}(s0,[|v0|],[|v1|],[|v2|]) @signature "java.util.ArrayList$SubList$1.<init>(Ljava/util/ArrayList$SubList;II)V" @classDescriptor [|java.util.ArrayList$SubList$1|] @type special;
+    #L00003Ac. return s0;
+  }
+  procedure (|java.util.List|) {|java.util.ArrayList$SubList.subList(II)Ljava.util.List;|} ((|java.util.ArrayList$SubList|) [|v0|], (|int|) [|v1|], (|int|) [|v2|]) 
+    @MaxLocals 3
+    @MaxStack 7
+    @GenericSignature "(II)Ljava/util/List<TE;>;"
+    @Owner (|java.util.ArrayList$SubList|)
+    @Access (PUBLIC)
+    @Signature "java.util.ArrayList$SubList.subList(II)Ljava/util/List;" 
+  {
+    local jmp;
+    s0;
+    s1;
+    s2;
+    s3;
+
+    #L00000Aa. s0:= [|v0|].<|java.util.ArrayList$SubList.size|>;
+    #L00000Ab. call s1:= {|java.util.ArrayList.subListRangeCheck(III)V|}([|v1|],[|v2|],s0) @signature "java.util.ArrayList.subListRangeCheck(III)V" @classDescriptor [|java.util.ArrayList|] @type direct;
+    #L00001Aa. s0:= new (|java.util.ArrayList$SubList|);
+    #L00001Ab. s1:= [|v0|].<|java.util.ArrayList$SubList.this$0|>;
+    #L00001Ac. s2:= [|v0|].<|java.util.ArrayList$SubList.offset|>;
+    #L00001Ad. call s3:= {|java.util.ArrayList$SubList.<init>(Ljava.util.ArrayList;Ljava.util.AbstractList;III)V|}(s0,s1,[|v0|],s2,[|v1|],[|v2|]) @signature "java.util.ArrayList$SubList.<init>(Ljava/util/ArrayList;Ljava/util/AbstractList;III)V" @classDescriptor [|java.util.ArrayList$SubList|] @type special;
+    #L00001Ae. return s0;
+  }
+  procedure (|void|) {|java.util.ArrayList$SubList.rangeCheck(I)V|} ((|java.util.ArrayList$SubList|) [|v0|], (|int|) [|v1|]) 
+    @MaxLocals 2
+    @MaxStack 4
+    @Owner (|java.util.ArrayList$SubList|)
+    @Access (PRIVATE)
+    @Signature "java.util.ArrayList$SubList.rangeCheck(I)V" 
+  {
+    local jmp;
+    s0;
+    s1;
+    s2;
+
+    #L00000Aa. if [|v1|] < 0 then goto L00001Aa;
+    #L00000Ab. s0:= [|v0|].<|java.util.ArrayList$SubList.size|>;
+    #L00000Ac. if [|v1|] < s0 then goto L00002Aa;
+    #L00001Aa. <@Frame (@Same, 0, `[(|top|), (|top|)], 0, `[(|top|), (|top|), (|top|), (|top|)])>
+    #L00001Ab. s0:= new (|java.lang.IndexOutOfBoundsException|);
+    #L00001Ac. call s1:= {|java.util.ArrayList$SubList.outOfBoundsMsg(I)Ljava.lang.String;|}([|v0|],[|v1|]) @signature "java.util.ArrayList$SubList.outOfBoundsMsg(I)Ljava/lang/String;" @classDescriptor [|java.util.ArrayList$SubList|] @type special;
+    #L00001Ad. call s2:= {|java.lang.IndexOutOfBoundsException.<init>(Ljava.lang.String;)V|}(s0,s1) @signature "java.lang.IndexOutOfBoundsException.<init>(Ljava/lang/String;)V" @classDescriptor [|java.lang.IndexOutOfBoundsException|] @type special;
+    #L00001Ae. throw s0;
+    #L00002Aa. <@Frame (@Same, 0, `[(|top|), (|top|)], 0, `[(|top|), (|top|), (|top|), (|top|)])>
+    #L00002Ab. return @void;
+  }
+  procedure (|void|) {|java.util.ArrayList$SubList.rangeCheckForAdd(I)V|} ((|java.util.ArrayList$SubList|) [|v0|], (|int|) [|v1|]) 
+    @MaxLocals 2
+    @MaxStack 4
+    @Owner (|java.util.ArrayList$SubList|)
+    @Access (PRIVATE)
+    @Signature "java.util.ArrayList$SubList.rangeCheckForAdd(I)V" 
+  {
+    local jmp;
+    s0;
+    s1;
+    s2;
+
+    #L00000Aa. if [|v1|] < 0 then goto L00001Aa;
+    #L00000Ab. s0:= [|v0|].<|java.util.ArrayList$SubList.size|>;
+    #L00000Ac. if [|v1|] <= s0 then goto L00002Aa;
+    #L00001Aa. <@Frame (@Same, 0, `[(|top|), (|top|)], 0, `[(|top|), (|top|), (|top|), (|top|)])>
+    #L00001Ab. s0:= new (|java.lang.IndexOutOfBoundsException|);
+    #L00001Ac. call s1:= {|java.util.ArrayList$SubList.outOfBoundsMsg(I)Ljava.lang.String;|}([|v0|],[|v1|]) @signature "java.util.ArrayList$SubList.outOfBoundsMsg(I)Ljava/lang/String;" @classDescriptor [|java.util.ArrayList$SubList|] @type special;
+    #L00001Ad. call s2:= {|java.lang.IndexOutOfBoundsException.<init>(Ljava.lang.String;)V|}(s0,s1) @signature "java.lang.IndexOutOfBoundsException.<init>(Ljava/lang/String;)V" @classDescriptor [|java.lang.IndexOutOfBoundsException|] @type special;
+    #L00001Ae. throw s0;
+    #L00002Aa. <@Frame (@Same, 0, `[(|top|), (|top|)], 0, `[(|top|), (|top|), (|top|), (|top|)])>
+    #L00002Ab. return @void;
+  }
+  procedure (|java.lang.String|) {|java.util.ArrayList$SubList.outOfBoundsMsg(I)Ljava.lang.String;|} ((|java.util.ArrayList$SubList|) [|v0|], (|int|) [|v1|]) 
+    @MaxLocals 2
+    @MaxStack 2
+    @Owner (|java.util.ArrayList$SubList|)
+    @Access (PRIVATE)
+    @Signature "java.util.ArrayList$SubList.outOfBoundsMsg(I)Ljava/lang/String;" 
+  {
+    local jmp;
+    s0;
+    s1;
+    s2;
+    s3;
+    s4;
+    s5;
+    s6;
+    s7;
+
+    #L00000Aa. s0:= new (|java.lang.StringBuilder|);
+    #L00000Ab. call s1:= {|java.lang.StringBuilder.<init>()V|}(s0) @signature "java.lang.StringBuilder.<init>()V" @classDescriptor [|java.lang.StringBuilder|] @type special;
+    #L00000Ac. call s2:= {|java.lang.StringBuilder.append(Ljava.lang.String;)Ljava.lang.StringBuilder;|}(s0,"Index: ") @signature "java.lang.StringBuilder.append(Ljava/lang/String;)Ljava/lang/StringBuilder;" @classDescriptor [|java.lang.StringBuilder|] @type virtual;
+    #L00000Ad. call s3:= {|java.lang.StringBuilder.append(I)Ljava.lang.StringBuilder;|}(s2,[|v1|]) @signature "java.lang.StringBuilder.append(I)Ljava/lang/StringBuilder;" @classDescriptor [|java.lang.StringBuilder|] @type virtual;
+    #L00000Ae. call s4:= {|java.lang.StringBuilder.append(Ljava.lang.String;)Ljava.lang.StringBuilder;|}(s3,", Size: ") @signature "java.lang.StringBuilder.append(Ljava/lang/String;)Ljava/lang/StringBuilder;" @classDescriptor [|java.lang.StringBuilder|] @type virtual;
+    #L00000Af. s5:= [|v0|].<|java.util.ArrayList$SubList.size|>;
+    #L00000Ag. call s6:= {|java.lang.StringBuilder.append(I)Ljava.lang.StringBuilder;|}(s4,s5) @signature "java.lang.StringBuilder.append(I)Ljava/lang/StringBuilder;" @classDescriptor [|java.lang.StringBuilder|] @type virtual;
+    #L00000Ah. call s7:= {|java.lang.StringBuilder.toString()Ljava.lang.String;|}(s6) @signature "java.lang.StringBuilder.toString()Ljava/lang/String;" @classDescriptor [|java.lang.StringBuilder|] @type virtual;
+    #L00000Ai. return s7;
+  }
+  procedure (|void|) {|java.util.ArrayList$SubList.checkForComodification()V|} ((|java.util.ArrayList$SubList|) [|v0|]) 
+    @MaxLocals 1
+    @MaxStack 2
+    @Owner (|java.util.ArrayList$SubList|)
+    @Access (PRIVATE)
+    @Signature "java.util.ArrayList$SubList.checkForComodification()V" 
+  {
+    local jmp;
+    s0;
+    s1;
+    s2;
+
+    #L00000Aa. s0:= [|v0|].<|java.util.ArrayList$SubList.this$0|>;
+    #L00000Ab. s1:= s0.<|java.util.ArrayList.modCount|>;
+    #L00000Ac. s2:= [|v0|].<|java.util.ArrayList$SubList.modCount|>;
+    #L00000Ad. if s1 == s2 then goto L00001Aa;
+    #L00002Aa. s0:= new (|java.util.ConcurrentModificationException|);
+    #L00002Ab. call s1:= {|java.util.ConcurrentModificationException.<init>()V|}(s0) @signature "java.util.ConcurrentModificationException.<init>()V" @classDescriptor [|java.util.ConcurrentModificationException|] @type special;
+    #L00002Ac. throw s0;
+    #L00001Aa. <@Frame (@Same, 0, `[(|top|)], 0, `[(|top|), (|top|)])>
+    #L00001Ab. return @void;
+  }
+
+record (|java.util.ArrayList$ListItr|)
+    @Source "ArrayList.java"
+    @GenericSignature "Ljava/util/ArrayList<TE;>.Itr;Ljava/util/ListIterator<TE;>;"
+    @Type class
+    @AccessFlag ()
+    @InnerClass (
+      @Name (|java.util.ArrayList$1|), 
+      @OuterName (|java.util.ArrayList|), 
+      @AccessFlag (STATIC,SYNTHETIC)
+     ) 
+  extends 
+    (|java.util.ArrayList$Itr|) 
+{
+  (|java.util.ArrayList|) <|ArrayList$ListItr.this$0|> @AccessFlag (FINAL,SYNTHETIC);
+}
+
+  procedure (|void|) {|java.util.ArrayList$ListItr.<init>(Ljava.util.ArrayList;I)V|} ((|java.util.ArrayList$ListItr|) [|v0|], (|java.util.ArrayList|) [|v1|], (|int|) [|v2|]) 
+    @MaxLocals 3
+    @MaxStack 3
+    @Owner (|java.util.ArrayList$ListItr|)
+    @Access (CONSTRUCTOR)
+    @Signature "java.util.ArrayList$ListItr.<init>(Ljava/util/ArrayList;I)V" 
+  {
+    local jmp;
+    s0;
+
+    #L00000Aa. [|v0|].<|java.util.ArrayList$ListItr.this$0|>:= [|v1|];
+    #L00001Aa. call s0:= {|java.util.ArrayList$Itr.<init>(Ljava.util.ArrayList;Ljava.util.ArrayList$1;)V|}([|v0|],[|v1|],null) @signature "java.util.ArrayList$Itr.<init>(Ljava/util/ArrayList;Ljava/util/ArrayList$1;)V" @classDescriptor [|java.util.ArrayList$Itr|] @type special;
+    #L00002Aa. [|v0|].<|java.util.ArrayList$ListItr.cursor|>:= [|v2|];
+    #L00003Aa. return @void;
+  }
+  procedure (|boolean|) {|java.util.ArrayList$ListItr.hasPrevious()Z|} ((|java.util.ArrayList$ListItr|) [|v0|]) 
+    @MaxLocals 1
+    @MaxStack 1
+    @Owner (|java.util.ArrayList$ListItr|)
+    @Access (PUBLIC)
+    @Signature "java.util.ArrayList$ListItr.hasPrevious()Z" 
+  {
+    local jmp;
+    s0;
+
+    #L00000Aa. s0:= [|v0|].<|java.util.ArrayList$ListItr.cursor|>;
+    #L00000Ab. if s0 == 0 then goto L00001Aa;
+    #L00000Ac. jmp:= 1;
+    #L00000Ad. goto L00002Aa;
+    #L00001Aa. <@Frame (@Same, 0, `[(|top|)], 0, `[(|top|)])>
+    #L00001Ab. jmp:= 0;
+    #L00002Aa. <@Frame (@Same1, 0, `[(|top|)], 1, `[(|int|)])>
+    #L00002Ab. return jmp;
+  }
+  procedure (|int|) {|java.util.ArrayList$ListItr.nextIndex()I|} ((|java.util.ArrayList$ListItr|) [|v0|]) 
+    @MaxLocals 1
+    @MaxStack 1
+    @Owner (|java.util.ArrayList$ListItr|)
+    @Access (PUBLIC)
+    @Signature "java.util.ArrayList$ListItr.nextIndex()I" 
+  {
+    local jmp;
+    s0;
+
+    #L00000Aa. s0:= [|v0|].<|java.util.ArrayList$ListItr.cursor|>;
+    #L00000Ab. return s0;
+  }
+  procedure (|int|) {|java.util.ArrayList$ListItr.previousIndex()I|} ((|java.util.ArrayList$ListItr|) [|v0|]) 
+    @MaxLocals 1
+    @MaxStack 2
+    @Owner (|java.util.ArrayList$ListItr|)
+    @Access (PUBLIC)
+    @Signature "java.util.ArrayList$ListItr.previousIndex()I" 
+  {
+    local jmp;
+    s0;
+
+    #L00000Aa. s0:= [|v0|].<|java.util.ArrayList$ListItr.cursor|>;
+    #L00000Ab. return s0-1;
+  }
+  procedure (|java.lang.Object|) {|java.util.ArrayList$ListItr.previous()Ljava.lang.Object;|} ((|java.util.ArrayList$ListItr|) [|v0|]) 
+    @MaxLocals 3
+    @MaxStack 4
+    @GenericSignature "()TE;"
+    @Owner (|java.util.ArrayList$ListItr|)
+    @Access (PUBLIC)
+    @Signature "java.util.ArrayList$ListItr.previous()Ljava/lang/Object;" 
+  {
+    local jmp;
+    s0;
+    s1;
+    [|v1|];
+    [|v2|];
+
+    #L00000Aa. call s0:= {|java.util.ArrayList$ListItr.checkForComodification()V|}([|v0|]) @signature "java.util.ArrayList$ListItr.checkForComodification()V" @classDescriptor [|java.util.ArrayList$ListItr|] @type virtual;
+    #L00001Aa. s0:= [|v0|].<|java.util.ArrayList$ListItr.cursor|>;
+    #L00001Ab. [|v1|]:= s0-1 @type (|int|);
+    #L00002Aa. if [|v1|] >= 0 then goto L00003Aa;
+    #L00004Aa. s0:= new (|java.util.NoSuchElementException|);
+    #L00004Ab. call s1:= {|java.util.NoSuchElementException.<init>()V|}(s0) @signature "java.util.NoSuchElementException.<init>()V" @classDescriptor [|java.util.NoSuchElementException|] @type special;
+    #L00004Ac. throw s0;
+    #L00003Aa. <@Frame (@Append, 1, `[(|int|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|), (|top|)])>
+    #L00003Ab. s0:= [|v0|].<|java.util.ArrayList$ListItr.this$0|>;
+    #L00003Ac. call s1:= {|java.util.ArrayList.access$200(Ljava.util.ArrayList;)[Ljava.lang.Object;|}(s0) @signature "java.util.ArrayList.access$200(Ljava/util/ArrayList;)[Ljava/lang/Object;" @classDescriptor [|java.util.ArrayList|] @type direct;
+    #L00003Ad. [|v2|]:= s1 @type (|java.lang.Object|);
+    #L00005Aa. if [|v1|] < [|v2|].length then goto L00006Aa;
+    #L00007Aa. s0:= new (|java.util.ConcurrentModificationException|);
+    #L00007Ab. call s1:= {|java.util.ConcurrentModificationException.<init>()V|}(s0) @signature "java.util.ConcurrentModificationException.<init>()V" @classDescriptor [|java.util.ConcurrentModificationException|] @type special;
+    #L00007Ac. throw s0;
+    #L00006Aa. <@Frame (@Append, 1, `[(|java.lang.Object[]|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|), (|top|)])>
+    #L00006Ab. [|v0|].<|java.util.ArrayList$ListItr.cursor|>:= [|v1|];
+    #L00008Aa. [|v0|].<|java.util.ArrayList$ListItr.lastRet|>:= [|v1|];
+    #L00008Ab. s0:= [|v2|][[|v1|]];
+    #L00008Ac. return s0;
+  }
+  procedure (|void|) {|java.util.ArrayList$ListItr.set(Ljava.lang.Object;)V|} ((|java.util.ArrayList$ListItr|) [|v0|], (|java.lang.Object|) [|v1|]) 
+    @MaxLocals 3
+    @MaxStack 3
+    @GenericSignature "(TE;)V"
+    @Owner (|java.util.ArrayList$ListItr|)
+    @Access (PUBLIC)
+    @Signature "java.util.ArrayList$ListItr.set(Ljava/lang/Object;)V" 
+  {
+    local jmp;
+    s0;
+    s1;
+    s2;
+    [|v2|];
+
+    #L00003Aa. s0:= [|v0|].<|java.util.ArrayList$ListItr.lastRet|>;
+    #L00003Ab. if s0 >= 0 then goto L00004Aa;
+    #L00005Aa. s0:= new (|java.lang.IllegalStateException|);
+    #L00005Ab. call s1:= {|java.lang.IllegalStateException.<init>()V|}(s0) @signature "java.lang.IllegalStateException.<init>()V" @classDescriptor [|java.lang.IllegalStateException|] @type special;
+    #L00005Ac. throw s0;
+    #L00004Aa. <@Frame (@Same, 0, `[(|top|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|)])>
+    #L00004Ab. call s0:= {|java.util.ArrayList$ListItr.checkForComodification()V|}([|v0|]) @signature "java.util.ArrayList$ListItr.checkForComodification()V" @classDescriptor [|java.util.ArrayList$ListItr|] @type virtual;
+    #L00000Aa. s0:= [|v0|].<|java.util.ArrayList$ListItr.this$0|>;
+    #L00000Ab. s1:= [|v0|].<|java.util.ArrayList$ListItr.lastRet|>;
+    #L00000Ac. call s2:= {|java.util.ArrayList.set(ILjava.lang.Object;)Ljava.lang.Object;|}(s0,s1,[|v1|]) @signature "java.util.ArrayList.set(ILjava/lang/Object;)Ljava/lang/Object;" @classDescriptor [|java.util.ArrayList|] @type virtual;
+    #L00001Aa. goto L00006Aa;
+    #L00002Aa. <@Frame (@Same1, 0, `[(|top|), (|top|), (|top|)], 1, `[(|java.lang.Object|), (|top|), (|top|)])>
+    #L00002Ab. [|v2|]:= Exception @type java.lang.Object;
+    #L00007Aa. s0:= new (|java.util.ConcurrentModificationException|);
+    #L00007Ab. call s1:= {|java.util.ConcurrentModificationException.<init>()V|}(s0) @signature "java.util.ConcurrentModificationException.<init>()V" @classDescriptor [|java.util.ConcurrentModificationException|] @type special;
+    #L00007Ac. throw s0;
+    #L00006Aa. <@Frame (@Same, 0, `[(|top|), (|top|), (|top|)], 0, `[(|java.lang.Object|), (|top|), (|top|)])>
+    #L00006Ab. return @void;
+      catch (|java.lang.IndexOutOfBoundsException|) @[L00000Aa..L00001Aa] goto L00002Aa;
+  }
+  procedure (|void|) {|java.util.ArrayList$ListItr.add(Ljava.lang.Object;)V|} ((|java.util.ArrayList$ListItr|) [|v0|], (|java.lang.Object|) [|v1|]) 
+    @MaxLocals 3
+    @MaxStack 3
+    @GenericSignature "(TE;)V"
+    @Owner (|java.util.ArrayList$ListItr|)
+    @Access (PUBLIC)
+    @Signature "java.util.ArrayList$ListItr.add(Ljava/lang/Object;)V" 
+  {
+    local jmp;
+    s0;
+    s1;
+    [|v2|];
+
+    #L00003Aa. call s0:= {|java.util.ArrayList$ListItr.checkForComodification()V|}([|v0|]) @signature "java.util.ArrayList$ListItr.checkForComodification()V" @classDescriptor [|java.util.ArrayList$ListItr|] @type virtual;
+    #L00000Aa. s0:= [|v0|].<|java.util.ArrayList$ListItr.cursor|>;
+    #L00000Ab. [|v2|]:= s0 @type (|int|);
+    #L00004Aa. s0:= [|v0|].<|java.util.ArrayList$ListItr.this$0|>;
+    #L00004Ab. call s1:= {|java.util.ArrayList.add(ILjava.lang.Object;)V|}(s0,[|v2|],[|v1|]) @signature "java.util.ArrayList.add(ILjava/lang/Object;)V" @classDescriptor [|java.util.ArrayList|] @type virtual;
+    #L00005Aa. [|v0|].<|java.util.ArrayList$ListItr.cursor|>:= [|v2|]+1;
+    #L00006Aa. [|v0|].<|java.util.ArrayList$ListItr.lastRet|>:= -1;
+    #L00007Aa. s0:= [|v0|].<|java.util.ArrayList$ListItr.this$0|>;
+    #L00007Ab. s1:= s0.<|java.util.ArrayList.modCount|>;
+    #L00007Ac. [|v0|].<|java.util.ArrayList$ListItr.expectedModCount|>:= s1;
+    #L00001Aa. goto L00008Aa;
+    #L00002Aa. <@Frame (@Same1, 0, `[(|top|), (|top|), (|top|)], 1, `[(|java.lang.Object|), (|top|), (|top|)])>
+    #L00002Ab. [|v2|]:= Exception @type java.lang.Object;
+    #L00009Aa. s0:= new (|java.util.ConcurrentModificationException|);
+    #L00009Ab. call s1:= {|java.util.ConcurrentModificationException.<init>()V|}(s0) @signature "java.util.ConcurrentModificationException.<init>()V" @classDescriptor [|java.util.ConcurrentModificationException|] @type special;
+    #L00009Ac. throw s0;
+    #L00008Aa. <@Frame (@Same, 0, `[(|top|), (|top|), (|top|)], 0, `[(|java.lang.Object|), (|top|), (|top|)])>
+    #L00008Ab. return @void;
+      catch (|java.lang.IndexOutOfBoundsException|) @[L00000Aa..L00001Aa] goto L00002Aa;
+  }
+
+record (|java.util.ArrayList$Itr|)
+    @Source "ArrayList.java"
+    @GenericSignature "Ljava/lang/Object;Ljava/util/Iterator<TE;>;"
+    @Type class
+    @AccessFlag ()
+    @InnerClass (
+      @Name (|java.util.ArrayList$Itr|), 
+      @OuterName (|java.util.ArrayList|), 
+      @InnerName Itr, 
+      @AccessFlag (PRIVATE)
+     ) 
+  extends 
+    (|java.lang.Object|) 
+{
+  (|int|) <|ArrayList$Itr.cursor|> @AccessFlag ();
+  (|int|) <|ArrayList$Itr.lastRet|> @AccessFlag ();
+  (|int|) <|ArrayList$Itr.expectedModCount|> @AccessFlag ();
+  (|java.util.ArrayList|) <|ArrayList$Itr.this$0|> @AccessFlag (FINAL,SYNTHETIC);
+}
+
+  procedure (|void|) {|java.util.ArrayList$Itr.<init>(Ljava.util.ArrayList;)V|} ((|java.util.ArrayList$Itr|) [|v0|], (|java.util.ArrayList|) [|v1|]) 
+    @MaxLocals 2
+    @MaxStack 2
+    @Owner (|java.util.ArrayList$Itr|)
+    @Access (PRIVATE,CONSTRUCTOR)
+    @Signature "java.util.ArrayList$Itr.<init>(Ljava/util/ArrayList;)V" 
+  {
+    local jmp;
+    s0;
+    s1;
+
+    #L00000Aa. [|v0|].<|java.util.ArrayList$Itr.this$0|>:= [|v1|];
+    #L00000Ab. call s0:= {|java.lang.Object.<init>()V|}([|v0|]) @signature "java.lang.Object.<init>()V" @classDescriptor [|java.lang.Object|] @type special;
+    #L00001Aa. [|v0|].<|java.util.ArrayList$Itr.lastRet|>:= -1;
+    #L00002Aa. s0:= [|v0|].<|java.util.ArrayList$Itr.this$0|>;
+    #L00002Ab. s1:= s0.<|java.util.ArrayList.modCount|>;
+    #L00002Ac. [|v0|].<|java.util.ArrayList$Itr.expectedModCount|>:= s1;
+    #L00002Ad. return @void;
+  }
+  procedure (|boolean|) {|java.util.ArrayList$Itr.hasNext()Z|} ((|java.util.ArrayList$Itr|) [|v0|]) 
+    @MaxLocals 1
+    @MaxStack 2
+    @Owner (|java.util.ArrayList$Itr|)
+    @Access (PUBLIC)
+    @Signature "java.util.ArrayList$Itr.hasNext()Z" 
+  {
+    local jmp;
+    s0;
+    s1;
+    s2;
+
+    #L00000Aa. s0:= [|v0|].<|java.util.ArrayList$Itr.cursor|>;
+    #L00000Ab. s1:= [|v0|].<|java.util.ArrayList$Itr.this$0|>;
+    #L00000Ac. call s2:= {|java.util.ArrayList.access$100(Ljava.util.ArrayList;)I|}(s1) @signature "java.util.ArrayList.access$100(Ljava/util/ArrayList;)I" @classDescriptor [|java.util.ArrayList|] @type direct;
+    #L00000Ad. if s0 == s2 then goto L00001Aa;
+    #L00000Ae. jmp:= 1;
+    #L00000Af. goto L00002Aa;
+    #L00001Aa. <@Frame (@Same, 0, `[(|top|)], 0, `[(|top|), (|top|)])>
+    #L00001Ab. jmp:= 0;
+    #L00002Aa. <@Frame (@Same1, 0, `[(|top|)], 1, `[(|int|), (|top|)])>
+    #L00002Ab. return jmp;
+  }
+  procedure (|java.lang.Object|) {|java.util.ArrayList$Itr.next()Ljava.lang.Object;|} ((|java.util.ArrayList$Itr|) [|v0|]) 
+    @MaxLocals 3
+    @MaxStack 4
+    @GenericSignature "()TE;"
+    @Owner (|java.util.ArrayList$Itr|)
+    @Access (PUBLIC)
+    @Signature "java.util.ArrayList$Itr.next()Ljava/lang/Object;" 
+  {
+    local jmp;
+    s0;
+    s1;
+    [|v1|];
+    [|v2|];
+
+    #L00000Aa. call s0:= {|java.util.ArrayList$Itr.checkForComodification()V|}([|v0|]) @signature "java.util.ArrayList$Itr.checkForComodification()V" @classDescriptor [|java.util.ArrayList$Itr|] @type virtual;
+    #L00001Aa. s0:= [|v0|].<|java.util.ArrayList$Itr.cursor|>;
+    #L00001Ab. [|v1|]:= s0 @type (|int|);
+    #L00002Aa. s0:= [|v0|].<|java.util.ArrayList$Itr.this$0|>;
+    #L00002Ab. call s1:= {|java.util.ArrayList.access$100(Ljava.util.ArrayList;)I|}(s0) @signature "java.util.ArrayList.access$100(Ljava/util/ArrayList;)I" @classDescriptor [|java.util.ArrayList|] @type direct;
+    #L00002Ac. if [|v1|] < s1 then goto L00003Aa;
+    #L00004Aa. s0:= new (|java.util.NoSuchElementException|);
+    #L00004Ab. call s1:= {|java.util.NoSuchElementException.<init>()V|}(s0) @signature "java.util.NoSuchElementException.<init>()V" @classDescriptor [|java.util.NoSuchElementException|] @type special;
+    #L00004Ac. throw s0;
+    #L00003Aa. <@Frame (@Append, 1, `[(|int|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|), (|top|)])>
+    #L00003Ab. s0:= [|v0|].<|java.util.ArrayList$Itr.this$0|>;
+    #L00003Ac. call s1:= {|java.util.ArrayList.access$200(Ljava.util.ArrayList;)[Ljava.lang.Object;|}(s0) @signature "java.util.ArrayList.access$200(Ljava/util/ArrayList;)[Ljava/lang/Object;" @classDescriptor [|java.util.ArrayList|] @type direct;
+    #L00003Ad. [|v2|]:= s1 @type (|java.lang.Object|);
+    #L00005Aa. if [|v1|] < [|v2|].length then goto L00006Aa;
+    #L00007Aa. s0:= new (|java.util.ConcurrentModificationException|);
+    #L00007Ab. call s1:= {|java.util.ConcurrentModificationException.<init>()V|}(s0) @signature "java.util.ConcurrentModificationException.<init>()V" @classDescriptor [|java.util.ConcurrentModificationException|] @type special;
+    #L00007Ac. throw s0;
+    #L00006Aa. <@Frame (@Append, 1, `[(|java.lang.Object[]|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|), (|top|)])>
+    #L00006Ab. [|v0|].<|java.util.ArrayList$Itr.cursor|>:= [|v1|]+1;
+    #L00008Aa. [|v0|].<|java.util.ArrayList$Itr.lastRet|>:= [|v1|];
+    #L00008Ab. s0:= [|v2|][[|v1|]];
+    #L00008Ac. return s0;
+  }
+  procedure (|void|) {|java.util.ArrayList$Itr.remove()V|} ((|java.util.ArrayList$Itr|) [|v0|]) 
+    @MaxLocals 2
+    @MaxStack 2
+    @Owner (|java.util.ArrayList$Itr|)
+    @Access (PUBLIC)
+    @Signature "java.util.ArrayList$Itr.remove()V" 
+  {
+    local jmp;
+    s0;
+    s1;
+    s2;
+    [|v1|];
+
+    #L00003Aa. s0:= [|v0|].<|java.util.ArrayList$Itr.lastRet|>;
+    #L00003Ab. if s0 >= 0 then goto L00004Aa;
+    #L00005Aa. s0:= new (|java.lang.IllegalStateException|);
+    #L00005Ab. call s1:= {|java.lang.IllegalStateException.<init>()V|}(s0) @signature "java.lang.IllegalStateException.<init>()V" @classDescriptor [|java.lang.IllegalStateException|] @type special;
+    #L00005Ac. throw s0;
+    #L00004Aa. <@Frame (@Same, 0, `[(|top|), (|top|)], 0, `[(|top|), (|top|)])>
+    #L00004Ab. call s0:= {|java.util.ArrayList$Itr.checkForComodification()V|}([|v0|]) @signature "java.util.ArrayList$Itr.checkForComodification()V" @classDescriptor [|java.util.ArrayList$Itr|] @type virtual;
+    #L00000Aa. s0:= [|v0|].<|java.util.ArrayList$Itr.this$0|>;
+    #L00000Ab. s1:= [|v0|].<|java.util.ArrayList$Itr.lastRet|>;
+    #L00000Ac. call s2:= {|java.util.ArrayList.remove(I)Ljava.lang.Object;|}(s0,s1) @signature "java.util.ArrayList.remove(I)Ljava/lang/Object;" @classDescriptor [|java.util.ArrayList|] @type virtual;
+    #L00006Aa. s0:= [|v0|].<|java.util.ArrayList$Itr.lastRet|>;
+    #L00006Ab. [|v0|].<|java.util.ArrayList$Itr.cursor|>:= s0;
+    #L00007Aa. [|v0|].<|java.util.ArrayList$Itr.lastRet|>:= -1;
+    #L00008Aa. s0:= [|v0|].<|java.util.ArrayList$Itr.this$0|>;
+    #L00008Ab. s1:= s0.<|java.util.ArrayList.modCount|>;
+    #L00008Ac. [|v0|].<|java.util.ArrayList$Itr.expectedModCount|>:= s1;
+    #L00001Aa. goto L00009Aa;
+    #L00002Aa. <@Frame (@Same1, 0, `[(|top|), (|top|)], 1, `[(|java.lang.Object|), (|top|)])>
+    #L00002Ab. [|v1|]:= Exception @type java.lang.Object;
+    #L00010Aa. s0:= new (|java.util.ConcurrentModificationException|);
+    #L00010Ab. call s1:= {|java.util.ConcurrentModificationException.<init>()V|}(s0) @signature "java.util.ConcurrentModificationException.<init>()V" @classDescriptor [|java.util.ConcurrentModificationException|] @type special;
+    #L00010Ac. throw s0;
+    #L00009Aa. <@Frame (@Same, 0, `[(|top|), (|top|)], 0, `[(|java.lang.Object|), (|top|)])>
+    #L00009Ab. return @void;
+      catch (|java.lang.IndexOutOfBoundsException|) @[L00000Aa..L00001Aa] goto L00002Aa;
+  }
+  procedure (|void|) {|java.util.ArrayList$Itr.checkForComodification()V|} ((|java.util.ArrayList$Itr|) [|v0|]) 
+    @MaxLocals 1
+    @MaxStack 2
+    @Owner (|java.util.ArrayList$Itr|)
+    @Access (FINAL)
+    @Signature "java.util.ArrayList$Itr.checkForComodification()V" 
+  {
+    local jmp;
+    s0;
+    s1;
+    s2;
+
+    #L00000Aa. s0:= [|v0|].<|java.util.ArrayList$Itr.this$0|>;
+    #L00000Ab. s1:= s0.<|java.util.ArrayList.modCount|>;
+    #L00000Ac. s2:= [|v0|].<|java.util.ArrayList$Itr.expectedModCount|>;
+    #L00000Ad. if s1 == s2 then goto L00001Aa;
+    #L00002Aa. s0:= new (|java.util.ConcurrentModificationException|);
+    #L00002Ab. call s1:= {|java.util.ConcurrentModificationException.<init>()V|}(s0) @signature "java.util.ConcurrentModificationException.<init>()V" @classDescriptor [|java.util.ConcurrentModificationException|] @type special;
+    #L00002Ac. throw s0;
+    #L00001Aa. <@Frame (@Same, 0, `[(|top|)], 0, `[(|top|), (|top|)])>
+    #L00001Ab. return @void;
+  }
+  procedure (|void|) {|java.util.ArrayList$Itr.<init>(Ljava.util.ArrayList;Ljava.util.ArrayList$1;)V|} ((|java.util.ArrayList$Itr|) [|v0|], (|java.util.ArrayList|) [|v1|], (|java.util.ArrayList$1|) [|v2|]) 
+    @MaxLocals 3
+    @MaxStack 2
+    @Owner (|java.util.ArrayList$Itr|)
+    @Access (SYNTHETIC,CONSTRUCTOR)
+    @Signature "java.util.ArrayList$Itr.<init>(Ljava/util/ArrayList;Ljava/util/ArrayList$1;)V" 
+  {
+    local jmp;
+    s0;
+
+    #L00000Aa. call s0:= {|java.util.ArrayList$Itr.<init>(Ljava.util.ArrayList;)V|}([|v0|],[|v1|]) @signature "java.util.ArrayList$Itr.<init>(Ljava/util/ArrayList;)V" @classDescriptor [|java.util.ArrayList$Itr|] @type special;
+    #L00000Ab. return @void;
+  }
+
+

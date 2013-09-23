@@ -24,7 +24,7 @@ class Record(access: Int, name: String, supername: String, signature: String, in
 
   def getAnnotations() = {
     if (access != 0) annotations.put("AccessFlag", Util.getAccessFlag(access))
-    annotations.put("type", Util.getRecordType(access))
+    annotations.put("Type", Util.getRecordType(access))
     annotations
   }
 

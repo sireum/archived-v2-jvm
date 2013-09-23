@@ -23,12 +23,9 @@ class TranslatorTest extends FunSuite {
 
   test("It should parse") {
     val reporter = new PilarParser.StringErrorReporter(true)
-    //      val cl = ClassLoader.getSystemClassLoader()
-    //      val qname = "org.sireum.jvm.samples.HelloWorld2"
-    //      PilarParser.apply(Left(ClassTranslator.translate(cl, qname)), reporter)
-     BytecodeTranslator.main(Array("java.util.HashMap"))  
-     //val ms = ChunkingPilarParser.apply(Right("file:/Users/Vidit/Dropbox/Classes/Spring2013/FinalProject/Sireum2Workspace/sireum-translator/sireum-jvm-translator/output"), reporter)
-//     val fst = {_:Unit => new ST }
+    BytecodeTranslator.main(Array("java.lang.String"))  
+    val ms = ChunkingPilarParser(Right("file:/Users/Vidit/Dropbox/Classes/Spring2013/FinalProject/Sireum2Workspace/sireum-translator/sireum-jvm-translator/output"), reporter)
+//    val fst = {_:Unit => new ST }
 //    val ast = SymbolTable.apply(List(ms.get), fst, false)
 //    val pl : AlirIntraProceduralGraph.NodePool = mmapEmpty
 //    val cfgs = ast.procedureSymbolTables map (pst => ControlFlowGraph[String](pst, "Entry", "Exit", pl, { (_: LocationDecl,_:Iterable[CatchClause]) => (Array.empty[CatchClause], false) }))

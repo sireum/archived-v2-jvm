@@ -1,16 +1,14 @@
 package org.sireum.test.jvm.translator
 
 import org.sireum.jvm.translator.ClassTranslator
+import org.sireum.util.Either3
 
 object BytecodeTranslator {
   def main(args: Array[String]) {
-    val output = ClassTranslator.translate(Left(args(0)))
-    val pw = new java.io.PrintWriter(new java.io.File("result/" + args(0).drop(args(0).lastIndexOf(".") + 1) + ".plr"))
+    val output = ClassTranslator.translate(Either3.First(args(0)))
     val pw2 = new java.io.PrintWriter(new java.io.File("output"))
 
-    pw.println(output)
     pw2.println(output)
-    pw.close()
     pw2.close()
   }
 }

@@ -1,0 +1,138 @@
+record (|java.util.Set|)
+    @Source "Set.java"
+    @GenericSignature "<E:Ljava/lang/Object;>Ljava/lang/Object;Ljava/util/Collection<TE;>;"
+    @Type interface
+    @AccessFlag (PUBLIC,INTERFACE) 
+  extends 
+    (|java.lang.Object|) 
+{
+}
+
+  procedure (|int|) {|java.util.Set.size()I|} ((|java.util.Set|) [|v0|]) 
+    @Owner (|java.util.Set|)
+    @Access (PUBLIC)
+    @Signature "java.util.Set.size()I" 
+  {
+
+    #L00000Aa. return @void;
+  }
+  procedure (|boolean|) {|java.util.Set.isEmpty()Z|} ((|java.util.Set|) [|v0|]) 
+    @Owner (|java.util.Set|)
+    @Access (PUBLIC)
+    @Signature "java.util.Set.isEmpty()Z" 
+  {
+
+    #L00000Aa. return @void;
+  }
+  procedure (|boolean|) {|java.util.Set.contains(Ljava.lang.Object;)Z|} ((|java.util.Set|) [|v0|], (|java.lang.Object|) [|v1|]) 
+    @Owner (|java.util.Set|)
+    @Access (PUBLIC)
+    @Signature "java.util.Set.contains(Ljava/lang/Object;)Z" 
+  {
+
+    #L00000Aa. return @void;
+  }
+  procedure (|java.util.Iterator|) {|java.util.Set.iterator()Ljava.util.Iterator;|} ((|java.util.Set|) [|v0|]) 
+    @GenericSignature "()Ljava/util/Iterator<TE;>;"
+    @Owner (|java.util.Set|)
+    @Access (PUBLIC)
+    @Signature "java.util.Set.iterator()Ljava/util/Iterator;" 
+  {
+
+    #L00000Aa. return @void;
+  }
+  procedure (|java.lang.Object[]|) {|java.util.Set.toArray()[Ljava.lang.Object;|} ((|java.util.Set|) [|v0|]) 
+    @Owner (|java.util.Set|)
+    @Access (PUBLIC)
+    @Signature "java.util.Set.toArray()[Ljava/lang/Object;" 
+  {
+
+    #L00000Aa. return @void;
+  }
+  procedure (|java.lang.Object[]|) {|java.util.Set.toArray([Ljava.lang.Object;)[Ljava.lang.Object;|} ((|java.util.Set|) [|v0|], (|java.lang.Object[]|) [|v1|]) 
+    @GenericSignature "<T:Ljava/lang/Object;>([TT;)[TT;"
+    @Owner (|java.util.Set|)
+    @Access (PUBLIC)
+    @Signature "java.util.Set.toArray([Ljava/lang/Object;)[Ljava/lang/Object;" 
+  {
+
+    #L00000Aa. return @void;
+  }
+  procedure (|boolean|) {|java.util.Set.add(Ljava.lang.Object;)Z|} ((|java.util.Set|) [|v0|], (|java.lang.Object|) [|v1|]) 
+    @GenericSignature "(TE;)Z"
+    @Owner (|java.util.Set|)
+    @Access (PUBLIC)
+    @Signature "java.util.Set.add(Ljava/lang/Object;)Z" 
+  {
+
+    #L00000Aa. return @void;
+  }
+  procedure (|boolean|) {|java.util.Set.remove(Ljava.lang.Object;)Z|} ((|java.util.Set|) [|v0|], (|java.lang.Object|) [|v1|]) 
+    @Owner (|java.util.Set|)
+    @Access (PUBLIC)
+    @Signature "java.util.Set.remove(Ljava/lang/Object;)Z" 
+  {
+
+    #L00000Aa. return @void;
+  }
+  procedure (|boolean|) {|java.util.Set.containsAll(Ljava.util.Collection;)Z|} ((|java.util.Set|) [|v0|], (|java.util.Collection|) [|v1|]) 
+    @GenericSignature "(Ljava/util/Collection<*>;)Z"
+    @Owner (|java.util.Set|)
+    @Access (PUBLIC)
+    @Signature "java.util.Set.containsAll(Ljava/util/Collection;)Z" 
+  {
+
+    #L00000Aa. return @void;
+  }
+  procedure (|boolean|) {|java.util.Set.addAll(Ljava.util.Collection;)Z|} ((|java.util.Set|) [|v0|], (|java.util.Collection|) [|v1|]) 
+    @GenericSignature "(Ljava/util/Collection<+TE;>;)Z"
+    @Owner (|java.util.Set|)
+    @Access (PUBLIC)
+    @Signature "java.util.Set.addAll(Ljava/util/Collection;)Z" 
+  {
+
+    #L00000Aa. return @void;
+  }
+  procedure (|boolean|) {|java.util.Set.retainAll(Ljava.util.Collection;)Z|} ((|java.util.Set|) [|v0|], (|java.util.Collection|) [|v1|]) 
+    @GenericSignature "(Ljava/util/Collection<*>;)Z"
+    @Owner (|java.util.Set|)
+    @Access (PUBLIC)
+    @Signature "java.util.Set.retainAll(Ljava/util/Collection;)Z" 
+  {
+
+    #L00000Aa. return @void;
+  }
+  procedure (|boolean|) {|java.util.Set.removeAll(Ljava.util.Collection;)Z|} ((|java.util.Set|) [|v0|], (|java.util.Collection|) [|v1|]) 
+    @GenericSignature "(Ljava/util/Collection<*>;)Z"
+    @Owner (|java.util.Set|)
+    @Access (PUBLIC)
+    @Signature "java.util.Set.removeAll(Ljava/util/Collection;)Z" 
+  {
+
+    #L00000Aa. return @void;
+  }
+  procedure (|void|) {|java.util.Set.clear()V|} ((|java.util.Set|) [|v0|]) 
+    @Owner (|java.util.Set|)
+    @Access (PUBLIC)
+    @Signature "java.util.Set.clear()V" 
+  {
+
+    #L00000Aa. return @void;
+  }
+  procedure (|boolean|) {|java.util.Set.equals(Ljava.lang.Object;)Z|} ((|java.util.Set|) [|v0|], (|java.lang.Object|) [|v1|]) 
+    @Owner (|java.util.Set|)
+    @Access (PUBLIC)
+    @Signature "java.util.Set.equals(Ljava/lang/Object;)Z" 
+  {
+
+    #L00000Aa. return @void;
+  }
+  procedure (|int|) {|java.util.Set.hashCode()I|} ((|java.util.Set|) [|v0|]) 
+    @Owner (|java.util.Set|)
+    @Access (PUBLIC)
+    @Signature "java.util.Set.hashCode()I" 
+  {
+
+    #L00000Aa. return @void;
+  }
+
