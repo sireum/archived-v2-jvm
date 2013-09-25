@@ -25,7 +25,7 @@ record (|org.sireum.test.jvm.samples.Conditions|)
     @MaxStack 2
     @Owner (|org.sireum.test.jvm.samples.Conditions|)
     @Access (PUBLIC,STATIC)
-    @Signature "org.sireum.test.jvm.samples.Conditions.main([Ljava/lang/String;)V" 
+    @Signature "org.sireum.test.jvm.samples.Conditions.main([Ljava.lang.String;)V" 
   {
     local jmp;
     s0;

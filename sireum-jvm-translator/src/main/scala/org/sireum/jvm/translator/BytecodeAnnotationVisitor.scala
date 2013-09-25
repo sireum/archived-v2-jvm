@@ -37,11 +37,10 @@ class BytecodeAnnotationVisitor(api: Int, av: AnnotationVisitor, parentName: Str
       new BytecodeAnnotationVisitor("@"+Util.getPilarClassName(desc), values)
   }
   override def visitArray(name: String) = {
-    new BytecodeAnnotationVisitor(name+"= (", values)
+    new BytecodeAnnotationVisitor(name+"= @Array", values)
   }
   override def visitEnum(name: String, desc: String, value: String) {
-    baseModel.annotations.put("Enum", name + " " +
-      Util.getPilarClassName(Util.convertType(desc)) + " " + value)
+    values += (name + "=" + Util.getPilarClassName(Util.convertType(desc)) + " " + value)
   }
       
   override def visitEnd() {
@@ -50,7 +49,7 @@ class BytecodeAnnotationVisitor(api: Int, av: AnnotationVisitor, parentName: Str
     } else if (baseModel!=null) {
       baseModel.annotations.put(Util.getPilarClassName(parentName), "")
     } else if (oldValues!=null && values.size!=0) {
-      oldValues += (parentName + "(" + values.mkString(", ")+"))")
+      oldValues += (parentName + "(" + values.mkString(", ")+")")
     } else {
       oldValues += (parentName)
     }
