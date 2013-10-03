@@ -97,8 +97,8 @@ record (|java.lang.System|)
 
     #L00004Aa. s0 := +|java.lang.System.cons|+ @Type (|java.io.Console|);
     #L00004Ab. if s0 != null then goto L00005Aa;
-    #L00006Aa. [|v0|] := "Ljava/lang/System;";
-    #L00006Ab. (@monitorenter "Ljava/lang/System;")
+    #L00006Aa. [|v0|] := +|java.lang.System.class|+;
+    #L00006Ab. (@monitorenter +|java.lang.System.class|+)
     #L00000Aa. call s0  := {|sun.misc.SharedSecrets.getJavaIOAccess()Lsun.misc.JavaIOAccess;|}() @ClassDescriptor (|sun.misc.SharedSecrets|) @Type direct;
     #L00000Ab. call s1  := {|sun.misc.JavaIOAccess.console()Ljava.io.Console;|}(s0) @ClassDescriptor (|sun.misc.JavaIOAccess|) @Type interface;
     #L00000Ac. +|java.lang.System.cons|+ := s1 @Type (|java.io.Console|);
@@ -562,7 +562,7 @@ record (|java.lang.System|)
     @MaxLocals 1
     @MaxStack 1
     @Owner (|java.lang.System|)
-    @(|Ljava.lang.Deprecated;|) 
+    @(|java.lang.Deprecated;|) 
     @Access (PUBLIC,STATIC)
     @Desc "java.lang.System.runFinalizersOnExit(Z)V" 
   {
@@ -578,8 +578,8 @@ record (|java.lang.System|)
     @MaxLocals 1
     @MaxStack 3
     @Owner (|java.lang.System|)
-    @(|Lsun.reflect.CallerSensitive;|) 
     @Access (PUBLIC,STATIC)
+    @(|sun.reflect.CallerSensitive;|) 
     @Desc "java.lang.System.load(Ljava.lang.String;)V" 
   {
     local jmp;
@@ -596,8 +596,8 @@ record (|java.lang.System|)
     @MaxLocals 1
     @MaxStack 3
     @Owner (|java.lang.System|)
-    @(|Lsun.reflect.CallerSensitive;|) 
     @Access (PUBLIC,STATIC)
+    @(|sun.reflect.CallerSensitive;|) 
     @Desc "java.lang.System.loadLibrary(Ljava.lang.String;)V" 
   {
     local jmp;

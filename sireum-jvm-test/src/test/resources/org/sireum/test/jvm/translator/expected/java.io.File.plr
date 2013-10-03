@@ -599,7 +599,7 @@ record (|java.io.File|)
     @MaxLocals 1
     @MaxStack 6
     @Owner (|java.io.File|)
-    @(|Ljava.lang.Deprecated;|) 
+    @(|java.lang.Deprecated;|) 
     @Access (PUBLIC)
     @Desc "java.io.File.toURL()Ljava.net.URL;" 
   {
@@ -1861,7 +1861,7 @@ record (|java.io.File|)
     s4;
     s5;
 
-    #L00000Aa. call s0  := {|java.lang.Class.desiredAssertionStatus()Z|}("Ljava/io/File;") @ClassDescriptor (|java.lang.Class|) @Type virtual;
+    #L00000Aa. call s0  := {|java.lang.Class.desiredAssertionStatus()Z|}(+|java.io.File.class|+) @ClassDescriptor (|java.lang.Class|) @Type virtual;
     #L00000Ab. if s0 != 0 then goto L00001Aa;
     #L00000Ac. jmp := 1;
     #L00000Ad. goto L00002Aa;
@@ -2059,7 +2059,7 @@ record (|java.io.File$PathStatus|)
     local jmp;
     s0;
 
-    #L00000Aa. call s0  := {|java.lang.Enum.valueOf(Ljava.lang.Class;Ljava.lang.String;)Ljava.lang.Enum;|}("Ljava/io/File$PathStatus;",[|v0|]) @ClassDescriptor (|java.lang.Enum|) @Type direct;
+    #L00000Aa. call s0  := {|java.lang.Enum.valueOf(Ljava.lang.Class;Ljava.lang.String;)Ljava.lang.Enum;|}(+|java.io.File$PathStatus.class|+,[|v0|]) @ClassDescriptor (|java.lang.Enum|) @Type direct;
     #L00000Ab. return ((|java.io.File$PathStatus|)) s0;
   }
   procedure (|void|) {|java.io.File$PathStatus.<init>(Ljava.lang.String;I)V|} ((|java.io.File$PathStatus|) [|v0|], (|java.lang.String|) [|v1|], (|int|) [|v2|]) 

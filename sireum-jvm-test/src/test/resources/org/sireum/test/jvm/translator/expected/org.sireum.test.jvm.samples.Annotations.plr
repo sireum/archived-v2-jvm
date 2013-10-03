@@ -1,9 +1,9 @@
 record (|org.sireum.test.jvm.samples.Annotations|)
     @Source "Annotations.java"
     @Type class
-    @(|org.sireum.test.jvm.samples.WithValue;|) (bytes="akljfla", arr=`[1, 2], abc= @(|Lorg.sireum.test.jvm.samples.Nested;|)(name="lol"), nested= @Array(@(|Lorg.sireum.test.jvm.samples.Nested;|)(name="abc"), @(|Lorg.sireum.test.jvm.samples.Nested;|)(name="xyz")))
+    @Annotation ((|org.sireum.test.jvm.samples.WithValue|) (bytes="akljfla", arr=`[1, 2], abc= @(|Lorg.sireum.test.jvm.samples.Nested;|)(name="lol"), nested= @Array(@(|Lorg.sireum.test.jvm.samples.Nested;|)(name="abc"), @(|Lorg.sireum.test.jvm.samples.Nested;|)(name="xyz"))))
     @AccessFlag (PUBLIC)
-    @(|com.google.common.annotations.Beta;|)  
+    @Annotation (|com.google.common.annotations.Beta;|))  
   extends 
     (|java.lang.Object|) 
 {

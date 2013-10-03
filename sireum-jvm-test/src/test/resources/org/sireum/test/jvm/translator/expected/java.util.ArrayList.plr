@@ -86,10 +86,10 @@ record (|java.util.ArrayList|)
     #L00002Ab. [|v0|].<|java.util.ArrayList.size|> := s0.length @Type (|int|);
     #L00003Aa. s0 := [|v0|].<|java.util.ArrayList.elementData|> @Type (|java.lang.Object[]|);
     #L00003Ab. call s1  := {|java.lang.Object.getClass()Ljava.lang.Class;|}(s0) @ClassDescriptor (|java.lang.Object|) @Type virtual;
-    #L00003Ac. if s1 == "[Ljava/lang/Object;" then goto L00004Aa;
+    #L00003Ac. if s1 == +|java.lang.Object[].class|+ then goto L00004Aa;
     #L00005Aa. s0 := [|v0|].<|java.util.ArrayList.elementData|> @Type (|java.lang.Object[]|);
     #L00005Ab. s1 := [|v0|].<|java.util.ArrayList.size|> @Type (|int|);
-    #L00005Ac. call s2  := {|java.util.Arrays.copyOf([Ljava.lang.Object;ILjava.lang.Class;)[Ljava.lang.Object;|}(s0,s1,"[Ljava/lang/Object;") @ClassDescriptor (|java.util.Arrays|) @Type direct;
+    #L00005Ac. call s2  := {|java.util.Arrays.copyOf([Ljava.lang.Object;ILjava.lang.Class;)[Ljava.lang.Object;|}(s0,s1,+|java.lang.Object[].class|+) @ClassDescriptor (|java.util.Arrays|) @Type direct;
     #L00005Ad. [|v0|].<|java.util.ArrayList.elementData|> := s2 @Type (|java.lang.Object[]|);
     #L00004Aa. <@Frame (@Full, 2, `[(|java.lang.Object|), (|java.lang.Object|)], 0, `[(|top|), (|top|), (|top|), (|top|)])>
     #L00004Ab. return @void;

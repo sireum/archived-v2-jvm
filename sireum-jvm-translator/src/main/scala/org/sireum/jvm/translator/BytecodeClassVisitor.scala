@@ -12,7 +12,7 @@ import org.sireum.jvm.util.Util
 import org.stringtemplate.v4.STGroupFile
 
 class BytecodeClassVisitor(api: Int, cv: ClassVisitor, methodLocalMap: Map[String, LocalInfo]) extends ClassVisitor(api, cv) {
-  val stg = new STGroupFile("pilar.stg")
+  val stg = new STGroupFile(getClass.getResource("pilar.stg"), "UTF-8", '<', '>')
   val stRecord = stg.getInstanceOf("recorddef")
 
   var record: Record = null

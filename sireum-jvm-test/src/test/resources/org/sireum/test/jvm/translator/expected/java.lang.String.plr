@@ -189,7 +189,7 @@ record (|java.lang.String|)
     @MaxLocals 7
     @MaxStack 6
     @Owner (|java.lang.String|)
-    @(|Ljava.lang.Deprecated;|) 
+    @(|java.lang.Deprecated;|) 
     @Access (PUBLIC,CONSTRUCTOR)
     @Desc "java.lang.String.<init>([BIII)V" 
   {
@@ -230,7 +230,7 @@ record (|java.lang.String|)
     @MaxLocals 3
     @MaxStack 5
     @Owner (|java.lang.String|)
-    @(|Ljava.lang.Deprecated;|) 
+    @(|java.lang.Deprecated;|) 
     @Access (PUBLIC,CONSTRUCTOR)
     @Desc "java.lang.String.<init>([BI)V" 
   {
@@ -444,7 +444,7 @@ record (|java.lang.String|)
     @MaxLocals 4
     @MaxStack 4
     @Owner (|java.lang.String|)
-    @(|Ljava.lang.Deprecated;|) 
+    @(|java.lang.Deprecated;|) 
     @Access (CONSTRUCTOR)
     @Desc "java.lang.String.<init>(II[C)V" 
   {
@@ -660,7 +660,7 @@ record (|java.lang.String|)
     @MaxLocals 9
     @MaxStack 4
     @Owner (|java.lang.String|)
-    @(|Ljava.lang.Deprecated;|) 
+    @(|java.lang.Deprecated;|) 
     @Access (PUBLIC)
     @Desc "java.lang.String.getBytes(II[BI)V" 
   {
@@ -2668,9 +2668,9 @@ record (|java.lang.String|)
     #L00003Aa. call s0  := {|java.lang.System.currentTimeMillis()J|}() @ClassDescriptor (|java.lang.System|) @Type direct;
     #L00003Ab. [|v2|] := s0 @Type (|java.lang.Object|);
     #L00004Aa. s0 := new (|int|)[7];
-    #L00004Ab. call s1  := {|java.lang.System.identityHashCode(Ljava.lang.Object;)I|}("Ljava/lang/String;") @ClassDescriptor (|java.lang.System|) @Type direct;
+    #L00004Ab. call s1  := {|java.lang.System.identityHashCode(Ljava.lang.Object;)I|}(+|java.lang.String.class|+) @ClassDescriptor (|java.lang.System|) @Type direct;
     #L00004Ac. s0[0] := s1;
-    #L00004Ad. call s2  := {|java.lang.System.identityHashCode(Ljava.lang.Object;)I|}("Ljava/lang/System;") @ClassDescriptor (|java.lang.System|) @Type direct;
+    #L00004Ad. call s2  := {|java.lang.System.identityHashCode(Ljava.lang.Object;)I|}(+|java.lang.System.class|+) @ClassDescriptor (|java.lang.System|) @Type direct;
     #L00004Ae. s0[1] := s2;
     #L00004Af. s0[2] := ((|integer|))([|v0|]^>>>32);
     #L00004Ag. s0[3] := ((|integer|))[|v0|];

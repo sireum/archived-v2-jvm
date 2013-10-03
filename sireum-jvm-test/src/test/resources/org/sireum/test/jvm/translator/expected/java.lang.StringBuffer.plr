@@ -1314,7 +1314,7 @@ record (|java.lang.StringBuffer|)
 
     #L00000Aa. s0 := new (|java.io.ObjectStreamField|)[3];
     #L00000Ab. s1 := new (|java.io.ObjectStreamField|);
-    #L00000Ac. call s2  := {|java.io.ObjectStreamField.<init>(Ljava.lang.String;Ljava.lang.Class;)V|}(s1,"value","[C") @ClassDescriptor (|java.io.ObjectStreamField|) @Type special;
+    #L00000Ac. call s2  := {|java.io.ObjectStreamField.<init>(Ljava.lang.String;Ljava.lang.Class;)V|}(s1,"value",+|char[].class|+) @ClassDescriptor (|java.io.ObjectStreamField|) @Type special;
     #L00000Ad. s0[0] := s1;
     #L00000Ae. s3 := new (|java.io.ObjectStreamField|);
     #L00000Af. s4 := +|java.lang.Integer.TYPE|+ @Type (|java.lang.Class|);
@@ -1431,7 +1431,7 @@ record (|java.io.ObjectOutputStream$PutField|)
   procedure (|void|) {|java.io.ObjectOutputStream$PutField.write(Ljava.io.ObjectOutput;)V|} ((|java.io.ObjectOutputStream$PutField|) [|v0|], (|java.io.ObjectOutput|) [|v1|]) 
     @Throws [|java.io.IOException|]
     @Owner (|java.io.ObjectOutputStream$PutField|)
-    @(|Ljava.lang.Deprecated;|) 
+    @(|java.lang.Deprecated;|) 
     @Access (PUBLIC)
     @Desc "java.io.ObjectOutputStream$PutField.write(Ljava.io.ObjectOutput;)V" 
   {

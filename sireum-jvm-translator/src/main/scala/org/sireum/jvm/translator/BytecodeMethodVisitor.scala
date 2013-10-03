@@ -15,7 +15,7 @@ import scala.collection.immutable.Stack
 class BytecodeMethodVisitor(api: Int, mv: MethodVisitor, procedure: Procedure) extends MethodVisitor(api, mv) {
   def this(proc: Procedure) = this(Opcodes.ASM4, null, proc)
 
-  val stg = new STGroupFile("pilar.stg")
+  val stg = new STGroupFile(getClass.getResource("pilar.stg"), "UTF-8", '<', '>')
   val exceptionMap = mutable.Set[Label]()
   val stackMap = mutable.Map[Label, Stack[Variable]]()
   val labelMap = mutable.Map[Label, Int]()

@@ -4,13 +4,9 @@ import java.io.File
 import java.io.FileWriter
 import java.net.URI
 
-import org.sireum.core.module.ChunkingPilarParserModule
-import org.sireum.core.module.PilarSymbolResolverModule
 import org.sireum.jvm.translator.ClassTranslator
 import org.sireum.pilar.parser.ChunkingPilarParser
 import org.sireum.pilar.parser.PilarParser
-import org.sireum.pipeline.PipelineConfiguration
-import org.sireum.pipeline.PipelineStage
 import org.sireum.test.framework.TestFramework
 import org.sireum.util.Either3
 import org.sireum.util.FileResourceUri

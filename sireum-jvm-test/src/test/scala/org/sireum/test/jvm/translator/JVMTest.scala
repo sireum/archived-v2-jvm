@@ -10,10 +10,7 @@ class JVMTest extends JVMTestFramework {
 	    "org.sireum.test.jvm.samples.Conditions", "java.lang.StringBuilder", "java.lang.StringBuffer")
 	
 	 def forceGenerate = true
-	 //classNames foreach { className => Translating className className }
-	 Translating className "org.sireum.test.jvm.samples.Test"
+	 classNames foreach { className => Translating className className }
+	 //Translating className "org.sireum.test.jvm.samples.Test"
 	 //Translating className "org.sireum.test.jvm.samples.HelloWorld2"
-	//scala.Predef
-	//scala.collection.immutable.Map
-	 //new java.io.File("")
 }
