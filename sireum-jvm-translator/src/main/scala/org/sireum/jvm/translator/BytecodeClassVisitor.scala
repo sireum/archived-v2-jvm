@@ -39,7 +39,7 @@ class BytecodeClassVisitor(api: Int, cv: ClassVisitor, methodLocalMap: Map[Strin
   }
 
   override def visitAnnotation(desc: String, visible: Boolean) = 
-    new BytecodeAnnotationVisitor(desc, record)
+    new BytecodeAnnotationVisitor(desc.substring(1), record)
 
   override def visitInnerClass(name: String, outername: String, innername: String, access: Int) = {
     val stInnerClass = stg.getInstanceOf("innerclassdef")

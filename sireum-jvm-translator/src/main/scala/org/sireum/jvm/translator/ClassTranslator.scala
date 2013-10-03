@@ -7,6 +7,7 @@ import org.objectweb.asm.util.TraceClassVisitor
 import org.sireum.util.FileResourceUri
 import java.io.FileInputStream
 import org.sireum.util.Either3
+import com.google.common.reflect.ClassPath
 
 object ClassTranslator {
   def translate(cr: ClassReader) = {
@@ -36,7 +37,7 @@ object ClassTranslator {
   
   def translate(source: Either3[String, Array[Byte], FileResourceUri]): String = {
     source match {
-      case Either3.First(e1) => translate(new ClassReader(e1)) 
+      case Either3.First(e1) => translate(new ClassReader(e1))
       case Either3.Second(e2) => translate(new ClassReader(e2))
       case Either3.Third(e3) => {
         val is: InputStream = new FileInputStream(e3)
@@ -44,4 +45,5 @@ object ClassTranslator {
       }
     }
   }
+
 }

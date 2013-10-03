@@ -73,6 +73,10 @@ trait JVMTestFramework extends TestFramework {
       case Either3.Second(e2) => "lol"
       case Either3.Third(e3) => e3.replace(File.separator, ".")
     }
+    
   }
+
+  
+  
 
 }

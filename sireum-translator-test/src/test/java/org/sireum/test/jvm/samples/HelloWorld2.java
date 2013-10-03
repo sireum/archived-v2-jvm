@@ -28,7 +28,7 @@ public class HelloWorld2 {
 
 		HelloWorld2 hw = new HelloWorld2();
 		hw.field2 = field + (new HelloWorld2()).field2
-				+ (new HelloWorld2()).field2;
+				+ (i>j ? 2:3) + (new HelloWorld2()).field2;
 		hw.p.x = 3;
 
 		int[] arr = new int[10];
@@ -71,11 +71,11 @@ public class HelloWorld2 {
 
 		switch (i) {
 		case 1:
-			return;
+			i = 2;
 		case 200:
-			return;
+			i = 3;
 		case 3000:
-			return;
+			i = 4;
 		}
 
 		switch (i) {

@@ -1,0 +1,114 @@
+record (|org.sireum.test.jvm.samples.ClassB|)
+    @Source "ClassB.java"
+    @Type class
+    @AccessFlag (PUBLIC) 
+  extends 
+    (|org.sireum.test.jvm.samples.ClassA|) 
+{
+  (|java.lang.String|) <|ClassB.strB|> @AccessFlag ();
+  (|int|) <|ClassB.numB|> @AccessFlag (STATIC);
+}
+
+  procedure (|void|) {|org.sireum.test.jvm.samples.ClassB.<clinit>()V|} () 
+    @MaxLocals 0
+    @MaxStack 1
+    @Owner (|org.sireum.test.jvm.samples.ClassB|)
+    @Access (STATIC)
+    @Desc "org.sireum.test.jvm.samples.ClassB.<clinit>()V" 
+  {
+    local jmp;
+
+    #L00000Aa. +|org.sireum.test.jvm.samples.ClassB.numB|+ := 50 @Type (|int|);
+    #L00000Ab. return @void;
+  }
+  procedure (|void|) {|org.sireum.test.jvm.samples.ClassB.<init>()V|} ((|org.sireum.test.jvm.samples.ClassB|) [|this|]) 
+    @MaxLocals 1
+    @MaxStack 2
+    @Owner (|org.sireum.test.jvm.samples.ClassB|)
+    @Access (PUBLIC,CONSTRUCTOR)
+    @Desc "org.sireum.test.jvm.samples.ClassB.<init>()V" 
+  {
+    local jmp;
+    s0;
+
+    #L00000Aa. call s0  := {|org.sireum.test.jvm.samples.ClassA.<init>()V|}([|this|]) @ClassDescriptor (|org.sireum.test.jvm.samples.ClassA|) @Type special;
+    #L00001Aa. [|this|].<|org.sireum.test.jvm.samples.ClassB.strB|> := "b" @Type (|java.lang.String|);
+    #L00002Aa. return @void;
+  }
+  procedure (|java.lang.String|) {|org.sireum.test.jvm.samples.ClassB.add(Ljava.lang.String;)Ljava.lang.String;|} ((|org.sireum.test.jvm.samples.ClassB|) [|i|], (|java.lang.String|) [|v1|]) 
+    @MaxLocals 2
+    @MaxStack 3
+    @Owner (|org.sireum.test.jvm.samples.ClassB|)
+    @Access (PUBLIC)
+    @Desc "org.sireum.test.jvm.samples.ClassB.add(Ljava.lang.String;)Ljava.lang.String;" 
+  {
+    local jmp;
+    s0;
+    s1;
+    s2;
+    s3;
+    s4;
+    s5;
+
+    #L00000Aa. s0 := new (|java.lang.StringBuilder|);
+    #L00000Ab. call s1  := {|java.lang.StringBuilder.<init>(Ljava.lang.String;)V|}(s0,"at B") @ClassDescriptor (|java.lang.StringBuilder|) @Type special;
+    #L00000Ac. s2 := [|i|].<|org.sireum.test.jvm.samples.ClassB.str|> @Type (|java.lang.String|);
+    #L00000Ad. call s3  := {|java.lang.StringBuilder.append(Ljava.lang.String;)Ljava.lang.StringBuilder;|}(s0,s2) @ClassDescriptor (|java.lang.StringBuilder|) @Type virtual;
+    #L00000Ae. call s4  := {|java.lang.StringBuilder.append(Ljava.lang.String;)Ljava.lang.StringBuilder;|}(s3,[|v1|]) @ClassDescriptor (|java.lang.StringBuilder|) @Type virtual;
+    #L00000Af. call s5  := {|java.lang.StringBuilder.toString()Ljava.lang.String;|}(s4) @ClassDescriptor (|java.lang.StringBuilder|) @Type virtual;
+    #L00000Ag. return s5;
+  }
+  procedure (|java.lang.String|) {|org.sireum.test.jvm.samples.ClassB.add(Ljava.lang.String;Ljava.lang.String;)Ljava.lang.String;|} ((|org.sireum.test.jvm.samples.ClassB|) [|i|], (|java.lang.String|) [|v1|], (|java.lang.String|) [|v2|]) 
+    @MaxLocals 3
+    @MaxStack 3
+    @Owner (|org.sireum.test.jvm.samples.ClassB|)
+    @Access (PUBLIC)
+    @Desc "org.sireum.test.jvm.samples.ClassB.add(Ljava.lang.String;Ljava.lang.String;)Ljava.lang.String;" 
+  {
+    local jmp;
+    s0;
+    s1;
+    s2;
+    s3;
+    s4;
+    s5;
+    s6;
+
+    #L00000Aa. s0 := new (|java.lang.StringBuilder|);
+    #L00000Ab. s1 := [|i|].<|org.sireum.test.jvm.samples.ClassB.strB|> @Type (|java.lang.String|);
+    #L00000Ac. call s2  := {|java.lang.String.valueOf(Ljava.lang.Object;)Ljava.lang.String;|}(s1) @ClassDescriptor (|java.lang.String|) @Type direct;
+    #L00000Ad. call s3  := {|java.lang.StringBuilder.<init>(Ljava.lang.String;)V|}(s0,s2) @ClassDescriptor (|java.lang.StringBuilder|) @Type special;
+    #L00000Ae. call s4  := {|java.lang.StringBuilder.append(Ljava.lang.String;)Ljava.lang.StringBuilder;|}(s0,[|v1|]) @ClassDescriptor (|java.lang.StringBuilder|) @Type virtual;
+    #L00000Af. call s5  := {|java.lang.StringBuilder.append(Ljava.lang.String;)Ljava.lang.StringBuilder;|}(s4,[|v2|]) @ClassDescriptor (|java.lang.StringBuilder|) @Type virtual;
+    #L00000Ag. call s6  := {|java.lang.StringBuilder.toString()Ljava.lang.String;|}(s5) @ClassDescriptor (|java.lang.StringBuilder|) @Type virtual;
+    #L00000Ah. return s6;
+  }
+  procedure (|int|) {|org.sireum.test.jvm.samples.ClassB.add(I)I|} ((|int|) [|i|]) 
+    @MaxLocals 1
+    @MaxStack 2
+    @Owner (|org.sireum.test.jvm.samples.ClassB|)
+    @Access (PUBLIC,STATIC)
+    @Desc "org.sireum.test.jvm.samples.ClassB.add(I)I" 
+  {
+    local jmp;
+    s0;
+
+    #L00000Aa. s0 := +|org.sireum.test.jvm.samples.ClassB.num|+ @Type (|int|);
+    #L00000Ab. return ((100+s0)+[|i|]);
+  }
+  procedure (|int|) {|org.sireum.test.jvm.samples.ClassB.sum()I|} () 
+    @MaxLocals 0
+    @MaxStack 2
+    @Owner (|org.sireum.test.jvm.samples.ClassB|)
+    @Access (PUBLIC,STATIC)
+    @Desc "org.sireum.test.jvm.samples.ClassB.sum()I" 
+  {
+    local jmp;
+    s0;
+    s1;
+
+    #L00000Aa. s0 := +|org.sireum.test.jvm.samples.ClassB.numB|+ @Type (|int|);
+    #L00000Ab. s1 := +|org.sireum.test.jvm.samples.ClassB.num|+ @Type (|int|);
+    #L00000Ac. return (s0+s1);
+  }
+

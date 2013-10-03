@@ -1,0 +1,218 @@
+record (|org.sireum.test.jvm.samples.HelloWorld2|)
+    @Source "HelloWorld2.java"
+    @Type class
+    @AccessFlag (PUBLIC)
+    @Annotation (|java.lang.Deprecated;|) 
+    @InnerClass (
+      @Name (|org.sireum.test.jvm.samples.HelloWorld2$Point|), 
+      @OuterName (|org.sireum.test.jvm.samples.HelloWorld2|), 
+      @InnerName Point, 
+      @AccessFlag ()
+     ) 
+  extends 
+    (|java.lang.Object|) 
+{
+  (|int|) <|HelloWorld2.field2|> @AccessFlag (PUBLIC);
+  (|org.sireum.test.jvm.samples.HelloWorld2$Point|) <|HelloWorld2.p|> @AccessFlag (PUBLIC);
+}
+  global (|int|) @@+|HelloWorld2.field|+ @AccessFlag (PUBLIC,STATIC,FINAL);
+
+  procedure (|void|) {|org.sireum.test.jvm.samples.HelloWorld2.<init>()V|} ((|org.sireum.test.jvm.samples.HelloWorld2|) [|this|]) 
+    @MaxLocals 1
+    @MaxStack 6
+    @Owner (|org.sireum.test.jvm.samples.HelloWorld2|)
+    @Access (PUBLIC,CONSTRUCTOR)
+    @Desc "org.sireum.test.jvm.samples.HelloWorld2.<init>()V" 
+  {
+    local jmp;
+    s0;
+    s1;
+
+    #L00000Aa. call s0  := {|java.lang.Object.<init>()V|}([|this|]) @ClassDescriptor (|java.lang.Object|) @Type special;
+    #L00001Aa. s0 := new (|org.sireum.test.jvm.samples.HelloWorld2$Point|);
+    #L00001Ab. call s1  := {|org.sireum.test.jvm.samples.HelloWorld2$Point.<init>(Lorg.sireum.test.jvm.samples.HelloWorld2;II)V|}(s0,[|this|],1,2) @ClassDescriptor (|org.sireum.test.jvm.samples.HelloWorld2$Point|) @Type special;
+    #L00001Ac. [|this|].<|org.sireum.test.jvm.samples.HelloWorld2.p|> := s0 @Type (|org.sireum.test.jvm.samples.HelloWorld2$Point|);
+    #L00002Aa. return @void;
+  }
+  procedure (|void|) {|org.sireum.test.jvm.samples.HelloWorld2.main([Ljava.lang.String;)V|} ((|java.lang.String[]|) [|args|]) 
+    @Throws [|java.io.IOException|],[|java.io.FileNotFoundException|]
+    @MaxLocals 14
+    @MaxStack 4
+    @Owner (|org.sireum.test.jvm.samples.HelloWorld2|)
+    @Annotation (|Lcom.google.common.annotations.Beta;|) 
+    @Access (PUBLIC,STATIC)
+    @Desc "org.sireum.test.jvm.samples.HelloWorld2.main([Ljava.lang.String;)V" 
+  {
+    local jmp;
+    s0;
+    s1;
+    s2;
+    s3;
+    s4;
+    s5;
+    (|int|) [|i|];
+    (|int|) [|j|];
+    (|int|) [|k|];
+    (|int|) [|l|];
+    (|long|) [|l2|];
+    (|org.sireum.test.jvm.samples.HelloWorld2|) [|hw|];
+    (|int[]|) [|arr|];
+    (|int|) [|adf|];
+    (|int|) [|laf|];
+    (|java.lang.Object|) [|o|];
+    (|java.lang.String|) [|lajfa|];
+    (|org.sireum.test.jvm.samples.HelloWorld2[]|) [|hw2|];
+
+    #L00006Aa. s0 := +|java.lang.System.out|+ @Type (|java.io.PrintStream|);
+    #L00006Ab. call s1  := {|java.io.PrintStream.println(Ljava.lang.String;)V|}(s0,"hello") @ClassDescriptor (|java.io.PrintStream|) @Type virtual;
+    #L00007Aa. [|i|] := 1 @Type (|int|);
+    #L00008Aa. [|j|] := 2 @Type (|int|);
+    #L00009Aa. [|k|] := ([|i|]+[|j|]) @Type (|int|);
+    #L00010Aa. [|l|] := -[|i|] @Type (|int|);
+    #L00011Aa. [|l2|] := ((|long|))[|i|] @Type (|long|);
+    #L00012Aa. s0 := new (|org.sireum.test.jvm.samples.HelloWorld2|);
+    #L00012Ab. call s1  := {|org.sireum.test.jvm.samples.HelloWorld2.<init>()V|}(s0) @ClassDescriptor (|org.sireum.test.jvm.samples.HelloWorld2|) @Type special;
+    #L00012Ac. [|hw|] := s0 @Type (|java.lang.Object|);
+    #L00013Aa. s0 := new (|org.sireum.test.jvm.samples.HelloWorld2|);
+    #L00013Ab. call s1  := {|org.sireum.test.jvm.samples.HelloWorld2.<init>()V|}(s0) @ClassDescriptor (|org.sireum.test.jvm.samples.HelloWorld2|) @Type special;
+    #L00013Ac. s2 := s0.<|org.sireum.test.jvm.samples.HelloWorld2.field2|> @Type (|int|);
+    #L00014Aa. if [|i|] <= [|j|] then goto L00015Aa;
+    #L00014Ab. jmp := 2;
+    #L00014Ac. goto L00016Aa;
+    #L00015Aa. <@Frame (@Full, 7, `[(|java.lang.String[]|), (|int|), (|int|), (|int|), (|int|), (|long|), (|java.lang.Object|), (|top|), (|top|), (|top|), (|top|), (|top|), (|top|), (|top|)], 2, `[(|java.lang.Object|), (|int|), (|top|), (|top|)])>
+    #L00015Ab. jmp := 3;
+    #L00016Aa. <@Frame (@Full, 7, `[(|java.lang.String[]|), (|int|), (|int|), (|int|), (|int|), (|long|), (|java.lang.Object|), (|top|), (|top|), (|top|), (|top|), (|top|), (|top|), (|top|)], 3, `[(|java.lang.Object|), (|int|), (|int|), (|top|)])>
+    #L00016Ab. s3 := new (|org.sireum.test.jvm.samples.HelloWorld2|);
+    #L00016Ac. call s4  := {|org.sireum.test.jvm.samples.HelloWorld2.<init>()V|}(s3) @ClassDescriptor (|org.sireum.test.jvm.samples.HelloWorld2|) @Type special;
+    #L00016Ad. s5 := s3.<|org.sireum.test.jvm.samples.HelloWorld2.field2|> @Type (|int|);
+    #L00017Aa. [|hw|].<|org.sireum.test.jvm.samples.HelloWorld2.field2|> := (((9+s2)+jmp)+s5) @Type (|int|);
+    #L00018Aa. s0 := [|hw|].<|org.sireum.test.jvm.samples.HelloWorld2.p|> @Type (|org.sireum.test.jvm.samples.HelloWorld2$Point|);
+    #L00018Ab. s0.<|org.sireum.test.jvm.samples.HelloWorld2$Point.x|> := 3 @Type (|int|);
+    #L00019Aa. s0 := new (|int|)[10];
+    #L00019Ab. [|arr|] := s0 @Type (|int|);
+    #L00020Aa. [|l|] := [|l|] + 1 @Type (|int|);
+    #L00021Aa. [|adf|] := (([|i|]+([|j|]*3))-4) @Type (|int|);
+    #L00022Aa. if [|i|] >= [|j|] then goto L00023Aa;
+    #L00024Aa. s0 := +|java.lang.System.out|+ @Type (|java.io.PrintStream|);
+    #L00024Ab. call s1  := {|java.io.PrintStream.println(Ljava.lang.String;)V|}(s0,"less than") @ClassDescriptor (|java.io.PrintStream|) @Type virtual;
+    #L00023Aa. <@Frame (@Append, 2, `[(|int[]|), (|int|), (|int|), (|int|), (|int|), (|long|), (|java.lang.Object|), (|top|), (|top|), (|top|), (|top|), (|top|), (|top|), (|top|)], 0, `[(|java.lang.Object|), (|int|), (|int|), (|top|)])>
+    #L00023Ab. if [|i|] != 0 then goto L00025Aa;
+    #L00026Aa. if [|hw|] == null then goto L00025Aa;
+    #L00027Aa. call s0  := {|org.sireum.test.jvm.samples.HelloWorld2.sum(II)I|}([|hw|],[|i|],[|j|]) @ClassDescriptor (|org.sireum.test.jvm.samples.HelloWorld2|) @Type virtual;
+    #L00025Aa. <@Frame (@Same, 0, `[(|int[]|), (|int|), (|int|), (|int|), (|int|), (|long|), (|java.lang.Object|), (|top|), (|top|), (|top|), (|top|), (|top|), (|top|), (|top|)], 0, `[(|java.lang.Object|), (|int|), (|int|), (|top|)])>
+    #L00025Ab. [|laf|] := 0 @Type (|int|);
+    #L00028Aa. goto L00029Aa;
+    #L00030Aa. <@Frame (@Append, 1, `[(|int|), (|int|), (|int|), (|int|), (|int|), (|long|), (|java.lang.Object|), (|top|), (|top|), (|top|), (|top|), (|top|), (|top|), (|top|)], 0, `[(|java.lang.Object|), (|int|), (|int|), (|top|)])>
+    #L00030Ab. call s0  := {|org.sireum.test.jvm.samples.HelloWorld2.sum(II)I|}([|hw|],[|laf|],[|j|]) @ClassDescriptor (|org.sireum.test.jvm.samples.HelloWorld2|) @Type virtual;
+    #L00031Aa. [|laf|] := [|laf|] + 1 @Type (|int|);
+    #L00029Aa. <@Frame (@Same, 0, `[(|int|), (|int|), (|int|), (|int|), (|int|), (|long|), (|java.lang.Object|), (|top|), (|top|), (|top|), (|top|), (|top|), (|top|), (|top|)], 0, `[(|java.lang.Object|), (|int|), (|int|), (|top|)])>
+    #L00029Ab. if [|laf|] < 10 then goto L00030Aa;
+    #L00032Aa. s0 := instanceof @varname [|hw|] @Type "(|org.sireum.test.jvm.samples.HelloWorld2|)";
+    #L00032Ab. if s0 == 0 then goto L00033Aa;
+    #L00034Aa. call s0  := {|org.sireum.test.jvm.samples.HelloWorld2.sum(II)I|}([|hw|],[|i|],[|j|]) @ClassDescriptor (|org.sireum.test.jvm.samples.HelloWorld2|) @Type virtual;
+    #L00033Aa. <@Frame (@Chop, 1, `[(|int|), (|int|), (|int|), (|int|), (|int|), (|long|), (|java.lang.Object|), (|top|), (|top|), (|top|), (|top|), (|top|), (|top|), (|top|)], 0, `[(|java.lang.Object|), (|int|), (|int|), (|top|)])>
+    #L00033Ab. [|o|] := "adfa" @Type string;
+    #L00035Aa. [|lajfa|] := ((|java.lang.String|)) [|o|] @Type (|java.lang.String|);
+    #L00036Aa. s0 := new (|org.sireum.test.jvm.samples.HelloWorld2|)[10];
+    #L00036Ab. [|hw2|] := s0 @Type (|java.lang.Object|);
+    #L00000Aa. s0 := [|hw2|][9];
+    #L00000Ab. s0.<|org.sireum.test.jvm.samples.HelloWorld2.field2|> := 2 @Type (|int|);
+    #L00001Aa. goto L00003Aa;
+    #L00002Aa. <@Frame (@Full, 12, `[(|java.lang.String[]|), (|int|), (|int|), (|int|), (|int|), (|long|), (|java.lang.Object|), (|int[]|), (|int|), (|java.lang.Object|), (|java.lang.Object|), (|org.sireum.test.jvm.samples.HelloWorld2[]|), (|top|), (|top|)], 1, `[(|java.lang.Object|), (|int|), (|int|), (|top|)])>
+    #L00002Ab. [|v13|] := "Exception" @Type (|java.lang.Object|);
+    #L00003Aa. <@Frame (@Same, 0, `[(|java.lang.String[]|), (|int|), (|int|), (|int|), (|int|), (|long|), (|java.lang.Object|), (|int[]|), (|int|), (|java.lang.Object|), (|java.lang.Object|), (|org.sireum.test.jvm.samples.HelloWorld2[]|), (|top|), (|top|)], 0, `[(|java.lang.Object|), (|int|), (|int|), (|top|)])>
+    #L00003Ab. [|i|] := 2 @Type (|int|);
+    #L00004Aa. goto L00037Aa;
+    #L00005Aa. <@Frame (@Same1, 0, `[(|java.lang.String[]|), (|int|), (|int|), (|int|), (|int|), (|long|), (|java.lang.Object|), (|int[]|), (|int|), (|java.lang.Object|), (|java.lang.Object|), (|org.sireum.test.jvm.samples.HelloWorld2[]|), (|top|), (|top|)], 1, `[(|java.lang.Object|), (|int|), (|int|), (|top|)])>
+    #L00005Ab. [|v13|] := "Exception" @Type (|java.lang.Object|);
+    #L00037Aa. <@Frame (@Same, 0, `[(|java.lang.String[]|), (|int|), (|int|), (|int|), (|int|), (|long|), (|java.lang.Object|), (|int[]|), (|int|), (|java.lang.Object|), (|java.lang.Object|), (|org.sireum.test.jvm.samples.HelloWorld2[]|), (|top|), (|top|)], 0, `[(|java.lang.Object|), (|int|), (|int|), (|top|)])>
+    #L00037Ab. switch [|i|]
+                | 1 => goto L00038Aa
+                | 200 => goto L00039Aa
+                | 3000 => goto L00040Aa
+                | => goto L00041Aa;
+    #L00038Aa. <@Frame (@Same, 0, `[(|java.lang.String[]|), (|int|), (|int|), (|int|), (|int|), (|long|), (|java.lang.Object|), (|int[]|), (|int|), (|java.lang.Object|), (|java.lang.Object|), (|org.sireum.test.jvm.samples.HelloWorld2[]|), (|top|), (|top|)], 0, `[(|java.lang.Object|), (|int|), (|int|), (|top|)])>
+    #L00038Ab. [|i|] := 2 @Type (|int|);
+    #L00039Aa. <@Frame (@Same, 0, `[(|java.lang.String[]|), (|int|), (|int|), (|int|), (|int|), (|long|), (|java.lang.Object|), (|int[]|), (|int|), (|java.lang.Object|), (|java.lang.Object|), (|org.sireum.test.jvm.samples.HelloWorld2[]|), (|top|), (|top|)], 0, `[(|java.lang.Object|), (|int|), (|int|), (|top|)])>
+    #L00039Ab. [|i|] := 3 @Type (|int|);
+    #L00040Aa. <@Frame (@Same, 0, `[(|java.lang.String[]|), (|int|), (|int|), (|int|), (|int|), (|long|), (|java.lang.Object|), (|int[]|), (|int|), (|java.lang.Object|), (|java.lang.Object|), (|org.sireum.test.jvm.samples.HelloWorld2[]|), (|top|), (|top|)], 0, `[(|java.lang.Object|), (|int|), (|int|), (|top|)])>
+    #L00040Ab. [|i|] := 4 @Type (|int|);
+    #L00041Aa. <@Frame (@Same, 0, `[(|java.lang.String[]|), (|int|), (|int|), (|int|), (|int|), (|long|), (|java.lang.Object|), (|int[]|), (|int|), (|java.lang.Object|), (|java.lang.Object|), (|org.sireum.test.jvm.samples.HelloWorld2[]|), (|top|), (|top|)], 0, `[(|java.lang.Object|), (|int|), (|int|), (|top|)])>
+    #L00041Ab. switch [|i|]
+                | 1 => goto L00043Aa
+                | 2 => goto L00044Aa
+                | 3 => goto L00045Aa
+                | => goto L00042Aa;
+    #L00043Aa. <@Frame (@Same, 0, `[(|java.lang.String[]|), (|int|), (|int|), (|int|), (|int|), (|long|), (|java.lang.Object|), (|int[]|), (|int|), (|java.lang.Object|), (|java.lang.Object|), (|org.sireum.test.jvm.samples.HelloWorld2[]|), (|top|), (|top|)], 0, `[(|java.lang.Object|), (|int|), (|int|), (|top|)])>
+    #L00043Ab. return @void;
+    #L00044Aa. <@Frame (@Same, 0, `[(|java.lang.String[]|), (|int|), (|int|), (|int|), (|int|), (|long|), (|java.lang.Object|), (|int[]|), (|int|), (|java.lang.Object|), (|java.lang.Object|), (|org.sireum.test.jvm.samples.HelloWorld2[]|), (|top|), (|top|)], 0, `[(|java.lang.Object|), (|int|), (|int|), (|top|)])>
+    #L00044Ab. return @void;
+    #L00045Aa. <@Frame (@Same, 0, `[(|java.lang.String[]|), (|int|), (|int|), (|int|), (|int|), (|long|), (|java.lang.Object|), (|int[]|), (|int|), (|java.lang.Object|), (|java.lang.Object|), (|org.sireum.test.jvm.samples.HelloWorld2[]|), (|top|), (|top|)], 0, `[(|java.lang.Object|), (|int|), (|int|), (|top|)])>
+    #L00045Ab. return @void;
+    #L00042Aa. <@Frame (@Same, 0, `[(|java.lang.String[]|), (|int|), (|int|), (|int|), (|int|), (|long|), (|java.lang.Object|), (|int[]|), (|int|), (|java.lang.Object|), (|java.lang.Object|), (|org.sireum.test.jvm.samples.HelloWorld2[]|), (|top|), (|top|)], 0, `[(|java.lang.Object|), (|int|), (|int|), (|top|)])>
+    #L00042Ab. return @void;
+      catch (|java.lang.ArithmeticException|) @[L00000Aa..L00001Aa] goto L00002Aa;
+      catch (|java.lang.ArithmeticException|) @[L00003Aa..L00004Aa] goto L00005Aa;
+  }
+  procedure (|int|) {|org.sireum.test.jvm.samples.HelloWorld2.sum(II)I|} ((|org.sireum.test.jvm.samples.HelloWorld2|) [|this|], (|int|) [|i|], (|int|) [|j|]) 
+    @MaxLocals 3
+    @MaxStack 2
+    @Owner (|org.sireum.test.jvm.samples.HelloWorld2|)
+    @Access (PUBLIC)
+    @Desc "org.sireum.test.jvm.samples.HelloWorld2.sum(II)I" 
+  {
+    local jmp;
+
+    #L00000Aa. return ([|i|]+[|j|]);
+  }
+
+record (|org.sireum.test.jvm.samples.HelloWorld2$Point|)
+    @Source "HelloWorld2.java"
+    @Type class
+    @AccessFlag ()
+    @InnerClass (
+      @Name (|org.sireum.test.jvm.samples.HelloWorld2$Point|), 
+      @OuterName (|org.sireum.test.jvm.samples.HelloWorld2|), 
+      @InnerName Point, 
+      @AccessFlag ()
+     ) 
+  extends 
+    (|java.lang.Object|) 
+{
+  (|int|) <|HelloWorld2$Point.x|> @AccessFlag ();
+  (|int|) <|HelloWorld2$Point.y|> @AccessFlag ();
+  (|org.sireum.test.jvm.samples.HelloWorld2|) <|HelloWorld2$Point.this$0|> @AccessFlag (FINAL,SYNTHETIC);
+}
+
+  procedure (|void|) {|org.sireum.test.jvm.samples.HelloWorld2$Point.<init>(Lorg.sireum.test.jvm.samples.HelloWorld2;II)V|} ((|org.sireum.test.jvm.samples.HelloWorld2$Point|) [|this|], (|org.sireum.test.jvm.samples.HelloWorld2|) [|v1|], (|int|) [|x|], (|int|) [|y|]) 
+    @MaxLocals 4
+    @MaxStack 2
+    @Owner (|org.sireum.test.jvm.samples.HelloWorld2$Point|)
+    @Access (CONSTRUCTOR)
+    @Desc "org.sireum.test.jvm.samples.HelloWorld2$Point.<init>(Lorg.sireum.test.jvm.samples.HelloWorld2;II)V" 
+  {
+    local jmp;
+    s0;
+
+    #L00000Aa. [|this|].<|org.sireum.test.jvm.samples.HelloWorld2$Point.this$0|> := [|v1|] @Type (|org.sireum.test.jvm.samples.HelloWorld2|);
+    #L00000Ab. call s0  := {|java.lang.Object.<init>()V|}([|this|]) @ClassDescriptor (|java.lang.Object|) @Type special;
+    #L00001Aa. [|this|].<|org.sireum.test.jvm.samples.HelloWorld2$Point.x|> := [|x|] @Type (|int|);
+    #L00002Aa. [|this|].<|org.sireum.test.jvm.samples.HelloWorld2$Point.y|> := [|y|] @Type (|int|);
+    #L00003Aa. return @void;
+  }
+  procedure (|void|) {|org.sireum.test.jvm.samples.HelloWorld2$Point.print()V|} ((|org.sireum.test.jvm.samples.HelloWorld2$Point|) [|this|]) 
+    @MaxLocals 1
+    @MaxStack 2
+    @Owner (|org.sireum.test.jvm.samples.HelloWorld2$Point|)
+    @Access ()
+    @Desc "org.sireum.test.jvm.samples.HelloWorld2$Point.print()V" 
+  {
+    local jmp;
+    s0;
+    s1;
+
+    #L00000Aa. s0 := +|java.lang.System.out|+ @Type (|java.io.PrintStream|);
+    #L00000Ab. call s1  := {|java.io.PrintStream.println(I)V|}(s0,9) @ClassDescriptor (|java.io.PrintStream|) @Type virtual;
+    #L00001Aa. return @void;
+  }
+

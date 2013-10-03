@@ -1,9 +1,9 @@
 record (|org.sireum.test.jvm.samples.Annotations|)
     @Source "Annotations.java"
-    @(|Lcom.google.common.annotations.Beta;|) 
     @Type class
-    @(|Lorg.sireum.test.jvm.samples.WithValue;|) (bytes="akljfla", arr=`[1, 2], abc= @(|Lorg.sireum.test.jvm.samples.Nested;|)(name="lol"), nested= @Array(@(|Lorg.sireum.test.jvm.samples.Nested;|)(name="abc"), @(|Lorg.sireum.test.jvm.samples.Nested;|)(name="xyz")))
-    @AccessFlag (PUBLIC) 
+    @(|org.sireum.test.jvm.samples.WithValue;|) (bytes="akljfla", arr=`[1, 2], abc= @(|Lorg.sireum.test.jvm.samples.Nested;|)(name="lol"), nested= @Array(@(|Lorg.sireum.test.jvm.samples.Nested;|)(name="abc"), @(|Lorg.sireum.test.jvm.samples.Nested;|)(name="xyz")))
+    @AccessFlag (PUBLIC)
+    @(|com.google.common.annotations.Beta;|)  
   extends 
     (|java.lang.Object|) 
 {
@@ -15,12 +15,12 @@ record (|org.sireum.test.jvm.samples.Annotations|)
     @MaxStack 1
     @Owner (|org.sireum.test.jvm.samples.Annotations|)
     @Access (PUBLIC,CONSTRUCTOR)
-    @Signature "org.sireum.test.jvm.samples.Annotations.<init>()V" 
+    @Desc "org.sireum.test.jvm.samples.Annotations.<init>()V" 
   {
     local jmp;
     s0;
 
-    #L00000Aa. call s0:= {|java.lang.Object.<init>()V|}([|this|]) @signature "java.lang.Object.<init>()V" @classDescriptor [|java.lang.Object|] @type special;
+    #L00000Aa. call s0  := {|java.lang.Object.<init>()V|}([|this|]) @ClassDescriptor (|java.lang.Object|) @Type special;
     #L00000Ab. return @void;
   }
 

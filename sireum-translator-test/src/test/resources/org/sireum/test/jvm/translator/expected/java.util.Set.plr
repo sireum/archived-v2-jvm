@@ -11,7 +11,7 @@ record (|java.util.Set|)
   procedure (|int|) {|java.util.Set.size()I|} ((|java.util.Set|) [|v0|]) 
     @Owner (|java.util.Set|)
     @Access (PUBLIC)
-    @Signature "java.util.Set.size()I" 
+    @Desc "java.util.Set.size()I" 
   {
 
     #L00000Aa. return @void;
@@ -19,7 +19,7 @@ record (|java.util.Set|)
   procedure (|boolean|) {|java.util.Set.isEmpty()Z|} ((|java.util.Set|) [|v0|]) 
     @Owner (|java.util.Set|)
     @Access (PUBLIC)
-    @Signature "java.util.Set.isEmpty()Z" 
+    @Desc "java.util.Set.isEmpty()Z" 
   {
 
     #L00000Aa. return @void;
@@ -27,7 +27,7 @@ record (|java.util.Set|)
   procedure (|boolean|) {|java.util.Set.contains(Ljava.lang.Object;)Z|} ((|java.util.Set|) [|v0|], (|java.lang.Object|) [|v1|]) 
     @Owner (|java.util.Set|)
     @Access (PUBLIC)
-    @Signature "java.util.Set.contains(Ljava.lang.Object;)Z" 
+    @Desc "java.util.Set.contains(Ljava.lang.Object;)Z" 
   {
 
     #L00000Aa. return @void;
@@ -36,7 +36,7 @@ record (|java.util.Set|)
     @GenericSignature "()Ljava/util/Iterator<TE;>;"
     @Owner (|java.util.Set|)
     @Access (PUBLIC)
-    @Signature "java.util.Set.iterator()Ljava.util.Iterator;" 
+    @Desc "java.util.Set.iterator()Ljava.util.Iterator;" 
   {
 
     #L00000Aa. return @void;
@@ -44,7 +44,7 @@ record (|java.util.Set|)
   procedure (|java.lang.Object[]|) {|java.util.Set.toArray()[Ljava.lang.Object;|} ((|java.util.Set|) [|v0|]) 
     @Owner (|java.util.Set|)
     @Access (PUBLIC)
-    @Signature "java.util.Set.toArray()[Ljava.lang.Object;" 
+    @Desc "java.util.Set.toArray()[Ljava.lang.Object;" 
   {
 
     #L00000Aa. return @void;
@@ -53,7 +53,7 @@ record (|java.util.Set|)
     @GenericSignature "<T:Ljava/lang/Object;>([TT;)[TT;"
     @Owner (|java.util.Set|)
     @Access (PUBLIC)
-    @Signature "java.util.Set.toArray([Ljava.lang.Object;)[Ljava.lang.Object;" 
+    @Desc "java.util.Set.toArray([Ljava.lang.Object;)[Ljava.lang.Object;" 
   {
 
     #L00000Aa. return @void;
@@ -62,7 +62,7 @@ record (|java.util.Set|)
     @GenericSignature "(TE;)Z"
     @Owner (|java.util.Set|)
     @Access (PUBLIC)
-    @Signature "java.util.Set.add(Ljava.lang.Object;)Z" 
+    @Desc "java.util.Set.add(Ljava.lang.Object;)Z" 
   {
 
     #L00000Aa. return @void;
@@ -70,7 +70,7 @@ record (|java.util.Set|)
   procedure (|boolean|) {|java.util.Set.remove(Ljava.lang.Object;)Z|} ((|java.util.Set|) [|v0|], (|java.lang.Object|) [|v1|]) 
     @Owner (|java.util.Set|)
     @Access (PUBLIC)
-    @Signature "java.util.Set.remove(Ljava.lang.Object;)Z" 
+    @Desc "java.util.Set.remove(Ljava.lang.Object;)Z" 
   {
 
     #L00000Aa. return @void;
@@ -79,7 +79,7 @@ record (|java.util.Set|)
     @GenericSignature "(Ljava/util/Collection<*>;)Z"
     @Owner (|java.util.Set|)
     @Access (PUBLIC)
-    @Signature "java.util.Set.containsAll(Ljava.util.Collection;)Z" 
+    @Desc "java.util.Set.containsAll(Ljava.util.Collection;)Z" 
   {
 
     #L00000Aa. return @void;
@@ -88,7 +88,7 @@ record (|java.util.Set|)
     @GenericSignature "(Ljava/util/Collection<+TE;>;)Z"
     @Owner (|java.util.Set|)
     @Access (PUBLIC)
-    @Signature "java.util.Set.addAll(Ljava.util.Collection;)Z" 
+    @Desc "java.util.Set.addAll(Ljava.util.Collection;)Z" 
   {
 
     #L00000Aa. return @void;
@@ -97,7 +97,7 @@ record (|java.util.Set|)
     @GenericSignature "(Ljava/util/Collection<*>;)Z"
     @Owner (|java.util.Set|)
     @Access (PUBLIC)
-    @Signature "java.util.Set.retainAll(Ljava.util.Collection;)Z" 
+    @Desc "java.util.Set.retainAll(Ljava.util.Collection;)Z" 
   {
 
     #L00000Aa. return @void;
@@ -106,7 +106,7 @@ record (|java.util.Set|)
     @GenericSignature "(Ljava/util/Collection<*>;)Z"
     @Owner (|java.util.Set|)
     @Access (PUBLIC)
-    @Signature "java.util.Set.removeAll(Ljava.util.Collection;)Z" 
+    @Desc "java.util.Set.removeAll(Ljava.util.Collection;)Z" 
   {
 
     #L00000Aa. return @void;
@@ -114,7 +114,7 @@ record (|java.util.Set|)
   procedure (|void|) {|java.util.Set.clear()V|} ((|java.util.Set|) [|v0|]) 
     @Owner (|java.util.Set|)
     @Access (PUBLIC)
-    @Signature "java.util.Set.clear()V" 
+    @Desc "java.util.Set.clear()V" 
   {
 
     #L00000Aa. return @void;
@@ -122,7 +122,7 @@ record (|java.util.Set|)
   procedure (|boolean|) {|java.util.Set.equals(Ljava.lang.Object;)Z|} ((|java.util.Set|) [|v0|], (|java.lang.Object|) [|v1|]) 
     @Owner (|java.util.Set|)
     @Access (PUBLIC)
-    @Signature "java.util.Set.equals(Ljava.lang.Object;)Z" 
+    @Desc "java.util.Set.equals(Ljava.lang.Object;)Z" 
   {
 
     #L00000Aa. return @void;
@@ -130,7 +130,7 @@ record (|java.util.Set|)
   procedure (|int|) {|java.util.Set.hashCode()I|} ((|java.util.Set|) [|v0|]) 
     @Owner (|java.util.Set|)
     @Access (PUBLIC)
-    @Signature "java.util.Set.hashCode()I" 
+    @Desc "java.util.Set.hashCode()I" 
   {
 
     #L00000Aa. return @void;

@@ -40,7 +40,7 @@ class BytecodeMethodVisitor(api: Int, mv: MethodVisitor, procedure: Procedure) e
   def changeLastVar() {
     if (!varStack.isEmpty && !varStack.top.value.equals("jmp")) {
       val l = getTopAndUpdate
-      addCodeLine("jmp:= " + l.value)
+      addCodeLine("jmp := " + l.value)
       pushValue(Variable(l.typ, "jmp"))
     }
   }
@@ -55,10 +55,10 @@ class BytecodeMethodVisitor(api: Int, mv: MethodVisitor, procedure: Procedure) e
   }
 
   def addCodeLine(code: String, typ: String = null, nosemicolon: Boolean = false) = {
-    if (typ != null && !nosemicolon) {
-      procedure.code.add(labelStr + a2z(currentLine) + ". " + code + " @type " + typ + ";")
-    } else if (typ != null && nosemicolon) {
-      procedure.code.add(labelStr + a2z(currentLine) + ". " + code + " @type " + typ)
+    if (typ != null && !typ.isEmpty && !nosemicolon) {
+      procedure.code.add(labelStr + a2z(currentLine) + ". " + code + " @Type " + typ + ";")
+    } else if (typ != null && !typ.isEmpty && nosemicolon) {
+      procedure.code.add(labelStr + a2z(currentLine) + ". " + code + " @Type " + typ)
     } else if (!nosemicolon) {
       procedure.code.add(labelStr + a2z(currentLine) + ". " + code + ";")
     } else if (nosemicolon) {
@@ -85,7 +85,7 @@ class BytecodeMethodVisitor(api: Int, mv: MethodVisitor, procedure: Procedure) e
   }
 
   override def visitAnnotation(name: String, visible: Boolean) = {
-    val bav = new BytecodeAnnotationVisitor(name, procedure)
+    val bav = new BytecodeAnnotationVisitor(name.substring(1), procedure)
     bav
   }
 
@@ -113,20 +113,20 @@ class BytecodeMethodVisitor(api: Int, mv: MethodVisitor, procedure: Procedure) e
   override def visitFieldInsn(opcode: Int, owner: String, name: String, desc: String) = opcode match {
     case Opcodes.GETSTATIC => {
       val stackVar = getStackVar
-      addCodeLine(stackVar + ":= " + Util.getPilarStaticField(owner + "." + name))
+      addCodeLine(stackVar + " := " + Util.getPilarStaticField(owner + "." + name), Util.getTypeString(desc))
       pushValue(Variable(Util.getTypeString(desc), stackVar))
     }
     case Opcodes.GETFIELD => {
       val stackVar = getStackVar
-      addCodeLine(stackVar + ":= " + popValue + "." + Util.getPilarField(owner + "." + name))
+      addCodeLine(stackVar + " := " + popValue + "." + Util.getPilarField(owner + "." + name), Util.getTypeString(desc))
       pushValue(Variable(Util.getTypeString(desc), stackVar))
     }
     case Opcodes.PUTSTATIC => {
-      addCodeLine(Util.getPilarStaticField(owner + "." + name) + ":= " + popValue)
+      addCodeLine(Util.getPilarStaticField(owner + "." + name) + " := " + popValue, Util.getTypeString(desc))
     }
     case Opcodes.PUTFIELD => {
       val value = popValue
-      addCodeLine(popValue + "." + Util.getPilarField(owner + "." + name) + ":= " + value)
+      addCodeLine(popValue + "." + Util.getPilarField(owner + "." + name) + " := " + value, Util.getTypeString(desc))
     }
     case _ => { /*Oh God! how can this happen?*/ }
   }
@@ -151,7 +151,7 @@ class BytecodeMethodVisitor(api: Int, mv: MethodVisitor, procedure: Procedure) e
 
   override def visitIincInsn(vr: Int, increment: Int) = {
     val varName = getVarName(vr)
-    addCodeLine(varName + ":= " + varName + " + " + increment, "(|int|)")
+    addCodeLine(varName + " := " + varName + " + " + increment, "(|int|)")
   }
 
   override def visitInsn(opcode: Int) = opcode match {
@@ -170,7 +170,7 @@ class BytecodeMethodVisitor(api: Int, mv: MethodVisitor, procedure: Procedure) e
       val arrayref = popValue
       val stackVar = getStackVar
 
-      addCodeLine(stackVar + ":= " + arrayref + "[" + index + "]")
+      addCodeLine(stackVar + " := " + arrayref + "[" + index + "]")
       pushValue(Variable(Util.getOpcodeType(opcode), stackVar))
     }
     case Opcodes.IASTORE | Opcodes.LASTORE | Opcodes.FASTORE | Opcodes.DASTORE |
@@ -179,7 +179,7 @@ class BytecodeMethodVisitor(api: Int, mv: MethodVisitor, procedure: Procedure) e
       val index = popValue
       val arrayref = popValue
 
-      addCodeLine(arrayref + "[" + index + "]" + ":= " + value)
+      addCodeLine(arrayref + "[" + index + "]" + " := " + value)
     }
     case Opcodes.POP => { popValue }
     case Opcodes.POP2 => { popValue; popValue }
@@ -256,16 +256,16 @@ class BytecodeMethodVisitor(api: Int, mv: MethodVisitor, procedure: Procedure) e
       val value1 = popValue
       val value2 = popValue
 
-      pushValue(new Variable(Util.getOpcodeType(opcode), value2 + Util.getOperator(opcode) + value1))
+      pushValue(Variable(Util.getOpcodeType(opcode), "("+ value2 + Util.getOperator(opcode) + value1 +")"))
     }
     case Opcodes.INEG | Opcodes.LNEG | Opcodes.FNEG | Opcodes.DNEG => {
-      pushValue(new Variable(Util.getOpcodeType(opcode), "-" + popValue))
+      pushValue(Variable(Util.getOpcodeType(opcode), "-" + popValue))
     }
     case Opcodes.I2L | Opcodes.I2F | Opcodes.I2D | Opcodes.L2I |
       Opcodes.L2F | Opcodes.L2D | Opcodes.F2I | Opcodes.F2L |
       Opcodes.F2D | Opcodes.D2I | Opcodes.D2L | Opcodes.D2F | Opcodes.I2B |
       Opcodes.I2C | Opcodes.I2S => {
-      pushValue(new Variable(Util.getOpcodeType(opcode), popValue))
+      pushValue(Variable(Util.getOpcodeType(opcode), "("+Util.getOpcodeType(opcode)+")"+popValue))
     }
     case Opcodes.LCMP | Opcodes.FCMPL | Opcodes.FCMPG | Opcodes.DCMPL |
       Opcodes.DCMPG => {
@@ -274,11 +274,11 @@ class BytecodeMethodVisitor(api: Int, mv: MethodVisitor, procedure: Procedure) e
       val value2 = popValue
 
       opcode match {
-        case Opcodes.LCMP => addCodeLine(stackVar + ":= lcmp(" + value1 + "," + value2 + ")")
-        case Opcodes.FCMPG => addCodeLine(stackVar + ":= fcmpg(" + value1 + "," + value2 + ")")
-        case Opcodes.FCMPL => addCodeLine(stackVar + ":= fcmpl(" + value1 + "," + value2 + ")")
-        case Opcodes.DCMPG => addCodeLine(stackVar + ":= dcmpg(" + value1 + "," + value2 + ")")
-        case Opcodes.DCMPL => addCodeLine(stackVar + ":= dcmpl(" + value1 + "," + value2 + ")")
+        case Opcodes.LCMP => addCodeLine(stackVar + " := lcmp(" + value1 + "," + value2 + ")")
+        case Opcodes.FCMPG => addCodeLine(stackVar + " := fcmpg(" + value1 + "," + value2 + ")")
+        case Opcodes.FCMPL => addCodeLine(stackVar + " := fcmpl(" + value1 + "," + value2 + ")")
+        case Opcodes.DCMPG => addCodeLine(stackVar + " := dcmpg(" + value1 + "," + value2 + ")")
+        case Opcodes.DCMPL => addCodeLine(stackVar + " := dcmpl(" + value1 + "," + value2 + ")")
       }
       pushValue(new Variable("(|int|)", stackVar))
     }
@@ -312,7 +312,7 @@ class BytecodeMethodVisitor(api: Int, mv: MethodVisitor, procedure: Procedure) e
       val typ = Util.getIntInsnType(operand)
       val stackVar = getStackVar()
 
-      addCodeLine(stackVar + ":= new " + typ + "[" + popValue + "]")
+      addCodeLine(stackVar + " := new " + typ + "[" + popValue + "]")
       pushValue(Variable(Util.getIntInsnType(operand) + "",
         stackVar))
     }
@@ -324,7 +324,7 @@ class BytecodeMethodVisitor(api: Int, mv: MethodVisitor, procedure: Procedure) e
       Opcodes.IFGT | Opcodes.IFLE => {
       val value1 = popValue
 
-      changeLastVar()
+      //changeLastVar()
       addCodeLine("if " + value1 + " " + Util.getOperator(opcode) + " 0 then goto " + getLabelId(label) + "Aa")
       stackMap += (label -> varStack)
     }
@@ -333,7 +333,7 @@ class BytecodeMethodVisitor(api: Int, mv: MethodVisitor, procedure: Procedure) e
       val value1 = popValue
       val value2 = popValue
 
-      changeLastVar()
+      //changeLastVar()
       addCodeLine("if " + value2 + " " + Util.getOperator(opcode) + " " + value1 + " then goto " + getLabelId(label) + "Aa")
       stackMap += (label -> varStack)
     }
@@ -346,7 +346,7 @@ class BytecodeMethodVisitor(api: Int, mv: MethodVisitor, procedure: Procedure) e
     case Opcodes.IFNULL | Opcodes.IFNONNULL => {
       val value1 = popValue
 
-      changeLastVar()
+      //changeLastVar()
       addCodeLine("if " + value1 + " " + Util.getOperator(opcode) + " null then goto " + getLabelId(label) + "Aa")
       stackMap += (label -> varStack)
     }
@@ -358,10 +358,10 @@ class BytecodeMethodVisitor(api: Int, mv: MethodVisitor, procedure: Procedure) e
       changeLastVar()
       varStack = stackMap.getOrElse(label, Stack())
     }
-    if (exceptionMap.contains(label)) pushValue(Variable("java.lang.Object", "Exception"))
+    if (exceptionMap.contains(label)) pushValue(Variable("(|java.lang.Object|)", "\"Exception\""))
     labelStr = getLabelId(label)
     currentLine = 0
-    currentStack = 0
+    if (varStack.isEmpty) currentStack = 0
   }
 
   override def visitLdcInsn(cst: Object) = {
@@ -371,6 +371,9 @@ class BytecodeMethodVisitor(api: Int, mv: MethodVisitor, procedure: Procedure) e
       pushValue(new Variable("float", cst.toString))
     } else if (cst.isInstanceOf[Long]) {
       pushValue(new Variable("long", cst.toString + "L"))
+    } else if (cst.isInstanceOf[Type]) {
+      val t = cst.asInstanceOf[Type]
+      pushValue(new Variable("", Util.getPilarStaticField(t.getClassName()+".class")))
     } else {
       pushValue(new Variable("", Util.getTextString(cst.toString)))
     }
@@ -418,9 +421,9 @@ class BytecodeMethodVisitor(api: Int, mv: MethodVisitor, procedure: Procedure) e
       0 to argLength foreach (_ => { args = popValue :: args })
 
       val stackVar = getStackVar
-      addCodeLine("call " + stackVar + ":= " + Util.getFunctionCall(owner, name, desc, Util.getMethodType(opcode), args))
-      if (Type.getReturnType(desc) != Type.VOID_TYPE) {
-        pushValue(new Variable(Util.getTypeString(desc), stackVar))
+      addCodeLine("call " + stackVar + "  := " + Util.getFunctionCall(owner, name, desc, Util.getMethodType(opcode), args))
+      if (!desc.endsWith("V")) {
+        pushValue(Variable(Util.getTypeString(desc), stackVar))
       }
     }
     case Opcodes.INVOKEDYNAMIC => { /* TODO: what to with this */ }
@@ -432,7 +435,7 @@ class BytecodeMethodVisitor(api: Int, mv: MethodVisitor, procedure: Procedure) e
     0 until dims foreach (_ => dim = "[" + popValue + "]" :: dim)
 
     val stackVar = getStackVar
-    addCodeLine(stackVar + ":= new " + Util.getTypeString(desc) + dim.mkString(""))
+    addCodeLine(stackVar + " := new " + Util.getTypeString(desc) + dim.mkString(""))
     pushValue(new Variable("", stackVar))
   }
 
@@ -462,12 +465,12 @@ class BytecodeMethodVisitor(api: Int, mv: MethodVisitor, procedure: Procedure) e
   override def visitTypeInsn(opcode: Int, desc: String) = opcode match {
     case Opcodes.NEW => {
       val stackVar = getStackVar
-      addCodeLine(stackVar + ":= new " + Util.getPilarClassName(desc))
+      addCodeLine(stackVar + " := new " + Util.getPilarClassName(desc))
       pushValue(new Variable(Util.getTypeString(desc), stackVar))
     }
     case Opcodes.ANEWARRAY => {
       val stackVar = getStackVar
-      addCodeLine(stackVar + ":= new " + Util.getPilarClassName(desc) + "[" + popValue + "]")
+      addCodeLine(stackVar + " := new " + Util.getPilarClassName(desc) + "[" + popValue + "]")
       pushValue(new Variable(Util.getTypeString(desc), stackVar))
     }
     case Opcodes.CHECKCAST => {
@@ -475,8 +478,7 @@ class BytecodeMethodVisitor(api: Int, mv: MethodVisitor, procedure: Procedure) e
     }
     case Opcodes.INSTANCEOF => {
       val stackVar = getStackVar
-      addCodeLine(stackVar + ":= instanceof @varname " + popValue + " @type \"" +
-        Util.getPilarClassName(desc) + "\"")
+      addCodeLine(stackVar + " := instanceof @varname " + popValue, "\"" + Util.getPilarClassName(desc) + "\"")
       pushValue(new Variable("boolean", stackVar))
     }
     case _ => { /*Oh God! how can this happen?*/ }
@@ -491,7 +493,7 @@ class BytecodeMethodVisitor(api: Int, mv: MethodVisitor, procedure: Procedure) e
     case Opcodes.ISTORE | Opcodes.LSTORE | Opcodes.FSTORE | Opcodes.DSTORE |
       Opcodes.ASTORE => {
       val arg1 = getTopAndUpdate
-      addCodeLine(getVarName(vr) + ":= " + arg1.value, arg1.typ)
+      addCodeLine(getVarName(vr) + " := " + arg1.value, arg1.typ)
     }
     case Opcodes.RET => { addCodeLine("return " + getVarName(vr)) }
     case _ => { /*Oh God! how can this happen?*/ }

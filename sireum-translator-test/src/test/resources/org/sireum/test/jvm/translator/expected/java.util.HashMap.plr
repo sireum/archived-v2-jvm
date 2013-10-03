@@ -32,7 +32,7 @@ record (|java.util.HashMap|)
     @MaxStack 4
     @Owner (|java.util.HashMap|)
     @Access (PUBLIC,CONSTRUCTOR)
-    @Signature "java.util.HashMap.<init>(IF)V" 
+    @Desc "java.util.HashMap.<init>(IF)V" 
   {
     local jmp;
     s0;
@@ -43,41 +43,41 @@ record (|java.util.HashMap|)
     s5;
     s6;
 
-    #L00000Aa. call s0:= {|java.util.AbstractMap.<init>()V|}([|v0|]) @signature "java.util.AbstractMap.<init>()V" @classDescriptor [|java.util.AbstractMap|] @type special;
-    #L00001Aa. s0:= +|java.util.HashMap.EMPTY_TABLE|+;
-    #L00001Ab. [|v0|].<|java.util.HashMap.table|>:= ((|[Ljava.util.HashMap$Entry;|)) s0;
-    #L00002Aa. [|v0|].<|java.util.HashMap.hashSeed|>:= 0;
-    #L00003Aa. [|v0|].<|java.util.HashMap.entrySet|>:= null;
+    #L00000Aa. call s0  := {|java.util.AbstractMap.<init>()V|}([|v0|]) @ClassDescriptor (|java.util.AbstractMap|) @Type special;
+    #L00001Aa. s0 := +|java.util.HashMap.EMPTY_TABLE|+ @Type (|java.util.HashMap$Entry[]|);
+    #L00001Ab. [|v0|].<|java.util.HashMap.table|> := ((|[Ljava.util.HashMap$Entry;|)) s0 @Type (|java.util.HashMap$Entry[]|);
+    #L00002Aa. [|v0|].<|java.util.HashMap.hashSeed|> := 0 @Type (|int|);
+    #L00003Aa. [|v0|].<|java.util.HashMap.entrySet|> := null @Type (|java.util.Set|);
     #L00004Aa. if [|v1|] >= 0 then goto L00005Aa;
-    #L00006Aa. s0:= new (|java.lang.IllegalArgumentException|);
-    #L00006Ab. s1:= new (|java.lang.StringBuilder|);
-    #L00006Ac. call s2:= {|java.lang.StringBuilder.<init>()V|}(s1) @signature "java.lang.StringBuilder.<init>()V" @classDescriptor [|java.lang.StringBuilder|] @type special;
-    #L00006Ad. call s3:= {|java.lang.StringBuilder.append(Ljava.lang.String;)Ljava.lang.StringBuilder;|}(s1,"Illegal initial capacity: ") @signature "java.lang.StringBuilder.append(Ljava.lang.String;)Ljava.lang.StringBuilder;" @classDescriptor [|java.lang.StringBuilder|] @type virtual;
-    #L00006Ae. call s4:= {|java.lang.StringBuilder.append(I)Ljava.lang.StringBuilder;|}(s3,[|v1|]) @signature "java.lang.StringBuilder.append(I)Ljava.lang.StringBuilder;" @classDescriptor [|java.lang.StringBuilder|] @type virtual;
-    #L00006Af. call s5:= {|java.lang.StringBuilder.toString()Ljava.lang.String;|}(s4) @signature "java.lang.StringBuilder.toString()Ljava.lang.String;" @classDescriptor [|java.lang.StringBuilder|] @type virtual;
-    #L00006Ag. call s6:= {|java.lang.IllegalArgumentException.<init>(Ljava.lang.String;)V|}(s0,s5) @signature "java.lang.IllegalArgumentException.<init>(Ljava.lang.String;)V" @classDescriptor [|java.lang.IllegalArgumentException|] @type special;
+    #L00006Aa. s0 := new (|java.lang.IllegalArgumentException|);
+    #L00006Ab. s1 := new (|java.lang.StringBuilder|);
+    #L00006Ac. call s2  := {|java.lang.StringBuilder.<init>()V|}(s1) @ClassDescriptor (|java.lang.StringBuilder|) @Type special;
+    #L00006Ad. call s3  := {|java.lang.StringBuilder.append(Ljava.lang.String;)Ljava.lang.StringBuilder;|}(s1,"Illegal initial capacity: ") @ClassDescriptor (|java.lang.StringBuilder|) @Type virtual;
+    #L00006Ae. call s4  := {|java.lang.StringBuilder.append(I)Ljava.lang.StringBuilder;|}(s3,[|v1|]) @ClassDescriptor (|java.lang.StringBuilder|) @Type virtual;
+    #L00006Af. call s5  := {|java.lang.StringBuilder.toString()Ljava.lang.String;|}(s4) @ClassDescriptor (|java.lang.StringBuilder|) @Type virtual;
+    #L00006Ag. call s6  := {|java.lang.IllegalArgumentException.<init>(Ljava.lang.String;)V|}(s0,s5) @ClassDescriptor (|java.lang.IllegalArgumentException|) @Type special;
     #L00006Ah. throw s0;
     #L00005Aa. <@Frame (@Full, 3, `[(|java.lang.Object|), (|int|), (|float|)], 0, `[(|top|), (|top|), (|top|), (|top|)])>
     #L00005Ab. if [|v1|] <= "1073741824" then goto L00007Aa;
-    #L00008Aa. [|v1|]:= "1073741824" @type ;
+    #L00008Aa. [|v1|] := "1073741824";
     #L00007Aa. <@Frame (@Same, 0, `[(|java.lang.Object|), (|int|), (|float|)], 0, `[(|top|), (|top|), (|top|), (|top|)])>
-    #L00007Ab. s0:= fcmpg(0.0,[|v2|]);
+    #L00007Ab. s0 := fcmpg(0.0,[|v2|]);
     #L00007Ac. if s0 <= 0 then goto L00009Aa;
-    #L00007Ad. call s1:= {|java.lang.Float.isNaN(F)Z|}([|v2|]) @signature "java.lang.Float.isNaN(F)Z" @classDescriptor [|java.lang.Float|] @type direct;
+    #L00007Ad. call s1  := {|java.lang.Float.isNaN(F)Z|}([|v2|]) @ClassDescriptor (|java.lang.Float|) @Type direct;
     #L00007Ae. if s1 == 0 then goto L00010Aa;
     #L00009Aa. <@Frame (@Same, 0, `[(|java.lang.Object|), (|int|), (|float|)], 0, `[(|top|), (|top|), (|top|), (|top|)])>
-    #L00009Ab. s0:= new (|java.lang.IllegalArgumentException|);
-    #L00009Ac. s1:= new (|java.lang.StringBuilder|);
-    #L00009Ad. call s2:= {|java.lang.StringBuilder.<init>()V|}(s1) @signature "java.lang.StringBuilder.<init>()V" @classDescriptor [|java.lang.StringBuilder|] @type special;
-    #L00009Ae. call s3:= {|java.lang.StringBuilder.append(Ljava.lang.String;)Ljava.lang.StringBuilder;|}(s1,"Illegal load factor: ") @signature "java.lang.StringBuilder.append(Ljava.lang.String;)Ljava.lang.StringBuilder;" @classDescriptor [|java.lang.StringBuilder|] @type virtual;
-    #L00009Af. call s4:= {|java.lang.StringBuilder.append(F)Ljava.lang.StringBuilder;|}(s3,[|v2|]) @signature "java.lang.StringBuilder.append(F)Ljava.lang.StringBuilder;" @classDescriptor [|java.lang.StringBuilder|] @type virtual;
-    #L00009Ag. call s5:= {|java.lang.StringBuilder.toString()Ljava.lang.String;|}(s4) @signature "java.lang.StringBuilder.toString()Ljava.lang.String;" @classDescriptor [|java.lang.StringBuilder|] @type virtual;
-    #L00009Ah. call s6:= {|java.lang.IllegalArgumentException.<init>(Ljava.lang.String;)V|}(s0,s5) @signature "java.lang.IllegalArgumentException.<init>(Ljava.lang.String;)V" @classDescriptor [|java.lang.IllegalArgumentException|] @type special;
+    #L00009Ab. s0 := new (|java.lang.IllegalArgumentException|);
+    #L00009Ac. s1 := new (|java.lang.StringBuilder|);
+    #L00009Ad. call s2  := {|java.lang.StringBuilder.<init>()V|}(s1) @ClassDescriptor (|java.lang.StringBuilder|) @Type special;
+    #L00009Ae. call s3  := {|java.lang.StringBuilder.append(Ljava.lang.String;)Ljava.lang.StringBuilder;|}(s1,"Illegal load factor: ") @ClassDescriptor (|java.lang.StringBuilder|) @Type virtual;
+    #L00009Af. call s4  := {|java.lang.StringBuilder.append(F)Ljava.lang.StringBuilder;|}(s3,[|v2|]) @ClassDescriptor (|java.lang.StringBuilder|) @Type virtual;
+    #L00009Ag. call s5  := {|java.lang.StringBuilder.toString()Ljava.lang.String;|}(s4) @ClassDescriptor (|java.lang.StringBuilder|) @Type virtual;
+    #L00009Ah. call s6  := {|java.lang.IllegalArgumentException.<init>(Ljava.lang.String;)V|}(s0,s5) @ClassDescriptor (|java.lang.IllegalArgumentException|) @Type special;
     #L00009Ai. throw s0;
     #L00010Aa. <@Frame (@Same, 0, `[(|java.lang.Object|), (|int|), (|float|)], 0, `[(|top|), (|top|), (|top|), (|top|)])>
-    #L00010Ab. [|v0|].<|java.util.HashMap.loadFactor|>:= [|v2|];
-    #L00011Aa. [|v0|].<|java.util.HashMap.threshold|>:= [|v1|];
-    #L00012Aa. call s0:= {|java.util.HashMap.init()V|}([|v0|]) @signature "java.util.HashMap.init()V" @classDescriptor [|java.util.HashMap|] @type virtual;
+    #L00010Ab. [|v0|].<|java.util.HashMap.loadFactor|> := [|v2|] @Type (|float|);
+    #L00011Aa. [|v0|].<|java.util.HashMap.threshold|> := [|v1|] @Type (|int|);
+    #L00012Aa. call s0  := {|java.util.HashMap.init()V|}([|v0|]) @ClassDescriptor (|java.util.HashMap|) @Type virtual;
     #L00013Aa. return @void;
   }
   procedure (|void|) {|java.util.HashMap.<init>(I)V|} ((|java.util.HashMap|) [|v0|], (|int|) [|v1|]) 
@@ -85,12 +85,12 @@ record (|java.util.HashMap|)
     @MaxStack 3
     @Owner (|java.util.HashMap|)
     @Access (PUBLIC,CONSTRUCTOR)
-    @Signature "java.util.HashMap.<init>(I)V" 
+    @Desc "java.util.HashMap.<init>(I)V" 
   {
     local jmp;
     s0;
 
-    #L00000Aa. call s0:= {|java.util.HashMap.<init>(IF)V|}([|v0|],[|v1|],0.75) @signature "java.util.HashMap.<init>(IF)V" @classDescriptor [|java.util.HashMap|] @type special;
+    #L00000Aa. call s0  := {|java.util.HashMap.<init>(IF)V|}([|v0|],[|v1|],0.75) @ClassDescriptor (|java.util.HashMap|) @Type special;
     #L00001Aa. return @void;
   }
   procedure (|void|) {|java.util.HashMap.<init>()V|} ((|java.util.HashMap|) [|v0|]) 
@@ -98,12 +98,12 @@ record (|java.util.HashMap|)
     @MaxStack 3
     @Owner (|java.util.HashMap|)
     @Access (PUBLIC,CONSTRUCTOR)
-    @Signature "java.util.HashMap.<init>()V" 
+    @Desc "java.util.HashMap.<init>()V" 
   {
     local jmp;
     s0;
 
-    #L00000Aa. call s0:= {|java.util.HashMap.<init>(IF)V|}([|v0|],16,0.75) @signature "java.util.HashMap.<init>(IF)V" @classDescriptor [|java.util.HashMap|] @type special;
+    #L00000Aa. call s0  := {|java.util.HashMap.<init>(IF)V|}([|v0|],16,0.75) @ClassDescriptor (|java.util.HashMap|) @Type special;
     #L00001Aa. return @void;
   }
   procedure (|void|) {|java.util.HashMap.<init>(Ljava.util.Map;)V|} ((|java.util.HashMap|) [|v0|], (|java.util.Map|) [|v1|]) 
@@ -112,19 +112,19 @@ record (|java.util.HashMap|)
     @GenericSignature "(Ljava/util/Map<+TK;+TV;>;)V"
     @Owner (|java.util.HashMap|)
     @Access (PUBLIC,CONSTRUCTOR)
-    @Signature "java.util.HashMap.<init>(Ljava.util.Map;)V" 
+    @Desc "java.util.HashMap.<init>(Ljava.util.Map;)V" 
   {
     local jmp;
     s0;
     s1;
     s2;
 
-    #L00000Aa. call s0:= {|java.util.Map.size()I|}([|v1|]) @signature "java.util.Map.size()I" @classDescriptor [|java.util.Map|] @type interface;
-    #L00000Ab. call s1:= {|java.lang.Math.max(II)I|}(s0/0.75+1,16) @signature "java.lang.Math.max(II)I" @classDescriptor [|java.lang.Math|] @type direct;
-    #L00000Ac. call s2:= {|java.util.HashMap.<init>(IF)V|}([|v0|],s1,0.75) @signature "java.util.HashMap.<init>(IF)V" @classDescriptor [|java.util.HashMap|] @type special;
-    #L00001Aa. s0:= [|v0|].<|java.util.HashMap.threshold|>;
-    #L00001Ab. call s1:= {|java.util.HashMap.inflateTable(I)V|}([|v0|],s0) @signature "java.util.HashMap.inflateTable(I)V" @classDescriptor [|java.util.HashMap|] @type special;
-    #L00002Aa. call s0:= {|java.util.HashMap.putAllForCreate(Ljava.util.Map;)V|}([|v0|],[|v1|]) @signature "java.util.HashMap.putAllForCreate(Ljava.util.Map;)V" @classDescriptor [|java.util.HashMap|] @type special;
+    #L00000Aa. call s0  := {|java.util.Map.size()I|}([|v1|]) @ClassDescriptor (|java.util.Map|) @Type interface;
+    #L00000Ab. call s1  := {|java.lang.Math.max(II)I|}((((|int|))(((|float|))s0/0.75)+1),16) @ClassDescriptor (|java.lang.Math|) @Type direct;
+    #L00000Ac. call s2  := {|java.util.HashMap.<init>(IF)V|}([|v0|],s1,0.75) @ClassDescriptor (|java.util.HashMap|) @Type special;
+    #L00001Aa. s0 := [|v0|].<|java.util.HashMap.threshold|> @Type (|int|);
+    #L00001Ab. call s1  := {|java.util.HashMap.inflateTable(I)V|}([|v0|],s0) @ClassDescriptor (|java.util.HashMap|) @Type special;
+    #L00002Aa. call s0  := {|java.util.HashMap.putAllForCreate(Ljava.util.Map;)V|}([|v0|],[|v1|]) @ClassDescriptor (|java.util.HashMap|) @Type special;
     #L00003Aa. return @void;
   }
   procedure (|int|) {|java.util.HashMap.roundUpToPowerOf2(I)I|} ((|int|) [|v0|]) 
@@ -132,7 +132,7 @@ record (|java.util.HashMap|)
     @MaxStack 2
     @Owner (|java.util.HashMap|)
     @Access (PRIVATE,STATIC)
-    @Signature "java.util.HashMap.roundUpToPowerOf2(I)I" 
+    @Desc "java.util.HashMap.roundUpToPowerOf2(I)I" 
   {
     local jmp;
     s0;
@@ -140,23 +140,23 @@ record (|java.util.HashMap|)
     [|v1|];
 
     #L00000Aa. if [|v0|] < "1073741824" then goto L00001Aa;
-    #L00000Ab. jmp:= "1073741824";
+    #L00000Ab. jmp := "1073741824";
     #L00000Ac. goto L00002Aa;
     #L00001Aa. <@Frame (@Same, 0, `[(|top|), (|top|)], 0, `[(|top|), (|top|)])>
-    #L00001Ab. call s0:= {|java.lang.Integer.highestOneBit(I)I|}([|v0|]) @signature "java.lang.Integer.highestOneBit(I)I" @classDescriptor [|java.lang.Integer|] @type direct;
-    #L00001Ac. [|v1|]:= s0 @type (|java.lang.Object|);
+    #L00001Ab. call s0  := {|java.lang.Integer.highestOneBit(I)I|}([|v0|]) @ClassDescriptor (|java.lang.Integer|) @Type direct;
+    #L00001Ac. [|v1|] := s0 @Type (|java.lang.Object|);
     #L00001Ad. if s0 == 0 then goto L00003Aa;
-    #L00001Ae. call s1:= {|java.lang.Integer.bitCount(I)I|}([|v0|]) @signature "java.lang.Integer.bitCount(I)I" @classDescriptor [|java.lang.Integer|] @type direct;
+    #L00001Ae. call s1  := {|java.lang.Integer.bitCount(I)I|}([|v0|]) @ClassDescriptor (|java.lang.Integer|) @Type direct;
     #L00001Af. if s1 <= 1 then goto L00004Aa;
-    #L00001Ag. jmp:= [|v1|]^<1;
+    #L00001Ag. jmp := ([|v1|]^<1);
     #L00001Ah. goto L00002Aa;
     #L00004Aa. <@Frame (@Append, 1, `[(|int|), (|top|)], 0, `[(|top|), (|top|)])>
-    #L00004Ab. jmp:= [|v1|];
+    #L00004Ab. jmp := [|v1|];
     #L00004Ac. goto L00002Aa;
     #L00003Aa. <@Frame (@Same, 0, `[(|int|), (|top|)], 0, `[(|top|), (|top|)])>
-    #L00003Ab. jmp:= 1;
+    #L00003Ab. jmp := 1;
     #L00002Aa. <@Frame (@Full, 1, `[(|int|), (|top|)], 1, `[(|int|), (|top|)])>
-    #L00002Ab. [|v1|]:= jmp @type int;
+    #L00002Ab. [|v1|] := jmp @Type int;
     #L00005Aa. return [|v1|];
   }
   procedure (|void|) {|java.util.HashMap.inflateTable(I)V|} ((|java.util.HashMap|) [|v0|], (|int|) [|v1|]) 
@@ -164,21 +164,21 @@ record (|java.util.HashMap|)
     @MaxStack 3
     @Owner (|java.util.HashMap|)
     @Access (PRIVATE)
-    @Signature "java.util.HashMap.inflateTable(I)V" 
+    @Desc "java.util.HashMap.inflateTable(I)V" 
   {
     local jmp;
     s0;
     s1;
     [|v2|];
 
-    #L00000Aa. call s0:= {|java.util.HashMap.roundUpToPowerOf2(I)I|}([|v1|]) @signature "java.util.HashMap.roundUpToPowerOf2(I)I" @classDescriptor [|java.util.HashMap|] @type direct;
-    #L00000Ab. [|v2|]:= s0 @type (|java.lang.Object|);
-    #L00001Aa. s0:= [|v0|].<|java.util.HashMap.loadFactor|>;
-    #L00001Ab. call s1:= {|java.lang.Math.min(FF)F|}([|v2|]*s0,1.07374182E9) @signature "java.lang.Math.min(FF)F" @classDescriptor [|java.lang.Math|] @type direct;
-    #L00001Ac. [|v0|].<|java.util.HashMap.threshold|>:= s1;
-    #L00002Aa. s0:= new (|java.util.HashMap$Entry|)[[|v2|]];
-    #L00002Ab. [|v0|].<|java.util.HashMap.table|>:= s0;
-    #L00003Aa. call s0:= {|java.util.HashMap.initHashSeedAsNeeded(I)Z|}([|v0|],[|v2|]) @signature "java.util.HashMap.initHashSeedAsNeeded(I)Z" @classDescriptor [|java.util.HashMap|] @type virtual;
+    #L00000Aa. call s0  := {|java.util.HashMap.roundUpToPowerOf2(I)I|}([|v1|]) @ClassDescriptor (|java.util.HashMap|) @Type direct;
+    #L00000Ab. [|v2|] := s0 @Type (|java.lang.Object|);
+    #L00001Aa. s0 := [|v0|].<|java.util.HashMap.loadFactor|> @Type (|float|);
+    #L00001Ab. call s1  := {|java.lang.Math.min(FF)F|}((((|float|))[|v2|]*s0),1.07374182E9) @ClassDescriptor (|java.lang.Math|) @Type direct;
+    #L00001Ac. [|v0|].<|java.util.HashMap.threshold|> := ((|int|))s1 @Type (|int|);
+    #L00002Aa. s0 := new (|java.util.HashMap$Entry|)[[|v2|]];
+    #L00002Ab. [|v0|].<|java.util.HashMap.table|> := s0 @Type (|java.util.HashMap$Entry[]|);
+    #L00003Aa. call s0  := {|java.util.HashMap.initHashSeedAsNeeded(I)Z|}([|v0|],[|v2|]) @ClassDescriptor (|java.util.HashMap|) @Type virtual;
     #L00004Aa. return @void;
   }
   procedure (|void|) {|java.util.HashMap.init()V|} ((|java.util.HashMap|) [|v0|]) 
@@ -186,7 +186,7 @@ record (|java.util.HashMap|)
     @MaxStack 0
     @Owner (|java.util.HashMap|)
     @Access ()
-    @Signature "java.util.HashMap.init()V" 
+    @Desc "java.util.HashMap.init()V" 
   {
     local jmp;
 
@@ -197,7 +197,7 @@ record (|java.util.HashMap|)
     @MaxStack 2
     @Owner (|java.util.HashMap|)
     @Access (FINAL)
-    @Signature "java.util.HashMap.initHashSeedAsNeeded(I)Z" 
+    @Desc "java.util.HashMap.initHashSeedAsNeeded(I)Z" 
   {
     local jmp;
     s0;
@@ -206,35 +206,34 @@ record (|java.util.HashMap|)
     [|v3|];
     [|v4|];
 
-    #L00000Aa. s0:= [|v0|].<|java.util.HashMap.hashSeed|>;
+    #L00000Aa. s0 := [|v0|].<|java.util.HashMap.hashSeed|> @Type (|int|);
     #L00000Ab. if s0 == 0 then goto L00001Aa;
-    #L00000Ac. jmp:= 1;
+    #L00000Ac. jmp := 1;
     #L00000Ad. goto L00002Aa;
     #L00001Aa. <@Frame (@Same, 0, `[(|top|), (|top|), (|top|), (|top|), (|top|)], 0, `[(|top|), (|top|)])>
-    #L00001Ab. jmp:= 0;
+    #L00001Ab. jmp := 0;
     #L00002Aa. <@Frame (@Same1, 0, `[(|top|), (|top|), (|top|), (|top|), (|top|)], 1, `[(|int|), (|top|)])>
-    #L00002Ab. [|v2|]:= jmp @type (|int|);
-    #L00003Aa. call s0:= {|sun.misc.VM.isBooted()Z|}() @signature "sun.misc.VM.isBooted()Z" @classDescriptor [|sun.misc.VM|] @type direct;
+    #L00002Ab. [|v2|] := jmp @Type (|int|);
+    #L00003Aa. call s0  := {|sun.misc.VM.isBooted()Z|}() @ClassDescriptor (|sun.misc.VM|) @Type direct;
     #L00003Ab. if s0 == 0 then goto L00004Aa;
-    #L00003Ac. s1:= +|java.util.HashMap$Holder.ALTERNATIVE_HASHING_THRESHOLD|+;
+    #L00003Ac. s1 := +|java.util.HashMap$Holder.ALTERNATIVE_HASHING_THRESHOLD|+ @Type (|int|);
     #L00003Ad. if [|v1|] < s1 then goto L00004Aa;
-    #L00003Ae. jmp:= 1;
+    #L00003Ae. jmp := 1;
     #L00003Af. goto L00005Aa;
     #L00004Aa. <@Frame (@Append, 1, `[(|int|), (|top|), (|top|), (|top|), (|top|)], 0, `[(|int|), (|top|)])>
-    #L00004Ab. jmp:= 0;
+    #L00004Ab. jmp := 0;
     #L00005Aa. <@Frame (@Same1, 0, `[(|int|), (|top|), (|top|), (|top|), (|top|)], 1, `[(|int|), (|top|)])>
-    #L00005Ab. [|v3|]:= jmp @type (|int|);
-    #L00006Aa. [|v4|]:= [|v2|]^~[|v3|] @type (|int|);
+    #L00005Ab. [|v3|] := jmp @Type (|int|);
+    #L00006Aa. [|v4|] := ([|v2|]^~[|v3|]) @Type (|int|);
     #L00007Aa. if [|v4|] == 0 then goto L00008Aa;
-    #L00009Aa. jmp:= [|v0|];
-    #L00009Ab. if [|v3|] == 0 then goto L00010Aa;
-    #L00009Ac. call s0:= {|sun.misc.Hashing.randomHashSeed(Ljava.lang.Object;)I|}([|v0|]) @signature "sun.misc.Hashing.randomHashSeed(Ljava.lang.Object;)I" @classDescriptor [|sun.misc.Hashing|] @type direct;
-    #L00009Ad. jmp:= s0;
-    #L00009Ae. goto L00011Aa;
+    #L00009Aa. if [|v3|] == 0 then goto L00010Aa;
+    #L00009Ab. call s0  := {|sun.misc.Hashing.randomHashSeed(Ljava.lang.Object;)I|}([|v0|]) @ClassDescriptor (|sun.misc.Hashing|) @Type direct;
+    #L00009Ac. jmp := s0;
+    #L00009Ad. goto L00011Aa;
     #L00010Aa. <@Frame (@Full, 5, `[(|java.lang.Object|), (|int|), (|int|), (|int|), (|int|)], 1, `[(|java.lang.Object|), (|top|)])>
-    #L00010Ab. jmp:= 0;
+    #L00010Ab. jmp := 0;
     #L00011Aa. <@Frame (@Full, 5, `[(|java.lang.Object|), (|int|), (|int|), (|int|), (|int|)], 2, `[(|java.lang.Object|), (|int|)])>
-    #L00011Ab. jmp.<|java.util.HashMap.hashSeed|>:= jmp;
+    #L00011Ab. [|v0|].<|java.util.HashMap.hashSeed|> := jmp @Type (|int|);
     #L00008Aa. <@Frame (@Same, 0, `[(|java.lang.Object|), (|int|), (|int|), (|int|), (|int|)], 0, `[(|java.lang.Object|), (|int|)])>
     #L00008Ab. return [|v4|];
   }
@@ -243,47 +242,47 @@ record (|java.util.HashMap|)
     @MaxStack 4
     @Owner (|java.util.HashMap|)
     @Access (FINAL)
-    @Signature "java.util.HashMap.hash(Ljava.lang.Object;)I" 
+    @Desc "java.util.HashMap.hash(Ljava.lang.Object;)I" 
   {
     local jmp;
     s0;
     [|v2|];
 
-    #L00000Aa. s0:= [|v0|].<|java.util.HashMap.hashSeed|>;
-    #L00000Ab. [|v2|]:= s0 @type (|int|);
+    #L00000Aa. s0 := [|v0|].<|java.util.HashMap.hashSeed|> @Type (|int|);
+    #L00000Ab. [|v2|] := s0 @Type (|int|);
     #L00001Aa. if 0 == [|v2|] then goto L00002Aa;
-    #L00001Ab. s0:= instanceof @varname [|v1|] @type "(|java.lang.String|)";
+    #L00001Ab. s0 := instanceof @varname [|v1|] @Type "(|java.lang.String|)";
     #L00001Ac. if s0 == 0 then goto L00002Aa;
-    #L00003Aa. call s0:= {|sun.misc.Hashing.stringHash32(Ljava.lang.String;)I|}(((|java.lang.String|)) [|v1|]) @signature "sun.misc.Hashing.stringHash32(Ljava.lang.String;)I" @classDescriptor [|sun.misc.Hashing|] @type direct;
+    #L00003Aa. call s0  := {|sun.misc.Hashing.stringHash32(Ljava.lang.String;)I|}(((|java.lang.String|)) [|v1|]) @ClassDescriptor (|sun.misc.Hashing|) @Type direct;
     #L00003Ab. return s0;
     #L00002Aa. <@Frame (@Append, 1, `[(|int|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|), (|top|)])>
-    #L00002Ab. call s0:= {|java.lang.Object.hashCode()I|}([|v1|]) @signature "java.lang.Object.hashCode()I" @classDescriptor [|java.lang.Object|] @type virtual;
-    #L00002Ac. [|v2|]:= [|v2|]^~s0 @type (|int|);
-    #L00004Aa. [|v2|]:= [|v2|]^~[|v2|]^>>>20^~[|v2|]^>>>12 @type (|int|);
-    #L00005Aa. return [|v2|]^~[|v2|]^>>>7^~[|v2|]^>>>4;
+    #L00002Ab. call s0  := {|java.lang.Object.hashCode()I|}([|v1|]) @ClassDescriptor (|java.lang.Object|) @Type virtual;
+    #L00002Ac. [|v2|] := ([|v2|]^~s0) @Type (|int|);
+    #L00004Aa. [|v2|] := ([|v2|]^~(([|v2|]^>>>20)^~([|v2|]^>>>12))) @Type (|int|);
+    #L00005Aa. return (([|v2|]^~([|v2|]^>>>7))^~([|v2|]^>>>4));
   }
   procedure (|int|) {|java.util.HashMap.indexFor(II)I|} ((|int|) [|v0|], (|int|) [|v1|]) 
     @MaxLocals 2
     @MaxStack 3
     @Owner (|java.util.HashMap|)
     @Access (STATIC)
-    @Signature "java.util.HashMap.indexFor(II)I" 
+    @Desc "java.util.HashMap.indexFor(II)I" 
   {
     local jmp;
 
-    #L00000Aa. return [|v0|]^&[|v1|]-1;
+    #L00000Aa. return ([|v0|]^&([|v1|]-1));
   }
   procedure (|int|) {|java.util.HashMap.size()I|} ((|java.util.HashMap|) [|v0|]) 
     @MaxLocals 1
     @MaxStack 1
     @Owner (|java.util.HashMap|)
     @Access (PUBLIC)
-    @Signature "java.util.HashMap.size()I" 
+    @Desc "java.util.HashMap.size()I" 
   {
     local jmp;
     s0;
 
-    #L00000Aa. s0:= [|v0|].<|java.util.HashMap.size|>;
+    #L00000Aa. s0 := [|v0|].<|java.util.HashMap.size|> @Type (|int|);
     #L00000Ab. return s0;
   }
   procedure (|boolean|) {|java.util.HashMap.isEmpty()Z|} ((|java.util.HashMap|) [|v0|]) 
@@ -291,17 +290,17 @@ record (|java.util.HashMap|)
     @MaxStack 1
     @Owner (|java.util.HashMap|)
     @Access (PUBLIC)
-    @Signature "java.util.HashMap.isEmpty()Z" 
+    @Desc "java.util.HashMap.isEmpty()Z" 
   {
     local jmp;
     s0;
 
-    #L00000Aa. s0:= [|v0|].<|java.util.HashMap.size|>;
+    #L00000Aa. s0 := [|v0|].<|java.util.HashMap.size|> @Type (|int|);
     #L00000Ab. if s0 != 0 then goto L00001Aa;
-    #L00000Ac. jmp:= 1;
+    #L00000Ac. jmp := 1;
     #L00000Ad. goto L00002Aa;
     #L00001Aa. <@Frame (@Same, 0, `[(|top|)], 0, `[(|top|)])>
-    #L00001Ab. jmp:= 0;
+    #L00001Ab. jmp := 0;
     #L00002Aa. <@Frame (@Same1, 0, `[(|top|)], 1, `[(|int|)])>
     #L00002Ab. return jmp;
   }
@@ -311,24 +310,24 @@ record (|java.util.HashMap|)
     @GenericSignature "(Ljava/lang/Object;)TV;"
     @Owner (|java.util.HashMap|)
     @Access (PUBLIC)
-    @Signature "java.util.HashMap.get(Ljava.lang.Object;)Ljava.lang.Object;" 
+    @Desc "java.util.HashMap.get(Ljava.lang.Object;)Ljava.lang.Object;" 
   {
     local jmp;
     s0;
     [|v2|];
 
     #L00000Aa. if [|v1|] != null then goto L00001Aa;
-    #L00002Aa. call s0:= {|java.util.HashMap.getForNullKey()Ljava.lang.Object;|}([|v0|]) @signature "java.util.HashMap.getForNullKey()Ljava.lang.Object;" @classDescriptor [|java.util.HashMap|] @type special;
+    #L00002Aa. call s0  := {|java.util.HashMap.getForNullKey()Ljava.lang.Object;|}([|v0|]) @ClassDescriptor (|java.util.HashMap|) @Type special;
     #L00002Ab. return s0;
     #L00001Aa. <@Frame (@Same, 0, `[(|top|), (|top|), (|top|)], 0, `[(|top|), (|top|)])>
-    #L00001Ab. call s0:= {|java.util.HashMap.getEntry(Ljava.lang.Object;)Ljava.util.HashMap$Entry;|}([|v0|],[|v1|]) @signature "java.util.HashMap.getEntry(Ljava.lang.Object;)Ljava.util.HashMap$Entry;" @classDescriptor [|java.util.HashMap|] @type virtual;
-    #L00001Ac. [|v2|]:= s0 @type (|java.lang.Object|);
+    #L00001Ab. call s0  := {|java.util.HashMap.getEntry(Ljava.lang.Object;)Ljava.util.HashMap$Entry;|}([|v0|],[|v1|]) @ClassDescriptor (|java.util.HashMap|) @Type virtual;
+    #L00001Ac. [|v2|] := s0 @Type (|java.lang.Object|);
     #L00003Aa. if null != [|v2|] then goto L00004Aa;
-    #L00003Ab. jmp:= null;
+    #L00003Ab. jmp := null;
     #L00003Ac. goto L00005Aa;
     #L00004Aa. <@Frame (@Append, 1, `[(|java.lang.Object|), (|top|), (|top|)], 0, `[(|top|), (|top|)])>
-    #L00004Ab. call s0:= {|java.util.HashMap$Entry.getValue()Ljava.lang.Object;|}([|v2|]) @signature "java.util.HashMap$Entry.getValue()Ljava.lang.Object;" @classDescriptor [|java.util.HashMap$Entry|] @type virtual;
-    #L00004Ac. jmp:= s0;
+    #L00004Ab. call s0  := {|java.util.HashMap$Entry.getValue()Ljava.lang.Object;|}([|v2|]) @ClassDescriptor (|java.util.HashMap$Entry|) @Type virtual;
+    #L00004Ac. jmp := s0;
     #L00005Aa. <@Frame (@Same1, 0, `[(|java.lang.Object|), (|top|), (|top|)], 1, `[(|java.lang.Object|), (|top|)])>
     #L00005Ab. return jmp;
   }
@@ -338,29 +337,29 @@ record (|java.util.HashMap|)
     @GenericSignature "()TV;"
     @Owner (|java.util.HashMap|)
     @Access (PRIVATE)
-    @Signature "java.util.HashMap.getForNullKey()Ljava.lang.Object;" 
+    @Desc "java.util.HashMap.getForNullKey()Ljava.lang.Object;" 
   {
     local jmp;
     s0;
     s1;
     [|v1|];
 
-    #L00000Aa. s0:= [|v0|].<|java.util.HashMap.size|>;
+    #L00000Aa. s0 := [|v0|].<|java.util.HashMap.size|> @Type (|int|);
     #L00000Ab. if s0 != 0 then goto L00001Aa;
     #L00002Aa. return null;
     #L00001Aa. <@Frame (@Same, 0, `[(|top|), (|top|)], 0, `[(|top|), (|top|)])>
-    #L00001Ab. s0:= [|v0|].<|java.util.HashMap.table|>;
-    #L00001Ac. s1:= s0[0];
-    #L00001Ad. [|v1|]:= s1 @type (|java.lang.Object|);
+    #L00001Ab. s0 := [|v0|].<|java.util.HashMap.table|> @Type (|java.util.HashMap$Entry[]|);
+    #L00001Ac. s1 := s0[0];
+    #L00001Ad. [|v1|] := s1 @Type (|java.lang.Object|);
     #L00003Aa. <@Frame (@Append, 1, `[(|java.lang.Object|), (|top|)], 0, `[(|top|), (|top|)])>
     #L00003Ab. if [|v1|] == null then goto L00004Aa;
-    #L00005Aa. s0:= [|v1|].<|java.util.HashMap$Entry.key|>;
+    #L00005Aa. s0 := [|v1|].<|java.util.HashMap$Entry.key|> @Type (|java.lang.Object|);
     #L00005Ab. if s0 != null then goto L00006Aa;
-    #L00007Aa. s0:= [|v1|].<|java.util.HashMap$Entry.value|>;
+    #L00007Aa. s0 := [|v1|].<|java.util.HashMap$Entry.value|> @Type (|java.lang.Object|);
     #L00007Ab. return s0;
     #L00006Aa. <@Frame (@Same, 0, `[(|java.lang.Object|), (|top|)], 0, `[(|top|), (|top|)])>
-    #L00006Ab. s0:= [|v1|].<|java.util.HashMap$Entry.next|>;
-    #L00006Ac. [|v1|]:= s0 @type (|java.util.HashMap$Entry|);
+    #L00006Ab. s0 := [|v1|].<|java.util.HashMap$Entry.next|> @Type (|java.util.HashMap$Entry|);
+    #L00006Ac. [|v1|] := s0 @Type (|java.util.HashMap$Entry|);
     #L00006Ad. goto L00003Aa;
     #L00004Aa. <@Frame (@Chop, 1, `[(|java.lang.Object|), (|top|)], 0, `[(|top|), (|top|)])>
     #L00004Ab. return null;
@@ -370,17 +369,17 @@ record (|java.util.HashMap|)
     @MaxStack 2
     @Owner (|java.util.HashMap|)
     @Access (PUBLIC)
-    @Signature "java.util.HashMap.containsKey(Ljava.lang.Object;)Z" 
+    @Desc "java.util.HashMap.containsKey(Ljava.lang.Object;)Z" 
   {
     local jmp;
     s0;
 
-    #L00000Aa. call s0:= {|java.util.HashMap.getEntry(Ljava.lang.Object;)Ljava.util.HashMap$Entry;|}([|v0|],[|v1|]) @signature "java.util.HashMap.getEntry(Ljava.lang.Object;)Ljava.util.HashMap$Entry;" @classDescriptor [|java.util.HashMap|] @type virtual;
+    #L00000Aa. call s0  := {|java.util.HashMap.getEntry(Ljava.lang.Object;)Ljava.util.HashMap$Entry;|}([|v0|],[|v1|]) @ClassDescriptor (|java.util.HashMap|) @Type virtual;
     #L00000Ab. if s0 == null then goto L00001Aa;
-    #L00000Ac. jmp:= 1;
+    #L00000Ac. jmp := 1;
     #L00000Ad. goto L00002Aa;
     #L00001Aa. <@Frame (@Same, 0, `[(|top|), (|top|)], 0, `[(|top|), (|top|)])>
-    #L00001Ab. jmp:= 0;
+    #L00001Ab. jmp := 0;
     #L00002Aa. <@Frame (@Same1, 0, `[(|top|), (|top|)], 1, `[(|int|), (|top|)])>
     #L00002Ab. return jmp;
   }
@@ -390,7 +389,7 @@ record (|java.util.HashMap|)
     @GenericSignature "(Ljava/lang/Object;)Ljava/util/HashMap$Entry<TK;TV;>;"
     @Owner (|java.util.HashMap|)
     @Access (FINAL)
-    @Signature "java.util.HashMap.getEntry(Ljava.lang.Object;)Ljava.util.HashMap$Entry;" 
+    @Desc "java.util.HashMap.getEntry(Ljava.lang.Object;)Ljava.util.HashMap$Entry;" 
   {
     local jmp;
     s0;
@@ -401,38 +400,38 @@ record (|java.util.HashMap|)
     [|v3|];
     [|v4|];
 
-    #L00000Aa. s0:= [|v0|].<|java.util.HashMap.size|>;
+    #L00000Aa. s0 := [|v0|].<|java.util.HashMap.size|> @Type (|int|);
     #L00000Ab. if s0 != 0 then goto L00001Aa;
     #L00002Aa. return null;
     #L00001Aa. <@Frame (@Same, 0, `[(|top|), (|top|), (|top|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|)])>
     #L00001Ab. if [|v1|] != null then goto L00003Aa;
-    #L00001Ac. jmp:= 0;
+    #L00001Ac. jmp := 0;
     #L00001Ad. goto L00004Aa;
     #L00003Aa. <@Frame (@Same, 0, `[(|top|), (|top|), (|top|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|)])>
-    #L00003Ab. call s0:= {|java.util.HashMap.hash(Ljava.lang.Object;)I|}([|v0|],[|v1|]) @signature "java.util.HashMap.hash(Ljava.lang.Object;)I" @classDescriptor [|java.util.HashMap|] @type virtual;
-    #L00003Ac. jmp:= s0;
+    #L00003Ab. call s0  := {|java.util.HashMap.hash(Ljava.lang.Object;)I|}([|v0|],[|v1|]) @ClassDescriptor (|java.util.HashMap|) @Type virtual;
+    #L00003Ac. jmp := s0;
     #L00004Aa. <@Frame (@Same1, 0, `[(|top|), (|top|), (|top|), (|top|), (|top|)], 1, `[(|int|), (|top|), (|top|)])>
-    #L00004Ab. [|v2|]:= jmp @type (|int|);
-    #L00005Aa. s0:= [|v0|].<|java.util.HashMap.table|>;
-    #L00005Ab. s1:= [|v0|].<|java.util.HashMap.table|>;
-    #L00005Ac. call s2:= {|java.util.HashMap.indexFor(II)I|}([|v2|],s1.length) @signature "java.util.HashMap.indexFor(II)I" @classDescriptor [|java.util.HashMap|] @type direct;
-    #L00005Ad. s3:= s0[s2];
-    #L00005Ae. [|v3|]:= s3 @type (|java.lang.Object|);
+    #L00004Ab. [|v2|] := jmp @Type (|int|);
+    #L00005Aa. s0 := [|v0|].<|java.util.HashMap.table|> @Type (|java.util.HashMap$Entry[]|);
+    #L00005Ab. s1 := [|v0|].<|java.util.HashMap.table|> @Type (|java.util.HashMap$Entry[]|);
+    #L00005Ac. call s2  := {|java.util.HashMap.indexFor(II)I|}([|v2|],s1.length) @ClassDescriptor (|java.util.HashMap|) @Type direct;
+    #L00005Ad. s3 := s0[s2];
+    #L00005Ae. [|v3|] := s3 @Type (|java.lang.Object|);
     #L00006Aa. <@Frame (@Append, 2, `[(|int|), (|java.lang.Object|), (|top|), (|top|), (|top|)], 0, `[(|int|), (|top|), (|top|)])>
     #L00006Ab. if [|v3|] == null then goto L00007Aa;
-    #L00008Aa. s0:= [|v3|].<|java.util.HashMap$Entry.hash|>;
+    #L00008Aa. s0 := [|v3|].<|java.util.HashMap$Entry.hash|> @Type (|int|);
     #L00008Ab. if s0 != [|v2|] then goto L00009Aa;
-    #L00008Ac. s1:= [|v3|].<|java.util.HashMap$Entry.key|>;
-    #L00008Ad. [|v4|]:= s1 @type (|java.lang.Object|);
+    #L00008Ac. s1 := [|v3|].<|java.util.HashMap$Entry.key|> @Type (|java.lang.Object|);
+    #L00008Ad. [|v4|] := s1 @Type (|java.lang.Object|);
     #L00008Ae. if s1 == [|v1|] then goto L00010Aa;
     #L00008Af. if [|v1|] == null then goto L00009Aa;
-    #L00008Ag. call s2:= {|java.lang.Object.equals(Ljava.lang.Object;)Z|}([|v1|],[|v4|]) @signature "java.lang.Object.equals(Ljava.lang.Object;)Z" @classDescriptor [|java.lang.Object|] @type virtual;
+    #L00008Ag. call s2  := {|java.lang.Object.equals(Ljava.lang.Object;)Z|}([|v1|],[|v4|]) @ClassDescriptor (|java.lang.Object|) @Type virtual;
     #L00008Ah. if s2 == 0 then goto L00009Aa;
     #L00010Aa. <@Frame (@Append, 1, `[(|java.lang.Object|), (|java.lang.Object|), (|top|), (|top|), (|top|)], 0, `[(|int|), (|top|), (|top|)])>
     #L00010Ab. return [|v3|];
     #L00009Aa. <@Frame (@Chop, 1, `[(|java.lang.Object|), (|java.lang.Object|), (|top|), (|top|), (|top|)], 0, `[(|int|), (|top|), (|top|)])>
-    #L00009Ab. s0:= [|v3|].<|java.util.HashMap$Entry.next|>;
-    #L00009Ac. [|v3|]:= s0 @type (|java.util.HashMap$Entry|);
+    #L00009Ab. s0 := [|v3|].<|java.util.HashMap$Entry.next|> @Type (|java.util.HashMap$Entry|);
+    #L00009Ac. [|v3|] := s0 @Type (|java.util.HashMap$Entry|);
     #L00009Ad. goto L00006Aa;
     #L00007Aa. <@Frame (@Chop, 1, `[(|java.lang.Object|), (|java.lang.Object|), (|top|), (|top|), (|top|)], 0, `[(|int|), (|top|), (|top|)])>
     #L00007Ab. return null;
@@ -443,7 +442,7 @@ record (|java.util.HashMap|)
     @GenericSignature "(TK;TV;)TV;"
     @Owner (|java.util.HashMap|)
     @Access (PUBLIC)
-    @Signature "java.util.HashMap.put(Ljava.lang.Object;Ljava.lang.Object;)Ljava.lang.Object;" 
+    @Desc "java.util.HashMap.put(Ljava.lang.Object;Ljava.lang.Object;)Ljava.lang.Object;" 
   {
     local jmp;
     s0;
@@ -455,47 +454,47 @@ record (|java.util.HashMap|)
     [|v6|];
     [|v7|];
 
-    #L00000Aa. s0:= [|v0|].<|java.util.HashMap.table|>;
-    #L00000Ab. s1:= +|java.util.HashMap.EMPTY_TABLE|+;
+    #L00000Aa. s0 := [|v0|].<|java.util.HashMap.table|> @Type (|java.util.HashMap$Entry[]|);
+    #L00000Ab. s1 := +|java.util.HashMap.EMPTY_TABLE|+ @Type (|java.util.HashMap$Entry[]|);
     #L00000Ac. if s0 != s1 then goto L00001Aa;
-    #L00002Aa. s0:= [|v0|].<|java.util.HashMap.threshold|>;
-    #L00002Ab. call s1:= {|java.util.HashMap.inflateTable(I)V|}([|v0|],s0) @signature "java.util.HashMap.inflateTable(I)V" @classDescriptor [|java.util.HashMap|] @type special;
+    #L00002Aa. s0 := [|v0|].<|java.util.HashMap.threshold|> @Type (|int|);
+    #L00002Ab. call s1  := {|java.util.HashMap.inflateTable(I)V|}([|v0|],s0) @ClassDescriptor (|java.util.HashMap|) @Type special;
     #L00001Aa. <@Frame (@Same, 0, `[(|top|), (|top|), (|top|), (|top|), (|top|), (|top|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|), (|top|), (|top|)])>
     #L00001Ab. if [|v1|] != null then goto L00003Aa;
-    #L00004Aa. call s0:= {|java.util.HashMap.putForNullKey(Ljava.lang.Object;)Ljava.lang.Object;|}([|v0|],[|v2|]) @signature "java.util.HashMap.putForNullKey(Ljava.lang.Object;)Ljava.lang.Object;" @classDescriptor [|java.util.HashMap|] @type special;
+    #L00004Aa. call s0  := {|java.util.HashMap.putForNullKey(Ljava.lang.Object;)Ljava.lang.Object;|}([|v0|],[|v2|]) @ClassDescriptor (|java.util.HashMap|) @Type special;
     #L00004Ab. return s0;
     #L00003Aa. <@Frame (@Same, 0, `[(|top|), (|top|), (|top|), (|top|), (|top|), (|top|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|), (|top|), (|top|)])>
-    #L00003Ab. call s0:= {|java.util.HashMap.hash(Ljava.lang.Object;)I|}([|v0|],[|v1|]) @signature "java.util.HashMap.hash(Ljava.lang.Object;)I" @classDescriptor [|java.util.HashMap|] @type virtual;
-    #L00003Ac. [|v3|]:= s0 @type (|java.lang.Object|);
-    #L00005Aa. s0:= [|v0|].<|java.util.HashMap.table|>;
-    #L00005Ab. call s1:= {|java.util.HashMap.indexFor(II)I|}([|v3|],s0.length) @signature "java.util.HashMap.indexFor(II)I" @classDescriptor [|java.util.HashMap|] @type direct;
-    #L00005Ac. [|v4|]:= s1 @type (|java.lang.Object|);
-    #L00006Aa. s0:= [|v0|].<|java.util.HashMap.table|>;
-    #L00006Ab. s1:= s0[[|v4|]];
-    #L00006Ac. [|v5|]:= s1 @type (|java.lang.Object|);
+    #L00003Ab. call s0  := {|java.util.HashMap.hash(Ljava.lang.Object;)I|}([|v0|],[|v1|]) @ClassDescriptor (|java.util.HashMap|) @Type virtual;
+    #L00003Ac. [|v3|] := s0 @Type (|java.lang.Object|);
+    #L00005Aa. s0 := [|v0|].<|java.util.HashMap.table|> @Type (|java.util.HashMap$Entry[]|);
+    #L00005Ab. call s1  := {|java.util.HashMap.indexFor(II)I|}([|v3|],s0.length) @ClassDescriptor (|java.util.HashMap|) @Type direct;
+    #L00005Ac. [|v4|] := s1 @Type (|java.lang.Object|);
+    #L00006Aa. s0 := [|v0|].<|java.util.HashMap.table|> @Type (|java.util.HashMap$Entry[]|);
+    #L00006Ab. s1 := s0[[|v4|]];
+    #L00006Ac. [|v5|] := s1 @Type (|java.lang.Object|);
     #L00007Aa. <@Frame (@Append, 3, `[(|int|), (|int|), (|java.lang.Object|), (|top|), (|top|), (|top|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|), (|top|), (|top|)])>
     #L00007Ab. if [|v5|] == null then goto L00008Aa;
-    #L00009Aa. s0:= [|v5|].<|java.util.HashMap$Entry.hash|>;
+    #L00009Aa. s0 := [|v5|].<|java.util.HashMap$Entry.hash|> @Type (|int|);
     #L00009Ab. if s0 != [|v3|] then goto L00010Aa;
-    #L00009Ac. s1:= [|v5|].<|java.util.HashMap$Entry.key|>;
-    #L00009Ad. [|v6|]:= s1 @type (|java.lang.Object|);
+    #L00009Ac. s1 := [|v5|].<|java.util.HashMap$Entry.key|> @Type (|java.lang.Object|);
+    #L00009Ad. [|v6|] := s1 @Type (|java.lang.Object|);
     #L00009Ae. if s1 == [|v1|] then goto L00011Aa;
-    #L00009Af. call s2:= {|java.lang.Object.equals(Ljava.lang.Object;)Z|}([|v1|],[|v6|]) @signature "java.lang.Object.equals(Ljava.lang.Object;)Z" @classDescriptor [|java.lang.Object|] @type virtual;
+    #L00009Af. call s2  := {|java.lang.Object.equals(Ljava.lang.Object;)Z|}([|v1|],[|v6|]) @ClassDescriptor (|java.lang.Object|) @Type virtual;
     #L00009Ag. if s2 == 0 then goto L00010Aa;
     #L00011Aa. <@Frame (@Append, 1, `[(|java.lang.Object|), (|int|), (|java.lang.Object|), (|top|), (|top|), (|top|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|), (|top|), (|top|)])>
-    #L00011Ab. s0:= [|v5|].<|java.util.HashMap$Entry.value|>;
-    #L00011Ac. [|v7|]:= s0 @type (|java.lang.Object|);
-    #L00012Aa. [|v5|].<|java.util.HashMap$Entry.value|>:= [|v2|];
-    #L00013Aa. call s0:= {|java.util.HashMap$Entry.recordAccess(Ljava.util.HashMap;)V|}([|v5|],[|v0|]) @signature "java.util.HashMap$Entry.recordAccess(Ljava.util.HashMap;)V" @classDescriptor [|java.util.HashMap$Entry|] @type virtual;
+    #L00011Ab. s0 := [|v5|].<|java.util.HashMap$Entry.value|> @Type (|java.lang.Object|);
+    #L00011Ac. [|v7|] := s0 @Type (|java.lang.Object|);
+    #L00012Aa. [|v5|].<|java.util.HashMap$Entry.value|> := [|v2|] @Type (|java.lang.Object|);
+    #L00013Aa. call s0  := {|java.util.HashMap$Entry.recordAccess(Ljava.util.HashMap;)V|}([|v5|],[|v0|]) @ClassDescriptor (|java.util.HashMap$Entry|) @Type virtual;
     #L00014Aa. return [|v7|];
     #L00010Aa. <@Frame (@Chop, 1, `[(|java.lang.Object|), (|int|), (|java.lang.Object|), (|top|), (|top|), (|top|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|), (|top|), (|top|)])>
-    #L00010Ab. s0:= [|v5|].<|java.util.HashMap$Entry.next|>;
-    #L00010Ac. [|v5|]:= s0 @type (|java.util.HashMap$Entry|);
+    #L00010Ab. s0 := [|v5|].<|java.util.HashMap$Entry.next|> @Type (|java.util.HashMap$Entry|);
+    #L00010Ac. [|v5|] := s0 @Type (|java.util.HashMap$Entry|);
     #L00010Ad. goto L00007Aa;
     #L00008Aa. <@Frame (@Chop, 1, `[(|java.lang.Object|), (|int|), (|java.lang.Object|), (|top|), (|top|), (|top|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|), (|top|), (|top|)])>
-    #L00008Ab. s0:= [|v0|].<|java.util.HashMap.modCount|>;
-    #L00008Ac. [|v0|].<|java.util.HashMap.modCount|>:= s0+1;
-    #L00015Aa. call s0:= {|java.util.HashMap.addEntry(ILjava.lang.Object;Ljava.lang.Object;I)V|}([|v0|],[|v3|],[|v1|],[|v2|],[|v4|]) @signature "java.util.HashMap.addEntry(ILjava.lang.Object;Ljava.lang.Object;I)V" @classDescriptor [|java.util.HashMap|] @type virtual;
+    #L00008Ab. s0 := [|v0|].<|java.util.HashMap.modCount|> @Type (|int|);
+    #L00008Ac. [|v0|].<|java.util.HashMap.modCount|> := (s0+1) @Type (|int|);
+    #L00015Aa. call s0  := {|java.util.HashMap.addEntry(ILjava.lang.Object;Ljava.lang.Object;I)V|}([|v0|],[|v3|],[|v1|],[|v2|],[|v4|]) @ClassDescriptor (|java.util.HashMap|) @Type virtual;
     #L00016Aa. return null;
   }
   procedure (|java.lang.Object|) {|java.util.HashMap.putForNullKey(Ljava.lang.Object;)Ljava.lang.Object;|} ((|java.util.HashMap|) [|v0|], (|java.lang.Object|) [|v1|]) 
@@ -504,7 +503,7 @@ record (|java.util.HashMap|)
     @GenericSignature "(TV;)TV;"
     @Owner (|java.util.HashMap|)
     @Access (PRIVATE)
-    @Signature "java.util.HashMap.putForNullKey(Ljava.lang.Object;)Ljava.lang.Object;" 
+    @Desc "java.util.HashMap.putForNullKey(Ljava.lang.Object;)Ljava.lang.Object;" 
   {
     local jmp;
     s0;
@@ -512,26 +511,26 @@ record (|java.util.HashMap|)
     [|v2|];
     [|v3|];
 
-    #L00000Aa. s0:= [|v0|].<|java.util.HashMap.table|>;
-    #L00000Ab. s1:= s0[0];
-    #L00000Ac. [|v2|]:= s1 @type (|java.lang.Object|);
+    #L00000Aa. s0 := [|v0|].<|java.util.HashMap.table|> @Type (|java.util.HashMap$Entry[]|);
+    #L00000Ab. s1 := s0[0];
+    #L00000Ac. [|v2|] := s1 @Type (|java.lang.Object|);
     #L00001Aa. <@Frame (@Append, 1, `[(|java.lang.Object|), (|top|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|), (|top|), (|top|)])>
     #L00001Ab. if [|v2|] == null then goto L00002Aa;
-    #L00003Aa. s0:= [|v2|].<|java.util.HashMap$Entry.key|>;
+    #L00003Aa. s0 := [|v2|].<|java.util.HashMap$Entry.key|> @Type (|java.lang.Object|);
     #L00003Ab. if s0 != null then goto L00004Aa;
-    #L00005Aa. s0:= [|v2|].<|java.util.HashMap$Entry.value|>;
-    #L00005Ab. [|v3|]:= s0 @type (|java.lang.Object|);
-    #L00006Aa. [|v2|].<|java.util.HashMap$Entry.value|>:= [|v1|];
-    #L00007Aa. call s0:= {|java.util.HashMap$Entry.recordAccess(Ljava.util.HashMap;)V|}([|v2|],[|v0|]) @signature "java.util.HashMap$Entry.recordAccess(Ljava.util.HashMap;)V" @classDescriptor [|java.util.HashMap$Entry|] @type virtual;
+    #L00005Aa. s0 := [|v2|].<|java.util.HashMap$Entry.value|> @Type (|java.lang.Object|);
+    #L00005Ab. [|v3|] := s0 @Type (|java.lang.Object|);
+    #L00006Aa. [|v2|].<|java.util.HashMap$Entry.value|> := [|v1|] @Type (|java.lang.Object|);
+    #L00007Aa. call s0  := {|java.util.HashMap$Entry.recordAccess(Ljava.util.HashMap;)V|}([|v2|],[|v0|]) @ClassDescriptor (|java.util.HashMap$Entry|) @Type virtual;
     #L00008Aa. return [|v3|];
     #L00004Aa. <@Frame (@Same, 0, `[(|java.lang.Object|), (|top|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|), (|top|), (|top|)])>
-    #L00004Ab. s0:= [|v2|].<|java.util.HashMap$Entry.next|>;
-    #L00004Ac. [|v2|]:= s0 @type (|java.util.HashMap$Entry|);
+    #L00004Ab. s0 := [|v2|].<|java.util.HashMap$Entry.next|> @Type (|java.util.HashMap$Entry|);
+    #L00004Ac. [|v2|] := s0 @Type (|java.util.HashMap$Entry|);
     #L00004Ad. goto L00001Aa;
     #L00002Aa. <@Frame (@Chop, 1, `[(|java.lang.Object|), (|top|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|), (|top|), (|top|)])>
-    #L00002Ab. s0:= [|v0|].<|java.util.HashMap.modCount|>;
-    #L00002Ac. [|v0|].<|java.util.HashMap.modCount|>:= s0+1;
-    #L00009Aa. call s0:= {|java.util.HashMap.addEntry(ILjava.lang.Object;Ljava.lang.Object;I)V|}([|v0|],0,null,[|v1|],0) @signature "java.util.HashMap.addEntry(ILjava.lang.Object;Ljava.lang.Object;I)V" @classDescriptor [|java.util.HashMap|] @type virtual;
+    #L00002Ab. s0 := [|v0|].<|java.util.HashMap.modCount|> @Type (|int|);
+    #L00002Ac. [|v0|].<|java.util.HashMap.modCount|> := (s0+1) @Type (|int|);
+    #L00009Aa. call s0  := {|java.util.HashMap.addEntry(ILjava.lang.Object;Ljava.lang.Object;I)V|}([|v0|],0,null,[|v1|],0) @ClassDescriptor (|java.util.HashMap|) @Type virtual;
     #L00010Aa. return null;
   }
   procedure (|void|) {|java.util.HashMap.putForCreate(Ljava.lang.Object;Ljava.lang.Object;)V|} ((|java.util.HashMap|) [|v0|], (|java.lang.Object|) [|v1|], (|java.lang.Object|) [|v2|]) 
@@ -540,7 +539,7 @@ record (|java.util.HashMap|)
     @GenericSignature "(TK;TV;)V"
     @Owner (|java.util.HashMap|)
     @Access (PRIVATE)
-    @Signature "java.util.HashMap.putForCreate(Ljava.lang.Object;Ljava.lang.Object;)V" 
+    @Desc "java.util.HashMap.putForCreate(Ljava.lang.Object;Ljava.lang.Object;)V" 
   {
     local jmp;
     s0;
@@ -552,38 +551,38 @@ record (|java.util.HashMap|)
     [|v6|];
 
     #L00000Aa. if null != [|v1|] then goto L00001Aa;
-    #L00000Ab. jmp:= 0;
+    #L00000Ab. jmp := 0;
     #L00000Ac. goto L00002Aa;
     #L00001Aa. <@Frame (@Same, 0, `[(|top|), (|top|), (|top|), (|top|), (|top|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|), (|top|), (|top|)])>
-    #L00001Ab. call s0:= {|java.util.HashMap.hash(Ljava.lang.Object;)I|}([|v0|],[|v1|]) @signature "java.util.HashMap.hash(Ljava.lang.Object;)I" @classDescriptor [|java.util.HashMap|] @type virtual;
-    #L00001Ac. jmp:= s0;
+    #L00001Ab. call s0  := {|java.util.HashMap.hash(Ljava.lang.Object;)I|}([|v0|],[|v1|]) @ClassDescriptor (|java.util.HashMap|) @Type virtual;
+    #L00001Ac. jmp := s0;
     #L00002Aa. <@Frame (@Same1, 0, `[(|top|), (|top|), (|top|), (|top|), (|top|), (|top|), (|top|)], 1, `[(|int|), (|top|), (|top|), (|top|), (|top|)])>
-    #L00002Ab. [|v3|]:= jmp @type (|int|);
-    #L00003Aa. s0:= [|v0|].<|java.util.HashMap.table|>;
-    #L00003Ab. call s1:= {|java.util.HashMap.indexFor(II)I|}([|v3|],s0.length) @signature "java.util.HashMap.indexFor(II)I" @classDescriptor [|java.util.HashMap|] @type direct;
-    #L00003Ac. [|v4|]:= s1 @type (|java.lang.Object|);
-    #L00004Aa. s0:= [|v0|].<|java.util.HashMap.table|>;
-    #L00004Ab. s1:= s0[[|v4|]];
-    #L00004Ac. [|v5|]:= s1 @type (|java.lang.Object|);
+    #L00002Ab. [|v3|] := jmp @Type (|int|);
+    #L00003Aa. s0 := [|v0|].<|java.util.HashMap.table|> @Type (|java.util.HashMap$Entry[]|);
+    #L00003Ab. call s1  := {|java.util.HashMap.indexFor(II)I|}([|v3|],s0.length) @ClassDescriptor (|java.util.HashMap|) @Type direct;
+    #L00003Ac. [|v4|] := s1 @Type (|java.lang.Object|);
+    #L00004Aa. s0 := [|v0|].<|java.util.HashMap.table|> @Type (|java.util.HashMap$Entry[]|);
+    #L00004Ab. s1 := s0[[|v4|]];
+    #L00004Ac. [|v5|] := s1 @Type (|java.lang.Object|);
     #L00005Aa. <@Frame (@Append, 3, `[(|int|), (|int|), (|java.lang.Object|), (|top|), (|top|), (|top|), (|top|)], 0, `[(|int|), (|top|), (|top|), (|top|), (|top|)])>
     #L00005Ab. if [|v5|] == null then goto L00006Aa;
-    #L00007Aa. s0:= [|v5|].<|java.util.HashMap$Entry.hash|>;
+    #L00007Aa. s0 := [|v5|].<|java.util.HashMap$Entry.hash|> @Type (|int|);
     #L00007Ab. if s0 != [|v3|] then goto L00008Aa;
-    #L00007Ac. s1:= [|v5|].<|java.util.HashMap$Entry.key|>;
-    #L00007Ad. [|v6|]:= s1 @type (|java.lang.Object|);
+    #L00007Ac. s1 := [|v5|].<|java.util.HashMap$Entry.key|> @Type (|java.lang.Object|);
+    #L00007Ad. [|v6|] := s1 @Type (|java.lang.Object|);
     #L00007Ae. if s1 == [|v1|] then goto L00009Aa;
     #L00007Af. if [|v1|] == null then goto L00008Aa;
-    #L00007Ag. call s2:= {|java.lang.Object.equals(Ljava.lang.Object;)Z|}([|v1|],[|v6|]) @signature "java.lang.Object.equals(Ljava.lang.Object;)Z" @classDescriptor [|java.lang.Object|] @type virtual;
+    #L00007Ag. call s2  := {|java.lang.Object.equals(Ljava.lang.Object;)Z|}([|v1|],[|v6|]) @ClassDescriptor (|java.lang.Object|) @Type virtual;
     #L00007Ah. if s2 == 0 then goto L00008Aa;
     #L00009Aa. <@Frame (@Append, 1, `[(|java.lang.Object|), (|int|), (|java.lang.Object|), (|top|), (|top|), (|top|), (|top|)], 0, `[(|int|), (|top|), (|top|), (|top|), (|top|)])>
-    #L00009Ab. [|v5|].<|java.util.HashMap$Entry.value|>:= [|v2|];
+    #L00009Ab. [|v5|].<|java.util.HashMap$Entry.value|> := [|v2|] @Type (|java.lang.Object|);
     #L00010Aa. return @void;
     #L00008Aa. <@Frame (@Chop, 1, `[(|java.lang.Object|), (|int|), (|java.lang.Object|), (|top|), (|top|), (|top|), (|top|)], 0, `[(|int|), (|top|), (|top|), (|top|), (|top|)])>
-    #L00008Ab. s0:= [|v5|].<|java.util.HashMap$Entry.next|>;
-    #L00008Ac. [|v5|]:= s0 @type (|java.util.HashMap$Entry|);
+    #L00008Ab. s0 := [|v5|].<|java.util.HashMap$Entry.next|> @Type (|java.util.HashMap$Entry|);
+    #L00008Ac. [|v5|] := s0 @Type (|java.util.HashMap$Entry|);
     #L00008Ad. goto L00005Aa;
     #L00006Aa. <@Frame (@Chop, 1, `[(|java.lang.Object|), (|int|), (|java.lang.Object|), (|top|), (|top|), (|top|), (|top|)], 0, `[(|int|), (|top|), (|top|), (|top|), (|top|)])>
-    #L00006Ab. call s0:= {|java.util.HashMap.createEntry(ILjava.lang.Object;Ljava.lang.Object;I)V|}([|v0|],[|v3|],[|v1|],[|v2|],[|v4|]) @signature "java.util.HashMap.createEntry(ILjava.lang.Object;Ljava.lang.Object;I)V" @classDescriptor [|java.util.HashMap|] @type virtual;
+    #L00006Ab. call s0  := {|java.util.HashMap.createEntry(ILjava.lang.Object;Ljava.lang.Object;I)V|}([|v0|],[|v3|],[|v1|],[|v2|],[|v4|]) @ClassDescriptor (|java.util.HashMap|) @Type virtual;
     #L00011Aa. return @void;
   }
   procedure (|void|) {|java.util.HashMap.putAllForCreate(Ljava.util.Map;)V|} ((|java.util.HashMap|) [|v0|], (|java.util.Map|) [|v1|]) 
@@ -592,7 +591,7 @@ record (|java.util.HashMap|)
     @GenericSignature "(Ljava/util/Map<+TK;+TV;>;)V"
     @Owner (|java.util.HashMap|)
     @Access (PRIVATE)
-    @Signature "java.util.HashMap.putAllForCreate(Ljava.util.Map;)V" 
+    @Desc "java.util.HashMap.putAllForCreate(Ljava.util.Map;)V" 
   {
     local jmp;
     s0;
@@ -601,17 +600,17 @@ record (|java.util.HashMap|)
     [|v2|];
     [|v3|];
 
-    #L00000Aa. call s0:= {|java.util.Map.entrySet()Ljava.util.Set;|}([|v1|]) @signature "java.util.Map.entrySet()Ljava.util.Set;" @classDescriptor [|java.util.Map|] @type interface;
-    #L00000Ab. call s1:= {|java.util.Set.iterator()Ljava.util.Iterator;|}(s0) @signature "java.util.Set.iterator()Ljava.util.Iterator;" @classDescriptor [|java.util.Set|] @type interface;
-    #L00000Ac. [|v2|]:= s1 @type (|java.lang.Object|);
+    #L00000Aa. call s0  := {|java.util.Map.entrySet()Ljava.util.Set;|}([|v1|]) @ClassDescriptor (|java.util.Map|) @Type interface;
+    #L00000Ab. call s1  := {|java.util.Set.iterator()Ljava.util.Iterator;|}(s0) @ClassDescriptor (|java.util.Set|) @Type interface;
+    #L00000Ac. [|v2|] := s1 @Type (|java.lang.Object|);
     #L00001Aa. <@Frame (@Append, 1, `[(|java.lang.Object|), (|top|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|)])>
-    #L00001Ab. call s0:= {|java.util.Iterator.hasNext()Z|}([|v2|]) @signature "java.util.Iterator.hasNext()Z" @classDescriptor [|java.util.Iterator|] @type interface;
+    #L00001Ab. call s0  := {|java.util.Iterator.hasNext()Z|}([|v2|]) @ClassDescriptor (|java.util.Iterator|) @Type interface;
     #L00001Ac. if s0 == 0 then goto L00002Aa;
-    #L00001Ad. call s1:= {|java.util.Iterator.next()Ljava.lang.Object;|}([|v2|]) @signature "java.util.Iterator.next()Ljava.lang.Object;" @classDescriptor [|java.util.Iterator|] @type interface;
-    #L00001Ae. [|v3|]:= ((|java.util.Map$Entry|)) s1 @type (|java.util.Map$Entry|);
-    #L00003Aa. call s0:= {|java.util.Map$Entry.getKey()Ljava.lang.Object;|}([|v3|]) @signature "java.util.Map$Entry.getKey()Ljava.lang.Object;" @classDescriptor [|java.util.Map$Entry|] @type interface;
-    #L00003Ab. call s1:= {|java.util.Map$Entry.getValue()Ljava.lang.Object;|}([|v3|]) @signature "java.util.Map$Entry.getValue()Ljava.lang.Object;" @classDescriptor [|java.util.Map$Entry|] @type interface;
-    #L00003Ac. call s2:= {|java.util.HashMap.putForCreate(Ljava.lang.Object;Ljava.lang.Object;)V|}([|v0|],s0,s1) @signature "java.util.HashMap.putForCreate(Ljava.lang.Object;Ljava.lang.Object;)V" @classDescriptor [|java.util.HashMap|] @type special;
+    #L00001Ad. call s1  := {|java.util.Iterator.next()Ljava.lang.Object;|}([|v2|]) @ClassDescriptor (|java.util.Iterator|) @Type interface;
+    #L00001Ae. [|v3|] := ((|java.util.Map$Entry|)) s1 @Type (|java.util.Map$Entry|);
+    #L00003Aa. call s0  := {|java.util.Map$Entry.getKey()Ljava.lang.Object;|}([|v3|]) @ClassDescriptor (|java.util.Map$Entry|) @Type interface;
+    #L00003Ab. call s1  := {|java.util.Map$Entry.getValue()Ljava.lang.Object;|}([|v3|]) @ClassDescriptor (|java.util.Map$Entry|) @Type interface;
+    #L00003Ac. call s2  := {|java.util.HashMap.putForCreate(Ljava.lang.Object;Ljava.lang.Object;)V|}([|v0|],s0,s1) @ClassDescriptor (|java.util.HashMap|) @Type special;
     #L00003Ad. goto L00001Aa;
     #L00002Aa. <@Frame (@Chop, 1, `[(|java.lang.Object|), (|top|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|)])>
     #L00002Ab. return @void;
@@ -621,7 +620,7 @@ record (|java.util.HashMap|)
     @MaxStack 4
     @Owner (|java.util.HashMap|)
     @Access ()
-    @Signature "java.util.HashMap.resize(I)V" 
+    @Desc "java.util.HashMap.resize(I)V" 
   {
     local jmp;
     s0;
@@ -630,21 +629,21 @@ record (|java.util.HashMap|)
     [|v3|];
     [|v4|];
 
-    #L00000Aa. s0:= [|v0|].<|java.util.HashMap.table|>;
-    #L00000Ab. [|v2|]:= s0 @type (|java.util.HashMap$Entry[]|);
-    #L00001Aa. [|v3|]:= [|v2|].length @type (|int|);
+    #L00000Aa. s0 := [|v0|].<|java.util.HashMap.table|> @Type (|java.util.HashMap$Entry[]|);
+    #L00000Ab. [|v2|] := s0 @Type (|java.util.HashMap$Entry[]|);
+    #L00001Aa. [|v3|] := [|v2|].length @Type (|int|);
     #L00002Aa. if [|v3|] != "1073741824" then goto L00003Aa;
-    #L00004Aa. [|v0|].<|java.util.HashMap.threshold|>:= "2147483647";
+    #L00004Aa. [|v0|].<|java.util.HashMap.threshold|> := "2147483647" @Type (|int|);
     #L00005Aa. return @void;
     #L00003Aa. <@Frame (@Append, 2, `[(|java.util.HashMap$Entry[]|), (|int|), (|top|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|), (|top|)])>
-    #L00003Ab. s0:= new (|java.util.HashMap$Entry|)[[|v1|]];
-    #L00003Ac. [|v4|]:= s0 @type (|java.lang.Object|);
-    #L00006Aa. call s0:= {|java.util.HashMap.initHashSeedAsNeeded(I)Z|}([|v0|],[|v1|]) @signature "java.util.HashMap.initHashSeedAsNeeded(I)Z" @classDescriptor [|java.util.HashMap|] @type virtual;
-    #L00006Ab. call s1:= {|java.util.HashMap.transfer([Ljava.util.HashMap$Entry;Z)V|}([|v0|],[|v4|],s0) @signature "java.util.HashMap.transfer([Ljava.util.HashMap$Entry;Z)V" @classDescriptor [|java.util.HashMap|] @type virtual;
-    #L00007Aa. [|v0|].<|java.util.HashMap.table|>:= [|v4|];
-    #L00008Aa. s0:= [|v0|].<|java.util.HashMap.loadFactor|>;
-    #L00008Ab. call s1:= {|java.lang.Math.min(FF)F|}([|v1|]*s0,1.07374182E9) @signature "java.lang.Math.min(FF)F" @classDescriptor [|java.lang.Math|] @type direct;
-    #L00008Ac. [|v0|].<|java.util.HashMap.threshold|>:= s1;
+    #L00003Ab. s0 := new (|java.util.HashMap$Entry|)[[|v1|]];
+    #L00003Ac. [|v4|] := s0 @Type (|java.lang.Object|);
+    #L00006Aa. call s0  := {|java.util.HashMap.initHashSeedAsNeeded(I)Z|}([|v0|],[|v1|]) @ClassDescriptor (|java.util.HashMap|) @Type virtual;
+    #L00006Ab. call s1  := {|java.util.HashMap.transfer([Ljava.util.HashMap$Entry;Z)V|}([|v0|],[|v4|],s0) @ClassDescriptor (|java.util.HashMap|) @Type virtual;
+    #L00007Aa. [|v0|].<|java.util.HashMap.table|> := [|v4|] @Type (|java.util.HashMap$Entry[]|);
+    #L00008Aa. s0 := [|v0|].<|java.util.HashMap.loadFactor|> @Type (|float|);
+    #L00008Ab. call s1  := {|java.lang.Math.min(FF)F|}((((|float|))[|v1|]*s0),1.07374182E9) @ClassDescriptor (|java.lang.Math|) @Type direct;
+    #L00008Ac. [|v0|].<|java.util.HashMap.threshold|> := ((|int|))s1 @Type (|int|);
     #L00009Aa. return @void;
   }
   procedure (|void|) {|java.util.HashMap.transfer([Ljava.util.HashMap$Entry;Z)V|} ((|java.util.HashMap|) [|v0|], (|java.util.HashMap$Entry[]|) [|v1|], (|boolean|) [|v2|]) 
@@ -652,11 +651,12 @@ record (|java.util.HashMap|)
     @MaxStack 3
     @Owner (|java.util.HashMap|)
     @Access ()
-    @Signature "java.util.HashMap.transfer([Ljava.util.HashMap$Entry;Z)V" 
+    @Desc "java.util.HashMap.transfer([Ljava.util.HashMap$Entry;Z)V" 
   {
     local jmp;
     s0;
     s1;
+    s2;
     [|v3|];
     [|v4|];
     [|v5|];
@@ -665,42 +665,41 @@ record (|java.util.HashMap|)
     [|v8|];
     [|v9|];
 
-    #L00000Aa. [|v3|]:= [|v1|].length @type (|int|);
-    #L00001Aa. s0:= [|v0|].<|java.util.HashMap.table|>;
-    #L00001Ab. [|v4|]:= s0 @type (|java.util.HashMap$Entry[]|);
-    #L00001Ac. [|v5|]:= [|v4|].length @type (|int|);
-    #L00001Ad. [|v6|]:= 0 @type (|int|);
+    #L00000Aa. [|v3|] := [|v1|].length @Type (|int|);
+    #L00001Aa. s0 := [|v0|].<|java.util.HashMap.table|> @Type (|java.util.HashMap$Entry[]|);
+    #L00001Ab. [|v4|] := s0 @Type (|java.util.HashMap$Entry[]|);
+    #L00001Ac. [|v5|] := [|v4|].length @Type (|int|);
+    #L00001Ad. [|v6|] := 0 @Type (|int|);
     #L00002Aa. <@Frame (@Full, 7, `[(|java.lang.Object|), (|java.util.HashMap$Entry[]|), (|int|), (|int|), (|java.util.HashMap$Entry[]|), (|int|), (|int|), (|top|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|)])>
     #L00002Ab. if [|v6|] >= [|v5|] then goto L00003Aa;
-    #L00002Ac. s0:= [|v4|][[|v6|]];
-    #L00002Ad. [|v7|]:= s0 @type (|java.lang.Object|);
+    #L00002Ac. s0 := [|v4|][[|v6|]];
+    #L00002Ad. [|v7|] := s0 @Type (|java.lang.Object|);
     #L00004Aa. <@Frame (@Append, 1, `[(|java.lang.Object|), (|java.util.HashMap$Entry[]|), (|int|), (|int|), (|java.util.HashMap$Entry[]|), (|int|), (|int|), (|top|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|)])>
     #L00004Ab. if null == [|v7|] then goto L00005Aa;
-    #L00006Aa. s0:= [|v7|].<|java.util.HashMap$Entry.next|>;
-    #L00006Ab. [|v8|]:= s0 @type (|java.util.HashMap$Entry|);
+    #L00006Aa. s0 := [|v7|].<|java.util.HashMap$Entry.next|> @Type (|java.util.HashMap$Entry|);
+    #L00006Ab. [|v8|] := s0 @Type (|java.util.HashMap$Entry|);
     #L00007Aa. if [|v2|] == 0 then goto L00008Aa;
-    #L00009Aa. s0:= [|v7|].<|java.util.HashMap$Entry.key|>;
-    #L00009Ab. jmp:= [|v7|];
-    #L00009Ac. if null != s0 then goto L00010Aa;
-    #L00009Ad. jmp:= 0;
-    #L00009Ae. goto L00011Aa;
+    #L00009Aa. s0 := [|v7|].<|java.util.HashMap$Entry.key|> @Type (|java.lang.Object|);
+    #L00009Ab. if null != s0 then goto L00010Aa;
+    #L00009Ac. jmp := 0;
+    #L00009Ad. goto L00011Aa;
     #L00010Aa. <@Frame (@Full, 9, `[(|java.lang.Object|), (|java.util.HashMap$Entry[]|), (|int|), (|int|), (|java.util.HashMap$Entry[]|), (|int|), (|int|), (|java.lang.Object|), (|java.lang.Object|), (|top|)], 1, `[(|java.lang.Object|), (|top|), (|top|)])>
-    #L00010Ab. s0:= [|v7|].<|java.util.HashMap$Entry.key|>;
-    #L00010Ac. call s1:= {|java.util.HashMap.hash(Ljava.lang.Object;)I|}([|v0|],s0) @signature "java.util.HashMap.hash(Ljava.lang.Object;)I" @classDescriptor [|java.util.HashMap|] @type virtual;
-    #L00010Ad. jmp:= s1;
+    #L00010Ab. s1 := [|v7|].<|java.util.HashMap$Entry.key|> @Type (|java.lang.Object|);
+    #L00010Ac. call s2  := {|java.util.HashMap.hash(Ljava.lang.Object;)I|}([|v0|],s1) @ClassDescriptor (|java.util.HashMap|) @Type virtual;
+    #L00010Ad. jmp := s2;
     #L00011Aa. <@Frame (@Full, 9, `[(|java.lang.Object|), (|java.util.HashMap$Entry[]|), (|int|), (|int|), (|java.util.HashMap$Entry[]|), (|int|), (|int|), (|java.lang.Object|), (|java.lang.Object|), (|top|)], 2, `[(|java.lang.Object|), (|int|), (|top|)])>
-    #L00011Ab. jmp.<|java.util.HashMap$Entry.hash|>:= jmp;
+    #L00011Ab. [|v7|].<|java.util.HashMap$Entry.hash|> := jmp @Type (|int|);
     #L00008Aa. <@Frame (@Same, 0, `[(|java.lang.Object|), (|java.util.HashMap$Entry[]|), (|int|), (|int|), (|java.util.HashMap$Entry[]|), (|int|), (|int|), (|java.lang.Object|), (|java.lang.Object|), (|top|)], 0, `[(|java.lang.Object|), (|int|), (|top|)])>
-    #L00008Ab. s0:= [|v7|].<|java.util.HashMap$Entry.hash|>;
-    #L00008Ac. call s1:= {|java.util.HashMap.indexFor(II)I|}(s0,[|v3|]) @signature "java.util.HashMap.indexFor(II)I" @classDescriptor [|java.util.HashMap|] @type direct;
-    #L00008Ad. [|v9|]:= s1 @type (|java.lang.Object|);
-    #L00012Aa. s0:= [|v1|][[|v9|]];
-    #L00012Ab. [|v7|].<|java.util.HashMap$Entry.next|>:= s0;
-    #L00013Aa. [|v1|][[|v9|]]:= [|v7|];
-    #L00014Aa. [|v7|]:= [|v8|] @type java.lang.Object;
+    #L00008Ab. s0 := [|v7|].<|java.util.HashMap$Entry.hash|> @Type (|int|);
+    #L00008Ac. call s1  := {|java.util.HashMap.indexFor(II)I|}(s0,[|v3|]) @ClassDescriptor (|java.util.HashMap|) @Type direct;
+    #L00008Ad. [|v9|] := s1 @Type (|java.lang.Object|);
+    #L00012Aa. s0 := [|v1|][[|v9|]];
+    #L00012Ab. [|v7|].<|java.util.HashMap$Entry.next|> := s0 @Type (|java.util.HashMap$Entry|);
+    #L00013Aa. [|v1|][[|v9|]] := [|v7|];
+    #L00014Aa. [|v7|] := [|v8|] @Type java.lang.Object;
     #L00015Aa. goto L00004Aa;
     #L00005Aa. <@Frame (@Chop, 2, `[(|java.lang.Object|), (|java.util.HashMap$Entry[]|), (|int|), (|int|), (|java.util.HashMap$Entry[]|), (|int|), (|int|), (|java.lang.Object|), (|java.lang.Object|), (|top|)], 0, `[(|java.lang.Object|), (|int|), (|top|)])>
-    #L00005Ab. [|v6|]:= [|v6|] + 1 @type (|int|);
+    #L00005Ab. [|v6|] := [|v6|] + 1 @Type (|int|);
     #L00005Ac. goto L00002Aa;
     #L00003Aa. <@Frame (@Chop, 3, `[(|java.lang.Object|), (|java.util.HashMap$Entry[]|), (|int|), (|int|), (|java.util.HashMap$Entry[]|), (|int|), (|int|), (|java.lang.Object|), (|java.lang.Object|), (|top|)], 0, `[(|java.lang.Object|), (|int|), (|top|)])>
     #L00003Ab. return @void;
@@ -711,7 +710,7 @@ record (|java.util.HashMap|)
     @GenericSignature "(Ljava/util/Map<+TK;+TV;>;)V"
     @Owner (|java.util.HashMap|)
     @Access (PUBLIC)
-    @Signature "java.util.HashMap.putAll(Ljava.util.Map;)V" 
+    @Desc "java.util.HashMap.putAll(Ljava.util.Map;)V" 
   {
     local jmp;
     s0;
@@ -722,48 +721,48 @@ record (|java.util.HashMap|)
     [|v3|];
     [|v4|];
 
-    #L00000Aa. call s0:= {|java.util.Map.size()I|}([|v1|]) @signature "java.util.Map.size()I" @classDescriptor [|java.util.Map|] @type interface;
-    #L00000Ab. [|v2|]:= s0 @type (|java.lang.Object|);
+    #L00000Aa. call s0  := {|java.util.Map.size()I|}([|v1|]) @ClassDescriptor (|java.util.Map|) @Type interface;
+    #L00000Ab. [|v2|] := s0 @Type (|java.lang.Object|);
     #L00001Aa. if [|v2|] != 0 then goto L00002Aa;
     #L00003Aa. return @void;
     #L00002Aa. <@Frame (@Append, 1, `[(|int|), (|top|), (|top|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|)])>
-    #L00002Ab. s0:= [|v0|].<|java.util.HashMap.table|>;
-    #L00002Ac. s1:= +|java.util.HashMap.EMPTY_TABLE|+;
+    #L00002Ab. s0 := [|v0|].<|java.util.HashMap.table|> @Type (|java.util.HashMap$Entry[]|);
+    #L00002Ac. s1 := +|java.util.HashMap.EMPTY_TABLE|+ @Type (|java.util.HashMap$Entry[]|);
     #L00002Ad. if s0 != s1 then goto L00004Aa;
-    #L00005Aa. s0:= [|v0|].<|java.util.HashMap.loadFactor|>;
-    #L00005Ab. s1:= [|v0|].<|java.util.HashMap.threshold|>;
-    #L00005Ac. call s2:= {|java.lang.Math.max(FF)F|}([|v2|]*s0,s1) @signature "java.lang.Math.max(FF)F" @classDescriptor [|java.lang.Math|] @type direct;
-    #L00005Ad. call s3:= {|java.util.HashMap.inflateTable(I)V|}([|v0|],s2) @signature "java.util.HashMap.inflateTable(I)V" @classDescriptor [|java.util.HashMap|] @type special;
+    #L00005Aa. s0 := [|v0|].<|java.util.HashMap.loadFactor|> @Type (|float|);
+    #L00005Ab. s1 := [|v0|].<|java.util.HashMap.threshold|> @Type (|int|);
+    #L00005Ac. call s2  := {|java.lang.Math.max(FF)F|}((((|float|))[|v2|]*s0),((|float|))s1) @ClassDescriptor (|java.lang.Math|) @Type direct;
+    #L00005Ad. call s3  := {|java.util.HashMap.inflateTable(I)V|}([|v0|],((|int|))s2) @ClassDescriptor (|java.util.HashMap|) @Type special;
     #L00004Aa. <@Frame (@Same, 0, `[(|int|), (|top|), (|top|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|)])>
-    #L00004Ab. s0:= [|v0|].<|java.util.HashMap.threshold|>;
+    #L00004Ab. s0 := [|v0|].<|java.util.HashMap.threshold|> @Type (|int|);
     #L00004Ac. if [|v2|] <= s0 then goto L00006Aa;
-    #L00007Aa. s0:= [|v0|].<|java.util.HashMap.loadFactor|>;
-    #L00007Ab. [|v3|]:= [|v2|]/s0+1.0 @type (|int|);
+    #L00007Aa. s0 := [|v0|].<|java.util.HashMap.loadFactor|> @Type (|float|);
+    #L00007Ab. [|v3|] := ((|int|))((((|float|))[|v2|]/s0)+1.0) @Type (|int|);
     #L00008Aa. if [|v3|] <= "1073741824" then goto L00009Aa;
-    #L00010Aa. [|v3|]:= "1073741824" @type ;
+    #L00010Aa. [|v3|] := "1073741824";
     #L00009Aa. <@Frame (@Append, 1, `[(|int|), (|top|), (|top|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|)])>
-    #L00009Ab. s0:= [|v0|].<|java.util.HashMap.table|>;
-    #L00009Ac. [|v4|]:= s0.length @type (|int|);
+    #L00009Ab. s0 := [|v0|].<|java.util.HashMap.table|> @Type (|java.util.HashMap$Entry[]|);
+    #L00009Ac. [|v4|] := s0.length @Type (|int|);
     #L00011Aa. <@Frame (@Append, 1, `[(|int|), (|top|), (|top|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|)])>
     #L00011Ab. if [|v4|] >= [|v3|] then goto L00012Aa;
-    #L00013Aa. [|v4|]:= [|v4|]^<1 @type (|int|);
+    #L00013Aa. [|v4|] := ([|v4|]^<1) @Type (|int|);
     #L00013Ab. goto L00011Aa;
     #L00012Aa. <@Frame (@Same, 0, `[(|int|), (|top|), (|top|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|)])>
-    #L00012Ab. s0:= [|v0|].<|java.util.HashMap.table|>;
+    #L00012Ab. s0 := [|v0|].<|java.util.HashMap.table|> @Type (|java.util.HashMap$Entry[]|);
     #L00012Ac. if [|v4|] <= s0.length then goto L00006Aa;
-    #L00014Aa. call s0:= {|java.util.HashMap.resize(I)V|}([|v0|],[|v4|]) @signature "java.util.HashMap.resize(I)V" @classDescriptor [|java.util.HashMap|] @type virtual;
+    #L00014Aa. call s0  := {|java.util.HashMap.resize(I)V|}([|v0|],[|v4|]) @ClassDescriptor (|java.util.HashMap|) @Type virtual;
     #L00006Aa. <@Frame (@Chop, 2, `[(|int|), (|top|), (|top|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|)])>
-    #L00006Ab. call s0:= {|java.util.Map.entrySet()Ljava.util.Set;|}([|v1|]) @signature "java.util.Map.entrySet()Ljava.util.Set;" @classDescriptor [|java.util.Map|] @type interface;
-    #L00006Ac. call s1:= {|java.util.Set.iterator()Ljava.util.Iterator;|}(s0) @signature "java.util.Set.iterator()Ljava.util.Iterator;" @classDescriptor [|java.util.Set|] @type interface;
-    #L00006Ad. [|v3|]:= s1 @type (|java.lang.Object|);
+    #L00006Ab. call s0  := {|java.util.Map.entrySet()Ljava.util.Set;|}([|v1|]) @ClassDescriptor (|java.util.Map|) @Type interface;
+    #L00006Ac. call s1  := {|java.util.Set.iterator()Ljava.util.Iterator;|}(s0) @ClassDescriptor (|java.util.Set|) @Type interface;
+    #L00006Ad. [|v3|] := s1 @Type (|java.lang.Object|);
     #L00015Aa. <@Frame (@Append, 1, `[(|java.lang.Object|), (|top|), (|top|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|)])>
-    #L00015Ab. call s0:= {|java.util.Iterator.hasNext()Z|}([|v3|]) @signature "java.util.Iterator.hasNext()Z" @classDescriptor [|java.util.Iterator|] @type interface;
+    #L00015Ab. call s0  := {|java.util.Iterator.hasNext()Z|}([|v3|]) @ClassDescriptor (|java.util.Iterator|) @Type interface;
     #L00015Ac. if s0 == 0 then goto L00016Aa;
-    #L00015Ad. call s1:= {|java.util.Iterator.next()Ljava.lang.Object;|}([|v3|]) @signature "java.util.Iterator.next()Ljava.lang.Object;" @classDescriptor [|java.util.Iterator|] @type interface;
-    #L00015Ae. [|v4|]:= ((|java.util.Map$Entry|)) s1 @type (|java.util.Map$Entry|);
-    #L00017Aa. call s0:= {|java.util.Map$Entry.getKey()Ljava.lang.Object;|}([|v4|]) @signature "java.util.Map$Entry.getKey()Ljava.lang.Object;" @classDescriptor [|java.util.Map$Entry|] @type interface;
-    #L00017Ab. call s1:= {|java.util.Map$Entry.getValue()Ljava.lang.Object;|}([|v4|]) @signature "java.util.Map$Entry.getValue()Ljava.lang.Object;" @classDescriptor [|java.util.Map$Entry|] @type interface;
-    #L00017Ac. call s2:= {|java.util.HashMap.put(Ljava.lang.Object;Ljava.lang.Object;)Ljava.lang.Object;|}([|v0|],s0,s1) @signature "java.util.HashMap.put(Ljava.lang.Object;Ljava.lang.Object;)Ljava.lang.Object;" @classDescriptor [|java.util.HashMap|] @type virtual;
+    #L00015Ad. call s1  := {|java.util.Iterator.next()Ljava.lang.Object;|}([|v3|]) @ClassDescriptor (|java.util.Iterator|) @Type interface;
+    #L00015Ae. [|v4|] := ((|java.util.Map$Entry|)) s1 @Type (|java.util.Map$Entry|);
+    #L00017Aa. call s0  := {|java.util.Map$Entry.getKey()Ljava.lang.Object;|}([|v4|]) @ClassDescriptor (|java.util.Map$Entry|) @Type interface;
+    #L00017Ab. call s1  := {|java.util.Map$Entry.getValue()Ljava.lang.Object;|}([|v4|]) @ClassDescriptor (|java.util.Map$Entry|) @Type interface;
+    #L00017Ac. call s2  := {|java.util.HashMap.put(Ljava.lang.Object;Ljava.lang.Object;)Ljava.lang.Object;|}([|v0|],s0,s1) @ClassDescriptor (|java.util.HashMap|) @Type virtual;
     #L00017Ad. goto L00015Aa;
     #L00016Aa. <@Frame (@Chop, 1, `[(|java.lang.Object|), (|top|), (|top|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|)])>
     #L00016Ab. return @void;
@@ -774,20 +773,20 @@ record (|java.util.HashMap|)
     @GenericSignature "(Ljava/lang/Object;)TV;"
     @Owner (|java.util.HashMap|)
     @Access (PUBLIC)
-    @Signature "java.util.HashMap.remove(Ljava.lang.Object;)Ljava.lang.Object;" 
+    @Desc "java.util.HashMap.remove(Ljava.lang.Object;)Ljava.lang.Object;" 
   {
     local jmp;
     s0;
     [|v2|];
 
-    #L00000Aa. call s0:= {|java.util.HashMap.removeEntryForKey(Ljava.lang.Object;)Ljava.util.HashMap$Entry;|}([|v0|],[|v1|]) @signature "java.util.HashMap.removeEntryForKey(Ljava.lang.Object;)Ljava.util.HashMap$Entry;" @classDescriptor [|java.util.HashMap|] @type virtual;
-    #L00000Ab. [|v2|]:= s0 @type (|java.lang.Object|);
+    #L00000Aa. call s0  := {|java.util.HashMap.removeEntryForKey(Ljava.lang.Object;)Ljava.util.HashMap$Entry;|}([|v0|],[|v1|]) @ClassDescriptor (|java.util.HashMap|) @Type virtual;
+    #L00000Ab. [|v2|] := s0 @Type (|java.lang.Object|);
     #L00001Aa. if [|v2|] != null then goto L00002Aa;
-    #L00001Ab. jmp:= null;
+    #L00001Ab. jmp := null;
     #L00001Ac. goto L00003Aa;
     #L00002Aa. <@Frame (@Append, 1, `[(|java.lang.Object|), (|top|), (|top|)], 0, `[(|top|), (|top|)])>
-    #L00002Ab. s0:= [|v2|].<|java.util.HashMap$Entry.value|>;
-    #L00002Ac. jmp:= s0;
+    #L00002Ab. s0 := [|v2|].<|java.util.HashMap$Entry.value|> @Type (|java.lang.Object|);
+    #L00002Ac. jmp := s0;
     #L00003Aa. <@Frame (@Same1, 0, `[(|java.lang.Object|), (|top|), (|top|)], 1, `[(|java.lang.Object|), (|top|)])>
     #L00003Ab. return jmp;
   }
@@ -797,7 +796,7 @@ record (|java.util.HashMap|)
     @GenericSignature "(Ljava/lang/Object;)Ljava/util/HashMap$Entry<TK;TV;>;"
     @Owner (|java.util.HashMap|)
     @Access (FINAL)
-    @Signature "java.util.HashMap.removeEntryForKey(Ljava.lang.Object;)Ljava.util.HashMap$Entry;" 
+    @Desc "java.util.HashMap.removeEntryForKey(Ljava.lang.Object;)Ljava.util.HashMap$Entry;" 
   {
     local jmp;
     s0;
@@ -810,54 +809,54 @@ record (|java.util.HashMap|)
     [|v6|];
     [|v7|];
 
-    #L00000Aa. s0:= [|v0|].<|java.util.HashMap.size|>;
+    #L00000Aa. s0 := [|v0|].<|java.util.HashMap.size|> @Type (|int|);
     #L00000Ab. if s0 != 0 then goto L00001Aa;
     #L00002Aa. return null;
     #L00001Aa. <@Frame (@Same, 0, `[(|top|), (|top|), (|top|), (|top|), (|top|), (|top|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|)])>
     #L00001Ab. if [|v1|] != null then goto L00003Aa;
-    #L00001Ac. jmp:= 0;
+    #L00001Ac. jmp := 0;
     #L00001Ad. goto L00004Aa;
     #L00003Aa. <@Frame (@Same, 0, `[(|top|), (|top|), (|top|), (|top|), (|top|), (|top|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|)])>
-    #L00003Ab. call s0:= {|java.util.HashMap.hash(Ljava.lang.Object;)I|}([|v0|],[|v1|]) @signature "java.util.HashMap.hash(Ljava.lang.Object;)I" @classDescriptor [|java.util.HashMap|] @type virtual;
-    #L00003Ac. jmp:= s0;
+    #L00003Ab. call s0  := {|java.util.HashMap.hash(Ljava.lang.Object;)I|}([|v0|],[|v1|]) @ClassDescriptor (|java.util.HashMap|) @Type virtual;
+    #L00003Ac. jmp := s0;
     #L00004Aa. <@Frame (@Same1, 0, `[(|top|), (|top|), (|top|), (|top|), (|top|), (|top|), (|top|), (|top|)], 1, `[(|int|), (|top|), (|top|)])>
-    #L00004Ab. [|v2|]:= jmp @type (|int|);
-    #L00005Aa. s0:= [|v0|].<|java.util.HashMap.table|>;
-    #L00005Ab. call s1:= {|java.util.HashMap.indexFor(II)I|}([|v2|],s0.length) @signature "java.util.HashMap.indexFor(II)I" @classDescriptor [|java.util.HashMap|] @type direct;
-    #L00005Ac. [|v3|]:= s1 @type (|java.lang.Object|);
-    #L00006Aa. s0:= [|v0|].<|java.util.HashMap.table|>;
-    #L00006Ab. s1:= s0[[|v3|]];
-    #L00006Ac. [|v4|]:= s1 @type (|java.lang.Object|);
-    #L00007Aa. [|v5|]:= [|v4|] @type java.lang.Object;
+    #L00004Ab. [|v2|] := jmp @Type (|int|);
+    #L00005Aa. s0 := [|v0|].<|java.util.HashMap.table|> @Type (|java.util.HashMap$Entry[]|);
+    #L00005Ab. call s1  := {|java.util.HashMap.indexFor(II)I|}([|v2|],s0.length) @ClassDescriptor (|java.util.HashMap|) @Type direct;
+    #L00005Ac. [|v3|] := s1 @Type (|java.lang.Object|);
+    #L00006Aa. s0 := [|v0|].<|java.util.HashMap.table|> @Type (|java.util.HashMap$Entry[]|);
+    #L00006Ab. s1 := s0[[|v3|]];
+    #L00006Ac. [|v4|] := s1 @Type (|java.lang.Object|);
+    #L00007Aa. [|v5|] := [|v4|] @Type java.lang.Object;
     #L00008Aa. <@Frame (@Full, 6, `[(|java.lang.Object|), (|java.lang.Object|), (|int|), (|int|), (|java.lang.Object|), (|java.lang.Object|), (|top|), (|top|)], 0, `[(|int|), (|top|), (|top|)])>
     #L00008Ab. if [|v5|] == null then goto L00009Aa;
-    #L00010Aa. s0:= [|v5|].<|java.util.HashMap$Entry.next|>;
-    #L00010Ab. [|v6|]:= s0 @type (|java.util.HashMap$Entry|);
-    #L00011Aa. s0:= [|v5|].<|java.util.HashMap$Entry.hash|>;
+    #L00010Aa. s0 := [|v5|].<|java.util.HashMap$Entry.next|> @Type (|java.util.HashMap$Entry|);
+    #L00010Ab. [|v6|] := s0 @Type (|java.util.HashMap$Entry|);
+    #L00011Aa. s0 := [|v5|].<|java.util.HashMap$Entry.hash|> @Type (|int|);
     #L00011Ab. if s0 != [|v2|] then goto L00012Aa;
-    #L00011Ac. s1:= [|v5|].<|java.util.HashMap$Entry.key|>;
-    #L00011Ad. [|v7|]:= s1 @type (|java.lang.Object|);
+    #L00011Ac. s1 := [|v5|].<|java.util.HashMap$Entry.key|> @Type (|java.lang.Object|);
+    #L00011Ad. [|v7|] := s1 @Type (|java.lang.Object|);
     #L00011Ae. if s1 == [|v1|] then goto L00013Aa;
     #L00011Af. if [|v1|] == null then goto L00012Aa;
-    #L00011Ag. call s2:= {|java.lang.Object.equals(Ljava.lang.Object;)Z|}([|v1|],[|v7|]) @signature "java.lang.Object.equals(Ljava.lang.Object;)Z" @classDescriptor [|java.lang.Object|] @type virtual;
+    #L00011Ag. call s2  := {|java.lang.Object.equals(Ljava.lang.Object;)Z|}([|v1|],[|v7|]) @ClassDescriptor (|java.lang.Object|) @Type virtual;
     #L00011Ah. if s2 == 0 then goto L00012Aa;
     #L00013Aa. <@Frame (@Append, 2, `[(|java.lang.Object|), (|java.lang.Object|), (|int|), (|int|), (|java.lang.Object|), (|java.lang.Object|), (|top|), (|top|)], 0, `[(|int|), (|top|), (|top|)])>
-    #L00013Ab. s0:= [|v0|].<|java.util.HashMap.modCount|>;
-    #L00013Ac. [|v0|].<|java.util.HashMap.modCount|>:= s0+1;
-    #L00014Aa. s0:= [|v0|].<|java.util.HashMap.size|>;
-    #L00014Ab. [|v0|].<|java.util.HashMap.size|>:= s0-1;
+    #L00013Ab. s0 := [|v0|].<|java.util.HashMap.modCount|> @Type (|int|);
+    #L00013Ac. [|v0|].<|java.util.HashMap.modCount|> := (s0+1) @Type (|int|);
+    #L00014Aa. s0 := [|v0|].<|java.util.HashMap.size|> @Type (|int|);
+    #L00014Ab. [|v0|].<|java.util.HashMap.size|> := (s0-1) @Type (|int|);
     #L00015Aa. if [|v4|] != [|v5|] then goto L00016Aa;
-    #L00017Aa. s0:= [|v0|].<|java.util.HashMap.table|>;
-    #L00017Ab. s0[[|v3|]]:= [|v6|];
+    #L00017Aa. s0 := [|v0|].<|java.util.HashMap.table|> @Type (|java.util.HashMap$Entry[]|);
+    #L00017Ab. s0[[|v3|]] := [|v6|];
     #L00017Ac. goto L00018Aa;
     #L00016Aa. <@Frame (@Same, 0, `[(|java.lang.Object|), (|java.lang.Object|), (|int|), (|int|), (|java.lang.Object|), (|java.lang.Object|), (|top|), (|top|)], 0, `[(|int|), (|top|), (|top|)])>
-    #L00016Ab. [|v4|].<|java.util.HashMap$Entry.next|>:= [|v6|];
+    #L00016Ab. [|v4|].<|java.util.HashMap$Entry.next|> := [|v6|] @Type (|java.util.HashMap$Entry|);
     #L00018Aa. <@Frame (@Same, 0, `[(|java.lang.Object|), (|java.lang.Object|), (|int|), (|int|), (|java.lang.Object|), (|java.lang.Object|), (|top|), (|top|)], 0, `[(|int|), (|top|), (|top|)])>
-    #L00018Ab. call s0:= {|java.util.HashMap$Entry.recordRemoval(Ljava.util.HashMap;)V|}([|v5|],[|v0|]) @signature "java.util.HashMap$Entry.recordRemoval(Ljava.util.HashMap;)V" @classDescriptor [|java.util.HashMap$Entry|] @type virtual;
+    #L00018Ab. call s0  := {|java.util.HashMap$Entry.recordRemoval(Ljava.util.HashMap;)V|}([|v5|],[|v0|]) @ClassDescriptor (|java.util.HashMap$Entry|) @Type virtual;
     #L00019Aa. return [|v5|];
     #L00012Aa. <@Frame (@Chop, 1, `[(|java.lang.Object|), (|java.lang.Object|), (|int|), (|int|), (|java.lang.Object|), (|java.lang.Object|), (|top|), (|top|)], 0, `[(|int|), (|top|), (|top|)])>
-    #L00012Ab. [|v4|]:= [|v5|] @type java.lang.Object;
-    #L00020Aa. [|v5|]:= [|v6|] @type java.lang.Object;
+    #L00012Ab. [|v4|] := [|v5|] @Type java.lang.Object;
+    #L00020Aa. [|v5|] := [|v6|] @Type java.lang.Object;
     #L00021Aa. goto L00008Aa;
     #L00009Aa. <@Frame (@Chop, 1, `[(|java.lang.Object|), (|java.lang.Object|), (|int|), (|int|), (|java.lang.Object|), (|java.lang.Object|), (|top|), (|top|)], 0, `[(|int|), (|top|), (|top|)])>
     #L00009Ab. return [|v5|];
@@ -868,7 +867,7 @@ record (|java.util.HashMap|)
     @GenericSignature "(Ljava/lang/Object;)Ljava/util/HashMap$Entry<TK;TV;>;"
     @Owner (|java.util.HashMap|)
     @Access (FINAL)
-    @Signature "java.util.HashMap.removeMapping(Ljava.lang.Object;)Ljava.util.HashMap$Entry;" 
+    @Desc "java.util.HashMap.removeMapping(Ljava.lang.Object;)Ljava.util.HashMap$Entry;" 
   {
     local jmp;
     s0;
@@ -881,55 +880,55 @@ record (|java.util.HashMap|)
     [|v7|];
     [|v8|];
 
-    #L00000Aa. s0:= [|v0|].<|java.util.HashMap.size|>;
+    #L00000Aa. s0 := [|v0|].<|java.util.HashMap.size|> @Type (|int|);
     #L00000Ab. if s0 == 0 then goto L00001Aa;
-    #L00000Ac. s1:= instanceof @varname [|v1|] @type "(|java.util.Map$Entry|)";
+    #L00000Ac. s1 := instanceof @varname [|v1|] @Type "(|java.util.Map$Entry|)";
     #L00000Ad. if s1 != 0 then goto L00002Aa;
     #L00001Aa. <@Frame (@Same, 0, `[(|top|), (|top|), (|top|), (|top|), (|top|), (|top|), (|top|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|)])>
     #L00001Ab. return null;
     #L00002Aa. <@Frame (@Same, 0, `[(|top|), (|top|), (|top|), (|top|), (|top|), (|top|), (|top|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|)])>
-    #L00002Ab. [|v2|]:= ((|java.util.Map$Entry|)) [|v1|] @type (|java.util.Map$Entry|);
-    #L00003Aa. call s0:= {|java.util.Map$Entry.getKey()Ljava.lang.Object;|}([|v2|]) @signature "java.util.Map$Entry.getKey()Ljava.lang.Object;" @classDescriptor [|java.util.Map$Entry|] @type interface;
-    #L00003Ab. [|v3|]:= s0 @type (|java.lang.Object|);
+    #L00002Ab. [|v2|] := ((|java.util.Map$Entry|)) [|v1|] @Type (|java.util.Map$Entry|);
+    #L00003Aa. call s0  := {|java.util.Map$Entry.getKey()Ljava.lang.Object;|}([|v2|]) @ClassDescriptor (|java.util.Map$Entry|) @Type interface;
+    #L00003Ab. [|v3|] := s0 @Type (|java.lang.Object|);
     #L00004Aa. if [|v3|] != null then goto L00005Aa;
-    #L00004Ab. jmp:= 0;
+    #L00004Ab. jmp := 0;
     #L00004Ac. goto L00006Aa;
     #L00005Aa. <@Frame (@Append, 2, `[(|java.lang.Object|), (|java.lang.Object|), (|top|), (|top|), (|top|), (|top|), (|top|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|)])>
-    #L00005Ab. call s0:= {|java.util.HashMap.hash(Ljava.lang.Object;)I|}([|v0|],[|v3|]) @signature "java.util.HashMap.hash(Ljava.lang.Object;)I" @classDescriptor [|java.util.HashMap|] @type virtual;
-    #L00005Ac. jmp:= s0;
+    #L00005Ab. call s0  := {|java.util.HashMap.hash(Ljava.lang.Object;)I|}([|v0|],[|v3|]) @ClassDescriptor (|java.util.HashMap|) @Type virtual;
+    #L00005Ac. jmp := s0;
     #L00006Aa. <@Frame (@Same1, 0, `[(|java.lang.Object|), (|java.lang.Object|), (|top|), (|top|), (|top|), (|top|), (|top|), (|top|), (|top|)], 1, `[(|int|), (|top|), (|top|)])>
-    #L00006Ab. [|v4|]:= jmp @type (|int|);
-    #L00007Aa. s0:= [|v0|].<|java.util.HashMap.table|>;
-    #L00007Ab. call s1:= {|java.util.HashMap.indexFor(II)I|}([|v4|],s0.length) @signature "java.util.HashMap.indexFor(II)I" @classDescriptor [|java.util.HashMap|] @type direct;
-    #L00007Ac. [|v5|]:= s1 @type (|java.lang.Object|);
-    #L00008Aa. s0:= [|v0|].<|java.util.HashMap.table|>;
-    #L00008Ab. s1:= s0[[|v5|]];
-    #L00008Ac. [|v6|]:= s1 @type (|java.lang.Object|);
-    #L00009Aa. [|v7|]:= [|v6|] @type java.lang.Object;
+    #L00006Ab. [|v4|] := jmp @Type (|int|);
+    #L00007Aa. s0 := [|v0|].<|java.util.HashMap.table|> @Type (|java.util.HashMap$Entry[]|);
+    #L00007Ab. call s1  := {|java.util.HashMap.indexFor(II)I|}([|v4|],s0.length) @ClassDescriptor (|java.util.HashMap|) @Type direct;
+    #L00007Ac. [|v5|] := s1 @Type (|java.lang.Object|);
+    #L00008Aa. s0 := [|v0|].<|java.util.HashMap.table|> @Type (|java.util.HashMap$Entry[]|);
+    #L00008Ab. s1 := s0[[|v5|]];
+    #L00008Ac. [|v6|] := s1 @Type (|java.lang.Object|);
+    #L00009Aa. [|v7|] := [|v6|] @Type java.lang.Object;
     #L00010Aa. <@Frame (@Full, 8, `[(|java.lang.Object|), (|java.lang.Object|), (|java.lang.Object|), (|java.lang.Object|), (|int|), (|int|), (|java.lang.Object|), (|java.lang.Object|), (|top|)], 0, `[(|int|), (|top|), (|top|)])>
     #L00010Ab. if [|v7|] == null then goto L00011Aa;
-    #L00012Aa. s0:= [|v7|].<|java.util.HashMap$Entry.next|>;
-    #L00012Ab. [|v8|]:= s0 @type (|java.util.HashMap$Entry|);
-    #L00013Aa. s0:= [|v7|].<|java.util.HashMap$Entry.hash|>;
+    #L00012Aa. s0 := [|v7|].<|java.util.HashMap$Entry.next|> @Type (|java.util.HashMap$Entry|);
+    #L00012Ab. [|v8|] := s0 @Type (|java.util.HashMap$Entry|);
+    #L00013Aa. s0 := [|v7|].<|java.util.HashMap$Entry.hash|> @Type (|int|);
     #L00013Ab. if s0 != [|v4|] then goto L00014Aa;
-    #L00013Ac. call s1:= {|java.util.HashMap$Entry.equals(Ljava.lang.Object;)Z|}([|v7|],[|v2|]) @signature "java.util.HashMap$Entry.equals(Ljava.lang.Object;)Z" @classDescriptor [|java.util.HashMap$Entry|] @type virtual;
+    #L00013Ac. call s1  := {|java.util.HashMap$Entry.equals(Ljava.lang.Object;)Z|}([|v7|],[|v2|]) @ClassDescriptor (|java.util.HashMap$Entry|) @Type virtual;
     #L00013Ad. if s1 == 0 then goto L00014Aa;
-    #L00015Aa. s0:= [|v0|].<|java.util.HashMap.modCount|>;
-    #L00015Ab. [|v0|].<|java.util.HashMap.modCount|>:= s0+1;
-    #L00016Aa. s0:= [|v0|].<|java.util.HashMap.size|>;
-    #L00016Ab. [|v0|].<|java.util.HashMap.size|>:= s0-1;
+    #L00015Aa. s0 := [|v0|].<|java.util.HashMap.modCount|> @Type (|int|);
+    #L00015Ab. [|v0|].<|java.util.HashMap.modCount|> := (s0+1) @Type (|int|);
+    #L00016Aa. s0 := [|v0|].<|java.util.HashMap.size|> @Type (|int|);
+    #L00016Ab. [|v0|].<|java.util.HashMap.size|> := (s0-1) @Type (|int|);
     #L00017Aa. if [|v6|] != [|v7|] then goto L00018Aa;
-    #L00019Aa. s0:= [|v0|].<|java.util.HashMap.table|>;
-    #L00019Ab. s0[[|v5|]]:= [|v8|];
+    #L00019Aa. s0 := [|v0|].<|java.util.HashMap.table|> @Type (|java.util.HashMap$Entry[]|);
+    #L00019Ab. s0[[|v5|]] := [|v8|];
     #L00019Ac. goto L00020Aa;
     #L00018Aa. <@Frame (@Append, 1, `[(|java.lang.Object|), (|java.lang.Object|), (|java.lang.Object|), (|java.lang.Object|), (|int|), (|int|), (|java.lang.Object|), (|java.lang.Object|), (|top|)], 0, `[(|int|), (|top|), (|top|)])>
-    #L00018Ab. [|v6|].<|java.util.HashMap$Entry.next|>:= [|v8|];
+    #L00018Ab. [|v6|].<|java.util.HashMap$Entry.next|> := [|v8|] @Type (|java.util.HashMap$Entry|);
     #L00020Aa. <@Frame (@Same, 0, `[(|java.lang.Object|), (|java.lang.Object|), (|java.lang.Object|), (|java.lang.Object|), (|int|), (|int|), (|java.lang.Object|), (|java.lang.Object|), (|top|)], 0, `[(|int|), (|top|), (|top|)])>
-    #L00020Ab. call s0:= {|java.util.HashMap$Entry.recordRemoval(Ljava.util.HashMap;)V|}([|v7|],[|v0|]) @signature "java.util.HashMap$Entry.recordRemoval(Ljava.util.HashMap;)V" @classDescriptor [|java.util.HashMap$Entry|] @type virtual;
+    #L00020Ab. call s0  := {|java.util.HashMap$Entry.recordRemoval(Ljava.util.HashMap;)V|}([|v7|],[|v0|]) @ClassDescriptor (|java.util.HashMap$Entry|) @Type virtual;
     #L00021Aa. return [|v7|];
     #L00014Aa. <@Frame (@Same, 0, `[(|java.lang.Object|), (|java.lang.Object|), (|java.lang.Object|), (|java.lang.Object|), (|int|), (|int|), (|java.lang.Object|), (|java.lang.Object|), (|top|)], 0, `[(|int|), (|top|), (|top|)])>
-    #L00014Ab. [|v6|]:= [|v7|] @type java.lang.Object;
-    #L00022Aa. [|v7|]:= [|v8|] @type java.lang.Object;
+    #L00014Ab. [|v6|] := [|v7|] @Type java.lang.Object;
+    #L00022Aa. [|v7|] := [|v8|] @Type java.lang.Object;
     #L00023Aa. goto L00010Aa;
     #L00011Aa. <@Frame (@Chop, 1, `[(|java.lang.Object|), (|java.lang.Object|), (|java.lang.Object|), (|java.lang.Object|), (|int|), (|int|), (|java.lang.Object|), (|java.lang.Object|), (|top|)], 0, `[(|int|), (|top|), (|top|)])>
     #L00011Ab. return [|v7|];
@@ -939,17 +938,17 @@ record (|java.util.HashMap|)
     @MaxStack 3
     @Owner (|java.util.HashMap|)
     @Access (PUBLIC)
-    @Signature "java.util.HashMap.clear()V" 
+    @Desc "java.util.HashMap.clear()V" 
   {
     local jmp;
     s0;
     s1;
 
-    #L00000Aa. s0:= [|v0|].<|java.util.HashMap.modCount|>;
-    #L00000Ab. [|v0|].<|java.util.HashMap.modCount|>:= s0+1;
-    #L00001Aa. s0:= [|v0|].<|java.util.HashMap.table|>;
-    #L00001Ab. call s1:= {|java.util.Arrays.fill([Ljava.lang.Object;Ljava.lang.Object;)V|}(s0,null) @signature "java.util.Arrays.fill([Ljava.lang.Object;Ljava.lang.Object;)V" @classDescriptor [|java.util.Arrays|] @type direct;
-    #L00002Aa. [|v0|].<|java.util.HashMap.size|>:= 0;
+    #L00000Aa. s0 := [|v0|].<|java.util.HashMap.modCount|> @Type (|int|);
+    #L00000Ab. [|v0|].<|java.util.HashMap.modCount|> := (s0+1) @Type (|int|);
+    #L00001Aa. s0 := [|v0|].<|java.util.HashMap.table|> @Type (|java.util.HashMap$Entry[]|);
+    #L00001Ab. call s1  := {|java.util.Arrays.fill([Ljava.lang.Object;Ljava.lang.Object;)V|}(s0,null) @ClassDescriptor (|java.util.Arrays|) @Type direct;
+    #L00002Aa. [|v0|].<|java.util.HashMap.size|> := 0 @Type (|int|);
     #L00003Aa. return @void;
   }
   procedure (|boolean|) {|java.util.HashMap.containsValue(Ljava.lang.Object;)Z|} ((|java.util.HashMap|) [|v0|], (|java.lang.Object|) [|v1|]) 
@@ -957,7 +956,7 @@ record (|java.util.HashMap|)
     @MaxStack 2
     @Owner (|java.util.HashMap|)
     @Access (PUBLIC)
-    @Signature "java.util.HashMap.containsValue(Ljava.lang.Object;)Z" 
+    @Desc "java.util.HashMap.containsValue(Ljava.lang.Object;)Z" 
   {
     local jmp;
     s0;
@@ -967,28 +966,28 @@ record (|java.util.HashMap|)
     [|v4|];
 
     #L00000Aa. if [|v1|] != null then goto L00001Aa;
-    #L00002Aa. call s0:= {|java.util.HashMap.containsNullValue()Z|}([|v0|]) @signature "java.util.HashMap.containsNullValue()Z" @classDescriptor [|java.util.HashMap|] @type special;
+    #L00002Aa. call s0  := {|java.util.HashMap.containsNullValue()Z|}([|v0|]) @ClassDescriptor (|java.util.HashMap|) @Type special;
     #L00002Ab. return s0;
     #L00001Aa. <@Frame (@Same, 0, `[(|top|), (|top|), (|top|), (|top|), (|top|)], 0, `[(|top|), (|top|)])>
-    #L00001Ab. s0:= [|v0|].<|java.util.HashMap.table|>;
-    #L00001Ac. [|v2|]:= s0 @type (|java.util.HashMap$Entry[]|);
-    #L00003Aa. [|v3|]:= 0 @type (|int|);
+    #L00001Ab. s0 := [|v0|].<|java.util.HashMap.table|> @Type (|java.util.HashMap$Entry[]|);
+    #L00001Ac. [|v2|] := s0 @Type (|java.util.HashMap$Entry[]|);
+    #L00003Aa. [|v3|] := 0 @Type (|int|);
     #L00004Aa. <@Frame (@Append, 2, `[(|java.util.HashMap$Entry[]|), (|int|), (|top|), (|top|), (|top|)], 0, `[(|top|), (|top|)])>
     #L00004Ab. if [|v3|] >= [|v2|].length then goto L00005Aa;
-    #L00006Aa. s0:= [|v2|][[|v3|]];
-    #L00006Ab. [|v4|]:= s0 @type (|java.lang.Object|);
+    #L00006Aa. s0 := [|v2|][[|v3|]];
+    #L00006Ab. [|v4|] := s0 @Type (|java.lang.Object|);
     #L00007Aa. <@Frame (@Append, 1, `[(|java.lang.Object|), (|int|), (|top|), (|top|), (|top|)], 0, `[(|top|), (|top|)])>
     #L00007Ab. if [|v4|] == null then goto L00008Aa;
-    #L00009Aa. s0:= [|v4|].<|java.util.HashMap$Entry.value|>;
-    #L00009Ab. call s1:= {|java.lang.Object.equals(Ljava.lang.Object;)Z|}([|v1|],s0) @signature "java.lang.Object.equals(Ljava.lang.Object;)Z" @classDescriptor [|java.lang.Object|] @type virtual;
+    #L00009Aa. s0 := [|v4|].<|java.util.HashMap$Entry.value|> @Type (|java.lang.Object|);
+    #L00009Ab. call s1  := {|java.lang.Object.equals(Ljava.lang.Object;)Z|}([|v1|],s0) @ClassDescriptor (|java.lang.Object|) @Type virtual;
     #L00009Ac. if s1 == 0 then goto L00010Aa;
     #L00011Aa. return 1;
     #L00010Aa. <@Frame (@Same, 0, `[(|java.lang.Object|), (|int|), (|top|), (|top|), (|top|)], 0, `[(|top|), (|top|)])>
-    #L00010Ab. s0:= [|v4|].<|java.util.HashMap$Entry.next|>;
-    #L00010Ac. [|v4|]:= s0 @type (|java.util.HashMap$Entry|);
+    #L00010Ab. s0 := [|v4|].<|java.util.HashMap$Entry.next|> @Type (|java.util.HashMap$Entry|);
+    #L00010Ac. [|v4|] := s0 @Type (|java.util.HashMap$Entry|);
     #L00010Ad. goto L00007Aa;
     #L00008Aa. <@Frame (@Chop, 1, `[(|java.lang.Object|), (|int|), (|top|), (|top|), (|top|)], 0, `[(|top|), (|top|)])>
-    #L00008Ab. [|v3|]:= [|v3|] + 1 @type (|int|);
+    #L00008Ab. [|v3|] := [|v3|] + 1 @Type (|int|);
     #L00008Ac. goto L00004Aa;
     #L00005Aa. <@Frame (@Chop, 1, `[(|java.lang.Object|), (|int|), (|top|), (|top|), (|top|)], 0, `[(|top|), (|top|)])>
     #L00005Ab. return 0;
@@ -998,7 +997,7 @@ record (|java.util.HashMap|)
     @MaxStack 2
     @Owner (|java.util.HashMap|)
     @Access (PRIVATE)
-    @Signature "java.util.HashMap.containsNullValue()Z" 
+    @Desc "java.util.HashMap.containsNullValue()Z" 
   {
     local jmp;
     s0;
@@ -1006,24 +1005,24 @@ record (|java.util.HashMap|)
     [|v2|];
     [|v3|];
 
-    #L00000Aa. s0:= [|v0|].<|java.util.HashMap.table|>;
-    #L00000Ab. [|v1|]:= s0 @type (|java.util.HashMap$Entry[]|);
-    #L00001Aa. [|v2|]:= 0 @type (|int|);
+    #L00000Aa. s0 := [|v0|].<|java.util.HashMap.table|> @Type (|java.util.HashMap$Entry[]|);
+    #L00000Ab. [|v1|] := s0 @Type (|java.util.HashMap$Entry[]|);
+    #L00001Aa. [|v2|] := 0 @Type (|int|);
     #L00002Aa. <@Frame (@Append, 2, `[(|java.util.HashMap$Entry[]|), (|int|), (|top|), (|top|)], 0, `[(|top|), (|top|)])>
     #L00002Ab. if [|v2|] >= [|v1|].length then goto L00003Aa;
-    #L00004Aa. s0:= [|v1|][[|v2|]];
-    #L00004Ab. [|v3|]:= s0 @type (|java.lang.Object|);
+    #L00004Aa. s0 := [|v1|][[|v2|]];
+    #L00004Ab. [|v3|] := s0 @Type (|java.lang.Object|);
     #L00005Aa. <@Frame (@Append, 1, `[(|java.lang.Object|), (|int|), (|top|), (|top|)], 0, `[(|top|), (|top|)])>
     #L00005Ab. if [|v3|] == null then goto L00006Aa;
-    #L00007Aa. s0:= [|v3|].<|java.util.HashMap$Entry.value|>;
+    #L00007Aa. s0 := [|v3|].<|java.util.HashMap$Entry.value|> @Type (|java.lang.Object|);
     #L00007Ab. if s0 != null then goto L00008Aa;
     #L00009Aa. return 1;
     #L00008Aa. <@Frame (@Same, 0, `[(|java.lang.Object|), (|int|), (|top|), (|top|)], 0, `[(|top|), (|top|)])>
-    #L00008Ab. s0:= [|v3|].<|java.util.HashMap$Entry.next|>;
-    #L00008Ac. [|v3|]:= s0 @type (|java.util.HashMap$Entry|);
+    #L00008Ab. s0 := [|v3|].<|java.util.HashMap$Entry.next|> @Type (|java.util.HashMap$Entry|);
+    #L00008Ac. [|v3|] := s0 @Type (|java.util.HashMap$Entry|);
     #L00008Ad. goto L00005Aa;
     #L00006Aa. <@Frame (@Chop, 1, `[(|java.lang.Object|), (|int|), (|top|), (|top|)], 0, `[(|top|), (|top|)])>
-    #L00006Ab. [|v2|]:= [|v2|] + 1 @type (|int|);
+    #L00006Ab. [|v2|] := [|v2|] + 1 @Type (|int|);
     #L00006Ac. goto L00002Aa;
     #L00003Aa. <@Frame (@Chop, 1, `[(|java.lang.Object|), (|int|), (|top|), (|top|)], 0, `[(|top|), (|top|)])>
     #L00003Ab. return 0;
@@ -1033,7 +1032,7 @@ record (|java.util.HashMap|)
     @MaxStack 4
     @Owner (|java.util.HashMap|)
     @Access (PUBLIC)
-    @Signature "java.util.HashMap.clone()Ljava.lang.Object;" 
+    @Desc "java.util.HashMap.clone()Ljava.lang.Object;" 
   {
     local jmp;
     s0;
@@ -1046,29 +1045,29 @@ record (|java.util.HashMap|)
     [|v1|];
     [|v2|];
 
-    #L00003Aa. [|v1|]:= null @type (|java.lang.Object|);
-    #L00000Aa. call s0:= {|java.util.AbstractMap.clone()Ljava.lang.Object;|}([|v0|]) @signature "java.util.AbstractMap.clone()Ljava.lang.Object;" @classDescriptor [|java.util.AbstractMap|] @type special;
-    #L00000Ab. [|v1|]:= ((|java.util.HashMap|)) s0 @type (|java.util.HashMap|);
+    #L00003Aa. [|v1|] := null @Type (|java.lang.Object|);
+    #L00000Aa. call s0  := {|java.util.AbstractMap.clone()Ljava.lang.Object;|}([|v0|]) @ClassDescriptor (|java.util.AbstractMap|) @Type special;
+    #L00000Ab. [|v1|] := ((|java.util.HashMap|)) s0 @Type (|java.util.HashMap|);
     #L00001Aa. goto L00004Aa;
     #L00002Aa. <@Frame (@Full, 2, `[(|java.lang.Object|), (|java.lang.Object|), (|top|)], 1, `[(|java.lang.Object|), (|top|), (|top|), (|top|)])>
-    #L00002Ab. [|v2|]:= Exception @type java.lang.Object;
+    #L00002Ab. [|v2|] := "Exception" @Type (|java.lang.Object|);
     #L00004Aa. <@Frame (@Same, 0, `[(|java.lang.Object|), (|java.lang.Object|), (|top|)], 0, `[(|java.lang.Object|), (|top|), (|top|), (|top|)])>
-    #L00004Ab. s0:= [|v1|].<|java.util.HashMap.table|>;
-    #L00004Ac. s1:= +|java.util.HashMap.EMPTY_TABLE|+;
+    #L00004Ab. s0 := [|v1|].<|java.util.HashMap.table|> @Type (|java.util.HashMap$Entry[]|);
+    #L00004Ac. s1 := +|java.util.HashMap.EMPTY_TABLE|+ @Type (|java.util.HashMap$Entry[]|);
     #L00004Ad. if s0 == s1 then goto L00005Aa;
-    #L00006Aa. s0:= [|v0|].<|java.util.HashMap.size|>;
-    #L00006Ab. s1:= [|v0|].<|java.util.HashMap.loadFactor|>;
-    #L00006Ac. call s2:= {|java.lang.Math.min(FF)F|}(1.0/s1,4.0) @signature "java.lang.Math.min(FF)F" @classDescriptor [|java.lang.Math|] @type direct;
-    #L00006Ad. call s3:= {|java.lang.Math.min(FF)F|}(s0*s2,1.07374182E9) @signature "java.lang.Math.min(FF)F" @classDescriptor [|java.lang.Math|] @type direct;
-    #L00006Ae. s4:= [|v0|].<|java.util.HashMap.table|>;
-    #L00006Af. call s5:= {|java.lang.Math.min(II)I|}(s3,s4.length) @signature "java.lang.Math.min(II)I" @classDescriptor [|java.lang.Math|] @type direct;
-    #L00006Ag. call s6:= {|java.util.HashMap.inflateTable(I)V|}([|v1|],s5) @signature "java.util.HashMap.inflateTable(I)V" @classDescriptor [|java.util.HashMap|] @type special;
+    #L00006Aa. s0 := [|v0|].<|java.util.HashMap.size|> @Type (|int|);
+    #L00006Ab. s1 := [|v0|].<|java.util.HashMap.loadFactor|> @Type (|float|);
+    #L00006Ac. call s2  := {|java.lang.Math.min(FF)F|}((1.0/s1),4.0) @ClassDescriptor (|java.lang.Math|) @Type direct;
+    #L00006Ad. call s3  := {|java.lang.Math.min(FF)F|}((((|float|))s0*s2),1.07374182E9) @ClassDescriptor (|java.lang.Math|) @Type direct;
+    #L00006Ae. s4 := [|v0|].<|java.util.HashMap.table|> @Type (|java.util.HashMap$Entry[]|);
+    #L00006Af. call s5  := {|java.lang.Math.min(II)I|}(((|int|))s3,s4.length) @ClassDescriptor (|java.lang.Math|) @Type direct;
+    #L00006Ag. call s6  := {|java.util.HashMap.inflateTable(I)V|}([|v1|],s5) @ClassDescriptor (|java.util.HashMap|) @Type special;
     #L00005Aa. <@Frame (@Same, 0, `[(|java.lang.Object|), (|java.lang.Object|), (|top|)], 0, `[(|java.lang.Object|), (|top|), (|top|), (|top|)])>
-    #L00005Ab. [|v1|].<|java.util.HashMap.entrySet|>:= null;
-    #L00007Aa. [|v1|].<|java.util.HashMap.modCount|>:= 0;
-    #L00008Aa. [|v1|].<|java.util.HashMap.size|>:= 0;
-    #L00009Aa. call s0:= {|java.util.HashMap.init()V|}([|v1|]) @signature "java.util.HashMap.init()V" @classDescriptor [|java.util.HashMap|] @type virtual;
-    #L00010Aa. call s0:= {|java.util.HashMap.putAllForCreate(Ljava.util.Map;)V|}([|v1|],[|v0|]) @signature "java.util.HashMap.putAllForCreate(Ljava.util.Map;)V" @classDescriptor [|java.util.HashMap|] @type special;
+    #L00005Ab. [|v1|].<|java.util.HashMap.entrySet|> := null @Type (|java.util.Set|);
+    #L00007Aa. [|v1|].<|java.util.HashMap.modCount|> := 0 @Type (|int|);
+    #L00008Aa. [|v1|].<|java.util.HashMap.size|> := 0 @Type (|int|);
+    #L00009Aa. call s0  := {|java.util.HashMap.init()V|}([|v1|]) @ClassDescriptor (|java.util.HashMap|) @Type virtual;
+    #L00010Aa. call s0  := {|java.util.HashMap.putAllForCreate(Ljava.util.Map;)V|}([|v1|],[|v0|]) @ClassDescriptor (|java.util.HashMap|) @Type special;
     #L00011Aa. return [|v1|];
       catch (|java.lang.CloneNotSupportedException|) @[L00000Aa..L00001Aa] goto L00002Aa;
   }
@@ -1078,7 +1077,7 @@ record (|java.util.HashMap|)
     @GenericSignature "(ITK;TV;I)V"
     @Owner (|java.util.HashMap|)
     @Access ()
-    @Signature "java.util.HashMap.addEntry(ILjava.lang.Object;Ljava.lang.Object;I)V" 
+    @Desc "java.util.HashMap.addEntry(ILjava.lang.Object;Ljava.lang.Object;I)V" 
   {
     local jmp;
     s0;
@@ -1086,27 +1085,27 @@ record (|java.util.HashMap|)
     s2;
     s3;
 
-    #L00000Aa. s0:= [|v0|].<|java.util.HashMap.size|>;
-    #L00000Ab. s1:= [|v0|].<|java.util.HashMap.threshold|>;
+    #L00000Aa. s0 := [|v0|].<|java.util.HashMap.size|> @Type (|int|);
+    #L00000Ab. s1 := [|v0|].<|java.util.HashMap.threshold|> @Type (|int|);
     #L00000Ac. if s0 < s1 then goto L00001Aa;
-    #L00000Ad. s2:= [|v0|].<|java.util.HashMap.table|>;
-    #L00000Ae. s3:= s2[[|v4|]];
+    #L00000Ad. s2 := [|v0|].<|java.util.HashMap.table|> @Type (|java.util.HashMap$Entry[]|);
+    #L00000Ae. s3 := s2[[|v4|]];
     #L00000Af. if null == s3 then goto L00001Aa;
-    #L00002Aa. s0:= [|v0|].<|java.util.HashMap.table|>;
-    #L00002Ab. call s1:= {|java.util.HashMap.resize(I)V|}([|v0|],2*s0.length) @signature "java.util.HashMap.resize(I)V" @classDescriptor [|java.util.HashMap|] @type virtual;
+    #L00002Aa. s0 := [|v0|].<|java.util.HashMap.table|> @Type (|java.util.HashMap$Entry[]|);
+    #L00002Ab. call s1  := {|java.util.HashMap.resize(I)V|}([|v0|],(2*s0.length)) @ClassDescriptor (|java.util.HashMap|) @Type virtual;
     #L00003Aa. if null == [|v2|] then goto L00004Aa;
-    #L00003Ab. call s0:= {|java.util.HashMap.hash(Ljava.lang.Object;)I|}([|v0|],[|v2|]) @signature "java.util.HashMap.hash(Ljava.lang.Object;)I" @classDescriptor [|java.util.HashMap|] @type virtual;
-    #L00003Ac. jmp:= s0;
+    #L00003Ab. call s0  := {|java.util.HashMap.hash(Ljava.lang.Object;)I|}([|v0|],[|v2|]) @ClassDescriptor (|java.util.HashMap|) @Type virtual;
+    #L00003Ac. jmp := s0;
     #L00003Ad. goto L00005Aa;
     #L00004Aa. <@Frame (@Same, 0, `[(|top|), (|top|), (|top|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|), (|top|), (|top|)])>
-    #L00004Ab. jmp:= 0;
+    #L00004Ab. jmp := 0;
     #L00005Aa. <@Frame (@Same1, 0, `[(|top|), (|top|), (|top|), (|top|), (|top|)], 1, `[(|int|), (|top|), (|top|), (|top|), (|top|)])>
-    #L00005Ab. [|v1|]:= jmp @type (|java.lang.Object|);
-    #L00006Aa. s0:= [|v0|].<|java.util.HashMap.table|>;
-    #L00006Ab. call s1:= {|java.util.HashMap.indexFor(II)I|}([|v1|],s0.length) @signature "java.util.HashMap.indexFor(II)I" @classDescriptor [|java.util.HashMap|] @type direct;
-    #L00006Ac. [|v4|]:= s1 @type (|java.lang.Object|);
+    #L00005Ab. [|v1|] := jmp @Type (|java.lang.Object|);
+    #L00006Aa. s0 := [|v0|].<|java.util.HashMap.table|> @Type (|java.util.HashMap$Entry[]|);
+    #L00006Ab. call s1  := {|java.util.HashMap.indexFor(II)I|}([|v1|],s0.length) @ClassDescriptor (|java.util.HashMap|) @Type direct;
+    #L00006Ac. [|v4|] := s1 @Type (|java.lang.Object|);
     #L00001Aa. <@Frame (@Same, 0, `[(|top|), (|top|), (|top|), (|top|), (|top|)], 0, `[(|int|), (|top|), (|top|), (|top|), (|top|)])>
-    #L00001Ab. call s0:= {|java.util.HashMap.createEntry(ILjava.lang.Object;Ljava.lang.Object;I)V|}([|v0|],[|v1|],[|v2|],[|v3|],[|v4|]) @signature "java.util.HashMap.createEntry(ILjava.lang.Object;Ljava.lang.Object;I)V" @classDescriptor [|java.util.HashMap|] @type virtual;
+    #L00001Ab. call s0  := {|java.util.HashMap.createEntry(ILjava.lang.Object;Ljava.lang.Object;I)V|}([|v0|],[|v1|],[|v2|],[|v3|],[|v4|]) @ClassDescriptor (|java.util.HashMap|) @Type virtual;
     #L00007Aa. return @void;
   }
   procedure (|void|) {|java.util.HashMap.createEntry(ILjava.lang.Object;Ljava.lang.Object;I)V|} ((|java.util.HashMap|) [|v0|], (|int|) [|v1|], (|java.lang.Object|) [|v2|], (|java.lang.Object|) [|v3|], (|int|) [|v4|]) 
@@ -1115,7 +1114,7 @@ record (|java.util.HashMap|)
     @GenericSignature "(ITK;TV;I)V"
     @Owner (|java.util.HashMap|)
     @Access ()
-    @Signature "java.util.HashMap.createEntry(ILjava.lang.Object;Ljava.lang.Object;I)V" 
+    @Desc "java.util.HashMap.createEntry(ILjava.lang.Object;Ljava.lang.Object;I)V" 
   {
     local jmp;
     s0;
@@ -1123,15 +1122,15 @@ record (|java.util.HashMap|)
     s2;
     [|v5|];
 
-    #L00000Aa. s0:= [|v0|].<|java.util.HashMap.table|>;
-    #L00000Ab. s1:= s0[[|v4|]];
-    #L00000Ac. [|v5|]:= s1 @type (|java.lang.Object|);
-    #L00001Aa. s0:= [|v0|].<|java.util.HashMap.table|>;
-    #L00001Ab. s1:= new (|java.util.HashMap$Entry|);
-    #L00001Ac. call s2:= {|java.util.HashMap$Entry.<init>(ILjava.lang.Object;Ljava.lang.Object;Ljava.util.HashMap$Entry;)V|}(s1,[|v1|],[|v2|],[|v3|],[|v5|]) @signature "java.util.HashMap$Entry.<init>(ILjava.lang.Object;Ljava.lang.Object;Ljava.util.HashMap$Entry;)V" @classDescriptor [|java.util.HashMap$Entry|] @type special;
-    #L00001Ad. s0[[|v4|]]:= s1;
-    #L00002Aa. s0:= [|v0|].<|java.util.HashMap.size|>;
-    #L00002Ab. [|v0|].<|java.util.HashMap.size|>:= s0+1;
+    #L00000Aa. s0 := [|v0|].<|java.util.HashMap.table|> @Type (|java.util.HashMap$Entry[]|);
+    #L00000Ab. s1 := s0[[|v4|]];
+    #L00000Ac. [|v5|] := s1 @Type (|java.lang.Object|);
+    #L00001Aa. s0 := [|v0|].<|java.util.HashMap.table|> @Type (|java.util.HashMap$Entry[]|);
+    #L00001Ab. s1 := new (|java.util.HashMap$Entry|);
+    #L00001Ac. call s2  := {|java.util.HashMap$Entry.<init>(ILjava.lang.Object;Ljava.lang.Object;Ljava.util.HashMap$Entry;)V|}(s1,[|v1|],[|v2|],[|v3|],[|v5|]) @ClassDescriptor (|java.util.HashMap$Entry|) @Type special;
+    #L00001Ad. s0[[|v4|]] := s1;
+    #L00002Aa. s0 := [|v0|].<|java.util.HashMap.size|> @Type (|int|);
+    #L00002Ab. [|v0|].<|java.util.HashMap.size|> := (s0+1) @Type (|int|);
     #L00003Aa. return @void;
   }
   procedure (|java.util.Iterator|) {|java.util.HashMap.newKeyIterator()Ljava.util.Iterator;|} ((|java.util.HashMap|) [|v0|]) 
@@ -1140,14 +1139,14 @@ record (|java.util.HashMap|)
     @GenericSignature "()Ljava/util/Iterator<TK;>;"
     @Owner (|java.util.HashMap|)
     @Access ()
-    @Signature "java.util.HashMap.newKeyIterator()Ljava.util.Iterator;" 
+    @Desc "java.util.HashMap.newKeyIterator()Ljava.util.Iterator;" 
   {
     local jmp;
     s0;
     s1;
 
-    #L00000Aa. s0:= new (|java.util.HashMap$KeyIterator|);
-    #L00000Ab. call s1:= {|java.util.HashMap$KeyIterator.<init>(Ljava.util.HashMap;Ljava.util.HashMap$1;)V|}(s0,[|v0|],null) @signature "java.util.HashMap$KeyIterator.<init>(Ljava.util.HashMap;Ljava.util.HashMap$1;)V" @classDescriptor [|java.util.HashMap$KeyIterator|] @type special;
+    #L00000Aa. s0 := new (|java.util.HashMap$KeyIterator|);
+    #L00000Ab. call s1  := {|java.util.HashMap$KeyIterator.<init>(Ljava.util.HashMap;Ljava.util.HashMap$1;)V|}(s0,[|v0|],null) @ClassDescriptor (|java.util.HashMap$KeyIterator|) @Type special;
     #L00000Ac. return s0;
   }
   procedure (|java.util.Iterator|) {|java.util.HashMap.newValueIterator()Ljava.util.Iterator;|} ((|java.util.HashMap|) [|v0|]) 
@@ -1156,14 +1155,14 @@ record (|java.util.HashMap|)
     @GenericSignature "()Ljava/util/Iterator<TV;>;"
     @Owner (|java.util.HashMap|)
     @Access ()
-    @Signature "java.util.HashMap.newValueIterator()Ljava.util.Iterator;" 
+    @Desc "java.util.HashMap.newValueIterator()Ljava.util.Iterator;" 
   {
     local jmp;
     s0;
     s1;
 
-    #L00000Aa. s0:= new (|java.util.HashMap$ValueIterator|);
-    #L00000Ab. call s1:= {|java.util.HashMap$ValueIterator.<init>(Ljava.util.HashMap;Ljava.util.HashMap$1;)V|}(s0,[|v0|],null) @signature "java.util.HashMap$ValueIterator.<init>(Ljava.util.HashMap;Ljava.util.HashMap$1;)V" @classDescriptor [|java.util.HashMap$ValueIterator|] @type special;
+    #L00000Aa. s0 := new (|java.util.HashMap$ValueIterator|);
+    #L00000Ab. call s1  := {|java.util.HashMap$ValueIterator.<init>(Ljava.util.HashMap;Ljava.util.HashMap$1;)V|}(s0,[|v0|],null) @ClassDescriptor (|java.util.HashMap$ValueIterator|) @Type special;
     #L00000Ac. return s0;
   }
   procedure (|java.util.Iterator|) {|java.util.HashMap.newEntryIterator()Ljava.util.Iterator;|} ((|java.util.HashMap|) [|v0|]) 
@@ -1172,14 +1171,14 @@ record (|java.util.HashMap|)
     @GenericSignature "()Ljava/util/Iterator<Ljava/util/Map$Entry<TK;TV;>;>;"
     @Owner (|java.util.HashMap|)
     @Access ()
-    @Signature "java.util.HashMap.newEntryIterator()Ljava.util.Iterator;" 
+    @Desc "java.util.HashMap.newEntryIterator()Ljava.util.Iterator;" 
   {
     local jmp;
     s0;
     s1;
 
-    #L00000Aa. s0:= new (|java.util.HashMap$EntryIterator|);
-    #L00000Ab. call s1:= {|java.util.HashMap$EntryIterator.<init>(Ljava.util.HashMap;Ljava.util.HashMap$1;)V|}(s0,[|v0|],null) @signature "java.util.HashMap$EntryIterator.<init>(Ljava.util.HashMap;Ljava.util.HashMap$1;)V" @classDescriptor [|java.util.HashMap$EntryIterator|] @type special;
+    #L00000Aa. s0 := new (|java.util.HashMap$EntryIterator|);
+    #L00000Ab. call s1  := {|java.util.HashMap$EntryIterator.<init>(Ljava.util.HashMap;Ljava.util.HashMap$1;)V|}(s0,[|v0|],null) @ClassDescriptor (|java.util.HashMap$EntryIterator|) @Type special;
     #L00000Ac. return s0;
   }
   procedure (|java.util.Set|) {|java.util.HashMap.keySet()Ljava.util.Set;|} ((|java.util.HashMap|) [|v0|]) 
@@ -1188,23 +1187,23 @@ record (|java.util.HashMap|)
     @GenericSignature "()Ljava/util/Set<TK;>;"
     @Owner (|java.util.HashMap|)
     @Access (PUBLIC)
-    @Signature "java.util.HashMap.keySet()Ljava.util.Set;" 
+    @Desc "java.util.HashMap.keySet()Ljava.util.Set;" 
   {
     local jmp;
     s0;
     s1;
     [|v1|];
 
-    #L00000Aa. s0:= [|v0|].<|java.util.HashMap.keySet|>;
-    #L00000Ab. [|v1|]:= s0 @type (|java.util.Set|);
+    #L00000Aa. s0 := [|v0|].<|java.util.HashMap.keySet|> @Type (|java.util.Set|);
+    #L00000Ab. [|v1|] := s0 @Type (|java.util.Set|);
     #L00001Aa. if [|v1|] == null then goto L00002Aa;
-    #L00001Ab. jmp:= [|v1|];
+    #L00001Ab. jmp := [|v1|];
     #L00001Ac. goto L00003Aa;
     #L00002Aa. <@Frame (@Append, 1, `[(|java.lang.Object|), (|top|)], 0, `[(|top|), (|top|), (|top|), (|top|), (|top|)])>
-    #L00002Ab. s0:= new (|java.util.HashMap$KeySet|);
-    #L00002Ac. call s1:= {|java.util.HashMap$KeySet.<init>(Ljava.util.HashMap;Ljava.util.HashMap$1;)V|}(s0,[|v0|],null) @signature "java.util.HashMap$KeySet.<init>(Ljava.util.HashMap;Ljava.util.HashMap$1;)V" @classDescriptor [|java.util.HashMap$KeySet|] @type special;
-    #L00002Ad. [|v0|].<|java.util.HashMap.keySet|>:= s0;
-    #L00002Ae. jmp:= s0;
+    #L00002Ab. s0 := new (|java.util.HashMap$KeySet|);
+    #L00002Ac. call s1  := {|java.util.HashMap$KeySet.<init>(Ljava.util.HashMap;Ljava.util.HashMap$1;)V|}(s0,[|v0|],null) @ClassDescriptor (|java.util.HashMap$KeySet|) @Type special;
+    #L00002Ad. [|v0|].<|java.util.HashMap.keySet|> := s0 @Type (|java.util.Set|);
+    #L00002Ae. jmp := s0;
     #L00003Aa. <@Frame (@Same1, 0, `[(|java.lang.Object|), (|top|)], 1, `[(|java.lang.Object|), (|top|), (|top|), (|top|), (|top|)])>
     #L00003Ab. return jmp;
   }
@@ -1214,23 +1213,23 @@ record (|java.util.HashMap|)
     @GenericSignature "()Ljava/util/Collection<TV;>;"
     @Owner (|java.util.HashMap|)
     @Access (PUBLIC)
-    @Signature "java.util.HashMap.values()Ljava.util.Collection;" 
+    @Desc "java.util.HashMap.values()Ljava.util.Collection;" 
   {
     local jmp;
     s0;
     s1;
     [|v1|];
 
-    #L00000Aa. s0:= [|v0|].<|java.util.HashMap.values|>;
-    #L00000Ab. [|v1|]:= s0 @type (|java.util.Collection|);
+    #L00000Aa. s0 := [|v0|].<|java.util.HashMap.values|> @Type (|java.util.Collection|);
+    #L00000Ab. [|v1|] := s0 @Type (|java.util.Collection|);
     #L00001Aa. if [|v1|] == null then goto L00002Aa;
-    #L00001Ab. jmp:= [|v1|];
+    #L00001Ab. jmp := [|v1|];
     #L00001Ac. goto L00003Aa;
     #L00002Aa. <@Frame (@Append, 1, `[(|java.lang.Object|), (|top|)], 0, `[(|top|), (|top|), (|top|), (|top|), (|top|)])>
-    #L00002Ab. s0:= new (|java.util.HashMap$Values|);
-    #L00002Ac. call s1:= {|java.util.HashMap$Values.<init>(Ljava.util.HashMap;Ljava.util.HashMap$1;)V|}(s0,[|v0|],null) @signature "java.util.HashMap$Values.<init>(Ljava.util.HashMap;Ljava.util.HashMap$1;)V" @classDescriptor [|java.util.HashMap$Values|] @type special;
-    #L00002Ad. [|v0|].<|java.util.HashMap.values|>:= s0;
-    #L00002Ae. jmp:= s0;
+    #L00002Ab. s0 := new (|java.util.HashMap$Values|);
+    #L00002Ac. call s1  := {|java.util.HashMap$Values.<init>(Ljava.util.HashMap;Ljava.util.HashMap$1;)V|}(s0,[|v0|],null) @ClassDescriptor (|java.util.HashMap$Values|) @Type special;
+    #L00002Ad. [|v0|].<|java.util.HashMap.values|> := s0 @Type (|java.util.Collection|);
+    #L00002Ae. jmp := s0;
     #L00003Aa. <@Frame (@Same1, 0, `[(|java.lang.Object|), (|top|)], 1, `[(|java.lang.Object|), (|top|), (|top|), (|top|), (|top|)])>
     #L00003Ab. return jmp;
   }
@@ -1240,12 +1239,12 @@ record (|java.util.HashMap|)
     @GenericSignature "()Ljava/util/Set<Ljava/util/Map$Entry<TK;TV;>;>;"
     @Owner (|java.util.HashMap|)
     @Access (PUBLIC)
-    @Signature "java.util.HashMap.entrySet()Ljava.util.Set;" 
+    @Desc "java.util.HashMap.entrySet()Ljava.util.Set;" 
   {
     local jmp;
     s0;
 
-    #L00000Aa. call s0:= {|java.util.HashMap.entrySet0()Ljava.util.Set;|}([|v0|]) @signature "java.util.HashMap.entrySet0()Ljava.util.Set;" @classDescriptor [|java.util.HashMap|] @type special;
+    #L00000Aa. call s0  := {|java.util.HashMap.entrySet0()Ljava.util.Set;|}([|v0|]) @ClassDescriptor (|java.util.HashMap|) @Type special;
     #L00000Ab. return s0;
   }
   procedure (|java.util.Set|) {|java.util.HashMap.entrySet0()Ljava.util.Set;|} ((|java.util.HashMap|) [|v0|]) 
@@ -1254,23 +1253,23 @@ record (|java.util.HashMap|)
     @GenericSignature "()Ljava/util/Set<Ljava/util/Map$Entry<TK;TV;>;>;"
     @Owner (|java.util.HashMap|)
     @Access (PRIVATE)
-    @Signature "java.util.HashMap.entrySet0()Ljava.util.Set;" 
+    @Desc "java.util.HashMap.entrySet0()Ljava.util.Set;" 
   {
     local jmp;
     s0;
     s1;
     [|v1|];
 
-    #L00000Aa. s0:= [|v0|].<|java.util.HashMap.entrySet|>;
-    #L00000Ab. [|v1|]:= s0 @type (|java.util.Set|);
+    #L00000Aa. s0 := [|v0|].<|java.util.HashMap.entrySet|> @Type (|java.util.Set|);
+    #L00000Ab. [|v1|] := s0 @Type (|java.util.Set|);
     #L00001Aa. if [|v1|] == null then goto L00002Aa;
-    #L00001Ab. jmp:= [|v1|];
+    #L00001Ab. jmp := [|v1|];
     #L00001Ac. goto L00003Aa;
     #L00002Aa. <@Frame (@Append, 1, `[(|java.lang.Object|), (|top|)], 0, `[(|top|), (|top|), (|top|), (|top|), (|top|)])>
-    #L00002Ab. s0:= new (|java.util.HashMap$EntrySet|);
-    #L00002Ac. call s1:= {|java.util.HashMap$EntrySet.<init>(Ljava.util.HashMap;Ljava.util.HashMap$1;)V|}(s0,[|v0|],null) @signature "java.util.HashMap$EntrySet.<init>(Ljava.util.HashMap;Ljava.util.HashMap$1;)V" @classDescriptor [|java.util.HashMap$EntrySet|] @type special;
-    #L00002Ad. [|v0|].<|java.util.HashMap.entrySet|>:= s0;
-    #L00002Ae. jmp:= s0;
+    #L00002Ab. s0 := new (|java.util.HashMap$EntrySet|);
+    #L00002Ac. call s1  := {|java.util.HashMap$EntrySet.<init>(Ljava.util.HashMap;Ljava.util.HashMap$1;)V|}(s0,[|v0|],null) @ClassDescriptor (|java.util.HashMap$EntrySet|) @Type special;
+    #L00002Ad. [|v0|].<|java.util.HashMap.entrySet|> := s0 @Type (|java.util.Set|);
+    #L00002Ae. jmp := s0;
     #L00003Aa. <@Frame (@Same1, 0, `[(|java.lang.Object|), (|top|)], 1, `[(|java.lang.Object|), (|top|), (|top|), (|top|), (|top|)])>
     #L00003Ab. return jmp;
   }
@@ -1280,7 +1279,7 @@ record (|java.util.HashMap|)
     @MaxStack 2
     @Owner (|java.util.HashMap|)
     @Access (PRIVATE)
-    @Signature "java.util.HashMap.writeObject(Ljava.io.ObjectOutputStream;)V" 
+    @Desc "java.util.HashMap.writeObject(Ljava.io.ObjectOutputStream;)V" 
   {
     local jmp;
     s0;
@@ -1289,34 +1288,34 @@ record (|java.util.HashMap|)
     [|v2|];
     [|v3|];
 
-    #L00000Aa. call s0:= {|java.io.ObjectOutputStream.defaultWriteObject()V|}([|v1|]) @signature "java.io.ObjectOutputStream.defaultWriteObject()V" @classDescriptor [|java.io.ObjectOutputStream|] @type virtual;
-    #L00001Aa. s0:= [|v0|].<|java.util.HashMap.table|>;
-    #L00001Ab. s1:= +|java.util.HashMap.EMPTY_TABLE|+;
+    #L00000Aa. call s0  := {|java.io.ObjectOutputStream.defaultWriteObject()V|}([|v1|]) @ClassDescriptor (|java.io.ObjectOutputStream|) @Type virtual;
+    #L00001Aa. s0 := [|v0|].<|java.util.HashMap.table|> @Type (|java.util.HashMap$Entry[]|);
+    #L00001Ab. s1 := +|java.util.HashMap.EMPTY_TABLE|+ @Type (|java.util.HashMap$Entry[]|);
     #L00001Ac. if s0 != s1 then goto L00002Aa;
-    #L00003Aa. s0:= [|v0|].<|java.util.HashMap.threshold|>;
-    #L00003Ab. call s1:= {|java.util.HashMap.roundUpToPowerOf2(I)I|}(s0) @signature "java.util.HashMap.roundUpToPowerOf2(I)I" @classDescriptor [|java.util.HashMap|] @type direct;
-    #L00003Ac. call s2:= {|java.io.ObjectOutputStream.writeInt(I)V|}([|v1|],s1) @signature "java.io.ObjectOutputStream.writeInt(I)V" @classDescriptor [|java.io.ObjectOutputStream|] @type virtual;
+    #L00003Aa. s0 := [|v0|].<|java.util.HashMap.threshold|> @Type (|int|);
+    #L00003Ab. call s1  := {|java.util.HashMap.roundUpToPowerOf2(I)I|}(s0) @ClassDescriptor (|java.util.HashMap|) @Type direct;
+    #L00003Ac. call s2  := {|java.io.ObjectOutputStream.writeInt(I)V|}([|v1|],s1) @ClassDescriptor (|java.io.ObjectOutputStream|) @Type virtual;
     #L00003Ad. goto L00004Aa;
     #L00002Aa. <@Frame (@Same, 0, `[(|top|), (|top|), (|top|), (|top|)], 0, `[(|top|), (|top|)])>
-    #L00002Ab. s0:= [|v0|].<|java.util.HashMap.table|>;
-    #L00002Ac. call s1:= {|java.io.ObjectOutputStream.writeInt(I)V|}([|v1|],s0.length) @signature "java.io.ObjectOutputStream.writeInt(I)V" @classDescriptor [|java.io.ObjectOutputStream|] @type virtual;
+    #L00002Ab. s0 := [|v0|].<|java.util.HashMap.table|> @Type (|java.util.HashMap$Entry[]|);
+    #L00002Ac. call s1  := {|java.io.ObjectOutputStream.writeInt(I)V|}([|v1|],s0.length) @ClassDescriptor (|java.io.ObjectOutputStream|) @Type virtual;
     #L00004Aa. <@Frame (@Same, 0, `[(|top|), (|top|), (|top|), (|top|)], 0, `[(|top|), (|top|)])>
-    #L00004Ab. s0:= [|v0|].<|java.util.HashMap.size|>;
-    #L00004Ac. call s1:= {|java.io.ObjectOutputStream.writeInt(I)V|}([|v1|],s0) @signature "java.io.ObjectOutputStream.writeInt(I)V" @classDescriptor [|java.io.ObjectOutputStream|] @type virtual;
-    #L00005Aa. s0:= [|v0|].<|java.util.HashMap.size|>;
+    #L00004Ab. s0 := [|v0|].<|java.util.HashMap.size|> @Type (|int|);
+    #L00004Ac. call s1  := {|java.io.ObjectOutputStream.writeInt(I)V|}([|v1|],s0) @ClassDescriptor (|java.io.ObjectOutputStream|) @Type virtual;
+    #L00005Aa. s0 := [|v0|].<|java.util.HashMap.size|> @Type (|int|);
     #L00005Ab. if s0 <= 0 then goto L00006Aa;
-    #L00007Aa. call s0:= {|java.util.HashMap.entrySet0()Ljava.util.Set;|}([|v0|]) @signature "java.util.HashMap.entrySet0()Ljava.util.Set;" @classDescriptor [|java.util.HashMap|] @type special;
-    #L00007Ab. call s1:= {|java.util.Set.iterator()Ljava.util.Iterator;|}(s0) @signature "java.util.Set.iterator()Ljava.util.Iterator;" @classDescriptor [|java.util.Set|] @type interface;
-    #L00007Ac. [|v2|]:= s1 @type (|java.lang.Object|);
+    #L00007Aa. call s0  := {|java.util.HashMap.entrySet0()Ljava.util.Set;|}([|v0|]) @ClassDescriptor (|java.util.HashMap|) @Type special;
+    #L00007Ab. call s1  := {|java.util.Set.iterator()Ljava.util.Iterator;|}(s0) @ClassDescriptor (|java.util.Set|) @Type interface;
+    #L00007Ac. [|v2|] := s1 @Type (|java.lang.Object|);
     #L00008Aa. <@Frame (@Append, 1, `[(|java.lang.Object|), (|top|), (|top|), (|top|)], 0, `[(|top|), (|top|)])>
-    #L00008Ab. call s0:= {|java.util.Iterator.hasNext()Z|}([|v2|]) @signature "java.util.Iterator.hasNext()Z" @classDescriptor [|java.util.Iterator|] @type interface;
+    #L00008Ab. call s0  := {|java.util.Iterator.hasNext()Z|}([|v2|]) @ClassDescriptor (|java.util.Iterator|) @Type interface;
     #L00008Ac. if s0 == 0 then goto L00006Aa;
-    #L00008Ad. call s1:= {|java.util.Iterator.next()Ljava.lang.Object;|}([|v2|]) @signature "java.util.Iterator.next()Ljava.lang.Object;" @classDescriptor [|java.util.Iterator|] @type interface;
-    #L00008Ae. [|v3|]:= ((|java.util.Map$Entry|)) s1 @type (|java.util.Map$Entry|);
-    #L00009Aa. call s0:= {|java.util.Map$Entry.getKey()Ljava.lang.Object;|}([|v3|]) @signature "java.util.Map$Entry.getKey()Ljava.lang.Object;" @classDescriptor [|java.util.Map$Entry|] @type interface;
-    #L00009Ab. call s1:= {|java.io.ObjectOutputStream.writeObject(Ljava.lang.Object;)V|}([|v1|],s0) @signature "java.io.ObjectOutputStream.writeObject(Ljava.lang.Object;)V" @classDescriptor [|java.io.ObjectOutputStream|] @type virtual;
-    #L00010Aa. call s0:= {|java.util.Map$Entry.getValue()Ljava.lang.Object;|}([|v3|]) @signature "java.util.Map$Entry.getValue()Ljava.lang.Object;" @classDescriptor [|java.util.Map$Entry|] @type interface;
-    #L00010Ab. call s1:= {|java.io.ObjectOutputStream.writeObject(Ljava.lang.Object;)V|}([|v1|],s0) @signature "java.io.ObjectOutputStream.writeObject(Ljava.lang.Object;)V" @classDescriptor [|java.io.ObjectOutputStream|] @type virtual;
+    #L00008Ad. call s1  := {|java.util.Iterator.next()Ljava.lang.Object;|}([|v2|]) @ClassDescriptor (|java.util.Iterator|) @Type interface;
+    #L00008Ae. [|v3|] := ((|java.util.Map$Entry|)) s1 @Type (|java.util.Map$Entry|);
+    #L00009Aa. call s0  := {|java.util.Map$Entry.getKey()Ljava.lang.Object;|}([|v3|]) @ClassDescriptor (|java.util.Map$Entry|) @Type interface;
+    #L00009Ab. call s1  := {|java.io.ObjectOutputStream.writeObject(Ljava.lang.Object;)V|}([|v1|],s0) @ClassDescriptor (|java.io.ObjectOutputStream|) @Type virtual;
+    #L00010Aa. call s0  := {|java.util.Map$Entry.getValue()Ljava.lang.Object;|}([|v3|]) @ClassDescriptor (|java.util.Map$Entry|) @Type interface;
+    #L00010Ab. call s1  := {|java.io.ObjectOutputStream.writeObject(Ljava.lang.Object;)V|}([|v1|],s0) @ClassDescriptor (|java.io.ObjectOutputStream|) @Type virtual;
     #L00011Aa. goto L00008Aa;
     #L00006Aa. <@Frame (@Chop, 1, `[(|java.lang.Object|), (|top|), (|top|), (|top|)], 0, `[(|top|), (|top|)])>
     #L00006Ab. return @void;
@@ -1327,7 +1326,7 @@ record (|java.util.HashMap|)
     @MaxStack 4
     @Owner (|java.util.HashMap|)
     @Access (PRIVATE)
-    @Signature "java.util.HashMap.readObject(Ljava.io.ObjectInputStream;)V" 
+    @Desc "java.util.HashMap.readObject(Ljava.io.ObjectInputStream;)V" 
   {
     local jmp;
     s0;
@@ -1344,59 +1343,59 @@ record (|java.util.HashMap|)
     [|v5|];
     [|v6|];
 
-    #L00000Aa. call s0:= {|java.io.ObjectInputStream.defaultReadObject()V|}([|v1|]) @signature "java.io.ObjectInputStream.defaultReadObject()V" @classDescriptor [|java.io.ObjectInputStream|] @type virtual;
-    #L00001Aa. s0:= [|v0|].<|java.util.HashMap.loadFactor|>;
-    #L00001Ab. s1:= fcmpg(0.0,s0);
+    #L00000Aa. call s0  := {|java.io.ObjectInputStream.defaultReadObject()V|}([|v1|]) @ClassDescriptor (|java.io.ObjectInputStream|) @Type virtual;
+    #L00001Aa. s0 := [|v0|].<|java.util.HashMap.loadFactor|> @Type (|float|);
+    #L00001Ab. s1 := fcmpg(0.0,s0);
     #L00001Ac. if s1 <= 0 then goto L00002Aa;
-    #L00001Ad. s2:= [|v0|].<|java.util.HashMap.loadFactor|>;
-    #L00001Ae. call s3:= {|java.lang.Float.isNaN(F)Z|}(s2) @signature "java.lang.Float.isNaN(F)Z" @classDescriptor [|java.lang.Float|] @type direct;
+    #L00001Ad. s2 := [|v0|].<|java.util.HashMap.loadFactor|> @Type (|float|);
+    #L00001Ae. call s3  := {|java.lang.Float.isNaN(F)Z|}(s2) @ClassDescriptor (|java.lang.Float|) @Type direct;
     #L00001Af. if s3 == 0 then goto L00003Aa;
     #L00002Aa. <@Frame (@Same, 0, `[(|top|), (|top|), (|top|), (|top|), (|top|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|), (|top|)])>
-    #L00002Ab. s0:= new (|java.io.InvalidObjectException|);
-    #L00002Ac. s1:= new (|java.lang.StringBuilder|);
-    #L00002Ad. call s2:= {|java.lang.StringBuilder.<init>()V|}(s1) @signature "java.lang.StringBuilder.<init>()V" @classDescriptor [|java.lang.StringBuilder|] @type special;
-    #L00002Ae. call s3:= {|java.lang.StringBuilder.append(Ljava.lang.String;)Ljava.lang.StringBuilder;|}(s1,"Illegal load factor: ") @signature "java.lang.StringBuilder.append(Ljava.lang.String;)Ljava.lang.StringBuilder;" @classDescriptor [|java.lang.StringBuilder|] @type virtual;
-    #L00002Af. s4:= [|v0|].<|java.util.HashMap.loadFactor|>;
-    #L00002Ag. call s5:= {|java.lang.StringBuilder.append(F)Ljava.lang.StringBuilder;|}(s3,s4) @signature "java.lang.StringBuilder.append(F)Ljava.lang.StringBuilder;" @classDescriptor [|java.lang.StringBuilder|] @type virtual;
-    #L00002Ah. call s6:= {|java.lang.StringBuilder.toString()Ljava.lang.String;|}(s5) @signature "java.lang.StringBuilder.toString()Ljava.lang.String;" @classDescriptor [|java.lang.StringBuilder|] @type virtual;
-    #L00002Ai. call s7:= {|java.io.InvalidObjectException.<init>(Ljava.lang.String;)V|}(s0,s6) @signature "java.io.InvalidObjectException.<init>(Ljava.lang.String;)V" @classDescriptor [|java.io.InvalidObjectException|] @type special;
+    #L00002Ab. s0 := new (|java.io.InvalidObjectException|);
+    #L00002Ac. s1 := new (|java.lang.StringBuilder|);
+    #L00002Ad. call s2  := {|java.lang.StringBuilder.<init>()V|}(s1) @ClassDescriptor (|java.lang.StringBuilder|) @Type special;
+    #L00002Ae. call s3  := {|java.lang.StringBuilder.append(Ljava.lang.String;)Ljava.lang.StringBuilder;|}(s1,"Illegal load factor: ") @ClassDescriptor (|java.lang.StringBuilder|) @Type virtual;
+    #L00002Af. s4 := [|v0|].<|java.util.HashMap.loadFactor|> @Type (|float|);
+    #L00002Ag. call s5  := {|java.lang.StringBuilder.append(F)Ljava.lang.StringBuilder;|}(s3,s4) @ClassDescriptor (|java.lang.StringBuilder|) @Type virtual;
+    #L00002Ah. call s6  := {|java.lang.StringBuilder.toString()Ljava.lang.String;|}(s5) @ClassDescriptor (|java.lang.StringBuilder|) @Type virtual;
+    #L00002Ai. call s7  := {|java.io.InvalidObjectException.<init>(Ljava.lang.String;)V|}(s0,s6) @ClassDescriptor (|java.io.InvalidObjectException|) @Type special;
     #L00002Aj. throw s0;
     #L00003Aa. <@Frame (@Same, 0, `[(|top|), (|top|), (|top|), (|top|), (|top|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|), (|top|)])>
-    #L00003Ab. s0:= +|java.util.HashMap.EMPTY_TABLE|+;
-    #L00003Ac. [|v0|].<|java.util.HashMap.table|>:= ((|[Ljava.util.HashMap$Entry;|)) s0;
-    #L00004Aa. call s0:= {|java.io.ObjectInputStream.readInt()I|}([|v1|]) @signature "java.io.ObjectInputStream.readInt()I" @classDescriptor [|java.io.ObjectInputStream|] @type virtual;
-    #L00005Aa. call s0:= {|java.io.ObjectInputStream.readInt()I|}([|v1|]) @signature "java.io.ObjectInputStream.readInt()I" @classDescriptor [|java.io.ObjectInputStream|] @type virtual;
-    #L00005Ab. [|v2|]:= s0 @type (|java.lang.Object|);
+    #L00003Ab. s0 := +|java.util.HashMap.EMPTY_TABLE|+ @Type (|java.util.HashMap$Entry[]|);
+    #L00003Ac. [|v0|].<|java.util.HashMap.table|> := ((|[Ljava.util.HashMap$Entry;|)) s0 @Type (|java.util.HashMap$Entry[]|);
+    #L00004Aa. call s0  := {|java.io.ObjectInputStream.readInt()I|}([|v1|]) @ClassDescriptor (|java.io.ObjectInputStream|) @Type virtual;
+    #L00005Aa. call s0  := {|java.io.ObjectInputStream.readInt()I|}([|v1|]) @ClassDescriptor (|java.io.ObjectInputStream|) @Type virtual;
+    #L00005Ab. [|v2|] := s0 @Type (|java.lang.Object|);
     #L00006Aa. if [|v2|] >= 0 then goto L00007Aa;
-    #L00008Aa. s0:= new (|java.io.InvalidObjectException|);
-    #L00008Ab. s1:= new (|java.lang.StringBuilder|);
-    #L00008Ac. call s2:= {|java.lang.StringBuilder.<init>()V|}(s1) @signature "java.lang.StringBuilder.<init>()V" @classDescriptor [|java.lang.StringBuilder|] @type special;
-    #L00008Ad. call s3:= {|java.lang.StringBuilder.append(Ljava.lang.String;)Ljava.lang.StringBuilder;|}(s1,"Illegal mappings count: ") @signature "java.lang.StringBuilder.append(Ljava.lang.String;)Ljava.lang.StringBuilder;" @classDescriptor [|java.lang.StringBuilder|] @type virtual;
-    #L00008Ae. call s4:= {|java.lang.StringBuilder.append(I)Ljava.lang.StringBuilder;|}(s3,[|v2|]) @signature "java.lang.StringBuilder.append(I)Ljava.lang.StringBuilder;" @classDescriptor [|java.lang.StringBuilder|] @type virtual;
-    #L00008Af. call s5:= {|java.lang.StringBuilder.toString()Ljava.lang.String;|}(s4) @signature "java.lang.StringBuilder.toString()Ljava.lang.String;" @classDescriptor [|java.lang.StringBuilder|] @type virtual;
-    #L00008Ag. call s6:= {|java.io.InvalidObjectException.<init>(Ljava.lang.String;)V|}(s0,s5) @signature "java.io.InvalidObjectException.<init>(Ljava.lang.String;)V" @classDescriptor [|java.io.InvalidObjectException|] @type special;
+    #L00008Aa. s0 := new (|java.io.InvalidObjectException|);
+    #L00008Ab. s1 := new (|java.lang.StringBuilder|);
+    #L00008Ac. call s2  := {|java.lang.StringBuilder.<init>()V|}(s1) @ClassDescriptor (|java.lang.StringBuilder|) @Type special;
+    #L00008Ad. call s3  := {|java.lang.StringBuilder.append(Ljava.lang.String;)Ljava.lang.StringBuilder;|}(s1,"Illegal mappings count: ") @ClassDescriptor (|java.lang.StringBuilder|) @Type virtual;
+    #L00008Ae. call s4  := {|java.lang.StringBuilder.append(I)Ljava.lang.StringBuilder;|}(s3,[|v2|]) @ClassDescriptor (|java.lang.StringBuilder|) @Type virtual;
+    #L00008Af. call s5  := {|java.lang.StringBuilder.toString()Ljava.lang.String;|}(s4) @ClassDescriptor (|java.lang.StringBuilder|) @Type virtual;
+    #L00008Ag. call s6  := {|java.io.InvalidObjectException.<init>(Ljava.lang.String;)V|}(s0,s5) @ClassDescriptor (|java.io.InvalidObjectException|) @Type special;
     #L00008Ah. throw s0;
     #L00007Aa. <@Frame (@Append, 1, `[(|int|), (|top|), (|top|), (|top|), (|top|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|), (|top|)])>
-    #L00007Ab. s0:= [|v0|].<|java.util.HashMap.loadFactor|>;
-    #L00007Ac. call s1:= {|java.lang.Math.min(FF)F|}(1.0/s0,4.0) @signature "java.lang.Math.min(FF)F" @classDescriptor [|java.lang.Math|] @type direct;
-    #L00007Ad. call s2:= {|java.lang.Math.min(FF)F|}([|v2|]*s1,1.07374182E9) @signature "java.lang.Math.min(FF)F" @classDescriptor [|java.lang.Math|] @type direct;
-    #L00007Ae. [|v3|]:= s2 @type (|int|);
+    #L00007Ab. s0 := [|v0|].<|java.util.HashMap.loadFactor|> @Type (|float|);
+    #L00007Ac. call s1  := {|java.lang.Math.min(FF)F|}((1.0/s0),4.0) @ClassDescriptor (|java.lang.Math|) @Type direct;
+    #L00007Ad. call s2  := {|java.lang.Math.min(FF)F|}((((|float|))[|v2|]*s1),1.07374182E9) @ClassDescriptor (|java.lang.Math|) @Type direct;
+    #L00007Ae. [|v3|] := ((|int|))s2 @Type (|int|);
     #L00009Aa. if [|v2|] <= 0 then goto L00010Aa;
-    #L00011Aa. call s0:= {|java.util.HashMap.inflateTable(I)V|}([|v0|],[|v3|]) @signature "java.util.HashMap.inflateTable(I)V" @classDescriptor [|java.util.HashMap|] @type special;
+    #L00011Aa. call s0  := {|java.util.HashMap.inflateTable(I)V|}([|v0|],[|v3|]) @ClassDescriptor (|java.util.HashMap|) @Type special;
     #L00011Ab. goto L00012Aa;
     #L00010Aa. <@Frame (@Append, 1, `[(|int|), (|top|), (|top|), (|top|), (|top|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|), (|top|)])>
-    #L00010Ab. [|v0|].<|java.util.HashMap.threshold|>:= [|v3|];
+    #L00010Ab. [|v0|].<|java.util.HashMap.threshold|> := [|v3|] @Type (|int|);
     #L00012Aa. <@Frame (@Same, 0, `[(|int|), (|top|), (|top|), (|top|), (|top|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|), (|top|)])>
-    #L00012Ab. call s0:= {|java.util.HashMap.init()V|}([|v0|]) @signature "java.util.HashMap.init()V" @classDescriptor [|java.util.HashMap|] @type virtual;
-    #L00013Aa. [|v4|]:= 0 @type (|int|);
+    #L00012Ab. call s0  := {|java.util.HashMap.init()V|}([|v0|]) @ClassDescriptor (|java.util.HashMap|) @Type virtual;
+    #L00013Aa. [|v4|] := 0 @Type (|int|);
     #L00014Aa. <@Frame (@Append, 1, `[(|int|), (|top|), (|top|), (|top|), (|top|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|), (|top|)])>
     #L00014Ab. if [|v4|] >= [|v2|] then goto L00015Aa;
-    #L00016Aa. call s0:= {|java.io.ObjectInputStream.readObject()Ljava.lang.Object;|}([|v1|]) @signature "java.io.ObjectInputStream.readObject()Ljava.lang.Object;" @classDescriptor [|java.io.ObjectInputStream|] @type virtual;
-    #L00016Ab. [|v5|]:= s0 @type (|java.lang.Object|);
-    #L00017Aa. call s0:= {|java.io.ObjectInputStream.readObject()Ljava.lang.Object;|}([|v1|]) @signature "java.io.ObjectInputStream.readObject()Ljava.lang.Object;" @classDescriptor [|java.io.ObjectInputStream|] @type virtual;
-    #L00017Ab. [|v6|]:= s0 @type (|java.lang.Object|);
-    #L00018Aa. call s0:= {|java.util.HashMap.putForCreate(Ljava.lang.Object;Ljava.lang.Object;)V|}([|v0|],[|v5|],[|v6|]) @signature "java.util.HashMap.putForCreate(Ljava.lang.Object;Ljava.lang.Object;)V" @classDescriptor [|java.util.HashMap|] @type special;
-    #L00019Aa. [|v4|]:= [|v4|] + 1 @type (|int|);
+    #L00016Aa. call s0  := {|java.io.ObjectInputStream.readObject()Ljava.lang.Object;|}([|v1|]) @ClassDescriptor (|java.io.ObjectInputStream|) @Type virtual;
+    #L00016Ab. [|v5|] := s0 @Type (|java.lang.Object|);
+    #L00017Aa. call s0  := {|java.io.ObjectInputStream.readObject()Ljava.lang.Object;|}([|v1|]) @ClassDescriptor (|java.io.ObjectInputStream|) @Type virtual;
+    #L00017Ab. [|v6|] := s0 @Type (|java.lang.Object|);
+    #L00018Aa. call s0  := {|java.util.HashMap.putForCreate(Ljava.lang.Object;Ljava.lang.Object;)V|}([|v0|],[|v5|],[|v6|]) @ClassDescriptor (|java.util.HashMap|) @Type special;
+    #L00019Aa. [|v4|] := [|v4|] + 1 @Type (|int|);
     #L00019Ab. goto L00014Aa;
     #L00015Aa. <@Frame (@Chop, 1, `[(|int|), (|top|), (|top|), (|top|), (|top|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|), (|top|)])>
     #L00015Ab. return @void;
@@ -1406,12 +1405,12 @@ record (|java.util.HashMap|)
     @MaxStack 1
     @Owner (|java.util.HashMap|)
     @Access ()
-    @Signature "java.util.HashMap.capacity()I" 
+    @Desc "java.util.HashMap.capacity()I" 
   {
     local jmp;
     s0;
 
-    #L00000Aa. s0:= [|v0|].<|java.util.HashMap.table|>;
+    #L00000Aa. s0 := [|v0|].<|java.util.HashMap.table|> @Type (|java.util.HashMap$Entry[]|);
     #L00000Ab. return s0.length;
   }
   procedure (|float|) {|java.util.HashMap.loadFactor()F|} ((|java.util.HashMap|) [|v0|]) 
@@ -1419,12 +1418,12 @@ record (|java.util.HashMap|)
     @MaxStack 1
     @Owner (|java.util.HashMap|)
     @Access ()
-    @Signature "java.util.HashMap.loadFactor()F" 
+    @Desc "java.util.HashMap.loadFactor()F" 
   {
     local jmp;
     s0;
 
-    #L00000Aa. s0:= [|v0|].<|java.util.HashMap.loadFactor|>;
+    #L00000Aa. s0 := [|v0|].<|java.util.HashMap.loadFactor|> @Type (|float|);
     #L00000Ab. return s0;
   }
   procedure (|void|) {|java.util.HashMap.<clinit>()V|} () 
@@ -1432,13 +1431,13 @@ record (|java.util.HashMap|)
     @MaxStack 1
     @Owner (|java.util.HashMap|)
     @Access (STATIC)
-    @Signature "java.util.HashMap.<clinit>()V" 
+    @Desc "java.util.HashMap.<clinit>()V" 
   {
     local jmp;
     s0;
 
-    #L00000Aa. s0:= new (|java.util.HashMap$Entry|)[0];
-    #L00000Ab. +|java.util.HashMap.EMPTY_TABLE|+:= s0;
+    #L00000Aa. s0 := new (|java.util.HashMap$Entry|)[0];
+    #L00000Ab. +|java.util.HashMap.EMPTY_TABLE|+ := s0 @Type (|java.util.HashMap$Entry[]|);
     #L00000Ac. return @void;
   }
 
@@ -1481,13 +1480,13 @@ record (|java.util.HashMap$EntrySet|)
     @MaxStack 2
     @Owner (|java.util.HashMap$EntrySet|)
     @Access (PRIVATE,CONSTRUCTOR)
-    @Signature "java.util.HashMap$EntrySet.<init>(Ljava.util.HashMap;)V" 
+    @Desc "java.util.HashMap$EntrySet.<init>(Ljava.util.HashMap;)V" 
   {
     local jmp;
     s0;
 
-    #L00000Aa. [|v0|].<|java.util.HashMap$EntrySet.this$0|>:= [|v1|];
-    #L00000Ab. call s0:= {|java.util.AbstractSet.<init>()V|}([|v0|]) @signature "java.util.AbstractSet.<init>()V" @classDescriptor [|java.util.AbstractSet|] @type special;
+    #L00000Aa. [|v0|].<|java.util.HashMap$EntrySet.this$0|> := [|v1|] @Type (|java.util.HashMap|);
+    #L00000Ab. call s0  := {|java.util.AbstractSet.<init>()V|}([|v0|]) @ClassDescriptor (|java.util.AbstractSet|) @Type special;
     #L00000Ac. return @void;
   }
   procedure (|java.util.Iterator|) {|java.util.HashMap$EntrySet.iterator()Ljava.util.Iterator;|} ((|java.util.HashMap$EntrySet|) [|v0|]) 
@@ -1496,14 +1495,14 @@ record (|java.util.HashMap$EntrySet|)
     @GenericSignature "()Ljava/util/Iterator<Ljava/util/Map$Entry<TK;TV;>;>;"
     @Owner (|java.util.HashMap$EntrySet|)
     @Access (PUBLIC)
-    @Signature "java.util.HashMap$EntrySet.iterator()Ljava.util.Iterator;" 
+    @Desc "java.util.HashMap$EntrySet.iterator()Ljava.util.Iterator;" 
   {
     local jmp;
     s0;
     s1;
 
-    #L00000Aa. s0:= [|v0|].<|java.util.HashMap$EntrySet.this$0|>;
-    #L00000Ab. call s1:= {|java.util.HashMap.newEntryIterator()Ljava.util.Iterator;|}(s0) @signature "java.util.HashMap.newEntryIterator()Ljava.util.Iterator;" @classDescriptor [|java.util.HashMap|] @type virtual;
+    #L00000Aa. s0 := [|v0|].<|java.util.HashMap$EntrySet.this$0|> @Type (|java.util.HashMap|);
+    #L00000Ab. call s1  := {|java.util.HashMap.newEntryIterator()Ljava.util.Iterator;|}(s0) @ClassDescriptor (|java.util.HashMap|) @Type virtual;
     #L00000Ac. return s1;
   }
   procedure (|boolean|) {|java.util.HashMap$EntrySet.contains(Ljava.lang.Object;)Z|} ((|java.util.HashMap$EntrySet|) [|v0|], (|java.lang.Object|) [|v1|]) 
@@ -1511,7 +1510,7 @@ record (|java.util.HashMap$EntrySet|)
     @MaxStack 2
     @Owner (|java.util.HashMap$EntrySet|)
     @Access (PUBLIC)
-    @Signature "java.util.HashMap$EntrySet.contains(Ljava.lang.Object;)Z" 
+    @Desc "java.util.HashMap$EntrySet.contains(Ljava.lang.Object;)Z" 
   {
     local jmp;
     s0;
@@ -1520,22 +1519,22 @@ record (|java.util.HashMap$EntrySet|)
     [|v2|];
     [|v3|];
 
-    #L00000Aa. s0:= instanceof @varname [|v1|] @type "(|java.util.Map$Entry|)";
+    #L00000Aa. s0 := instanceof @varname [|v1|] @Type "(|java.util.Map$Entry|)";
     #L00000Ab. if s0 != 0 then goto L00001Aa;
     #L00002Aa. return 0;
     #L00001Aa. <@Frame (@Same, 0, `[(|top|), (|top|), (|top|), (|top|)], 0, `[(|top|), (|top|)])>
-    #L00001Ab. [|v2|]:= ((|java.util.Map$Entry|)) [|v1|] @type (|java.util.Map$Entry|);
-    #L00003Aa. s0:= [|v0|].<|java.util.HashMap$EntrySet.this$0|>;
-    #L00003Ab. call s1:= {|java.util.Map$Entry.getKey()Ljava.lang.Object;|}([|v2|]) @signature "java.util.Map$Entry.getKey()Ljava.lang.Object;" @classDescriptor [|java.util.Map$Entry|] @type interface;
-    #L00003Ac. call s2:= {|java.util.HashMap.getEntry(Ljava.lang.Object;)Ljava.util.HashMap$Entry;|}(s0,s1) @signature "java.util.HashMap.getEntry(Ljava.lang.Object;)Ljava.util.HashMap$Entry;" @classDescriptor [|java.util.HashMap|] @type virtual;
-    #L00003Ad. [|v3|]:= s2 @type (|java.lang.Object|);
+    #L00001Ab. [|v2|] := ((|java.util.Map$Entry|)) [|v1|] @Type (|java.util.Map$Entry|);
+    #L00003Aa. s0 := [|v0|].<|java.util.HashMap$EntrySet.this$0|> @Type (|java.util.HashMap|);
+    #L00003Ab. call s1  := {|java.util.Map$Entry.getKey()Ljava.lang.Object;|}([|v2|]) @ClassDescriptor (|java.util.Map$Entry|) @Type interface;
+    #L00003Ac. call s2  := {|java.util.HashMap.getEntry(Ljava.lang.Object;)Ljava.util.HashMap$Entry;|}(s0,s1) @ClassDescriptor (|java.util.HashMap|) @Type virtual;
+    #L00003Ad. [|v3|] := s2 @Type (|java.lang.Object|);
     #L00004Aa. if [|v3|] == null then goto L00005Aa;
-    #L00004Ab. call s0:= {|java.util.HashMap$Entry.equals(Ljava.lang.Object;)Z|}([|v3|],[|v2|]) @signature "java.util.HashMap$Entry.equals(Ljava.lang.Object;)Z" @classDescriptor [|java.util.HashMap$Entry|] @type virtual;
+    #L00004Ab. call s0  := {|java.util.HashMap$Entry.equals(Ljava.lang.Object;)Z|}([|v3|],[|v2|]) @ClassDescriptor (|java.util.HashMap$Entry|) @Type virtual;
     #L00004Ac. if s0 == 0 then goto L00005Aa;
-    #L00004Ad. jmp:= 1;
+    #L00004Ad. jmp := 1;
     #L00004Ae. goto L00006Aa;
     #L00005Aa. <@Frame (@Append, 2, `[(|java.lang.Object|), (|java.lang.Object|), (|top|), (|top|)], 0, `[(|top|), (|top|)])>
-    #L00005Ab. jmp:= 0;
+    #L00005Ab. jmp := 0;
     #L00006Aa. <@Frame (@Same1, 0, `[(|java.lang.Object|), (|java.lang.Object|), (|top|), (|top|)], 1, `[(|int|), (|top|)])>
     #L00006Ab. return jmp;
   }
@@ -1544,19 +1543,19 @@ record (|java.util.HashMap$EntrySet|)
     @MaxStack 2
     @Owner (|java.util.HashMap$EntrySet|)
     @Access (PUBLIC)
-    @Signature "java.util.HashMap$EntrySet.remove(Ljava.lang.Object;)Z" 
+    @Desc "java.util.HashMap$EntrySet.remove(Ljava.lang.Object;)Z" 
   {
     local jmp;
     s0;
     s1;
 
-    #L00000Aa. s0:= [|v0|].<|java.util.HashMap$EntrySet.this$0|>;
-    #L00000Ab. call s1:= {|java.util.HashMap.removeMapping(Ljava.lang.Object;)Ljava.util.HashMap$Entry;|}(s0,[|v1|]) @signature "java.util.HashMap.removeMapping(Ljava.lang.Object;)Ljava.util.HashMap$Entry;" @classDescriptor [|java.util.HashMap|] @type virtual;
+    #L00000Aa. s0 := [|v0|].<|java.util.HashMap$EntrySet.this$0|> @Type (|java.util.HashMap|);
+    #L00000Ab. call s1  := {|java.util.HashMap.removeMapping(Ljava.lang.Object;)Ljava.util.HashMap$Entry;|}(s0,[|v1|]) @ClassDescriptor (|java.util.HashMap|) @Type virtual;
     #L00000Ac. if s1 == null then goto L00001Aa;
-    #L00000Ad. jmp:= 1;
+    #L00000Ad. jmp := 1;
     #L00000Ae. goto L00002Aa;
     #L00001Aa. <@Frame (@Same, 0, `[(|top|), (|top|)], 0, `[(|top|), (|top|)])>
-    #L00001Ab. jmp:= 0;
+    #L00001Ab. jmp := 0;
     #L00002Aa. <@Frame (@Same1, 0, `[(|top|), (|top|)], 1, `[(|int|), (|top|)])>
     #L00002Ab. return jmp;
   }
@@ -1565,14 +1564,14 @@ record (|java.util.HashMap$EntrySet|)
     @MaxStack 1
     @Owner (|java.util.HashMap$EntrySet|)
     @Access (PUBLIC)
-    @Signature "java.util.HashMap$EntrySet.size()I" 
+    @Desc "java.util.HashMap$EntrySet.size()I" 
   {
     local jmp;
     s0;
     s1;
 
-    #L00000Aa. s0:= [|v0|].<|java.util.HashMap$EntrySet.this$0|>;
-    #L00000Ab. s1:= s0.<|java.util.HashMap.size|>;
+    #L00000Aa. s0 := [|v0|].<|java.util.HashMap$EntrySet.this$0|> @Type (|java.util.HashMap|);
+    #L00000Ab. s1 := s0.<|java.util.HashMap.size|> @Type (|int|);
     #L00000Ac. return s1;
   }
   procedure (|void|) {|java.util.HashMap$EntrySet.clear()V|} ((|java.util.HashMap$EntrySet|) [|v0|]) 
@@ -1580,14 +1579,14 @@ record (|java.util.HashMap$EntrySet|)
     @MaxStack 1
     @Owner (|java.util.HashMap$EntrySet|)
     @Access (PUBLIC)
-    @Signature "java.util.HashMap$EntrySet.clear()V" 
+    @Desc "java.util.HashMap$EntrySet.clear()V" 
   {
     local jmp;
     s0;
     s1;
 
-    #L00000Aa. s0:= [|v0|].<|java.util.HashMap$EntrySet.this$0|>;
-    #L00000Ab. call s1:= {|java.util.HashMap.clear()V|}(s0) @signature "java.util.HashMap.clear()V" @classDescriptor [|java.util.HashMap|] @type virtual;
+    #L00000Aa. s0 := [|v0|].<|java.util.HashMap$EntrySet.this$0|> @Type (|java.util.HashMap|);
+    #L00000Ab. call s1  := {|java.util.HashMap.clear()V|}(s0) @ClassDescriptor (|java.util.HashMap|) @Type virtual;
     #L00001Aa. return @void;
   }
   procedure (|void|) {|java.util.HashMap$EntrySet.<init>(Ljava.util.HashMap;Ljava.util.HashMap$1;)V|} ((|java.util.HashMap$EntrySet|) [|v0|], (|java.util.HashMap|) [|v1|], (|java.util.HashMap$1|) [|v2|]) 
@@ -1595,12 +1594,12 @@ record (|java.util.HashMap$EntrySet|)
     @MaxStack 2
     @Owner (|java.util.HashMap$EntrySet|)
     @Access (SYNTHETIC,CONSTRUCTOR)
-    @Signature "java.util.HashMap$EntrySet.<init>(Ljava.util.HashMap;Ljava.util.HashMap$1;)V" 
+    @Desc "java.util.HashMap$EntrySet.<init>(Ljava.util.HashMap;Ljava.util.HashMap$1;)V" 
   {
     local jmp;
     s0;
 
-    #L00000Aa. call s0:= {|java.util.HashMap$EntrySet.<init>(Ljava.util.HashMap;)V|}([|v0|],[|v1|]) @signature "java.util.HashMap$EntrySet.<init>(Ljava.util.HashMap;)V" @classDescriptor [|java.util.HashMap$EntrySet|] @type special;
+    #L00000Aa. call s0  := {|java.util.HashMap$EntrySet.<init>(Ljava.util.HashMap;)V|}([|v0|],[|v1|]) @ClassDescriptor (|java.util.HashMap$EntrySet|) @Type special;
     #L00000Ab. return @void;
   }
 
@@ -1626,13 +1625,13 @@ record (|java.util.HashMap$Values|)
     @MaxStack 2
     @Owner (|java.util.HashMap$Values|)
     @Access (PRIVATE,CONSTRUCTOR)
-    @Signature "java.util.HashMap$Values.<init>(Ljava.util.HashMap;)V" 
+    @Desc "java.util.HashMap$Values.<init>(Ljava.util.HashMap;)V" 
   {
     local jmp;
     s0;
 
-    #L00000Aa. [|v0|].<|java.util.HashMap$Values.this$0|>:= [|v1|];
-    #L00000Ab. call s0:= {|java.util.AbstractCollection.<init>()V|}([|v0|]) @signature "java.util.AbstractCollection.<init>()V" @classDescriptor [|java.util.AbstractCollection|] @type special;
+    #L00000Aa. [|v0|].<|java.util.HashMap$Values.this$0|> := [|v1|] @Type (|java.util.HashMap|);
+    #L00000Ab. call s0  := {|java.util.AbstractCollection.<init>()V|}([|v0|]) @ClassDescriptor (|java.util.AbstractCollection|) @Type special;
     #L00000Ac. return @void;
   }
   procedure (|java.util.Iterator|) {|java.util.HashMap$Values.iterator()Ljava.util.Iterator;|} ((|java.util.HashMap$Values|) [|v0|]) 
@@ -1641,14 +1640,14 @@ record (|java.util.HashMap$Values|)
     @GenericSignature "()Ljava/util/Iterator<TV;>;"
     @Owner (|java.util.HashMap$Values|)
     @Access (PUBLIC)
-    @Signature "java.util.HashMap$Values.iterator()Ljava.util.Iterator;" 
+    @Desc "java.util.HashMap$Values.iterator()Ljava.util.Iterator;" 
   {
     local jmp;
     s0;
     s1;
 
-    #L00000Aa. s0:= [|v0|].<|java.util.HashMap$Values.this$0|>;
-    #L00000Ab. call s1:= {|java.util.HashMap.newValueIterator()Ljava.util.Iterator;|}(s0) @signature "java.util.HashMap.newValueIterator()Ljava.util.Iterator;" @classDescriptor [|java.util.HashMap|] @type virtual;
+    #L00000Aa. s0 := [|v0|].<|java.util.HashMap$Values.this$0|> @Type (|java.util.HashMap|);
+    #L00000Ab. call s1  := {|java.util.HashMap.newValueIterator()Ljava.util.Iterator;|}(s0) @ClassDescriptor (|java.util.HashMap|) @Type virtual;
     #L00000Ac. return s1;
   }
   procedure (|int|) {|java.util.HashMap$Values.size()I|} ((|java.util.HashMap$Values|) [|v0|]) 
@@ -1656,14 +1655,14 @@ record (|java.util.HashMap$Values|)
     @MaxStack 1
     @Owner (|java.util.HashMap$Values|)
     @Access (PUBLIC)
-    @Signature "java.util.HashMap$Values.size()I" 
+    @Desc "java.util.HashMap$Values.size()I" 
   {
     local jmp;
     s0;
     s1;
 
-    #L00000Aa. s0:= [|v0|].<|java.util.HashMap$Values.this$0|>;
-    #L00000Ab. s1:= s0.<|java.util.HashMap.size|>;
+    #L00000Aa. s0 := [|v0|].<|java.util.HashMap$Values.this$0|> @Type (|java.util.HashMap|);
+    #L00000Ab. s1 := s0.<|java.util.HashMap.size|> @Type (|int|);
     #L00000Ac. return s1;
   }
   procedure (|boolean|) {|java.util.HashMap$Values.contains(Ljava.lang.Object;)Z|} ((|java.util.HashMap$Values|) [|v0|], (|java.lang.Object|) [|v1|]) 
@@ -1671,14 +1670,14 @@ record (|java.util.HashMap$Values|)
     @MaxStack 2
     @Owner (|java.util.HashMap$Values|)
     @Access (PUBLIC)
-    @Signature "java.util.HashMap$Values.contains(Ljava.lang.Object;)Z" 
+    @Desc "java.util.HashMap$Values.contains(Ljava.lang.Object;)Z" 
   {
     local jmp;
     s0;
     s1;
 
-    #L00000Aa. s0:= [|v0|].<|java.util.HashMap$Values.this$0|>;
-    #L00000Ab. call s1:= {|java.util.HashMap.containsValue(Ljava.lang.Object;)Z|}(s0,[|v1|]) @signature "java.util.HashMap.containsValue(Ljava.lang.Object;)Z" @classDescriptor [|java.util.HashMap|] @type virtual;
+    #L00000Aa. s0 := [|v0|].<|java.util.HashMap$Values.this$0|> @Type (|java.util.HashMap|);
+    #L00000Ab. call s1  := {|java.util.HashMap.containsValue(Ljava.lang.Object;)Z|}(s0,[|v1|]) @ClassDescriptor (|java.util.HashMap|) @Type virtual;
     #L00000Ac. return s1;
   }
   procedure (|void|) {|java.util.HashMap$Values.clear()V|} ((|java.util.HashMap$Values|) [|v0|]) 
@@ -1686,14 +1685,14 @@ record (|java.util.HashMap$Values|)
     @MaxStack 1
     @Owner (|java.util.HashMap$Values|)
     @Access (PUBLIC)
-    @Signature "java.util.HashMap$Values.clear()V" 
+    @Desc "java.util.HashMap$Values.clear()V" 
   {
     local jmp;
     s0;
     s1;
 
-    #L00000Aa. s0:= [|v0|].<|java.util.HashMap$Values.this$0|>;
-    #L00000Ab. call s1:= {|java.util.HashMap.clear()V|}(s0) @signature "java.util.HashMap.clear()V" @classDescriptor [|java.util.HashMap|] @type virtual;
+    #L00000Aa. s0 := [|v0|].<|java.util.HashMap$Values.this$0|> @Type (|java.util.HashMap|);
+    #L00000Ab. call s1  := {|java.util.HashMap.clear()V|}(s0) @ClassDescriptor (|java.util.HashMap|) @Type virtual;
     #L00001Aa. return @void;
   }
   procedure (|void|) {|java.util.HashMap$Values.<init>(Ljava.util.HashMap;Ljava.util.HashMap$1;)V|} ((|java.util.HashMap$Values|) [|v0|], (|java.util.HashMap|) [|v1|], (|java.util.HashMap$1|) [|v2|]) 
@@ -1701,12 +1700,12 @@ record (|java.util.HashMap$Values|)
     @MaxStack 2
     @Owner (|java.util.HashMap$Values|)
     @Access (SYNTHETIC,CONSTRUCTOR)
-    @Signature "java.util.HashMap$Values.<init>(Ljava.util.HashMap;Ljava.util.HashMap$1;)V" 
+    @Desc "java.util.HashMap$Values.<init>(Ljava.util.HashMap;Ljava.util.HashMap$1;)V" 
   {
     local jmp;
     s0;
 
-    #L00000Aa. call s0:= {|java.util.HashMap$Values.<init>(Ljava.util.HashMap;)V|}([|v0|],[|v1|]) @signature "java.util.HashMap$Values.<init>(Ljava.util.HashMap;)V" @classDescriptor [|java.util.HashMap$Values|] @type special;
+    #L00000Aa. call s0  := {|java.util.HashMap$Values.<init>(Ljava.util.HashMap;)V|}([|v0|],[|v1|]) @ClassDescriptor (|java.util.HashMap$Values|) @Type special;
     #L00000Ab. return @void;
   }
 
@@ -1732,13 +1731,13 @@ record (|java.util.HashMap$KeySet|)
     @MaxStack 2
     @Owner (|java.util.HashMap$KeySet|)
     @Access (PRIVATE,CONSTRUCTOR)
-    @Signature "java.util.HashMap$KeySet.<init>(Ljava.util.HashMap;)V" 
+    @Desc "java.util.HashMap$KeySet.<init>(Ljava.util.HashMap;)V" 
   {
     local jmp;
     s0;
 
-    #L00000Aa. [|v0|].<|java.util.HashMap$KeySet.this$0|>:= [|v1|];
-    #L00000Ab. call s0:= {|java.util.AbstractSet.<init>()V|}([|v0|]) @signature "java.util.AbstractSet.<init>()V" @classDescriptor [|java.util.AbstractSet|] @type special;
+    #L00000Aa. [|v0|].<|java.util.HashMap$KeySet.this$0|> := [|v1|] @Type (|java.util.HashMap|);
+    #L00000Ab. call s0  := {|java.util.AbstractSet.<init>()V|}([|v0|]) @ClassDescriptor (|java.util.AbstractSet|) @Type special;
     #L00000Ac. return @void;
   }
   procedure (|java.util.Iterator|) {|java.util.HashMap$KeySet.iterator()Ljava.util.Iterator;|} ((|java.util.HashMap$KeySet|) [|v0|]) 
@@ -1747,14 +1746,14 @@ record (|java.util.HashMap$KeySet|)
     @GenericSignature "()Ljava/util/Iterator<TK;>;"
     @Owner (|java.util.HashMap$KeySet|)
     @Access (PUBLIC)
-    @Signature "java.util.HashMap$KeySet.iterator()Ljava.util.Iterator;" 
+    @Desc "java.util.HashMap$KeySet.iterator()Ljava.util.Iterator;" 
   {
     local jmp;
     s0;
     s1;
 
-    #L00000Aa. s0:= [|v0|].<|java.util.HashMap$KeySet.this$0|>;
-    #L00000Ab. call s1:= {|java.util.HashMap.newKeyIterator()Ljava.util.Iterator;|}(s0) @signature "java.util.HashMap.newKeyIterator()Ljava.util.Iterator;" @classDescriptor [|java.util.HashMap|] @type virtual;
+    #L00000Aa. s0 := [|v0|].<|java.util.HashMap$KeySet.this$0|> @Type (|java.util.HashMap|);
+    #L00000Ab. call s1  := {|java.util.HashMap.newKeyIterator()Ljava.util.Iterator;|}(s0) @ClassDescriptor (|java.util.HashMap|) @Type virtual;
     #L00000Ac. return s1;
   }
   procedure (|int|) {|java.util.HashMap$KeySet.size()I|} ((|java.util.HashMap$KeySet|) [|v0|]) 
@@ -1762,14 +1761,14 @@ record (|java.util.HashMap$KeySet|)
     @MaxStack 1
     @Owner (|java.util.HashMap$KeySet|)
     @Access (PUBLIC)
-    @Signature "java.util.HashMap$KeySet.size()I" 
+    @Desc "java.util.HashMap$KeySet.size()I" 
   {
     local jmp;
     s0;
     s1;
 
-    #L00000Aa. s0:= [|v0|].<|java.util.HashMap$KeySet.this$0|>;
-    #L00000Ab. s1:= s0.<|java.util.HashMap.size|>;
+    #L00000Aa. s0 := [|v0|].<|java.util.HashMap$KeySet.this$0|> @Type (|java.util.HashMap|);
+    #L00000Ab. s1 := s0.<|java.util.HashMap.size|> @Type (|int|);
     #L00000Ac. return s1;
   }
   procedure (|boolean|) {|java.util.HashMap$KeySet.contains(Ljava.lang.Object;)Z|} ((|java.util.HashMap$KeySet|) [|v0|], (|java.lang.Object|) [|v1|]) 
@@ -1777,14 +1776,14 @@ record (|java.util.HashMap$KeySet|)
     @MaxStack 2
     @Owner (|java.util.HashMap$KeySet|)
     @Access (PUBLIC)
-    @Signature "java.util.HashMap$KeySet.contains(Ljava.lang.Object;)Z" 
+    @Desc "java.util.HashMap$KeySet.contains(Ljava.lang.Object;)Z" 
   {
     local jmp;
     s0;
     s1;
 
-    #L00000Aa. s0:= [|v0|].<|java.util.HashMap$KeySet.this$0|>;
-    #L00000Ab. call s1:= {|java.util.HashMap.containsKey(Ljava.lang.Object;)Z|}(s0,[|v1|]) @signature "java.util.HashMap.containsKey(Ljava.lang.Object;)Z" @classDescriptor [|java.util.HashMap|] @type virtual;
+    #L00000Aa. s0 := [|v0|].<|java.util.HashMap$KeySet.this$0|> @Type (|java.util.HashMap|);
+    #L00000Ab. call s1  := {|java.util.HashMap.containsKey(Ljava.lang.Object;)Z|}(s0,[|v1|]) @ClassDescriptor (|java.util.HashMap|) @Type virtual;
     #L00000Ac. return s1;
   }
   procedure (|boolean|) {|java.util.HashMap$KeySet.remove(Ljava.lang.Object;)Z|} ((|java.util.HashMap$KeySet|) [|v0|], (|java.lang.Object|) [|v1|]) 
@@ -1792,19 +1791,19 @@ record (|java.util.HashMap$KeySet|)
     @MaxStack 2
     @Owner (|java.util.HashMap$KeySet|)
     @Access (PUBLIC)
-    @Signature "java.util.HashMap$KeySet.remove(Ljava.lang.Object;)Z" 
+    @Desc "java.util.HashMap$KeySet.remove(Ljava.lang.Object;)Z" 
   {
     local jmp;
     s0;
     s1;
 
-    #L00000Aa. s0:= [|v0|].<|java.util.HashMap$KeySet.this$0|>;
-    #L00000Ab. call s1:= {|java.util.HashMap.removeEntryForKey(Ljava.lang.Object;)Ljava.util.HashMap$Entry;|}(s0,[|v1|]) @signature "java.util.HashMap.removeEntryForKey(Ljava.lang.Object;)Ljava.util.HashMap$Entry;" @classDescriptor [|java.util.HashMap|] @type virtual;
+    #L00000Aa. s0 := [|v0|].<|java.util.HashMap$KeySet.this$0|> @Type (|java.util.HashMap|);
+    #L00000Ab. call s1  := {|java.util.HashMap.removeEntryForKey(Ljava.lang.Object;)Ljava.util.HashMap$Entry;|}(s0,[|v1|]) @ClassDescriptor (|java.util.HashMap|) @Type virtual;
     #L00000Ac. if s1 == null then goto L00001Aa;
-    #L00000Ad. jmp:= 1;
+    #L00000Ad. jmp := 1;
     #L00000Ae. goto L00002Aa;
     #L00001Aa. <@Frame (@Same, 0, `[(|top|), (|top|)], 0, `[(|top|), (|top|)])>
-    #L00001Ab. jmp:= 0;
+    #L00001Ab. jmp := 0;
     #L00002Aa. <@Frame (@Same1, 0, `[(|top|), (|top|)], 1, `[(|int|), (|top|)])>
     #L00002Ab. return jmp;
   }
@@ -1813,14 +1812,14 @@ record (|java.util.HashMap$KeySet|)
     @MaxStack 1
     @Owner (|java.util.HashMap$KeySet|)
     @Access (PUBLIC)
-    @Signature "java.util.HashMap$KeySet.clear()V" 
+    @Desc "java.util.HashMap$KeySet.clear()V" 
   {
     local jmp;
     s0;
     s1;
 
-    #L00000Aa. s0:= [|v0|].<|java.util.HashMap$KeySet.this$0|>;
-    #L00000Ab. call s1:= {|java.util.HashMap.clear()V|}(s0) @signature "java.util.HashMap.clear()V" @classDescriptor [|java.util.HashMap|] @type virtual;
+    #L00000Aa. s0 := [|v0|].<|java.util.HashMap$KeySet.this$0|> @Type (|java.util.HashMap|);
+    #L00000Ab. call s1  := {|java.util.HashMap.clear()V|}(s0) @ClassDescriptor (|java.util.HashMap|) @Type virtual;
     #L00001Aa. return @void;
   }
   procedure (|void|) {|java.util.HashMap$KeySet.<init>(Ljava.util.HashMap;Ljava.util.HashMap$1;)V|} ((|java.util.HashMap$KeySet|) [|v0|], (|java.util.HashMap|) [|v1|], (|java.util.HashMap$1|) [|v2|]) 
@@ -1828,12 +1827,12 @@ record (|java.util.HashMap$KeySet|)
     @MaxStack 2
     @Owner (|java.util.HashMap$KeySet|)
     @Access (SYNTHETIC,CONSTRUCTOR)
-    @Signature "java.util.HashMap$KeySet.<init>(Ljava.util.HashMap;Ljava.util.HashMap$1;)V" 
+    @Desc "java.util.HashMap$KeySet.<init>(Ljava.util.HashMap;Ljava.util.HashMap$1;)V" 
   {
     local jmp;
     s0;
 
-    #L00000Aa. call s0:= {|java.util.HashMap$KeySet.<init>(Ljava.util.HashMap;)V|}([|v0|],[|v1|]) @signature "java.util.HashMap$KeySet.<init>(Ljava.util.HashMap;)V" @classDescriptor [|java.util.HashMap$KeySet|] @type special;
+    #L00000Aa. call s0  := {|java.util.HashMap$KeySet.<init>(Ljava.util.HashMap;)V|}([|v0|],[|v1|]) @ClassDescriptor (|java.util.HashMap$KeySet|) @Type special;
     #L00000Ab. return @void;
   }
 
@@ -1859,13 +1858,13 @@ record (|java.util.HashMap$EntryIterator|)
     @MaxStack 2
     @Owner (|java.util.HashMap$EntryIterator|)
     @Access (PRIVATE,CONSTRUCTOR)
-    @Signature "java.util.HashMap$EntryIterator.<init>(Ljava.util.HashMap;)V" 
+    @Desc "java.util.HashMap$EntryIterator.<init>(Ljava.util.HashMap;)V" 
   {
     local jmp;
     s0;
 
-    #L00000Aa. [|v0|].<|java.util.HashMap$EntryIterator.this$0|>:= [|v1|];
-    #L00000Ab. call s0:= {|java.util.HashMap$HashIterator.<init>(Ljava.util.HashMap;)V|}([|v0|],[|v1|]) @signature "java.util.HashMap$HashIterator.<init>(Ljava.util.HashMap;)V" @classDescriptor [|java.util.HashMap$HashIterator|] @type special;
+    #L00000Aa. [|v0|].<|java.util.HashMap$EntryIterator.this$0|> := [|v1|] @Type (|java.util.HashMap|);
+    #L00000Ab. call s0  := {|java.util.HashMap$HashIterator.<init>(Ljava.util.HashMap;)V|}([|v0|],[|v1|]) @ClassDescriptor (|java.util.HashMap$HashIterator|) @Type special;
     #L00000Ac. return @void;
   }
   procedure (|java.util.Map$Entry|) {|java.util.HashMap$EntryIterator.next()Ljava.util.Map$Entry;|} ((|java.util.HashMap$EntryIterator|) [|v0|]) 
@@ -1874,12 +1873,12 @@ record (|java.util.HashMap$EntryIterator|)
     @GenericSignature "()Ljava/util/Map$Entry<TK;TV;>;"
     @Owner (|java.util.HashMap$EntryIterator|)
     @Access (PUBLIC)
-    @Signature "java.util.HashMap$EntryIterator.next()Ljava.util.Map$Entry;" 
+    @Desc "java.util.HashMap$EntryIterator.next()Ljava.util.Map$Entry;" 
   {
     local jmp;
     s0;
 
-    #L00000Aa. call s0:= {|java.util.HashMap$EntryIterator.nextEntry()Ljava.util.HashMap$Entry;|}([|v0|]) @signature "java.util.HashMap$EntryIterator.nextEntry()Ljava.util.HashMap$Entry;" @classDescriptor [|java.util.HashMap$EntryIterator|] @type virtual;
+    #L00000Aa. call s0  := {|java.util.HashMap$EntryIterator.nextEntry()Ljava.util.HashMap$Entry;|}([|v0|]) @ClassDescriptor (|java.util.HashMap$EntryIterator|) @Type virtual;
     #L00000Ab. return s0;
   }
   procedure (|java.lang.Object|) {|java.util.HashMap$EntryIterator.next()Ljava.lang.Object;|} ((|java.util.HashMap$EntryIterator|) [|v0|]) 
@@ -1887,12 +1886,12 @@ record (|java.util.HashMap$EntryIterator|)
     @MaxStack 1
     @Owner (|java.util.HashMap$EntryIterator|)
     @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Signature "java.util.HashMap$EntryIterator.next()Ljava.lang.Object;" 
+    @Desc "java.util.HashMap$EntryIterator.next()Ljava.lang.Object;" 
   {
     local jmp;
     s0;
 
-    #L00000Aa. call s0:= {|java.util.HashMap$EntryIterator.next()Ljava.util.Map$Entry;|}([|v0|]) @signature "java.util.HashMap$EntryIterator.next()Ljava.util.Map$Entry;" @classDescriptor [|java.util.HashMap$EntryIterator|] @type virtual;
+    #L00000Aa. call s0  := {|java.util.HashMap$EntryIterator.next()Ljava.util.Map$Entry;|}([|v0|]) @ClassDescriptor (|java.util.HashMap$EntryIterator|) @Type virtual;
     #L00000Ab. return s0;
   }
   procedure (|void|) {|java.util.HashMap$EntryIterator.<init>(Ljava.util.HashMap;Ljava.util.HashMap$1;)V|} ((|java.util.HashMap$EntryIterator|) [|v0|], (|java.util.HashMap|) [|v1|], (|java.util.HashMap$1|) [|v2|]) 
@@ -1900,12 +1899,12 @@ record (|java.util.HashMap$EntryIterator|)
     @MaxStack 2
     @Owner (|java.util.HashMap$EntryIterator|)
     @Access (SYNTHETIC,CONSTRUCTOR)
-    @Signature "java.util.HashMap$EntryIterator.<init>(Ljava.util.HashMap;Ljava.util.HashMap$1;)V" 
+    @Desc "java.util.HashMap$EntryIterator.<init>(Ljava.util.HashMap;Ljava.util.HashMap$1;)V" 
   {
     local jmp;
     s0;
 
-    #L00000Aa. call s0:= {|java.util.HashMap$EntryIterator.<init>(Ljava.util.HashMap;)V|}([|v0|],[|v1|]) @signature "java.util.HashMap$EntryIterator.<init>(Ljava.util.HashMap;)V" @classDescriptor [|java.util.HashMap$EntryIterator|] @type special;
+    #L00000Aa. call s0  := {|java.util.HashMap$EntryIterator.<init>(Ljava.util.HashMap;)V|}([|v0|],[|v1|]) @ClassDescriptor (|java.util.HashMap$EntryIterator|) @Type special;
     #L00000Ab. return @void;
   }
 
@@ -1931,13 +1930,13 @@ record (|java.util.HashMap$KeyIterator|)
     @MaxStack 2
     @Owner (|java.util.HashMap$KeyIterator|)
     @Access (PRIVATE,CONSTRUCTOR)
-    @Signature "java.util.HashMap$KeyIterator.<init>(Ljava.util.HashMap;)V" 
+    @Desc "java.util.HashMap$KeyIterator.<init>(Ljava.util.HashMap;)V" 
   {
     local jmp;
     s0;
 
-    #L00000Aa. [|v0|].<|java.util.HashMap$KeyIterator.this$0|>:= [|v1|];
-    #L00000Ab. call s0:= {|java.util.HashMap$HashIterator.<init>(Ljava.util.HashMap;)V|}([|v0|],[|v1|]) @signature "java.util.HashMap$HashIterator.<init>(Ljava.util.HashMap;)V" @classDescriptor [|java.util.HashMap$HashIterator|] @type special;
+    #L00000Aa. [|v0|].<|java.util.HashMap$KeyIterator.this$0|> := [|v1|] @Type (|java.util.HashMap|);
+    #L00000Ab. call s0  := {|java.util.HashMap$HashIterator.<init>(Ljava.util.HashMap;)V|}([|v0|],[|v1|]) @ClassDescriptor (|java.util.HashMap$HashIterator|) @Type special;
     #L00000Ac. return @void;
   }
   procedure (|java.lang.Object|) {|java.util.HashMap$KeyIterator.next()Ljava.lang.Object;|} ((|java.util.HashMap$KeyIterator|) [|v0|]) 
@@ -1946,14 +1945,14 @@ record (|java.util.HashMap$KeyIterator|)
     @GenericSignature "()TK;"
     @Owner (|java.util.HashMap$KeyIterator|)
     @Access (PUBLIC)
-    @Signature "java.util.HashMap$KeyIterator.next()Ljava.lang.Object;" 
+    @Desc "java.util.HashMap$KeyIterator.next()Ljava.lang.Object;" 
   {
     local jmp;
     s0;
     s1;
 
-    #L00000Aa. call s0:= {|java.util.HashMap$KeyIterator.nextEntry()Ljava.util.HashMap$Entry;|}([|v0|]) @signature "java.util.HashMap$KeyIterator.nextEntry()Ljava.util.HashMap$Entry;" @classDescriptor [|java.util.HashMap$KeyIterator|] @type virtual;
-    #L00000Ab. call s1:= {|java.util.HashMap$Entry.getKey()Ljava.lang.Object;|}(s0) @signature "java.util.HashMap$Entry.getKey()Ljava.lang.Object;" @classDescriptor [|java.util.HashMap$Entry|] @type virtual;
+    #L00000Aa. call s0  := {|java.util.HashMap$KeyIterator.nextEntry()Ljava.util.HashMap$Entry;|}([|v0|]) @ClassDescriptor (|java.util.HashMap$KeyIterator|) @Type virtual;
+    #L00000Ab. call s1  := {|java.util.HashMap$Entry.getKey()Ljava.lang.Object;|}(s0) @ClassDescriptor (|java.util.HashMap$Entry|) @Type virtual;
     #L00000Ac. return s1;
   }
   procedure (|void|) {|java.util.HashMap$KeyIterator.<init>(Ljava.util.HashMap;Ljava.util.HashMap$1;)V|} ((|java.util.HashMap$KeyIterator|) [|v0|], (|java.util.HashMap|) [|v1|], (|java.util.HashMap$1|) [|v2|]) 
@@ -1961,12 +1960,12 @@ record (|java.util.HashMap$KeyIterator|)
     @MaxStack 2
     @Owner (|java.util.HashMap$KeyIterator|)
     @Access (SYNTHETIC,CONSTRUCTOR)
-    @Signature "java.util.HashMap$KeyIterator.<init>(Ljava.util.HashMap;Ljava.util.HashMap$1;)V" 
+    @Desc "java.util.HashMap$KeyIterator.<init>(Ljava.util.HashMap;Ljava.util.HashMap$1;)V" 
   {
     local jmp;
     s0;
 
-    #L00000Aa. call s0:= {|java.util.HashMap$KeyIterator.<init>(Ljava.util.HashMap;)V|}([|v0|],[|v1|]) @signature "java.util.HashMap$KeyIterator.<init>(Ljava.util.HashMap;)V" @classDescriptor [|java.util.HashMap$KeyIterator|] @type special;
+    #L00000Aa. call s0  := {|java.util.HashMap$KeyIterator.<init>(Ljava.util.HashMap;)V|}([|v0|],[|v1|]) @ClassDescriptor (|java.util.HashMap$KeyIterator|) @Type special;
     #L00000Ab. return @void;
   }
 
@@ -1992,13 +1991,13 @@ record (|java.util.HashMap$ValueIterator|)
     @MaxStack 2
     @Owner (|java.util.HashMap$ValueIterator|)
     @Access (PRIVATE,CONSTRUCTOR)
-    @Signature "java.util.HashMap$ValueIterator.<init>(Ljava.util.HashMap;)V" 
+    @Desc "java.util.HashMap$ValueIterator.<init>(Ljava.util.HashMap;)V" 
   {
     local jmp;
     s0;
 
-    #L00000Aa. [|v0|].<|java.util.HashMap$ValueIterator.this$0|>:= [|v1|];
-    #L00000Ab. call s0:= {|java.util.HashMap$HashIterator.<init>(Ljava.util.HashMap;)V|}([|v0|],[|v1|]) @signature "java.util.HashMap$HashIterator.<init>(Ljava.util.HashMap;)V" @classDescriptor [|java.util.HashMap$HashIterator|] @type special;
+    #L00000Aa. [|v0|].<|java.util.HashMap$ValueIterator.this$0|> := [|v1|] @Type (|java.util.HashMap|);
+    #L00000Ab. call s0  := {|java.util.HashMap$HashIterator.<init>(Ljava.util.HashMap;)V|}([|v0|],[|v1|]) @ClassDescriptor (|java.util.HashMap$HashIterator|) @Type special;
     #L00000Ac. return @void;
   }
   procedure (|java.lang.Object|) {|java.util.HashMap$ValueIterator.next()Ljava.lang.Object;|} ((|java.util.HashMap$ValueIterator|) [|v0|]) 
@@ -2007,14 +2006,14 @@ record (|java.util.HashMap$ValueIterator|)
     @GenericSignature "()TV;"
     @Owner (|java.util.HashMap$ValueIterator|)
     @Access (PUBLIC)
-    @Signature "java.util.HashMap$ValueIterator.next()Ljava.lang.Object;" 
+    @Desc "java.util.HashMap$ValueIterator.next()Ljava.lang.Object;" 
   {
     local jmp;
     s0;
     s1;
 
-    #L00000Aa. call s0:= {|java.util.HashMap$ValueIterator.nextEntry()Ljava.util.HashMap$Entry;|}([|v0|]) @signature "java.util.HashMap$ValueIterator.nextEntry()Ljava.util.HashMap$Entry;" @classDescriptor [|java.util.HashMap$ValueIterator|] @type virtual;
-    #L00000Ab. s1:= s0.<|java.util.HashMap$Entry.value|>;
+    #L00000Aa. call s0  := {|java.util.HashMap$ValueIterator.nextEntry()Ljava.util.HashMap$Entry;|}([|v0|]) @ClassDescriptor (|java.util.HashMap$ValueIterator|) @Type virtual;
+    #L00000Ab. s1 := s0.<|java.util.HashMap$Entry.value|> @Type (|java.lang.Object|);
     #L00000Ac. return s1;
   }
   procedure (|void|) {|java.util.HashMap$ValueIterator.<init>(Ljava.util.HashMap;Ljava.util.HashMap$1;)V|} ((|java.util.HashMap$ValueIterator|) [|v0|], (|java.util.HashMap|) [|v1|], (|java.util.HashMap$1|) [|v2|]) 
@@ -2022,12 +2021,12 @@ record (|java.util.HashMap$ValueIterator|)
     @MaxStack 2
     @Owner (|java.util.HashMap$ValueIterator|)
     @Access (SYNTHETIC,CONSTRUCTOR)
-    @Signature "java.util.HashMap$ValueIterator.<init>(Ljava.util.HashMap;Ljava.util.HashMap$1;)V" 
+    @Desc "java.util.HashMap$ValueIterator.<init>(Ljava.util.HashMap;Ljava.util.HashMap$1;)V" 
   {
     local jmp;
     s0;
 
-    #L00000Aa. call s0:= {|java.util.HashMap$ValueIterator.<init>(Ljava.util.HashMap;)V|}([|v0|],[|v1|]) @signature "java.util.HashMap$ValueIterator.<init>(Ljava.util.HashMap;)V" @classDescriptor [|java.util.HashMap$ValueIterator|] @type special;
+    #L00000Aa. call s0  := {|java.util.HashMap$ValueIterator.<init>(Ljava.util.HashMap;)V|}([|v0|],[|v1|]) @ClassDescriptor (|java.util.HashMap$ValueIterator|) @Type special;
     #L00000Ab. return @void;
   }
 
@@ -2057,7 +2056,7 @@ record (|java.util.HashMap$HashIterator|)
     @MaxStack 6
     @Owner (|java.util.HashMap$HashIterator|)
     @Access (CONSTRUCTOR)
-    @Signature "java.util.HashMap$HashIterator.<init>(Ljava.util.HashMap;)V" 
+    @Desc "java.util.HashMap$HashIterator.<init>(Ljava.util.HashMap;)V" 
   {
     local jmp;
     s0;
@@ -2065,21 +2064,21 @@ record (|java.util.HashMap$HashIterator|)
     s2;
     [|v2|];
 
-    #L00000Aa. [|v0|].<|java.util.HashMap$HashIterator.this$0|>:= [|v1|];
-    #L00000Ab. call s0:= {|java.lang.Object.<init>()V|}([|v0|]) @signature "java.lang.Object.<init>()V" @classDescriptor [|java.lang.Object|] @type special;
-    #L00001Aa. s0:= [|v1|].<|java.util.HashMap.modCount|>;
-    #L00001Ab. [|v0|].<|java.util.HashMap$HashIterator.expectedModCount|>:= s0;
-    #L00002Aa. s0:= [|v1|].<|java.util.HashMap.size|>;
+    #L00000Aa. [|v0|].<|java.util.HashMap$HashIterator.this$0|> := [|v1|] @Type (|java.util.HashMap|);
+    #L00000Ab. call s0  := {|java.lang.Object.<init>()V|}([|v0|]) @ClassDescriptor (|java.lang.Object|) @Type special;
+    #L00001Aa. s0 := [|v1|].<|java.util.HashMap.modCount|> @Type (|int|);
+    #L00001Ab. [|v0|].<|java.util.HashMap$HashIterator.expectedModCount|> := s0 @Type (|int|);
+    #L00002Aa. s0 := [|v1|].<|java.util.HashMap.size|> @Type (|int|);
     #L00002Ab. if s0 <= 0 then goto L00003Aa;
-    #L00004Aa. s0:= [|v1|].<|java.util.HashMap.table|>;
-    #L00004Ab. [|v2|]:= s0 @type (|java.util.HashMap$Entry[]|);
+    #L00004Aa. s0 := [|v1|].<|java.util.HashMap.table|> @Type (|java.util.HashMap$Entry[]|);
+    #L00004Ab. [|v2|] := s0 @Type (|java.util.HashMap$Entry[]|);
     #L00005Aa. <@Frame (@Full, 3, `[(|java.lang.Object|), (|java.lang.Object|), (|java.util.HashMap$Entry[]|)], 0, `[(|top|), (|top|), (|top|), (|top|), (|top|), (|top|)])>
-    #L00005Ab. s0:= [|v0|].<|java.util.HashMap$HashIterator.index|>;
+    #L00005Ab. s0 := [|v0|].<|java.util.HashMap$HashIterator.index|> @Type (|int|);
     #L00005Ac. if s0 >= [|v2|].length then goto L00003Aa;
-    #L00005Ad. s1:= [|v0|].<|java.util.HashMap$HashIterator.index|>;
-    #L00005Ae. [|v0|].<|java.util.HashMap$HashIterator.index|>:= s1+1;
-    #L00005Af. s2:= [|v2|][s1];
-    #L00005Ag. [|v0|].<|java.util.HashMap$HashIterator.next|>:= s2;
+    #L00005Ad. s1 := [|v0|].<|java.util.HashMap$HashIterator.index|> @Type (|int|);
+    #L00005Ae. [|v0|].<|java.util.HashMap$HashIterator.index|> := (s1+1) @Type (|int|);
+    #L00005Af. s2 := [|v2|][s1];
+    #L00005Ag. [|v0|].<|java.util.HashMap$HashIterator.next|> := s2 @Type (|java.util.HashMap$Entry|);
     #L00005Ah. if s2 != null then goto L00003Aa;
     #L00006Aa. goto L00005Aa;
     #L00003Aa. <@Frame (@Chop, 1, `[(|java.lang.Object|), (|java.lang.Object|), (|java.util.HashMap$Entry[]|)], 0, `[(|top|), (|top|), (|top|), (|top|), (|top|), (|top|)])>
@@ -2090,17 +2089,17 @@ record (|java.util.HashMap$HashIterator|)
     @MaxStack 1
     @Owner (|java.util.HashMap$HashIterator|)
     @Access (PUBLIC,FINAL)
-    @Signature "java.util.HashMap$HashIterator.hasNext()Z" 
+    @Desc "java.util.HashMap$HashIterator.hasNext()Z" 
   {
     local jmp;
     s0;
 
-    #L00000Aa. s0:= [|v0|].<|java.util.HashMap$HashIterator.next|>;
+    #L00000Aa. s0 := [|v0|].<|java.util.HashMap$HashIterator.next|> @Type (|java.util.HashMap$Entry|);
     #L00000Ab. if s0 == null then goto L00001Aa;
-    #L00000Ac. jmp:= 1;
+    #L00000Ac. jmp := 1;
     #L00000Ad. goto L00002Aa;
     #L00001Aa. <@Frame (@Same, 0, `[(|top|)], 0, `[(|top|)])>
-    #L00001Ab. jmp:= 0;
+    #L00001Ab. jmp := 0;
     #L00002Aa. <@Frame (@Same1, 0, `[(|top|)], 1, `[(|int|)])>
     #L00002Ab. return jmp;
   }
@@ -2110,7 +2109,7 @@ record (|java.util.HashMap$HashIterator|)
     @GenericSignature "()Ljava/util/HashMap$Entry<TK;TV;>;"
     @Owner (|java.util.HashMap$HashIterator|)
     @Access (FINAL)
-    @Signature "java.util.HashMap$HashIterator.nextEntry()Ljava.util.HashMap$Entry;" 
+    @Desc "java.util.HashMap$HashIterator.nextEntry()Ljava.util.HashMap$Entry;" 
   {
     local jmp;
     s0;
@@ -2119,38 +2118,38 @@ record (|java.util.HashMap$HashIterator|)
     [|v1|];
     [|v2|];
 
-    #L00000Aa. s0:= [|v0|].<|java.util.HashMap$HashIterator.this$0|>;
-    #L00000Ab. s1:= s0.<|java.util.HashMap.modCount|>;
-    #L00000Ac. s2:= [|v0|].<|java.util.HashMap$HashIterator.expectedModCount|>;
+    #L00000Aa. s0 := [|v0|].<|java.util.HashMap$HashIterator.this$0|> @Type (|java.util.HashMap|);
+    #L00000Ab. s1 := s0.<|java.util.HashMap.modCount|> @Type (|int|);
+    #L00000Ac. s2 := [|v0|].<|java.util.HashMap$HashIterator.expectedModCount|> @Type (|int|);
     #L00000Ad. if s1 == s2 then goto L00001Aa;
-    #L00002Aa. s0:= new (|java.util.ConcurrentModificationException|);
-    #L00002Ab. call s1:= {|java.util.ConcurrentModificationException.<init>()V|}(s0) @signature "java.util.ConcurrentModificationException.<init>()V" @classDescriptor [|java.util.ConcurrentModificationException|] @type special;
+    #L00002Aa. s0 := new (|java.util.ConcurrentModificationException|);
+    #L00002Ab. call s1  := {|java.util.ConcurrentModificationException.<init>()V|}(s0) @ClassDescriptor (|java.util.ConcurrentModificationException|) @Type special;
     #L00002Ac. throw s0;
     #L00001Aa. <@Frame (@Same, 0, `[(|top|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|), (|top|), (|top|), (|top|)])>
-    #L00001Ab. s0:= [|v0|].<|java.util.HashMap$HashIterator.next|>;
-    #L00001Ac. [|v1|]:= s0 @type (|java.util.HashMap$Entry|);
+    #L00001Ab. s0 := [|v0|].<|java.util.HashMap$HashIterator.next|> @Type (|java.util.HashMap$Entry|);
+    #L00001Ac. [|v1|] := s0 @Type (|java.util.HashMap$Entry|);
     #L00003Aa. if [|v1|] != null then goto L00004Aa;
-    #L00005Aa. s0:= new (|java.util.NoSuchElementException|);
-    #L00005Ab. call s1:= {|java.util.NoSuchElementException.<init>()V|}(s0) @signature "java.util.NoSuchElementException.<init>()V" @classDescriptor [|java.util.NoSuchElementException|] @type special;
+    #L00005Aa. s0 := new (|java.util.NoSuchElementException|);
+    #L00005Ab. call s1  := {|java.util.NoSuchElementException.<init>()V|}(s0) @ClassDescriptor (|java.util.NoSuchElementException|) @Type special;
     #L00005Ac. throw s0;
     #L00004Aa. <@Frame (@Append, 1, `[(|java.lang.Object|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|), (|top|), (|top|), (|top|)])>
-    #L00004Ab. s0:= [|v1|].<|java.util.HashMap$Entry.next|>;
-    #L00004Ac. [|v0|].<|java.util.HashMap$HashIterator.next|>:= s0;
+    #L00004Ab. s0 := [|v1|].<|java.util.HashMap$Entry.next|> @Type (|java.util.HashMap$Entry|);
+    #L00004Ac. [|v0|].<|java.util.HashMap$HashIterator.next|> := s0 @Type (|java.util.HashMap$Entry|);
     #L00004Ad. if s0 != null then goto L00006Aa;
-    #L00007Aa. s0:= [|v0|].<|java.util.HashMap$HashIterator.this$0|>;
-    #L00007Ab. s1:= s0.<|java.util.HashMap.table|>;
-    #L00007Ac. [|v2|]:= s1 @type (|java.util.HashMap$Entry[]|);
+    #L00007Aa. s0 := [|v0|].<|java.util.HashMap$HashIterator.this$0|> @Type (|java.util.HashMap|);
+    #L00007Ab. s1 := s0.<|java.util.HashMap.table|> @Type (|java.util.HashMap$Entry[]|);
+    #L00007Ac. [|v2|] := s1 @Type (|java.util.HashMap$Entry[]|);
     #L00008Aa. <@Frame (@Append, 1, `[(|java.util.HashMap$Entry[]|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|), (|top|), (|top|), (|top|)])>
-    #L00008Ab. s0:= [|v0|].<|java.util.HashMap$HashIterator.index|>;
+    #L00008Ab. s0 := [|v0|].<|java.util.HashMap$HashIterator.index|> @Type (|int|);
     #L00008Ac. if s0 >= [|v2|].length then goto L00006Aa;
-    #L00008Ad. s1:= [|v0|].<|java.util.HashMap$HashIterator.index|>;
-    #L00008Ae. [|v0|].<|java.util.HashMap$HashIterator.index|>:= s1+1;
-    #L00008Af. s2:= [|v2|][s1];
-    #L00008Ag. [|v0|].<|java.util.HashMap$HashIterator.next|>:= s2;
+    #L00008Ad. s1 := [|v0|].<|java.util.HashMap$HashIterator.index|> @Type (|int|);
+    #L00008Ae. [|v0|].<|java.util.HashMap$HashIterator.index|> := (s1+1) @Type (|int|);
+    #L00008Af. s2 := [|v2|][s1];
+    #L00008Ag. [|v0|].<|java.util.HashMap$HashIterator.next|> := s2 @Type (|java.util.HashMap$Entry|);
     #L00008Ah. if s2 != null then goto L00006Aa;
     #L00009Aa. goto L00008Aa;
     #L00006Aa. <@Frame (@Chop, 1, `[(|java.util.HashMap$Entry[]|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|), (|top|), (|top|), (|top|)])>
-    #L00006Ab. [|v0|].<|java.util.HashMap$HashIterator.current|>:= [|v1|];
+    #L00006Ab. [|v0|].<|java.util.HashMap$HashIterator.current|> := [|v1|] @Type (|java.util.HashMap$Entry|);
     #L00010Aa. return [|v1|];
   }
   procedure (|void|) {|java.util.HashMap$HashIterator.remove()V|} ((|java.util.HashMap$HashIterator|) [|v0|]) 
@@ -2158,7 +2157,7 @@ record (|java.util.HashMap$HashIterator|)
     @MaxStack 2
     @Owner (|java.util.HashMap$HashIterator|)
     @Access (PUBLIC)
-    @Signature "java.util.HashMap$HashIterator.remove()V" 
+    @Desc "java.util.HashMap$HashIterator.remove()V" 
   {
     local jmp;
     s0;
@@ -2166,29 +2165,29 @@ record (|java.util.HashMap$HashIterator|)
     s2;
     [|v1|];
 
-    #L00000Aa. s0:= [|v0|].<|java.util.HashMap$HashIterator.current|>;
+    #L00000Aa. s0 := [|v0|].<|java.util.HashMap$HashIterator.current|> @Type (|java.util.HashMap$Entry|);
     #L00000Ab. if s0 != null then goto L00001Aa;
-    #L00002Aa. s0:= new (|java.lang.IllegalStateException|);
-    #L00002Ab. call s1:= {|java.lang.IllegalStateException.<init>()V|}(s0) @signature "java.lang.IllegalStateException.<init>()V" @classDescriptor [|java.lang.IllegalStateException|] @type special;
+    #L00002Aa. s0 := new (|java.lang.IllegalStateException|);
+    #L00002Ab. call s1  := {|java.lang.IllegalStateException.<init>()V|}(s0) @ClassDescriptor (|java.lang.IllegalStateException|) @Type special;
     #L00002Ac. throw s0;
     #L00001Aa. <@Frame (@Same, 0, `[(|top|), (|top|)], 0, `[(|top|), (|top|)])>
-    #L00001Ab. s0:= [|v0|].<|java.util.HashMap$HashIterator.this$0|>;
-    #L00001Ac. s1:= s0.<|java.util.HashMap.modCount|>;
-    #L00001Ad. s2:= [|v0|].<|java.util.HashMap$HashIterator.expectedModCount|>;
+    #L00001Ab. s0 := [|v0|].<|java.util.HashMap$HashIterator.this$0|> @Type (|java.util.HashMap|);
+    #L00001Ac. s1 := s0.<|java.util.HashMap.modCount|> @Type (|int|);
+    #L00001Ad. s2 := [|v0|].<|java.util.HashMap$HashIterator.expectedModCount|> @Type (|int|);
     #L00001Ae. if s1 == s2 then goto L00003Aa;
-    #L00004Aa. s0:= new (|java.util.ConcurrentModificationException|);
-    #L00004Ab. call s1:= {|java.util.ConcurrentModificationException.<init>()V|}(s0) @signature "java.util.ConcurrentModificationException.<init>()V" @classDescriptor [|java.util.ConcurrentModificationException|] @type special;
+    #L00004Aa. s0 := new (|java.util.ConcurrentModificationException|);
+    #L00004Ab. call s1  := {|java.util.ConcurrentModificationException.<init>()V|}(s0) @ClassDescriptor (|java.util.ConcurrentModificationException|) @Type special;
     #L00004Ac. throw s0;
     #L00003Aa. <@Frame (@Same, 0, `[(|top|), (|top|)], 0, `[(|top|), (|top|)])>
-    #L00003Ab. s0:= [|v0|].<|java.util.HashMap$HashIterator.current|>;
-    #L00003Ac. s1:= s0.<|java.util.HashMap$Entry.key|>;
-    #L00003Ad. [|v1|]:= s1 @type (|java.lang.Object|);
-    #L00005Aa. [|v0|].<|java.util.HashMap$HashIterator.current|>:= null;
-    #L00006Aa. s0:= [|v0|].<|java.util.HashMap$HashIterator.this$0|>;
-    #L00006Ab. call s1:= {|java.util.HashMap.removeEntryForKey(Ljava.lang.Object;)Ljava.util.HashMap$Entry;|}(s0,[|v1|]) @signature "java.util.HashMap.removeEntryForKey(Ljava.lang.Object;)Ljava.util.HashMap$Entry;" @classDescriptor [|java.util.HashMap|] @type virtual;
-    #L00007Aa. s0:= [|v0|].<|java.util.HashMap$HashIterator.this$0|>;
-    #L00007Ab. s1:= s0.<|java.util.HashMap.modCount|>;
-    #L00007Ac. [|v0|].<|java.util.HashMap$HashIterator.expectedModCount|>:= s1;
+    #L00003Ab. s0 := [|v0|].<|java.util.HashMap$HashIterator.current|> @Type (|java.util.HashMap$Entry|);
+    #L00003Ac. s1 := s0.<|java.util.HashMap$Entry.key|> @Type (|java.lang.Object|);
+    #L00003Ad. [|v1|] := s1 @Type (|java.lang.Object|);
+    #L00005Aa. [|v0|].<|java.util.HashMap$HashIterator.current|> := null @Type (|java.util.HashMap$Entry|);
+    #L00006Aa. s0 := [|v0|].<|java.util.HashMap$HashIterator.this$0|> @Type (|java.util.HashMap|);
+    #L00006Ab. call s1  := {|java.util.HashMap.removeEntryForKey(Ljava.lang.Object;)Ljava.util.HashMap$Entry;|}(s0,[|v1|]) @ClassDescriptor (|java.util.HashMap|) @Type virtual;
+    #L00007Aa. s0 := [|v0|].<|java.util.HashMap$HashIterator.this$0|> @Type (|java.util.HashMap|);
+    #L00007Ab. s1 := s0.<|java.util.HashMap.modCount|> @Type (|int|);
+    #L00007Ac. [|v0|].<|java.util.HashMap$HashIterator.expectedModCount|> := s1 @Type (|int|);
     #L00008Aa. return @void;
   }
 
@@ -2218,16 +2217,16 @@ record (|java.util.HashMap$Entry|)
     @GenericSignature "(ITK;TV;Ljava/util/HashMap$Entry<TK;TV;>;)V"
     @Owner (|java.util.HashMap$Entry|)
     @Access (CONSTRUCTOR)
-    @Signature "java.util.HashMap$Entry.<init>(ILjava.lang.Object;Ljava.lang.Object;Ljava.util.HashMap$Entry;)V" 
+    @Desc "java.util.HashMap$Entry.<init>(ILjava.lang.Object;Ljava.lang.Object;Ljava.util.HashMap$Entry;)V" 
   {
     local jmp;
     s0;
 
-    #L00000Aa. call s0:= {|java.lang.Object.<init>()V|}([|v0|]) @signature "java.lang.Object.<init>()V" @classDescriptor [|java.lang.Object|] @type special;
-    #L00001Aa. [|v0|].<|java.util.HashMap$Entry.value|>:= [|v3|];
-    #L00002Aa. [|v0|].<|java.util.HashMap$Entry.next|>:= [|v4|];
-    #L00003Aa. [|v0|].<|java.util.HashMap$Entry.key|>:= [|v2|];
-    #L00004Aa. [|v0|].<|java.util.HashMap$Entry.hash|>:= [|v1|];
+    #L00000Aa. call s0  := {|java.lang.Object.<init>()V|}([|v0|]) @ClassDescriptor (|java.lang.Object|) @Type special;
+    #L00001Aa. [|v0|].<|java.util.HashMap$Entry.value|> := [|v3|] @Type (|java.lang.Object|);
+    #L00002Aa. [|v0|].<|java.util.HashMap$Entry.next|> := [|v4|] @Type (|java.util.HashMap$Entry|);
+    #L00003Aa. [|v0|].<|java.util.HashMap$Entry.key|> := [|v2|] @Type (|java.lang.Object|);
+    #L00004Aa. [|v0|].<|java.util.HashMap$Entry.hash|> := [|v1|] @Type (|int|);
     #L00005Aa. return @void;
   }
   procedure (|java.lang.Object|) {|java.util.HashMap$Entry.getKey()Ljava.lang.Object;|} ((|java.util.HashMap$Entry|) [|v0|]) 
@@ -2236,12 +2235,12 @@ record (|java.util.HashMap$Entry|)
     @GenericSignature "()TK;"
     @Owner (|java.util.HashMap$Entry|)
     @Access (PUBLIC,FINAL)
-    @Signature "java.util.HashMap$Entry.getKey()Ljava.lang.Object;" 
+    @Desc "java.util.HashMap$Entry.getKey()Ljava.lang.Object;" 
   {
     local jmp;
     s0;
 
-    #L00000Aa. s0:= [|v0|].<|java.util.HashMap$Entry.key|>;
+    #L00000Aa. s0 := [|v0|].<|java.util.HashMap$Entry.key|> @Type (|java.lang.Object|);
     #L00000Ab. return s0;
   }
   procedure (|java.lang.Object|) {|java.util.HashMap$Entry.getValue()Ljava.lang.Object;|} ((|java.util.HashMap$Entry|) [|v0|]) 
@@ -2250,12 +2249,12 @@ record (|java.util.HashMap$Entry|)
     @GenericSignature "()TV;"
     @Owner (|java.util.HashMap$Entry|)
     @Access (PUBLIC,FINAL)
-    @Signature "java.util.HashMap$Entry.getValue()Ljava.lang.Object;" 
+    @Desc "java.util.HashMap$Entry.getValue()Ljava.lang.Object;" 
   {
     local jmp;
     s0;
 
-    #L00000Aa. s0:= [|v0|].<|java.util.HashMap$Entry.value|>;
+    #L00000Aa. s0 := [|v0|].<|java.util.HashMap$Entry.value|> @Type (|java.lang.Object|);
     #L00000Ab. return s0;
   }
   procedure (|java.lang.Object|) {|java.util.HashMap$Entry.setValue(Ljava.lang.Object;)Ljava.lang.Object;|} ((|java.util.HashMap$Entry|) [|v0|], (|java.lang.Object|) [|v1|]) 
@@ -2264,15 +2263,15 @@ record (|java.util.HashMap$Entry|)
     @GenericSignature "(TV;)TV;"
     @Owner (|java.util.HashMap$Entry|)
     @Access (PUBLIC,FINAL)
-    @Signature "java.util.HashMap$Entry.setValue(Ljava.lang.Object;)Ljava.lang.Object;" 
+    @Desc "java.util.HashMap$Entry.setValue(Ljava.lang.Object;)Ljava.lang.Object;" 
   {
     local jmp;
     s0;
     [|v2|];
 
-    #L00000Aa. s0:= [|v0|].<|java.util.HashMap$Entry.value|>;
-    #L00000Ab. [|v2|]:= s0 @type (|java.lang.Object|);
-    #L00001Aa. [|v0|].<|java.util.HashMap$Entry.value|>:= [|v1|];
+    #L00000Aa. s0 := [|v0|].<|java.util.HashMap$Entry.value|> @Type (|java.lang.Object|);
+    #L00000Ab. [|v2|] := s0 @Type (|java.lang.Object|);
+    #L00001Aa. [|v0|].<|java.util.HashMap$Entry.value|> := [|v1|] @Type (|java.lang.Object|);
     #L00002Aa. return [|v2|];
   }
   procedure (|boolean|) {|java.util.HashMap$Entry.equals(Ljava.lang.Object;)Z|} ((|java.util.HashMap$Entry|) [|v0|], (|java.lang.Object|) [|v1|]) 
@@ -2280,7 +2279,7 @@ record (|java.util.HashMap$Entry|)
     @MaxStack 2
     @Owner (|java.util.HashMap$Entry|)
     @Access (PUBLIC,FINAL)
-    @Signature "java.util.HashMap$Entry.equals(Ljava.lang.Object;)Z" 
+    @Desc "java.util.HashMap$Entry.equals(Ljava.lang.Object;)Z" 
   {
     local jmp;
     s0;
@@ -2290,27 +2289,27 @@ record (|java.util.HashMap$Entry|)
     [|v5|];
     [|v6|];
 
-    #L00000Aa. s0:= instanceof @varname [|v1|] @type "(|java.util.Map$Entry|)";
+    #L00000Aa. s0 := instanceof @varname [|v1|] @Type "(|java.util.Map$Entry|)";
     #L00000Ab. if s0 != 0 then goto L00001Aa;
     #L00002Aa. return 0;
     #L00001Aa. <@Frame (@Same, 0, `[(|top|), (|top|), (|top|), (|top|), (|top|), (|top|), (|top|)], 0, `[(|top|), (|top|)])>
-    #L00001Ab. [|v2|]:= ((|java.util.Map$Entry|)) [|v1|] @type (|java.util.Map$Entry|);
-    #L00003Aa. call s0:= {|java.util.HashMap$Entry.getKey()Ljava.lang.Object;|}([|v0|]) @signature "java.util.HashMap$Entry.getKey()Ljava.lang.Object;" @classDescriptor [|java.util.HashMap$Entry|] @type virtual;
-    #L00003Ab. [|v3|]:= s0 @type (|java.lang.Object|);
-    #L00004Aa. call s0:= {|java.util.Map$Entry.getKey()Ljava.lang.Object;|}([|v2|]) @signature "java.util.Map$Entry.getKey()Ljava.lang.Object;" @classDescriptor [|java.util.Map$Entry|] @type interface;
-    #L00004Ab. [|v4|]:= s0 @type (|java.lang.Object|);
+    #L00001Ab. [|v2|] := ((|java.util.Map$Entry|)) [|v1|] @Type (|java.util.Map$Entry|);
+    #L00003Aa. call s0  := {|java.util.HashMap$Entry.getKey()Ljava.lang.Object;|}([|v0|]) @ClassDescriptor (|java.util.HashMap$Entry|) @Type virtual;
+    #L00003Ab. [|v3|] := s0 @Type (|java.lang.Object|);
+    #L00004Aa. call s0  := {|java.util.Map$Entry.getKey()Ljava.lang.Object;|}([|v2|]) @ClassDescriptor (|java.util.Map$Entry|) @Type interface;
+    #L00004Ab. [|v4|] := s0 @Type (|java.lang.Object|);
     #L00005Aa. if [|v3|] == [|v4|] then goto L00006Aa;
     #L00005Ab. if [|v3|] == null then goto L00007Aa;
-    #L00005Ac. call s0:= {|java.lang.Object.equals(Ljava.lang.Object;)Z|}([|v3|],[|v4|]) @signature "java.lang.Object.equals(Ljava.lang.Object;)Z" @classDescriptor [|java.lang.Object|] @type virtual;
+    #L00005Ac. call s0  := {|java.lang.Object.equals(Ljava.lang.Object;)Z|}([|v3|],[|v4|]) @ClassDescriptor (|java.lang.Object|) @Type virtual;
     #L00005Ad. if s0 == 0 then goto L00007Aa;
     #L00006Aa. <@Frame (@Append, 3, `[(|java.lang.Object|), (|java.lang.Object|), (|java.lang.Object|), (|top|), (|top|), (|top|), (|top|)], 0, `[(|top|), (|top|)])>
-    #L00006Ab. call s0:= {|java.util.HashMap$Entry.getValue()Ljava.lang.Object;|}([|v0|]) @signature "java.util.HashMap$Entry.getValue()Ljava.lang.Object;" @classDescriptor [|java.util.HashMap$Entry|] @type virtual;
-    #L00006Ac. [|v5|]:= s0 @type (|java.lang.Object|);
-    #L00008Aa. call s0:= {|java.util.Map$Entry.getValue()Ljava.lang.Object;|}([|v2|]) @signature "java.util.Map$Entry.getValue()Ljava.lang.Object;" @classDescriptor [|java.util.Map$Entry|] @type interface;
-    #L00008Ab. [|v6|]:= s0 @type (|java.lang.Object|);
+    #L00006Ab. call s0  := {|java.util.HashMap$Entry.getValue()Ljava.lang.Object;|}([|v0|]) @ClassDescriptor (|java.util.HashMap$Entry|) @Type virtual;
+    #L00006Ac. [|v5|] := s0 @Type (|java.lang.Object|);
+    #L00008Aa. call s0  := {|java.util.Map$Entry.getValue()Ljava.lang.Object;|}([|v2|]) @ClassDescriptor (|java.util.Map$Entry|) @Type interface;
+    #L00008Ab. [|v6|] := s0 @Type (|java.lang.Object|);
     #L00009Aa. if [|v5|] == [|v6|] then goto L00010Aa;
     #L00009Ab. if [|v5|] == null then goto L00007Aa;
-    #L00009Ac. call s0:= {|java.lang.Object.equals(Ljava.lang.Object;)Z|}([|v5|],[|v6|]) @signature "java.lang.Object.equals(Ljava.lang.Object;)Z" @classDescriptor [|java.lang.Object|] @type virtual;
+    #L00009Ac. call s0  := {|java.lang.Object.equals(Ljava.lang.Object;)Z|}([|v5|],[|v6|]) @ClassDescriptor (|java.lang.Object|) @Type virtual;
     #L00009Ad. if s0 == 0 then goto L00007Aa;
     #L00010Aa. <@Frame (@Append, 2, `[(|java.lang.Object|), (|java.lang.Object|), (|java.lang.Object|), (|top|), (|top|), (|top|), (|top|)], 0, `[(|top|), (|top|)])>
     #L00010Ab. return 1;
@@ -2322,7 +2321,7 @@ record (|java.util.HashMap$Entry|)
     @MaxStack 2
     @Owner (|java.util.HashMap$Entry|)
     @Access (PUBLIC,FINAL)
-    @Signature "java.util.HashMap$Entry.hashCode()I" 
+    @Desc "java.util.HashMap$Entry.hashCode()I" 
   {
     local jmp;
     s0;
@@ -2330,18 +2329,18 @@ record (|java.util.HashMap$Entry|)
     s2;
     s3;
 
-    #L00000Aa. call s0:= {|java.util.HashMap$Entry.getKey()Ljava.lang.Object;|}([|v0|]) @signature "java.util.HashMap$Entry.getKey()Ljava.lang.Object;" @classDescriptor [|java.util.HashMap$Entry|] @type virtual;
-    #L00000Ab. call s1:= {|java.util.Objects.hashCode(Ljava.lang.Object;)I|}(s0) @signature "java.util.Objects.hashCode(Ljava.lang.Object;)I" @classDescriptor [|java.util.Objects|] @type direct;
-    #L00000Ac. call s2:= {|java.util.HashMap$Entry.getValue()Ljava.lang.Object;|}([|v0|]) @signature "java.util.HashMap$Entry.getValue()Ljava.lang.Object;" @classDescriptor [|java.util.HashMap$Entry|] @type virtual;
-    #L00000Ad. call s3:= {|java.util.Objects.hashCode(Ljava.lang.Object;)I|}(s2) @signature "java.util.Objects.hashCode(Ljava.lang.Object;)I" @classDescriptor [|java.util.Objects|] @type direct;
-    #L00000Ae. return s1^~s3;
+    #L00000Aa. call s0  := {|java.util.HashMap$Entry.getKey()Ljava.lang.Object;|}([|v0|]) @ClassDescriptor (|java.util.HashMap$Entry|) @Type virtual;
+    #L00000Ab. call s1  := {|java.util.Objects.hashCode(Ljava.lang.Object;)I|}(s0) @ClassDescriptor (|java.util.Objects|) @Type direct;
+    #L00000Ac. call s2  := {|java.util.HashMap$Entry.getValue()Ljava.lang.Object;|}([|v0|]) @ClassDescriptor (|java.util.HashMap$Entry|) @Type virtual;
+    #L00000Ad. call s3  := {|java.util.Objects.hashCode(Ljava.lang.Object;)I|}(s2) @ClassDescriptor (|java.util.Objects|) @Type direct;
+    #L00000Ae. return (s1^~s3);
   }
   procedure (|java.lang.String|) {|java.util.HashMap$Entry.toString()Ljava.lang.String;|} ((|java.util.HashMap$Entry|) [|v0|]) 
     @MaxLocals 1
     @MaxStack 2
     @Owner (|java.util.HashMap$Entry|)
     @Access (PUBLIC,FINAL)
-    @Signature "java.util.HashMap$Entry.toString()Ljava.lang.String;" 
+    @Desc "java.util.HashMap$Entry.toString()Ljava.lang.String;" 
   {
     local jmp;
     s0;
@@ -2353,14 +2352,14 @@ record (|java.util.HashMap$Entry|)
     s6;
     s7;
 
-    #L00000Aa. s0:= new (|java.lang.StringBuilder|);
-    #L00000Ab. call s1:= {|java.lang.StringBuilder.<init>()V|}(s0) @signature "java.lang.StringBuilder.<init>()V" @classDescriptor [|java.lang.StringBuilder|] @type special;
-    #L00000Ac. call s2:= {|java.util.HashMap$Entry.getKey()Ljava.lang.Object;|}([|v0|]) @signature "java.util.HashMap$Entry.getKey()Ljava.lang.Object;" @classDescriptor [|java.util.HashMap$Entry|] @type virtual;
-    #L00000Ad. call s3:= {|java.lang.StringBuilder.append(Ljava.lang.Object;)Ljava.lang.StringBuilder;|}(s0,s2) @signature "java.lang.StringBuilder.append(Ljava.lang.Object;)Ljava.lang.StringBuilder;" @classDescriptor [|java.lang.StringBuilder|] @type virtual;
-    #L00000Ae. call s4:= {|java.lang.StringBuilder.append(Ljava.lang.String;)Ljava.lang.StringBuilder;|}(s3,"=") @signature "java.lang.StringBuilder.append(Ljava.lang.String;)Ljava.lang.StringBuilder;" @classDescriptor [|java.lang.StringBuilder|] @type virtual;
-    #L00000Af. call s5:= {|java.util.HashMap$Entry.getValue()Ljava.lang.Object;|}([|v0|]) @signature "java.util.HashMap$Entry.getValue()Ljava.lang.Object;" @classDescriptor [|java.util.HashMap$Entry|] @type virtual;
-    #L00000Ag. call s6:= {|java.lang.StringBuilder.append(Ljava.lang.Object;)Ljava.lang.StringBuilder;|}(s4,s5) @signature "java.lang.StringBuilder.append(Ljava.lang.Object;)Ljava.lang.StringBuilder;" @classDescriptor [|java.lang.StringBuilder|] @type virtual;
-    #L00000Ah. call s7:= {|java.lang.StringBuilder.toString()Ljava.lang.String;|}(s6) @signature "java.lang.StringBuilder.toString()Ljava.lang.String;" @classDescriptor [|java.lang.StringBuilder|] @type virtual;
+    #L00000Aa. s0 := new (|java.lang.StringBuilder|);
+    #L00000Ab. call s1  := {|java.lang.StringBuilder.<init>()V|}(s0) @ClassDescriptor (|java.lang.StringBuilder|) @Type special;
+    #L00000Ac. call s2  := {|java.util.HashMap$Entry.getKey()Ljava.lang.Object;|}([|v0|]) @ClassDescriptor (|java.util.HashMap$Entry|) @Type virtual;
+    #L00000Ad. call s3  := {|java.lang.StringBuilder.append(Ljava.lang.Object;)Ljava.lang.StringBuilder;|}(s0,s2) @ClassDescriptor (|java.lang.StringBuilder|) @Type virtual;
+    #L00000Ae. call s4  := {|java.lang.StringBuilder.append(Ljava.lang.String;)Ljava.lang.StringBuilder;|}(s3,"=") @ClassDescriptor (|java.lang.StringBuilder|) @Type virtual;
+    #L00000Af. call s5  := {|java.util.HashMap$Entry.getValue()Ljava.lang.Object;|}([|v0|]) @ClassDescriptor (|java.util.HashMap$Entry|) @Type virtual;
+    #L00000Ag. call s6  := {|java.lang.StringBuilder.append(Ljava.lang.Object;)Ljava.lang.StringBuilder;|}(s4,s5) @ClassDescriptor (|java.lang.StringBuilder|) @Type virtual;
+    #L00000Ah. call s7  := {|java.lang.StringBuilder.toString()Ljava.lang.String;|}(s6) @ClassDescriptor (|java.lang.StringBuilder|) @Type virtual;
     #L00000Ai. return s7;
   }
   procedure (|void|) {|java.util.HashMap$Entry.recordAccess(Ljava.util.HashMap;)V|} ((|java.util.HashMap$Entry|) [|v0|], (|java.util.HashMap|) [|v1|]) 
@@ -2369,7 +2368,7 @@ record (|java.util.HashMap$Entry|)
     @GenericSignature "(Ljava/util/HashMap<TK;TV;>;)V"
     @Owner (|java.util.HashMap$Entry|)
     @Access ()
-    @Signature "java.util.HashMap$Entry.recordAccess(Ljava.util.HashMap;)V" 
+    @Desc "java.util.HashMap$Entry.recordAccess(Ljava.util.HashMap;)V" 
   {
     local jmp;
 
@@ -2381,7 +2380,7 @@ record (|java.util.HashMap$Entry|)
     @GenericSignature "(Ljava/util/HashMap<TK;TV;>;)V"
     @Owner (|java.util.HashMap$Entry|)
     @Access ()
-    @Signature "java.util.HashMap$Entry.recordRemoval(Ljava.util.HashMap;)V" 
+    @Desc "java.util.HashMap$Entry.recordRemoval(Ljava.util.HashMap;)V" 
   {
     local jmp;
 
@@ -2409,12 +2408,12 @@ record (|java.util.HashMap$Holder|)
     @MaxStack 1
     @Owner (|java.util.HashMap$Holder|)
     @Access (PRIVATE,CONSTRUCTOR)
-    @Signature "java.util.HashMap$Holder.<init>()V" 
+    @Desc "java.util.HashMap$Holder.<init>()V" 
   {
     local jmp;
     s0;
 
-    #L00000Aa. call s0:= {|java.lang.Object.<init>()V|}([|v0|]) @signature "java.lang.Object.<init>()V" @classDescriptor [|java.lang.Object|] @type special;
+    #L00000Aa. call s0  := {|java.lang.Object.<init>()V|}([|v0|]) @ClassDescriptor (|java.lang.Object|) @Type special;
     #L00000Ab. return @void;
   }
   procedure (|void|) {|java.util.HashMap$Holder.<clinit>()V|} () 
@@ -2422,7 +2421,7 @@ record (|java.util.HashMap$Holder|)
     @MaxStack 4
     @Owner (|java.util.HashMap$Holder|)
     @Access (STATIC)
-    @Signature "java.util.HashMap$Holder.<clinit>()V" 
+    @Desc "java.util.HashMap$Holder.<clinit>()V" 
   {
     local jmp;
     s0;
@@ -2432,34 +2431,34 @@ record (|java.util.HashMap$Holder|)
     [|v1|];
     [|v2|];
 
-    #L00003Aa. s0:= new (|sun.security.action.GetPropertyAction|);
-    #L00003Ab. call s1:= {|sun.security.action.GetPropertyAction.<init>(Ljava.lang.String;)V|}(s0,"jdk.map.althashing.threshold") @signature "sun.security.action.GetPropertyAction.<init>(Ljava.lang.String;)V" @classDescriptor [|sun.security.action.GetPropertyAction|] @type special;
-    #L00003Ac. call s2:= {|java.security.AccessController.doPrivileged(Ljava.security.PrivilegedAction;)Ljava.lang.Object;|}(s0) @signature "java.security.AccessController.doPrivileged(Ljava.security.PrivilegedAction;)Ljava.lang.Object;" @classDescriptor [|java.security.AccessController|] @type direct;
-    #L00003Ad. [|v0|]:= ((|java.lang.String|)) s2 @type (|java.lang.String|);
+    #L00003Aa. s0 := new (|sun.security.action.GetPropertyAction|);
+    #L00003Ab. call s1  := {|sun.security.action.GetPropertyAction.<init>(Ljava.lang.String;)V|}(s0,"jdk.map.althashing.threshold") @ClassDescriptor (|sun.security.action.GetPropertyAction|) @Type special;
+    #L00003Ac. call s2  := {|java.security.AccessController.doPrivileged(Ljava.security.PrivilegedAction;)Ljava.lang.Object;|}(s0) @ClassDescriptor (|java.security.AccessController|) @Type direct;
+    #L00003Ad. [|v0|] := ((|java.lang.String|)) s2 @Type (|java.lang.String|);
     #L00000Aa. if null == [|v0|] then goto L00004Aa;
-    #L00000Ab. call s0:= {|java.lang.Integer.parseInt(Ljava.lang.String;)I|}([|v0|]) @signature "java.lang.Integer.parseInt(Ljava.lang.String;)I" @classDescriptor [|java.lang.Integer|] @type direct;
-    #L00000Ac. jmp:= s0;
+    #L00000Ab. call s0  := {|java.lang.Integer.parseInt(Ljava.lang.String;)I|}([|v0|]) @ClassDescriptor (|java.lang.Integer|) @Type direct;
+    #L00000Ac. jmp := s0;
     #L00000Ad. goto L00005Aa;
     #L00004Aa. <@Frame (@Append, 1, `[(|java.lang.Object|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|), (|top|)])>
-    #L00004Ab. jmp:= "2147483647";
+    #L00004Ab. jmp := "2147483647";
     #L00005Aa. <@Frame (@Same1, 0, `[(|java.lang.Object|), (|top|), (|top|)], 1, `[(|int|), (|top|), (|top|), (|top|)])>
-    #L00005Ab. [|v1|]:= jmp @type (|java.lang.Object|);
+    #L00005Ab. [|v1|] := jmp @Type (|java.lang.Object|);
     #L00006Aa. if [|v1|] != -1 then goto L00007Aa;
-    #L00008Aa. [|v1|]:= "2147483647" @type ;
+    #L00008Aa. [|v1|] := "2147483647";
     #L00007Aa. <@Frame (@Append, 1, `[(|int|), (|top|), (|top|)], 0, `[(|int|), (|top|), (|top|), (|top|)])>
     #L00007Ab. if [|v1|] >= 0 then goto L00001Aa;
-    #L00009Aa. s0:= new (|java.lang.IllegalArgumentException|);
-    #L00009Ab. call s1:= {|java.lang.IllegalArgumentException.<init>(Ljava.lang.String;)V|}(s0,"value must be positive integer.") @signature "java.lang.IllegalArgumentException.<init>(Ljava.lang.String;)V" @classDescriptor [|java.lang.IllegalArgumentException|] @type special;
+    #L00009Aa. s0 := new (|java.lang.IllegalArgumentException|);
+    #L00009Ab. call s1  := {|java.lang.IllegalArgumentException.<init>(Ljava.lang.String;)V|}(s0,"value must be positive integer.") @ClassDescriptor (|java.lang.IllegalArgumentException|) @Type special;
     #L00009Ac. throw s0;
     #L00001Aa. <@Frame (@Same, 0, `[(|int|), (|top|), (|top|)], 0, `[(|int|), (|top|), (|top|), (|top|)])>
     #L00001Ab. goto L00010Aa;
     #L00002Aa. <@Frame (@Full, 1, `[(|java.lang.Object|), (|top|), (|top|)], 1, `[(|java.lang.Object|), (|top|), (|top|), (|top|)])>
-    #L00002Ab. [|v2|]:= Exception @type java.lang.Object;
-    #L00011Aa. s0:= new (|java.lang.Error|);
-    #L00011Ab. call s1:= {|java.lang.Error.<init>(Ljava.lang.String;Ljava.lang.Throwable;)V|}(s0,"Illegal value for 'jdk.map.althashing.threshold'",[|v2|]) @signature "java.lang.Error.<init>(Ljava.lang.String;Ljava.lang.Throwable;)V" @classDescriptor [|java.lang.Error|] @type special;
+    #L00002Ab. [|v2|] := "Exception" @Type (|java.lang.Object|);
+    #L00011Aa. s0 := new (|java.lang.Error|);
+    #L00011Ab. call s1  := {|java.lang.Error.<init>(Ljava.lang.String;Ljava.lang.Throwable;)V|}(s0,"Illegal value for 'jdk.map.althashing.threshold'",[|v2|]) @ClassDescriptor (|java.lang.Error|) @Type special;
     #L00011Ac. throw s0;
     #L00010Aa. <@Frame (@Append, 1, `[(|int|), (|top|), (|top|)], 0, `[(|java.lang.Object|), (|top|), (|top|), (|top|)])>
-    #L00010Ab. +|java.util.HashMap$Holder.ALTERNATIVE_HASHING_THRESHOLD|+:= [|v1|];
+    #L00010Ab. +|java.util.HashMap$Holder.ALTERNATIVE_HASHING_THRESHOLD|+ := [|v1|] @Type (|int|);
     #L00012Aa. return @void;
       catch (|java.lang.IllegalArgumentException|) @[L00000Aa..L00001Aa] goto L00002Aa;
   }
@@ -2484,7 +2483,7 @@ record (|java.util.Map$Entry|)
     @GenericSignature "()TK;"
     @Owner (|java.util.Map$Entry|)
     @Access (PUBLIC)
-    @Signature "java.util.Map$Entry.getKey()Ljava.lang.Object;" 
+    @Desc "java.util.Map$Entry.getKey()Ljava.lang.Object;" 
   {
 
     #L00000Aa. return @void;
@@ -2493,7 +2492,7 @@ record (|java.util.Map$Entry|)
     @GenericSignature "()TV;"
     @Owner (|java.util.Map$Entry|)
     @Access (PUBLIC)
-    @Signature "java.util.Map$Entry.getValue()Ljava.lang.Object;" 
+    @Desc "java.util.Map$Entry.getValue()Ljava.lang.Object;" 
   {
 
     #L00000Aa. return @void;
@@ -2502,7 +2501,7 @@ record (|java.util.Map$Entry|)
     @GenericSignature "(TV;)TV;"
     @Owner (|java.util.Map$Entry|)
     @Access (PUBLIC)
-    @Signature "java.util.Map$Entry.setValue(Ljava.lang.Object;)Ljava.lang.Object;" 
+    @Desc "java.util.Map$Entry.setValue(Ljava.lang.Object;)Ljava.lang.Object;" 
   {
 
     #L00000Aa. return @void;
@@ -2510,7 +2509,7 @@ record (|java.util.Map$Entry|)
   procedure (|boolean|) {|java.util.Map$Entry.equals(Ljava.lang.Object;)Z|} ((|java.util.Map$Entry|) [|v0|], (|java.lang.Object|) [|v1|]) 
     @Owner (|java.util.Map$Entry|)
     @Access (PUBLIC)
-    @Signature "java.util.Map$Entry.equals(Ljava.lang.Object;)Z" 
+    @Desc "java.util.Map$Entry.equals(Ljava.lang.Object;)Z" 
   {
 
     #L00000Aa. return @void;
@@ -2518,7 +2517,7 @@ record (|java.util.Map$Entry|)
   procedure (|int|) {|java.util.Map$Entry.hashCode()I|} ((|java.util.Map$Entry|) [|v0|]) 
     @Owner (|java.util.Map$Entry|)
     @Access (PUBLIC)
-    @Signature "java.util.Map$Entry.hashCode()I" 
+    @Desc "java.util.Map$Entry.hashCode()I" 
   {
 
     #L00000Aa. return @void;

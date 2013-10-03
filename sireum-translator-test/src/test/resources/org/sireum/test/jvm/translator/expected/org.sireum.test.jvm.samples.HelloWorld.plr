@@ -1,0 +1,58 @@
+record (|org.sireum.test.jvm.samples.HelloWorld|)
+    @Source "HelloWorld.java"
+    @Type class
+    @AccessFlag (PUBLIC) 
+  extends 
+    (|java.lang.Object|) 
+{
+}
+
+  procedure (|void|) {|org.sireum.test.jvm.samples.HelloWorld.<init>()V|} ((|org.sireum.test.jvm.samples.HelloWorld|) [|this|]) 
+    @MaxLocals 1
+    @MaxStack 1
+    @Owner (|org.sireum.test.jvm.samples.HelloWorld|)
+    @Access (PUBLIC,CONSTRUCTOR)
+    @Desc "org.sireum.test.jvm.samples.HelloWorld.<init>()V" 
+  {
+    local jmp;
+    s0;
+
+    #L00000Aa. call s0  := {|java.lang.Object.<init>()V|}([|this|]) @ClassDescriptor (|java.lang.Object|) @Type special;
+    #L00000Ab. return @void;
+  }
+  procedure (|int|) {|org.sireum.test.jvm.samples.HelloWorld.sum(II)I|} ((|int|) [|a|], (|int|) [|b|]) 
+    @MaxLocals 2
+    @MaxStack 2
+    @Owner (|org.sireum.test.jvm.samples.HelloWorld|)
+    @Access (PUBLIC,STATIC)
+    @Desc "org.sireum.test.jvm.samples.HelloWorld.sum(II)I" 
+  {
+    local jmp;
+
+    #L00000Aa. return ([|a|]+[|b|]);
+  }
+  procedure (|void|) {|org.sireum.test.jvm.samples.HelloWorld.main([Ljava.lang.String;)V|} ((|java.lang.String[]|) [|args|]) 
+    @MaxLocals 5
+    @MaxStack 2
+    @Owner (|org.sireum.test.jvm.samples.HelloWorld|)
+    @Access (PUBLIC,STATIC)
+    @Desc "org.sireum.test.jvm.samples.HelloWorld.main([Ljava.lang.String;)V" 
+  {
+    local jmp;
+    s0;
+    s1;
+    (|java.lang.String|) [|hello|];
+    (|int|) [|i|];
+    (|int|) [|j|];
+    (|int|) [|k|];
+
+    #L00000Aa. [|hello|] := "Hello World!" @Type string;
+    #L00001Aa. [|i|] := 0 @Type (|int|);
+    #L00002Aa. [|j|] := 1 @Type (|int|);
+    #L00003Aa. call s0  := {|org.sireum.test.jvm.samples.HelloWorld.sum(II)I|}([|i|],[|j|]) @ClassDescriptor (|org.sireum.test.jvm.samples.HelloWorld|) @Type direct;
+    #L00003Ab. [|k|] := s0 @Type (|java.lang.Object|);
+    #L00004Aa. s0 := +|java.lang.System.out|+ @Type (|java.io.PrintStream|);
+    #L00004Ab. call s1  := {|java.io.PrintStream.println(Ljava.lang.String;)V|}(s0,[|hello|]) @ClassDescriptor (|java.io.PrintStream|) @Type virtual;
+    #L00005Aa. return @void;
+  }
+

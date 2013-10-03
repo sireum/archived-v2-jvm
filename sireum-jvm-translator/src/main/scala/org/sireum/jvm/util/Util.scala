@@ -102,9 +102,8 @@ object Util {
     val functionCall = new StringBuilder
     functionCall ++= getPilarMethod(getFunctionSignature(className.replace("/","."), functionName, desc))
     functionCall ++= "(" + args.mkString(",") + ")"
-    functionCall ++= " @signature " + "\""+ getFunctionSignature(className.replace("/","."), functionName, desc.replace("/",".")) +"\""
-    functionCall ++= " @classDescriptor " + getPilarName(className)
-    functionCall ++= " @type " + functionType
+    functionCall ++= " @ClassDescriptor " + getPilarClassName(className)
+    functionCall ++= " @Type " + functionType
     functionCall.toString
   }
 

@@ -23,7 +23,7 @@ class TranslatorTest extends FunSuite {
 
   test("It should parse") {
     val reporter = new PilarParser.StringErrorReporter(true)
-    BytecodeTranslator.main(Array("java.lang.String"))  
+    BytecodeTranslator.main(Array("org.sireum.test.jvm.samples.Annotations"))  
     val ms = ChunkingPilarParser(Right("file:/Users/Vidit/Dropbox/Classes/Spring2013/FinalProject/Sireum2Workspace/sireum-translator/sireum-jvm-translator/output"), reporter)
 //    val fst = {_:Unit => new ST }
 //    val ast = SymbolTable.apply(List(ms.get), fst, false)
