@@ -2,6 +2,8 @@ package org.sireum.test.jvm.translator
 
 import org.junit.runner.RunWith
 import org.scalatest.junit.JUnitRunner
+import com.google.common.reflect.ClassPath
+import scala.collection.JavaConversions._
 
 @RunWith(classOf[JUnitRunner])
 class JVMTest extends JVMTestFramework {
@@ -10,7 +12,40 @@ class JVMTest extends JVMTestFramework {
 	    "org.sireum.test.jvm.samples.Conditions", "java.lang.StringBuilder", "java.lang.StringBuffer")
 	
 	 def forceGenerate = true
-	 classNames foreach { className => Translating className className }
-	 //Translating className "org.sireum.test.jvm.samples.Test"
-	 //Translating className "org.sireum.test.jvm.samples.HelloWorld2"
+	 def compareFiles = false
+	 
+	 val cp: ClassPath = ClassPath.from(getClass.getClassLoader())
+	 cp.getTopLevelClassesRecursive("org.sireum").foreach(x=>Translating className x.getName())
+	 //cp.getTopLevelClassesRecursive("scala.collection").foreach(x=>Translating className x.getName())
+
+	 
+	 //println(cp.getTopLevelClassesRecursive("scala.collection").size())
+	 //cp.getTopLevelClassesRecursive("scala.collection").foreach(x=>println(x.getName()))
+	 
+//	      val cl = getClass.getClassLoader()
+//        val output = new StringBuilder()
+//        val is = cl.getResourceAsStream(e1.replace('.', File.separatorChar)+".class")
+//        if (isClass(e1)) {
+//	      output ++= translate(is)
+//        } else {
+//          val cp : ClassPath = ClassPath.from(cl)
+//          val clazzs = cp.getTopLevelClassesRecursive(e1)
+//          clazzs.foreach(clazz => {
+//            println(clazz.getName())
+//            val is = cl.getResourceAsStream(clazz.getName().replace('.', File.separatorChar)+".class")
+//            output ++= translate(is)
+//          })
+//        }
+//	   
+//  def isClass(name: String): Boolean = {
+//    try {
+//      Class.forName(name, false, getClass.getClassLoader())
+//      true
+//    } catch  {
+//      case ce : ClassNotFoundException => false
+//    }
+//  }
+	 
+	 
+	 
 }

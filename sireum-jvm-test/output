@@ -1,1569 +1,310 @@
-record (|java.lang.StringBuffer|)
-    @Source "StringBuffer.java"
+record (|scala.collection.script.Update|)
+    @Source "Message.scala"
+    @GenericSignature "<A:Ljava/lang/Object;>Ljava/lang/Object;Lscala/collection/script/Message<TA;>;Lscala/Product;Lscala/Serializable;"
     @Type class
-    @AccessFlag (PUBLIC,FINAL)
-    @InnerClass (
-      @Name (|java.io.ObjectInputStream$GetField|), 
-      @OuterName (|java.io.ObjectInputStream|), 
-      @InnerName GetField, 
-      @AccessFlag (PUBLIC,STATIC)
-     ) 
+    @(|scala.reflect.ScalaSignature;|) (bytes="\u0006\u0001\u0005ec\u0001B\u0001\u0003\u0001&\u0011a!\u00169eCR,'BA\u0002\u0005\u0003\u0019\u00198M]5qi*\u0011QAB\u0001\u000BG>dG.Z2uS>t'\"A\u0004\u0002\u000BM\u001C\u0017\r\\1\u0004\u0001U\u0011!\"F\n\u0006\u0001-ya$\t\t\u0003\u00195i\u0011AB\u0005\u0003\u001D\u0019\u0011a!\u00118z%\u00164\u0007c\u0001\t\u0012'5\t!!\u0003\u0002\u0013\u0005\t9Q*Z:tC\u001E,\u0007C\u0001\u000B\u0016\u0019\u0001!aA\u0006\u0001\u0005\u0006\u00049\"!A!\u0012\u0005aY\u0002C\u0001\u0007\u001A\u0013\tQbAA\u0004O_RD\u0017N\\4\u0011\u00051a\u0012BA\u000F\u0007\u0005\r\te.\u001F\t\u0003\u0019}I!\u0001\t\u0004\u0003\u000FA\u0013x\u000EZ;diB\u0011ABI\u0005\u0003G\u0019\u0011AbU3sS\u0006d\u0017N_1cY\u0016D\u0001\"\n\u0001\u0003\u0016\u0004%\tAJ\u0001\tY>\u001C\u0017\r^5p]V\tq\u0005\u0005\u0002\u0011Q%\u0011\u0011F\u0001\u0002\t\u0019>\u001C\u0017\r^5p]\"A1\u0006\u0001B\tB\u0003%q%A\u0005m_\u000E\fG/[8oA!AQ\u0006\u0001BK\u0002\u0013\u0005a&\u0001\u0003fY\u0016lW#A\n\t\u0011A\u0002!\u0011#Q\u0001\nM\tQ!\u001A7f[\u0002BQA\r\u0001\u0005\u0002M\na\u0001P5oSRtDc\u0001\u001B6mA\u0019\u0001\u0003A\n\t\u000B\u0015\n\u0004\u0019A\u0014\t\u000B5\n\u0004\u0019A\n\t\u000BI\u0002A\u0011\u0001\u001D\u0015\u0005QJ\u0004\"B\u00178\u0001\u0004\u0019\u0002bB\u001E\u0001\u0003\u0003%\t\u0001P\u0001\u0005G>\u0004\u00180\u0006\u0002>\u0001R\u0019a(\u0011\"\u0011\u0007A\u0001q\b\u0005\u0002\u0015\u0001\u0012)aC\u000Fb\u0001/!9QE\u000FI\u0001\u0002\u00049\u0003bB\u0017;!\u0003\u0005\ra\u0010\u0005\b\t\u0002\t\n\u0011\"\u0001F\u00039\u0019w\u000E]=%I\u00164\u0017-\u001E7uIE*\"AR)\u0016\u0003\u001DS#a\n%,\u0003%\u0003\"AS(\u000E\u0003-S!\u0001T'\u0002\u0013Ut7\r[3dW\u0016$'B\u0001(\u0007\u0003)\tgN\\8uCRLwN\\\u0005\u0003!.\u0013\u0011#\u001E8dQ\u0016\u001C7.\u001A3WCJL\u0017M\\2f\t\u001512I1\u0001\u0018\u0011\u001D\u0019\u0006!%A\u0005\u0002Q\u000BabY8qs\u0012\"WMZ1vYR$#'\u0006\u0002V/V\taK\u000B\u0002\u0014\u0011\u0012)aC\u0015b\u0001/!9\u0011\fAA\u0001\n\u0003R\u0016!\u00049s_\u0012,8\r\u001E)sK\u001AL\u00070F\u0001\\!\ta\u0016-D\u0001^\u0015\tqv,\u0001\u0003mC:<'\"\u00011\u0002\t)\fg/Y\u0005\u0003Ev\u0013aa\u0015;sS:<\u0007b\u00023\u0001\u0003\u0003%\t!Z\u0001\raJ|G-^2u\u0003JLG/_\u000B\u0002MB\u0011AbZ\u0005\u0003Q\u001A\u00111!\u00138u\u0011\u001DQ\u0007!!A\u0005\u0002-\fa\u0002\u001D:pIV\u001CG/\u00127f[\u0016tG\u000F\u0006\u0002\u001CY\"9Q.[A\u0001\u0002\u00041\u0017a\u0001=%c!9q\u000EAA\u0001\n\u0003\u0002\u0018a\u00049s_\u0012,8\r^%uKJ\fGo\u001C:\u0016\u0003E\u00042A]:\u001C\u001B\u0005!\u0011B\u0001;\u0005\u0005!IE/\u001A:bi>\u0014\bb\u0002<\u0001\u0003\u0003%\ta^\u0001\tG\u0006tW)];bYR\u0011\u0001p\u001F\t\u0003\u0019eL!A\u001F\u0004\u0003\u000F\t{w\u000E\\3b]\"9Q.^A\u0001\u0002\u0004Y\u0002bB?\u0001\u0003\u0003%\tE`\u0001\tQ\u0006\u001C\bnQ8eKR\ta\rC\u0005\u0002\u0002\u0001\t\t\u0011\"\u0011\u0002\u0004\u0005AAo\\*ue&tw\rF\u0001\\\u0011%\t9\u0001AA\u0001\n\u0003\nI!\u0001\u0004fcV\fGn\u001D\u000B\u0004q\u0006-\u0001\u0002C7\u0002\u0006\u0005\u0005\t\u0019A\u000E\b\u0013\u0005=!!!A\t\u0002\u0005E\u0011AB+qI\u0006$X\rE\u0002\u0011\u0003'1\u0001\"\u0001\u0002\u0002\u0002#\u0005\u0011QC\n\u0005\u0003'Y\u0011\u0005C\u00043\u0003'!\t!!\u0007\u0015\u0005\u0005E\u0001BCA\u0001\u0003'\t\t\u0011\"\u0012\u0002\u0004!Q\u0011qDA\n\u0003\u0003%\t)!\t\u0002\u000B\u0005\u0004\b\u000F\\=\u0016\t\u0005\r\u0012\u0011\u0006\u000B\u0007\u0003K\tY#!\f\u0011\tA\u0001\u0011q\u0005\t\u0004)\u0005%BA\u0002\f\u0002\u001E\t\u0007q\u0003\u0003\u0004&\u0003;\u0001\ra\n\u0005\b[\u0005u\u0001\u0019AA\u0014\u0011)\t\t$a\u0005\u0002\u0002\u0013\u0005\u00151G\u0001\bk:\f\u0007\u000F\u001D7z+\u0011\t)$!\u0012\u0015\t\u0005]\u0012q\t\t\u0006\u0019\u0005e\u0012QH\u0005\u0004\u0003w1!AB(qi&|g\u000E\u0005\u0004\r\u00039\u00131I\u0005\u0004\u0003\u00032!A\u0002+va2,'\u0007E\u0002\u0015\u0003\u000B\"aAFA\u0018\u0005\u00049\u0002BCA%\u0003_\t\t\u00111\u0001\u0002L\u0005\u0019\u0001\u0010\n\u0019\u0011\tA\u0001\u00111\t\u0005\u000B\u0003\u001F\n\u0019\"!A\u0005\n\u0005E\u0013a\u0003:fC\u0012\u0014Vm]8mm\u0016$\"!a\u0015\u0011\u0007q\u000B)&C\u0002\u0002Xu\u0013aa\u00142kK\u000E$\b")
+    @AccessFlag (PUBLIC) 
   extends 
-    (|java.lang.AbstractStringBuilder|) 
+    (|java.lang.Object|) 
 {
-  (|long|) <|StringBuffer.serialVersionUID|> @AccessFlag (STATIC,FINAL);
-  (|java.io.ObjectStreamField[]|) <|StringBuffer.serialPersistentFields|> @AccessFlag (PRIVATE,STATIC,FINAL);
+  (|scala.collection.script.Location|) <|Update.location|> @AccessFlag (PRIVATE,FINAL);
+  (|java.lang.Object|) <|Update.elem|> @GenericSignature "TA;" @AccessFlag (PRIVATE,FINAL);
 }
 
-  procedure (|void|) {|java.lang.StringBuffer.<init>()V|} ((|java.lang.StringBuffer|) [|v0|]) 
-    @MaxLocals 1
-    @MaxStack 2
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PUBLIC,CONSTRUCTOR)
-    @Desc "java.lang.StringBuffer.<init>()V" 
-  {
-    local jmp;
-    s0;
-
-    #L00000Aa. call s0  := {|java.lang.AbstractStringBuilder.<init>(I)V|}([|v0|],16) @ClassDescriptor (|java.lang.AbstractStringBuilder|) @Type special;
-    #L00001Aa. return @void;
-  }
-  procedure (|void|) {|java.lang.StringBuffer.<init>(I)V|} ((|java.lang.StringBuffer|) [|v0|], (|int|) [|v1|]) 
-    @MaxLocals 2
-    @MaxStack 2
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PUBLIC,CONSTRUCTOR)
-    @Desc "java.lang.StringBuffer.<init>(I)V" 
-  {
-    local jmp;
-    s0;
-
-    #L00000Aa. call s0  := {|java.lang.AbstractStringBuilder.<init>(I)V|}([|v0|],[|v1|]) @ClassDescriptor (|java.lang.AbstractStringBuilder|) @Type special;
-    #L00001Aa. return @void;
-  }
-  procedure (|void|) {|java.lang.StringBuffer.<init>(Ljava.lang.String;)V|} ((|java.lang.StringBuffer|) [|v0|], (|java.lang.String|) [|v1|]) 
-    @MaxLocals 2
-    @MaxStack 3
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PUBLIC,CONSTRUCTOR)
-    @Desc "java.lang.StringBuffer.<init>(Ljava.lang.String;)V" 
-  {
-    local jmp;
-    s0;
-    s1;
-
-    #L00000Aa. call s0  := {|java.lang.String.length()I|}([|v1|]) @ClassDescriptor (|java.lang.String|) @Type virtual;
-    #L00000Ab. call s1  := {|java.lang.AbstractStringBuilder.<init>(I)V|}([|v0|],(s0+16)) @ClassDescriptor (|java.lang.AbstractStringBuilder|) @Type special;
-    #L00001Aa. call s0  := {|java.lang.StringBuffer.append(Ljava.lang.String;)Ljava.lang.StringBuffer;|}([|v0|],[|v1|]) @ClassDescriptor (|java.lang.StringBuffer|) @Type virtual;
-    #L00002Aa. return @void;
-  }
-  procedure (|void|) {|java.lang.StringBuffer.<init>(Ljava.lang.CharSequence;)V|} ((|java.lang.StringBuffer|) [|v0|], (|java.lang.CharSequence|) [|v1|]) 
-    @MaxLocals 2
-    @MaxStack 3
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PUBLIC,CONSTRUCTOR)
-    @Desc "java.lang.StringBuffer.<init>(Ljava.lang.CharSequence;)V" 
-  {
-    local jmp;
-    s0;
-    s1;
-
-    #L00000Aa. call s0  := {|java.lang.CharSequence.length()I|}([|v1|]) @ClassDescriptor (|java.lang.CharSequence|) @Type interface;
-    #L00000Ab. call s1  := {|java.lang.StringBuffer.<init>(I)V|}([|v0|],(s0+16)) @ClassDescriptor (|java.lang.StringBuffer|) @Type special;
-    #L00001Aa. call s0  := {|java.lang.StringBuffer.append(Ljava.lang.CharSequence;)Ljava.lang.StringBuffer;|}([|v0|],[|v1|]) @ClassDescriptor (|java.lang.StringBuffer|) @Type virtual;
-    #L00002Aa. return @void;
-  }
-  procedure (|int|) {|java.lang.StringBuffer.length()I|} ((|java.lang.StringBuffer|) [|v0|]) 
+  procedure (|scala.collection.script.Location|) {|scala.collection.script.Update.location()Lscala.collection.script.Location;|} ((|scala.collection.script.Update|) [|this|]) 
     @MaxLocals 1
     @MaxStack 1
-    @Owner (|java.lang.StringBuffer|)
+    @Owner (|scala.collection.script.Update|)
     @Access (PUBLIC)
-    @Desc "java.lang.StringBuffer.length()I" 
+    @Desc "scala.collection.script.Update.location()Lscala.collection.script.Location;" 
   {
     local jmp;
     s0;
 
-    #L00000Aa. s0 := [|v0|].<|java.lang.StringBuffer.count|> @Type (|int|);
+    #L00000Aa. s0 := [|this|].<|scala.collection.script.Update.location|> @Type (|scala.collection.script.Location|);
     #L00000Ab. return s0;
   }
-  procedure (|int|) {|java.lang.StringBuffer.capacity()I|} ((|java.lang.StringBuffer|) [|v0|]) 
+  procedure (|java.lang.Object|) {|scala.collection.script.Update.elem()Ljava.lang.Object;|} ((|scala.collection.script.Update|) [|this|]) 
     @MaxLocals 1
     @MaxStack 1
-    @Owner (|java.lang.StringBuffer|)
+    @GenericSignature "()TA;"
+    @Owner (|scala.collection.script.Update|)
     @Access (PUBLIC)
-    @Desc "java.lang.StringBuffer.capacity()I" 
+    @Desc "scala.collection.script.Update.elem()Ljava.lang.Object;" 
   {
     local jmp;
     s0;
 
-    #L00000Aa. s0 := [|v0|].<|java.lang.StringBuffer.value|> @Type (|char[]|);
-    #L00000Ab. return s0.length;
+    #L00000Aa. s0 := [|this|].<|scala.collection.script.Update.elem|> @Type (|java.lang.Object|);
+    #L00000Ab. return s0;
   }
-  procedure (|void|) {|java.lang.StringBuffer.ensureCapacity(I)V|} ((|java.lang.StringBuffer|) [|v0|], (|int|) [|v1|]) 
-    @MaxLocals 2
-    @MaxStack 2
-    @Owner (|java.lang.StringBuffer|)
+  procedure (|scala.collection.script.Update|) {|scala.collection.script.Update.copy(Lscala.collection.script.Location;Ljava.lang.Object;)Lscala.collection.script.Update;|} ((|scala.collection.script.Update|) [|this|], (|scala.collection.script.Location|) [|location|], (|java.lang.Object|) [|elem|]) 
+    @MaxLocals 3
+    @MaxStack 4
+    @GenericSignature "<A:Ljava/lang/Object;>(Lscala/collection/script/Location;TA;)Lscala/collection/script/Update<TA;>;"
+    @Owner (|scala.collection.script.Update|)
     @Access (PUBLIC)
-    @Desc "java.lang.StringBuffer.ensureCapacity(I)V" 
-  {
-    local jmp;
-    s0;
-
-    #L00000Aa. s0 := [|v0|].<|java.lang.StringBuffer.value|> @Type (|char[]|);
-    #L00000Ab. if [|v1|] <= s0.length then goto L00001Aa;
-    #L00002Aa. call s0  := {|java.lang.StringBuffer.expandCapacity(I)V|}([|v0|],[|v1|]) @ClassDescriptor (|java.lang.StringBuffer|) @Type virtual;
-    #L00001Aa. <@Frame (@Same, 0, `[(|top|), (|top|)], 0, `[(|top|), (|top|)])>
-    #L00001Ab. return @void;
-  }
-  procedure (|void|) {|java.lang.StringBuffer.trimToSize()V|} ((|java.lang.StringBuffer|) [|v0|]) 
-    @MaxLocals 1
-    @MaxStack 1
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PUBLIC)
-    @Desc "java.lang.StringBuffer.trimToSize()V" 
-  {
-    local jmp;
-    s0;
-
-    #L00000Aa. call s0  := {|java.lang.AbstractStringBuilder.trimToSize()V|}([|v0|]) @ClassDescriptor (|java.lang.AbstractStringBuilder|) @Type special;
-    #L00001Aa. return @void;
-  }
-  procedure (|void|) {|java.lang.StringBuffer.setLength(I)V|} ((|java.lang.StringBuffer|) [|v0|], (|int|) [|v1|]) 
-    @MaxLocals 2
-    @MaxStack 2
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PUBLIC)
-    @Desc "java.lang.StringBuffer.setLength(I)V" 
-  {
-    local jmp;
-    s0;
-
-    #L00000Aa. call s0  := {|java.lang.AbstractStringBuilder.setLength(I)V|}([|v0|],[|v1|]) @ClassDescriptor (|java.lang.AbstractStringBuilder|) @Type special;
-    #L00001Aa. return @void;
-  }
-  procedure (|char|) {|java.lang.StringBuffer.charAt(I)C|} ((|java.lang.StringBuffer|) [|v0|], (|int|) [|v1|]) 
-    @MaxLocals 2
-    @MaxStack 3
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PUBLIC)
-    @Desc "java.lang.StringBuffer.charAt(I)C" 
+    @Desc "scala.collection.script.Update.copy(Lscala.collection.script.Location;Ljava.lang.Object;)Lscala.collection.script.Update;" 
   {
     local jmp;
     s0;
     s1;
 
-    #L00000Aa. if [|v1|] < 0 then goto L00001Aa;
-    #L00000Ab. s0 := [|v0|].<|java.lang.StringBuffer.count|> @Type (|int|);
-    #L00000Ac. if [|v1|] < s0 then goto L00002Aa;
+    #L00000Aa. s0 := new (|scala.collection.script.Update|);
+    #L00000Ab. call s1  := {|scala.collection.script.Update.<init>(Lscala.collection.script.Location;Ljava.lang.Object;)V|}(s0,[|location|],[|elem|]) @ClassDescriptor (|scala.collection.script.Update|) @Type special;
+    #L00000Ac. return s0;
+  }
+  procedure (|scala.collection.script.Location|) {|scala.collection.script.Update.copy$default$1()Lscala.collection.script.Location;|} ((|scala.collection.script.Update|) [|this|]) 
+    @MaxLocals 1
+    @MaxStack 1
+    @GenericSignature "<A:Ljava/lang/Object;>()Lscala/collection/script/Location;"
+    @Owner (|scala.collection.script.Update|)
+    @Access (PUBLIC)
+    @Desc "scala.collection.script.Update.copy$default$1()Lscala.collection.script.Location;" 
+  {
+    local jmp;
+    s0;
+
+    #L00000Aa. call s0  := {|scala.collection.script.Update.location()Lscala.collection.script.Location;|}([|this|]) @ClassDescriptor (|scala.collection.script.Update|) @Type virtual;
+    #L00000Ab. return s0;
+  }
+  procedure (|java.lang.Object|) {|scala.collection.script.Update.copy$default$2()Ljava.lang.Object;|} ((|scala.collection.script.Update|) [|this|]) 
+    @MaxLocals 1
+    @MaxStack 1
+    @GenericSignature "<A:Ljava/lang/Object;>()TA;"
+    @Owner (|scala.collection.script.Update|)
+    @Access (PUBLIC)
+    @Desc "scala.collection.script.Update.copy$default$2()Ljava.lang.Object;" 
+  {
+    local jmp;
+    s0;
+
+    #L00000Aa. call s0  := {|scala.collection.script.Update.elem()Ljava.lang.Object;|}([|this|]) @ClassDescriptor (|scala.collection.script.Update|) @Type virtual;
+    #L00000Ab. return s0;
+  }
+  procedure (|java.lang.String|) {|scala.collection.script.Update.productPrefix()Ljava.lang.String;|} ((|scala.collection.script.Update|) [|this|]) 
+    @MaxLocals 1
+    @MaxStack 1
+    @Owner (|scala.collection.script.Update|)
+    @Access (PUBLIC)
+    @Desc "scala.collection.script.Update.productPrefix()Ljava.lang.String;" 
+  {
+    local jmp;
+
+    #L00000Aa. return "Update";
+  }
+  procedure (|int|) {|scala.collection.script.Update.productArity()I|} ((|scala.collection.script.Update|) [|this|]) 
+    @MaxLocals 1
+    @MaxStack 1
+    @Owner (|scala.collection.script.Update|)
+    @Access (PUBLIC)
+    @Desc "scala.collection.script.Update.productArity()I" 
+  {
+    local jmp;
+
+    #L00000Aa. return 2;
+  }
+  procedure (|java.lang.Object|) {|scala.collection.script.Update.productElement(I)Ljava.lang.Object;|} ((|scala.collection.script.Update|) [|this|], (|int|) [|x$1|]) 
+    @MaxLocals 2
+    @MaxStack 3
+    @Owner (|scala.collection.script.Update|)
+    @Access (PUBLIC)
+    @Desc "scala.collection.script.Update.productElement(I)Ljava.lang.Object;" 
+  {
+    local jmp;
+    s0;
+    s1;
+    s2;
+    s3;
+
+    #L00000Aa. switch [|x$1|]
+                | 0 => goto L00002Aa
+                | 1 => goto L00003Aa
+                | => goto L00001Aa;
     #L00001Aa. <@Frame (@Same, 0, `[(|top|), (|top|)], 0, `[(|top|), (|top|), (|top|)])>
-    #L00001Ab. s0 := new (|java.lang.StringIndexOutOfBoundsException|);
-    #L00001Ac. call s1  := {|java.lang.StringIndexOutOfBoundsException.<init>(I)V|}(s0,[|v1|]) @ClassDescriptor (|java.lang.StringIndexOutOfBoundsException|) @Type special;
-    #L00001Ad. throw s0;
+    #L00001Ab. s0 := new (|java.lang.IndexOutOfBoundsException|);
+    #L00001Ac. call s1  := {|scala.runtime.BoxesRunTime.boxToInteger(I)Ljava.lang.Integer;|}([|x$1|]) @ClassDescriptor (|scala.runtime.BoxesRunTime|) @Type direct;
+    #L00001Ad. call s2  := {|java.lang.Object.toString()Ljava.lang.String;|}(s1) @ClassDescriptor (|java.lang.Object|) @Type virtual;
+    #L00001Ae. call s3  := {|java.lang.IndexOutOfBoundsException.<init>(Ljava.lang.String;)V|}(s0,s2) @ClassDescriptor (|java.lang.IndexOutOfBoundsException|) @Type special;
+    #L00001Af. throw s0;
+    #L00003Aa. <@Frame (@Same, 0, `[(|top|), (|top|)], 0, `[(|top|), (|top|), (|top|)])>
+    #L00003Ab. call s0  := {|scala.collection.script.Update.elem()Ljava.lang.Object;|}([|this|]) @ClassDescriptor (|scala.collection.script.Update|) @Type virtual;
+    #L00003Ac. jmp := s0;
+    #L00003Ad. goto L00004Aa;
     #L00002Aa. <@Frame (@Same, 0, `[(|top|), (|top|)], 0, `[(|top|), (|top|), (|top|)])>
-    #L00002Ab. s0 := [|v0|].<|java.lang.StringBuffer.value|> @Type (|char[]|);
-    #L00002Ac. s1 := s0[[|v1|]];
-    #L00002Ad. return s1;
+    #L00002Ab. call s1  := {|scala.collection.script.Update.location()Lscala.collection.script.Location;|}([|this|]) @ClassDescriptor (|scala.collection.script.Update|) @Type virtual;
+    #L00002Ac. jmp := s1;
+    #L00004Aa. <@Frame (@Same1, 0, `[(|top|), (|top|)], 1, `[(|java.lang.Object|), (|top|), (|top|)])>
+    #L00004Ab. return jmp;
   }
-  procedure (|int|) {|java.lang.StringBuffer.codePointAt(I)I|} ((|java.lang.StringBuffer|) [|v0|], (|int|) [|v1|]) 
-    @MaxLocals 2
-    @MaxStack 2
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PUBLIC)
-    @Desc "java.lang.StringBuffer.codePointAt(I)I" 
-  {
-    local jmp;
-    s0;
-
-    #L00000Aa. call s0  := {|java.lang.AbstractStringBuilder.codePointAt(I)I|}([|v0|],[|v1|]) @ClassDescriptor (|java.lang.AbstractStringBuilder|) @Type special;
-    #L00000Ab. return s0;
-  }
-  procedure (|int|) {|java.lang.StringBuffer.codePointBefore(I)I|} ((|java.lang.StringBuffer|) [|v0|], (|int|) [|v1|]) 
-    @MaxLocals 2
-    @MaxStack 2
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PUBLIC)
-    @Desc "java.lang.StringBuffer.codePointBefore(I)I" 
-  {
-    local jmp;
-    s0;
-
-    #L00000Aa. call s0  := {|java.lang.AbstractStringBuilder.codePointBefore(I)I|}([|v0|],[|v1|]) @ClassDescriptor (|java.lang.AbstractStringBuilder|) @Type special;
-    #L00000Ab. return s0;
-  }
-  procedure (|int|) {|java.lang.StringBuffer.codePointCount(II)I|} ((|java.lang.StringBuffer|) [|v0|], (|int|) [|v1|], (|int|) [|v2|]) 
-    @MaxLocals 3
-    @MaxStack 3
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PUBLIC)
-    @Desc "java.lang.StringBuffer.codePointCount(II)I" 
-  {
-    local jmp;
-    s0;
-
-    #L00000Aa. call s0  := {|java.lang.AbstractStringBuilder.codePointCount(II)I|}([|v0|],[|v1|],[|v2|]) @ClassDescriptor (|java.lang.AbstractStringBuilder|) @Type special;
-    #L00000Ab. return s0;
-  }
-  procedure (|int|) {|java.lang.StringBuffer.offsetByCodePoints(II)I|} ((|java.lang.StringBuffer|) [|v0|], (|int|) [|v1|], (|int|) [|v2|]) 
-    @MaxLocals 3
-    @MaxStack 3
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PUBLIC)
-    @Desc "java.lang.StringBuffer.offsetByCodePoints(II)I" 
-  {
-    local jmp;
-    s0;
-
-    #L00000Aa. call s0  := {|java.lang.AbstractStringBuilder.offsetByCodePoints(II)I|}([|v0|],[|v1|],[|v2|]) @ClassDescriptor (|java.lang.AbstractStringBuilder|) @Type special;
-    #L00000Ab. return s0;
-  }
-  procedure (|void|) {|java.lang.StringBuffer.getChars(II[CI)V|} ((|java.lang.StringBuffer|) [|v0|], (|int|) [|v1|], (|int|) [|v2|], (|char[]|) [|v3|], (|int|) [|v4|]) 
-    @MaxLocals 5
-    @MaxStack 5
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PUBLIC)
-    @Desc "java.lang.StringBuffer.getChars(II[CI)V" 
-  {
-    local jmp;
-    s0;
-
-    #L00000Aa. call s0  := {|java.lang.AbstractStringBuilder.getChars(II[CI)V|}([|v0|],[|v1|],[|v2|],[|v3|],[|v4|]) @ClassDescriptor (|java.lang.AbstractStringBuilder|) @Type special;
-    #L00001Aa. return @void;
-  }
-  procedure (|void|) {|java.lang.StringBuffer.setCharAt(IC)V|} ((|java.lang.StringBuffer|) [|v0|], (|int|) [|v1|], (|char|) [|v2|]) 
-    @MaxLocals 3
-    @MaxStack 3
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PUBLIC)
-    @Desc "java.lang.StringBuffer.setCharAt(IC)V" 
-  {
-    local jmp;
-    s0;
-    s1;
-
-    #L00000Aa. if [|v1|] < 0 then goto L00001Aa;
-    #L00000Ab. s0 := [|v0|].<|java.lang.StringBuffer.count|> @Type (|int|);
-    #L00000Ac. if [|v1|] < s0 then goto L00002Aa;
-    #L00001Aa. <@Frame (@Same, 0, `[(|top|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|)])>
-    #L00001Ab. s0 := new (|java.lang.StringIndexOutOfBoundsException|);
-    #L00001Ac. call s1  := {|java.lang.StringIndexOutOfBoundsException.<init>(I)V|}(s0,[|v1|]) @ClassDescriptor (|java.lang.StringIndexOutOfBoundsException|) @Type special;
-    #L00001Ad. throw s0;
-    #L00002Aa. <@Frame (@Same, 0, `[(|top|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|)])>
-    #L00002Ab. s0 := [|v0|].<|java.lang.StringBuffer.value|> @Type (|char[]|);
-    #L00002Ac. s0[[|v1|]] := [|v2|];
-    #L00003Aa. return @void;
-  }
-  procedure (|java.lang.StringBuffer|) {|java.lang.StringBuffer.append(Ljava.lang.Object;)Ljava.lang.StringBuffer;|} ((|java.lang.StringBuffer|) [|v0|], (|java.lang.Object|) [|v1|]) 
-    @MaxLocals 2
-    @MaxStack 2
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PUBLIC)
-    @Desc "java.lang.StringBuffer.append(Ljava.lang.Object;)Ljava.lang.StringBuffer;" 
-  {
-    local jmp;
-    s0;
-    s1;
-
-    #L00000Aa. call s0  := {|java.lang.String.valueOf(Ljava.lang.Object;)Ljava.lang.String;|}([|v1|]) @ClassDescriptor (|java.lang.String|) @Type direct;
-    #L00000Ab. call s1  := {|java.lang.AbstractStringBuilder.append(Ljava.lang.String;)Ljava.lang.AbstractStringBuilder;|}([|v0|],s0) @ClassDescriptor (|java.lang.AbstractStringBuilder|) @Type special;
-    #L00001Aa. return [|v0|];
-  }
-  procedure (|java.lang.StringBuffer|) {|java.lang.StringBuffer.append(Ljava.lang.String;)Ljava.lang.StringBuffer;|} ((|java.lang.StringBuffer|) [|v0|], (|java.lang.String|) [|v1|]) 
-    @MaxLocals 2
-    @MaxStack 2
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PUBLIC)
-    @Desc "java.lang.StringBuffer.append(Ljava.lang.String;)Ljava.lang.StringBuffer;" 
-  {
-    local jmp;
-    s0;
-
-    #L00000Aa. call s0  := {|java.lang.AbstractStringBuilder.append(Ljava.lang.String;)Ljava.lang.AbstractStringBuilder;|}([|v0|],[|v1|]) @ClassDescriptor (|java.lang.AbstractStringBuilder|) @Type special;
-    #L00001Aa. return [|v0|];
-  }
-  procedure (|java.lang.StringBuffer|) {|java.lang.StringBuffer.append(Ljava.lang.StringBuffer;)Ljava.lang.StringBuffer;|} ((|java.lang.StringBuffer|) [|v0|], (|java.lang.StringBuffer|) [|v1|]) 
-    @MaxLocals 2
-    @MaxStack 2
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PUBLIC)
-    @Desc "java.lang.StringBuffer.append(Ljava.lang.StringBuffer;)Ljava.lang.StringBuffer;" 
-  {
-    local jmp;
-    s0;
-
-    #L00000Aa. call s0  := {|java.lang.AbstractStringBuilder.append(Ljava.lang.StringBuffer;)Ljava.lang.AbstractStringBuilder;|}([|v0|],[|v1|]) @ClassDescriptor (|java.lang.AbstractStringBuilder|) @Type special;
-    #L00001Aa. return [|v0|];
-  }
-  procedure (|java.lang.StringBuffer|) {|java.lang.StringBuffer.append(Ljava.lang.CharSequence;)Ljava.lang.StringBuffer;|} ((|java.lang.StringBuffer|) [|v0|], (|java.lang.CharSequence|) [|v1|]) 
-    @MaxLocals 2
-    @MaxStack 4
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PUBLIC)
-    @Desc "java.lang.StringBuffer.append(Ljava.lang.CharSequence;)Ljava.lang.StringBuffer;" 
-  {
-    local jmp;
-    s0;
-    s1;
-
-    #L00000Aa. if [|v1|] != null then goto L00001Aa;
-    #L00002Aa. [|v1|] := "null" @Type string;
-    #L00001Aa. <@Frame (@Same, 0, `[(|top|), (|top|)], 0, `[(|top|), (|top|), (|top|), (|top|)])>
-    #L00001Ab. s0 := instanceof @varname [|v1|] @Type "(|java.lang.String|)";
-    #L00001Ac. if s0 == 0 then goto L00003Aa;
-    #L00004Aa. call s0  := {|java.lang.StringBuffer.append(Ljava.lang.String;)Ljava.lang.StringBuffer;|}([|v0|],((|java.lang.String|)) [|v1|]) @ClassDescriptor (|java.lang.StringBuffer|) @Type virtual;
-    #L00004Ab. return s0;
-    #L00003Aa. <@Frame (@Same, 0, `[(|top|), (|top|)], 0, `[(|top|), (|top|), (|top|), (|top|)])>
-    #L00003Ab. s0 := instanceof @varname [|v1|] @Type "(|java.lang.StringBuffer|)";
-    #L00003Ac. if s0 == 0 then goto L00005Aa;
-    #L00006Aa. call s0  := {|java.lang.StringBuffer.append(Ljava.lang.StringBuffer;)Ljava.lang.StringBuffer;|}([|v0|],((|java.lang.StringBuffer|)) [|v1|]) @ClassDescriptor (|java.lang.StringBuffer|) @Type virtual;
-    #L00006Ab. return s0;
-    #L00005Aa. <@Frame (@Same, 0, `[(|top|), (|top|)], 0, `[(|top|), (|top|), (|top|), (|top|)])>
-    #L00005Ab. call s0  := {|java.lang.CharSequence.length()I|}([|v1|]) @ClassDescriptor (|java.lang.CharSequence|) @Type interface;
-    #L00005Ac. call s1  := {|java.lang.StringBuffer.append(Ljava.lang.CharSequence;II)Ljava.lang.StringBuffer;|}([|v0|],[|v1|],0,s0) @ClassDescriptor (|java.lang.StringBuffer|) @Type virtual;
-    #L00005Ad. return s1;
-  }
-  procedure (|java.lang.StringBuffer|) {|java.lang.StringBuffer.append(Ljava.lang.CharSequence;II)Ljava.lang.StringBuffer;|} ((|java.lang.StringBuffer|) [|v0|], (|java.lang.CharSequence|) [|v1|], (|int|) [|v2|], (|int|) [|v3|]) 
-    @MaxLocals 4
-    @MaxStack 4
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PUBLIC)
-    @Desc "java.lang.StringBuffer.append(Ljava.lang.CharSequence;II)Ljava.lang.StringBuffer;" 
-  {
-    local jmp;
-    s0;
-
-    #L00000Aa. call s0  := {|java.lang.AbstractStringBuilder.append(Ljava.lang.CharSequence;II)Ljava.lang.AbstractStringBuilder;|}([|v0|],[|v1|],[|v2|],[|v3|]) @ClassDescriptor (|java.lang.AbstractStringBuilder|) @Type special;
-    #L00001Aa. return [|v0|];
-  }
-  procedure (|java.lang.StringBuffer|) {|java.lang.StringBuffer.append([C)Ljava.lang.StringBuffer;|} ((|java.lang.StringBuffer|) [|v0|], (|char[]|) [|v1|]) 
-    @MaxLocals 2
-    @MaxStack 2
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PUBLIC)
-    @Desc "java.lang.StringBuffer.append([C)Ljava.lang.StringBuffer;" 
-  {
-    local jmp;
-    s0;
-
-    #L00000Aa. call s0  := {|java.lang.AbstractStringBuilder.append([C)Ljava.lang.AbstractStringBuilder;|}([|v0|],[|v1|]) @ClassDescriptor (|java.lang.AbstractStringBuilder|) @Type special;
-    #L00001Aa. return [|v0|];
-  }
-  procedure (|java.lang.StringBuffer|) {|java.lang.StringBuffer.append([CII)Ljava.lang.StringBuffer;|} ((|java.lang.StringBuffer|) [|v0|], (|char[]|) [|v1|], (|int|) [|v2|], (|int|) [|v3|]) 
-    @MaxLocals 4
-    @MaxStack 4
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PUBLIC)
-    @Desc "java.lang.StringBuffer.append([CII)Ljava.lang.StringBuffer;" 
-  {
-    local jmp;
-    s0;
-
-    #L00000Aa. call s0  := {|java.lang.AbstractStringBuilder.append([CII)Ljava.lang.AbstractStringBuilder;|}([|v0|],[|v1|],[|v2|],[|v3|]) @ClassDescriptor (|java.lang.AbstractStringBuilder|) @Type special;
-    #L00001Aa. return [|v0|];
-  }
-  procedure (|java.lang.StringBuffer|) {|java.lang.StringBuffer.append(Z)Ljava.lang.StringBuffer;|} ((|java.lang.StringBuffer|) [|v0|], (|boolean|) [|v1|]) 
-    @MaxLocals 2
-    @MaxStack 2
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PUBLIC)
-    @Desc "java.lang.StringBuffer.append(Z)Ljava.lang.StringBuffer;" 
-  {
-    local jmp;
-    s0;
-
-    #L00000Aa. call s0  := {|java.lang.AbstractStringBuilder.append(Z)Ljava.lang.AbstractStringBuilder;|}([|v0|],[|v1|]) @ClassDescriptor (|java.lang.AbstractStringBuilder|) @Type special;
-    #L00001Aa. return [|v0|];
-  }
-  procedure (|java.lang.StringBuffer|) {|java.lang.StringBuffer.append(C)Ljava.lang.StringBuffer;|} ((|java.lang.StringBuffer|) [|v0|], (|char|) [|v1|]) 
-    @MaxLocals 2
-    @MaxStack 2
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PUBLIC)
-    @Desc "java.lang.StringBuffer.append(C)Ljava.lang.StringBuffer;" 
-  {
-    local jmp;
-    s0;
-
-    #L00000Aa. call s0  := {|java.lang.AbstractStringBuilder.append(C)Ljava.lang.AbstractStringBuilder;|}([|v0|],[|v1|]) @ClassDescriptor (|java.lang.AbstractStringBuilder|) @Type special;
-    #L00001Aa. return [|v0|];
-  }
-  procedure (|java.lang.StringBuffer|) {|java.lang.StringBuffer.append(I)Ljava.lang.StringBuffer;|} ((|java.lang.StringBuffer|) [|v0|], (|int|) [|v1|]) 
-    @MaxLocals 2
-    @MaxStack 2
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PUBLIC)
-    @Desc "java.lang.StringBuffer.append(I)Ljava.lang.StringBuffer;" 
-  {
-    local jmp;
-    s0;
-
-    #L00000Aa. call s0  := {|java.lang.AbstractStringBuilder.append(I)Ljava.lang.AbstractStringBuilder;|}([|v0|],[|v1|]) @ClassDescriptor (|java.lang.AbstractStringBuilder|) @Type special;
-    #L00001Aa. return [|v0|];
-  }
-  procedure (|java.lang.StringBuffer|) {|java.lang.StringBuffer.appendCodePoint(I)Ljava.lang.StringBuffer;|} ((|java.lang.StringBuffer|) [|v0|], (|int|) [|v1|]) 
-    @MaxLocals 2
-    @MaxStack 2
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PUBLIC)
-    @Desc "java.lang.StringBuffer.appendCodePoint(I)Ljava.lang.StringBuffer;" 
-  {
-    local jmp;
-    s0;
-
-    #L00000Aa. call s0  := {|java.lang.AbstractStringBuilder.appendCodePoint(I)Ljava.lang.AbstractStringBuilder;|}([|v0|],[|v1|]) @ClassDescriptor (|java.lang.AbstractStringBuilder|) @Type special;
-    #L00001Aa. return [|v0|];
-  }
-  procedure (|java.lang.StringBuffer|) {|java.lang.StringBuffer.append(J)Ljava.lang.StringBuffer;|} ((|java.lang.StringBuffer|) [|v0|], (|long|) [|v1|]) 
-    @MaxLocals 3
-    @MaxStack 3
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PUBLIC)
-    @Desc "java.lang.StringBuffer.append(J)Ljava.lang.StringBuffer;" 
-  {
-    local jmp;
-    s0;
-    [|v2|];
-
-    #L00000Aa. call s0  := {|java.lang.AbstractStringBuilder.append(J)Ljava.lang.AbstractStringBuilder;|}([|v0|],[|v1|]) @ClassDescriptor (|java.lang.AbstractStringBuilder|) @Type special;
-    #L00001Aa. return [|v0|];
-  }
-  procedure (|java.lang.StringBuffer|) {|java.lang.StringBuffer.append(F)Ljava.lang.StringBuffer;|} ((|java.lang.StringBuffer|) [|v0|], (|float|) [|v1|]) 
-    @MaxLocals 2
-    @MaxStack 2
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PUBLIC)
-    @Desc "java.lang.StringBuffer.append(F)Ljava.lang.StringBuffer;" 
-  {
-    local jmp;
-    s0;
-
-    #L00000Aa. call s0  := {|java.lang.AbstractStringBuilder.append(F)Ljava.lang.AbstractStringBuilder;|}([|v0|],[|v1|]) @ClassDescriptor (|java.lang.AbstractStringBuilder|) @Type special;
-    #L00001Aa. return [|v0|];
-  }
-  procedure (|java.lang.StringBuffer|) {|java.lang.StringBuffer.append(D)Ljava.lang.StringBuffer;|} ((|java.lang.StringBuffer|) [|v0|], (|double|) [|v1|]) 
-    @MaxLocals 3
-    @MaxStack 3
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PUBLIC)
-    @Desc "java.lang.StringBuffer.append(D)Ljava.lang.StringBuffer;" 
-  {
-    local jmp;
-    s0;
-    [|v2|];
-
-    #L00000Aa. call s0  := {|java.lang.AbstractStringBuilder.append(D)Ljava.lang.AbstractStringBuilder;|}([|v0|],[|v1|]) @ClassDescriptor (|java.lang.AbstractStringBuilder|) @Type special;
-    #L00001Aa. return [|v0|];
-  }
-  procedure (|java.lang.StringBuffer|) {|java.lang.StringBuffer.delete(II)Ljava.lang.StringBuffer;|} ((|java.lang.StringBuffer|) [|v0|], (|int|) [|v1|], (|int|) [|v2|]) 
-    @MaxLocals 3
-    @MaxStack 3
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PUBLIC)
-    @Desc "java.lang.StringBuffer.delete(II)Ljava.lang.StringBuffer;" 
-  {
-    local jmp;
-    s0;
-
-    #L00000Aa. call s0  := {|java.lang.AbstractStringBuilder.delete(II)Ljava.lang.AbstractStringBuilder;|}([|v0|],[|v1|],[|v2|]) @ClassDescriptor (|java.lang.AbstractStringBuilder|) @Type special;
-    #L00001Aa. return [|v0|];
-  }
-  procedure (|java.lang.StringBuffer|) {|java.lang.StringBuffer.deleteCharAt(I)Ljava.lang.StringBuffer;|} ((|java.lang.StringBuffer|) [|v0|], (|int|) [|v1|]) 
-    @MaxLocals 2
-    @MaxStack 2
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PUBLIC)
-    @Desc "java.lang.StringBuffer.deleteCharAt(I)Ljava.lang.StringBuffer;" 
-  {
-    local jmp;
-    s0;
-
-    #L00000Aa. call s0  := {|java.lang.AbstractStringBuilder.deleteCharAt(I)Ljava.lang.AbstractStringBuilder;|}([|v0|],[|v1|]) @ClassDescriptor (|java.lang.AbstractStringBuilder|) @Type special;
-    #L00001Aa. return [|v0|];
-  }
-  procedure (|java.lang.StringBuffer|) {|java.lang.StringBuffer.replace(IILjava.lang.String;)Ljava.lang.StringBuffer;|} ((|java.lang.StringBuffer|) [|v0|], (|int|) [|v1|], (|int|) [|v2|], (|java.lang.String|) [|v3|]) 
-    @MaxLocals 4
-    @MaxStack 4
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PUBLIC)
-    @Desc "java.lang.StringBuffer.replace(IILjava.lang.String;)Ljava.lang.StringBuffer;" 
-  {
-    local jmp;
-    s0;
-
-    #L00000Aa. call s0  := {|java.lang.AbstractStringBuilder.replace(IILjava.lang.String;)Ljava.lang.AbstractStringBuilder;|}([|v0|],[|v1|],[|v2|],[|v3|]) @ClassDescriptor (|java.lang.AbstractStringBuilder|) @Type special;
-    #L00001Aa. return [|v0|];
-  }
-  procedure (|java.lang.String|) {|java.lang.StringBuffer.substring(I)Ljava.lang.String;|} ((|java.lang.StringBuffer|) [|v0|], (|int|) [|v1|]) 
-    @MaxLocals 2
-    @MaxStack 3
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PUBLIC)
-    @Desc "java.lang.StringBuffer.substring(I)Ljava.lang.String;" 
-  {
-    local jmp;
-    s0;
-    s1;
-
-    #L00000Aa. s0 := [|v0|].<|java.lang.StringBuffer.count|> @Type (|int|);
-    #L00000Ab. call s1  := {|java.lang.StringBuffer.substring(II)Ljava.lang.String;|}([|v0|],[|v1|],s0) @ClassDescriptor (|java.lang.StringBuffer|) @Type virtual;
-    #L00000Ac. return s1;
-  }
-  procedure (|java.lang.CharSequence|) {|java.lang.StringBuffer.subSequence(II)Ljava.lang.CharSequence;|} ((|java.lang.StringBuffer|) [|v0|], (|int|) [|v1|], (|int|) [|v2|]) 
-    @MaxLocals 3
-    @MaxStack 3
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PUBLIC)
-    @Desc "java.lang.StringBuffer.subSequence(II)Ljava.lang.CharSequence;" 
-  {
-    local jmp;
-    s0;
-
-    #L00000Aa. call s0  := {|java.lang.AbstractStringBuilder.substring(II)Ljava.lang.String;|}([|v0|],[|v1|],[|v2|]) @ClassDescriptor (|java.lang.AbstractStringBuilder|) @Type special;
-    #L00000Ab. return s0;
-  }
-  procedure (|java.lang.String|) {|java.lang.StringBuffer.substring(II)Ljava.lang.String;|} ((|java.lang.StringBuffer|) [|v0|], (|int|) [|v1|], (|int|) [|v2|]) 
-    @MaxLocals 3
-    @MaxStack 3
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PUBLIC)
-    @Desc "java.lang.StringBuffer.substring(II)Ljava.lang.String;" 
-  {
-    local jmp;
-    s0;
-
-    #L00000Aa. call s0  := {|java.lang.AbstractStringBuilder.substring(II)Ljava.lang.String;|}([|v0|],[|v1|],[|v2|]) @ClassDescriptor (|java.lang.AbstractStringBuilder|) @Type special;
-    #L00000Ab. return s0;
-  }
-  procedure (|java.lang.StringBuffer|) {|java.lang.StringBuffer.insert(I[CII)Ljava.lang.StringBuffer;|} ((|java.lang.StringBuffer|) [|v0|], (|int|) [|v1|], (|char[]|) [|v2|], (|int|) [|v3|], (|int|) [|v4|]) 
-    @MaxLocals 5
-    @MaxStack 5
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PUBLIC)
-    @Desc "java.lang.StringBuffer.insert(I[CII)Ljava.lang.StringBuffer;" 
-  {
-    local jmp;
-    s0;
-
-    #L00000Aa. call s0  := {|java.lang.AbstractStringBuilder.insert(I[CII)Ljava.lang.AbstractStringBuilder;|}([|v0|],[|v1|],[|v2|],[|v3|],[|v4|]) @ClassDescriptor (|java.lang.AbstractStringBuilder|) @Type special;
-    #L00001Aa. return [|v0|];
-  }
-  procedure (|java.lang.StringBuffer|) {|java.lang.StringBuffer.insert(ILjava.lang.Object;)Ljava.lang.StringBuffer;|} ((|java.lang.StringBuffer|) [|v0|], (|int|) [|v1|], (|java.lang.Object|) [|v2|]) 
-    @MaxLocals 3
-    @MaxStack 3
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PUBLIC)
-    @Desc "java.lang.StringBuffer.insert(ILjava.lang.Object;)Ljava.lang.StringBuffer;" 
-  {
-    local jmp;
-    s0;
-    s1;
-
-    #L00000Aa. call s0  := {|java.lang.String.valueOf(Ljava.lang.Object;)Ljava.lang.String;|}([|v2|]) @ClassDescriptor (|java.lang.String|) @Type direct;
-    #L00000Ab. call s1  := {|java.lang.AbstractStringBuilder.insert(ILjava.lang.String;)Ljava.lang.AbstractStringBuilder;|}([|v0|],[|v1|],s0) @ClassDescriptor (|java.lang.AbstractStringBuilder|) @Type special;
-    #L00001Aa. return [|v0|];
-  }
-  procedure (|java.lang.StringBuffer|) {|java.lang.StringBuffer.insert(ILjava.lang.String;)Ljava.lang.StringBuffer;|} ((|java.lang.StringBuffer|) [|v0|], (|int|) [|v1|], (|java.lang.String|) [|v2|]) 
-    @MaxLocals 3
-    @MaxStack 3
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PUBLIC)
-    @Desc "java.lang.StringBuffer.insert(ILjava.lang.String;)Ljava.lang.StringBuffer;" 
-  {
-    local jmp;
-    s0;
-
-    #L00000Aa. call s0  := {|java.lang.AbstractStringBuilder.insert(ILjava.lang.String;)Ljava.lang.AbstractStringBuilder;|}([|v0|],[|v1|],[|v2|]) @ClassDescriptor (|java.lang.AbstractStringBuilder|) @Type special;
-    #L00001Aa. return [|v0|];
-  }
-  procedure (|java.lang.StringBuffer|) {|java.lang.StringBuffer.insert(I[C)Ljava.lang.StringBuffer;|} ((|java.lang.StringBuffer|) [|v0|], (|int|) [|v1|], (|char[]|) [|v2|]) 
-    @MaxLocals 3
-    @MaxStack 3
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PUBLIC)
-    @Desc "java.lang.StringBuffer.insert(I[C)Ljava.lang.StringBuffer;" 
-  {
-    local jmp;
-    s0;
-
-    #L00000Aa. call s0  := {|java.lang.AbstractStringBuilder.insert(I[C)Ljava.lang.AbstractStringBuilder;|}([|v0|],[|v1|],[|v2|]) @ClassDescriptor (|java.lang.AbstractStringBuilder|) @Type special;
-    #L00001Aa. return [|v0|];
-  }
-  procedure (|java.lang.StringBuffer|) {|java.lang.StringBuffer.insert(ILjava.lang.CharSequence;)Ljava.lang.StringBuffer;|} ((|java.lang.StringBuffer|) [|v0|], (|int|) [|v1|], (|java.lang.CharSequence|) [|v2|]) 
-    @MaxLocals 3
-    @MaxStack 5
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PUBLIC)
-    @Desc "java.lang.StringBuffer.insert(ILjava.lang.CharSequence;)Ljava.lang.StringBuffer;" 
-  {
-    local jmp;
-    s0;
-    s1;
-
-    #L00000Aa. if [|v2|] != null then goto L00001Aa;
-    #L00002Aa. [|v2|] := "null" @Type string;
-    #L00001Aa. <@Frame (@Same, 0, `[(|top|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|), (|top|), (|top|)])>
-    #L00001Ab. s0 := instanceof @varname [|v2|] @Type "(|java.lang.String|)";
-    #L00001Ac. if s0 == 0 then goto L00003Aa;
-    #L00004Aa. call s0  := {|java.lang.StringBuffer.insert(ILjava.lang.String;)Ljava.lang.StringBuffer;|}([|v0|],[|v1|],((|java.lang.String|)) [|v2|]) @ClassDescriptor (|java.lang.StringBuffer|) @Type virtual;
-    #L00004Ab. return s0;
-    #L00003Aa. <@Frame (@Same, 0, `[(|top|), (|top|), (|top|)], 0, `[(|top|), (|top|), (|top|), (|top|), (|top|)])>
-    #L00003Ab. call s0  := {|java.lang.CharSequence.length()I|}([|v2|]) @ClassDescriptor (|java.lang.CharSequence|) @Type interface;
-    #L00003Ac. call s1  := {|java.lang.StringBuffer.insert(ILjava.lang.CharSequence;II)Ljava.lang.StringBuffer;|}([|v0|],[|v1|],[|v2|],0,s0) @ClassDescriptor (|java.lang.StringBuffer|) @Type virtual;
-    #L00003Ad. return s1;
-  }
-  procedure (|java.lang.StringBuffer|) {|java.lang.StringBuffer.insert(ILjava.lang.CharSequence;II)Ljava.lang.StringBuffer;|} ((|java.lang.StringBuffer|) [|v0|], (|int|) [|v1|], (|java.lang.CharSequence|) [|v2|], (|int|) [|v3|], (|int|) [|v4|]) 
-    @MaxLocals 5
-    @MaxStack 5
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PUBLIC)
-    @Desc "java.lang.StringBuffer.insert(ILjava.lang.CharSequence;II)Ljava.lang.StringBuffer;" 
-  {
-    local jmp;
-    s0;
-
-    #L00000Aa. call s0  := {|java.lang.AbstractStringBuilder.insert(ILjava.lang.CharSequence;II)Ljava.lang.AbstractStringBuilder;|}([|v0|],[|v1|],[|v2|],[|v3|],[|v4|]) @ClassDescriptor (|java.lang.AbstractStringBuilder|) @Type special;
-    #L00001Aa. return [|v0|];
-  }
-  procedure (|java.lang.StringBuffer|) {|java.lang.StringBuffer.insert(IZ)Ljava.lang.StringBuffer;|} ((|java.lang.StringBuffer|) [|v0|], (|int|) [|v1|], (|boolean|) [|v2|]) 
-    @MaxLocals 3
-    @MaxStack 3
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PUBLIC)
-    @Desc "java.lang.StringBuffer.insert(IZ)Ljava.lang.StringBuffer;" 
-  {
-    local jmp;
-    s0;
-    s1;
-
-    #L00000Aa. call s0  := {|java.lang.String.valueOf(Z)Ljava.lang.String;|}([|v2|]) @ClassDescriptor (|java.lang.String|) @Type direct;
-    #L00000Ab. call s1  := {|java.lang.StringBuffer.insert(ILjava.lang.String;)Ljava.lang.StringBuffer;|}([|v0|],[|v1|],s0) @ClassDescriptor (|java.lang.StringBuffer|) @Type virtual;
-    #L00000Ac. return s1;
-  }
-  procedure (|java.lang.StringBuffer|) {|java.lang.StringBuffer.insert(IC)Ljava.lang.StringBuffer;|} ((|java.lang.StringBuffer|) [|v0|], (|int|) [|v1|], (|char|) [|v2|]) 
-    @MaxLocals 3
-    @MaxStack 3
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PUBLIC)
-    @Desc "java.lang.StringBuffer.insert(IC)Ljava.lang.StringBuffer;" 
-  {
-    local jmp;
-    s0;
-
-    #L00000Aa. call s0  := {|java.lang.AbstractStringBuilder.insert(IC)Ljava.lang.AbstractStringBuilder;|}([|v0|],[|v1|],[|v2|]) @ClassDescriptor (|java.lang.AbstractStringBuilder|) @Type special;
-    #L00001Aa. return [|v0|];
-  }
-  procedure (|java.lang.StringBuffer|) {|java.lang.StringBuffer.insert(II)Ljava.lang.StringBuffer;|} ((|java.lang.StringBuffer|) [|v0|], (|int|) [|v1|], (|int|) [|v2|]) 
-    @MaxLocals 3
-    @MaxStack 3
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PUBLIC)
-    @Desc "java.lang.StringBuffer.insert(II)Ljava.lang.StringBuffer;" 
-  {
-    local jmp;
-    s0;
-    s1;
-
-    #L00000Aa. call s0  := {|java.lang.String.valueOf(I)Ljava.lang.String;|}([|v2|]) @ClassDescriptor (|java.lang.String|) @Type direct;
-    #L00000Ab. call s1  := {|java.lang.StringBuffer.insert(ILjava.lang.String;)Ljava.lang.StringBuffer;|}([|v0|],[|v1|],s0) @ClassDescriptor (|java.lang.StringBuffer|) @Type virtual;
-    #L00000Ac. return s1;
-  }
-  procedure (|java.lang.StringBuffer|) {|java.lang.StringBuffer.insert(IJ)Ljava.lang.StringBuffer;|} ((|java.lang.StringBuffer|) [|v0|], (|int|) [|v1|], (|long|) [|v2|]) 
-    @MaxLocals 4
-    @MaxStack 4
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PUBLIC)
-    @Desc "java.lang.StringBuffer.insert(IJ)Ljava.lang.StringBuffer;" 
-  {
-    local jmp;
-    s0;
-    s1;
-    [|v3|];
-
-    #L00000Aa. call s0  := {|java.lang.String.valueOf(J)Ljava.lang.String;|}([|v2|]) @ClassDescriptor (|java.lang.String|) @Type direct;
-    #L00000Ab. call s1  := {|java.lang.StringBuffer.insert(ILjava.lang.String;)Ljava.lang.StringBuffer;|}([|v0|],[|v1|],s0) @ClassDescriptor (|java.lang.StringBuffer|) @Type virtual;
-    #L00000Ac. return s1;
-  }
-  procedure (|java.lang.StringBuffer|) {|java.lang.StringBuffer.insert(IF)Ljava.lang.StringBuffer;|} ((|java.lang.StringBuffer|) [|v0|], (|int|) [|v1|], (|float|) [|v2|]) 
-    @MaxLocals 3
-    @MaxStack 3
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PUBLIC)
-    @Desc "java.lang.StringBuffer.insert(IF)Ljava.lang.StringBuffer;" 
-  {
-    local jmp;
-    s0;
-    s1;
-
-    #L00000Aa. call s0  := {|java.lang.String.valueOf(F)Ljava.lang.String;|}([|v2|]) @ClassDescriptor (|java.lang.String|) @Type direct;
-    #L00000Ab. call s1  := {|java.lang.StringBuffer.insert(ILjava.lang.String;)Ljava.lang.StringBuffer;|}([|v0|],[|v1|],s0) @ClassDescriptor (|java.lang.StringBuffer|) @Type virtual;
-    #L00000Ac. return s1;
-  }
-  procedure (|java.lang.StringBuffer|) {|java.lang.StringBuffer.insert(ID)Ljava.lang.StringBuffer;|} ((|java.lang.StringBuffer|) [|v0|], (|int|) [|v1|], (|double|) [|v2|]) 
-    @MaxLocals 4
-    @MaxStack 4
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PUBLIC)
-    @Desc "java.lang.StringBuffer.insert(ID)Ljava.lang.StringBuffer;" 
-  {
-    local jmp;
-    s0;
-    s1;
-    [|v3|];
-
-    #L00000Aa. call s0  := {|java.lang.String.valueOf(D)Ljava.lang.String;|}([|v2|]) @ClassDescriptor (|java.lang.String|) @Type direct;
-    #L00000Ab. call s1  := {|java.lang.StringBuffer.insert(ILjava.lang.String;)Ljava.lang.StringBuffer;|}([|v0|],[|v1|],s0) @ClassDescriptor (|java.lang.StringBuffer|) @Type virtual;
-    #L00000Ac. return s1;
-  }
-  procedure (|int|) {|java.lang.StringBuffer.indexOf(Ljava.lang.String;)I|} ((|java.lang.StringBuffer|) [|v0|], (|java.lang.String|) [|v1|]) 
-    @MaxLocals 2
-    @MaxStack 3
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PUBLIC)
-    @Desc "java.lang.StringBuffer.indexOf(Ljava.lang.String;)I" 
-  {
-    local jmp;
-    s0;
-
-    #L00000Aa. call s0  := {|java.lang.StringBuffer.indexOf(Ljava.lang.String;I)I|}([|v0|],[|v1|],0) @ClassDescriptor (|java.lang.StringBuffer|) @Type virtual;
-    #L00000Ab. return s0;
-  }
-  procedure (|int|) {|java.lang.StringBuffer.indexOf(Ljava.lang.String;I)I|} ((|java.lang.StringBuffer|) [|v0|], (|java.lang.String|) [|v1|], (|int|) [|v2|]) 
-    @MaxLocals 3
-    @MaxStack 7
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PUBLIC)
-    @Desc "java.lang.StringBuffer.indexOf(Ljava.lang.String;I)I" 
-  {
-    local jmp;
-    s0;
-    s1;
-    s2;
-    s3;
-    s4;
-
-    #L00000Aa. s0 := [|v0|].<|java.lang.StringBuffer.value|> @Type (|char[]|);
-    #L00000Ab. s1 := [|v0|].<|java.lang.StringBuffer.count|> @Type (|int|);
-    #L00000Ac. call s2  := {|java.lang.String.toCharArray()[C|}([|v1|]) @ClassDescriptor (|java.lang.String|) @Type virtual;
-    #L00000Ad. call s3  := {|java.lang.String.length()I|}([|v1|]) @ClassDescriptor (|java.lang.String|) @Type virtual;
-    #L00000Ae. call s4  := {|java.lang.String.indexOf([CII[CIII)I|}(s0,0,s1,s2,0,s3,[|v2|]) @ClassDescriptor (|java.lang.String|) @Type direct;
-    #L00000Af. return s4;
-  }
-  procedure (|int|) {|java.lang.StringBuffer.lastIndexOf(Ljava.lang.String;)I|} ((|java.lang.StringBuffer|) [|v0|], (|java.lang.String|) [|v1|]) 
-    @MaxLocals 2
-    @MaxStack 3
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PUBLIC)
-    @Desc "java.lang.StringBuffer.lastIndexOf(Ljava.lang.String;)I" 
-  {
-    local jmp;
-    s0;
-    s1;
-
-    #L00000Aa. s0 := [|v0|].<|java.lang.StringBuffer.count|> @Type (|int|);
-    #L00000Ab. call s1  := {|java.lang.StringBuffer.lastIndexOf(Ljava.lang.String;I)I|}([|v0|],[|v1|],s0) @ClassDescriptor (|java.lang.StringBuffer|) @Type virtual;
-    #L00000Ac. return s1;
-  }
-  procedure (|int|) {|java.lang.StringBuffer.lastIndexOf(Ljava.lang.String;I)I|} ((|java.lang.StringBuffer|) [|v0|], (|java.lang.String|) [|v1|], (|int|) [|v2|]) 
-    @MaxLocals 3
-    @MaxStack 7
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PUBLIC)
-    @Desc "java.lang.StringBuffer.lastIndexOf(Ljava.lang.String;I)I" 
-  {
-    local jmp;
-    s0;
-    s1;
-    s2;
-    s3;
-    s4;
-
-    #L00000Aa. s0 := [|v0|].<|java.lang.StringBuffer.value|> @Type (|char[]|);
-    #L00000Ab. s1 := [|v0|].<|java.lang.StringBuffer.count|> @Type (|int|);
-    #L00000Ac. call s2  := {|java.lang.String.toCharArray()[C|}([|v1|]) @ClassDescriptor (|java.lang.String|) @Type virtual;
-    #L00000Ad. call s3  := {|java.lang.String.length()I|}([|v1|]) @ClassDescriptor (|java.lang.String|) @Type virtual;
-    #L00000Ae. call s4  := {|java.lang.String.lastIndexOf([CII[CIII)I|}(s0,0,s1,s2,0,s3,[|v2|]) @ClassDescriptor (|java.lang.String|) @Type direct;
-    #L00000Af. return s4;
-  }
-  procedure (|java.lang.StringBuffer|) {|java.lang.StringBuffer.reverse()Ljava.lang.StringBuffer;|} ((|java.lang.StringBuffer|) [|v0|]) 
+  procedure (|scala.collection.Iterator|) {|scala.collection.script.Update.productIterator()Lscala.collection.Iterator;|} ((|scala.collection.script.Update|) [|this|]) 
     @MaxLocals 1
+    @MaxStack 2
+    @GenericSignature "()Lscala/collection/Iterator<Ljava/lang/Object;>;"
+    @Owner (|scala.collection.script.Update|)
+    @Access (PUBLIC)
+    @Desc "scala.collection.script.Update.productIterator()Lscala.collection.Iterator;" 
+  {
+    local jmp;
+    s0;
+    s1;
+
+    #L00000Aa. s0 := +|scala.runtime.ScalaRunTime$.MODULE$|+ @Type (|scala.runtime.ScalaRunTime$|);
+    #L00000Ab. call s1  := {|scala.runtime.ScalaRunTime$.typedProductIterator(Lscala.Product;)Lscala.collection.Iterator;|}(s0,[|this|]) @ClassDescriptor (|scala.runtime.ScalaRunTime$|) @Type virtual;
+    #L00000Ac. return s1;
+  }
+  procedure (|boolean|) {|scala.collection.script.Update.canEqual(Ljava.lang.Object;)Z|} ((|scala.collection.script.Update|) [|this|], (|java.lang.Object|) [|x$1|]) 
+    @MaxLocals 2
     @MaxStack 1
-    @Owner (|java.lang.StringBuffer|)
+    @Owner (|scala.collection.script.Update|)
     @Access (PUBLIC)
-    @Desc "java.lang.StringBuffer.reverse()Ljava.lang.StringBuffer;" 
+    @Desc "scala.collection.script.Update.canEqual(Ljava.lang.Object;)Z" 
   {
     local jmp;
     s0;
 
-    #L00000Aa. call s0  := {|java.lang.AbstractStringBuilder.reverse()Ljava.lang.AbstractStringBuilder;|}([|v0|]) @ClassDescriptor (|java.lang.AbstractStringBuilder|) @Type special;
-    #L00001Aa. return [|v0|];
+    #L00000Aa. s0 := [|x$1|] <: (|scala.collection.script.Update|);
+    #L00000Ab. return s0;
   }
-  procedure (|java.lang.String|) {|java.lang.StringBuffer.toString()Ljava.lang.String;|} ((|java.lang.StringBuffer|) [|v0|]) 
+  procedure (|int|) {|scala.collection.script.Update.hashCode()I|} ((|scala.collection.script.Update|) [|this|]) 
     @MaxLocals 1
-    @MaxStack 5
-    @Owner (|java.lang.StringBuffer|)
+    @MaxStack 2
+    @Owner (|scala.collection.script.Update|)
     @Access (PUBLIC)
-    @Desc "java.lang.StringBuffer.toString()Ljava.lang.String;" 
+    @Desc "scala.collection.script.Update.hashCode()I" 
+  {
+    local jmp;
+    s0;
+    s1;
+
+    #L00000Aa. s0 := +|scala.runtime.ScalaRunTime$.MODULE$|+ @Type (|scala.runtime.ScalaRunTime$|);
+    #L00000Ab. call s1  := {|scala.runtime.ScalaRunTime$._hashCode(Lscala.Product;)I|}(s0,[|this|]) @ClassDescriptor (|scala.runtime.ScalaRunTime$|) @Type virtual;
+    #L00000Ac. return s1;
+  }
+  procedure (|java.lang.String|) {|scala.collection.script.Update.toString()Ljava.lang.String;|} ((|scala.collection.script.Update|) [|this|]) 
+    @MaxLocals 1
+    @MaxStack 2
+    @Owner (|scala.collection.script.Update|)
+    @Access (PUBLIC)
+    @Desc "scala.collection.script.Update.toString()Ljava.lang.String;" 
+  {
+    local jmp;
+    s0;
+    s1;
+
+    #L00000Aa. s0 := +|scala.runtime.ScalaRunTime$.MODULE$|+ @Type (|scala.runtime.ScalaRunTime$|);
+    #L00000Ab. call s1  := {|scala.runtime.ScalaRunTime$._toString(Lscala.Product;)Ljava.lang.String;|}(s0,[|this|]) @ClassDescriptor (|scala.runtime.ScalaRunTime$|) @Type virtual;
+    #L00000Ac. return s1;
+  }
+  procedure (|boolean|) {|scala.collection.script.Update.equals(Ljava.lang.Object;)Z|} ((|scala.collection.script.Update|) [|this|], (|java.lang.Object|) [|x$1|]) 
+    @MaxLocals 7
+    @MaxStack 2
+    @Owner (|scala.collection.script.Update|)
+    @Access (PUBLIC)
+    @Desc "scala.collection.script.Update.equals(Ljava.lang.Object;)Z" 
   {
     local jmp;
     s0;
     s1;
     s2;
-    s3;
 
-    #L00000Aa. s0 := new (|java.lang.String|);
-    #L00000Ab. s1 := [|v0|].<|java.lang.StringBuffer.value|> @Type (|char[]|);
-    #L00000Ac. s2 := [|v0|].<|java.lang.StringBuffer.count|> @Type (|int|);
-    #L00000Ad. call s3  := {|java.lang.String.<init>([CII)V|}(s0,s1,0,s2) @ClassDescriptor (|java.lang.String|) @Type special;
-    #L00000Ae. return s0;
+    #L00000Aa. if [|this|] == [|x$1|] then goto L00001Aa;
+    #L00000Ab. s0 := [|x$1|] <: (|scala.collection.script.Update|);
+    #L00000Ac. if s0 == 0 then goto L00002Aa;
+    #L00003Aa. [|v2|] := 1 @Type (|int|);
+    #L00003Ab. goto L00004Aa;
+    #L00002Aa. <@Frame (@Same, 0, `[(|top|), (|top|), (|top|), (|top|), (|top|), (|top|), (|top|)], 0, `[(|top|), (|top|)])>
+    #L00002Ab. [|v2|] := 0 @Type (|int|);
+    #L00004Aa. <@Frame (@Append, 1, `[(|int|), (|top|), (|top|), (|top|), (|top|), (|top|), (|top|)], 0, `[(|top|), (|top|)])>
+    #L00004Ab. if [|v2|] == 0 then goto L00005Aa;
+    #L00004Ac. [|v6|] := ((|scala.collection.script.Update|)) [|x$1|] @Type (|scala.collection.script.Update|);
+    #L00004Ad. call s0  := {|scala.collection.script.Update.location()Lscala.collection.script.Location;|}([|this|]) @ClassDescriptor (|scala.collection.script.Update|) @Type virtual;
+    #L00004Ae. call s1  := {|scala.collection.script.Update.location()Lscala.collection.script.Location;|}([|v6|]) @ClassDescriptor (|scala.collection.script.Update|) @Type virtual;
+    #L00004Af. [|v3|] := s1 @Type (|java.lang.Object|);
+    #L00004Ag. if s0 != null then goto L00006Aa;
+    #L00004Ah. if [|v3|] == null then goto L00007Aa;
+    #L00004Ai. goto L00008Aa;
+    #L00006Aa. <@Frame (@Full, 7, `[(|java.lang.Object|), (|java.lang.Object|), (|int|), (|java.lang.Object|), (|top|), (|top|), (|java.lang.Object|)], 1, `[(|java.lang.Object|), (|top|)])>
+    #L00006Ab. call s2  := {|java.lang.Object.equals(Ljava.lang.Object;)Z|}(s0,[|v3|]) @ClassDescriptor (|java.lang.Object|) @Type virtual;
+    #L00006Ac. if s2 == 0 then goto L00008Aa;
+    #L00007Aa. <@Frame (@Same, 0, `[(|java.lang.Object|), (|java.lang.Object|), (|int|), (|java.lang.Object|), (|top|), (|top|), (|java.lang.Object|)], 0, `[(|java.lang.Object|), (|top|)])>
+    #L00007Ab. call s0  := {|scala.collection.script.Update.elem()Ljava.lang.Object;|}([|this|]) @ClassDescriptor (|scala.collection.script.Update|) @Type virtual;
+    #L00007Ac. call s1  := {|scala.collection.script.Update.elem()Ljava.lang.Object;|}([|v6|]) @ClassDescriptor (|scala.collection.script.Update|) @Type virtual;
+    #L00007Ad. [|v5|] := s1 @Type (|java.lang.Object|);
+    #L00007Ae. [|v4|] := s0 @Type (|java.lang.Object|);
+    #L00007Af. if s0 != [|v5|] then goto L00009Aa;
+    #L00007Ag. jmp := 1;
+    #L00007Ah. goto L00010Aa;
+    #L00009Aa. <@Frame (@Full, 7, `[(|java.lang.Object|), (|java.lang.Object|), (|int|), (|java.lang.Object|), (|java.lang.Object|), (|java.lang.Object|), (|java.lang.Object|)], 0, `[(|java.lang.Object|), (|top|)])>
+    #L00009Ab. if [|v4|] != null then goto L00011Aa;
+    #L00009Ac. jmp := 0;
+    #L00009Ad. goto L00010Aa;
+    #L00011Aa. <@Frame (@Same, 0, `[(|java.lang.Object|), (|java.lang.Object|), (|int|), (|java.lang.Object|), (|java.lang.Object|), (|java.lang.Object|), (|java.lang.Object|)], 0, `[(|java.lang.Object|), (|top|)])>
+    #L00011Ab. s0 := [|v4|] <: (|java.lang.Number|);
+    #L00011Ac. if s0 == 0 then goto L00012Aa;
+    #L00011Ad. call s1  := {|scala.runtime.BoxesRunTime.equalsNumObject(Ljava.lang.Number;Ljava.lang.Object;)Z|}(((|java.lang.Number|)) [|v4|],[|v5|]) @ClassDescriptor (|scala.runtime.BoxesRunTime|) @Type direct;
+    #L00011Ae. jmp := s1;
+    #L00011Af. goto L00010Aa;
+    #L00012Aa. <@Frame (@Same, 0, `[(|java.lang.Object|), (|java.lang.Object|), (|int|), (|java.lang.Object|), (|java.lang.Object|), (|java.lang.Object|), (|java.lang.Object|)], 0, `[(|java.lang.Object|), (|top|)])>
+    #L00012Ab. s0 := [|v4|] <: (|java.lang.Character|);
+    #L00012Ac. if s0 == 0 then goto L00013Aa;
+    #L00012Ad. call s1  := {|scala.runtime.BoxesRunTime.equalsCharObject(Ljava.lang.Character;Ljava.lang.Object;)Z|}(((|java.lang.Character|)) [|v4|],[|v5|]) @ClassDescriptor (|scala.runtime.BoxesRunTime|) @Type direct;
+    #L00012Ae. jmp := s1;
+    #L00012Af. goto L00010Aa;
+    #L00013Aa. <@Frame (@Same, 0, `[(|java.lang.Object|), (|java.lang.Object|), (|int|), (|java.lang.Object|), (|java.lang.Object|), (|java.lang.Object|), (|java.lang.Object|)], 0, `[(|java.lang.Object|), (|top|)])>
+    #L00013Ab. call s0  := {|java.lang.Object.equals(Ljava.lang.Object;)Z|}([|v4|],[|v5|]) @ClassDescriptor (|java.lang.Object|) @Type virtual;
+    #L00013Ac. jmp := s0;
+    #L00010Aa. <@Frame (@Same1, 0, `[(|java.lang.Object|), (|java.lang.Object|), (|int|), (|java.lang.Object|), (|java.lang.Object|), (|java.lang.Object|), (|java.lang.Object|)], 1, `[(|int|), (|top|)])>
+    #L00010Ab. if jmp == 0 then goto L00008Aa;
+    #L00010Ac. call s1  := {|scala.collection.script.Update.canEqual(Ljava.lang.Object;)Z|}([|v6|],[|this|]) @ClassDescriptor (|scala.collection.script.Update|) @Type virtual;
+    #L00010Ad. if s1 == 0 then goto L00008Aa;
+    #L00010Ae. jmp := 1;
+    #L00010Af. goto L00014Aa;
+    #L00008Aa. <@Frame (@Full, 7, `[(|java.lang.Object|), (|java.lang.Object|), (|int|), (|java.lang.Object|), (|top|), (|top|), (|java.lang.Object|)], 0, `[(|int|), (|top|)])>
+    #L00008Ab. jmp := 0;
+    #L00014Aa. <@Frame (@Same1, 0, `[(|java.lang.Object|), (|java.lang.Object|), (|int|), (|java.lang.Object|), (|top|), (|top|), (|java.lang.Object|)], 1, `[(|int|), (|top|)])>
+    #L00014Ab. if jmp == 0 then goto L00005Aa;
+    #L00001Aa. <@Frame (@Full, 2, `[(|java.lang.Object|), (|java.lang.Object|), (|int|), (|java.lang.Object|), (|top|), (|top|), (|java.lang.Object|)], 0, `[(|int|), (|top|)])>
+    #L00001Ab. jmp := 1;
+    #L00001Ac. goto L00015Aa;
+    #L00005Aa. <@Frame (@Append, 1, `[(|int|), (|java.lang.Object|), (|int|), (|java.lang.Object|), (|top|), (|top|), (|java.lang.Object|)], 0, `[(|int|), (|top|)])>
+    #L00005Ab. jmp := 0;
+    #L00015Aa. <@Frame (@Full, 2, `[(|java.lang.Object|), (|java.lang.Object|), (|int|), (|java.lang.Object|), (|top|), (|top|), (|java.lang.Object|)], 1, `[(|int|), (|top|)])>
+    #L00015Ab. return jmp;
   }
-  procedure (|void|) {|java.lang.StringBuffer.writeObject(Ljava.io.ObjectOutputStream;)V|} ((|java.lang.StringBuffer|) [|v0|], (|java.io.ObjectOutputStream|) [|v1|]) 
-    @Throws [|java.io.IOException|]
+  procedure (|void|) {|scala.collection.script.Update.<init>(Lscala.collection.script.Location;Ljava.lang.Object;)V|} ((|scala.collection.script.Update|) [|this|], (|scala.collection.script.Location|) [|elem|], (|java.lang.Object|) [|v2|]) 
     @MaxLocals 3
-    @MaxStack 3
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PRIVATE)
-    @Desc "java.lang.StringBuffer.writeObject(Ljava.io.ObjectOutputStream;)V" 
-  {
-    local jmp;
-    s0;
-    s1;
-    [|v2|];
-
-    #L00000Aa. call s0  := {|java.io.ObjectOutputStream.putFields()Ljava.io.ObjectOutputStream$PutField;|}([|v1|]) @ClassDescriptor (|java.io.ObjectOutputStream|) @Type virtual;
-    #L00000Ab. [|v2|] := s0 @Type (|java.lang.Object|);
-    #L00001Aa. s0 := [|v0|].<|java.lang.StringBuffer.value|> @Type (|char[]|);
-    #L00001Ab. call s1  := {|java.io.ObjectOutputStream$PutField.put(Ljava.lang.String;Ljava.lang.Object;)V|}([|v2|],"value",s0) @ClassDescriptor (|java.io.ObjectOutputStream$PutField|) @Type virtual;
-    #L00002Aa. s0 := [|v0|].<|java.lang.StringBuffer.count|> @Type (|int|);
-    #L00002Ab. call s1  := {|java.io.ObjectOutputStream$PutField.put(Ljava.lang.String;I)V|}([|v2|],"count",s0) @ClassDescriptor (|java.io.ObjectOutputStream$PutField|) @Type virtual;
-    #L00003Aa. call s0  := {|java.io.ObjectOutputStream$PutField.put(Ljava.lang.String;Z)V|}([|v2|],"shared",0) @ClassDescriptor (|java.io.ObjectOutputStream$PutField|) @Type virtual;
-    #L00004Aa. call s0  := {|java.io.ObjectOutputStream.writeFields()V|}([|v1|]) @ClassDescriptor (|java.io.ObjectOutputStream|) @Type virtual;
-    #L00005Aa. return @void;
-  }
-  procedure (|void|) {|java.lang.StringBuffer.readObject(Ljava.io.ObjectInputStream;)V|} ((|java.lang.StringBuffer|) [|v0|], (|java.io.ObjectInputStream|) [|v1|]) 
-    @Throws [|java.io.IOException|],[|java.lang.ClassNotFoundException|]
-    @MaxLocals 3
-    @MaxStack 4
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PRIVATE)
-    @Desc "java.lang.StringBuffer.readObject(Ljava.io.ObjectInputStream;)V" 
-  {
-    local jmp;
-    s0;
-    [|v2|];
-
-    #L00000Aa. call s0  := {|java.io.ObjectInputStream.readFields()Ljava.io.ObjectInputStream$GetField;|}([|v1|]) @ClassDescriptor (|java.io.ObjectInputStream|) @Type virtual;
-    #L00000Ab. [|v2|] := s0 @Type (|java.lang.Object|);
-    #L00001Aa. call s0  := {|java.io.ObjectInputStream$GetField.get(Ljava.lang.String;Ljava.lang.Object;)Ljava.lang.Object;|}([|v2|],"value",null) @ClassDescriptor (|java.io.ObjectInputStream$GetField|) @Type virtual;
-    #L00001Ab. [|v0|].<|java.lang.StringBuffer.value|> := ((|[C|)) ((|[C|)) s0 @Type (|char[]|);
-    #L00002Aa. call s0  := {|java.io.ObjectInputStream$GetField.get(Ljava.lang.String;I)I|}([|v2|],"count",0) @ClassDescriptor (|java.io.ObjectInputStream$GetField|) @Type virtual;
-    #L00002Ab. [|v0|].<|java.lang.StringBuffer.count|> := s0 @Type (|int|);
-    #L00003Aa. return @void;
-  }
-  procedure (|java.lang.AbstractStringBuilder|) {|java.lang.StringBuffer.reverse()Ljava.lang.AbstractStringBuilder;|} ((|java.lang.StringBuffer|) [|v0|]) 
-    @MaxLocals 1
-    @MaxStack 1
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Desc "java.lang.StringBuffer.reverse()Ljava.lang.AbstractStringBuilder;" 
-  {
-    local jmp;
-    s0;
-
-    #L00000Aa. call s0  := {|java.lang.StringBuffer.reverse()Ljava.lang.StringBuffer;|}([|v0|]) @ClassDescriptor (|java.lang.StringBuffer|) @Type virtual;
-    #L00000Ab. return s0;
-  }
-  procedure (|java.lang.AbstractStringBuilder|) {|java.lang.StringBuffer.insert(ID)Ljava.lang.AbstractStringBuilder;|} ((|java.lang.StringBuffer|) [|v0|], (|int|) [|v1|], (|double|) [|v2|]) 
-    @MaxLocals 4
-    @MaxStack 4
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Desc "java.lang.StringBuffer.insert(ID)Ljava.lang.AbstractStringBuilder;" 
-  {
-    local jmp;
-    s0;
-    [|v3|];
-
-    #L00000Aa. call s0  := {|java.lang.StringBuffer.insert(ID)Ljava.lang.StringBuffer;|}([|v0|],[|v1|],[|v2|]) @ClassDescriptor (|java.lang.StringBuffer|) @Type virtual;
-    #L00000Ab. return s0;
-  }
-  procedure (|java.lang.AbstractStringBuilder|) {|java.lang.StringBuffer.insert(IF)Ljava.lang.AbstractStringBuilder;|} ((|java.lang.StringBuffer|) [|v0|], (|int|) [|v1|], (|float|) [|v2|]) 
-    @MaxLocals 3
-    @MaxStack 3
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Desc "java.lang.StringBuffer.insert(IF)Ljava.lang.AbstractStringBuilder;" 
-  {
-    local jmp;
-    s0;
-
-    #L00000Aa. call s0  := {|java.lang.StringBuffer.insert(IF)Ljava.lang.StringBuffer;|}([|v0|],[|v1|],[|v2|]) @ClassDescriptor (|java.lang.StringBuffer|) @Type virtual;
-    #L00000Ab. return s0;
-  }
-  procedure (|java.lang.AbstractStringBuilder|) {|java.lang.StringBuffer.insert(IJ)Ljava.lang.AbstractStringBuilder;|} ((|java.lang.StringBuffer|) [|v0|], (|int|) [|v1|], (|long|) [|v2|]) 
-    @MaxLocals 4
-    @MaxStack 4
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Desc "java.lang.StringBuffer.insert(IJ)Ljava.lang.AbstractStringBuilder;" 
-  {
-    local jmp;
-    s0;
-    [|v3|];
-
-    #L00000Aa. call s0  := {|java.lang.StringBuffer.insert(IJ)Ljava.lang.StringBuffer;|}([|v0|],[|v1|],[|v2|]) @ClassDescriptor (|java.lang.StringBuffer|) @Type virtual;
-    #L00000Ab. return s0;
-  }
-  procedure (|java.lang.AbstractStringBuilder|) {|java.lang.StringBuffer.insert(II)Ljava.lang.AbstractStringBuilder;|} ((|java.lang.StringBuffer|) [|v0|], (|int|) [|v1|], (|int|) [|v2|]) 
-    @MaxLocals 3
-    @MaxStack 3
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Desc "java.lang.StringBuffer.insert(II)Ljava.lang.AbstractStringBuilder;" 
-  {
-    local jmp;
-    s0;
-
-    #L00000Aa. call s0  := {|java.lang.StringBuffer.insert(II)Ljava.lang.StringBuffer;|}([|v0|],[|v1|],[|v2|]) @ClassDescriptor (|java.lang.StringBuffer|) @Type virtual;
-    #L00000Ab. return s0;
-  }
-  procedure (|java.lang.AbstractStringBuilder|) {|java.lang.StringBuffer.insert(IC)Ljava.lang.AbstractStringBuilder;|} ((|java.lang.StringBuffer|) [|v0|], (|int|) [|v1|], (|char|) [|v2|]) 
-    @MaxLocals 3
-    @MaxStack 3
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Desc "java.lang.StringBuffer.insert(IC)Ljava.lang.AbstractStringBuilder;" 
-  {
-    local jmp;
-    s0;
-
-    #L00000Aa. call s0  := {|java.lang.StringBuffer.insert(IC)Ljava.lang.StringBuffer;|}([|v0|],[|v1|],[|v2|]) @ClassDescriptor (|java.lang.StringBuffer|) @Type virtual;
-    #L00000Ab. return s0;
-  }
-  procedure (|java.lang.AbstractStringBuilder|) {|java.lang.StringBuffer.insert(IZ)Ljava.lang.AbstractStringBuilder;|} ((|java.lang.StringBuffer|) [|v0|], (|int|) [|v1|], (|boolean|) [|v2|]) 
-    @MaxLocals 3
-    @MaxStack 3
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Desc "java.lang.StringBuffer.insert(IZ)Ljava.lang.AbstractStringBuilder;" 
-  {
-    local jmp;
-    s0;
-
-    #L00000Aa. call s0  := {|java.lang.StringBuffer.insert(IZ)Ljava.lang.StringBuffer;|}([|v0|],[|v1|],[|v2|]) @ClassDescriptor (|java.lang.StringBuffer|) @Type virtual;
-    #L00000Ab. return s0;
-  }
-  procedure (|java.lang.AbstractStringBuilder|) {|java.lang.StringBuffer.insert(ILjava.lang.CharSequence;II)Ljava.lang.AbstractStringBuilder;|} ((|java.lang.StringBuffer|) [|v0|], (|int|) [|v1|], (|java.lang.CharSequence|) [|v2|], (|int|) [|v3|], (|int|) [|v4|]) 
-    @MaxLocals 5
-    @MaxStack 5
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Desc "java.lang.StringBuffer.insert(ILjava.lang.CharSequence;II)Ljava.lang.AbstractStringBuilder;" 
-  {
-    local jmp;
-    s0;
-
-    #L00000Aa. call s0  := {|java.lang.StringBuffer.insert(ILjava.lang.CharSequence;II)Ljava.lang.StringBuffer;|}([|v0|],[|v1|],[|v2|],[|v3|],[|v4|]) @ClassDescriptor (|java.lang.StringBuffer|) @Type virtual;
-    #L00000Ab. return s0;
-  }
-  procedure (|java.lang.AbstractStringBuilder|) {|java.lang.StringBuffer.insert(ILjava.lang.CharSequence;)Ljava.lang.AbstractStringBuilder;|} ((|java.lang.StringBuffer|) [|v0|], (|int|) [|v1|], (|java.lang.CharSequence|) [|v2|]) 
-    @MaxLocals 3
-    @MaxStack 3
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Desc "java.lang.StringBuffer.insert(ILjava.lang.CharSequence;)Ljava.lang.AbstractStringBuilder;" 
-  {
-    local jmp;
-    s0;
-
-    #L00000Aa. call s0  := {|java.lang.StringBuffer.insert(ILjava.lang.CharSequence;)Ljava.lang.StringBuffer;|}([|v0|],[|v1|],[|v2|]) @ClassDescriptor (|java.lang.StringBuffer|) @Type virtual;
-    #L00000Ab. return s0;
-  }
-  procedure (|java.lang.AbstractStringBuilder|) {|java.lang.StringBuffer.insert(I[C)Ljava.lang.AbstractStringBuilder;|} ((|java.lang.StringBuffer|) [|v0|], (|int|) [|v1|], (|char[]|) [|v2|]) 
-    @MaxLocals 3
-    @MaxStack 3
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Desc "java.lang.StringBuffer.insert(I[C)Ljava.lang.AbstractStringBuilder;" 
-  {
-    local jmp;
-    s0;
-
-    #L00000Aa. call s0  := {|java.lang.StringBuffer.insert(I[C)Ljava.lang.StringBuffer;|}([|v0|],[|v1|],[|v2|]) @ClassDescriptor (|java.lang.StringBuffer|) @Type virtual;
-    #L00000Ab. return s0;
-  }
-  procedure (|java.lang.AbstractStringBuilder|) {|java.lang.StringBuffer.insert(ILjava.lang.String;)Ljava.lang.AbstractStringBuilder;|} ((|java.lang.StringBuffer|) [|v0|], (|int|) [|v1|], (|java.lang.String|) [|v2|]) 
-    @MaxLocals 3
-    @MaxStack 3
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Desc "java.lang.StringBuffer.insert(ILjava.lang.String;)Ljava.lang.AbstractStringBuilder;" 
-  {
-    local jmp;
-    s0;
-
-    #L00000Aa. call s0  := {|java.lang.StringBuffer.insert(ILjava.lang.String;)Ljava.lang.StringBuffer;|}([|v0|],[|v1|],[|v2|]) @ClassDescriptor (|java.lang.StringBuffer|) @Type virtual;
-    #L00000Ab. return s0;
-  }
-  procedure (|java.lang.AbstractStringBuilder|) {|java.lang.StringBuffer.insert(ILjava.lang.Object;)Ljava.lang.AbstractStringBuilder;|} ((|java.lang.StringBuffer|) [|v0|], (|int|) [|v1|], (|java.lang.Object|) [|v2|]) 
-    @MaxLocals 3
-    @MaxStack 3
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Desc "java.lang.StringBuffer.insert(ILjava.lang.Object;)Ljava.lang.AbstractStringBuilder;" 
-  {
-    local jmp;
-    s0;
-
-    #L00000Aa. call s0  := {|java.lang.StringBuffer.insert(ILjava.lang.Object;)Ljava.lang.StringBuffer;|}([|v0|],[|v1|],[|v2|]) @ClassDescriptor (|java.lang.StringBuffer|) @Type virtual;
-    #L00000Ab. return s0;
-  }
-  procedure (|java.lang.AbstractStringBuilder|) {|java.lang.StringBuffer.insert(I[CII)Ljava.lang.AbstractStringBuilder;|} ((|java.lang.StringBuffer|) [|v0|], (|int|) [|v1|], (|char[]|) [|v2|], (|int|) [|v3|], (|int|) [|v4|]) 
-    @MaxLocals 5
-    @MaxStack 5
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Desc "java.lang.StringBuffer.insert(I[CII)Ljava.lang.AbstractStringBuilder;" 
-  {
-    local jmp;
-    s0;
-
-    #L00000Aa. call s0  := {|java.lang.StringBuffer.insert(I[CII)Ljava.lang.StringBuffer;|}([|v0|],[|v1|],[|v2|],[|v3|],[|v4|]) @ClassDescriptor (|java.lang.StringBuffer|) @Type virtual;
-    #L00000Ab. return s0;
-  }
-  procedure (|java.lang.AbstractStringBuilder|) {|java.lang.StringBuffer.replace(IILjava.lang.String;)Ljava.lang.AbstractStringBuilder;|} ((|java.lang.StringBuffer|) [|v0|], (|int|) [|v1|], (|int|) [|v2|], (|java.lang.String|) [|v3|]) 
-    @MaxLocals 4
-    @MaxStack 4
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Desc "java.lang.StringBuffer.replace(IILjava.lang.String;)Ljava.lang.AbstractStringBuilder;" 
-  {
-    local jmp;
-    s0;
-
-    #L00000Aa. call s0  := {|java.lang.StringBuffer.replace(IILjava.lang.String;)Ljava.lang.StringBuffer;|}([|v0|],[|v1|],[|v2|],[|v3|]) @ClassDescriptor (|java.lang.StringBuffer|) @Type virtual;
-    #L00000Ab. return s0;
-  }
-  procedure (|java.lang.AbstractStringBuilder|) {|java.lang.StringBuffer.deleteCharAt(I)Ljava.lang.AbstractStringBuilder;|} ((|java.lang.StringBuffer|) [|v0|], (|int|) [|v1|]) 
-    @MaxLocals 2
     @MaxStack 2
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Desc "java.lang.StringBuffer.deleteCharAt(I)Ljava.lang.AbstractStringBuilder;" 
-  {
-    local jmp;
-    s0;
-
-    #L00000Aa. call s0  := {|java.lang.StringBuffer.deleteCharAt(I)Ljava.lang.StringBuffer;|}([|v0|],[|v1|]) @ClassDescriptor (|java.lang.StringBuffer|) @Type virtual;
-    #L00000Ab. return s0;
-  }
-  procedure (|java.lang.AbstractStringBuilder|) {|java.lang.StringBuffer.appendCodePoint(I)Ljava.lang.AbstractStringBuilder;|} ((|java.lang.StringBuffer|) [|v0|], (|int|) [|v1|]) 
-    @MaxLocals 2
-    @MaxStack 2
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Desc "java.lang.StringBuffer.appendCodePoint(I)Ljava.lang.AbstractStringBuilder;" 
-  {
-    local jmp;
-    s0;
-
-    #L00000Aa. call s0  := {|java.lang.StringBuffer.appendCodePoint(I)Ljava.lang.StringBuffer;|}([|v0|],[|v1|]) @ClassDescriptor (|java.lang.StringBuffer|) @Type virtual;
-    #L00000Ab. return s0;
-  }
-  procedure (|java.lang.AbstractStringBuilder|) {|java.lang.StringBuffer.delete(II)Ljava.lang.AbstractStringBuilder;|} ((|java.lang.StringBuffer|) [|v0|], (|int|) [|v1|], (|int|) [|v2|]) 
-    @MaxLocals 3
-    @MaxStack 3
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Desc "java.lang.StringBuffer.delete(II)Ljava.lang.AbstractStringBuilder;" 
-  {
-    local jmp;
-    s0;
-
-    #L00000Aa. call s0  := {|java.lang.StringBuffer.delete(II)Ljava.lang.StringBuffer;|}([|v0|],[|v1|],[|v2|]) @ClassDescriptor (|java.lang.StringBuffer|) @Type virtual;
-    #L00000Ab. return s0;
-  }
-  procedure (|java.lang.AbstractStringBuilder|) {|java.lang.StringBuffer.append(D)Ljava.lang.AbstractStringBuilder;|} ((|java.lang.StringBuffer|) [|v0|], (|double|) [|v1|]) 
-    @MaxLocals 3
-    @MaxStack 3
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Desc "java.lang.StringBuffer.append(D)Ljava.lang.AbstractStringBuilder;" 
-  {
-    local jmp;
-    s0;
-    [|v2|];
-
-    #L00000Aa. call s0  := {|java.lang.StringBuffer.append(D)Ljava.lang.StringBuffer;|}([|v0|],[|v1|]) @ClassDescriptor (|java.lang.StringBuffer|) @Type virtual;
-    #L00000Ab. return s0;
-  }
-  procedure (|java.lang.AbstractStringBuilder|) {|java.lang.StringBuffer.append(F)Ljava.lang.AbstractStringBuilder;|} ((|java.lang.StringBuffer|) [|v0|], (|float|) [|v1|]) 
-    @MaxLocals 2
-    @MaxStack 2
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Desc "java.lang.StringBuffer.append(F)Ljava.lang.AbstractStringBuilder;" 
-  {
-    local jmp;
-    s0;
-
-    #L00000Aa. call s0  := {|java.lang.StringBuffer.append(F)Ljava.lang.StringBuffer;|}([|v0|],[|v1|]) @ClassDescriptor (|java.lang.StringBuffer|) @Type virtual;
-    #L00000Ab. return s0;
-  }
-  procedure (|java.lang.AbstractStringBuilder|) {|java.lang.StringBuffer.append(J)Ljava.lang.AbstractStringBuilder;|} ((|java.lang.StringBuffer|) [|v0|], (|long|) [|v1|]) 
-    @MaxLocals 3
-    @MaxStack 3
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Desc "java.lang.StringBuffer.append(J)Ljava.lang.AbstractStringBuilder;" 
-  {
-    local jmp;
-    s0;
-    [|v2|];
-
-    #L00000Aa. call s0  := {|java.lang.StringBuffer.append(J)Ljava.lang.StringBuffer;|}([|v0|],[|v1|]) @ClassDescriptor (|java.lang.StringBuffer|) @Type virtual;
-    #L00000Ab. return s0;
-  }
-  procedure (|java.lang.AbstractStringBuilder|) {|java.lang.StringBuffer.append(I)Ljava.lang.AbstractStringBuilder;|} ((|java.lang.StringBuffer|) [|v0|], (|int|) [|v1|]) 
-    @MaxLocals 2
-    @MaxStack 2
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Desc "java.lang.StringBuffer.append(I)Ljava.lang.AbstractStringBuilder;" 
-  {
-    local jmp;
-    s0;
-
-    #L00000Aa. call s0  := {|java.lang.StringBuffer.append(I)Ljava.lang.StringBuffer;|}([|v0|],[|v1|]) @ClassDescriptor (|java.lang.StringBuffer|) @Type virtual;
-    #L00000Ab. return s0;
-  }
-  procedure (|java.lang.AbstractStringBuilder|) {|java.lang.StringBuffer.append(C)Ljava.lang.AbstractStringBuilder;|} ((|java.lang.StringBuffer|) [|v0|], (|char|) [|v1|]) 
-    @MaxLocals 2
-    @MaxStack 2
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Desc "java.lang.StringBuffer.append(C)Ljava.lang.AbstractStringBuilder;" 
-  {
-    local jmp;
-    s0;
-
-    #L00000Aa. call s0  := {|java.lang.StringBuffer.append(C)Ljava.lang.StringBuffer;|}([|v0|],[|v1|]) @ClassDescriptor (|java.lang.StringBuffer|) @Type virtual;
-    #L00000Ab. return s0;
-  }
-  procedure (|java.lang.AbstractStringBuilder|) {|java.lang.StringBuffer.append(Z)Ljava.lang.AbstractStringBuilder;|} ((|java.lang.StringBuffer|) [|v0|], (|boolean|) [|v1|]) 
-    @MaxLocals 2
-    @MaxStack 2
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Desc "java.lang.StringBuffer.append(Z)Ljava.lang.AbstractStringBuilder;" 
-  {
-    local jmp;
-    s0;
-
-    #L00000Aa. call s0  := {|java.lang.StringBuffer.append(Z)Ljava.lang.StringBuffer;|}([|v0|],[|v1|]) @ClassDescriptor (|java.lang.StringBuffer|) @Type virtual;
-    #L00000Ab. return s0;
-  }
-  procedure (|java.lang.AbstractStringBuilder|) {|java.lang.StringBuffer.append([CII)Ljava.lang.AbstractStringBuilder;|} ((|java.lang.StringBuffer|) [|v0|], (|char[]|) [|v1|], (|int|) [|v2|], (|int|) [|v3|]) 
-    @MaxLocals 4
-    @MaxStack 4
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Desc "java.lang.StringBuffer.append([CII)Ljava.lang.AbstractStringBuilder;" 
-  {
-    local jmp;
-    s0;
-
-    #L00000Aa. call s0  := {|java.lang.StringBuffer.append([CII)Ljava.lang.StringBuffer;|}([|v0|],[|v1|],[|v2|],[|v3|]) @ClassDescriptor (|java.lang.StringBuffer|) @Type virtual;
-    #L00000Ab. return s0;
-  }
-  procedure (|java.lang.AbstractStringBuilder|) {|java.lang.StringBuffer.append([C)Ljava.lang.AbstractStringBuilder;|} ((|java.lang.StringBuffer|) [|v0|], (|char[]|) [|v1|]) 
-    @MaxLocals 2
-    @MaxStack 2
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Desc "java.lang.StringBuffer.append([C)Ljava.lang.AbstractStringBuilder;" 
-  {
-    local jmp;
-    s0;
-
-    #L00000Aa. call s0  := {|java.lang.StringBuffer.append([C)Ljava.lang.StringBuffer;|}([|v0|],[|v1|]) @ClassDescriptor (|java.lang.StringBuffer|) @Type virtual;
-    #L00000Ab. return s0;
-  }
-  procedure (|java.lang.AbstractStringBuilder|) {|java.lang.StringBuffer.append(Ljava.lang.CharSequence;II)Ljava.lang.AbstractStringBuilder;|} ((|java.lang.StringBuffer|) [|v0|], (|java.lang.CharSequence|) [|v1|], (|int|) [|v2|], (|int|) [|v3|]) 
-    @MaxLocals 4
-    @MaxStack 4
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Desc "java.lang.StringBuffer.append(Ljava.lang.CharSequence;II)Ljava.lang.AbstractStringBuilder;" 
-  {
-    local jmp;
-    s0;
-
-    #L00000Aa. call s0  := {|java.lang.StringBuffer.append(Ljava.lang.CharSequence;II)Ljava.lang.StringBuffer;|}([|v0|],[|v1|],[|v2|],[|v3|]) @ClassDescriptor (|java.lang.StringBuffer|) @Type virtual;
-    #L00000Ab. return s0;
-  }
-  procedure (|java.lang.AbstractStringBuilder|) {|java.lang.StringBuffer.append(Ljava.lang.CharSequence;)Ljava.lang.AbstractStringBuilder;|} ((|java.lang.StringBuffer|) [|v0|], (|java.lang.CharSequence|) [|v1|]) 
-    @MaxLocals 2
-    @MaxStack 2
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Desc "java.lang.StringBuffer.append(Ljava.lang.CharSequence;)Ljava.lang.AbstractStringBuilder;" 
-  {
-    local jmp;
-    s0;
-
-    #L00000Aa. call s0  := {|java.lang.StringBuffer.append(Ljava.lang.CharSequence;)Ljava.lang.StringBuffer;|}([|v0|],[|v1|]) @ClassDescriptor (|java.lang.StringBuffer|) @Type virtual;
-    #L00000Ab. return s0;
-  }
-  procedure (|java.lang.AbstractStringBuilder|) {|java.lang.StringBuffer.append(Ljava.lang.StringBuffer;)Ljava.lang.AbstractStringBuilder;|} ((|java.lang.StringBuffer|) [|v0|], (|java.lang.StringBuffer|) [|v1|]) 
-    @MaxLocals 2
-    @MaxStack 2
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Desc "java.lang.StringBuffer.append(Ljava.lang.StringBuffer;)Ljava.lang.AbstractStringBuilder;" 
-  {
-    local jmp;
-    s0;
-
-    #L00000Aa. call s0  := {|java.lang.StringBuffer.append(Ljava.lang.StringBuffer;)Ljava.lang.StringBuffer;|}([|v0|],[|v1|]) @ClassDescriptor (|java.lang.StringBuffer|) @Type virtual;
-    #L00000Ab. return s0;
-  }
-  procedure (|java.lang.AbstractStringBuilder|) {|java.lang.StringBuffer.append(Ljava.lang.String;)Ljava.lang.AbstractStringBuilder;|} ((|java.lang.StringBuffer|) [|v0|], (|java.lang.String|) [|v1|]) 
-    @MaxLocals 2
-    @MaxStack 2
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Desc "java.lang.StringBuffer.append(Ljava.lang.String;)Ljava.lang.AbstractStringBuilder;" 
-  {
-    local jmp;
-    s0;
-
-    #L00000Aa. call s0  := {|java.lang.StringBuffer.append(Ljava.lang.String;)Ljava.lang.StringBuffer;|}([|v0|],[|v1|]) @ClassDescriptor (|java.lang.StringBuffer|) @Type virtual;
-    #L00000Ab. return s0;
-  }
-  procedure (|java.lang.AbstractStringBuilder|) {|java.lang.StringBuffer.append(Ljava.lang.Object;)Ljava.lang.AbstractStringBuilder;|} ((|java.lang.StringBuffer|) [|v0|], (|java.lang.Object|) [|v1|]) 
-    @MaxLocals 2
-    @MaxStack 2
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Desc "java.lang.StringBuffer.append(Ljava.lang.Object;)Ljava.lang.AbstractStringBuilder;" 
-  {
-    local jmp;
-    s0;
-
-    #L00000Aa. call s0  := {|java.lang.StringBuffer.append(Ljava.lang.Object;)Ljava.lang.StringBuffer;|}([|v0|],[|v1|]) @ClassDescriptor (|java.lang.StringBuffer|) @Type virtual;
-    #L00000Ab. return s0;
-  }
-  procedure (|java.lang.Appendable|) {|java.lang.StringBuffer.append(C)Ljava.lang.Appendable;|} ((|java.lang.StringBuffer|) [|v0|], (|char|) [|v1|]) 
-    @Throws [|java.io.IOException|]
-    @MaxLocals 2
-    @MaxStack 2
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Desc "java.lang.StringBuffer.append(C)Ljava.lang.Appendable;" 
-  {
-    local jmp;
-    s0;
-
-    #L00000Aa. call s0  := {|java.lang.StringBuffer.append(C)Ljava.lang.StringBuffer;|}([|v0|],[|v1|]) @ClassDescriptor (|java.lang.StringBuffer|) @Type virtual;
-    #L00000Ab. return s0;
-  }
-  procedure (|java.lang.Appendable|) {|java.lang.StringBuffer.append(Ljava.lang.CharSequence;II)Ljava.lang.Appendable;|} ((|java.lang.StringBuffer|) [|v0|], (|java.lang.CharSequence|) [|v1|], (|int|) [|v2|], (|int|) [|v3|]) 
-    @Throws [|java.io.IOException|]
-    @MaxLocals 4
-    @MaxStack 4
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Desc "java.lang.StringBuffer.append(Ljava.lang.CharSequence;II)Ljava.lang.Appendable;" 
-  {
-    local jmp;
-    s0;
-
-    #L00000Aa. call s0  := {|java.lang.StringBuffer.append(Ljava.lang.CharSequence;II)Ljava.lang.StringBuffer;|}([|v0|],[|v1|],[|v2|],[|v3|]) @ClassDescriptor (|java.lang.StringBuffer|) @Type virtual;
-    #L00000Ab. return s0;
-  }
-  procedure (|java.lang.Appendable|) {|java.lang.StringBuffer.append(Ljava.lang.CharSequence;)Ljava.lang.Appendable;|} ((|java.lang.StringBuffer|) [|v0|], (|java.lang.CharSequence|) [|v1|]) 
-    @Throws [|java.io.IOException|]
-    @MaxLocals 2
-    @MaxStack 2
-    @Owner (|java.lang.StringBuffer|)
-    @Access (PUBLIC,SYNTHETIC,VOLATILE)
-    @Desc "java.lang.StringBuffer.append(Ljava.lang.CharSequence;)Ljava.lang.Appendable;" 
-  {
-    local jmp;
-    s0;
-
-    #L00000Aa. call s0  := {|java.lang.StringBuffer.append(Ljava.lang.CharSequence;)Ljava.lang.StringBuffer;|}([|v0|],[|v1|]) @ClassDescriptor (|java.lang.StringBuffer|) @Type virtual;
-    #L00000Ab. return s0;
-  }
-  procedure (|void|) {|java.lang.StringBuffer.<clinit>()V|} () 
-    @MaxLocals 0
-    @MaxStack 7
-    @Owner (|java.lang.StringBuffer|)
-    @Access (STATIC)
-    @Desc "java.lang.StringBuffer.<clinit>()V" 
-  {
-    local jmp;
-    s0;
-    s1;
-    s2;
-    s3;
-    s4;
-    s5;
-    s6;
-    s7;
-    s8;
-
-    #L00000Aa. s0 := new (|java.io.ObjectStreamField|)[3];
-    #L00000Ab. s1 := new (|java.io.ObjectStreamField|);
-    #L00000Ac. call s2  := {|java.io.ObjectStreamField.<init>(Ljava.lang.String;Ljava.lang.Class;)V|}(s1,"value",+|char[].class|+) @ClassDescriptor (|java.io.ObjectStreamField|) @Type special;
-    #L00000Ad. s0[0] := s1;
-    #L00000Ae. s3 := new (|java.io.ObjectStreamField|);
-    #L00000Af. s4 := +|java.lang.Integer.TYPE|+ @Type (|java.lang.Class|);
-    #L00000Ag. call s5  := {|java.io.ObjectStreamField.<init>(Ljava.lang.String;Ljava.lang.Class;)V|}(s3,"count",s4) @ClassDescriptor (|java.io.ObjectStreamField|) @Type special;
-    #L00000Ah. s0[1] := s3;
-    #L00000Ai. s6 := new (|java.io.ObjectStreamField|);
-    #L00000Aj. s7 := +|java.lang.Boolean.TYPE|+ @Type (|java.lang.Class|);
-    #L00000Ak. call s8  := {|java.io.ObjectStreamField.<init>(Ljava.lang.String;Ljava.lang.Class;)V|}(s6,"shared",s7) @ClassDescriptor (|java.io.ObjectStreamField|) @Type special;
-    #L00000Al. s0[2] := s6;
-    #L00000Am. +|java.lang.StringBuffer.serialPersistentFields|+ := s0 @Type (|java.io.ObjectStreamField[]|);
-    #L00000An. return @void;
-  }
-
-record (|java.io.ObjectOutputStream$PutField|)
-    @Source "ObjectOutputStream.java"
-    @Type class
-    @AccessFlag (PUBLIC)
-    @InnerClass (
-      @Name (|java.io.ObjectOutputStream$PutField|), 
-      @OuterName (|java.io.ObjectOutputStream|), 
-      @InnerName PutField, 
-      @AccessFlag (PUBLIC,STATIC)
-     ) 
-  extends 
-    (|java.lang.Object|) 
-{
-}
-
-  procedure (|void|) {|java.io.ObjectOutputStream$PutField.<init>()V|} ((|java.io.ObjectOutputStream$PutField|) [|v0|]) 
-    @MaxLocals 1
-    @MaxStack 1
-    @Owner (|java.io.ObjectOutputStream$PutField|)
+    @GenericSignature "(Lscala/collection/script/Location;TA;)V"
+    @Owner (|scala.collection.script.Update|)
     @Access (PUBLIC,CONSTRUCTOR)
-    @Desc "java.io.ObjectOutputStream$PutField.<init>()V" 
+    @Desc "scala.collection.script.Update.<init>(Lscala.collection.script.Location;Ljava.lang.Object;)V" 
   {
     local jmp;
     s0;
+    s1;
 
-    #L00000Aa. call s0  := {|java.lang.Object.<init>()V|}([|v0|]) @ClassDescriptor (|java.lang.Object|) @Type special;
-    #L00000Ab. return @void;
+    #L00000Aa. [|this|].<|scala.collection.script.Update.location|> := [|elem|] @Type (|scala.collection.script.Location|);
+    #L00000Ab. [|this|].<|scala.collection.script.Update.elem|> := [|v2|] @Type (|java.lang.Object|);
+    #L00000Ac. call s0  := {|java.lang.Object.<init>()V|}([|this|]) @ClassDescriptor (|java.lang.Object|) @Type special;
+    #L00000Ad. call s1  := {|scala.Product$class.$init$(Lscala.Product;)V|}([|this|]) @ClassDescriptor (|scala.Product$class|) @Type direct;
+    #L00000Ae. return @void;
   }
-  procedure (|void|) {|java.io.ObjectOutputStream$PutField.put(Ljava.lang.String;Z)V|} ((|java.io.ObjectOutputStream$PutField|) [|v0|], (|java.lang.String|) [|v1|], (|boolean|) [|v2|]) 
-    @Owner (|java.io.ObjectOutputStream$PutField|)
-    @Access (PUBLIC)
-    @Desc "java.io.ObjectOutputStream$PutField.put(Ljava.lang.String;Z)V" 
-  {
-
-    #L00000Aa. return @void;
-  }
-  procedure (|void|) {|java.io.ObjectOutputStream$PutField.put(Ljava.lang.String;B)V|} ((|java.io.ObjectOutputStream$PutField|) [|v0|], (|java.lang.String|) [|v1|], (|byte|) [|v2|]) 
-    @Owner (|java.io.ObjectOutputStream$PutField|)
-    @Access (PUBLIC)
-    @Desc "java.io.ObjectOutputStream$PutField.put(Ljava.lang.String;B)V" 
-  {
-
-    #L00000Aa. return @void;
-  }
-  procedure (|void|) {|java.io.ObjectOutputStream$PutField.put(Ljava.lang.String;C)V|} ((|java.io.ObjectOutputStream$PutField|) [|v0|], (|java.lang.String|) [|v1|], (|char|) [|v2|]) 
-    @Owner (|java.io.ObjectOutputStream$PutField|)
-    @Access (PUBLIC)
-    @Desc "java.io.ObjectOutputStream$PutField.put(Ljava.lang.String;C)V" 
-  {
-
-    #L00000Aa. return @void;
-  }
-  procedure (|void|) {|java.io.ObjectOutputStream$PutField.put(Ljava.lang.String;S)V|} ((|java.io.ObjectOutputStream$PutField|) [|v0|], (|java.lang.String|) [|v1|], (|short|) [|v2|]) 
-    @Owner (|java.io.ObjectOutputStream$PutField|)
-    @Access (PUBLIC)
-    @Desc "java.io.ObjectOutputStream$PutField.put(Ljava.lang.String;S)V" 
-  {
-
-    #L00000Aa. return @void;
-  }
-  procedure (|void|) {|java.io.ObjectOutputStream$PutField.put(Ljava.lang.String;I)V|} ((|java.io.ObjectOutputStream$PutField|) [|v0|], (|java.lang.String|) [|v1|], (|int|) [|v2|]) 
-    @Owner (|java.io.ObjectOutputStream$PutField|)
-    @Access (PUBLIC)
-    @Desc "java.io.ObjectOutputStream$PutField.put(Ljava.lang.String;I)V" 
-  {
-
-    #L00000Aa. return @void;
-  }
-  procedure (|void|) {|java.io.ObjectOutputStream$PutField.put(Ljava.lang.String;J)V|} ((|java.io.ObjectOutputStream$PutField|) [|v0|], (|java.lang.String|) [|v1|], (|long|) [|v2|]) 
-    @Owner (|java.io.ObjectOutputStream$PutField|)
-    @Access (PUBLIC)
-    @Desc "java.io.ObjectOutputStream$PutField.put(Ljava.lang.String;J)V" 
-  {
-
-    #L00000Aa. return @void;
-  }
-  procedure (|void|) {|java.io.ObjectOutputStream$PutField.put(Ljava.lang.String;F)V|} ((|java.io.ObjectOutputStream$PutField|) [|v0|], (|java.lang.String|) [|v1|], (|float|) [|v2|]) 
-    @Owner (|java.io.ObjectOutputStream$PutField|)
-    @Access (PUBLIC)
-    @Desc "java.io.ObjectOutputStream$PutField.put(Ljava.lang.String;F)V" 
-  {
-
-    #L00000Aa. return @void;
-  }
-  procedure (|void|) {|java.io.ObjectOutputStream$PutField.put(Ljava.lang.String;D)V|} ((|java.io.ObjectOutputStream$PutField|) [|v0|], (|java.lang.String|) [|v1|], (|double|) [|v2|]) 
-    @Owner (|java.io.ObjectOutputStream$PutField|)
-    @Access (PUBLIC)
-    @Desc "java.io.ObjectOutputStream$PutField.put(Ljava.lang.String;D)V" 
-  {
-
-    #L00000Aa. return @void;
-  }
-  procedure (|void|) {|java.io.ObjectOutputStream$PutField.put(Ljava.lang.String;Ljava.lang.Object;)V|} ((|java.io.ObjectOutputStream$PutField|) [|v0|], (|java.lang.String|) [|v1|], (|java.lang.Object|) [|v2|]) 
-    @Owner (|java.io.ObjectOutputStream$PutField|)
-    @Access (PUBLIC)
-    @Desc "java.io.ObjectOutputStream$PutField.put(Ljava.lang.String;Ljava.lang.Object;)V" 
-  {
-
-    #L00000Aa. return @void;
-  }
-  procedure (|void|) {|java.io.ObjectOutputStream$PutField.write(Ljava.io.ObjectOutput;)V|} ((|java.io.ObjectOutputStream$PutField|) [|v0|], (|java.io.ObjectOutput|) [|v1|]) 
-    @Throws [|java.io.IOException|]
-    @Owner (|java.io.ObjectOutputStream$PutField|)
-    @(|java.lang.Deprecated;|) 
-    @Access (PUBLIC)
-    @Desc "java.io.ObjectOutputStream$PutField.write(Ljava.io.ObjectOutput;)V" 
-  {
-
-    #L00000Aa. return @void;
-  }
-
-record (|java.io.ObjectInputStream$GetField|)
-    @Source "ObjectInputStream.java"
-    @Type class
-    @AccessFlag (PUBLIC)
-    @InnerClass (
-      @Name (|java.io.ObjectInputStream$GetField|), 
-      @OuterName (|java.io.ObjectInputStream|), 
-      @InnerName GetField, 
-      @AccessFlag (PUBLIC,STATIC)
-     ) 
-  extends 
-    (|java.lang.Object|) 
-{
-}
-
-  procedure (|void|) {|java.io.ObjectInputStream$GetField.<init>()V|} ((|java.io.ObjectInputStream$GetField|) [|v0|]) 
-    @MaxLocals 1
-    @MaxStack 1
-    @Owner (|java.io.ObjectInputStream$GetField|)
+  procedure (|void|) {|scala.collection.script.Update.<init>(Ljava.lang.Object;)V|} ((|scala.collection.script.Update|) [|this|], (|java.lang.Object|) [|elem|]) 
+    @MaxLocals 2
+    @MaxStack 3
+    @GenericSignature "(TA;)V"
+    @Owner (|scala.collection.script.Update|)
     @Access (PUBLIC,CONSTRUCTOR)
-    @Desc "java.io.ObjectInputStream$GetField.<init>()V" 
+    @Desc "scala.collection.script.Update.<init>(Ljava.lang.Object;)V" 
   {
     local jmp;
     s0;
+    s1;
 
-    #L00000Aa. call s0  := {|java.lang.Object.<init>()V|}([|v0|]) @ClassDescriptor (|java.lang.Object|) @Type special;
-    #L00000Ab. return @void;
-  }
-  procedure (|java.io.ObjectStreamClass|) {|java.io.ObjectInputStream$GetField.getObjectStreamClass()Ljava.io.ObjectStreamClass;|} ((|java.io.ObjectInputStream$GetField|) [|v0|]) 
-    @Owner (|java.io.ObjectInputStream$GetField|)
-    @Access (PUBLIC)
-    @Desc "java.io.ObjectInputStream$GetField.getObjectStreamClass()Ljava.io.ObjectStreamClass;" 
-  {
-
-    #L00000Aa. return @void;
-  }
-  procedure (|boolean|) {|java.io.ObjectInputStream$GetField.defaulted(Ljava.lang.String;)Z|} ((|java.io.ObjectInputStream$GetField|) [|v0|], (|java.lang.String|) [|v1|]) 
-    @Throws [|java.io.IOException|]
-    @Owner (|java.io.ObjectInputStream$GetField|)
-    @Access (PUBLIC)
-    @Desc "java.io.ObjectInputStream$GetField.defaulted(Ljava.lang.String;)Z" 
-  {
-
-    #L00000Aa. return @void;
-  }
-  procedure (|boolean|) {|java.io.ObjectInputStream$GetField.get(Ljava.lang.String;Z)Z|} ((|java.io.ObjectInputStream$GetField|) [|v0|], (|java.lang.String|) [|v1|], (|boolean|) [|v2|]) 
-    @Throws [|java.io.IOException|]
-    @Owner (|java.io.ObjectInputStream$GetField|)
-    @Access (PUBLIC)
-    @Desc "java.io.ObjectInputStream$GetField.get(Ljava.lang.String;Z)Z" 
-  {
-
-    #L00000Aa. return @void;
-  }
-  procedure (|byte|) {|java.io.ObjectInputStream$GetField.get(Ljava.lang.String;B)B|} ((|java.io.ObjectInputStream$GetField|) [|v0|], (|java.lang.String|) [|v1|], (|byte|) [|v2|]) 
-    @Throws [|java.io.IOException|]
-    @Owner (|java.io.ObjectInputStream$GetField|)
-    @Access (PUBLIC)
-    @Desc "java.io.ObjectInputStream$GetField.get(Ljava.lang.String;B)B" 
-  {
-
-    #L00000Aa. return @void;
-  }
-  procedure (|char|) {|java.io.ObjectInputStream$GetField.get(Ljava.lang.String;C)C|} ((|java.io.ObjectInputStream$GetField|) [|v0|], (|java.lang.String|) [|v1|], (|char|) [|v2|]) 
-    @Throws [|java.io.IOException|]
-    @Owner (|java.io.ObjectInputStream$GetField|)
-    @Access (PUBLIC)
-    @Desc "java.io.ObjectInputStream$GetField.get(Ljava.lang.String;C)C" 
-  {
-
-    #L00000Aa. return @void;
-  }
-  procedure (|short|) {|java.io.ObjectInputStream$GetField.get(Ljava.lang.String;S)S|} ((|java.io.ObjectInputStream$GetField|) [|v0|], (|java.lang.String|) [|v1|], (|short|) [|v2|]) 
-    @Throws [|java.io.IOException|]
-    @Owner (|java.io.ObjectInputStream$GetField|)
-    @Access (PUBLIC)
-    @Desc "java.io.ObjectInputStream$GetField.get(Ljava.lang.String;S)S" 
-  {
-
-    #L00000Aa. return @void;
-  }
-  procedure (|int|) {|java.io.ObjectInputStream$GetField.get(Ljava.lang.String;I)I|} ((|java.io.ObjectInputStream$GetField|) [|v0|], (|java.lang.String|) [|v1|], (|int|) [|v2|]) 
-    @Throws [|java.io.IOException|]
-    @Owner (|java.io.ObjectInputStream$GetField|)
-    @Access (PUBLIC)
-    @Desc "java.io.ObjectInputStream$GetField.get(Ljava.lang.String;I)I" 
-  {
-
-    #L00000Aa. return @void;
-  }
-  procedure (|long|) {|java.io.ObjectInputStream$GetField.get(Ljava.lang.String;J)J|} ((|java.io.ObjectInputStream$GetField|) [|v0|], (|java.lang.String|) [|v1|], (|long|) [|v2|]) 
-    @Throws [|java.io.IOException|]
-    @Owner (|java.io.ObjectInputStream$GetField|)
-    @Access (PUBLIC)
-    @Desc "java.io.ObjectInputStream$GetField.get(Ljava.lang.String;J)J" 
-  {
-
-    #L00000Aa. return @void;
-  }
-  procedure (|float|) {|java.io.ObjectInputStream$GetField.get(Ljava.lang.String;F)F|} ((|java.io.ObjectInputStream$GetField|) [|v0|], (|java.lang.String|) [|v1|], (|float|) [|v2|]) 
-    @Throws [|java.io.IOException|]
-    @Owner (|java.io.ObjectInputStream$GetField|)
-    @Access (PUBLIC)
-    @Desc "java.io.ObjectInputStream$GetField.get(Ljava.lang.String;F)F" 
-  {
-
-    #L00000Aa. return @void;
-  }
-  procedure (|double|) {|java.io.ObjectInputStream$GetField.get(Ljava.lang.String;D)D|} ((|java.io.ObjectInputStream$GetField|) [|v0|], (|java.lang.String|) [|v1|], (|double|) [|v2|]) 
-    @Throws [|java.io.IOException|]
-    @Owner (|java.io.ObjectInputStream$GetField|)
-    @Access (PUBLIC)
-    @Desc "java.io.ObjectInputStream$GetField.get(Ljava.lang.String;D)D" 
-  {
-
-    #L00000Aa. return @void;
-  }
-  procedure (|java.lang.Object|) {|java.io.ObjectInputStream$GetField.get(Ljava.lang.String;Ljava.lang.Object;)Ljava.lang.Object;|} ((|java.io.ObjectInputStream$GetField|) [|v0|], (|java.lang.String|) [|v1|], (|java.lang.Object|) [|v2|]) 
-    @Throws [|java.io.IOException|]
-    @Owner (|java.io.ObjectInputStream$GetField|)
-    @Access (PUBLIC)
-    @Desc "java.io.ObjectInputStream$GetField.get(Ljava.lang.String;Ljava.lang.Object;)Ljava.lang.Object;" 
-  {
-
-    #L00000Aa. return @void;
+    #L00000Aa. s0 := +|scala.collection.script.NoLo$.MODULE$|+ @Type (|scala.collection.script.NoLo$|);
+    #L00000Ab. call s1  := {|scala.collection.script.Update.<init>(Lscala.collection.script.Location;Ljava.lang.Object;)V|}([|this|],s0,[|elem|]) @ClassDescriptor (|scala.collection.script.Update|) @Type special;
+    #L00000Ac. return @void;
   }
 
 

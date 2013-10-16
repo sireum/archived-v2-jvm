@@ -57,6 +57,7 @@ public class HelloWorld2 {
 		String lajfa = (String)o;
 		
 		HelloWorld2[] hw2 = new HelloWorld2[10];
+		i = hw2.length;
 		try {
 			hw2[9].field2 = 2;
 		} catch (ArithmeticException ae) {

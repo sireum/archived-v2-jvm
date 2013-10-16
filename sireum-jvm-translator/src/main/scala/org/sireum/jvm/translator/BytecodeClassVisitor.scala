@@ -2,8 +2,6 @@ package org.sireum.jvm.translator
 
 import org.objectweb.asm.ClassVisitor
 import org.objectweb.asm.Opcodes
-import org.objectweb.asm.signature.SignatureReader
-import org.objectweb.asm.util.TraceSignatureVisitor
 import org.sireum.jvm.models.Field
 import org.sireum.jvm.models.LocalInfo
 import org.sireum.jvm.models.Procedure
@@ -59,7 +57,7 @@ class BytecodeClassVisitor(api: Int, cv: ClassVisitor, methodLocalMap: Map[Strin
       stOuterClass.add("method", name + desc)
     }
 
-    addAnnotations("OuterClass", stOuterClass.render)
+    addAnnotations("OuterClass", Util.getTextString(stOuterClass.render))
     record.outerClasses.add(name)
   }
 
