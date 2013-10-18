@@ -4,6 +4,7 @@ import org.junit.runner.RunWith
 import org.scalatest.junit.JUnitRunner
 import com.google.common.reflect.ClassPath
 import scala.collection.JavaConversions._
+import org.sireum.jvm.translator.ClassTranslator
 
 @RunWith(classOf[JUnitRunner])
 class JVMTest extends JVMTestFramework {
@@ -15,10 +16,10 @@ class JVMTest extends JVMTestFramework {
 	 def compareFiles = false
 	 
 	 val cp: ClassPath = ClassPath.from(getClass.getClassLoader())
-	 cp.getTopLevelClassesRecursive("org.sireum").foreach(x=>Translating className x.getName())
+	 cp.getTopLevelClassesRecursive("org.sireum.core").foreach(x=>Translating className x.getName())
+	 cp.getTopLevelClassesRecursive("org.sireum.jvm").foreach(x=>Translating className x.getName())
 	 //cp.getTopLevelClassesRecursive("scala.collection").foreach(x=>Translating className x.getName())
 
-	 
 	 //println(cp.getTopLevelClassesRecursive("scala.collection").size())
 	 //cp.getTopLevelClassesRecursive("scala.collection").foreach(x=>println(x.getName()))
 	 

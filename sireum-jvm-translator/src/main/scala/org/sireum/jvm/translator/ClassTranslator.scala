@@ -49,8 +49,7 @@ object ClassTranslator {
       case Left(e1) => {
         val output = new StringBuilder()
         val is = cl.getResourceAsStream(e1.replace('.', File.separatorChar) + ".class")
-        output ++= translate(is)
-        output.toString
+        translate(is)
       }
       case Right(e2) => {
         val is: InputStream = new FileInputStream(e2)
