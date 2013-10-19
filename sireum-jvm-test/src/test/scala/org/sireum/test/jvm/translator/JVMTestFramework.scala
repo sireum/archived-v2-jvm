@@ -29,10 +29,6 @@ trait JVMTestFramework extends TestFramework {
 
       val reporter = new PilarParser.StringErrorReporter(true)
       val output = ClassTranslator.translate(source)
-      
-      val pw = new java.io.PrintWriter(new java.io.File("output"))
-      pw.println(output)
-      pw.close()
 
       // Does it parse?
       val ms = ChunkingPilarParser(Left(output), reporter)
