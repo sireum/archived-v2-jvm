@@ -1,6 +1,6 @@
 /bin
 /target
 /.scala_dependencies
-/.cache
+/.cache*
 .settings
 .worksheet
