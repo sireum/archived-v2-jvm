@@ -9,5 +9,6 @@
 	<classpathentry combineaccessrules="false" kind="src" path="/sireum-core-test"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/sireum-pilar"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/sireum-jvm-translator"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/sireum-parser"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
